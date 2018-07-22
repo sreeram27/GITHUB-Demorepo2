@@ -6,6 +6,8 @@
         <members>A028</members>
         <members>A08089</members>
         <members>A081</members>
+        <members>A160</members>
+        <members>A161</members>
         <name>ApexClass</name>
     </types>
 </Package>
