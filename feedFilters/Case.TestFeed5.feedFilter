@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFeedFilter xmlns="http://soap.sforce.com/2006/04/metadata">
+    <criteria>
+        <feedItemType>PollPost</feedItemType>
+        <feedItemVisibility>AllUsers</feedItemVisibility>
+    </criteria>
+    <criteria>
+        <feedItemType>AttachArticleEvent</feedItemType>
+        <relatedSObjectType>KnowledgeArticleVersion</relatedSObjectType>
+    </criteria>
+    <label>TestFeed5</label>
+</CustomFeedFilter>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Test</description>
+    <interviewLabel>MyFlow1 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>MyFlow1</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Fastupdate1</name>
+        <label>Fastupdate1</label>
+        <locationX>344</locationX>
+        <locationY>206</locationY>
+        <inputReference>Flow1</inputReference>
+    </recordUpdates>
+    <startElementReference>Fastupdate1</startElementReference>
+    <variables>
+        <name>Flow1</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Obj5__c</objectType>
+    </variables>
+</Flow>
