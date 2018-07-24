@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>TestEmailAlert1</fullName>
+        <description>TestEmailAlert1</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>naresh-sb.one@autorabit.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Test45/TestEt1</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>WorkFlowFieldUpdateTest2</fullName>
+        <field>Field1__c</field>
+        <name>WorkFlowFieldUpdateTest2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>TestOutboundMesage1</fullName>
+        <apiVersion>42.0</apiVersion>
+        <endpointUrl>https://www.google.co.in/</endpointUrl>
+        <fields>Id</fields>
+        <fields>Name</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>saikumar-sb.one@autorabit.com</integrationUser>
+        <name>TestOutboundMesage1</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+</Workflow>

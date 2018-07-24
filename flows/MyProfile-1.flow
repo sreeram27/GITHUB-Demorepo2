@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Flow3</name>
+        <label>Flow3</label>
+        <locationX>535</locationX>
+        <locationY>506</locationY>
+        <actionName>NewEvent</actionName>
+        <actionType>quickAction</actionType>
+        <inputParameters>
+            <name>EndDateTime</name>
+        </inputParameters>
+        <inputParameters>
+            <name>OwnerId</name>
+        </inputParameters>
+        <inputParameters>
+            <name>StartDateTime</name>
+        </inputParameters>
+    </actionCalls>
+    <interviewLabel>MyProfile# {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>MyProfile#</label>
+    <processType>AutoLaunchedFlow</processType>
+</Flow>
