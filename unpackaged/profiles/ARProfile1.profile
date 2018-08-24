@@ -65,11 +65,31 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>A29</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A32</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>a12testclass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>a13testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>a29testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>a32testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>rtclass1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
@@ -129,6 +149,19 @@
         <field>CAcobj1__c.CACField1s__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTObj2__c.f1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTObj2__c.f2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <layoutAssignments>
+        <layout>RTObj2__c-RTObj2 Layout</layout>
+    </layoutAssignments>
     <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>

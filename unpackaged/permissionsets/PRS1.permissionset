@@ -136,6 +136,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>RTObj2__c.f1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTObj2__c.f2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>SAOB1__c.SAF1__c</field>
         <readable>true</readable>
     </fieldPermissions>
