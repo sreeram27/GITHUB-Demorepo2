@@ -21,6 +21,7 @@
     <columns>
         <field>ADDRESS1_STATE</field>
     </columns>
+    <description>test</description>
     <format>Tabular</format>
     <name>AccountReport1</name>
     <params>

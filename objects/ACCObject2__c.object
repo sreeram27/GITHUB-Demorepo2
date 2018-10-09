@@ -43,7 +43,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>123</description>
+    <description>123dsdsdsf</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -54,6 +54,7 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Field1__c</fullName>
+        <description>fdgfg</description>
         <externalId>false</externalId>
         <label>Field1</label>
         <required>false</required>
@@ -72,6 +73,7 @@
     </fields>
     <fields>
         <fullName>Field2__c</fullName>
+        <description>test</description>
         <externalId>false</externalId>
         <label>Field2</label>
         <required>false</required>
@@ -80,7 +82,7 @@
     </fields>
     <fields>
         <fullName>Field3__c</fullName>
-        <description>1233</description>
+        <description>1233ds</description>
         <externalId>false</externalId>
         <label>Field3</label>
         <required>false</required>
@@ -89,6 +91,7 @@
     </fields>
     <fields>
         <fullName>Field4__c</fullName>
+        <description>fdsfdsf</description>
         <externalId>false</externalId>
         <label>Field4</label>
         <required>false</required>

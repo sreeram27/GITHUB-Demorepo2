@@ -27,6 +27,7 @@
     <columns>
         <field>EMAIL</field>
     </columns>
+    <description>test</description>
     <format>Tabular</format>
     <name>LeadReport</name>
     <params>
@@ -34,7 +35,7 @@
         <value>1</value>
     </params>
     <reportType>LeadList</reportType>
-    <scope>user</scope>
+    <scope>org</scope>
     <showDetails>true</showDetails>
     <timeFrameFilter>
         <dateColumn>CREATED_DATE</dateColumn>

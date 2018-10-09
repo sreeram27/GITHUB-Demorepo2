@@ -49,6 +49,18 @@
         <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>A0</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A0123</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A025</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>A027</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -61,19 +73,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A041</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>A045</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>A0456</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A045678</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A052</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -253,10 +261,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A30</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>A300</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -382,6 +386,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>AA54</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AAAA06</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AAAA07</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -665,10 +677,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>a30testclass</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>a32testclass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -713,6 +721,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>rtclass1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>s1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -754,15 +766,15 @@
     </classAccesses>
     <externalDataSourceAccesses>
         <enabled>false</enabled>
-        <externalDataSource>EDS1</externalDataSource>
+        <externalDataSource>EXTDS1</externalDataSource>
     </externalDataSourceAccesses>
     <externalDataSourceAccesses>
         <enabled>false</enabled>
-        <externalDataSource>EDS2</externalDataSource>
+        <externalDataSource>EXTDS2</externalDataSource>
     </externalDataSourceAccesses>
     <externalDataSourceAccesses>
         <enabled>false</enabled>
-        <externalDataSource>EDS3</externalDataSource>
+        <externalDataSource>EXTDS3</externalDataSource>
     </externalDataSourceAccesses>
     <fieldPermissions>
         <editable>false</editable>
@@ -1052,7 +1064,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.AccountField__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1222,17 +1234,17 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.UpsellOpportunity__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Account.Website</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Account.YearStarted</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2386,6 +2398,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Obj29th_1__c.Field1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Obj300__c.EmailField1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2836,6 +2853,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>QObj1__c.Field1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>QaObj1__c.AccountLookupField1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2927,6 +2949,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>RLObject1__c.RLObject5Field10__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTObj2__c.f1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>RTObj2__c.f2__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3642,6 +3674,15 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>PRS5</label>
     <license>Partner Community</license>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>Account</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
     <pageAccesses>
         <apexPage>ACCObjTest1Page</apexPage>
         <enabled>false</enabled>

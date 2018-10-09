@@ -43,6 +43,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>gfdgfdg</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -53,6 +54,7 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Field1__c</fullName>
+        <description>fcfc</description>
         <externalId>false</externalId>
         <label>Field1</label>
         <required>false</required>
@@ -61,6 +63,7 @@
     </fields>
     <fields>
         <fullName>Field2__c</fullName>
+        <description>gffghf</description>
         <externalId>false</externalId>
         <label>Field2</label>
         <length>6</length>
