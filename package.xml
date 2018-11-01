@@ -20,13 +20,10 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>ACDemoOBj1__c.AutorabitExtId__c</members>
         <members>ACDemoOBj1__c.Ftest12__c</members>
-        <members>DLCObj18__c.AutorabitExtId__c</members>
         <members>DLCObj18__c.Field1__c</members>
         <members>DLCObj18__c.Field2__c</members>
         <members>DLCObj18__c.Field5__c</members>
-        <members>DLObj1__c.AutorabitExtId__c</members>
         <members>DLObj1__c.Field1__c</members>
         <members>DLObj1__c.Field2__c</members>
         <members>DLObj1__c.Field3__c</members>
