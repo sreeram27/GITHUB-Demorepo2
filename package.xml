@@ -304,7 +304,6 @@
         <members>ACCobj3__c.Field2__c</members>
         <members>ACCobj3__c.Field3__c</members>
         <members>ACCobj3__c.Field4__c</members>
-        <members>ACDemoOBj1__c.AutorabitExtId__c</members>
         <members>ACDemoOBj1__c.Ftest12__c</members>
         <members>ACLObj1__c.Field1__c</members>
         <members>ACOBJT1__c.Field__c</members>
@@ -353,7 +352,6 @@
         <members>Account.AccountSource</members>
         <members>Account.Active__c</members>
         <members>Account.AnnualRevenue</members>
-        <members>Account.AutorabitExtId__c</members>
         <members>Account.BillingAddress</members>
         <members>Account.CleanStatus</members>
         <members>Account.CustomerPriority__c</members>
@@ -486,7 +484,6 @@
         <members>CampaignMember.Title</members>
         <members>Case.AccountId</members>
         <members>Case.AssetId</members>
-        <members>Case.AutorabitExtId__c</members>
         <members>Case.BusinessHoursId</members>
         <members>Case.ClosedDate</members>
         <members>Case.Comments</members>
@@ -518,7 +515,6 @@
         <members>Contact.AccountId</members>
         <members>Contact.AssistantName</members>
         <members>Contact.AssistantPhone</members>
-        <members>Contact.AutorabitExtId__c</members>
         <members>Contact.Birthdate</members>
         <members>Contact.CleanStatus</members>
         <members>Contact.Department</members>
@@ -763,7 +759,6 @@
         <members>KCobj1__c.KCField2__c</members>
         <members>Lead.Address</members>
         <members>Lead.AnnualRevenue</members>
-        <members>Lead.AutorabitExtId__c</members>
         <members>Lead.CampaignId</members>
         <members>Lead.CleanStatus</members>
         <members>Lead.Company</members>
@@ -843,7 +838,6 @@
         <members>Obj_Test1__c.Field1_Test1_Obj__c</members>
         <members>Opportunity.AccountId</members>
         <members>Opportunity.Amount</members>
-        <members>Opportunity.AutorabitExtId__c</members>
         <members>Opportunity.CampaignId</members>
         <members>Opportunity.CloseDate</members>
         <members>Opportunity.ContractId</members>
@@ -993,7 +987,6 @@
         <members>QuickText.Message</members>
         <members>QuickText.Name</members>
         <members>QuickText.OwnerId</members>
-        <members>RCObj1__c.AutorabitExtId__c</members>
         <members>RCObj1__c.field1__c</members>
         <members>RLObject1__c.RLObject1Field1__c</members>
         <members>RLObject1__c.RLObject5Field10__c</members>
@@ -1016,7 +1009,6 @@
         <members>SAccOb1__c.Sfo1__c</members>
         <members>SAccObjS1__c.PFieldp1__c</members>
         <members>SAccObjS1__c.SAccField1__c</members>
-        <members>SC1__c.AutorabitExtId__c</members>
         <members>SC1__c.SCF1__c</members>
         <members>SCObj1__c.AcField11__c</members>
         <members>SCObj1__c.SACF1__c</members>
