@@ -853,11 +853,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ACDemoOBj1__c.AutorabitExtId__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>ACDemoOBj1__c.Ftest12__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1049,11 +1044,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.AccountField__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.AutoRabitExtId__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1279,11 +1269,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>KACObj1__c.KACField2__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Lead.AutorabitExtId__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1608,11 +1593,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>RCObj1__c.AutorabitExtId__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>RCObj1__c.field1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1639,11 +1619,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>SAOBJ1__c.SAOB1Field2__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>SC1__c.AutorabitExtId__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

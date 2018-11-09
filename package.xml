@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <version>44.0</version>
     <types>
         <members>A0</members>
@@ -280,7 +281,6 @@
         <members>ACCobj3__c.Field2__c</members>
         <members>ACCobj3__c.Field3__c</members>
         <members>ACCobj3__c.Field4__c</members>
-        <members>ACDemoOBj1__c.AutorabitExtId__c</members>
         <members>ACDemoOBj1__c.Ftest12__c</members>
         <members>ACLObj1__c.Field1__c</members>
         <members>ACOBJT1__c.Field__c</members>
@@ -320,7 +320,6 @@
         <members>Accobj4__c.Field5__c</members>
         <members>Accobj4__c.Field6__c</members>
         <members>Account.AccountField__c</members>
-        <members>Account.AutoRabitExtId__c</members>
         <members>Aobj1__c.Field1__c</members>
         <members>Aobj2__c.Afieldt1__c</members>
         <members>ArObj901__c.Field1__c</members>
@@ -366,7 +365,6 @@
         <members>JUnObj1__c.Field1__c</members>
         <members>KACObj1__c.KACField1__c</members>
         <members>KACObj1__c.KACField2__c</members>
-        <members>Lead.AutorabitExtId__c</members>
         <members>M__c.mergeField3__c</members>
         <members>Mar13obj1__c.FIeld2__c</members>
         <members>Mar13obj1__c.Field1__c</members>
@@ -438,14 +436,12 @@
         <members>QaObj5__c.MasterField1__c</members>
         <members>QaObj8__c.Field1__c</members>
         <members>QaObj8__c.Field2__c</members>
-        <members>RCObj1__c.AutorabitExtId__c</members>
         <members>RCObj1__c.field1__c</members>
         <members>RRRObj1__c.Field1__c</members>
         <members>RRRObj2__c.Field1__c</members>
         <members>RTObj2__c.f1__c</members>
         <members>RTObj2__c.f2__c</members>
         <members>SAOBJ1__c.SAOB1Field2__c</members>
-        <members>SC1__c.AutorabitExtId__c</members>
         <members>SC1__c.SCF1__c</members>
         <members>SEObj1__c.Field1__c</members>
         <members>SEObj1__c.Field2__c</members>
