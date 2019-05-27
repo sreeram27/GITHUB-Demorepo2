@@ -23,6 +23,13 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>ApexPage</members>
+        <members>ApexPage5</members>
+        <members>Apexpage1</members>
+        <members>Apexpage6</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
         <members>ACDemoOBj1__c.Ftest12__c</members>
         <members>DLCObj18__c.Field1__c</members>
         <members>DLCObj18__c.Field2__c</members>
