@@ -55,7 +55,7 @@
         <fullName>Field1__c</fullName>
         <externalId>false</externalId>
         <label>Field1</label>
-        <length>4</length>
+        <length>12/length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -65,7 +65,7 @@
         <fullName>field2__c</fullName>
         <externalId>false</externalId>
         <label>field2</label>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
     </fields>
