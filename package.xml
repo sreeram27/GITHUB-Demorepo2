@@ -45,6 +45,10 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>AC1</members>
+        <members>AC2</members>
+        <members>ACL24</members>
+        <members>ACL25</members>
         <members>CustomLabelTest2</members>
         <members>CustomlabelSB3</members>
         <members>DL1</members>
