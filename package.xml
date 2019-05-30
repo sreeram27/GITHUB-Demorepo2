@@ -42,6 +42,10 @@
         <members>DObj2__c.Field3__c</members>
         <members>DObj2__c.field1__c</members>
         <members>DObj2__c.field2__c</members>
+        <members>Dbj1__c.F1__c</members>
+        <members>Dbj1__c.F2__c</members>
+        <members>Obj900__c.Field1__c</members>
+        <members>Obj900__c.field2__c</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -60,6 +64,8 @@
         <members>DLCObj18__c</members>
         <members>DLObj1__c</members>
         <members>DObj2__c</members>
+        <members>Dbj1__c</members>
+        <members>Obj900__c</members>
         <name>CustomObject</name>
     </types>
     <types>
