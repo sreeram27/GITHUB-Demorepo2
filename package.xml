@@ -36,6 +36,10 @@
         <name>ApexTrigger</name>
     </types>
     <types>
+        <members>Case.Standard</members>
+        <name>AssignmentRule</name>
+    </types>
+    <types>
         <members>ACDemoOBj1__c.Ftest12__c</members>
         <members>DLCObj18__c.Field1__c</members>
         <members>DLCObj18__c.Field2__c</members>
