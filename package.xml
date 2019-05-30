@@ -30,6 +30,12 @@
         <name>ApexPage</name>
     </types>
     <types>
+        <members>AccountTrigger1</members>
+        <members>ContactTrigger1</members>
+        <members>Leadtrigger1</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
         <members>ACDemoOBj1__c.Ftest12__c</members>
         <members>DLCObj18__c.Field1__c</members>
         <members>DLCObj18__c.Field2__c</members>
