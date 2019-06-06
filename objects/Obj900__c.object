@@ -55,7 +55,7 @@
         <fullName>Field1__c</fullName>
         <externalId>false</externalId>
         <label>Field1</label>
-        <length>12/length>
+        <length>12</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
