@@ -43,7 +43,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>111test56bbb</description>
+    <description>111bbb</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -54,10 +54,10 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>F1__c</fullName>
-        <description>Test6</description>
+        <description>222vvvcv11111</description>
         <externalId>false</externalId>
         <label>F1</label>
-        <length>11</length>
+        <length>17</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -65,10 +65,10 @@
     </fields>
     <fields>
         <fullName>F2__c</fullName>
-        <description>Test</description>
+        <description>rtretrt</description>
         <externalId>false</externalId>
         <label>F2</label>
-        <length>12</length>
+        <length>23</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
