@@ -43,19 +43,23 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>new wd111sf11f</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>F1__c</fullName>
+        <description>new98</description>
         <externalId>false</externalId>
         <label>F1</label>
-        <length>7</length>
+        <length>37</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -63,12 +67,12 @@
     </fields>
     <fields>
         <fullName>F2__c</fullName>
+        <description>New33344555</description>
         <externalId>false</externalId>
         <label>F2</label>
-        <length>7</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
+        <type>Email</type>
         <unique>false</unique>
     </fields>
     <label>Dbj1</label>
@@ -77,6 +81,16 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Dbj1s</pluralLabel>
+    <recordTypes>
+        <fullName>Dbj_RC1</fullName>
+        <active>true</active>
+        <label>Dbj_RC1</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Dbj_RC2</fullName>
+        <active>false</active>
+        <label>Dbj_RC2</label>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

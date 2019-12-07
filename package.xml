@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>44.0</version>
+    <version>47.0</version>
     <types>
         <members>A0</members>
+        <members>A000</members>
+        <members>A0001</members>
         <members>A0123</members>
         <members>A0123678</members>
         <members>A012378</members>
@@ -199,10 +201,16 @@
     <types>
         <members>ACCObjTest1Page</members>
         <members>ACOBJTpage</members>
+        <members>ApexPage</members>
+        <members>ApexPage5</members>
         <members>Apexpage1</members>
         <members>Apexpage2</members>
         <members>Apexpage3</members>
         <name>ApexPage</name>
+    </types>
+    <types>
+        <members>AccountTrigger1</members>
+        <name>ApexTrigger</name>
     </types>
     <types>
         <members>Case.CaseRule1</members>
@@ -211,6 +219,11 @@
         <members>Lead.LeadRule2</members>
         <members>Lead.Standard</members>
         <name>AssignmentRule</name>
+    </types>
+    <types>
+        <members>Case</members>
+        <members>Lead</members>
+        <name>AssignmentRules</name>
     </types>
     <types>
         <members>ACOBJTpagecomponent</members>
@@ -236,14 +249,13 @@
         <name>AutoResponseRule</name>
     </types>
     <types>
-        <members>Case.CaseProcess1</members>
-        <name>BusinessProcess</name>
+        <members>Case</members>
+        <members>Lead</members>
+        <name>AutoResponseRules</name>
     </types>
     <types>
-        <members>Knowledge__kav.TestKnowlledgeChannaelLayout</members>
-        <members>TestArticleType2__kav.Email</members>
-        <members>Test_Articletype__kav.TestChannaelLayout1</members>
-        <name>ChannelLayout</name>
+        <members>Case.CaseProcess1</members>
+        <name>BusinessProcess</name>
     </types>
     <types>
         <members>Case.Case_Feed1</members>
@@ -508,6 +520,7 @@
     <types>
         <members>AAtest456</members>
         <members>AC1</members>
+        <members>AC100</members>
         <members>AC2</members>
         <members>AC56</members>
         <members>AC67</members>
@@ -897,10 +910,8 @@
         <name>DuplicateRule</name>
     </types>
     <types>
-        <members>Test123</members>
         <members>Test45</members>
         <members>Test45/TestEt1</members>
-        <members>TestEmailTemplateFolder1</members>
         <members>unfiled$public/ET1</members>
         <name>EmailTemplate</name>
     </types>
@@ -1205,6 +1216,8 @@
         <name>QuickAction</name>
     </types>
     <types>
+        <members>Dbj1__c.Dbj_RC1</members>
+        <members>Dbj1__c.Dbj_RC2</members>
         <members>EC_AccObj1__c.ECrecordTypeTest3</members>
         <members>EC_AccObj1__c.Test1</members>
         <name>RecordType</name>
@@ -1381,6 +1394,7 @@
         <name>Translations</name>
     </types>
     <types>
+        <members>AR_SFObj1__c.ARSFvalidationRule1</members>
         <members>DLObj1__c.VRule2</members>
         <members>DObj2__c.Vaidationrule11</members>
         <members>DuplicateRecordSet.VRule1</members>

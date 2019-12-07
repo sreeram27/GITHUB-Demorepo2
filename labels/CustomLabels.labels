@@ -11,8 +11,15 @@
         <fullName>AC1</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>AC1</shortDescription>
-        <value>1</value>
+        <shortDescription>ac111</shortDescription>
+        <value>123 new</value>
+    </labels>
+    <labels>
+        <fullName>AC100</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AC100</shortDescription>
+        <value>11221</value>
     </labels>
     <labels>
         <fullName>AC2</fullName>
