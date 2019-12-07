@@ -17,11 +17,17 @@
         <members>A13</members>
         <members>A160</members>
         <members>A161</members>
+        <members>A180</members>
+        <members>A19</members>
         <members>A191</members>
         <members>A193</members>
         <members>A194</members>
         <members>A30</members>
         <members>A32</members>
+        <members>A78</members>
+        <members>A789</members>
+        <members>A7891</members>
+        <members>A8</members>
         <name>ApexClass</name>
     </types>
     <types>
