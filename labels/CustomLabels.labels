@@ -5,7 +5,21 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ac111</shortDescription>
-        <value>1111111122222</value>
+        <value>123 new</value>
+    </labels>
+    <labels>
+        <fullName>AC100</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AC100</shortDescription>
+        <value>11221</value>
+    </labels>
+    <labels>
+        <fullName>AC11</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AC11</shortDescription>
+        <value>1111221</value>
     </labels>
     <labels>
         <fullName>AC2</fullName>

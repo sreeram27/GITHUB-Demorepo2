@@ -16,6 +16,8 @@
         <members>A10</members>
         <members>A12</members>
         <members>A13</members>
+        <members>A14</members>
+        <members>A1456</members>
         <members>A160</members>
         <members>A161</members>
         <members>A191</members>
@@ -23,6 +25,8 @@
         <members>A194</members>
         <members>A30</members>
         <members>A32</members>
+        <members>a30testclass</members>
+        <members>a32testclass</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -61,12 +65,15 @@
         <members>DObj2__c.field2__c</members>
         <members>Dbj1__c.F1__c</members>
         <members>Dbj1__c.F2__c</members>
+        <members>NewObj600__c.Field1__c</members>
         <members>Obj900__c.Field1__c</members>
         <members>Obj900__c.field2__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>AC1</members>
+        <members>AC100</members>
+        <members>AC11</members>
         <members>AC2</members>
         <members>ACL24</members>
         <members>ACL25</members>
@@ -82,6 +89,7 @@
         <members>DLObj1__c</members>
         <members>DObj2__c</members>
         <members>Dbj1__c</members>
+        <members>NewObj600__c</members>
         <members>Obj900__c</members>
         <name>CustomObject</name>
     </types>
