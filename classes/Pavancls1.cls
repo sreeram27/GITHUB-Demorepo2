@@ -3,12 +3,12 @@ public Class Pavancls1
 public Account createAccount(String name)  //method to create account
 {
 //Modify
-Account an0341121= new Account();
+Account an03411211= new Account();
 
-an0341121.Name = name;
+an03411211.Name = name;
 //Modify11111114512311
 //maven4 Modify
-return an0341121;
+return an03411211;
 //Sai test67
 }
 }
