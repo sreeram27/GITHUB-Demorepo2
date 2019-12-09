@@ -22,10 +22,14 @@
         <members>A194</members>
         <members>A30</members>
         <members>A32</members>
+        <members>NA23Class1</members>
+        <members>NA23Class2</members>
         <members>Pavancls1</members>
         <members>Pavancls3</members>
         <members>Pavancls4</members>
         <members>RClass1</members>
+        <members>SAClass200</members>
+        <members>SAClass201</members>
         <name>ApexClass</name>
     </types>
     <types>
