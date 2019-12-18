@@ -66,6 +66,13 @@
         <members>Dbj1__c.F2__c</members>
         <members>Obj900__c.Field1__c</members>
         <members>Obj900__c.field2__c</members>
+        <members>Saiobj500__c.F1__c</members>
+        <members>Saiobj500__c.f2__c</members>
+        <members>SaoObj900__c.F2__c</members>
+        <members>Vob90__c.f1__c</members>
+        <members>WFTestObj__c.WFtestfield__c</members>
+        <members>ZACRObj2__c.field1__c</members>
+        <members>ZACRObj2__c.field2__c</members>
         <name>CustomField</name>
     </types>
     <types>
