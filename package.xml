@@ -11,6 +11,8 @@
         <members>A027</members>
         <members>A028</members>
         <members>A036</members>
+        <members>A080189</members>
+        <members>A08023424</members>
         <members>A08089</members>
         <members>A081</members>
         <members>A10</members>
@@ -52,6 +54,8 @@
     </types>
     <types>
         <members>ACDemoOBj1__c.Ftest12__c</members>
+        <members>Accobj4__c.Field1__c</members>
+        <members>Accobj4__c.Field2__c</members>
         <members>DLCObj18__c.Field1__c</members>
         <members>DLCObj18__c.Field2__c</members>
         <members>DLCObj18__c.Field5__c</members>
@@ -78,6 +82,7 @@
     </types>
     <types>
         <members>AC1</members>
+        <members>AC11</members>
         <members>AC2</members>
         <members>ACL24</members>
         <members>ACL25</members>
@@ -89,6 +94,7 @@
     </types>
     <types>
         <members>ACDemoOBj1__c</members>
+        <members>Accobj4__c</members>
         <members>DLCObj18__c</members>
         <members>DLObj1__c</members>
         <members>DObj2__c</members>
