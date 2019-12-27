@@ -36,7 +36,12 @@
         <name>ApexPage</name>
     </types>
     <types>
+        <members>Account</members>
+        <members>AccountAddressTrigger</members>
         <members>AccountTrigger1</members>
+        <members>Backify__updateVersion</members>
+        <members>Branch_CodeUpdate</members>
+        <members>Branch_Code_Update</members>
         <members>ContactTrigger1</members>
         <members>Leadtrigger1</members>
         <name>ApexTrigger</name>
@@ -48,6 +53,15 @@
     <types>
         <members>Case</members>
         <name>AssignmentRules</name>
+    </types>
+    <types>
+        <members>ARIndexCmp</members>
+        <members>AR_DX</members>
+        <members>AccountList</members>
+        <members>Buttton</members>
+        <members>Component</members>
+        <members>ContactDetails</members>
+        <name>AuraDefinitionBundle</name>
     </types>
     <types>
         <members>ACDemoOBj1__c.Ftest12__c</members>
