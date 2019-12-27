@@ -3,6 +3,7 @@
     <version>47.0</version>
     <types>
         <members>A0</members>
+        <members>A000</members>
         <members>A0001</members>
         <members>A0071</members>
         <members>A0123</members>
@@ -51,6 +52,13 @@
     <types>
         <members>Case</members>
         <name>AssignmentRules</name>
+    </types>
+    <types>
+        <members>AURATest7</members>
+        <members>AuRATest1</members>
+        <members>AutoComponenent2</members>
+        <members>Saiaura</members>
+        <name>AuraDefinitionBundle</name>
     </types>
     <types>
         <members>ACDemoOBj1__c.Ftest12__c</members>
