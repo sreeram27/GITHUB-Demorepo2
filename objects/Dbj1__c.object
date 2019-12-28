@@ -43,7 +43,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>111bbb</description>
+    <description>new wd111sf11f</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -52,12 +52,13 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>F1__c</fullName>
-        <description>222vvvcv11111</description>
+        <description>new98</description>
         <externalId>false</externalId>
         <label>F1</label>
-        <length>17</length>
+        <length>37</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -65,13 +66,12 @@
     </fields>
     <fields>
         <fullName>F2__c</fullName>
-        <description>rtretrt</description>
+        <description>New33344555</description>
         <externalId>false</externalId>
         <label>F2</label>
-        <length>23</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
+        <type>Email</type>
         <unique>false</unique>
     </fields>
     <label>Dbj1</label>
