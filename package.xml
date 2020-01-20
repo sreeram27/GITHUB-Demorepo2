@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>44.0</version>
+    <version>47.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -30,6 +30,8 @@
         <members>Pavancls3</members>
         <members>Pavancls4</members>
         <members>RClass1</members>
+        <members>a30testclass</members>
+        <members>a32testclass</members>
         <name>ApexClass</name>
     </types>
     <types>
