@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>47.0</version>
+    <version>48.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
-        <members>A0001</members>
         <members>A0071</members>
         <members>A0123</members>
         <members>A01234</members>
@@ -26,6 +25,7 @@
         <members>A200</members>
         <members>A30</members>
         <members>A32</members>
+        <members>KSC1</members>
         <members>Pavancls1</members>
         <members>Pavancls3</members>
         <members>Pavancls4</members>
@@ -106,6 +106,7 @@
         <members>CustomlabelSB3</members>
         <members>DL1</members>
         <members>ESCCustomLabel1</members>
+        <members>KS1</members>
         <name>CustomLabel</name>
     </types>
     <types>

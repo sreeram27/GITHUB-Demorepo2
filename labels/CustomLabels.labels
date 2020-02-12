@@ -70,4 +70,11 @@
         <shortDescription>ESCCustomLabel1</shortDescription>
         <value>2</value>
     </labels>
+    <labels>
+        <fullName>KS1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>KS1</shortDescription>
+        <value>1</value>
+    </labels>
 </CustomLabels>
