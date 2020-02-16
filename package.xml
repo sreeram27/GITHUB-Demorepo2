@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>39.0</version>
+    <version>47.0</version>
     <types>
         <members>A0</members>
+        <members>A000</members>
+        <members>A0071</members>
         <members>A0123</members>
         <members>A025</members>
         <members>A027</members>
         <members>A028</members>
         <members>A036</members>
+        <members>A041</members>
+        <members>A045</members>
         <members>A0456</members>
         <members>A045678</members>
         <members>A052</members>
@@ -46,15 +50,20 @@
         <members>A193</members>
         <members>A194</members>
         <members>A195</members>
+        <members>A1987</members>
         <members>A2</members>
         <members>A20</members>
         <members>A200</members>
         <members>A201</members>
+        <members>A21</members>
         <members>A23</members>
+        <members>A241</members>
+        <members>A243</members>
         <members>A27</members>
         <members>A28</members>
         <members>A29</members>
         <members>A3</members>
+        <members>A30</members>
         <members>A300</members>
         <members>A301</members>
         <members>A31</members>
@@ -159,6 +168,7 @@
         <members>a28testclass4</members>
         <members>a29testclass</members>
         <members>a2testclass</members>
+        <members>a30testclass</members>
         <members>a32testclass</members>
         <members>a3testclass</members>
         <members>a4testclass</members>
@@ -191,6 +201,11 @@
         <members>Apexpage2</members>
         <members>Apexpage3</members>
         <name>ApexPage</name>
+    </types>
+    <types>
+        <members>AccountTrigger1</members>
+        <members>ContactTrigger1</members>
+        <name>ApexTrigger</name>
     </types>
     <types>
         <members>Salesforce1</members>
@@ -1609,6 +1624,9 @@
         <members>EmailMessage</members>
         <members>Event</members>
         <members>ExchangeUserMapping</members>
+        <members>ExternalObj1__x</members>
+        <members>ExternalObj2__x</members>
+        <members>ExternalObj3__x</members>
         <members>FeedItem</members>
         <members>ForecastingCategoryMapping</members>
         <members>Formula_objecct1__c</members>
@@ -1853,6 +1871,8 @@
         <members>Dobj7__c-en_US</members>
         <members>ECT1__c-en_US</members>
         <members>EC_AccObj1__c-en_US</members>
+        <members>ExternalObj1__x-en_US</members>
+        <members>ExternalObj3__x-en_US</members>
         <members>Formula_objecct1__c-en_US</members>
         <members>JUnObj1__c-en_US</members>
         <members>KACObj1__c-en_US</members>
@@ -2017,10 +2037,8 @@
         <name>DuplicateRule</name>
     </types>
     <types>
-        <members>Test123</members>
         <members>Test45</members>
         <members>Test45/TestEt1</members>
-        <members>TestEmailTemplateFolder1</members>
         <members>unfiled$public/ET1</members>
         <members>unfiled$public/MarketingProductInquiryResponse</members>
         <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
@@ -2045,6 +2063,9 @@
         <name>EscalationRule</name>
     </types>
     <types>
+        <members>EDS1</members>
+        <members>EDS2</members>
+        <members>EDS3</members>
         <members>EXTDS1</members>
         <members>EXTDS2</members>
         <members>EXTDS3</members>
@@ -2170,6 +2191,8 @@
         <members>ECT1__c-ECT1 Layout</members>
         <members>EC_AccObj1__c-EC-AccObj1 Layout</members>
         <members>Event-Event Layout</members>
+        <members>ExternalObj1__x-ExternalObj1 Layout</members>
+        <members>ExternalObj3__x-ExternalObj3 Layout</members>
         <members>FeedItem-Feed Item Layout</members>
         <members>Formula_objecct1__c-Formula objecct1 Layout</members>
         <members>Global-Global Layout</members>
@@ -2832,6 +2855,7 @@
         <members>Product2Family</members>
         <members>QuickTextCategory</members>
         <members>QuickTextChannel</members>
+        <members>SalesTeamRole</members>
         <members>Salutation</members>
         <members>SolutionStatus</members>
         <members>TaskPriority</members>
