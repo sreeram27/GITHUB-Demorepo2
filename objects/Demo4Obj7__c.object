@@ -2,21 +2,20 @@
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
         <fullName>Demo4Field1__c</fullName>
-        <description>test11111111</description>
         <externalId>false</externalId>
         <label>Demo4Field1</label>
+        <length>40</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Phone</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Demo4Field2__c</fullName>
-        <description>test1111111</description>
         <externalId>false</externalId>
         <label>Demo4Field2</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Email</type>
-        <unique>false</unique>
+        <type>Phone</type>
     </fields>
 </CustomObject>

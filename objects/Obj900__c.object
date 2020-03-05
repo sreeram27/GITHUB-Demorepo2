@@ -75,6 +75,11 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Obj900s</pluralLabel>
+    <recordTypes>
+        <fullName>Obj900RC1</fullName>
+        <active>true</active>
+        <label>Obj900RC1</label>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
