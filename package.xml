@@ -4,7 +4,6 @@
     <types>
         <members>A0</members>
         <members>A000</members>
-        <members>A0001</members>
         <members>A0071</members>
         <members>A0123</members>
         <members>A01234</members>
@@ -63,10 +62,18 @@
     <types>
         <members>ARIndexCmp</members>
         <members>AR_DX</members>
+        <members>AURATest7</members>
         <members>AccountList</members>
+        <members>AuRATest1</members>
+        <members>AuRATest2</members>
+        <members>AuRATest3</members>
+        <members>AuraComponent5</members>
+        <members>Aura_Bundle_Test1</members>
+        <members>AutoComponenent2</members>
         <members>Buttton</members>
         <members>Component</members>
         <members>ContactDetails</members>
+        <members>Saiaura</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
