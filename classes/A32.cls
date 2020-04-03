@@ -4,10 +4,9 @@ public Account createAccount(String name)  //method to create account
 {
 //sai Add comment for Account A1
 //saikumar
-Account a321111111111= new Account();
-a321111111111.Name = name;
-return a321111111111;
-//saikumartest113111
-//test2341 GITA TAG111
+Account a3212= new Account();
+a3212.Name = name;
+return a3212;
+//dfgfdggh
 }
 }
