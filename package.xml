@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>47.0</version>
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <version>48.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -309,6 +310,11 @@
         <name>AssignmentRule</name>
     </types>
     <types>
+        <members>Case</members>
+        <members>Lead</members>
+        <name>AssignmentRules</name>
+    </types>
+    <types>
         <members>ACOBJTpagecomponent</members>
         <members>Ar2</members>
         <members>AuraComponent5</members>
@@ -333,15 +339,14 @@
         <name>AutoResponseRule</name>
     </types>
     <types>
+        <members>Case</members>
+        <members>Lead</members>
+        <name>AutoResponseRules</name>
+    </types>
+    <types>
         <members>Case.CaseProcess1</members>
         <members>Lead.LeadProcess1</members>
         <name>BusinessProcess</name>
-    </types>
-    <types>
-        <members>Knowledge__kav.TestKnowlledgeChannaelLayout</members>
-        <members>TestArticleType2__kav.Email</members>
-        <members>Test_Articletype__kav.TestChannaelLayout1</members>
-        <name>ChannelLayout</name>
     </types>
     <types>
         <members>DataCloudGeoLocation</members>
@@ -380,6 +385,7 @@
         <members>ACCObject2__c.Field2__c</members>
         <members>ACCObject2__c.Field3__c</members>
         <members>ACCObject2__c.Field4__c</members>
+        <members>ACCObjt1__c.FT2__c</members>
         <members>ACCObjt1__c.FT5__c</members>
         <members>ACCobj3__c.Field1__c</members>
         <members>ACCobj3__c.Field2__c</members>
@@ -1234,10 +1240,8 @@
         <name>DuplicateRule</name>
     </types>
     <types>
-        <members>Test123</members>
         <members>Test45</members>
         <members>Test45/TestEt1</members>
-        <members>TestEmailTemplateFolder1</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityLockoutEmailTemplate</members>
@@ -1524,6 +1528,7 @@
         <members>Oct23obj1__c.All</members>
         <members>PradeepObj__c.All</members>
         <members>RCObj1__c.All</members>
+        <members>SEObject1__c.All</members>
         <members>Sai_Obj500__c.All</members>
         <members>User.AllUsers</members>
         <members>b1__c.All</members>
@@ -1863,6 +1868,7 @@
         <name>Translations</name>
     </types>
     <types>
+        <members>AR_SFObj1__c.ARSFvalidationRule1</members>
         <members>DLObj1__c.VRule2</members>
         <members>DObj2__c.Vaidationrule11</members>
         <members>DuplicateRecordSet.VRule1</members>
