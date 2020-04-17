@@ -26,7 +26,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC11</shortDescription>
-        <value>12111</value>
+        <value>11</value>
     </labels>
     <labels>
         <fullName>AC133</fullName>
@@ -40,7 +40,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC211</shortDescription>
-        <value>122</value>
+        <value>1221111111</value>
     </labels>
     <labels>
         <fullName>AC56</fullName>
