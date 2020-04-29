@@ -320,6 +320,11 @@
         <members>AutoComponenent2</members>
         <members>AutoComponenet1</members>
         <members>Saiaura</members>
+        <members>forgotPassword</members>
+        <members>loginForm</members>
+        <members>selfRegister</members>
+        <members>setExpId</members>
+        <members>setStartUrl</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
@@ -444,6 +449,7 @@
         <members>Account.Name</members>
         <members>Account.NumberOfEmployees</members>
         <members>Account.NumberofLocations__c</members>
+        <members>Account.OperatingHoursId</members>
         <members>Account.OwnerId</members>
         <members>Account.Ownership</members>
         <members>Account.ParentId</members>
@@ -2611,6 +2617,7 @@
         <members>AdminClone</members>
         <members>Analytics Cloud Integration User</members>
         <members>Analytics Cloud Security User</members>
+        <members>ApexClassProfile</members>
         <members>Authenticated Website</members>
         <members>CFPProfile</members>
         <members>Catch up Profile</members>
@@ -2656,6 +2663,7 @@
         <members>Test1Profile</members>
         <members>TestCreateProfile</members>
         <members>TestSite1 Profile</members>
+        <members>Teste Profile</members>
         <members>Work%2Ecom Only User</members>
         <members>clone profile</members>
         <name>Profile</name>
