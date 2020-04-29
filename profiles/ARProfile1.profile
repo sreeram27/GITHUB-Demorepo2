@@ -778,10 +778,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>MarCls2</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>MyProfilePageController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -796,6 +792,14 @@
     <classAccesses>
         <apexClass>NA23Class2</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>NC11</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>NC22</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>NCLS100</apexClass>
@@ -2812,16 +2816,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Mar20Obj1__c.Mar20field1__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Mar20Obj1__c.mar20Field2__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Mar20Obj2__c.Mar20Obj2Field1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3498,6 +3492,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>SKVObject1__c.SKVField5__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SSObj1__c.F1__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4190,6 +4189,9 @@
         <layout>DepTestObj1__c-DepTestObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Desobj2__c-Desobj2 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>DlConfigObj151__c-DlConfigObj151 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4261,9 +4263,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Macro-Macro Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Mar20Obj1__c-Mar20Obj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Mar20Obj2__c-Mar20Obj2 Layout</layout>
@@ -4411,6 +4410,9 @@
         <layout>SKVObject1__c-SKVObject1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>SSObj1__c-SSObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>STObj1__c-STObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4505,6 +4507,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Test54__c-Test54 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Test55__c-Test55 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Test57__c-Test57 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>TestACObj1__c-TestACObj1 Layout</layout>
@@ -4742,13 +4750,13 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
+        <allowCreate>false</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Dbj1__c</object>
-        <viewAllRecords>true</viewAllRecords>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
