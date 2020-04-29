@@ -2185,6 +2185,10 @@
         <members>Folder1/DocTest1.text</members>
         <members>Folder2</members>
         <members>Folder2/Doc5.png</members>
+        <members>SharedDocuments</members>
+        <members>SharedDocuments/Anthem_Letterhead.jpg</members>
+        <members>SharedDocuments/Anthem_Logo.jpg</members>
+        <members>SharedDocuments/New_Anthem_Logo.png</members>
         <name>Document</name>
     </types>
     <types>
