@@ -306,6 +306,15 @@
         <name>AssignmentRules</name>
     </types>
     <types>
+        <members>ACEBrokerages_ChatterPublish</members>
+        <members>ACE_ChatterFiles</members>
+        <members>ANA_LTNG01_CustomLookup</members>
+        <members>ANA_LTNG01_CustomLookup_oppty</members>
+        <members>ANA_LTNG02_BrokerConsultant_Commission</members>
+        <members>ANA_LTNG02_BrokerConsultant_Commission_Oppty</members>
+        <members>ANA_LTNG03_BrokerConsultant_App_oppty</members>
+        <members>ANA_LTNG04_BrokerConsultant_Event</members>
+        <members>ANA_LTNG04_BrokerConsultant_Event_oppty</members>
         <members>ARIndexCmp</members>
         <members>AR_DX</members>
         <members>AURATest7</members>
@@ -316,6 +325,9 @@
         <members>AuraComponent5</members>
         <members>Aura_Bundle_Test1</members>
         <members>AutoComponenent2</members>
+        <members>BrainsharkAccessTokenSettings</members>
+        <members>BrainsharkAchievements</members>
+        <members>BrainsharkAppSettings</members>
         <members>Buttton</members>
         <members>Component</members>
         <members>ContactDetails</members>
@@ -1964,6 +1976,28 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>SharedDocuments</members>
+        <members>SharedDocuments/Anthem_Letterhead.jpg</members>
+        <members>SharedDocuments/Anthem_Logo.jpg</members>
+        <members>SharedDocuments/New_Anthem_Logo.png</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>Georgia_COBRA</members>
+        <members>Georgia_COBRA/BCBSGa_COBRA_Setup_Paperwork</members>
+        <members>Georgia_COBRA/Newly_Installed_Group_1</members>
+        <members>Georgia_COBRA/Newly_Installed_Group_2</members>
+        <members>Georgia_COBRA/Newly_Installed_Group_3</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>addNewShares</members>
+        <members>existingShares</members>
+        <members>lightningSharingWrapper</members>
+        <members>lwcLogger</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
         <members>ACR2__c.All</members>
         <members>ACR3__c.All</members>
         <members>AR_Obj1__c.All</members>
@@ -2171,6 +2205,24 @@
         <members>Lead.RecType1</members>
         <members>Obj900__c.Obj900RC1</members>
         <name>RecordType</name>
+    </types>
+    <types>
+        <members>ANA_Open_Enrollment_Reports</members>
+        <members>ANA_Open_Enrollment_Reports/Active_Bilingual_OE_Ambassadors</members>
+        <members>ANA_Open_Enrollment_Reports/Active_Interplan_OE_Ambassadors</members>
+        <members>ANA_Open_Enrollment_Reports/Active_OE_Ambassadors</members>
+        <members>ANA_Open_Enrollment_Reports/Active_OE_Ambassadors_by_State</members>
+        <members>ANA_Open_Enrollment_Reports/Bilingual_Monthly_OE_AMB_Volunteer</members>
+        <members>ANA_Open_Enrollment_Reports/Contacts_under_Open_Enrollment_Account</members>
+        <members>ANA_Open_Enrollment_Reports/Monthly_OE_Ambassador_Volunteer_records</members>
+        <members>ANA_Open_Enrollment_Reports/Monthly_OE_Facilitator_Report</members>
+        <members>ANA_Open_Enrollment_Reports/OE_Ambassador_Volunteer_records</members>
+        <members>ANA_Open_Enrollment_Reports/OE_Facilitator_Report</members>
+        <members>ANA_Open_Enrollment_Reports/OE_Meeting</members>
+        <members>ANA_Open_Enrollment_Reports/OE_Meetings_with_Orders_with_Fulfillment</members>
+        <members>ANA_Open_Enrollment_Reports/OE_Meetings_with_Orders_with_Order_Line</members>
+        <members>ANA_Open_Enrollment_Reports/OE_Orders</members>
+        <name>Report</name>
     </types>
     <types>
         <members>AR_Obj1__c.ARPValidationRule1</members>
