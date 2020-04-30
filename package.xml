@@ -406,6 +406,9 @@
         <members>ACTNROBJ11__c.Field1__c</members>
         <members>ACTNRObj2__c.Field1__c</members>
         <members>ADDObj1__c.F1__c</members>
+        <members>ANA_Underwriting__c.ASL__c</members>
+        <members>ANA_Underwriting__c.Account_Name__c</members>
+        <members>ANA_Underwriting__c.Funding__c</members>
         <members>AR_Obj1__c.AR_SField1__c</members>
         <members>AR_Obj1__c.AR_SField2__c</members>
         <members>AR_Obj1__c.AR_SField3__c</members>
@@ -511,6 +514,15 @@
         <members>ActiveScratchOrg.SignupInstance</members>
         <members>ActiveScratchOrg.SignupTrialDays</members>
         <members>ActiveScratchOrg.SignupUsername</members>
+        <members>AlternateNetwork__c.AltNetStateOptions__c</members>
+        <members>AlternateNetwork__c.CorrespondingPackageCodeContractCode__c</members>
+        <members>AlternateNetwork__c.CorrespondingPrefix__c</members>
+        <members>AlternateNetwork__c.EffectiveDate__c</members>
+        <members>AlternateNetwork__c.LoggedInUserProfile__c</members>
+        <members>AlternateNetwork__c.QuoteLineItem__c</members>
+        <members>AlternateNetwork__c.SFDCLegacyID__c</members>
+        <members>AlternateNetwork__c.TermDate__c</members>
+        <members>Anthem_API_Settings__c.Event_Endpoint__c</members>
         <members>Aobj2__c.Afieldt1__c</members>
         <members>Asset.AccountId</members>
         <members>Asset.AssetLevel</members>
@@ -1777,6 +1789,8 @@
         <members>AcntrObj1__c</members>
         <members>ActiveScratchOrg</members>
         <members>Activity</members>
+        <members>AlternateNetwork__c</members>
+        <members>Anthem_API_Settings__c</members>
         <members>Aobj2__c</members>
         <members>Ar1__c</members>
         <members>Asset</members>
@@ -2181,6 +2195,12 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>ICE_IDC</members>
+        <members>ICE_IDC/IDC_Status</members>
+        <members>ICE_IDC/Sprint_1_Offshore_Dashboard</members>
+        <name>Dashboard</name>
+    </types>
+    <types>
         <members>Folder1</members>
         <members>Folder1/DocTest1.text</members>
         <members>Folder2</members>
@@ -2189,6 +2209,22 @@
         <members>SharedDocuments/Anthem_Letterhead.jpg</members>
         <members>SharedDocuments/Anthem_Logo.jpg</members>
         <members>SharedDocuments/New_Anthem_Logo.png</members>
+        <members>VisitOps__VisitOps</members>
+        <members>VisitOps__VisitOps/VisitOps__AnalyticReportLogo.jpg</members>
+        <members>VisitOps__VisitOps/VisitOps__Contact_Information_for_Footer.png</members>
+        <members>VisitOps__VisitOps/VisitOps__NameBadge_Logo.png</members>
+        <members>VisitOps__VisitOps/VisitOps__Survey_Footer.jpg</members>
+        <members>VisitOps__VisitOps/VisitOps__Survey_Logo.png</members>
+        <members>VisitOps__VisitOps/VisitOps__TentCardLeft_Image.png</members>
+        <members>VisitOps__VisitOps/VisitOps__TentCardRight_Image.png</members>
+        <members>VisitOps__VisitOps/VisitOps__VisitForce_App_Icon.jpg</members>
+        <members>VisitOps__VisitOps/VisitOps__VisitOps_Logo.png</members>
+        <members>VisitOps__VisitOps/VisitOps__VisitOps_Logo_For_App.png</members>
+        <members>vlocity_ins__VlocityDocumentUploads</members>
+        <members>vlocity_ins__VlocityDocumentUploads/CABHAGAEAfaf935b5c68e4ac4b77c1a0e9f02adbb.png</members>
+        <members>vlocity_ins__VlocityDocumentUploads/CABHAGAJAf8db6750af8e4689af4c9dc31d469ef5.png</members>
+        <members>vlocity_ins__VlocityDocumentUploads/CABHAGBBAa1cb6d59d9484b14a8cd679a3250d755.png</members>
+        <members>vlocity_ins__VlocityDocumentUploads/CABHAGBCA5d556130a87042d5bda4609b9c536fe0.png</members>
         <name>Document</name>
     </types>
     <types>
@@ -2197,6 +2233,12 @@
         <name>DuplicateRule</name>
     </types>
     <types>
+        <members>PMO</members>
+        <members>PMO/Defect_Creation_Notification</members>
+        <members>PMO/Question_Log_Send_Email_on_Query_Assignment</members>
+        <members>PMO/Request_Description_Created_Updated</members>
+        <members>PMO/Send_Email_To_Owner_Of_the_Request</members>
+        <members>PMO/Send_Email_To_Submitter_of_the_Question</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityLockoutEmailTemplate</members>
@@ -3183,10 +3225,12 @@
         <name>TopicsForObjects</name>
     </types>
     <types>
+        <members>APXTConga4__Conga_Solution_Email_Template__c.APXTConga4__CET_Count_Validator</members>
         <members>AR_Obj1__c.ARPValidationRule1</members>
         <members>AR_Obj1__c.ARSValidationRule1</members>
         <members>AR_Obj1__c.ARSValidationRule3</members>
         <members>AR_Obj1__c.ARpValidationRule4</members>
+        <members>Account.ACC_EGR_Require_Contribution_Percent</members>
         <members>EC_AccObj1__c.ECVRule1</members>
         <members>Lead.LeadValidationRule1</members>
         <members>Lead.LeadValidationRule2</members>
