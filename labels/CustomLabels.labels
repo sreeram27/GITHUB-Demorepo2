@@ -401,6 +401,20 @@
         <value>1</value>
     </labels>
     <labels>
+        <fullName>AnthemSubrogationEmail1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AnthemSubrogationEmail1</shortDescription>
+        <value>dl-subroimplementations@meridianresource.com</value>
+    </labels>
+    <labels>
+        <fullName>AnthemSubrogationEmail2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AnthemSubrogationEmail2</shortDescription>
+        <value>kaye.Newsome@anthem.com</value>
+    </labels>
+    <labels>
         <fullName>At1</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -408,11 +422,26 @@
         <value>1</value>
     </labels>
     <labels>
+        <fullName>BPD_Master_Duplicate_Record_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BPD_Master Duplicate Record Type</shortDescription>
+        <value>01241000001h0IF</value>
+    </labels>
+    <labels>
         <fullName>Bl</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Bl</shortDescription>
         <value>1</value>
+    </labels>
+    <labels>
+        <fullName>CDHPISGLink_Part1</fullName>
+        <categories>CDHP</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDHPISGLink_Part1</shortDescription>
+        <value>https://commercial--ICEOLY.cs1.my.salesforce.com/idp/login?app=0spS0000000CaYN&amp;binding=HttpPost&amp;RelayState=https://ind--cdhp.my.salesforce.com/lightning/r/CDHP_Parent__c/</value>
     </labels>
     <labels>
         <fullName>CL1</fullName>
@@ -560,6 +589,14 @@
         <protected>true</protected>
         <shortDescription>CST6</shortDescription>
         <value>8</value>
+    </labels>
+    <labels>
+        <fullName>CSVMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSVMessage</shortDescription>
+        <value>If no record is selected, first 1000 of the displayed records will be downloaded. 
+To download selected records please select the desired rows you want to download. If more that 1000 records are selected first 1000 of the selected records will be downloaded.</value>
     </labels>
     <labels>
         <fullName>Cl900</fullName>
