@@ -2227,6 +2227,10 @@
         <name>Report</name>
     </types>
     <types>
+        <members>SiteSamples</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
         <members>AR_Obj1__c.ARPValidationRule1</members>
         <members>AR_Obj1__c.ARSValidationRule1</members>
         <members>AR_Obj1__c.ARSValidationRule3</members>
