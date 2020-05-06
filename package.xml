@@ -65,6 +65,7 @@
         <name>PermissionSet</name>
     </types>
     <types>
+        <members>API User</members>
         <members>ARProfile1</members>
         <members>ARProfile9</members>
         <name>Profile</name>
