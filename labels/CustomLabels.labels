@@ -850,6 +850,13 @@
         <value>4</value>
     </labels>
     <labels>
+        <fullName>DemoCl1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DemoCl1</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
         <fullName>DemoLabel2</fullName>
         <language>en_US</language>
         <protected>true</protected>
