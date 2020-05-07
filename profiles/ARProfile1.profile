@@ -8,11 +8,11 @@
     <applicationVisibilities>
         <application>standard__Chatter</application>
         <default>false</default>
-        <visible>true</visible>
+        <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Community</application>
-        <default>false</default>
+        <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
@@ -48,7 +48,7 @@
     <applicationVisibilities>
         <application>standard__SalesforceCMS</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Service</application>
@@ -67,7 +67,7 @@
     </applicationVisibilities>
     <classAccesses>
         <apexClass>A0</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A000</apexClass>
@@ -75,7 +75,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A0001</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0071</apexClass>
@@ -135,7 +135,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A052</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A080123</apexClass>
@@ -3512,7 +3512,7 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>STObj1__c.sf2__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -4619,11 +4619,11 @@
     <loginHours/>
     <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
-        <startAddress>0.0.0.0</startAddress>
+        <startAddress>0.0.0.1</startAddress>
     </loginIpRanges>
     <loginIpRanges>
         <endAddress>255.255.255.201</endAddress>
-        <startAddress>1.0.0.2</startAddress>
+        <startAddress>1.0.0.1</startAddress>
     </loginIpRanges>
     <loginIpRanges>
         <endAddress>255.255.255.207</endAddress>
@@ -4653,8 +4653,8 @@
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>ACR5__c</object>
         <viewAllRecords>true</viewAllRecords>
@@ -4669,8 +4669,8 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
+        <allowCreate>true</allowCreate>
+        <allowDelete>truelse</allowDelete>
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
@@ -4684,7 +4684,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Account</object>
-        <viewAllRecords>true</viewAllRecords>
+        <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -4715,7 +4715,7 @@
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
+        <allowDelete>true</allowDelete>
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
@@ -4734,7 +4734,7 @@
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
+        <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Contract</object>
@@ -5534,7 +5534,7 @@
         <name>UseWebLink</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>ViewDataCategories</name>
     </userPermissions>
     <userPermissions>
