@@ -4,6 +4,7 @@
     <types>
         <members>A0</members>
         <members>A000</members>
+        <members>A0071</members>
         <members>A0123</members>
         <members>A0123678</members>
         <members>A012378</members>
@@ -513,9 +514,11 @@
     <types>
         <members>AAtest456</members>
         <members>AC1</members>
+        <members>AC133</members>
         <members>AC2</members>
         <members>AC56</members>
         <members>AC67</members>
+        <members>AC8</members>
         <members>ACCt3</members>
         <members>ACL101</members>
         <members>ACL11</members>
