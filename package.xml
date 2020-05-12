@@ -3,6 +3,7 @@
     <version>48.0</version>
     <types>
         <members>A0</members>
+        <members>A000</members>
         <members>A0001</members>
         <members>A0071</members>
         <members>A0123</members>
@@ -75,6 +76,7 @@
     </types>
     <types>
         <members>AC1</members>
+        <members>AC11</members>
         <members>AC2</members>
         <members>ACL24</members>
         <members>ACL25</members>
