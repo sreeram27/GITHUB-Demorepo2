@@ -156,7 +156,7 @@
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>F1__c</fullName>
-        <description>may4th</description>
+        <description>May13th</description>
         <externalId>false</externalId>
         <label>F1</label>
         <length>37</length>
