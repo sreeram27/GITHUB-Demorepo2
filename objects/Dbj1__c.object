@@ -167,12 +167,13 @@
     </fields>
     <fields>
         <fullName>F2__c</fullName>
-        <description>New33344555</description>
+        <description>test12may13</description>
         <externalId>false</externalId>
         <label>F2</label>
+        <length>80</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Email</type>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <label>Dbj1</label>
