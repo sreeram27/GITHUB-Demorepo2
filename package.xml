@@ -2662,6 +2662,7 @@
         <name>PlatformEventChannelMember</name>
     </types>
     <types>
+        <members>API User</members>
         <members>ARProfile1</members>
         <members>ARProfile10</members>
         <members>ARProfile2</members>
@@ -2670,14 +2671,19 @@
         <members>AdminClone</members>
         <members>Analytics Cloud Integration User</members>
         <members>Analytics Cloud Security User</members>
+        <members>Anthem SaaS Toolkit Profile</members>
         <members>ApexClassProfile</members>
         <members>Authenticated Website</members>
+        <members>B2BMA Integration User</members>
+        <members>Broker Portal Profile</members>
         <members>CFPProfile</members>
         <members>Catch up Profile</members>
         <members>Chatter External User</members>
         <members>Chatter Free User</members>
         <members>Chatter Moderator User</members>
         <members>CloneProfile1</members>
+        <members>Cloudberry Integration</members>
+        <members>Community Admin</members>
         <members>ContractManager</members>
         <members>Cross Org Data Proxy User</members>
         <members>Custom%3A Marketing Profile</members>
