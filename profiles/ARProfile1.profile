@@ -2,43 +2,22 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>A0</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A000</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0001</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0123</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>Sai&lt;&gt;
-?
-:
-;
-&quot;&apos;
-/
-{}
-[]{}
-|
-\
-~`
-@
-!
-#
-$
-%
-^
-&amp;
-*
-+
-_
-=
--
-.
-,
-/</description>
+    <description>add</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACDemoOBj1__c.Ftest12__c</field>
@@ -99,6 +78,7 @@ _
         <field>DObj2__c.field2__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <loginHours/>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
