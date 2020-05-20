@@ -265,4 +265,9 @@
         <members>zl123</members>
         <name>CustomLabel</name>
     </types>
+    <types>
+        <members>ARProfile1</members>
+        <members>ARProfile10</members>
+        <name>Profile</name>
+    </types>
 </Package>
