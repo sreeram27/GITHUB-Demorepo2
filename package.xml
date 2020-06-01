@@ -301,6 +301,11 @@
         <name>ApexTrigger</name>
     </types>
     <types>
+        <members>AppSwitcher</members>
+        <members>Salesforce1</members>
+        <name>AppMenu</name>
+    </types>
+    <types>
         <members>Case.Standard</members>
         <name>AssignmentRule</name>
     </types>
