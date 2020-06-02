@@ -157,9 +157,9 @@
     <fields>
         <fullName>ACCField1__c</fullName>
         <description>Test12312454656511111</description>
-        <externalId>true</externalId>
+        <externalId>false</externalId>
         <label>ACCField1</label>
-        <length>9</length>
+        <length>8</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
