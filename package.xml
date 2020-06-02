@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>47.0</version>
+    <version>48.0</version>
     <types>
         <members>A0</members>
+        <members>A000</members>
         <members>A0001</members>
         <members>A0071</members>
         <members>A0123</members>
@@ -15,6 +16,7 @@
         <members>A10</members>
         <members>A12</members>
         <members>A13</members>
+        <members>A1456</members>
         <members>A160</members>
         <members>A161</members>
         <members>A180</members>
@@ -22,12 +24,21 @@
         <members>A191</members>
         <members>A193</members>
         <members>A194</members>
+        <members>A243</members>
+        <members>A24567</members>
         <members>A30</members>
         <members>A32</members>
         <members>A78</members>
         <members>A789</members>
         <members>A7891</members>
         <members>A8</members>
+        <members>A98</members>
+        <members>A989</members>
+        <members>AA54</members>
+        <members>AAAA07</members>
+        <members>ANew2</members>
+        <members>AP123</members>
+        <members>AS101</members>
         <name>ApexClass</name>
     </types>
     <types>
