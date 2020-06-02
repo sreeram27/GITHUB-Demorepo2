@@ -1,14 +1,13 @@
 public Class A0
 {
-public Account createAccount(String name)  //method to create account
+public Account createAccount(String name)
 {
-//Modify
-Account an01= new Account();
-
-an01.Name = name;
-//Modify11111114512311
-//maven4 Modify
-return an01;
-//sai11csd
+Account a02= new Account();
+a02.Name = name;
+return a02;
+Account eee= new Account();
+eee.Name = name;
+return eee;
+//added block
 }
 }
