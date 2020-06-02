@@ -10,4 +10,13 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <label>ACDemoOBj1</label>
+    <nameField>
+        <label>ACDemoOBj1 Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>ACDemoOBj1s</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

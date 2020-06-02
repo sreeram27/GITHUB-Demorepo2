@@ -26,4 +26,13 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
+    <label>ACCObjt1</label>
+    <nameField>
+        <label>ACCObj1 Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>ACCObjt1s</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>
