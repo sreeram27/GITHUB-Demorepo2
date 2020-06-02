@@ -690,7 +690,27 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>DLSClass4</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Dec18</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass4</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -750,6 +770,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>KKK2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>KKK3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Kl1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -798,6 +826,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>NC11</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>NC22</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>NCLS100</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -815,6 +851,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>NewSep62</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PUlreqcls1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1002,11 +1042,27 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>a_saiclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>abc</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>b0testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>b_saiclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>c_saiclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>kkkk</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1019,6 +1075,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>pavancls2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>pr</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1124,6 +1184,11 @@
         <editable>false</editable>
         <field>ACR2__c.AutorabitExtId__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACR2__c.F12__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2812,16 +2877,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Mar20Obj1__c.Mar20field1__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Mar20Obj1__c.mar20Field2__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Mar20Obj2__c.Mar20Obj2Field1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -3501,6 +3556,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>SSObj1__c.F1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>STObj1__c.AutorabitExtId__c</field>
         <readable>false</readable>
@@ -4141,6 +4201,9 @@
         <layout>Contact-Contact Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ContactPointPhone_Contact_Point_Phone_La__c-ContactPointPhone-Contact Point Phone La Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ContentVersion-Content Version Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4188,6 +4251,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>DepTestObj1__c-DepTestObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Desobj2__c-Desobj2 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>DlConfigObj151__c-DlConfigObj151 Layout</layout>
@@ -4263,9 +4329,6 @@
         <layout>Macro-Macro Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Mar20Obj1__c-Mar20Obj1 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Mar20Obj2__c-Mar20Obj2 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4285,6 +4348,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>NA23obj3__c-NA23obj3 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>NN1__c-NN1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>NS25Obj1__c-NS25Obj1 Layout</layout>
@@ -4408,6 +4474,9 @@
         <layout>SKVObject1__c-SKVObject1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>SSObj1__c-SSObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>STObj1__c-STObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4502,6 +4571,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Test54__c-Test54 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Test55__c-Test55 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Test57__c-Test57 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>TestACObj1__c-TestACObj1 Layout</layout>
@@ -4909,6 +4984,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>ConfigObj1__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>ContactPointPhone_Contact_Point_Phone_La__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
