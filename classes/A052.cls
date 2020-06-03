@@ -5,12 +5,8 @@ public Account createAccount(String name)  //method to create account
 //test edit comment for Account A0
 //saikumar test mar20
 //saikumar
-Account a027111111311= new Account();
-a027111111311 .Name = name;
-return a027111111311 ;
-//sai1233234
-//saikumar3233
-//this is the test comment
-//saifggg
+Account a057= new Account();
+a057.Name = name;
+return a057;
 }
 }

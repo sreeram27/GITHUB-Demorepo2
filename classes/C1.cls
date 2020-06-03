@@ -1,12 +1,9 @@
 public Class C1
 {
-public Account createAccount(String name)  //method to create account
+public Account createAccount(String name)  
 {
-//Add comment for Account A1
-Account a11112314 = new Account();
-a11112314.Name = name;
-return a11112314;
-//this is the test comment
-//saikumar test1334
+Account a11 = new Account();
+a11.Name = name;
+return a11;
 }
 }
