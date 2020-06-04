@@ -9,6 +9,11 @@
         <members>A0123</members>
         <members>A01234</members>
         <members>A01234567</members>
+        <members>A0123678</members>
+        <members>A02</members>
+        <members>A022233444</members>
+        <members>A025</members>
+        <members>A026</members>
         <members>A027</members>
         <members>A028</members>
         <members>A08089</members>
@@ -83,7 +88,12 @@
     </types>
     <types>
         <members>AC1</members>
+        <members>AC100</members>
+        <members>AC11</members>
         <members>AC2</members>
+        <members>AC56</members>
+        <members>AC67</members>
+        <members>ACCL1</members>
         <members>ACL24</members>
         <members>ACL25</members>
         <members>CustomLabelTest2</members>
@@ -114,7 +124,9 @@
     <types>
         <members>ARProfile1</members>
         <members>ARProfile10</members>
+        <members>ARProfile13</members>
         <members>ARProfile2</members>
+        <members>ARProfile8</members>
         <members>ATESTProfile1</members>
         <members>Admin</members>
         <members>AdminClone</members>

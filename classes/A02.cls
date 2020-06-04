@@ -1,14 +1,14 @@
-public Class A000
+public Class A02
 {
 public Account createAccount(String name)  //method to create account
 {
 //Modify
-Account ad121111111= new Account();
+Account ad12111= new Account();
 
-ad121111111.Name = name;
+ad12111.Name = name;
 //Modify111111145123111
 //maven4 Modify skippped
-return ad121111111;
+return ad12111;
 //sai
 }
 }

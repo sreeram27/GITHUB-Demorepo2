@@ -2,43 +2,62 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>A0</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A000</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0001</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>A0071</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>A0123</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>A01234</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A01234567</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A0123678</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A02</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A022233444</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A025</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A026</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A027</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A028</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
-    <description>Sai&lt;&gt;
-?
-:
-;
-&quot;&apos;
-/
-{}
-[]{}
-|
-\
-~`
-@
-!
-#
-$
-%
-^
-&amp;
-*
-+
-_
-=
--
-.
-,
-/</description>
+    <description>testghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACDemoOBj1__c.Ftest12__c</field>
@@ -99,7 +118,40 @@ _
         <field>DObj2__c.field2__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <loginIpRanges>
+        <endAddress>255.234.123.223</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.229</endAddress>
+        <startAddress>1.1.1.1</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.222</endAddress>
+        <startAddress>2.2.2.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>test</description>
+        <endAddress>255.234.123.222</endAddress>
+        <startAddress>3.3.3.3</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.227</endAddress>
+        <startAddress>6.6.6.6</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.228</endAddress>
+        <startAddress>7.7.7.7</startAddress>
+    </loginIpRanges>
     <userLicense>Salesforce</userLicense>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ActivitiesAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AddDirectMessageMembers</name>
+    </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>AllowUniversalSearch</name>
@@ -222,6 +274,10 @@ _
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>RemoveDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>RunReports</name>
     </userPermissions>
     <userPermissions>
@@ -243,6 +299,10 @@ _
     <userPermissions>
         <enabled>true</enabled>
         <name>SubscribeToLightningReports</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>TransactionalEmailSend</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
