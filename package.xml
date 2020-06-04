@@ -4,10 +4,15 @@
     <types>
         <members>A0</members>
         <members>A000</members>
+        <members>A0001</members>
         <members>A0071</members>
         <members>A0123</members>
+        <members>A01234</members>
+        <members>A01234567</members>
         <members>A0123678</members>
         <members>A012378</members>
+        <members>A022233444</members>
+        <members>A0233</members>
         <members>A025</members>
         <members>A027</members>
         <members>A028</members>
@@ -905,8 +910,10 @@
         <name>DuplicateRule</name>
     </types>
     <types>
+        <members>Test123</members>
         <members>Test45</members>
         <members>Test45/TestEt1</members>
+        <members>TestEmailTemplateFolder1</members>
         <members>unfiled$public/ET1</members>
         <name>EmailTemplate</name>
     </types>
@@ -1137,7 +1144,9 @@
         <members>ARProfile2</members>
         <members>ARProfile8</members>
         <members>ARProfile9</members>
+        <members>ATESTProfile1</members>
         <members>Admin</members>
+        <members>AdminClone</members>
         <members>Analytics Cloud Integration User</members>
         <members>Analytics Cloud Security User</members>
         <members>Arprofile12</members>
