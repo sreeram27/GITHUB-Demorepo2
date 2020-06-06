@@ -327,7 +327,9 @@
         <members>AuRATest3</members>
         <members>AuraComponent5</members>
         <members>Aura_Bundle_Test1</members>
+        <members>Auracomponent4</members>
         <members>AutoComponenent2</members>
+        <members>AutoComponenet1</members>
         <members>BrainsharkAccessTokenSettings</members>
         <members>BrainsharkAchievements</members>
         <members>BrainsharkAppSettings</members>
@@ -1980,6 +1982,8 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>Folder1</members>
+        <members>Folder1/DocTest1.text</members>
         <members>SharedDocuments</members>
         <members>SharedDocuments/Anthem_Letterhead.jpg</members>
         <members>SharedDocuments/Anthem_Logo.jpg</members>
@@ -1992,6 +1996,24 @@
         <members>Georgia_COBRA/Newly_Installed_Group_1</members>
         <members>Georgia_COBRA/Newly_Installed_Group_2</members>
         <members>Georgia_COBRA/Newly_Installed_Group_3</members>
+        <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityLockoutEmailTemplate</members>
+        <members>unfiled$public/CommunityVerificationEmailTemplate</members>
+        <members>unfiled$public/CommunityWelcomeEmailTemplate</members>
+        <members>unfiled$public/MarketingProductInquiryResponse</members>
+        <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
+        <members>unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE</members>
+        <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE</members>
+        <members>unfiled$public/SalesNewCustomerEmail</members>
+        <members>unfiled$public/SupportCaseAssignmentNotification</members>
+        <members>unfiled$public/SupportCaseCreatedPhoneInquiries</members>
+        <members>unfiled$public/SupportCaseCreatedWebInquiries</members>
+        <members>unfiled$public/SupportCaseResponse</members>
+        <members>unfiled$public/SupportEscalatedCaseNotification</members>
+        <members>unfiled$public/SupportEscalatedCaseReassignment</members>
+        <members>unfiled$public/SupportSelfServiceNewLoginandPassword</members>
+        <members>unfiled$public/SupportSelfServiceResetPassword</members>
         <name>EmailTemplate</name>
     </types>
     <types>
