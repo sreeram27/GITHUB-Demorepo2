@@ -10,7 +10,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A0001</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0071</apexClass>
@@ -18,7 +18,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A0123</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A01234</apexClass>
@@ -56,8 +56,36 @@
         <apexClass>A028</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>A09876</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A10</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A13</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A30</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A45</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
-    <description>testghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</description>
+    <description>add</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACDemoOBj1__c.Ftest12__c</field>
@@ -118,9 +146,18 @@
         <field>DObj2__c.field2__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <loginHours/>
     <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.201</endAddress>
+        <startAddress>1.0.0.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.207</endAddress>
+        <startAddress>1.0.0.9</startAddress>
     </loginIpRanges>
     <loginIpRanges>
         <endAddress>255.234.123.229</endAddress>
@@ -270,7 +307,31 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageCategories</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageCssUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageDataCategories</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageDataIntegrations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageDynamicDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>MassInlineEdit</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>OverrideForecasts</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -307,6 +368,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>UseWebLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewDataCategories</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

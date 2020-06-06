@@ -2,11 +2,11 @@ public Class A10
 {
 public Account createAccount(String name)  //method to create account
 {
-//Merge2
-//Merge2
-Account a10= new Account();
-a10.Name = name;
-return a10;
-//
+//sai Add comment for Account A10
+//saikumar
+Account a1011= new Account();
+a1011.Name = name;
+return a1011;
+//sai11111111111
 }
 }
