@@ -12,6 +12,8 @@
         <members>A027</members>
         <members>A028</members>
         <members>A036</members>
+        <members>A0456</members>
+        <members>A045678</members>
         <members>A080189</members>
         <members>A08023424</members>
         <members>A08089</members>
@@ -90,8 +92,11 @@
     </types>
     <types>
         <members>AC1</members>
+        <members>AC100</members>
         <members>AC11</members>
+        <members>AC133</members>
         <members>AC2</members>
+        <members>AC56</members>
         <members>ACL24</members>
         <members>ACL25</members>
         <members>CustomLabelTest2</members>

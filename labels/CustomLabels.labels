@@ -5,35 +5,56 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ac111</shortDescription>
-        <value>123345111</value>
+        <value>12</value>
+    </labels>
+    <labels>
+        <fullName>AC100</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AC100</shortDescription>
+        <value>11</value>
     </labels>
     <labels>
         <fullName>AC11</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC11</shortDescription>
-        <value>1111221</value>
+        <value>123e4</value>
+    </labels>
+    <labels>
+        <fullName>AC133</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AC133</shortDescription>
+        <value>1</value>
     </labels>
     <labels>
         <fullName>AC2</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC211</shortDescription>
-        <value>12211111111122</value>
+        <value>s1</value>
+    </labels>
+    <labels>
+        <fullName>AC56</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AC56</shortDescription>
+        <value>00911111111111</value>
     </labels>
     <labels>
         <fullName>ACL24</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACL24</shortDescription>
-        <value>12111111</value>
+        <value>233</value>
     </labels>
     <labels>
         <fullName>ACL25</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACL25</shortDescription>
-        <value>76511111</value>
+        <value>32434</value>
     </labels>
     <labels>
         <fullName>CustomLabelTest2</fullName>
