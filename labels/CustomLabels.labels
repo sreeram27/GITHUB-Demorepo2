@@ -1174,13 +1174,6 @@
         <value>1</value>
     </labels>
     <labels>
-        <fullName>STCL1</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>STCL1</shortDescription>
-        <value>1</value>
-    </labels>
-    <labels>
         <fullName>SV1</fullName>
         <language>en_US</language>
         <protected>true</protected>
