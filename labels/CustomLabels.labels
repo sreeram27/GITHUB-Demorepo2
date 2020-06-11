@@ -1358,7 +1358,14 @@
         <value>1</value>
     </labels>
     <labels>
-        <fullName>SaiCustomlabel10</fullName>
+        <fullName>STCL1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>STCL1</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>SV1</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>SaiCustomlabel10</shortDescription>
