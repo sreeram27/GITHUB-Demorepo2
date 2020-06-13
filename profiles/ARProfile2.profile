@@ -2521,6 +2521,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Goal.OrigGoalId__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>HarishObject1__c.PhoneField1__c</field>
         <readable>true</readable>
@@ -2848,6 +2853,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>MergeObject1__c.MergeField2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Metric.OrigMetricId__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4057,6 +4067,10 @@
         <layout>Accobj4__c-Accobj4 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Account-Account %28Marketing%29 Layout</layout>
+        <recordType>Account.ARC1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4120,6 +4134,10 @@
         <layout>ConsumptionSchedule-Consumption Schedule Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Contact-Contact %28Marketing%29 Layout</layout>
+        <recordType>Contact.CRT1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Contact-Contact Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4135,6 +4153,14 @@
         <layout>DLCObj18__c-DLCObj18 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>DLCObj18__c-DLCObj18 Layout</layout>
+        <recordType>DLCObj18__c.DLCObj18_RcType1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>DLCObj18__c-DLCObj18 Layout</layout>
+        <recordType>DLCObj18__c.DLCObj18_RcType2</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>DLConfigTestObj__c-DLConfigTestObj Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4148,6 +4174,14 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Dbj1__c-Dbj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Dbj1__c-Dbj1 Layout</layout>
+        <recordType>Dbj1__c.Dbj_RC1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Dbj1__c-Dbj1 Layout</layout>
+        <recordType>Dbj1__c.Dbj_RC2</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Demo4Obj7__c-Demo4Obj7 Layout</layout>
@@ -4166,6 +4200,14 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>EC_AccObj1__c-EC-AccObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>EC_AccObj1__c-EC-AccObj1 Layout</layout>
+        <recordType>EC_AccObj1__c.ECrecordTypeTest3</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>EC_AccObj1__c-EC-AccObj1 Layout</layout>
+        <recordType>EC_AccObj1__c.Test1</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>EObj1__c-EObj1 Layout</layout>
@@ -4204,7 +4246,15 @@
         <layout>LB500obj2__c-LB500obj2 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Lead-Lead %28Sales%29 Layout</layout>
+        <recordType>Lead.LeadRecType1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Lead-Lead Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Lead-Lead Layout</layout>
+        <recordType>Lead.RecType1</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lobj45__c-Lobj45 Layout</layout>
@@ -4235,9 +4285,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>NA23obj3__c-NA23obj3 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>NN1__c-NN1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>NS25Obj1__c-NS25Obj1 Layout</layout>
@@ -4277,6 +4324,10 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Obj900__c-Obj900 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Obj900__c-Obj900 Layout</layout>
+        <recordType>Obj900__c.Obj900RC1</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ObjAc1__c-ObjAc1 Layout</layout>
@@ -4912,6 +4963,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Lead.RecType1</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Metric.Completion</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Metric.Progress</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
