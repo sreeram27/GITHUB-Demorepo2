@@ -1,0 +1,13 @@
+<aura:component controller='ACEBrokerages_ChatterController' implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+  	<aura:handler name='init' value='{!this}' action='{!c.doInit}' />
+   	<aura:attribute name = "subjectId" type="String" />
+    <aura:attribute name="feeds" type="CollaborationGroup[]"/>
+    
+    
+
+    <aura:iteration var="feed" items="{!v.feeds}">
+		<forceChatter:publisher context="RECORD" recordId="{!feed.Id}" />
+        <forceChatter:feed type="Record" subjectId="{!feed.Id}" feedDesign="BROWSE"/>
+    </aura:iteration>
+	
+</aura:component>
