@@ -192,7 +192,7 @@
         <fullName>field1__c</fullName>
         <externalId>false</externalId>
         <label>field1</label>
-        <length>7</length>
+        <length>9</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -200,7 +200,7 @@
     </fields>
     <fields>
         <fullName>field2__c</fullName>
-        <externalId>false</externalId>
+        <externalId>true</externalId>
         <label>field2</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
