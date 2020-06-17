@@ -16,7 +16,7 @@ global with sharing class ANA_AP01_AccountContactList implements vlocity_ins.Vlo
 *  This method is an implementation to  vlocity_ins.VlocityOpenInterface interface.
 *  @name :invokeMethod
 *  @param : String,Map<String,Object>,Map<String,Object>,Map<String,Object> .
-*  @return <parameter> - Boolean
+*  @return <parameter> - Boolean bgfghfh
 */
     global Boolean invokeMethod(String methodName, Map<String,Object> inputMap, Map<String,Object> outMap,
                                 Map<String,Object> optns) {                                    
@@ -29,7 +29,7 @@ global with sharing class ANA_AP01_AccountContactList implements vlocity_ins.Vlo
 *  This method will get the AccountId from the record that the omniscript gets invoked and prepares the contact list.
 *  @name :invokeMethod
 *  @param : String,Map<String,Object>,Map<String,Object>,Map<String,Object> .
-*  @return <parameter> - Boolean
+*  @return <parameter> - Boolean jfdgbjhfbghfgbfhgh
 */
     public void populatePicklist(Map<String,Object> input, Map<String, Object> outMap, Map<String, Object> optns)
     {
@@ -54,6 +54,8 @@ global with sharing class ANA_AP01_AccountContactList implements vlocity_ins.Vlo
         {
             UTIL_LoggingService.logHandledException(qExcp, ANA_UTIL03_Constants.ORGID, ANA_UTIL03_Constants.APPNAME, CLASSNAME, POPULATEPICKLIST,null,LoggingLevel.ERROR); 
         }
+        //saidfgfg
         
     }
+    //gbdhjfghfhgf
 }
