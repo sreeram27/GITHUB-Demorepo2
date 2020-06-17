@@ -12,7 +12,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ac111</shortDescription>
-        <value>152</value>
+        <value>311</value>
     </labels>
     <labels>
         <fullName>AC100</fullName>
@@ -26,7 +26,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC11</shortDescription>
-        <value>1w345</value>
+        <value>123e4</value>
     </labels>
     <labels>
         <fullName>AC133</fullName>
@@ -54,14 +54,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC6712</shortDescription>
-        <value>89</value>
+        <value>111</value>
     </labels>
     <labels>
         <fullName>AC8</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC8</shortDescription>
-        <value>111</value>
+        <value>11</value>
     </labels>
     <labels>
         <fullName>ACCL1</fullName>
@@ -1171,6 +1171,13 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>SS2</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>STCL1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>STCL1</shortDescription>
         <value>1</value>
     </labels>
     <labels>
