@@ -2,10 +2,9 @@ public Class A0
 {
 public Account createAccount(String name)  //method to create account
 {
-Account s2145= new Account();
-s2145.Name = name;
-return s2145;
-//34512vstest12
-}
+Account s21= new Account();
+s21.Name = name;
+return s21;
+//sai89075re1
 }
 }
