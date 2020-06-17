@@ -94480,6 +94480,26 @@
         <layout>ARF__c-Action Request Form Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Account-Account Layout - Brokerage</layout>
+        <recordType>Account.Brokerage</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout - Customer</layout>
+        <recordType>Account.Confidential</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout - Customer</layout>
+        <recordType>Account.Customer</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout - Prospect</layout>
+        <recordType>Account.Prospect</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout-Vendor</layout>
+        <recordType>Account.ServiceProvider</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -94521,26 +94541,6 @@
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
         <recordType>Account.vlocity_ins__MobilePhoneAccount</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Account-Account Layout - Brokerage</layout>
-        <recordType>Account.Brokerage</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Account-Account Layout - Customer</layout>
-        <recordType>Account.Confidential</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Account-Account Layout - Customer</layout>
-        <recordType>Account.Customer</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Account-Account Layout - Prospect</layout>
-        <recordType>Account.Prospect</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Account-Account Layout-Vendor</layout>
-        <recordType>Account.ServiceProvider</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Account-vlocity_ins__Account %28Vlocity 2%2E7%29</layout>
@@ -94760,11 +94760,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Billing__c-Billing Layout</layout>
-        <recordType>Billing__c.Billing</recordType>
+        <recordType>Billing__c.BillingASO</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Billing__c-Billing Layout</layout>
-        <recordType>Billing__c.BillingASO</recordType>
+        <recordType>Billing__c.Billing</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Broker_Consultant_Commissions1__c-Broker%2FConsultant Commissions1 Layout</layout>
@@ -95801,6 +95801,22 @@
         <layout>Open_Enrollment_Meetings__c-Open Enrollment Meetings Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout - IGAP</layout>
+        <recordType>Opportunity.In_Group_Add_Product</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout - IGC</layout>
+        <recordType>Opportunity.In_Group_Change</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout - New Business</layout>
+        <recordType>Opportunity.New_Business</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout - Renewal</layout>
+        <recordType>Opportunity.Renewal</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Opportunity-Opportunity Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -95838,22 +95854,6 @@
     <layoutAssignments>
         <layout>Opportunity-Opportunity Layout</layout>
         <recordType>Opportunity.StopLoss</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Opportunity-Opportunity Layout - IGAP</layout>
-        <recordType>Opportunity.In_Group_Add_Product</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Opportunity-Opportunity Layout - IGC</layout>
-        <recordType>Opportunity.In_Group_Change</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Opportunity-Opportunity Layout - New Business</layout>
-        <recordType>Opportunity.New_Business</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Opportunity-Opportunity Layout - Renewal</layout>
-        <recordType>Opportunity.Renewal</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-vlocity_ins__Mobile Opportunity %28Vlocity 2%2E5%29</layout>
@@ -96707,11 +96707,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.EUSR_User_Create</recordType>
+        <recordType>Support_Request__c.EUSR_User_Create1</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.EUSR_User_Create1</recordType>
+        <recordType>Support_Request__c.EUSR_User_Create</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Support_Request__c-End User Support Request</layout>
@@ -97766,11 +97766,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__ObjectClass__c-vlocity_ins__Object Class Layout</layout>
-        <recordType>vlocity_ins__ObjectClass__c.vlocity_ins__Object</recordType>
+        <recordType>vlocity_ins__ObjectClass__c.vlocity_ins__ObjectType</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__ObjectClass__c-vlocity_ins__Object Class Layout</layout>
-        <recordType>vlocity_ins__ObjectClass__c.vlocity_ins__ObjectType</recordType>
+        <recordType>vlocity_ins__ObjectClass__c.vlocity_ins__Object</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__ObjectElement__c-vlocity_ins__Vlocity Object Section Element Layout</layout>
@@ -108370,6 +108370,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewEventLogFiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewPlatformEvents</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

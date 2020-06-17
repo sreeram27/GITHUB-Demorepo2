@@ -108,10 +108,17 @@
         <members>AAAA06</members>
         <members>AAAA07</members>
         <members>AC300</members>
+        <members>ACEBrokerages_ChatterController</members>
+        <members>ACEBrokerages_ChatterControllerTest</members>
         <members>ACls1</members>
         <members>AD1</members>
         <members>AD2</members>
         <members>AN2</members>
+        <members>ANA_AP01_AccountContactList</members>
+        <members>ANA_AP01_AccountContactList_Test</members>
+        <members>ANA_AP03_QuoteLineItemApproval</members>
+        <members>ANA_AP03_QuoteLineItemApproval_Test</members>
+        <members>ANA_AP04_Process_QuoteLineItems</members>
         <members>ANew1</members>
         <members>ANew2</members>
         <members>AS1</members>
@@ -283,6 +290,11 @@
     <types>
         <members>ACCObjTest1Page</members>
         <members>ACOBJTpage</members>
+        <members>ANAWeeklyOppt</members>
+        <members>ANA_CreateOEMeetings</members>
+        <members>ANA_MassUpdate</members>
+        <members>ANA_MassUpdate_Programs</members>
+        <members>ANA_Membership</members>
         <members>ApexPage</members>
         <members>ApexPage5</members>
         <members>Apexpage1</members>
@@ -897,7 +909,6 @@
         <members>SaiCl1</members>
         <members>SaiCl2</members>
         <members>SaiCl91</members>
-        <members>SaiCustomlabel10</members>
         <members>SaiCustomlabel2</members>
         <members>SaiCustomlabel3</members>
         <members>SaiKLabel1</members>
