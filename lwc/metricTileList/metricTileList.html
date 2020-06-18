@@ -1,0 +1,52 @@
+<!---Author : Ravideep Singh
+Created Date : 03/09/2020
+History : @: 03/10/2020 - PRDCRM-50555 : Component to show iteration PG Ctalog Items based on filters-->
+<template>
+    <div class="slds-card slds-p-around_x-small">
+        <div class = "title">
+            <p>Select PG Metrics for: {oppname}</p>
+        </div>
+        <template if:true={searchBarIsVisible}>
+            <lightning-input
+                label="Search Key"
+                type="text"
+                onchange={handleSearchKeyChange}
+                class="search-bar"
+            ></lightning-input>
+        </template>
+        <template if:true={pgcatalogitems.data}>
+            <template if:true={pgcatalogitems.data.records.length}>
+                <ul class="slds-grid slds-grid_pull-padded slds-wrap">
+                    <template
+                        for:each={pgcatalogitems.data.records}
+                        for:item="pgcatalogitem"
+                    >
+                        <c-metric-tile 
+                            key={pgcatalogitem.Id}
+                            pgcatalogitem={pgcatalogitem}
+                            draggable={tilesAreDraggable}
+                            onselected={handlePGCatalogItemSelected}
+                            class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3"
+                        >
+                        </c-metric-tile >
+                    </template>
+                </ul>
+                <c-paginator
+                    page-number={pageNumber}
+                    page-size={pgcatalogitems.data.pageSize}
+                    total-item-count={pgcatalogitems.data.totalItemCount}
+                    onprevious={handlePreviousPage}
+                    onnext={handleNextPage}
+                ></c-paginator>
+            </template>
+            <template if:false={pgcatalogitems.data.records.length}>
+                <c-placeholder
+                    message="There are no PG Catalog Items matching your current selection"
+                ></c-placeholder>
+            </template>
+        </template>
+        <template if:true={pgcatalogitems.error}>
+            <c-inline-message errors={pgcatalogitems.error}></c-inline-message>
+        </template>
+    </div>
+</template>
