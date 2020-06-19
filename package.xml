@@ -312,6 +312,7 @@
         <name>AssignmentRules</name>
     </types>
     <types>
+        <members>ANA_LTNG01_CustomLookup_oppty</members>
         <members>AURATest7</members>
         <members>AuRATest1</members>
         <members>AuRATest2</members>
@@ -1560,12 +1561,8 @@
         <members>AccTest1</members>
         <members>Acclabel45</members>
         <members>AnLabel11</members>
-        <members>AnthemSubrogationEmail1</members>
-        <members>AnthemSubrogationEmail2</members>
         <members>At1</members>
-        <members>BPD_Master_Duplicate_Record_Type</members>
         <members>Bl</members>
-        <members>CDHPISGLink_Part1</members>
         <members>CL1</members>
         <members>CL1234</members>
         <members>CL2</members>
@@ -1587,7 +1584,6 @@
         <members>CLtest2</members>
         <members>CSB31</members>
         <members>CST6</members>
-        <members>CSVMessage</members>
         <members>Cl900</members>
         <members>Ct1</members>
         <members>Ct2</members>
@@ -2715,6 +2711,7 @@
         <members>ProfileTest123</members>
         <members>Profileest</members>
         <members>ReadOnly</members>
+        <members>SaiJun19thprofile</members>
         <members>Silver Partner User</members>
         <members>SolutionManager</members>
         <members>Standard</members>
