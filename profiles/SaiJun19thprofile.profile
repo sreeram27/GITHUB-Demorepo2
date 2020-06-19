@@ -4,6 +4,10 @@
         <apexClass>A0123</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>A025</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>true</custom>
     <loginIpRanges>
         <description>sd111</description>
