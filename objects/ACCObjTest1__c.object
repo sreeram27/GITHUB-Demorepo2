@@ -140,6 +140,19 @@
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>ACOBJTpagecomponent</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>ACCObjTest1Page</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -156,7 +169,7 @@
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>ACCField1__c</fullName>
-        <description>Test12312454656511111</description>
+        <description>swd</description>
         <externalId>false</externalId>
         <label>ACCField1</label>
         <length>8</length>
@@ -168,6 +181,7 @@
     <fields>
         <fullName>ACCField2__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>qwsdcfvc</inlineHelpText>
         <label>ACCField2</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -183,6 +197,66 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>N1__c</fullName>
+        <description>124</description>
+        <externalId>false</externalId>
+        <label>N1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>12345</fullName>
+                    <default>false</default>
+                    <label>12345</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PLNew1__c</fullName>
+        <description>Twt`2</description>
+        <externalId>false</externalId>
+        <label>PLNew1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>007</fullName>
+                    <default>true</default>
+                    <label>007</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PLnew3__c</fullName>
+        <description>sd</description>
+        <externalId>false</externalId>
+        <label>PLnew3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>sd</fullName>
+                    <default>false</default>
+                    <label>sd</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>PLt1__c</fullName>
@@ -209,18 +283,166 @@
         <description>Add Comment</description>
         <externalId>false</externalId>
         <label>Plt3</label>
-        <length>7</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>azsxd</fullName>
+                    <default>false</default>
+                    <label>azsxd</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TextField15__c</fullName>
+        <externalId>false</externalId>
+        <label>TextField15</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>pl1__c</fullName>
+        <description>12356</description>
+        <externalId>false</externalId>
+        <label>pl13</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>fg</fullName>
+                    <default>false</default>
+                    <label>fg</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>test__c</fullName>
+        <externalId>false</externalId>
+        <label>test</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
     <label>ACCObjTest1</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>ACCObjTest1 Name</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>ACCObjTest1s</pluralLabel>
+    <recordTypes>
+        <fullName>SairecordType1</fullName>
+        <active>true</active>
+        <description>test</description>
+        <label>SairecordType1</label>
+        <picklistValues>
+            <picklist>N1__c</picklist>
+            <values>
+                <fullName>12345</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLNew1__c</picklist>
+            <values>
+                <fullName>007</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLnew3__c</picklist>
+            <values>
+                <fullName>sd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLt1__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Plt3__c</picklist>
+            <values>
+                <fullName>azsxd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>pl1__c</picklist>
+            <values>
+                <fullName>fg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SairecordType2</fullName>
+        <active>true</active>
+        <description>zxc</description>
+        <label>SairecordType2</label>
+        <picklistValues>
+            <picklist>N1__c</picklist>
+            <values>
+                <fullName>12345</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLNew1__c</picklist>
+            <values>
+                <fullName>007</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLnew3__c</picklist>
+            <values>
+                <fullName>sd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLt1__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Plt3__c</picklist>
+            <values>
+                <fullName>azsxd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>pl1__c</picklist>
+            <values>
+                <fullName>fg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
