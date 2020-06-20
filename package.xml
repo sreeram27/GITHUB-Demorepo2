@@ -32,6 +32,7 @@
         <members>A14</members>
         <members>A1456</members>
         <members>A14567</members>
+        <members>A15</members>
         <members>A151</members>
         <members>A152</members>
         <members>A156</members>
@@ -40,6 +41,7 @@
         <members>A16</members>
         <members>A160</members>
         <members>A161</members>
+        <members>A16789</members>
         <members>A17</members>
         <members>A170</members>
         <members>A18</members>
@@ -134,10 +136,25 @@
         <members>NA23Class1</members>
         <members>NA23Class2</members>
         <members>NS25Class1</members>
+        <members>New1233</members>
+        <members>NewSep62</members>
+        <members>PUlreqcls1</members>
+        <members>RClass1</members>
+        <members>RGvc02</members>
+        <members>S10</members>
         <members>S200</members>
         <members>S300</members>
+        <members>SA100</members>
+        <members>SAClS2</members>
+        <members>SAClass200</members>
+        <members>SAClass201</members>
+        <members>SKVAug16Class1</members>
+        <members>SKVClass1</members>
+        <members>SKVClass2</members>
         <members>SRclass1</members>
         <members>SaiMaven1</members>
+        <members>Sep1</members>
+        <members>SiteLoginController</members>
         <members>St1</members>
         <members>Z22</members>
         <members>Z23</members>
@@ -230,7 +247,10 @@
     </types>
     <types>
         <members>ACOBJTpagecomponent</members>
+        <members>ARIndexCmp</members>
+        <members>AURATest7</members>
         <members>Ar2</members>
+        <members>AuRATest1</members>
         <members>AuraComponent5</members>
         <members>Aura_Bundle_Test1</members>
         <members>Aura_Bundle_Test2</members>
@@ -2042,6 +2062,8 @@
         <name>Dashboard</name>
     </types>
     <types>
+        <members>Folder1</members>
+        <members>Folder1/DocTest1.text</members>
         <members>TestFolder</members>
         <members>TestFolder/ar4.png</members>
         <name>Document</name>
@@ -2056,6 +2078,11 @@
         <members>Test45</members>
         <members>Test45/TestEt1</members>
         <members>TestEmailTemplateFolder1</members>
+        <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityLockoutEmailTemplate</members>
+        <members>unfiled$public/CommunityVerificationEmailTemplate</members>
+        <members>unfiled$public/CommunityWelcomeEmailTemplate</members>
         <members>unfiled$public/ET1</members>
         <members>unfiled$public/MarketingProductInquiryResponse</members>
         <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
@@ -2509,6 +2536,7 @@
         <members>ProfileTest1</members>
         <members>ProfileTest123</members>
         <members>ReadOnly</members>
+        <members>SaiJun19thprofile</members>
         <members>Silver Partner User</members>
         <members>SolutionManager</members>
         <members>Standard</members>
