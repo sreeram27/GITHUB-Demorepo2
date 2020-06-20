@@ -143,7 +143,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Add Comment</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -155,32 +154,45 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
-        <fullName>AutorabitExtId__c</fullName>
-        <description>External Id created by AutoRABIT TEST35465767</description>
-        <externalId>true</externalId>
-        <label>AutorabitExtId__c</label>
-        <length>18</length>
+        <fullName>FT1__c</fullName>
+        <externalId>false</externalId>
+        <label>FT1</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Phone</type>
     </fields>
     <fields>
-        <fullName>Ftest12__c</fullName>
+        <fullName>FT2__c</fullName>
         <externalId>false</externalId>
-        <label>Ftest12</label>
-        <length>40</length>
+        <label>FT2</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Date</type>
     </fields>
-    <label>ACDemoOBj1</label>
+    <fields>
+        <fullName>FT5__c</fullName>
+        <externalId>false</externalId>
+        <label>FT5</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>123</fullName>
+                    <default>false</default>
+                    <label>1213</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>ACCObjt1</label>
     <nameField>
-        <label>ACDemoOBj1 Name</label>
+        <label>ACCObj1 Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>ACDemoOBj1s</pluralLabel>
+    <pluralLabel>ACCObjt1s</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
