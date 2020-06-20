@@ -197,14 +197,17 @@
         <members>ACCObjTest1Page</members>
         <members>ACOBJTpage</members>
         <members>ApexPage</members>
+        <members>ApexPage5</members>
         <members>Apexpage1</members>
         <members>Apexpage2</members>
         <members>Apexpage3</members>
+        <members>Apexpage6</members>
         <name>ApexPage</name>
     </types>
     <types>
         <members>AccountTrigger1</members>
         <members>ContactTrigger1</members>
+        <members>Leadtrigger1</members>
         <name>ApexTrigger</name>
     </types>
     <types>
@@ -307,18 +310,27 @@
     <types>
         <members>ACCObjTest1__c.ACCField1__c</members>
         <members>ACCObjTest1__c.ACCField2__c</members>
+        <members>ACCObjTest1__c.AutorabitExtId__c</members>
+        <members>ACCObjTest1__c.N1__c</members>
+        <members>ACCObjTest1__c.PLNew1__c</members>
+        <members>ACCObjTest1__c.PLnew3__c</members>
         <members>ACCObjTest1__c.PLt1__c</members>
         <members>ACCObjTest1__c.Plt3__c</members>
         <members>ACCObjTest1__c.TextField15__c</members>
+        <members>ACCObjTest1__c.pl1__c</members>
         <members>ACCObjTest1__c.test__c</members>
         <members>ACCObject2__c.Field1__c</members>
         <members>ACCObject2__c.Field2__c</members>
         <members>ACCObject2__c.Field3__c</members>
         <members>ACCObject2__c.Field4__c</members>
+        <members>ACCObjt1__c.FT1__c</members>
+        <members>ACCObjt1__c.FT2__c</members>
+        <members>ACCObjt1__c.FT5__c</members>
         <members>ACCobj3__c.Field1__c</members>
         <members>ACCobj3__c.Field2__c</members>
         <members>ACCobj3__c.Field3__c</members>
         <members>ACCobj3__c.Field4__c</members>
+        <members>ACDemoOBj1__c.AutorabitExtId__c</members>
         <members>ACDemoOBj1__c.Ftest12__c</members>
         <members>ACLObj1__c.Field1__c</members>
         <members>ACOBJT1__c.Field__c</members>
@@ -1529,6 +1541,7 @@
     <types>
         <members>ACCObjTest1__c</members>
         <members>ACCObject2__c</members>
+        <members>ACCObjt1__c</members>
         <members>ACCobj3__c</members>
         <members>ACDemoOBj1__c</members>
         <members>ACLObj1__c</members>
@@ -2536,6 +2549,8 @@
         <name>QuickAction</name>
     </types>
     <types>
+        <members>ACCObjTest1__c.SairecordType1</members>
+        <members>ACCObjTest1__c.SairecordType2</members>
         <members>EC_AccObj1__c.ECrecordTypeTest3</members>
         <members>EC_AccObj1__c.Test1</members>
         <members>Idea.InternalIdeasIdeaRecordType</members>
