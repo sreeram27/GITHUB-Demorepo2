@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>47.0</version>
+    <version>48.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -1233,6 +1233,8 @@
     </types>
     <types>
         <members>AAtest456</members>
+        <members>AC1</members>
+        <members>AC100</members>
         <members>ACCt3</members>
         <members>ACL101</members>
         <members>ACL11</members>
@@ -2037,8 +2039,10 @@
         <name>DuplicateRule</name>
     </types>
     <types>
+        <members>Test123</members>
         <members>Test45</members>
         <members>Test45/TestEt1</members>
+        <members>TestEmailTemplateFolder1</members>
         <members>unfiled$public/ET1</members>
         <members>unfiled$public/MarketingProductInquiryResponse</members>
         <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
