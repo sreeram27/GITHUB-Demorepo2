@@ -12,14 +12,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ac111</shortDescription>
-        <value>777</value>
+        <value>311</value>
     </labels>
     <labels>
         <fullName>AC100</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC100</shortDescription>
-        <value>12</value>
+        <value>11</value>
     </labels>
     <labels>
         <fullName>AC11</fullName>
