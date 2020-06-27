@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
+        <fullName>AAtest456</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AAtest456</shortDescription>
+        <value>11111</value>
+    </labels>
+    <labels>
         <fullName>AC1</fullName>
         <language>en_US</language>
         <protected>true</protected>
