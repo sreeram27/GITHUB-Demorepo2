@@ -7,6 +7,5 @@ public Account createAccount(String name)  //method to create account
 Account a0111111= new Account();
 a0111111.Name = name;
 return a0111111;
-//sai test2
 }
 }
