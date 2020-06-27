@@ -5,7 +5,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AAtest456</shortDescription>
-        <value>007</value>
+        <value>11111</value>
     </labels>
     <labels>
         <fullName>AC1</fullName>
@@ -124,7 +124,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>S22CL2</shortDescription>
-        <value>ad1</value>
+        <value>ad1111111111</value>
     </labels>
     <labels>
         <fullName>ACL24</fullName>
