@@ -5,6 +5,13 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ac111</shortDescription>
+        <value>11111111</value>
+    </labels>
+    <labels>
+        <fullName>AC100</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AC100</shortDescription>
         <value>11</value>
     </labels>
     <labels>
