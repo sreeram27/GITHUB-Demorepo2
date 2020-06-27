@@ -11,4 +11,7 @@
         <active>false</active>
         <label>DLCObj18 RcType2</label>
     </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>
