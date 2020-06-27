@@ -2233,6 +2233,10 @@
         <name>ListView</name>
     </types>
     <types>
+        <members>Catch up</members>
+        <name>ManagedTopics</name>
+    </types>
+    <types>
         <members>PRS1</members>
         <members>PRS2</members>
         <name>PermissionSet</name>
