@@ -270,6 +270,11 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>SiteFooter</members>
+        <members>SiteHeader</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
         <members>ANAWeeklyOppt</members>
         <members>ANA_CreateOEMeetings</members>
         <members>ANA_MassUpdate</members>
@@ -366,8 +371,12 @@
         <members>ACCObjTest1__c.ACCField1__c</members>
         <members>ACCObjTest1__c.ACCField2__c</members>
         <members>ACCObjTest1__c.AutorabitExtId__c</members>
+        <members>ACCObjTest1__c.N1__c</members>
+        <members>ACCObjTest1__c.PLNew1__c</members>
+        <members>ACCObjTest1__c.PLnew3__c</members>
         <members>ACCObjTest1__c.PLt1__c</members>
         <members>ACCObjTest1__c.Plt3__c</members>
+        <members>ACCObjTest1__c.pl1__c</members>
         <members>ACCObjt1__c.FT1__c</members>
         <members>ACCObjt1__c.FT2__c</members>
         <members>ACCObjt1__c.FT5__c</members>
@@ -2052,8 +2061,15 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>ACR2__c</members>
+        <members>ACR3__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
         <members>Folder1</members>
         <members>Folder1/DocTest1.text</members>
+        <members>Folder2</members>
+        <members>Folder2/Doc5.png</members>
         <members>SharedDocuments</members>
         <members>SharedDocuments/Anthem_Letterhead.jpg</members>
         <members>SharedDocuments/Anthem_Logo.jpg</members>
@@ -2289,6 +2305,8 @@
         <name>Profile</name>
     </types>
     <types>
+        <members>ACCObjTest1__c.SairecordType1</members>
+        <members>ACCObjTest1__c.SairecordType2</members>
         <members>Account.ARC1</members>
         <members>Contact.CRT1</members>
         <members>DLCObj18__c.DLCObj18_RcType1</members>
