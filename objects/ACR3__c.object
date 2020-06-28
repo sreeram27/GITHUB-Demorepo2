@@ -5,4 +5,12 @@
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
+    <nameField>
+        <label>ACR3 Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>ACR3s</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>
