@@ -368,6 +368,12 @@
         <name>BusinessProcess</name>
     </types>
     <types>
+        <members>ACR2__c.Test</members>
+        <members>ACR3__c.Layout_layout</members>
+        <members>ACR4__c.Layout_layout</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
         <members>ACCObjTest1__c.ACCField1__c</members>
         <members>ACCObjTest1__c.ACCField2__c</members>
         <members>ACCObjTest1__c.AutorabitExtId__c</members>
@@ -2342,6 +2348,10 @@
         <members>ANA_Open_Enrollment_Reports/OE_Meetings_with_Orders_with_Order_Line</members>
         <members>ANA_Open_Enrollment_Reports/OE_Orders</members>
         <name>Report</name>
+    </types>
+    <types>
+        <members>CEO</members>
+        <name>Role</name>
     </types>
     <types>
         <members>SiteSamples</members>
