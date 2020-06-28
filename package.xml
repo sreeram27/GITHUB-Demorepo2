@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>45.0</version>
+    <version>48.0</version>
     <types>
         <members>A0</members>
         <members>A0001</members>
@@ -10,9 +10,15 @@
         <members>A028</members>
         <members>A08089</members>
         <members>A081</members>
+        <members>A1</members>
         <members>A10</members>
         <members>A12</members>
         <members>A13</members>
+        <members>A14</members>
+        <members>A151</members>
+        <members>A152</members>
+        <members>A156</members>
+        <members>A158</members>
         <members>A160</members>
         <members>A161</members>
         <members>A191</members>
@@ -21,6 +27,11 @@
         <members>A30</members>
         <members>A32</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>SiteFooter</members>
+        <members>SiteHeader</members>
+        <name>ApexComponent</name>
     </types>
     <types>
         <members>ApexPage</members>
@@ -40,6 +51,26 @@
         <name>AssignmentRule</name>
     </types>
     <types>
+        <members>Case</members>
+        <name>AssignmentRules</name>
+    </types>
+    <types>
+        <members>Lead.LeadProcess1</members>
+        <name>BusinessProcess</name>
+    </types>
+    <types>
+        <members>ACCObjTest1__c.ACCField1__c</members>
+        <members>ACCObjTest1__c.ACCField2__c</members>
+        <members>ACCObjTest1__c.AutorabitExtId__c</members>
+        <members>ACCObjTest1__c.N1__c</members>
+        <members>ACCObjTest1__c.PLNew1__c</members>
+        <members>ACCObjTest1__c.PLnew3__c</members>
+        <members>ACCObjTest1__c.PLt1__c</members>
+        <members>ACCObjTest1__c.Plt3__c</members>
+        <members>ACCObjTest1__c.pl1__c</members>
+        <members>ACCObjt1__c.FT1__c</members>
+        <members>ACCObjt1__c.FT2__c</members>
+        <members>ACCObjt1__c.FT5__c</members>
         <members>ACDemoOBj1__c.Ftest12__c</members>
         <members>DLCObj18__c.Field1__c</members>
         <members>DLCObj18__c.Field2__c</members>
@@ -70,6 +101,8 @@
         <name>CustomLabel</name>
     </types>
     <types>
+        <members>ACCObjTest1__c</members>
+        <members>ACCObjt1__c</members>
         <members>ACDemoOBj1__c</members>
         <members>DLCObj18__c</members>
         <members>DLObj1__c</members>
@@ -77,6 +110,44 @@
         <members>Dbj1__c</members>
         <members>Obj900__c</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <members>ACR2__c</members>
+        <members>ACR3__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Folder1</members>
+        <members>Folder1/DocTest1.text</members>
+        <members>Folder2</members>
+        <members>Folder2/Doc5.png</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityLockoutEmailTemplate</members>
+        <members>unfiled$public/CommunityVerificationEmailTemplate</members>
+        <members>unfiled$public/CommunityWelcomeEmailTemplate</members>
+        <members>unfiled$public/MarketingProductInquiryResponse</members>
+        <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
+        <members>unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE</members>
+        <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE</members>
+        <members>unfiled$public/SalesNewCustomerEmail</members>
+        <members>unfiled$public/SupportCaseAssignmentNotification</members>
+        <members>unfiled$public/SupportCaseCreatedPhoneInquiries</members>
+        <members>unfiled$public/SupportCaseCreatedWebInquiries</members>
+        <members>unfiled$public/SupportCaseResponse</members>
+        <members>unfiled$public/SupportEscalatedCaseNotification</members>
+        <members>unfiled$public/SupportEscalatedCaseReassignment</members>
+        <members>unfiled$public/SupportSelfServiceNewLoginandPassword</members>
+        <members>unfiled$public/SupportSelfServiceResetPassword</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>DLCObj18__c.All</members>
+        <members>DLObj1__c.All</members>
+        <name>ListView</name>
     </types>
     <types>
         <members>PRS1</members>
@@ -139,5 +210,17 @@
         <members>Work%2Ecom Only User</members>
         <members>clone profile</members>
         <name>Profile</name>
+    </types>
+    <types>
+        <members>ACCObjTest1__c.SairecordType1</members>
+        <members>ACCObjTest1__c.SairecordType2</members>
+        <members>Dbj1__c.Dbj_RC1</members>
+        <members>Dbj1__c.Dbj_RC2</members>
+        <members>Obj900__c.Obj900RC1</members>
+        <name>RecordType</name>
+    </types>
+    <types>
+        <members>SiteSamples</members>
+        <name>StaticResource</name>
     </types>
 </Package>
