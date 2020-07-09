@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MyDomainDiscoverableLogin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexHandler>MyDomainDiscLoginDefaultHandler</apexHandler>
+    <executeApexHandlerAs>kcs4u4-rjzc@force.com</executeApexHandlerAs>
+    <usernameLabel>TestVas2021</usernameLabel>
+</MyDomainDiscoverableLogin>

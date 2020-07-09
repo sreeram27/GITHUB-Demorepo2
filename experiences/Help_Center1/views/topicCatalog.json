@@ -1,0 +1,61 @@
+{
+  "appPageId" : "5b8da4b8-8e87-4f9f-8142-a67513ce745b",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "889ed66c-a467-47ee-94ed-a4529e752f54",
+  "label" : "Topic Catalog",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "bannerText" : "",
+        "bannerTextWithKnowledge" : "Explore other <a href=\"javascript:void(0)\" class=\"headlineArticles\">articles</a> and <a href=\"javascript:void(0)\" class=\"headlineDiscussions\">discussions</a> on this topic.",
+        "bannerTextWithoutKnowledge" : "Explore other <a href=\"javascript:void(0)\" class=\"headlineDiscussions\">discussions</a> on this topic.",
+        "pageType" : "",
+        "showSubTopics" : true,
+        "title" : "Topics",
+        "uniqueNameOrId" : ""
+      },
+      "componentName" : "forceCommunity:headline",
+      "id" : "7ccdbd77-1efb-4905-933f-684bed54ab29",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "3b03825a-d819-4407-8331-4abd5d9acc32",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "forceCommunity:topicCatalog",
+      "id" : "1c4433e3-de17-4805-b8fa-c49a74112bdf",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "2a80dda9-13fd-460e-9468-d1f06979d104",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "6b40f474-aea0-4ab5-addd-a89b3486b65e",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "description" : "",
+        "metaTags" : "",
+        "title" : "Topic Catalog"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "621952f4-4415-4ddd-bc02-69041cf97444",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "85aa5944-e686-4200-b84f-d01194024f1c",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "topic-catalog"
+}

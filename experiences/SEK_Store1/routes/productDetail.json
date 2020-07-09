@@ -1,0 +1,9 @@
+{
+  "activeViewId" : "d1828f81-a73e-4bd7-9575-429aa531808a",
+  "appPageId" : "65550390-4173-4ae0-8693-b0aeef889a0d",
+  "id" : "7570d090-aeb7-4b5e-8035-cfe01a1f6705",
+  "label" : "Product Detail",
+  "routeType" : "detail-01t",
+  "type" : "route",
+  "urlPrefix" : "product"
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmbeddedServiceConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <areGuestUsersAllowed>false</areGuestUsersAllowed>
+    <embeddedServiceAppointmentSettings>
+        <enabled>true</enabled>
+        <shouldShowExistingAppointment>false</shouldShowExistingAppointment>
+        <shouldShowNewAppointment>true</shouldShowNewAppointment>
+    </embeddedServiceAppointmentSettings>
+    <embeddedServiceCustomLabels>
+        <customLabel>LA_Container_Base_EndOfDialog_04IB0000000TN6V_8091803</customLabel>
+        <labelKey>LA_Container_Base_EndOfDialog</labelKey>
+    </embeddedServiceCustomLabels>
+    <embeddedServiceCustomLabels>
+        <customLabel>LA_Container_Base_Minimize_04IB0000000TN6V_6633223</customLabel>
+        <labelKey>LA_Container_Base_Minimize</labelKey>
+    </embeddedServiceCustomLabels>
+    <embeddedServiceCustomLabels>
+        <customLabel>LA_Container_Base_Close_04IB0000000TN6V_7553357</customLabel>
+        <labelKey>LA_Container_Base_Close</labelKey>
+    </embeddedServiceCustomLabels>
+    <masterLabel>Chat Deployment</masterLabel>
+    <shouldHideAuthDialog>false</shouldHideAuthDialog>
+    <site>Help_Center</site>
+</EmbeddedServiceConfig>

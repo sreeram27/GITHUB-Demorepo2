@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OauthCustomScope xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used for Represents a permission defining the protected data</description>
+    <developerName>Test_CustomScope</developerName>
+    <isProtected>false</isProtected>
+    <isPublic>true</isPublic>
+    <masterLabel>Test_CustomScope</masterLabel>
+</OauthCustomScope>
