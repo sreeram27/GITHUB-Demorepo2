@@ -377,6 +377,10 @@
         <name>CompactLayout</name>
     </types>
     <types>
+        <members>Test_Mobile</members>
+        <name>ConnectedApp</name>
+    </types>
+    <types>
         <members>ACCObjTest1__c.ACCField1__c</members>
         <members>ACCObjTest1__c.ACCField2__c</members>
         <members>ACCObjTest1__c.AutorabitExtId__c</members>
@@ -2112,6 +2116,10 @@
         <name>EmailTemplate</name>
     </types>
     <types>
+        <members>IframeWhiteListUrlSettings</members>
+        <name>IframeWhiteListUrlSettings</name>
+    </types>
+    <types>
         <members>addNewShares</members>
         <members>existingShares</members>
         <members>lightningSharingWrapper</members>
@@ -2369,6 +2377,7 @@
         <name>StaticResource</name>
     </types>
     <types>
+        <members>X0H4B00000006YvU</members>
         <members>X0H4B0000000TXnB</members>
         <name>UserProvisioningConfig</name>
     </types>
