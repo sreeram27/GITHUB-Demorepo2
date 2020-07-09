@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>49.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
         <members>A0001</members>
         <members>A0071</members>
-        <members>A0123</members>
         <members>A01234</members>
         <members>A01234567</members>
         <members>A0123678</members>
@@ -362,6 +361,10 @@
         <members>setExpId</members>
         <members>setStartUrl</members>
         <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>myTest</members>
+        <name>BlacklistedConsumer</name>
     </types>
     <types>
         <members>Lead.LeadProcess1</members>
@@ -2116,6 +2119,10 @@
         <name>LightningComponentBundle</name>
     </types>
     <types>
+        <members>LightningOnboardingConfig</members>
+        <name>LightningOnboardingConfig</name>
+    </types>
+    <types>
         <members>ACR2__c.All</members>
         <members>ACR3__c.All</members>
         <members>AR_Obj1__c.All</members>
@@ -2243,6 +2250,10 @@
         <name>ManagedTopics</name>
     </types>
     <types>
+        <members>apexEmailNotifications</members>
+        <name>NetworkBranding</name>
+    </types>
+    <types>
         <members>PRS1</members>
         <members>PRS2</members>
         <name>PermissionSet</name>
@@ -2356,6 +2367,10 @@
     <types>
         <members>SiteSamples</members>
         <name>StaticResource</name>
+    </types>
+    <types>
+        <members>X0H4B0000000TXnB</members>
+        <name>UserProvisioningConfig</name>
     </types>
     <types>
         <members>AR_Obj1__c.ARPValidationRule1</members>
