@@ -102,8 +102,8 @@
         <fullName>ACL101</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>ACL11101</shortDescription>
-        <value>1111</value>
+        <shortDescription>ACL101</shortDescription>
+        <value>1</value>
     </labels>
     <labels>
         <fullName>ACL11</fullName>
