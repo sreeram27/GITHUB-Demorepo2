@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedContentType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is the description for my content type</description>
+    <developerName>myContentType</developerName>
+    <managedContentNodeTypes>
+        <helpText>Help Text for title</helpText>
+        <isLocalizable>true</isLocalizable>
+        <isRequired>true</isRequired>
+        <nodeLabel>Content Title</nodeLabel>
+        <nodeName>title</nodeName>
+        <nodeType>NAMEFIELD</nodeType>
+        <placeholderText>Placeholder Text for title</placeholderText>
+    </managedContentNodeTypes>
+    <managedContentNodeTypes>
+        <helpText>Help Text for Content Text</helpText>
+        <isLocalizable>true</isLocalizable>
+        <isRequired>false</isRequired>
+        <nodeLabel>Content Text</nodeLabel>
+        <nodeName>textnode</nodeName>
+        <nodeType>TEXT</nodeType>
+        <placeholderText>Placeholder Text for Content Text</placeholderText>
+    </managedContentNodeTypes>
+    <managedContentNodeTypes>
+        <isLocalizable>false</isLocalizable>
+        <isRequired>false</isRequired>
+        <nodeLabel>Content RichText</nodeLabel>
+        <nodeName>richtextnode</nodeName>
+        <nodeType>RTE</nodeType>
+    </managedContentNodeTypes>
+    <managedContentNodeTypes>
+        <isLocalizable>false</isLocalizable>
+        <isRequired>false</isRequired>
+        <nodeLabel>Content MultilineText</nodeLabel>
+        <nodeName>multilinetextnode</nodeName>
+        <nodeType>MTEXT</nodeType>
+    </managedContentNodeTypes>
+    <managedContentNodeTypes>
+        <isLocalizable>false</isLocalizable>
+        <isRequired>false</isRequired>
+        <nodeLabel>Content Image</nodeLabel>
+        <nodeName>imagenode</nodeName>
+        <nodeType>IMG</nodeType>
+    </managedContentNodeTypes>
+    <masterLabel>My Content Type</masterLabel>
+</ManagedContentType>
