@@ -130,6 +130,17 @@
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>AutoRabitExtId__c</fullName>
+        <description>External Id created by AutoRABIT</description>
+        <externalId>true</externalId>
+        <label>AutoRabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CanDataSubjectOptOut</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -146,18 +157,15 @@
         <fullName>Name</fullName>
         <trackHistory>false</trackHistory>
     </fields>
-    <listViews>
-        <fullName>All_DataUsePurposes</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All Data Use Purposes</label>
-    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>LegalBasis</customTabListAdditionalFields>
         <customTabListAdditionalFields>Description</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Purpose</customTabListAdditionalFields>
         <customTabListAdditionalFields>LastModifiedDate</customTabListAdditionalFields>
         <customTabListAdditionalFields>LastModifiedBy</customTabListAdditionalFields>
         <searchResultsAdditionalFields>LegalBasis</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Description</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Purpose</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LastModifiedDate</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LastModifiedBy</searchResultsAdditionalFields>
     </searchLayouts>

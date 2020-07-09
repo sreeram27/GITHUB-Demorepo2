@@ -85,30 +85,30 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>ListClean</actionName>
+        <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>ListClean</actionName>
+        <actionName>List</actionName>
         <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>ListClean</actionName>
+        <actionName>List</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>List</actionName>
+        <actionName>ListClean</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>List</actionName>
+        <actionName>ListClean</actionName>
         <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>List</actionName>
+        <actionName>ListClean</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
@@ -183,30 +183,30 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>ViewCustomerPortalUser</actionName>
+        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>ViewCustomerPortalUser</actionName>
+        <actionName>View</actionName>
         <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>ViewCustomerPortalUser</actionName>
+        <actionName>View</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>View</actionName>
+        <actionName>ViewCustomerPortalUser</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>View</actionName>
+        <actionName>ViewCustomerPortalUser</actionName>
         <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>View</actionName>
+        <actionName>ViewCustomerPortalUser</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
@@ -225,22 +225,9 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
-    <externalSharingModel>Private</externalSharingModel>
-    <fields>
-        <fullName>AccountLookUpField__c</fullName>
-        <deleteConstraint>SetNull</deleteConstraint>
-        <externalId>false</externalId>
-        <label>AccountLookUpField</label>
-        <referenceTo>ACR2__c</referenceTo>
-        <relationshipLabel>Accounts</relationshipLabel>
-        <relationshipName>Accounts</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
-    </fields>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>AccountNumber</fullName>
         <trackFeedHistory>false</trackFeedHistory>
@@ -303,6 +290,10 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>CustomerPriority__c</fullName>
         <externalId>false</externalId>
         <label>Customer Priority</label>
@@ -353,7 +344,14 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>IsBuyer</fullName>
+    </fields>
+    <fields>
         <fullName>IsCustomerPortal</fullName>
+    </fields>
+    <fields>
+        <fullName>IsExcludedFromRealign</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
         <fullName>IsPartner</fullName>
@@ -362,6 +360,30 @@
     <fields>
         <fullName>Jigsaw</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>LiveText__Active__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>NaicsCode</fullName>
@@ -577,10 +599,9 @@
     </listViews>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypes>
-        <fullName>ARC1</fullName>
+        <fullName>Test</fullName>
         <active>true</active>
-        <description>test</description>
-        <label>ARC1</label>
+        <label>Test</label>
         <picklistValues>
             <picklist>AccountSource</picklist>
             <values>
@@ -762,6 +783,17 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>LiveText__Active__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Ownership</picklist>
             <values>
                 <fullName>Other</fullName>
@@ -898,5 +930,164 @@
         <showsLocation>true</showsLocation>
         <showsStatus>true</showsStatus>
         <url>http://www.genwatt.com/genwatt/billing.htm?actname={!Account_Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>LiveText__Opt_in_for_Text_Messages_list</fullName>
+        <availability>online</availability>
+        <description>This button is for List View</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Opt-in for Text Messages</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)} 
+			{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+			{!REQUIRESCRIPT(&apos;/support/console/31.0/integration.js&apos;)}; 
+
+			var records = {!GETRECORDIDS($ObjectType.Account)}; 
+			if (records[0] == null) 
+			{ 
+				alert(&quot;Please select at least one account&quot;) 
+			} 
+			else{ 
+				var packagePrefix = &quot;LiveText__&quot;; 
+				var recordType = &quot;account&quot;; 
+				var recordIds = &quot;&quot;; 
+				var optOutField = &apos;&apos;; 
+				var optOutDefaultValue = &apos;yes&apos;; 
+				var smsType = &apos;&apos;; 
+				var userId = &apos;{!$User.Id}&apos;; 
+				var elementIdVar = &apos;&apos;; 
+				var showUserDropDown = false; 
+				var dialogTitle = &apos;&apos;; 
+				var queryString = &apos;&apos;; 
+
+				for (var n in records) { 
+					if(n == &apos;remove&apos; || n == &apos;indexOf&apos;) continue; 
+					recordIds = recordIds + records[n]; 
+				
+					if (n != records.length-1) { 
+						recordIds = recordIds + &quot;,&quot;; 
+					} 
+				} 
+
+				var e = document.querySelector(&apos;select[name$=&quot;fcf&quot;]&apos;);
+				var selectedView = e.options[e.selectedIndex].value; 
+				
+				var returnURL = &apos;/001?fcf=&apos;+ selectedView + &apos;&amp;rolodexIndex=-1&amp;page=1&apos;; 
+
+				var urlStart =  &apos;https://&apos;+window.location.hostname+&apos;/apex/LiveText__LiveTextOptinStatusPage?recordType=&apos;+recordType +
+				 				&apos;&amp;records=&apos;+recordIds+&apos;&amp;retURL=&apos;+returnURL; 
+
+				if(sforce.console.isInConsole()) { 
+					sforce.console.openPrimaryTab(null,urlStart + &apos;&amp;inConsole=yes&amp;optType=1&apos;, true, &apos;Opt-in for Text Messages&apos;); 
+				}else{ 
+					window.top.location.href = urlStart + &apos;&amp;inConsole=no&amp;optType=1&apos;; 
+				} 
+			}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>LiveText__Opt_out_for_Text_Messages_list</fullName>
+        <availability>online</availability>
+        <description>This button is for List View</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Opt-out for Text Messages</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)} 
+			{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+			{!REQUIRESCRIPT(&apos;/support/console/31.0/integration.js&apos;)}; 
+
+			var records = {!GETRECORDIDS($ObjectType.Account)}; 
+			if (records[0] == null) 
+			{ 
+				alert(&quot;Please select at least one account&quot;) 
+			} 
+			else{ 
+				var packagePrefix = &quot;LiveText__&quot;; 
+				var recordType = &quot;account&quot;; 
+				var recordIds = &quot;&quot;; 
+				var optOutField = &apos;&apos;; 
+				var optOutDefaultValue = &apos;yes&apos;; 
+				var smsType = &apos;&apos;; 
+				var userId = &apos;{!$User.Id}&apos;; 
+				var elementIdVar = &apos;&apos;; 
+				var showUserDropDown = false; 
+				var dialogTitle = &apos;&apos;; 
+				var queryString = &apos;&apos;; 
+
+				for (var n in records) { 
+					if(n == &apos;remove&apos; || n == &apos;indexOf&apos;) continue; 
+					recordIds = recordIds + records[n]; 
+				
+					if (n != records.length-1) { 
+						recordIds = recordIds + &quot;,&quot;; 
+					} 
+				} 
+
+				var e = document.querySelector(&apos;select[name$=&quot;fcf&quot;]&apos;);
+				var selectedView = e.options[e.selectedIndex].value; 
+				
+				var returnURL = &apos;/001?fcf=&apos;+ selectedView + &apos;&amp;rolodexIndex=-1&amp;page=1&apos;; 
+
+				var urlStart =  &apos;https://&apos;+window.location.hostname+&apos;/apex/LiveText__LiveTextOptinStatusPage?recordType=&apos;+recordType+
+				 				&apos;&amp;records=&apos;+recordIds+&apos;&amp;retURL=&apos;+returnURL; 
+				 				
+				if(sforce.console.isInConsole()) { 
+					sforce.console.openPrimaryTab(null, urlStart + &apos;&amp;inConsole=yes&amp;optType=0&apos;, true, &apos;Opt-out for Text Messages&apos;); 
+				}else{ 
+					window.top.location.href = urlStart + &apos;&amp;inConsole=no&amp;optType=0&apos;; 
+				} 
+			
+				console.log(&apos;Record Ids are &apos;+ recordIds); 
+			}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>LiveText__Send_Bulk_SMS</fullName>
+        <availability>online</availability>
+        <description>Sends text message to selected records</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Text to List</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)} 
+           {!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+            {!REQUIRESCRIPT(&apos;/support/console/31.0/integration.js&apos;)}; 
+
+            var records = {!GETRECORDIDS($ObjectType.Contact)}; 
+            var hasShortCodeNumber = sforce.apex.execute(&quot;LiveText.RetrievePreferredPhoneNumber&quot;,&quot;agentHasShortcodeNumberAssigned&quot;,{});
+            if (records[0] == null){ 
+                alert(&quot;Please select at least one contact&quot;);
+            }else if((records.length &gt; 25) &amp;&amp; hasShortCodeNumber==&quot;false&quot;){ 
+                alert(&quot;A maximum of 25 text messages may be sent at once. Please select fewer recipients and try again.&quot;); 
+            } 
+            else{ 
+                var packagePrefix = &quot;LiveText__&quot;; 
+                var recordType = &quot;account&quot;; 
+                var recordIds = &quot;&quot;;
+
+                for (var n in records) { 
+                    if(n == &apos;remove&apos; || n == &apos;indexOf&apos;) continue; 
+                    recordIds = recordIds + records[n]; 
+                    
+                    if (n != records.length-1) { 
+                        recordIds = recordIds + &quot;,&quot;; 
+                    } 
+                }
+
+                var storageId = sforce.apex.execute(&quot;LiveText.RetrievePreferredPhoneNumber&quot;,&quot;saveToStorage&quot;,{stringToSave:recordIds});
+                var urlStart = &apos;https://&apos;+window.location.hostname+&apos;/apex/LiveText__LiveTextBulkSms?recordType=&apos;+recordType+&apos;&amp;storageId=&apos;+storageId; 
+                
+                if(sforce.console.isInConsole()) { 
+                    sforce.console.openPrimaryTab(null, urlStart, true);
+                } else { 
+                    window.top.location.href = urlStart; 
+                } 
+            }</url>
     </webLinks>
 </CustomObject>

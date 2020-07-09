@@ -161,14 +161,14 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>RelatedRecordId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Status</fullName>
         <trackHistory>false</trackHistory>
     </fields>
-    <listViews>
-        <fullName>All_AuthorizationFormConsents</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All Authorization Form Consents</label>
-    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>ConsentGiver</customTabListAdditionalFields>
         <customTabListAdditionalFields>AuthorizationFormText</customTabListAdditionalFields>

@@ -1,0 +1,33 @@
+{
+  "definitionName" : "b2b:branding-b2b",
+  "id" : "b7f09540-f3b6-4150-82eb-40494c14480d",
+  "label" : "B2B Commerce",
+  "type" : "brandingSet",
+  "values" : {
+    "ActionColor" : "#2574A9",
+    "BorderColor" : "#D4D4D4",
+    "CardBackgroundColor" : "rgba(255, 255, 255, 0)",
+    "CompanyLogo" : "",
+    "DetailTextColor" : "#696969",
+    "ErrorFontColor" : "#ff9e9e",
+    "HeaderFonts" : "Roboto Condensed",
+    "LinkColor" : "#2574A9",
+    "LoginBackgroundColor" : "#F4F4F4",
+    "LoginBackgroundImage" : "../../../../sfsites/picasso/core/external/salesforceIdentity/images/background.jpg?v=1",
+    "OverlayTextColor" : "#FFFFFF",
+    "PrimaryFont" : "Roboto Condensed",
+    "TextColor" : "#333",
+    "TextTransformStyle" : "uppercase",
+    "_ActionColorDarker" : "#135F90",
+    "_ActionColorTrans" : "rgba(25, 124, 190, 0.9)",
+    "_HoverColor" : "rgba(25, 124, 190, 0.05)",
+    "_LinkColorDarker" : "#135F90",
+    "_OverlayTextColorShadow" : "#000000",
+    "_brandNavigationBarBackgroundColor" : "rgb(255,255,255)",
+    "_brandNavigationItemBackgroundColorHover" : "rgba(0,0,0,.2)",
+    "_brandNavigationItemDividerColor" : "rgba(255, 255, 255, 0.2)",
+    "brandNavigationBackgroundColor" : "rgb(255,255,255)",
+    "brandNavigationBarBackgroundColor" : "rgb(255,255,255)",
+    "brandNavigationColorText" : "rgb(0,0,0)"
+  }
+}

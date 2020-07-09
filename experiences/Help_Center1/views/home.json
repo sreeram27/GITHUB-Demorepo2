@@ -1,0 +1,56 @@
+{
+  "appPageId" : "5b8da4b8-8e87-4f9f-8142-a67513ce745b",
+  "componentName" : "siteforce:sldsThreeCol444Layout",
+  "id" : "fcc7d527-cc24-4285-8c44-02227a6f3ca0",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "showTitle" : false,
+        "title" : "Featured Topics"
+      },
+      "componentName" : "forceTopic:featuredTopics",
+      "id" : "1da7cc5e-ca44-4661-af66-2638f9747d55",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "52998675-a726-404e-9d09-33077ae9ff4b",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "849989e7-5c87-4750-a409-bc3fdabf0b92",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "b017e6e1-ec1c-4585-b1a8-734540b7a3af",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "474465f9-83b5-4ec8-b31f-d267368e50ef",
+    "regionName" : "sidebarAlt",
+    "type" : "region"
+  }, {
+    "id" : "bc307a2c-ca3f-46b0-a151-c457bd6eb06e",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "description" : "",
+        "metaTags" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "858a305a-351a-4c02-88e5-91c71aa6f230",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "5c067b4d-2780-4f8e-86e9-a0dee93015f0",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Home",
+  "type" : "view",
+  "viewType" : "home"
+}

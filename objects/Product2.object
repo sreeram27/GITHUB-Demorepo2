@@ -127,21 +127,24 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableDataTranslation>true</enableDataTranslation>
     <enableFeeds>false</enableFeeds>
     <fields>
-        <fullName>AutorabitExtId__c</fullName>
-        <description>External Id created by AutoRABIT</description>
-        <externalId>true</externalId>
-        <label>AutorabitExtId__c</label>
-        <length>18</length>
-        <required>false</required>
+        <fullName>CanUseQuantitySchedule</fullName>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CanUseRevenueSchedule</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
+        <translateData>true</translateData>
     </fields>
     <fields>
         <fullName>DisplayUrl</fullName>
@@ -168,15 +171,40 @@
     <fields>
         <fullName>Name</fullName>
         <trackHistory>false</trackHistory>
+        <translateData>true</translateData>
+    </fields>
+    <fields>
+        <fullName>NumberOfQuantityInstallments</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>NumberOfRevenueInstallments</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>ProductCode</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>QuantityInstallmentPeriod</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>QuantityScheduleType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>QuantityUnitOfMeasure</fullName>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RevenueInstallmentPeriod</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>RevenueScheduleType</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>StockKeepingUnit</fullName>

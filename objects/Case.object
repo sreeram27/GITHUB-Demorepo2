@@ -43,30 +43,30 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>CloneAsChild</actionName>
+        <actionName>Clone</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>CloneAsChild</actionName>
+        <actionName>Clone</actionName>
         <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>CloneAsChild</actionName>
+        <actionName>Clone</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Clone</actionName>
+        <actionName>CloneAsChild</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Clone</actionName>
+        <actionName>CloneAsChild</actionName>
         <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Clone</actionName>
+        <actionName>CloneAsChild</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
@@ -265,6 +265,12 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -440,6 +446,13 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>SourceId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Status</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
@@ -539,6 +552,51 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWriteTransfer</sharingModel>
+    <webLinks>
+        <fullName>LiveText__Send_Bulk_SMS</fullName>
+        <availability>online</availability>
+        <description>Sends text message to selected records</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Text to List</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)} 
+            {!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+            {!REQUIRESCRIPT(&apos;/support/console/31.0/integration.js&apos;)}; 
+
+            var records = {!GETRECORDIDS($ObjectType.Case)}; 
+            var hasShortCodeNumber = sforce.apex.execute(&quot;LiveText.RetrievePreferredPhoneNumber&quot;,&quot;agentHasShortcodeNumberAssigned&quot;,{});
+            if (records[0] == null){ 
+                alert(&quot;Please select at least one case&quot;);
+            }else if((records.length &gt; 25) &amp;&amp; hasShortCodeNumber==&quot;false&quot;){ 
+                alert(&quot;A maximum of 25 text messages may be sent at once. Please select fewer recipients and try again.&quot;); 
+            } 
+            else{ 
+                var packagePrefix = &quot;LiveText__&quot;; 
+                var recordType = &quot;case&quot;; 
+                var recordIds = &quot;&quot;;
+
+                for (var n in records) { 
+                    if(n == &apos;remove&apos; || n == &apos;indexOf&apos;) continue; 
+                    recordIds = recordIds + records[n]; 
+                    
+                    if (n != records.length-1) { 
+                        recordIds = recordIds + &quot;,&quot;; 
+                    } 
+                }
+
+                var storageId = sforce.apex.execute(&quot;LiveText.RetrievePreferredPhoneNumber&quot;,&quot;saveToStorage&quot;,{stringToSave:recordIds});
+                var urlStart = &apos;https://&apos;+window.location.hostname+&apos;/apex/LiveText__LiveTextBulkSms?recordType=&apos;+recordType+&apos;&amp;storageId=&apos;+storageId; 
+                
+                if(sforce.console.isInConsole()) { 
+                    sforce.console.openPrimaryTab(null, urlStart, true);
+                } else { 
+                    window.top.location.href = urlStart; 
+                } 
+            }</url>
+    </webLinks>
     <webLinks>
         <fullName>UpsellCrosssellOpportunity</fullName>
         <availability>online</availability>
