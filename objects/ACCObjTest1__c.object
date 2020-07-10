@@ -271,8 +271,14 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>1</label>
                 </value>
             </valueSetDefinition>
@@ -385,7 +391,7 @@
         <picklistValues>
             <picklist>PLt1__c</picklist>
             <values>
-                <fullName>1</fullName>
+                <fullName>2</fullName>
                 <default>true</default>
             </values>
         </picklistValues>
@@ -406,7 +412,7 @@
     </recordTypes>
     <recordTypes>
         <fullName>SairecordType2</fullName>
-        <active>true</active>
+        <active>false</active>
         <description>zxc</description>
         <label>SairecordType2</label>
         <picklistValues>
@@ -433,7 +439,7 @@
         <picklistValues>
             <picklist>PLt1__c</picklist>
             <values>
-                <fullName>1</fullName>
+                <fullName>2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
