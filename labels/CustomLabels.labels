@@ -54,14 +54,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACCL1</shortDescription>
-        <value>Test11</value>
+        <value>211</value>
     </labels>
     <labels>
         <fullName>ACCL3</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACCL3</shortDescription>
-        <value>3</value>
+        <value>3111</value>
     </labels>
     <labels>
         <fullName>ACCTest</fullName>
@@ -110,7 +110,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>S22CL2</shortDescription>
-        <value>ad1111111111</value>
+        <value>11</value>
     </labels>
     <labels>
         <fullName>ACL24</fullName>
