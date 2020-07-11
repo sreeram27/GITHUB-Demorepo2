@@ -23,6 +23,7 @@
     <enableLotusNotesImages>false</enableLotusNotesImages>
     <enableMassEnableReportBuilder>true</enableMassEnableReportBuilder>
     <enableNewChartsEngine>true</enableNewChartsEngine>
+    <enableOrgHasWatchlistEnabled>false</enableOrgHasWatchlistEnabled>
     <enableQueryLiveConnectors>false</enableQueryLiveConnectors>
     <enableRemoveFooterForRepDisplay>false</enableRemoveFooterForRepDisplay>
     <enableRemoveFooterFromRepExp>false</enableRemoveFooterFromRepExp>
@@ -33,7 +34,7 @@
     <enableWaveRecordNavigation>false</enableWaveRecordNavigation>
     <enableWaveReplication>false</enableWaveReplication>
     <enableWaveSharingInheritance>false</enableWaveSharingInheritance>
-    <enableWaveTemplate>false</enableWaveTemplate>
+    <enableWaveTemplate>true</enableWaveTemplate>
     <enableWaveTrendedDatasetCleanup>false</enableWaveTrendedDatasetCleanup>
     <replaceBlankMeasuresWithNulls>false</replaceBlankMeasuresWithNulls>
     <turnOnTimeZones>false</turnOnTimeZones>

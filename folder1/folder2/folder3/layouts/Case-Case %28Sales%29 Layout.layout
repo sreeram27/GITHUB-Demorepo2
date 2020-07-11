@@ -26,7 +26,7 @@
         </feedFilters>
         <fullWidthFeed>true</fullWidthFeed>
         <hideSidebar>true</hideSidebar>
-        <highlightExternalFeedItems>false</highlightExternalFeedItems>
+        <highlightExternalFeedItems>true</highlightExternalFeedItems>
         <rightComponents>
             <componentType>HelpAndToolLinks</componentType>
         </rightComponents>
@@ -45,7 +45,7 @@
         <rightComponents>
             <componentType>CustomButtons</componentType>
         </rightComponents>
-        <useInlineFiltersInConsole>false</useInlineFiltersInConsole>
+        <useInlineFiltersInConsole>true</useInlineFiltersInConsole>
     </feedLayout>
     <headers>PersonalTagging</headers>
     <headers>PublicTagging</headers>
@@ -217,9 +217,6 @@
             <quickActionName>Case.LogACall</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>Case.CaseComment</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
             <quickActionName>Case.ChangeStatus</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
@@ -291,7 +288,7 @@
     <showRunAssignmentRulesCheckbox>true</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>true</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1a0000012AH9</masterLabel>
+        <masterLabel>00hB0000000Yd1Z</masterLabel>
         <sizeX>3</sizeX>
         <sizeY>4</sizeY>
         <summaryLayoutItems>

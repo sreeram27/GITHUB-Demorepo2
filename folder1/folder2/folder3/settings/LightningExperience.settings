@@ -2,7 +2,7 @@
 <LightningExperienceSettings xmlns="http://soap.sforce.com/2006/04/metadata">
     <enableAccessCheckCrucPref>false</enableAccessCheckCrucPref>
     <enableApiUserLtngOutAccessPref>false</enableApiUserLtngOutAccessPref>
-    <enableAuraCDNPref>false</enableAuraCDNPref>
+    <enableAuraCDNPref>true</enableAuraCDNPref>
     <enableAuraDepAccessChksCRUCPref>false</enableAuraDepAccessChksCRUCPref>
     <enableFeedbackInMobile>true</enableFeedbackInMobile>
     <enableIE11DeprecationMsgHidden>false</enableIE11DeprecationMsgHidden>
@@ -16,14 +16,13 @@
     <enableLEXExtensionRequiredFields>false</enableLEXExtensionRequiredFields>
     <enableLEXExtensionTrailhead>false</enableLEXExtensionTrailhead>
     <enableLEXOnIpadEnabled>false</enableLEXOnIpadEnabled>
-    <enableLexEndUsersNoSwitching>true</enableLexEndUsersNoSwitching>
+    <enableLexEndUsersNoSwitching>false</enableLexEndUsersNoSwitching>
     <enableNavPersonalizationOptOut>false</enableNavPersonalizationOptOut>
     <enableRemoveThemeBrandBanner>false</enableRemoveThemeBrandBanner>
     <enableS1BannerPref>true</enableS1BannerPref>
     <enableS1BrowserEnabled>true</enableS1BrowserEnabled>
     <enableS1DesktopEnabled>true</enableS1DesktopEnabled>
     <enableS1UiLoggingEnabled>true</enableS1UiLoggingEnabled>
-    <enableSkypeChatEnabled>false</enableSkypeChatEnabled>
     <enableSparkAllUsers>false</enableSparkAllUsers>
     <enableSparkConversationEnabled>false</enableSparkConversationEnabled>
     <enableSplitViewOnStandard>false</enableSplitViewOnStandard>

@@ -11,9 +11,9 @@
     <caseMergeInLightning>false</caseMergeInLightning>
     <closeCaseThroughStatusChange>false</closeCaseThroughStatusChange>
     <defaultCaseFeedLayoutOn>true</defaultCaseFeedLayoutOn>
-    <defaultCaseOwner>saikumar-sb.three@autorabit.com</defaultCaseOwner>
+    <defaultCaseOwner>saikumar.k-uzzr@force.com</defaultCaseOwner>
     <defaultCaseOwnerType>User</defaultCaseOwnerType>
-    <defaultCaseUser>saikumar-sb.three@autorabit.com</defaultCaseUser>
+    <defaultCaseUser>saikumar.k-uzzr@force.com</defaultCaseUser>
     <emailToCase>
         <enableEmailToCase>false</enableEmailToCase>
     </emailToCase>
@@ -21,8 +21,6 @@
     <enableCollapseEmailThread>true</enableCollapseEmailThread>
     <enableEarlyEscalationRuleTriggers>false</enableEarlyEscalationRuleTriggers>
     <enableEscalateQfiToCaseInternal>false</enableEscalateQfiToCaseInternal>
-    <enableEscalateQfiToCaseNetworks>false</enableEscalateQfiToCaseNetworks>
-    <enableExtNetworksCaseFeedEnabled>false</enableExtNetworksCaseFeedEnabled>
     <enableSuggestedSolutions>true</enableSuggestedSolutions>
     <escalateCaseBefore>false</escalateCaseBefore>
     <notifyContactOnCaseComment>false</notifyContactOnCaseComment>
