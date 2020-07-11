@@ -1,0 +1,1548 @@
+<apex:page standardController="LiveText__Conversation_Header__c"  extensions="LiveText.ConsoleIntegrationController" action="{!notifyVersionAndCallbackUrl}" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <apex:stylesheet value="{!URLFOR($Resource.LiveText__SLDS202, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <c:ScriptsComponent id="scmp"/>
+    <apex:includeScript value="/soap/ajax/36.0/connection.js"/>
+    <apex:includeScript value="/support/console/36.0/integration.js"/>
+    <apex:includeScript value="{!URLFOR($Resource.LiveText__LiveText, '/js/libphonenumber.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.LiveText__LiveText, '/js/livetextglobal.js')}" />
+
+    <style type="text/css">
+        #liveTextWindowBodyId{position: absolute;bottom: 0px;top: 0px; left: 0px; right: 0px; background-color: #eceeee; }
+        #liveTextRequestPanelHeaderContainer{border-bottom: 1px solid #dedede;background-color: #f2f3f3;color: #000000;height: 30px;-moz-border-radius: 5px 5px 0 0;-webkit-border-radius: 5px 5px 0 0;border-radius: 5px 5px 0 0;padding: 7px 7px 7px 7px;display: block;font-size: 65%;font-weight: bold;}
+        #liveTextRequestPanelHeader{font-weight: bold;}
+        #liveTextListContainer{border-width: 0;overflow-y:auto;}
+        #liveTextRequestCount{text-align: center;float: left;font-weight: bold;padding: 0 2px 0 3px;font-size: 11px;font-family: Arial,Helvetica,sans-serif;}
+        #liveTextStatusList{float:right;padding:0px 17px 0px 0px;background-color: #f2f3f3;}
+        #selectIcon{float:right;width:15px;height:15px;background-position:left center;background-repeat:no-repeat;background-image: url({!URLFOR($Resource.LiveText,'images/offlineDot.png')});}
+        a:link {color: #015ba7 !important;}
+        .headerText{font-size:11px;font-weight:bold;font-family:Arial,Helvetica,sans-serif;color:#222}
+        .phoneLabel{font-size:13px;font-weight:bold;font-family:Arial,Helvetica,sans-serif;color:#015ba7;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+        .phoneDetailsLabel{font-size:12px;font-weight:normal;font-family:Arial,Helvetica,sans-serif;color:#222;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;margin-top:2px;}
+        .timerLabel{font-size:12px;font-weight:normal;font-family:Arial,Helvetica,sans-serif;color:gray;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+        .timerDiv{margin-top:8px;margin-right:7px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+        .notificationButton{text-align:center;border-top:1px solid #eceeee;border-radius:0 !important;}
+        div.LA_Warning {background-color: #ffffdc;border: 1px solid #f8e38e;border-radius: 5px;box-shadow: 0 3px 0 -2px #fff inset;display: block;margin: 20px;z-index:999999;}
+        div.LA_Warning div.LA_Warning_Title {color: #222;font-size: 1.16em;font-weight: bold;margin-right: 10px;margin-top: 10px;}
+        div.LA_Warning div.LA_Warning_Text {color: #222;font-weight: normal;margin-bottom: 10px;margin-right: 10px;margin-top: 5px;}
+        div.LA_Warning_Img {width:32px;height:32px;background-position: center;background-repeat:no-repeat;background-image: url({!URLFOR($Resource.LiveText,'images/error32.png')})};
+     </style>
+    <script>
+        Visualforce.remoting.timeout = 120000;
+
+        // W-5435202 - JSENCODE the labels used in the page
+        window.$Label = window.$Label || {};
+    	$Label.SessionTimeoutTitle = '{!JSENCODE($Label.SessionTimeoutTitle)}';
+    	$Label.ConnectionLostTitle = '{!JSENCODE($Label.ConnectionLostTitle)}';
+    	$Label.ConnectionLostMsg = '{!JSENCODE($Label.ConnectionLostMsg)}'; 
+        $Label.SessionTimeout = '{!JSENCODE($Label.SessionTimeout)}';
+        $Label.WidgetLabel = '{!JSENCODE($Label.WidgetLabel)}';
+        $Label.AcceptLabel = '{!JSENCODE($Label.AcceptLabel)}';
+        $Label.NewInboundConversationTitle = '{!JSENCODE($Label.NewInboundConversationTitle)}'; 
+        $Label.NewInboundConversationMsg = '{!JSENCODE($Label.NewInboundConversationMsg)}';
+        $Label.Attachment_Message_Label = '{!JSENCODE($Label.Attachment_Message_Label)}';
+        
+        function getCookie(cname){
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i = 0; i <ca.length; i++){
+                var c = ca[i];
+                while (c.charAt(0)==' '){
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0){
+                    return c.substring(name.length,c.length);
+                }
+            }
+            return "";
+        }
+        
+        function isNullOrEmpty(val){
+        	return (val == '' || val == null || val == 'null' || val == undefined || val == 'undefined' || typeof(val) == 'undefined');
+        }
+
+        /**************************************/
+        /* Begin Auto-Accept Cookie functions */
+        /**************************************/
+        var autoAcceptCookieName = 'autoacceptConversationId';
+        function getAutoAcceptCookie(){
+            return getCookie(autoAcceptCookieName);
+        }
+
+        function setAutoAcceptCookie(conversationRecordId){
+            document.cookie = autoAcceptCookieName + '=' + conversationRecordId;
+        }
+
+        function isAutoAcceptCoookieSet(){
+            var autoAcceptConversationId = getCookie('autoacceptConversationId');
+            var cookieIsSet =  !isNullOrEmpty(autoAcceptConversationId);
+            return cookieIsSet;
+        }
+
+        function clearAutoAcceptCookie(){
+            document.cookie = 'autoacceptConversationId=';
+        }
+        /**************************************/
+        /* End Auto-Accept Cookie functions */
+        /**************************************/
+
+        function checkForSfdcProvide(){
+            try{
+                console.log('Testing for Sfdc.provide');
+                Sfdc.provide("SfdcApp.Visualforce.VSManager",{});
+            }
+            catch(e){
+                console.log('checkForSfdcProvide Error:' +e);
+                if(e.message.indexOf('Sfdc.provide is not a function') >= 0){
+                    sessionTimeoutOccured = true;
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function fetchNewRecords(){
+            if(!checkForSfdcProvide()){
+                showConnectivityError();
+            }else{
+                LiveText.LT.displayRecords(getCurrentStatus());
+            }
+        }
+
+        function checkConnection(){
+            sforce.console.resetSessionTimeOut();
+        }
+
+        function reloadWidget(){
+            sessionStorage.setItem('suppressAudio', true);
+            sessionStorage.setItem('previousAgentStatus', previousAgentStatus);
+            reloadLocation();
+        }
+        
+        function reloadLocation(){
+        	
+        	if (navigator.onLine){
+        		console.log('Reloading location');
+        		window.location.reload(true);
+        	}
+        	else{
+        		console.log('Avoiding location reload when internet connection is lost. Reloading will inadvertently kill widget until browser refresh');
+        	}
+        }
+
+        var sessionTimeoutOccured = false;
+        var myChannels;
+        var notificationsGranted;
+        var newConversationSubscribedChannel = null;
+        var newSmsSubscribedChannel = null;
+        var previousAgentStatus = sessionStorage.getItem('previousAgentStatus') == 'null' || sessionStorage.getItem('previousAgentStatus') == ''
+                                    ? null
+                                    : sessionStorage.getItem('previousAgentStatus');
+        sessionStorage.setItem('previousAgentStatus', null);
+        var primaryTabId = null;
+        var leadSource = '{!LeadSource}';
+        var facebookLeadSource = '{!FacebookLeadSource}';
+        var ObjectsTabsAPINames;
+        var suppressAudio = sessionStorage.getItem('suppressAudio') == null || sessionStorage.getItem('suppressAudio') == 'false' || sessionStorage.getItem('suppressAudio') == false
+                            ? false
+                            : true;
+        sessionStorage.setItem('suppressAudio', null);
+        var internetConnectionDown = false;
+        var screenRefreshTimer = null;
+        var isReloading = false;
+        var connectivityErrorDisplayed = false;
+        var connectionErrorAudio = null;
+
+        var textChannel = '{!textChannelType}';
+        var facebookChannel = '{!facebookChannelType}';
+        var appleChannel = '{!appleChannelType}';
+
+        sforce.SoapTransport.prototype.onFailure = function(res, writer) {
+            var resString = JSON.stringify(res);
+            var isSessionError = resString.indexOf('Remote invocation failed') >= 0 || resString.indexOf('INVALID_SESSION') >= 0;
+            if(isSessionError){
+                 sessionTimeoutOccured = true;
+                 showConnectivityError();
+                 console.log('SESSION TIMED OUT DUE TO SoapTransport.prototype.onFailure: ' + resString);
+            }else{
+                alert("Error: " + res);
+            }
+        };
+
+        function showSpinner(){
+                j$('#spinner').show();
+        }
+        function hideSpinner(){
+            j$('#spinner').hide();
+        }
+
+        function updateConversationHeader(conversationRecordId, formattedOriginatingNumberToDisplay, tabid){
+            if(!sessionTimeoutOccured){
+                try{
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.ConsoleIntegrationController.AcceptRemote}',
+                        conversationRecordId,
+                        formattedOriginatingNumberToDisplay,
+                        function(result, event){
+                            if (event.status && result != null){
+                                LiveText.LT.openMasterTab(result);
+                                if(tabid){
+                                    //checking selected navigation tab if it's TSH list do not close tab
+                                    sforce.console.getSelectedNavigationTab(function(result){
+                                        //closing tsh object tab
+                                        var listViewUrl = result.listViewUrl;
+                                        Visualforce.remoting.Manager.invokeAction(
+                                            '{!$RemoteAction.ConsoleIntegrationController.checkTshPrefixListView}',
+                                                listViewUrl,
+                                                function(result){
+                                                    if(result == false || result == 'false'){
+                                                        //omni-channel short-term solution
+                                                        sforce.console.disableTabClose(true,tabid);
+                                                    }
+                                                })
+                                    })
+                                }
+                            }
+                       });
+                }catch(e){
+                    console.log('An Error has Occured. Error:' +e);
+                }
+            }
+        }
+
+
+        function autoAcceptNewConversation(conversationRecordId, tabid, isSetAutoAcceptCookie){
+            try{
+                // Set auto accept cookie in case session has timed out. Frame will be reloaded and cookie will be used to auto accept.
+                if(isSetAutoAcceptCookie){
+               		setAutoAcceptCookie(conversationRecordId);
+                }
+
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.ConsoleIntegrationController.isNewConversationHeader}',
+                    conversationRecordId,
+                    function(result, event){
+                        if (event.status && result != null) {
+                            // clear auto accept cookie on success
+                            clearAutoAcceptCookie();
+                            //this will close widget after accepting conversation in omnichannel.
+                            sforce.console.setCustomConsoleComponentVisible(false);
+                            conversationRecordId = result;
+                            LiveText.LT.acceptConversation(conversationRecordId, tabid);
+                        }
+                   }
+                ), { buffer: false, escape: true, timeout: 30000 };
+            }catch(e){
+                console.log('Reloading widget Visualforce remoting error: ' + e);
+                reloadLocation();
+            }
+        }
+
+        function loadAudio(domElementName, audioFileName){
+            var audio = j$('#' + domElementName)[0];
+            if (audio.canPlayType('audio/mpeg;')) {
+                audio.src = audioFileName + '.mp3';
+            }else if (audio.canPlayType('audio/ogg;')) {
+                audio.src = audioFileName + '.ogg';
+            }else{
+                audio.src = audioFileName + '.wav';
+            }
+            return audio;
+        }
+
+        j$(document).ready(function() {
+            hideSpinner();
+            connectionErrorAudio = loadAudio('ConnectivityErrorAudio', "{!URLFOR($Resource.LiveText, 'sounds/connectionError')}");
+            j$(window).resize(function(){
+                j$('#requestTable').height(j$("html").height()-j$("#liveTextRequestPanelHeaderContainer").outerHeight(true));
+            });
+
+            var lastRecordId = null;
+            previousAgentStatus = j$('[id$="cip_agentStatusDropDown"]').text();
+            //Setting agent status in db
+            if(previousAgentStatus){
+                setCurrentStatus(previousAgentStatus);
+                LiveText.LT.setStatusImage(previousAgentStatus);
+                updateAgentStatusJS(previousAgentStatus);
+            }else{
+                setCurrentStatus(LiveText.LT.Constants.OFFLINE);
+                LiveText.LT.setStatusImage(LiveText.LT.Constants.OFFLINE);
+                updateAgentStatusJS(LiveText.LT.Constants.OFFLINE);
+            }
+            sforce.console.addEventListener(sforce.console.ConsoleEvent.PRESENCE.LOGIN_SUCCESS, function(result){
+                sforce.console.setCustomConsoleComponentVisible(false);
+            });
+            sforce.console.addEventListener(sforce.console.ConsoleEvent.OPEN_TAB, function(result){
+
+                var recordId = result.objectId;
+                if(recordId != lastRecordId && !isNullOrEmpty(recordId)){ // make sure tab is associated with a record before calling auto accept
+                    lastRecordId = recordId;
+                    autoAcceptNewConversation(recordId, result.id, true);
+                }
+            });
+
+            j$('#enableNotificationsButton').hide();
+            j$('#connectivityErrorWindow').css("display: inline");
+            j$('#connectivityErrorWindow').hide();
+            myChannels = getMyChannels();
+            var currentStatus = getCurrentStatus();
+            LiveText.LT.setStatusImage(currentStatus);
+            sforce.console.onCustomConsoleComponentButtonClicked(LiveText.LT.resetBackgroundColor);
+
+            sforce.console.onFocusedPrimaryTab(function(result){
+                var messageObj = {};
+                messageObj['currentPrimaryTabID'] = result.id;
+                sforce.console.fireEvent('PrimaryTabFocusChange', JSON.stringify(messageObj), function(result){
+                });
+            });
+            
+            if(currentStatus === LiveText.LT.Constants.AVAILABLE){
+                LiveText.LT.displayRecords(currentStatus);
+            }
+
+            j$('.dropitmenu').dropit();
+            var acceptedError = false;
+            var tabConversationMap = new Object(); // map tabId -> conversationId
+                tabConversationMap.get = function(key){
+                    return tabConversationMap[key];
+                }
+                tabConversationMap.set = function(key, value){
+                    return tabConversationMap[key] = value;
+                }
+            function tabCloseListener(r){
+                var tabId = r.id;
+                var cid = tabConversationMap.get(r.id);
+                console.log('Tab Closed event listener results:' + tabId + ' ' + cid);
+                if(cid != null && cid !== undefined && !acceptedError){
+                    handleEndChat(cid);
+                    var autoLinkingPerformed = sessionStorage.getItem('autoLinkingPerformed') == 'null'
+                                                || sessionStorage.getItem('autoLinkingPerformed') == ''
+                                                ? []
+                                                : JSON.parse(sessionStorage.getItem('autoLinkingPerformed'));
+                    var index = autoLinkingPerformed.indexOf(cid);
+                    if(index > -1){
+                        autoLinkingPerformed.splice(index, 1);
+                    }
+                    console.log('autoLinkingPerformed after removing: ' + autoLinkingPerformed);
+                    sessionStorage.setItem('autoLinkingPerformed', JSON.stringify(autoLinkingPerformed));
+                    tabConversationMap.set(tabId,undefined);
+                    var obj = {};
+                    obj['tabId'] = tabId;
+                    sforce.console.fireEvent('RemoveTabCloseListener', JSON.stringify(obj));
+                }
+            }
+
+            sforce.console.addEventListener('AddTabCloseListener', function(result){
+                console.log('adding tab close listener');
+                var message = JSON.parse(result.message);
+                acceptedError = message.acceptErr;
+                //console.log(JSON.stringify(message));
+                if(message != null && message.tabId != null && message.cid != null && !message.acceptErr){
+                    tabConversationMap.set(message.tabId,  message.cid);
+                    sforce.console.addEventListener(sforce.console.ConsoleEvent.CLOSE_TAB,tabCloseListener, { tabId : message.tabId });
+                }
+            });
+
+            sforce.console.addEventListener('RemoveTabCloseListener', function(result){
+                var message = JSON.parse(result.message);
+                //console.log(JSON.stringify(message));
+                if(message != null && message.tabId != null){
+                    console.log('removing tab close listener');
+                    tabConversationMap.set(message.tabId, undefined);
+                    sforce.console.removeEventListener(sforce.console.ConsoleEvent.CLOSE_TAB, tabCloseListener, { tabId : message.tabId });
+                }
+            });
+
+            sforce.console.addEventListener('ConversationSessionExpired', function(result){
+                sessionTimeoutOccured = true;
+                console.log('SESSION TIMED OUT DUE TO CHAT PAGE SESSION END');
+                showConnectivityError();
+            });
+
+            // If auto accept cookie is set, we likely got here because a conversation was accepted in omni-channel and the session in this page was expired
+            // The page was reloaded by showConnectivityError. The cookie will be used to auto accept the conversation that was initially being accepted.
+            if(isAutoAcceptCoookieSet()){
+                var autoAcceptConversationId = getAutoAcceptCookie();
+                // clear auto accept cookie so we only attempt this once
+                clearAutoAcceptCookie();
+                autoAcceptNewConversation(autoAcceptConversationId, undefined, false);
+            }
+            // W-5656909 - Moving the streaming api init to the end of document ready
+            // and adding a timeout to avoid 403: Unknown client error
+            setTimeout(function(){
+                LiveText.LT.streaming_api_init(currentStatus);
+            }, 5000);
+            
+        });//end of document.ready
+
+
+        function showConnectivityError() {
+            if(!connectivityErrorDisplayed){
+                if(!sessionTimeoutOccured) { // check to make sure session hasn't timed out
+                    checkForSfdcProvide();
+                }
+                var title = (sessionTimeoutOccured) ? $Label.SessionTimeoutTitle : $Label.ConnectionLostTitle;
+                var errorMsg = (sessionTimeoutOccured) ? $Label.SessionTimeout : $Label.ConnectionLostMsg;
+                j$('#connectionErrorTitle').text(title);
+                j$('#connectionErrorMsg').text(errorMsg);
+                if(!isReloading){
+                    console.log('showing ConnectivityError');
+                    if(previousAgentStatus == null) previousAgentStatus = getCurrentStatus();
+                    j$('#requestTable').hide();
+
+                    notify(title, errorMsg, 'error');
+
+                    j$('#connectivityErrorWindow').show();
+
+                    sforce.console.setCustomConsoleComponentVisible(true);
+                    fireCustomEvent('ConnectivityChanged', '0');
+                    if({!disconnectSound} == true){
+                        connectionErrorAudio.play();
+                    }
+                    connectivityErrorDisplayed = true;
+                }
+            }
+
+
+            // If auto accept cookie is set, we likely got here because a conversation was accepted in omni-channel and the session in this page was expired
+            // Reload this page to renew the session. The cookie will be used after reload to auto accept the conversation that was initially being accepted
+            if(isAutoAcceptCoookieSet()){            
+                console.log('Attempting reload in showConnectivityError');
+                reloadLocation();
+           }
+        }
+
+        function hideConnectivityError() {
+            if(!sessionTimeoutOccured){
+                j$('#connectivityErrorWindow').hide();
+                internetConnectionDown = !navigator.onLine;
+                if(connectivityErrorDisplayed){
+                    connectivityErrorDisplayed = false;
+                    fireCustomEvent('ConnectivityChanged', '1');
+                }
+                if (previousAgentStatus != null){
+                    LiveText.LT.clearAgentQueue(previousAgentStatus);
+                    previousAgentStatus = null;
+                }
+            }
+        }
+
+        function handleEndChat(conversationRecordId){
+             Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ConsoleIntegrationController.endChat}',
+                conversationRecordId,
+                function(){
+                }
+            );
+        }
+
+        function lookupChannelId(id){
+            for(var i=0;i<myChannels.length;i++){
+                if(myChannels[i].Id === id) return myChannels[i];
+            }
+            return null;
+        }
+
+        function escapeQuotes(str){
+            return str.replace(/(['"])/g, "\\$1");
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        };
+
+        function unescapeHtml(escapedStr) {
+            var div = document.createElement('div');
+            div.innerHTML = escapedStr;
+            var reString = '';
+            var children = div.childNodes;
+            for (i = 0; i < children.length; i++) {
+                reString += children[i].nodeValue;
+            }
+            return reString ? reString : '';
+        };
+
+        function getCurrentStatus(){
+            var currentStatus = j$('[id$="cip_agentStatusDropDown"]').text();
+            return currentStatus;
+        }
+
+         function setCurrentStatus(status){
+            j$('[id$="cip_agentStatusDropDown"]').text(status);
+            sessionStorage['previousAgentStatus'] = status;
+         }
+
+        function getMyChannels() {
+                var channelsObj = j$('[id$=hiddenchannels]').text();
+                if (channelsObj) {
+                    return j$.parseJSON(channelsObj);
+                }
+                return null;
+        }
+
+        function fireCustomEvent(name, data){
+            sforce.console.fireEvent(name, data, function(result){
+            });
+        }
+
+        function disableButtonById(id){
+            var button = j$('#' + id);
+            button.prop('disabled', true);
+        }
+
+        function setAgentAvailable(){
+            notificationsGranted = checkNotifications();
+            LiveText.LT.clearAgentQueue(LiveText.LT.Constants.AVAILABLE);
+        }
+
+        function setAgentOffline(){
+            j$('#enableNotificationsButton').hide();
+            LiveText.LT.clearAgentQueue(LiveText.LT.Constants.OFFLINE);
+        }
+
+        function phoneFormatter(phone){
+            if(!phone ){
+                return null;
+            }
+            if(!phone.startsWith('+')){
+                phone = '+' + phone;
+            }
+            var phoneUtil = i18n.phonenumbers.PhoneNumberUtil.getInstance();
+            var number = phoneUtil.parseAndKeepRawInput(phone);
+            if(phoneUtil.isValidNumber(number)){
+                return phoneUtil.format(number, i18n.phonenumbers.PhoneNumberFormat.INTERNATIONAL);
+            }else{
+                console.log('Phone is invalid: ' + phone);
+                return phone;
+            }
+         }
+
+        var LiveText = LiveText || {};
+        LiveText.LT = (function() {
+            "use strict";
+            // declare variables here
+            var recCount = 0;
+            var namespace = '{!nameSpace}';
+            var fldChannelDisplayId = namespace + 'LiveText_Number__c';
+            var fldRecipientLabel = namespace + 'Formatted_Originating_Number__c';
+            var fldRecipientId = namespace + 'Originating_Number__c';
+            var flsLiveTextSession = namespace + 'Conversation_Header__c';
+            var fldRecipientLabelRaw = namespace + 'Formatted_Originating_Number_To_Display__c';
+            var fldStage = namespace + 'Status__c';
+            var fldChannelType = namespace + 'Channel_Type__c';
+            var fldElapsedTime = namespace + 'ElapsedTime__c';
+            var fldMessage = namespace + 'Message__c';
+            var fldFirstName = namespace + 'First_Name__c';
+            var fldLastName = namespace + 'Last_Name__c';
+            var fldChannelId = namespace + 'Support_Number__c';
+            var fldChannel = namespace + 'Number__c';
+            var fldChannelLabel = 'Name';
+            var primaryTabId = null;
+            var currentStatus = null;
+            var primaryTabName = null;
+            var Constants = {
+               'OFFLINE': 'Offline',
+               'AVAILABLE': 'Available'
+            };
+            var conversationJsArray = [];
+            var customIconUrl = 'none';
+            var customIconUrlOff;
+
+            function openMasterTab(convInfo){
+                var convHeaderObj = convInfo.ReadableConversation;
+                conversationJsArray[convHeaderObj.Id] = new conversationJs();
+                conversationJsArray[convHeaderObj.Id].recordId = convHeaderObj.Id;
+                conversationJsArray[convHeaderObj.Id].channelId = convHeaderObj[fldChannelId];
+                conversationJsArray[convHeaderObj.Id].openPrimaryTabName = unescapeHtml(convHeaderObj[fldRecipientLabel]);
+                conversationJsArray[convHeaderObj.Id].recipientId = lookupChannelId(convHeaderObj[fldChannelId])[fldChannelType] == textChannel ? convHeaderObj[fldRecipientId] : convHeaderObj[fldRecipientLabel];
+                conversationJsArray[convHeaderObj.Id].mainObject = convInfo.WriteableConversation;
+                conversationJsArray[convHeaderObj.Id].addRecordsLoadedEventListener();
+                conversationJsArray[convHeaderObj.Id].openMasterTab();
+            }
+
+            function conversationJs(){
+                this.mainObject;
+                this.recordId;
+                this.channelId;
+                this.recipientId;
+                this.openPrimaryTabName;
+                this.primaryTabId = '';
+                this.currentRecordId = '';
+                this.pTabName = '';
+                var _this;
+                var ContactId = null;
+                var AccountId = null;
+                this.openMasterTab = function(){
+                    _this = this;
+                    primaryTabArray[this.recordId]= this.openPrimaryTabName;
+                    var li_id = j$('#li_' + this.recordId);
+                    if(li_id != null && li_id !== 'undefined'){
+                        li_id.hide();
+                        displayRecCount();
+                    }
+
+                    _this.openPrimaryTab(this.recordId, this.openPrimaryTabName, this.channelId, this.recipientId);
+                }
+                this.addRecordsLoadedEventListener = function(){
+                    sforce.console.addEventListener('associatedObjectsLoaded', function(result){
+                        var message = j$.parseJSON(result.message);
+                        var tempTabId = message['currentPrimaryTabID'];
+                        var masterRecordId = message['masterRecordId'];
+                        var isFromSocialPersona = message['isFromSocialPersona'];
+                        if(tempTabId == _this.primaryTabId){
+                            var records = j$.parseJSON(message.records);
+                            _this.autoLinkAndOpenRelatedObjects(_this.recordId, _this.openPrimaryTabName, _this.recipientId, records, masterRecordId, isFromSocialPersona);
+                        }
+                    });
+                }
+                this.openPrimaryTab =  function (recordId, openPrimaryTabName, channelId, recipientId) {
+                    console.log('openPrimaryTab');
+                    var conversationSessionPrefix = '{!conversationSessionPrefix}';
+                    conversationSessionPrefix = conversationSessionPrefix +'cvid='+recordId+'&conversationtype=inbound&channelId='+channelId+'&phone='+ encodeURIComponent(recipientId.replace('+', '%2B'));
+                    sforce.console.openPrimaryTab(undefined, conversationSessionPrefix, true, openPrimaryTabName, function(result){
+                        if (result.success == true) {
+                            _this.primaryTabId = result.id;
+                            sforce.console.disableTabClose(true, result.id, function(){
+                                //console.log('Main Tab Locked');
+                            });
+                            sforce.console.setTabIcon('{!URLFOR($Resource.LiveText,'images/LTicon16.png')}',_this.primaryTabId);
+                        } else {
+                            console.log('Primary tab cannot be opened');
+                        }
+                     });
+                    this.currentRecordId=recordId;
+                    this.conversationSessionPrefix ='';
+                    this.pTabName=openPrimaryTabName;
+                }
+                this.autoLinkAndOpenRelatedObjects = function (recordId,openPrimaryTabName, recipientId, records, masterRecordId, isFromSocialPersona){
+                    var shouldOpenTabs = (isFromSocialPersona == false || isFromSocialPersona == 'false') ?
+                                            true :
+                                            ('undefined' !== typeof masterRecordId && masterRecordId != null && masterRecordId != '');
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.ConsoleIntegrationController.getRelatedObjectsAndAutoLink}',
+                         _this.mainObject,
+                        recipientId,
+                        records,
+                        masterRecordId,
+                        function(result, event){
+                            if (event.status && result) {
+                                var conversationInfo = result;
+                                if(conversationInfo.autolinkedRecords != null){
+                                    for(var i=0;i<conversationInfo.autolinkedRecords.length;i++){
+                                        if(conversationInfo.autolinkedRecords[i].ObjectType == 'Account'){
+                                            AccountId = conversationInfo.autolinkedRecords[i].Id;
+                                        }else if(conversationInfo.autolinkedRecords[i].ObjectType == 'Contact'){
+                                            ContactId = conversationInfo.autolinkedRecords[i].Id;
+                                        }
+                                    }
+                                }
+                                var relatedObjects = j$.parseJSON(unescapeHtml(conversationInfo.RelatedObjects));
+                                var newObjectsAPINames = j$.parseJSON(unescapeHtml(conversationInfo.ShowNewObjectsTabsAPINames));
+                                var defaultScreenPop = conversationInfo.DefaultScreenPop == '' ? false : j$.parseJSON(unescapeHtml(conversationInfo.DefaultScreenPop));
+                                var openedConversationChannelType = conversationInfo.channelType;
+                                conversationInfo.RelatedObjects = null;
+                                ObjectsTabsAPINames = j$.parseJSON(unescapeHtml(conversationInfo.ObjectsTabsAPINames));
+
+                                var messageObj = {};
+                                messageObj['currentPrimaryTabID'] = _this.primaryTabId;
+                                sforce.console.fireEvent('RefreshLinkRecordsTableEvent', JSON.stringify(messageObj), function(result){});
+                                _this.openRelatedCustomObjects(_this.primaryTabId, relatedObjects, conversationInfo, newObjectsAPINames, defaultScreenPop, shouldOpenTabs, openedConversationChannelType);
+                            } else {
+                                console.log(event.type);
+                            }
+                        }
+                    );
+                }
+                this.openRelatedCustomObjects = function (primaryTabId, relatedObjects,conversationInfo, newObjectsAPINames, defaultScreenPop, shouldOpenTabs, openedConversationChannelType){
+                    if(shouldOpenTabs){
+                        this.displayCustomListAsSubTabs(relatedObjects.customObjects, relatedObjects.AutoFocusItemId, false);
+                    }
+                    var relatedRecords = 0;
+                    if(relatedObjects.customObjects != null)    relatedRecords += relatedObjects.customObjects.length;
+                    _this.addNewObjectsSubTabs(_this.primaryTabId, relatedObjects, conversationInfo, newObjectsAPINames, defaultScreenPop, openedConversationChannelType);
+                }
+                this.addNewObjectsSubTabs = function (primaryTabId, relatedObjects, conversationInfo, newObjectsAPINames, defaultScreenPop, openedConversationChannelType){
+                    var messageObj = {};
+                    messageObj['currentPrimaryTabID'] = primaryTabId;
+                    var openDefaultCustomObject = true;
+                    var defaultCustomObjectApiName = defaultScreenPop == false ? '' : defaultScreenPop.apiName ;
+                    //Below code is to create new tabs based on the LT admin LiveText Session Workspace Options [NEW Tabs]
+                    for (var i = 0; i < newObjectsAPINames.length; i++) {
+                        var active = relatedObjects.AutoFocusItemId == newObjectsAPINames[i].apiName;
+                        openDefaultCustomObject = openDefaultCustomObject && !(defaultCustomObjectApiName == newObjectsAPINames[i].apiName);
+                        if(newObjectsAPINames[i].isCreateable){
+                            var subTabUrl = newObjectsAPINames[i].url;
+                            switch(newObjectsAPINames[i].apiName){//check if can switch to keyPrefix
+                                case 'Contact' :
+                                    if(openedConversationChannelType == textChannel){
+                                        subTabUrl += '?con10='+encodeURIComponent(primaryTabArray[this.currentRecordId])+'&con12='+encodeURIComponent(primaryTabArray[this.currentRecordId])+'&con9='+leadSource;
+                                    }else{
+                                        subTabUrl+= '?con9='+facebookLeadSource
+                                    }
+                                break;
+                                case 'Lead' :
+                                    if(openedConversationChannelType == textChannel){
+                                        subTabUrl += '?lea8='+encodeURIComponent(primaryTabArray[this.currentRecordId])+'&lea9='+encodeURIComponent(primaryTabArray[this.currentRecordId])+'&lea5='+leadSource;
+                                    }else{
+                                        subTabUrl+= '?lea5='+facebookLeadSource
+                                    }
+                                break;
+                                case 'Account' :
+                                    if(openedConversationChannelType == textChannel){
+                                        subTabUrl += '?acc10='+encodeURIComponent(primaryTabArray[this.currentRecordId])+'&PersonMobilePhone='+encodeURIComponent(primaryTabArray[this.currentRecordId]);
+                                    }
+                                break;
+                                case 'Case' :
+                                    if(ContactId != null || AccountId != null){
+                                        subTabUrl += '?';
+                                        if (ContactId != null){
+                                            subTabUrl += 'cas3_lkid='+ContactId + '&';
+                                        }
+                                        if (AccountId != null)  {
+                                            subTabUrl += 'cas4_lkid='+AccountId + '&';
+                                        }
+                                    }
+                                break;
+                                case 'Opportunity' :
+                                    if(AccountId != null){
+                                        subTabUrl += '?accid='+AccountId
+                                    }
+                                break;
+                            }
+                            _this.openCustomObjectSubTab(_this.primaryTabId, subTabUrl, active, 'New ' + unescapeHtml(newObjectsAPINames[i].label), newObjectsAPINames[i].iconUrl);
+                        }
+                    };
+                    //Below code is to create new tabs based on the LT admin no records found setting
+                    if(defaultScreenPop != false){
+                        if(openDefaultCustomObject){
+                            if(relatedObjects.AutoFocusItemId == defaultCustomObjectApiName){
+                                subTabUrl = defaultScreenPop.url;
+                                switch(relatedObjects.AutoFocusItemId){//check if can switch to keyPrefix
+                                    case 'Contact' :
+                                        if(openedConversationChannelType == textChannel){
+                                            subTabUrl += '?con10='+encodeURIComponent(primaryTabArray[this.currentRecordId])+'&con12='+encodeURIComponent(primaryTabArray[this.currentRecordId])+'&con9='+leadSource;
+                                        }else{
+                                            subTabUrl+= '?con9='+facebookLeadSource
+                                        }
+                                    break;
+                                    case 'Lead' :
+                                        if(openedConversationChannelType == textChannel){
+                                            subTabUrl += '?lea8='+encodeURIComponent(primaryTabArray[this.currentRecordId])+'&lea9='+encodeURIComponent(primaryTabArray[this.currentRecordId])+'&lea5='+leadSource;
+                                        }else{
+                                            subTabUrl+= '?lea5='+facebookLeadSource
+                                        }
+                                    break;
+                                    case 'Account' :
+                                        if(openedConversationChannelType == textChannel){
+                                            subTabUrl += '?acc10='+encodeURIComponent(primaryTabArray[this.currentRecordId])+'&PersonMobilePhone='+encodeURIComponent(primaryTabArray[this.currentRecordId]);
+                                        }
+                                    break;
+                                }
+                                _this.openCustomObjectSubTab(_this.primaryTabId, subTabUrl, true, 'New ' + unescapeHtml(defaultScreenPop.label), defaultScreenPop.iconUrl);
+                            }
+                        }
+                    }
+                    sforce.console.fireEvent('AutoLinkingComplete', JSON.stringify(messageObj), function(result){});
+                }
+                this.openCustomObjectSubTab = function(primaryTabId, url, active, label, iconUrl){
+                    if(url != null){
+                        sforce.console.openSubtab(primaryTabId, url, active, label, null, function(result){
+                            if (result.success == true) {
+                                iconUrl = iconUrl == null ? '{!URLFOR($Resource.LiveText,'images/LTicon16.png')}' : iconUrl;
+                                sforce.console.setTabIcon(iconUrl, result.id);
+                            } else {
+                                alert('subtab cannot be opened');
+                            }
+                        });
+                    }
+                }
+                this.displayCustomListAsSubTabs = function (items, autoFocusItemId, displayActiveItemOnly){
+                    if(displayActiveItemOnly == null) displayActiveItemOnly = false;
+                    for(var i=0;i<items.length;i++){
+                        var item = items[i];
+                        var active = item.Id == autoFocusItemId;
+
+                        if(!displayActiveItemOnly || (displayActiveItemOnly && active)){
+                            var tabName = unescapeHtml(item.ObjectName);
+                            var icon = null;
+                            if(ObjectsTabsAPINames != null){
+                                for(var j=0;j<ObjectsTabsAPINames.length;j++){
+                                    if(ObjectsTabsAPINames[j].apiName == item.ObjectType){
+                                        icon = ObjectsTabsAPINames[j].iconUrl;
+                                    }
+                                }
+                            }
+                            this.openCustomObjectSubTab(_this.primaryTabId, '/'+item.Id, active, tabName, icon);
+                        }
+                    }
+                }
+            }
+
+            function clearAgentQueue(selectedStatus){
+                if(!sessionTimeoutOccured && !connectivityErrorDisplayed){
+                    setCurrentStatus(selectedStatus);
+                    LiveText.LT.setStatusImage(selectedStatus);
+                    if(selectedStatus === Constants.OFFLINE){
+                        currentStatus = selectedStatus;
+                        j$('#requestTable').html('').hide();
+                        resetCount();
+                        updateAgentStatusJS(selectedStatus);
+                    }else if(selectedStatus === Constants.AVAILABLE){
+                       // if(currentStatus !== selectedStatus){
+                            currentStatus = selectedStatus;
+                            j$('#requestTable').html('').show();
+                            fetchNewRecords();
+                            updateAgentStatusJS(selectedStatus);
+                       // }
+                    }
+                }else if (sessionTimeoutOccured){
+                    alert($Label.SessionTimeout);
+                }
+            }
+
+            function getComponentButtonStyle(isAlert, isOnline, callback){
+                var backgroundColor = (isAlert) ? '#e9686d' : 'transparent';
+                var backgroundImageUrl =  '';
+                if(customIconUrl == 'none'){
+                        Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.ConsoleIntegrationController.getCustomLogo}',
+                        'LT_Online',
+                        'LT_Offline',
+                        function(result, event){
+                            if (event.status && result) {
+                                customIconUrl = '';
+                                customIconUrlOff = '';
+                                if(result[0] != '' && result[1] != ''){
+                                    customIconUrl =  result[0];
+                                    customIconUrlOff = result[1];
+                                }
+                                if(isOnline){
+                                    if(customIconUrl != ''){
+                                        backgroundImageUrl = customIconUrl;
+                                    }else{
+                                        backgroundImageUrl = '{!URLFOR($Resource.LiveText,'images/Online.png')}' ;
+                                    }
+                                }else{
+                                    if(customIconUrlOff != ''){
+                                        backgroundImageUrl = customIconUrlOff;
+                                    }else{
+                                        backgroundImageUrl = '{!URLFOR($Resource.LiveText,'images/Offline.png')}' ;
+                                    }
+                                }
+                            } else {
+                                console.log(event.message);
+                            }
+                            var backgroundImageStyle = 'background-image: url(' + backgroundImageUrl + '); background-size:24px 24px;'
+                            if(callback != null &&  typeof callback != 'undefined') {
+                                callback('width:100%;margin-left:0px;margin-right:0px;background:' + backgroundColor + ';background-repeat:no-repeat;background-position: 7px 4px;' + backgroundImageStyle);
+                            }else{
+                                return 'width:100%;margin-left:0px;margin-right:0px;background:' + backgroundColor + ';background-repeat:no-repeat;background-position: 7px 4px;' + backgroundImageStyle;
+                            }
+                        }
+                    );
+
+                }else{
+                    if(isOnline){
+                        if(customIconUrl != ''){
+                            backgroundImageUrl = customIconUrl;
+                        }else{
+                            backgroundImageUrl = '{!URLFOR($Resource.LiveText,'images/Online.png')}' ;
+                        }
+                    }else{
+                        if(customIconUrlOff != ''){
+                            backgroundImageUrl = customIconUrlOff;
+                        }else{
+                            backgroundImageUrl = '{!URLFOR($Resource.LiveText,'images/Offline.png')}' ;
+                        }
+                    }
+                    var backgroundImageStyle = 'background-image: url(' + backgroundImageUrl + ');background-size:24px 24px;'
+                    if(callback != null &&  typeof callback != 'undefined') {
+                        callback('width:100%;margin-left:0px;margin-right:0px;background:' + backgroundColor + ';background-repeat:no-repeat;background-position: 7px 4px;' + backgroundImageStyle);
+                    }else{
+                        return 'width:100%;margin-left:0px;margin-right:0px;background:' + backgroundColor + ';background-repeat:no-repeat;background-position: 7px 4px;' + backgroundImageStyle;
+                    }
+                }
+            }
+
+            //===Methods=================================
+            // Following functions are exposed only private functions are never exposed and cannot be called
+            function streaming_api_init(selectedStatus) {
+                j$.cometd.websocketEnabled = false;
+                // Updating cometd to latest version available
+                j$.cometd.configure({
+                    url: window.location.protocol + '//' + window.location.hostname + '/cometd/43.0/',
+                    requestHeaders: { Authorization: 'OAuth {!$Api.Session_ID}' },
+                    appendMessageTypeToURL: false,
+                    stickyReconnect: false
+                });
+                j$.cometd.handshake();
+            }
+
+            function acceptConversation(conversationRecordId, tabid){
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.ConsoleIntegrationController.getConversationHeader}',
+                        conversationRecordId,
+                        function(record){
+                            var formattedNumber = (record != null && record[fldRecipientLabelRaw] == null && lookupChannelId(record[fldChannelId])[fldChannelType] == textChannel) ? phoneFormatter(record[fldRecipientId]) : '';
+                            updateConversationHeader(conversationRecordId, formattedNumber, tabid);
+                        }
+                );
+            }
+
+            function subscribeChannels(){
+                newConversationSubscribedChannel = j$.cometd.subscribe('/topic/NewConversationHeader', function(message) {
+                    var currentStatus = getCurrentStatus();
+                    var record = message.data.sobject;
+                    if (record[fldStage] == 'New') {
+                        if(currentStatus === Constants.AVAILABLE){
+                            if(recCount < 200){
+                                LiveText.LT.displayRecords(getCurrentStatus());
+                            }
+                        }
+                    }else if (record[fldStage] === 'Active' || record[fldStage] === 'Ended') {
+                        //decrement count and remove from widget
+                        var li_id = j$('#li_' + record.Id);
+                        if(li_id != null && li_id !== 'undefined' && li_id.length > 0){
+                            li_id.remove();
+                            displayRecCount();
+                            if(recCount < 200){
+                                LiveText.LT.displayRecords(getCurrentStatus());
+                            }
+                        }
+                    }
+                    fireCustomEvent('NewConversationHeader', JSON.stringify(message));
+                });
+                newSmsSubscribedChannel = j$.cometd.subscribe('/topic/NewSMSText', function(message) {
+                    fireCustomEvent('NewSMSText', JSON.stringify(message));
+                });
+            }
+
+            function unSubscribeChannels(){
+                if(newConversationSubscribedChannel != null){
+                    j$.cometd.unsubscribe(newConversationSubscribedChannel);
+                    newConversationSubscribedChannel = null;
+                }
+                if(newSmsSubscribedChannel != null){
+                    j$.cometd.unsubscribe(newSmsSubscribedChannel);
+                    newSmsSubscribedChannel = null;
+                 }
+            }
+
+            function reSubscribeChannels(){
+                //console.log('re-subscribing channels');
+                unSubscribeChannels();
+                subscribeChannels();
+            }
+
+            var _connected = false;
+
+            j$.cometd.addListener('/meta/subscribe', function(message) {
+                var payload = JSON.stringify(message);
+                if(!payload.successful && payload.failure){
+                    showConnectivityError();
+                }else{
+                    hideConnectivityError();
+                }
+                console.log('subscribe listener: ' + '[' + new Date() + '] payload: [' + JSON.stringify(message) + ']');
+            });
+
+            j$.cometd.addListener('/meta/unsubscribe', function(message) {
+                console.log('unsubscribe listener: ' + '[' + new Date() + '] payload: [' + JSON.stringify(message) + ']');
+            });
+
+            j$.cometd.addListener('/meta/unsuccessful', function(message) {
+                jsonMessage = JSON.stringify(message);
+                console.log('unsuccessful listener: ' + '[' + new Date() + '] payload: [' + jsonMessage + ']');
+                if (jsonMessage.contains('"error":"403::Unknown client"')) {
+                    // W-5656909 - Force cometd to disconnect here, and initialize again after
+                    // If the error 403 happens, probably cometd is disconnected already
+                    // but to not get illegal state, the disconnect is needed here
+                    if (!j$.cometd.isDisconnected()) {
+                        resetConnection();
+                    }
+                    _connected = false;
+                    setTimeout(function () {
+                        console.log('Reinitializing in meta/unsuccessful');
+                        streaming_api_init();
+                    }, 5000);
+                }
+            });
+
+            j$.cometd.addListener('/meta/connect', function(message){
+                if (j$.cometd.isDisconnected()){  // Available since 1.1.2
+                    _connected = false;
+                    console.log('console meta/connect got disconnectd');
+                    if(isResetConnection){
+                        isResetConnection = false;
+                        suppressAudio = true;
+                        // W-5656909 - Increasing the timeout can help avoid 403: Unknown client error
+                        setTimeout(function(){
+                            console.log('Reinitializing in meta/connect');
+                            streaming_api_init();
+                        }, 5000);
+                    }
+
+                    return;
+                }
+                var wasConnected = _connected;
+                _connected = message.successful;
+                if (!wasConnected && _connected){
+                    console.log('comet reconnected');
+                    reSubscribeChannels();
+                    var currentStatus =  getCurrentStatus();
+                    var reloadQueue = previousAgentStatus == null && currentStatus ==  Constants.AVAILABLE &&  !sessionTimeoutOccured;
+                    hideConnectivityError();
+                    if (reloadQueue){
+                        console.log('reloading queue');
+                        suppressAudio = true;
+                        fetchNewRecords();
+                    }
+                 }else if (wasConnected && !_connected){
+                    console.log('comet disconnected');
+                    if(message.xhr != null && message.xhr.responseText != null && message.xhr.responseText.indexOf('Authentication invalid') >= 0){
+                        sessionTimeoutOccured = true;
+                    }
+                    showConnectivityError();
+                    j$.cometd.handshake();
+                    console.log('handskake');
+                }
+            });
+
+            j$.cometd.addListener('/meta/disconnect', function(message){
+                console.log('disconnect listener: ' + '[' + new Date() + '] payload: [' + jsonMessage + ']');
+                if (message.successful){
+                    _connected = false;
+                }
+            });
+
+            j$.cometd.addListener('/meta/handshake', function(message){
+                if (message.successful === true){
+                    console.log('handskake2');
+                    hideConnectivityError();
+                } else {
+                    console.log('handshake error message: ' + JSON.stringify(message));
+                }
+            });
+
+            j$.cometd.onListenerException = function(exception, subscriptionHandle, isListener, message){
+                console.log('COMET EXCEPTION: ' + JSON.stringify(exception));
+                console.log('subscriptionHandle: ' + JSON.stringify(subscriptionHandle));
+                console.log('isListener:' + isListener);
+                console.log('message: ' + JSON.stringify(message));
+            };
+
+            var isResetConnection = false;
+            function resetConnection(){
+                isResetConnection = true;
+                j$.cometd.disconnect();
+
+            }
+
+            function displayRecords() {
+               if(getCurrentStatus() === Constants.AVAILABLE){
+                    j$('#requestTable').show();
+                    // showSpinner(); // don't do this temporarily as it's incredibly distracting especially during high traffic
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.ConsoleIntegrationController.retrieveLiveMessageSessions}',
+                        function(result, event){
+                            if (result){
+                                if(recCount == result.length){
+                                    suppressAudio = true;
+                                }
+                                for(var i = 0; i< result.length; i++){
+                                    if(result[i][fldChannelId] != null){
+                                        toast(result[i], suppressAudio);
+                                    }
+                                }
+                                sforce.console.isCustomConsoleComponentHidden(function(result){
+                                    var isAlert = j$("#requestTable > div").filter(":visible").size() > 0;
+                                    checkWindowVisibility(result, isAlert, suppressAudio);
+                                });
+                            }
+                            displayRecCount();
+                            setTimeout(function(){
+                                suppressAudio = false;
+                            }, 2000);
+                            hideSpinner();
+                        }
+                    );
+                }
+            }
+
+            function resetCount(){
+                recCount = 0;
+                document.getElementById("optId").innerHTML = '(' + recCount + ')';
+            }
+
+            function getCountText(count){
+                return (count >= 100) ? '99+' : count;
+            }
+
+            function setComponentButtonText(count) {
+                sforce.console.setCustomConsoleComponentButtonText($Label.WidgetLabel + ' ' + '(' + getCountText(count) + ')');
+                if (count == 0) {
+                    var currentStatus = getCurrentStatus();
+                    setStatusImage(currentStatus);
+                }
+            }
+
+            function setStatusImage(currentStatus) {
+                if (currentStatus === LiveText.LT.Constants.AVAILABLE) {
+                    getComponentButtonStyle(false, true, setCustomStyle);
+                    document.getElementById("selectIcon").style.backgroundImage = "url({!URLFOR($Resource.LiveText,'images/onlineDot.png')})";
+                    checkNotifications();
+                } else {
+                    getComponentButtonStyle(false, false, setCustomStyle);
+                    sforce.console.setCustomConsoleComponentButtonText($Label.WidgetLabel + ' (0)');
+                     document.getElementById("selectIcon").style.backgroundImage = "url({!URLFOR($Resource.LiveText,'images/offlineDot.png')})";
+                     j$('#enableNotificationsButton').hide();
+                     checkNotifications();
+                }
+            }
+
+            var setCustomStyle = function(resultStyle){
+                    sforce.console.setCustomConsoleComponentButtonStyle(resultStyle);
+            }
+
+            var resetBackgroundColor = function (result) {
+                 var res = (result.windowHidden ? 'hidden' : 'visible');
+                 var status = getCurrentStatus();
+                 if (res == 'visible' && status === LiveText.LT.Constants.AVAILABLE && recCount==0) {
+                    getComponentButtonStyle(false, true, setCustomStyle);
+
+                } else {
+                    if (status === LiveText.LT.Constants.OFFLINE) {
+                        getComponentButtonStyle(false, false, setCustomStyle);
+                    }
+                }
+            };
+
+            function displayRecCount() {
+                recCount = j$("#requestTable > div").filter(":visible").size();
+                document.getElementById("optId").innerHTML = '(' + getCountText(recCount) + ')';
+                setComponentButtonText(recCount);
+            };
+
+            function isAttachmentLink(str){
+                if(str == null){
+                    return false;
+                }
+                return (str.startsWith('<span><a class="attachmentLink" href="/servlet/servlet.FileDownload?file=') && str.endsWith('</span>'));
+            }
+
+            function toast(records, suppressNotification) {
+                var contentDivId = 'div_' + records.Id;
+                var contentLiId = 'li_' + records.Id;
+                // check if this is a duplicate notification
+                if(document.getElementById(contentLiId) != null){
+                    return;
+                }
+                var tempId = new Date().getTime().toString();
+                var timerDivId = 'timerdiv_' + records.Id;
+                var timerSpanId = 'timerspan_' + records.Id;
+                var acceptButtonId = 'acceptButton_' + records.Id;
+                var messagePreviewId = 'msgPreview_' + records.Id;
+                var channelInfo = lookupChannelId(records[fldChannelId]);
+                var displayNumber = records[fldChannelDisplayId];
+                var tooltip =  escapeQuotes(channelInfo.Name);
+                var recipientIdToDisplayId = 'recipientIdToDisplay_' + records.Id;
+
+                var channelType =  channelInfo[fldChannelType];
+                var channelLabel = channelInfo[fldChannelLabel];
+                var channelIdToDisplay = '';
+                var recipientIdToDisplay = records[fldRecipientLabel];
+                if(channelType == textChannel){
+                    try{
+                        channelIdToDisplay = phoneFormatter(channelInfo[fldChannel]);
+                    }catch(e){
+                        console.log('PhoneFormatter exception: ' + e);
+                    }
+                    try{
+                        recipientIdToDisplay = phoneFormatter(records[fldRecipientId]);
+                    }catch(e){
+                        console.log('PhoneFormatter exception: ' + e);
+                    }
+                }
+                recipientIdToDisplay = escapeHtml(recipientIdToDisplay.replace(/'/g, "\'"));
+                channelIdToDisplay = escapeHtml(channelIdToDisplay.replace(/'/g, "\'"));
+                channelLabel = escapeHtml(channelLabel.replace(/'/g, "\'"));
+                var channelBackground = channelType == textChannel ? '#F6E3CE' : channelType == facebookChannel ? '#E1F5FB' : channelType == appleChannel ? '#EFF9EB' : '#FFFFFF';
+                var channelIcon = channelType == textChannel ? "{!URLFOR($Resource.LiveText, 'images/icon_sms.png')}" : channelType == facebookChannel ? "{!URLFOR($Resource.LiveText, 'images/icon_fbmessenger.png')}" : channelType == appleChannel ? "{!URLFOR($Resource.LiveText, 'images/icon_abc.png')}" : "{!URLFOR($Resource.LiveText, 'images/icon_whatsapp.png')}";
+                var content =   '<div id="'+contentLiId+'">'+
+                                    '<div>'+
+                                        '<div class="slds-page-header" style="background-color: '+channelBackground+'; padding-top:0rem; padding-bottom:0rem; padding-right:0rem;">'+
+                                            '<div class="slds-media slds-media--center slds-grid">'+
+                                                '<div class="slds-media__figure slds-align-top" style="padding-top:.75rem">'+
+                                                    '<img src="'+channelIcon+'" class="slds-icon" style="width:32px;height:32px;"></img>'+
+                                                '</div>'+
+                                                '<div id="'+contentDivId+'" class="slds-media__body slds-page-header" style="background-color: white;">'+
+                                                    '<p id="num" class="slds-text-body--medium page-header__info" style="overflow:hidden;text-overflow:ellipsis;">'+channelLabel +'</p>'+
+                                                    '<p id="num" class="slds-text-body--small page-header__info" style="overflow:hidden;text-overflow:ellipsis;">'+channelIdToDisplay +'</p>'+
+                                                    '<p class="slds-text-body--medium page-header__info"></p>'+
+                                                    '<div id="'+timerDivId+'" class="slds-text-body--medium page-header__info slds-align-middle slds-grid">'+
+                                                        '<div class="slds-text-align--center slds-align-middle" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;">'+
+                                                            '<span id="'+timerSpanId+'">'+get_elapsed_time_string(0)+'</span>' +
+                                                            '<span style="margin-left:5px;margin-right:5px;"> - </span>' +
+                                                            '<span id="'+recipientIdToDisplayId+'">'+recipientIdToDisplay+'</span>' +
+                                                        '</div>'+
+                                                        '<button type="submit"  id="'+acceptButtonId+
+                                                        '" class="slds-button slds-button--neutral slds-col--bump-left" onClick="resetScreenRefreshTimeout();disableButtonById(\''
+                                                        +acceptButtonId+'\');LiveText.LT.acceptConversation(\''+records.Id+'\');return false">' + $Label.AcceptLabel + '</button>' +
+                                                    '</div>'+
+                                                    '<div class="slds-form-element slds-m-top--xx-small slds-align-middle" id="parent_'+messagePreviewId+'">'+
+                                                        '<div class="slds-form-element__control">'+
+                                                            '<span id="'+messagePreviewId+'" class="slds-text-body--regular"/>'+
+                                                        '</div>'+
+                                                    '</div>'+
+                                                '</div>'+
+                                            '</div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</div>';
+
+                j$('#requestTable').append(content);
+                j$('#requestTable').height(j$("html").height()-j$("#liveTextRequestPanelHeaderContainer").outerHeight(true));
+                displayRecCount();
+
+                j$('#parent_'+messagePreviewId).hide();
+                var elapsed_seconds = records[fldElapsedTime];
+                if(currentStatus === Constants.AVAILABLE && !suppressNotification){
+                    notify($Label.NewInboundConversationTitle, $Label.NewInboundConversationMsg, 'inbound');
+                }
+                var elapsedTimeInterval = setInterval(function (){
+                    var timerElement = j$('#' + timerSpanId);
+                    if(currentStatus === Constants.OFFLINE || timerElement.length == 0){
+                        clearInterval(elapsedTimeInterval);
+                    }
+                    if(timerElement.length != 0){
+                       elapsed_seconds = elapsed_seconds + 1;
+                       timerElement.text(get_elapsed_time_string(elapsed_seconds));
+                    }
+                }, 1000);
+
+                var rowElement = j$('#'+contentLiId);
+                rowElement.hover(
+                    function () {
+                        j$('#'+contentDivId).css("background-color", channelBackground);
+                        Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.ConsoleIntegrationController.getSMSMessages}',
+                        records.Id,
+                        function(result, event){
+                            if(event.status){
+                                try{
+                                    var message = result[0][fldMessage];
+                                    var isAttachment = isAttachmentLink(unescapeHtml(message));
+                                    message = message.substring(0, 160);
+                                    if(channelType != textChannel){
+                                        var personName = result[0][fldFirstName] !== undefined ? result[0][fldFirstName] : '';
+                                        personName +=  result[0][fldLastName] !== undefined ? ' ' + result[0][fldLastName] : '';
+                                        if(personName && personName !== undefined && personName != ''){
+                                            j$('#'+recipientIdToDisplayId).text(unescapeHtml(personName));
+                                        }
+                                    }
+                                    if(isAttachment){
+                                        j$('#'+messagePreviewId).html($Label.Attachment_Message_Label);
+                                    }else{
+                                        j$('#'+messagePreviewId).html(message);
+                                    }
+                                    if(rowElement.is(':hover')){
+                                        j$('#parent_'+messagePreviewId).show();
+                                    }
+                                }catch(error){
+                                    console.log(error);
+                                }
+                            }else if (event.type === 'exception'){
+                                console.log(event.message);
+                            }else{
+                                console.log(event.message);
+                            }
+                        });
+                    }, function(){
+                        j$('#parent_'+messagePreviewId).hide();
+                        j$('#'+contentDivId).css("background-color", "white");
+                    }
+                );
+
+                //fillind first and last name for not phones
+                if(channelType != textChannel){
+                    rowElement.trigger('mouseenter');
+                    rowElement.trigger('mouseout');
+                }
+            }
+
+            // Display alert icon when new incoming SMS comes and console component is hidden
+            var checkWindowVisibility = function checkWindowVisibility(result, isAlert, suppressAudio1) {
+                //Display the window visibility
+                if (result.success) {
+                    getComponentButtonStyle(isAlert, true, setCustomStyle);
+                    // audio tag to play sound
+                     if(!suppressAudio1){
+                        j$('<audio id="chatAudio"><source src="{!URLFOR($Resource.LiveText, 'sounds/newcase.ogg')}" type="audio/ogg"><source src="{!URLFOR($Resource.LiveText, 'sounds/newcase.mp3')}" type="audio/mpeg"><source src="{!URLFOR($Resource.LiveText, 'sounds/newcase.wav')}" type="audio/wav"></audio>').appendTo('body');
+                        j$('#chatAudio')[0].play();
+                    }
+                } else {
+                   alert('Error!');
+                }
+            }
+
+            function makeCounter() {
+                var count = 0;
+                return function() {
+                    count++;
+                    return count;
+                };
+            }
+
+            var primaryTabArray = {};
+
+            function get_elapsed_time_string(total_seconds) {
+                function pretty_time_string(num) {
+                    return (num < 10 ? "0" : "") + num;
+                }
+                var hours = Math.floor(total_seconds / 3600);
+                total_seconds = total_seconds % 3600;
+
+                var minutes = Math.floor(total_seconds / 60);
+                total_seconds = total_seconds % 60;
+
+                var seconds = Math.floor(total_seconds);
+                // Pad the minutes and seconds with leading zeros, if required
+                hours = pretty_time_string(hours);
+                minutes = pretty_time_string(minutes);
+                seconds = pretty_time_string(seconds);
+                // Compose the string for display
+                var currentTimeString = hours + ":" + minutes + ":" + seconds;
+                return currentTimeString;
+            }
+            return {
+                streaming_api_init: streaming_api_init,
+                openMasterTab: openMasterTab,
+                displayRecords: displayRecords,
+                clearAgentQueue:clearAgentQueue,
+                Constants:Constants,
+                setStatusImage:setStatusImage,
+                resetBackgroundColor:resetBackgroundColor,
+                resetConnection:resetConnection,
+                acceptConversation:acceptConversation
+            };
+        }());
+
+        function notify(title, body, icon){
+            if ('undefined' !== typeof Notification && typeof Notification.permission !== 'undefined'){
+               if(Notification && Notification.permission === "granted"){
+                    var millis=new Date().getTime();
+                        var tag = 'N:' + millis;
+                    var n = new Notification(title,  {
+                            icon: icon === "error" ? "{!URLFOR($Resource.LiveText,'images/error48.png')}" : icon === "inbound" ? "{!URLFOR($Resource.LiveText,'images/LTicon48.png')}" :"",
+                            tag: tag,
+                            body: body
+                        });
+                    n.onclick = function(){
+                            window.parent.focus();
+                    };
+                }
+            }
+        }
+
+        function enableBrowserNotifications(){
+          if (!("Notification" in window)) {
+            console.log("This browser does not support desktop notification");
+          }else if (Notification.permission === "granted") {
+            notificationsGranted = true;
+          }else if (Notification.permission !== 'denied') {
+            Notification.requestPermission(function (permission){
+                if (Notification.permission === "granted") {
+                    j$('#enableNotificationsButton').hide();
+                }
+            });
+          }
+        }
+
+        function checkNotifications(){
+            if (!("Notification" in window)) {
+                console.log("This browser does not support desktop notification");
+                j$('#enableNotificationsButton').hide();
+                return false;
+            }else if (Notification.permission === "granted") {
+                j$('#enableNotificationsButton').hide();
+                return true;
+            }else{
+                j$('#enableNotificationsButton').show();
+                return false;
+            }
+        }
+    </script>
+        <apex:form >
+            <audio id="ConnectivityErrorAudio"></audio>
+            <div id="liveTextWindowBodyId">
+                <div id="liveTextRequestPanelId">
+                    <div id="liveTextRequestPanelHeaderContainer" >
+                        <div id="liveTextRequestPanelHeader" >
+                            <div class="liveTextListContainer">
+                                <div id="liveTextRequestCount"><a id="optId" StyleClass="headerText" >({!totalSize})</a></div>
+                                <apex:outputLabel value="Requests" id="optPrefix" StyleClass="headerText" />
+                                <div id="liveTextStatusList">
+                                    <ul class="dropitmenu">
+                                        <li>
+                                            <apex:outputLink styleClass="dropitdropdown"  id="cip_agentStatusDropDown" value="#">{!status}</apex:outputLink>
+                                            <ul>
+                                                <li><a onclick='setAgentAvailable();' name="setAgentAvailable" href="#"><img src="{!URLFOR($Resource.LiveText,'images/onlineDot.png')}"></img><span>Available</span></a></li>
+                                                <li><a onclick='setAgentOffline();' name="setAgentOffline" href="#"><img src="{!URLFOR($Resource.LiveText,'images/offlineDot.png')}"></img><span>Offline</span></a></li>
+                                                <li id="enableNotificationsButton" class="notificationButton"><a href="#" onclick="enableBrowserNotifications()"><span>Enable Notifications</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="selectIcon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="liveTextRequestList" class="live-text">
+                    <div class="slds-spinner_container" id="spinner">
+                        <div class="slds-spinner--brand slds-spinner slds-spinner--large" aria-hidden="false" role="alert">
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>
+                    <div id="connectivityErrorWindow" class="slds-box slds-theme--error slds-theme--alert-texture" style="display:none">
+                        <div class="slds-grid slds-wrap slds-grid--pull-padded">
+                            <div class="slds-col--padded slds-size--1-of-6 slds-large-size--4-of-12 slds-align-middle">
+                                <div id="errorImage" class="LA_Warning_Img"></div>
+                                <!--svg aria-hidden="true" class="slds-icon slds-icon--middle">
+                                    <use xlink:href="{!URLFOR($Resource.SLDS202, '/assets/icons/utility-sprite/svg/symbols.svg#error')}"></use>
+                                </svg-->
+                            </div>
+                            <div class="slds-col--padded slds-size--5-of-6 slds-large-size--8-of-12 slds-align-middle">
+                                <h2 class="slds-text-heading--medium" id="connectionErrorTitle">{!$Label.ConnectionLostTitle}</h2>
+                            </div>
+                            <div class="slds-col--padded slds-size--1-of-6 slds-large-size--4-of-12"></div>
+                            <div class="slds-col--padded slds-size--5-of-6 slds-large-size--8-of-12 slds-col--bump-left">
+                                <div id="connectionErrorMsg" class="slds-text--medium slds-align-middle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="requestTable" class="slds-scrollable--y">
+                    </div>
+                </div>
+            </div>
+
+            <apex:outputText id="hiddenchannels" value="{!myChannelsJson}" Style="display:none;" />
+            <apex:outputPanel id="dummy" />
+            <div style="display: none;">
+                <img src="{!URLFOR($Resource.LiveText,'images/LTicon48.png')}" />
+                <img src="{!URLFOR($Resource.LiveText,'images/error48.png')}" />
+                <img src="{!URLFOR($Resource.LiveText,'images/error32.png')}" />
+            </div>
+            <apex:actionFunction name="updateAgentStatusJS" action="{!updateAgentStatus}" rerender="dummy">
+                <apex:param name="parm1" assignTo="{!status}" value="" />
+            </apex:actionFunction>
+            <script type="text/javascript">
+                j$(document).ajaxError(function( event, request, settings ) {
+                    if(!isReloading && !connectivityErrorDisplayed){
+                        console.log('Ajax error.');
+                        if(settings != null && request != null){
+                            console.log('Error requesting ' + settings.url + ': ' + request.status + ' ' + request.statusText);
+                        }
+
+                        var isAjaxDisconnect = (request != null && (request.status == 0 || request.status == 401));
+                        if(isAjaxDisconnect) {
+                            sessionTimeoutOccured = sessionTimeoutOccured || request.status == 401 || request.status == 0;
+
+                            if(sessionTimeoutOccured){
+
+                                var cometSessionExpired = (settings != null && settings.url.indexOf('cometd') > 0 && request.status == 401);
+                                if(cometSessionExpired){
+                                    console.log('SESSION TIMED DUE TO COMET SESSION ENDING');
+                                } else{
+                                    console.log('OTHER AJAX ERROR OCCURRED');
+                                }
+                                // reload should fix comet session expiring
+                                reloadLocation();
+                            }
+
+                            showConnectivityError();
+                        }
+
+                    }
+                });
+
+                setInterval(function(){
+                    if(connectivityErrorDisplayed) return;
+
+                    if(!checkForSfdcProvide()){
+                        showConnectivityError();
+                    }
+                    else if(!internetConnectionDown){
+                       try{
+                           sforce.connection.sessionId = '{!$Api.Session_ID}';
+                           var soqlQuery = 'Select id From {!nameSpace}Conversation_Header__c Limit 1';
+                           sforce.connection.query(soqlQuery, function(result){
+                               try{
+                                   Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ConsoleIntegrationController.dummyRemoteAction}',
+                                       function(result, event){
+                                           LiveText.LT.resetConnection();
+                                           checkConnection();
+                                       }
+                                   );
+                               }
+                               catch (e){
+                                   internetConnectionDown = false;
+                                   sessionTimeoutOccured = true;
+                                   console.log('SESSION TIMED OUT DUE TO EXCEPTION');
+                                   showConnectivityError();
+                                   console.log('An Error has Occured. Error: ' + e);
+                               }
+                           });
+                       }
+                       catch(e){
+                           console.log('An Error has Occured. Error:' +e);
+                       }
+
+                   }
+               },{!sessionRefreshTimeInMiliseconds});
+
+                window.addEventListener('online', function(e) {
+                    internetConnectionDown = navigator.onLine;
+                    isReloading = true;
+                    hideConnectivityError();
+                }, false);
+
+                window.addEventListener('offline', function(e) {
+                    internetConnectionDown = navigator.onLine;
+                    isReloading = false;
+                    showConnectivityError();
+                }, false);
+
+                var originalOnError = Visualforce.remoting.Util.error;
+                Visualforce.remoting.Util.error = function(a,b){
+                    if (b&&(b.message.indexOf('Logged in?')!==-1)){
+                        internetConnectionDown = false;
+                        sessionTimeoutOccured = true;
+                         console.log('SESSION TIMED OUT DUE TO LOGGED IN ERROR');
+                        showConnectivityError();
+                    } else {
+                        originalOnError && originalOnError(a,b);
+                    }
+                };
+
+                function resetScreenRefreshTimeout(){
+                    if(screenRefreshTimer != null) clearTimeout(screenRefreshTimer);
+                    screenRefreshTimer = setTimeout(function(){
+                        if(!internetConnectionDown && !sessionTimeoutOccured){
+                            isReloading = true;
+                            sessionStorage.setItem('previousAgentStatus', getCurrentStatus());
+                            sessionStorage.setItem('suppressAudio', true);
+                            reloadLocation();
+                        }
+                     },2*{!sessionRefreshTimeInMiliseconds}+30000);
+                 }
+
+                 resetScreenRefreshTimeout();
+            </script>
+    </apex:form>
+</html>
+</apex:page>

@@ -1,0 +1,1332 @@
+<apex:page controller="LiveText.LiveTextAdminController" title="LiveMessage Admin" action="{!populateChannels}">
+    <c:ScriptsComponent id="scmp" />
+    <apex:includeScript value="{!URLFOR($Resource.LiveText__LiveText, 'js/livetextadmin.js')}" />
+    <apex:sectionHeader title="{!$Label.livetext__adminpagetitlelbl}" subtitle="{!$Label.livetext__adminpgsubtitlelbl}"/>
+    <apex:includeScript value="{!URLFOR($Resource.LiveText__LiveText, '/js/libphonenumber.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.LiveText__LiveText, '/js/livetextglobal.js')}" />
+    <script src="/soap/ajax/34.0/connection.js"> </script>
+    <script src="/soap/ajax/34.0/apex.js"> </script>
+
+    <style>
+        .verticalSpacer{height:5px;width:1px;}
+        .radioOpt td, .radioOptinput{
+            padding: 5px;
+        }
+        fieldset {
+            margin-top: -10px;
+        }
+    </style>
+    <script type="text/javascript">
+        // W-5434633 - JSENCODE the labels used in the page
+        window.$Label = window.$Label || {};
+        $Label.ChannelTypeText = '{!JSENCODE($Label.livetext__channeltypetext)}';
+        $Label.ChannelTypeFacebook = '{!JSENCODE($Label.livetext__channeltypefacebook)}';
+        $Label.ABCConfSettingLbl = '{!JSENCODE($Label.livetext__abcconfsettinglbl)}'; 
+        $Label.FormsReviewLbl = '{!JSENCODE($Label.livetext__formsreviewlbl)}';
+        $Label.FormImagesLbl = '{!JSENCODE($Label.livetext__formimageslbl)}';
+        $Label.FormImageTooLarge = '{!JSENCODE($Label.livetext__formimagetoolarge)}';
+
+        function enableSound() {
+            disconnectSoundEnabled = false;
+            if(j$('[id$=soundEnbBox]').is(":checked")) {
+                j$('[id$=soundEnbBox]').prop('checked',true);
+                disconnectSoundEnabled = true;
+            }
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.LiveTextAdminController.enableAlertSound}',disconnectSoundEnabled,
+                function(result, event) {
+                }
+            );
+        }
+
+
+        function fillFormattedHiddenField(channel){
+            var phone = j$('[id$=phoneNumberInput]').val();
+            if(channel == $Label.ChannelTypeText){
+                j$('[id$=formattedPhoneInputHidden]').val(formatLTNumber(phone));
+            }else if(channel == $Label.ChannelTypeFacebook || channel == $Label.ABCConfSettingLbl){
+                showPhoneErrorMessage('phoneValid', phone, phone);
+                j$('[id$=formattedPhoneInputHidden]').val(phone);
+                j$('[id$=ltNumberphoneNumberInputHidden]').val(phone)
+                j$(".saveButtons").prop("disabled",false);
+            }
+        }
+
+        function formatLTNumber(phone){
+            var phoneStartsWithPlus = false;
+            var phoneUtil = i18n.phonenumbers.PhoneNumberUtil.getInstance();
+            if(!phone){
+                return null;
+            }
+            if(phone.startsWith('+')){
+                phoneStartsWithPlus = true;
+            }
+            phone = phone.replace(/\D/g,'');
+            if(phone.length == 5 || phone.length == 6){
+                console.log('It\'s a shortcode.');
+                j$('[id$=ltNumberCountryIsoCodeInputHidden]').val('US'); // Only US shortcodes are supported for now
+                //phone = phoneStartsWithPlus ? '+' + phone : phone;
+                j$('[id$=ltNumberphoneNumberInputHidden]').val(phone);
+                showPhoneErrorMessage('phoneValid', phone, phone);
+                return phone;
+            }
+            if(phone.length < 10 || phone.length > 17){
+                console.log('Invalid phone length');
+                phone = phoneStartsWithPlus ? '+' + phone : phone;
+                showPhoneErrorMessage('phoneInvalidLength', phone, phone);
+                j$('[id$=ltNumberphoneNumberInputHidden]').val(phone);
+                return phone;
+            }
+
+            phone = '+' + phone;
+            var number;
+            try{
+                number = phoneUtil.parseAndKeepRawInput(phone);
+            }catch(err){
+                console.log('\'Number\' cannot be created');
+                showPhoneErrorMessage('phoneNotValid', phone, phone);
+                j$('[id$=ltNumberphoneNumberInputHidden]').val(phone);
+                return phone;
+            }
+            if(phoneUtil.isValidNumber(number)){
+                j$('[id$=ltNumberCountryIsoCodeInputHidden]').val(phoneUtil.getRegionCodeForNumber(number));
+                var retPhone = phoneUtil.format(number, i18n.phonenumbers.PhoneNumberFormat.INTERNATIONAL);
+                var e164phone = phoneUtil.format(number, i18n.phonenumbers.PhoneNumberFormat.E164);
+                j$('[id$=ltNumberphoneNumberInputHidden]').val(e164phone);
+                j$('[id$=phoneNumberInput]').val(retPhone);
+                showPhoneErrorMessage('phoneValid', retPhone, e164phone);
+                return retPhone;
+            }else{
+                console.log('Phone is not valid');
+                showPhoneErrorMessage('phoneNotValid', phone, phone);
+                j$('[id$=ltNumberphoneNumberInputHidden]').val(phone);
+                return phone;
+            }
+        }
+
+        var indexImages = 0;
+        var totalImages = 0;
+        var formImagesArr = [];
+        function validateJSON() {
+            hideErrorMessage();
+            var nextBtn = j$("[id$=formNextBtn]");
+            var cancelBtn = j$("[id$=formCancelBtn]");
+            nextBtn.toggleClass('btnDisabled', true).attr('disabled', 'disabled');
+            cancelBtn.toggleClass('btnDisabled', true).attr('disabled', 'disabled');
+            nextBtn.val("Validating JSON...");
+
+            if (!j$("[id$=formJSONInput]").val() || !j$("[id$=formNameInput]").val() || !j$("[id$=formDescInput]").val()) {
+                showFormErrorMsg("fieldsRequiredMissing");
+                return;
+            } else {
+                var isValid = false;
+                var isStatic;
+                var type;
+                try {
+                    var obj = JSON.parse(j$("[id$=formJSONInput]").val())
+                    if (obj && typeof obj === 'object' && obj !== null) {
+                        //sessionStorage.setItem('structuredFormImages', JSON.stringify([]));
+                        if (!obj.hasOwnProperty('v')) {
+                            obj.v = '1';
+                            j$("[id$=formJSONInput]").val(JSON.stringify(obj));
+                        }
+                        if (obj.hasOwnProperty('interactiveData')) {
+                            // This is userLiveLayout or useLiveLayout?
+                            obj.interactiveData.useLiveLayout = true;
+                            j$("[id$=formJSONInput]").val(JSON.stringify(obj));
+
+                            var intDataObj = obj.interactiveData;
+                            if (intDataObj.hasOwnProperty('data')) {
+                                var dataObj = intDataObj.data;
+                                if (dataObj.hasOwnProperty('listPicker')) {
+                                    isStatic = true;
+                                    if (dataObj.listPicker.hasOwnProperty('multipleSelection')) {
+                                        if (dataObj.listPicker.multipleSelection) {
+                                            type = "Multiselect Listpicker";
+                                        } else {
+                                            type = "Singleselect Listpicker";
+                                        }
+                                    } else {
+                                        type = "Listpicker";
+                                    }
+                                } else if (dataObj.hasOwnProperty('event')) {
+                                    isStatic = false;
+                                    if (dataObj.event.hasOwnProperty('timeslots')) {
+                                        var timeSlots = dataObj.event.timeslots;
+                                        if (timeSlots && timeSlots.length > 0) {
+                                            type = "Datetimepicker (Multiple timeslots)";
+                                        } else {
+                                            type = "Datetimepicker (Single timeslot)";
+                                        }
+                                    }
+                                } else {
+                                    type = "NotSupported";
+                                    showFormErrorMsg(type);
+                                    return;
+                                }
+                                if (dataObj.hasOwnProperty('images')) {
+                                    formImagesMap = {};
+                                    for (var i = 0; i < dataObj.images.length; i++) {
+                                        if (dataObj.images[i].hasOwnProperty('identifier')) {
+                                            var imgId = dataObj.images[i].identifier;
+                                            formImagesMap[imgId] = {
+                                                Id:imgId,
+                                                Name:"",
+                                                Data:"",
+                                                Title:"",
+                                                Subtitle:"",
+                                                CanBeLargeImage: false
+                                            };
+                                        }
+                                    }
+                                    formImagesMap = recursiveSearchImgs(obj, formImagesMap, false);
+                                    formImagesArr = [];
+                                    for (var child in formImagesMap) {
+                                        if (formImagesMap.hasOwnProperty(child)) {
+                                            formImagesArr.push(formImagesMap[child]);
+                                        }
+                                    }
+                                    indexImages = 0;
+                                    totalImages = formImagesArr.length;
+                                } else {
+                                    formImagesArr = [];
+                                    indexImages = 0;
+                                    totalImages = 0;
+                                }
+                                isValid = true;
+                            }
+                        }
+                    }
+                } catch (err) {
+                    isValid = false;
+                }
+                if (isValid) {
+                    j$("[id$=formIsStatic]").val(isStatic);
+                    j$("[id$=formType]").val(type);
+
+                    var formName = j$("[id$=formNameInput]");
+                    j$("[id$=formNameOutput]").text(formName.val());
+                    j$("[id$=formNameDetailsOutput]").text(formName.val());
+                    formName.prop("readonly", true);
+
+                    var formDesc = j$("[id$=formDescInput]");
+                    j$("[id$=formDescDetailsOutput]").text(formDesc.val());
+                    formDesc.prop("readonly", true);
+
+                    var formJSON = j$("[id$=formJSONInput]");
+                    j$("[id$=formJSONDetailsOutput]").text(formJSON.val());
+                    formJSON.prop("readonly", true);
+
+                    j$("[id$=formBackBtn]").css("display", "inline");
+                    j$("[id$=formNextBtn]").css("display", "none");
+                    j$("#formDetails").css("display", "none");
+                    if (totalImages > 0) {
+                        setImageUploadSection();
+                        j$("#formImagesToUpload").css("display", "inline");
+                        j$("[id$=formUploadBtn]").css("display", "inline");
+                    }
+                    else {
+                        j$("[id$=formSaveBtn]").css("display", "inline");
+                        j$("[id$=formsDetailsToSaveSection] h3").text($Label.FormsReviewLbl);
+                        j$("#formDetailsToSave").css("display", "inline");
+                    }
+                } else {
+                    showFormErrorMsg("invalidJSON");
+                    return;
+                }
+            }
+            nextBtn.toggleClass('btnDisabled', false).attr('disabled', null);
+            cancelBtn.toggleClass('btnDisabled', false).attr('disabled', null);
+            nextBtn.val("Next");
+        }
+
+        function recursiveSearchImgs(obj, formImagesMap, canBeLargeImage) {
+            if (obj.hasOwnProperty('imageIdentifier')) {
+                if (formImagesMap[obj.imageIdentifier] !== null) {
+                    if(obj.hasOwnProperty('title')){
+                        formImagesMap[obj.imageIdentifier].Title = obj.title;
+                    }
+                    if(obj.hasOwnProperty('subtitle')){
+                        formImagesMap[obj.imageIdentifier].Subtitle = obj.subtitle;
+                    }
+                    if(canBeLargeImage){
+                        formImagesMap[obj.imageIdentifier].CanBeLargeImage = canBeLargeImage;
+                    }
+                }
+            } else {
+                for (var child in obj) {
+                    if (obj.hasOwnProperty(child)) {
+                        if (obj[child] instanceof Object) {
+                            if(child == 'receivedMessage' || child == 'replyMessage'){
+                                formImagesMap = recursiveSearchImgs(obj[child], formImagesMap, true);
+                            }else{
+                                formImagesMap = recursiveSearchImgs(obj[child], formImagesMap, false);
+                            }
+                        }
+                    }
+                }
+            }
+            return formImagesMap;
+        }
+
+        function setImageUploadSection() {
+            j$("[id$=formsDetailsImagesSection] h3").text($Label.FormImagesLbl + " - Uploading " + (indexImages + 1) + " of " + totalImages);
+            j$("[id$=formImageTitle]").text(formImagesArr[indexImages].Title);
+            j$("[id$=formImageSubtitle]").text(formImagesArr[indexImages].Subtitle);
+            j$("[id$=formImageId]").val(formImagesArr[indexImages].Id);
+        }
+
+        var maxStringSize = 6000000;
+        var maxFileSize = 2100000; // 2 mb plus small buffer
+        var imageEncodedFile = "";
+        var imageName = "";
+        function handleFileSelect(evt) {
+            hideErrorMessage();
+            var files = evt.target.files;
+            j$('#formImage').attr('src', '');
+            for (var i = 0, f; f = files[i]; i++) {
+                // Only process image files.
+                if (!f.type.match('image/(jpg|jpeg|JPG|JPEG)')){
+                    showFormErrorMsg("unsupportedFileFormat");
+                    j$('#inputImage').val('');
+                    continue;
+                } else {
+                    var reader = new FileReader();
+                    // Closure to capture the file information.
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+                            if(theFile.size <= maxFileSize){
+                                totalLength = this.result.length;
+                                if(totalLength < maxStringSize){
+                                    j$('#formImage').attr('src', e.target.result);
+                                    imageEncodedFile = e.target.result.replace(/^data:image\/(jpg|jpeg|JPG|JPEG);base64,/, '');
+                                    imageName = theFile.name;
+                                } else {
+                                    j$('#inputImage').val('');
+                                    showFormErrorMsg(($Label.FormImageTooLarge.replace("{0}", maxStringSize)).replace("{1}", totalLength));
+                                }
+                            } else {
+                                j$('#inputImage').val('');
+                                showFormErrorMsg("imageTooLarge");
+                            }
+                        };
+                    })(f);
+                    // Read in the image file as a data URL.
+                    reader.readAsDataURL(f);
+                }
+            }
+        }
+
+        function validateImageBeforeUpload() {
+            hideErrorMessage();
+            var uploadBtn = j$("[id$=formUploadBtn]");
+            var backBtn = j$("[id$=formBackBtn]");
+            var cancelBtn = j$("[id$=formCancelBtn]");
+            uploadBtn.toggleClass('btnDisabled', true).attr('disabled', 'disabled');
+            backBtn.toggleClass('btnDisabled', true).attr('disabled', 'disabled');
+            cancelBtn.toggleClass('btnDisabled', true).attr('disabled', 'disabled');
+            uploadBtn.val("Uploading...");
+            var formImage = j$("#formImage");
+            // Check image dimensions
+            var width = formImage.width();
+            var height = formImage.height();
+            if ((width === 120 && height === 120) || (width === 180 && height === 180) || ((width === 789 && height === 450) && formImagesArr[indexImages].CanBeLargeImage)){
+                // Image dimensions are valid
+                var formImageId = j$('[id$=formImageId]').val();
+                formImagesArr[indexImages].Data = imageEncodedFile;
+                formImagesArr[indexImages].Name = imageName;
+                formImage.attr('src', '');
+                j$("#inputImage").val('');
+                indexImages++;
+                if (indexImages === totalImages) {
+                    // All the images were uploaded already
+                    j$("[id$=formsDetailsToSaveSection] h3").text($Label.FormsReviewLbl);
+                    j$("#formImagesToUpload").css("display", "none");
+                    j$("[id$=formUploadBtn]").css("display", "none");
+                    j$("[id$=formSaveBtn]").css("display", "inline");
+                    j$("#formDetailsToSave").css("display", "inline");
+                } else {
+                    setImageUploadSection();
+                }
+            } else {
+                if (width === 0 && height === 0) {
+                    showFormErrorMsg("noImageSelected");
+                    return;
+                } else if(formImagesArr[indexImages].CanBeLargeImage){
+                    showFormErrorMsg("imageMainDimensionsNotValid");
+                    return;
+                }else {
+                    showFormErrorMsg("imageDimensionsNotValid");
+                    return;
+                }
+            }
+            uploadBtn.toggleClass('btnDisabled', false).attr('disabled', null);
+            backBtn.toggleClass('btnDisabled', false).attr('disabled', null);
+            cancelBtn.toggleClass('btnDisabled', false).attr('disabled', null);
+            uploadBtn.val("Upload");
+        }
+
+        function backStep() {
+            hideErrorMessage();
+            j$("[id$=formBackBtn]").toggleClass('btnDisabled', true).attr('disabled', 'disabled');
+            j$("#formImage").attr('src', '');
+            j$("#inputImage").val('');
+            imageEncodedFile = "";
+            imageName = "";
+            if (indexImages === 0) {
+                // Go to first step before validating JSON
+                if (totalImages > 0) {
+                    j$("#formImagesToUpload").css("display", "none");
+                    j$("[id$=formUploadBtn]").css("display", "none");
+                } else {
+                    j$("[id$=formSaveBtn]").css("display", "none");
+                    j$("#formDetailsToSave").css("display", "none");
+                }
+                j$("[id$=formBackBtn]").css("display", "none");
+                j$("[id$=formNextBtn]").css("display", "inline");
+                j$("#formDetails").css("display", "inline");
+                j$("[id$=formJSONInput]").prop("readonly", false);
+                j$("[id$=formNameInput]").prop("readonly", false);
+                j$("[id$=formDescInput]").prop("readonly", false);
+            } else {
+                if (indexImages === totalImages) {
+                    j$("#formImagesToUpload").css("display", "inline");
+                    j$("[id$=formUploadBtn]").css("display", "inline");
+                    j$("#formDetailsToSave").css("display", "none");
+                    j$("[id$=formSaveBtn]").css("display", "none");
+                }
+                indexImages--;
+                setImageUploadSection();
+            }
+            j$("[id$=formBackBtn]").toggleClass('btnDisabled', false).attr('disabled', null);
+        }
+
+        function savingForm() {
+            j$("[id$=formSaveBtn]").toggleClass('btnDisabled', true).attr('disabled', 'disabled');
+            j$("[id$=formBackBtn]").toggleClass('btnDisabled', true).attr('disabled', 'disabled');
+            j$("[id$=formCancelBtn]").toggleClass('btnDisabled', true).attr('disabled', 'disabled');
+            j$("[id$=formSaveBtn]").val("Saving...");
+            saveForm();
+        }
+
+        function hideErrorMessage() {
+            j$("#formDetailsErrorMsg").css("display", "none");
+        }
+
+        function displayFormErrorMsg() {
+            j$("#formDetailsErrorMsg").css("display", "inline");
+            j$("[id$=formSaveBtn]").val("Save");
+            j$("[id$=formUploadBtn]").val("Upload");
+            j$("[id$=formNextBtn]").val("Next");
+            j$("[id$=formUploadBtn]").toggleClass('btnDisabled', false).attr('disabled', null);
+            j$("[id$=formNextBtn]").toggleClass('btnDisabled', false).attr('disabled', null);
+            j$("[id$=formSaveBtn]").toggleClass('btnDisabled', false).attr('disabled', null);
+            j$("[id$=formBackBtn]").toggleClass('btnDisabled', false).attr('disabled', null);
+            j$("[id$=formCancelBtn]").toggleClass('btnDisabled', false).attr('disabled', null);
+        }
+
+        function insertFromImages(formId) {
+            var isOk = true;
+            sforce.connection.sessionId = '{!$Api.Session_ID}';
+            for(i = 0; i < formImagesArr.length; i++){
+                try{
+                    var created = createAttachment(formImagesArr[i], formId);
+                    if(!created){
+                        isOk = false;
+                    }
+                }catch(e){
+                    console.log('-V- e');
+                    console.log(e);
+                    isOk = false;
+                }
+            }
+            if(isOk){
+                resetStateAfterFormSave();
+            }else{
+                showFormErrorMsg("Error saving images");
+            }
+        }
+
+        function createAttachment(formObject, formId){
+            var attachment = new sforce.SObject('Attachment');
+            attachment.Name = formObject.Id;
+            attachment.Body = formObject.Data;
+            attachment.Description = formObject.Id;
+            attachment.ParentId = formId;
+            var result = sforce.connection.create([attachment]);
+            return result[0].getBoolean("success");
+        }
+
+        function cleanForm() {
+            j$("[id$=autoResponseFrmLookup]").val("");
+            j$("[id$=initialFrmLookup]").val("");
+            j$("[id$=chatEndFrmLookup]").val("");
+        }
+
+        function checkDisabledField(selectedOption) {
+            var radioBtnId = selectedOption.id;
+            var radioBtnSet = document.getElementById(radioBtnId);
+            var radioBtnVal = radioBtnSet.value;
+            var isAutoRespFrm = radioBtnId.includes('autoRespFrm');
+            var isInitialFrm = radioBtnId.includes('initialFrm');
+            var isEndFrm = radioBtnId.includes('chatEndFrm');
+
+            if (isAutoRespFrm) {
+
+                if (radioBtnVal == 'Text') {
+                    j$("[id$=autoResponseFrmLookup]").val("");
+                    j$("[id$=autoResponseFormSelected]").val(false);
+                    j$("[id$=autoResponseText]").show();
+                    j$("[id$=autoResponseFrmLookupDiv]").hide();
+                    renderAutoRespForm(radioBtnVal);
+                } else if (radioBtnVal == 'Form') {
+                    j$("[id$=autoResponseFormSelected]").val(true);
+                    j$("[id$=autoResponseFrmLookupDiv]").show();
+                    j$("[id$=autoResponseText]").hide();
+                    renderAutoRespForm(radioBtnVal);
+                }
+            } else if (isInitialFrm) {
+
+                if (radioBtnVal == 'Text') {
+                    j$("[id$=initialFrmLookup]").val("");
+                    j$("[id$=initialMessageFormSelected]").val(false);
+                    j$("[id$=initialMsgText]").show();
+                    j$("[id$=initialFrmLookupDiv]").hide();
+                    renderInitialForm(radioBtnVal);
+                } else if (radioBtnVal == 'Form') {
+                    j$("[id$=initialMessageFormSelected]").val(true);
+                    j$("[id$=initialFrmLookupDiv]").show();
+                    j$("[id$=initialMsgText]").hide();
+                    renderInitialForm(radioBtnVal);
+                }
+            } else if (isEndFrm) {
+
+                if (radioBtnVal == 'Text') {
+                    j$("[id$=chatEndFrmLookup]").val("");
+                    j$("[id$=chatEndFormSelected]").val(false);
+                    j$("[id$=endMsgText]").show();
+                    j$("[id$=chatEndFrmLookupDiv]").hide();
+                    renderEndForm(radioBtnVal);
+                } else if (radioBtnVal == 'Form') {
+                    j$("[id$=chatEndFormSelected]").val(true);
+                    j$("[id$=chatEndFrmLookupDiv]").show();
+                    j$("[id$=endMsgText]").hide();
+                    renderEndForm(radioBtnVal);
+                }
+            }
+        }
+
+    </script>
+    <apex:form id="heywire_adminForm">
+        <apex:actionPoller action="{!connectedToHeywire}"
+            reRender="heywire_adminForm" interval="5"
+            rendered="{!checkConnectionStatus}" />
+        <apex:pageBlock mode="edit" id="heywire_ConfigureBlock"
+            rendered="{!AND(NOT(displayComponent), NOT(displayFormDetailsSection))}">
+            <apex:inputHidden value="{!oAuthURL}" id="oAuthURL" />
+            <apex:inputHidden value="{!appVersion}" id="appVersion" />
+            <apex:inputHidden value="{!orgType}" id="orgType" />
+            <apex:inputHidden value="{!callbackUrl}" id="callbackURL" />
+            <apex:pageMessages id="heywire_pageMessages" rendered="{!displayMessagesOnTop}" />
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton id="connectRefreshConnection" rendered="{!displayConnectRefreshButton}"
+                    value="{!IF(connectionStatus != null, $Label.livetext__refreshconnectionbtn, $Label.livetext__connectbtn)}"
+                    action="{!connect}" rerender="heywire_adminForm"
+                    oncomplete="openoAuthWindow();" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1"
+                title="{!$Label.livetext__accountdetailpbtitle}" rendered="{!isConfigureUrls}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel id="enterHeywireEndpointInput"
+                        for="heywireEndpointInput" value="{!$Label.livetext__endpointurlinput}" />
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputText id="heywireEndpointInput" size="40"
+                            styleClass="requiredInput" maxLength="255"
+                            value="{!configurationSettings.LiveText__Endpoint_URL__c}" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel id="enterHeywireOAuthEndpointInput"
+                        for="heywireOAuthEndpointInput" value="{!$Label.livetext__oauthurlinput}" />
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputText id="heywireOAuthEndpointInput" size="40"
+                            styleClass="requiredInput" maxLength="255"
+                            value="{!configurationSettings.LiveText__oAuth_URL__c}" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="{!$Label.livetext__basicinfotitle}">
+              <apex:pageBlockSectionItem helpText="{!$Label.livetext__oauthservertooltip}" rendered="{!IF(connectionStatus != null && NOT(displayComponent)
+                                                                                          && configurationSettings != null && configurationSettings.Is_Valid_Credentials__c, false, true)}">
+                  <apex:outputLabel id="OAuthServerLabel" value="{!$Label.livetext__oauthserverlabel}" for="liveTextServerPickList"/>
+                  <apex:outputPanel styleClass="requiredInput" layout="block">
+                      <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                      <apex:selectList id="liveTextServerPickList" multiselect="false" size="1" value="{!liveTextServer}">
+                          <apex:selectOptions value="{!liveTextServerPickList}"/>
+                      </apex:selectList>
+                  </apex:outputPanel>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem helpText="{!$Label.livetext__connectedbyhelptxtlbl}" rendered="{!connectionStatus != null}">
+                  <apex:outputLabel value="{!$Label.livetext__connectedbylbl}" />
+                  <apex:outputPanel >
+                      <apex:outputField value="{!connectionStatus.LastModifiedById}" />
+                      <span style="padding-right: 5px">,</span>
+                      <apex:outputField value="{!connectionStatus.LastModifiedDate}" />
+                  </apex:outputPanel>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem helpText="{!$ObjectType.LiveText__ConfigurationSettings__c.Fields.LiveText__Disconnect_Sound_Enabled__c.inlineHelpText}">
+                  <apex:outputLabel id="soundEnb" value="{!$Label.livetext__disconnectsoundenabledlbl}"/>
+                  <apex:outputPanel id="soundEnbPanel">
+                      <apex:inputCheckbox value="{!disconnectSoundEnabled}" id="soundEnbBox" onclick="enableSound()"/>
+                  </apex:outputPanel>
+              </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:actionFunction action="{!showPhoneErrorMessage}"
+            name="showPhoneErrorMessage" reRender="pageErrors">
+            <apex:param name="message" assignTo="{!phoneErrorMessage}" value=""/>
+            <apex:param name="formattedPhone" assignTo="{!channel.LiveText__International_Live_Text_Number__c}" value=""/>
+            <apex:param name="phoneNumber" assignTo="{!phoneNumber}" value=""/>
+        </apex:actionFunction>
+        <apex:actionFunction action="{!deleteSupportNumber}"
+            name="delSupportNumberJS" reRender="heywire_adminForm">
+            <apex:param name="supportNoId" assignTo="{!selectedLtnId}" value="" />
+        </apex:actionFunction>
+        <apex:actionFunction action="{!editSupportNumber}"
+            name="editSupportNumberJS" reRender="heywire_adminForm">
+            <apex:param name="supportNoId" assignTo="{!selectedLtnId}" value="" />
+        </apex:actionFunction>
+        <apex:pageBlock mode="edit" id="heywire_SupportNoBlock"
+              rendered="{!IF(connectionStatus != null && NOT(displayComponent) && NOT(displayFormDetailsSection), true, false)}">
+            <apex:pageMessages rendered="{!NOT(displayMessagesOnTop)}" />
+            <apex:pageBlockSection columns="1"
+                title="{!$Label.livetext__supportnumberconflbl}">
+                <apex:pageblockTable value="{!channels}" var="sObj"
+                    id="pbtLiveTextNumbers">
+                    <apex:column headerValue="{!$Label.livetext__actionlbl}">
+                        <apex:commandLink value="{!$Label.livetext__editactionlbl}"
+                            onclick="editSupportNumberJS('{!sObj['Id']}'); return false;">
+                        </apex:commandLink>&nbsp;|&nbsp;
+                        <apex:commandLink value="{!$Label.livetext__deleteactionlbl}"
+                            onclick="deleteSupportNumber('{!sObj['Id']}'); return false;">
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.livetext__namelbl}">
+                        <apex:outputField value="{!sObj['Name']}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.livetext__supportnumberlbl}">
+                        <apex:outputField value="{!sObj.LiveText__Formatted_Support_Number__c}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.livetext__lastmodifiedbylbl}">
+                        <apex:outputField value="{!sObj.LastModifiedById}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.livetext__lastmodifieddatelbl}">
+                        <apex:outputField value="{!sObj.LastModifiedDate}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$Label.livetext__validatedlbl}">
+                        <apex:image value="/img/func_icons/remove12_on.gif" width="15"
+                            height="15" rendered="{!NOT(sObj['Validated__c'])}" />
+                        <apex:image value="/img/msg_icons/confirm16.gif" width="15"
+                            height="15" rendered="{!sObj.LiveText__Validated__c}" />
+                    </apex:column>
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="{!editModeTitle}" mode="edit"
+            id="heywire_SupportNoDetailBlock" rendered="{!displayComponent}">
+            <apex:actionFunction action="{!moveToRight}" name="moveToRightJS"
+                reRender="assignUsersSection" />
+            <apex:actionFunction action="{!moveToLeft}" name="moveToLeftJS"
+                reRender="assignUsersSection" />
+            <apex:actionFunction action="{!searchUsers}" name="searchUsersJS"
+                reRender="assignUsersSection" />
+            <apex:actionFunction action="{!moveSPRecordTypeToRight}" name="moveSPRecordTypeToRightJS"
+                reRender="screenPopOptionsSection" />
+            <apex:actionFunction action="{!moveSPRecordTypeToLeft}" name="moveSPRecordTypeToLeftJS"
+                reRender="screenPopOptionsSection" />
+            <apex:actionFunction action="{!moveSPRecordTypeUp}" name="moveSPRecordTypeUpJS"
+                reRender="screenPopOptionsSection" />
+            <apex:actionFunction action="{!moveSPRecordTypeDown}" name="moveSPRecordTypeDownJS"
+                reRender="screenPopOptionsSection" />
+            <apex:actionFunction action="{!moveALRecordTypeToRight}" name="moveALRecordTypeToRightJS"
+                reRender="workspaceOptionsSection" />
+            <apex:actionFunction action="{!moveALRecordTypeToLeft}" name="moveALRecordTypeToLeftJS"
+                reRender="workspaceOptionsSection" />
+            <apex:pageBlock id="pageErrors">
+                <apex:pageMessages rendered="{!NOT(displayMessagesOnTop)}" id="heywire_SupportNoDetailBlock_messages" />
+            </apex:pageBlock>
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton id="saveSuppotNoBtn" styleClass="saveButtons" value="{!$Label.livetext__savebtn}"
+                    action="{!save}"/>
+                <apex:commandButton id="cancelBtn" value="{!$Label.livetext__cancelbtn}"
+                    action="{!cancel}" onclick="cleanForm();" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2"
+                title="{!$Label.livetext__basicinformationlbl}" >
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Number__c.inlineHelpText}" >
+                    <apex:outputLabel id="phoneNumberInputLbl" for="phoneNumberInput"
+                        value="{!$Label.livetext__phonenumberlbl}" />
+                    <apex:outputPanel styleClass="requiredInput" layout="block" id="PhoneNumberPanel">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputText id="phoneNumberInput" size="40" maxlength="255"
+                            value="{!phoneNumber}"
+                            disabled="{!channel.LiveText__Validated__c}"
+                            onchange="fillFormattedHiddenField('{!channelType}');"/>
+                        <apex:inputHidden id="formattedPhoneInputHidden" value="{!channel.LiveText__International_Live_Text_Number__c}"/>
+                        <apex:inputHidden id="ltNumberCountryIsoCodeInputHidden" value="{!channel.LiveText__ISOCountryCode__c}"/>
+                        <apex:inputHidden id="ltNumberphoneNumberInputHidden" value="{!channel.LiveText__Number__c}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Validated__c.inlineHelpText}">
+                    <apex:outputLabel id="validatedLbl" for="validatedImg"
+                        value="{!$Label.livetext__validatedlbl}" />
+                    <apex:image value="{!IF(channel.LiveText__Validated__c, '/img/msg_icons/confirm16.gif', '/img/func_icons/remove12_on.gif')}"
+                        width="15" height="15" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$Label.livetext__phonelabelhelptextlbl}">
+                    <apex:outputLabel id="nameInputLbl" for="nameInput"
+                        value="{!$Label.livetext__namelabellbl}" />
+                    <apex:outputPanel styleClass="requiredInput" layout="block">
+                        <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                        <apex:inputText id="nameInput" size="40" maxlength="80"
+                            value="{!channel.Name}" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Save_Session_Attachments__c.inlineHelpText}">
+                    <apex:outputLabel id="saveSessionAttachments" for="saveSessionAttachmentsCheckBox"
+                        value="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Save_Session_Attachments__c.Label}"/>
+                    <apex:outputPanel id="saveSessionAttachmentsPanel">
+                        <apex:inputCheckbox value="{!channel.LiveText__Save_Session_Attachments__c}" id="saveSessionAttachmentsCheckBox" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem rendered="{!displayExclusiveSearch}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Search_Exclusively_With_Unique_Id__c.inlineHelpText}">
+                    <apex:outputLabel id="searchExclusivelyWithUniqueIdLbl" for="searchExclusivelyWithUniqueId"
+                        value="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Search_Exclusively_With_Unique_Id__c.label}" />
+                    <apex:inputCheckbox value="{!channel.LiveText__Search_Exclusively_With_Unique_Id__c}" id="searchExclusivelyWithUniqueId" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="1" title="{!$Label.livetext__autoresdetaillbl}" id="responseManagementSection" rendered="{!displayResponseManagement}">
+                <apex:pageBlockSectionItem rendered="{!displayABCFeatures}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Auto_Response_Message__c.inlineHelpText}">
+                    <apex:outputPanel layout="inline">
+                        <apex:outputLabel id="autoRespFrmLbl" for="autoRespFrm"
+                            value="{!$Label.livetext__autoresponsemsglbl}" />
+                    </apex:outputPanel>
+                    <apex:outputPanel id="autoRespFormSelected" style="top: 60px !important;">
+                        <apex:selectRadio value="{!autoResponseForm}" id="autoRespFrm" styleClass="radioOpt" onChange="checkDisabledField(this); return false;" >
+                            <apex:selectOption itemValue="Text" itemLabel="Text" />
+                            <apex:selectOption itemValue="Form" itemLabel="Form" />
+                        </apex:selectRadio>
+                        <apex:outputPanel rendered="{!IF(autoResponseForm == 'Text','true','false')}" >
+                            <div id="autoResponseText">
+                                <apex:pageBlockSectionItem >
+                                        <apex:inputTextarea id="abcAutoRespInput"
+                                            cols="25"
+                                            rows="3"
+                                            value="{!channel.LiveText__Auto_Response_Message__c}"></apex:inputTextarea>
+                                </apex:pageBlockSectionItem>
+                            </div>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(autoResponseForm == 'Form','true','false')}">
+                            <div id="autoResponseFrmLookupDiv" style="margin-bottom: 20px;" >
+                                <apex:inputField id="autoResponseFrmLookup" value="{!channel.LiveText__Auto_Response_Form__c}"></apex:inputField>
+                            </div>
+                        </apex:outputPanel>
+                        <apex:actionFunction name="renderAutoRespForm" rerender="autoRespFormSelected" >
+                            <apex:param name="selectedOption" assignTo="{!autoResponseForm}" value="" />
+                        </apex:actionFunction>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem rendered="{!displayABCFeatures}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Initial_Message__c.inlineHelpText}">
+                    <apex:outputPanel layout="inline">
+                        <apex:outputLabel id="initialFrmLbl" for="initialFrm"
+                            value="{!$Label.livetext__initialmsglbl}" />
+                    </apex:outputPanel>
+                    <apex:outputPanel id="initialFormSelected" layout="inline">
+                        <apex:selectRadio value="{!initialMessageForm}" id="initialFrm" styleClass="radioOpt" onChange="checkDisabledField(this); return false;" >
+                            <apex:selectOption itemValue="Text" itemLabel="Text" />
+                            <apex:selectOption itemValue="Form" itemLabel="Form" />
+                        </apex:selectRadio>
+                        <apex:outputPanel rendered="{!IF(initialMessageForm == 'Text','true','false')}" >
+                            <div id="initialMsgText">
+                                <apex:pageBlockSectionItem >
+                                    <apex:inputTextarea id="abcInitialMsgInput"
+                                        cols="25"
+                                        rows="3"
+                                        value="{!channel.LiveText__Initial_Message__c}">
+                                    </apex:inputTextarea>
+                                </apex:pageBlockSectionItem>
+                            </div>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(initialMessageForm == 'Form','true','false')}">
+                            <div id="initialFrmLookupDiv" style="margin-bottom: 20px;" >
+                                <apex:inputField id="initialFrmLookup" value="{!channel.LiveText__Start_Message_Form__c}"></apex:inputField>
+                            </div>
+                        </apex:outputPanel>
+                        <apex:actionFunction name="renderInitialForm" rerender="initialFormSelected" >
+                            <apex:param name="selectedOption" assignTo="{!initialMessageForm}" value="" />
+                        </apex:actionFunction>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem rendered="{!displayABCFeatures}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Chat_End_Message__c.inlineHelpText}">
+                    <apex:outputPanel layout="inline">
+                        <apex:outputLabel id="chatEndFrmLbl" for="chatEndFrm"
+                            value="{!$Label.livetext__chatendmsglbl}" />
+                    </apex:outputPanel>
+                    <apex:outputPanel id="endFormSelected" layout="inline">
+                        <apex:selectRadio value="{!chatEndForm}" id="chatEndFrm" styleClass="radioOpt" onChange="checkDisabledField(this); return false;" >
+                            <apex:selectOption itemValue="Text" itemLabel="Text" />
+                            <apex:selectOption itemValue="Form" itemLabel="Form" />
+                        </apex:selectRadio>
+                        <apex:outputPanel rendered="{!IF(chatEndForm == 'Text','true','false')}" >
+                        <div id="endMsgText">
+                            <apex:pageBlockSectionItem >
+                                <apex:inputTextarea id="abcEndChatInput"
+                                    value="{!channel.LiveText__Chat_End_Message__c}"
+                                    cols="25"
+                                    rows="3">
+                                </apex:inputTextarea>
+                            </apex:pageBlockSectionItem>
+                        </div>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(chatEndForm == 'Form','true','false')}">
+                            <div id="chatEndFrmLookupDiv" >
+                                <apex:inputField id="chatEndFrmLookup" value="{!channel.LiveText__End_Message_Form__c}"></apex:inputField>
+                            </div>
+                        </apex:outputPanel>
+                        <apex:actionFunction name="renderEndForm" rerender="endFormSelected" >
+                            <apex:param name="selectedOption" assignTo="{!chatEndForm}" value="" />
+                        </apex:actionFunction>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:inputHidden value="{!autoResponseFormSelected}" id="autoResponseFormSelected" />
+                <apex:inputHidden value="{!chatEndFormSelected}" id="chatEndFormSelected" />
+                <apex:inputHidden value="{!initialMessageFormSelected}" id="initialMessageFormSelected" />
+
+                <apex:pageBlockSectionItem rendered="{!NOT(displayABCFeatures)}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Auto_Response_Message__c.inlineHelpText}">
+                    <apex:outputLabel id="autoRespMsgLbl" for="autoRespInput"
+                        value="{!$Label.livetext__autoresponsemsglbl}"/>
+                    <apex:inputTextarea id="autoRespInput"
+                        cols="25"
+                        rows="3"
+                        value="{!channel.LiveText__Auto_Response_Message__c}">
+                    </apex:inputTextarea>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!NOT(displayABCFeatures)}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Initial_Message__c.inlineHelpText}">
+                    <apex:outputLabel id="initialMsgLbl" for="initialMsgInput"
+                        value="{!$Label.livetext__initialmsglbl}" />
+                    <apex:inputTextarea id="initialMsgInput"
+                        cols="25"
+                        rows="3"
+                        value="{!channel.LiveText__Initial_Message__c}">
+                    </apex:inputTextarea>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!NOT(displayABCFeatures)}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Chat_End_Message__c.inlineHelpText}">
+                    <apex:outputLabel id="endChatInputLbl" for="endChatInput"
+                        value="{!$Label.livetext__chatendmsglbl}" />
+                    <apex:inputTextarea id="endChatInput"
+                        value="{!channel.LiveText__Chat_End_Message__c}"
+                        cols="25"
+                        rows="3"></apex:inputTextarea>
+                </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem rendered="{!NOT(displayABCFeatures)}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__No_Available_Users_Message__c.inlineHelpText}">
+                        <apex:outputLabel id="noAvailableUsersLbl" for="noAvailableUsersInput"
+                            value="{!$Label.livetext__noavailableusersmsglbl}" />
+                        <apex:inputTextarea id="noAvailableUsersInput"
+                            cols="25"
+                            rows="3"
+                            value="{!channel.LiveText__No_Available_Users_Message__c}"></apex:inputTextarea>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!NOT(displayABCFeatures)}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Offline_Hours_Message__c.inlineHelpText}">
+                        <apex:outputLabel id="offlienHrsMsgLbl" for="offlineHrsInput"
+                            value="{!$Label.livetext__offlinehrsmsglbl}" />
+                        <apex:inputTextarea id="offlineHrsInput"
+                            cols="25"
+                            rows="3"
+                            value="{!channel.LiveText__Offline_Hours_Message__c}"
+                            disabled="{!businessHours.size<=1}"></apex:inputTextarea>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!NOT(displayABCFeatures)}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Business_Hours__c.inlineHelpText}">
+                        <apex:outputLabel id="businessHrsLbl" for="businessHourList"
+                            value="{!$Label.livetext__businesshrslbl}" />
+                        <apex:selectList id="businessHourList"
+                            value="{!selectedBusinessHour}" size="1"
+                            disabled="{!businessHours.size<=1}">
+                            <apex:actionSupport event="onchange" rerender="notifyUsersDuringOffHoursPanel"/>
+                            <apex:selectOptions value="{!businessHours}" />
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!NOT(displayABCFeatures)}" helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Notify_Users_During_Off_Hours__c.inlineHelpText}">
+                        <apex:outputLabel id="notifyUsersDuringOffHoursLbl" for="notifyUsersDuringOffHoursCheckBox"
+                            value="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Notify_Users_During_Off_Hours__c.Label}"/>
+                        <apex:outputPanel id="notifyUsersDuringOffHoursPanel">
+                            <apex:inputCheckbox value="{!notifyUsersDuringOffHours}" id="notifyUsersDuringOffHoursCheckBox"
+                                disabled="{!IF(OR((selectedBusinessHour == 'None'),(selectedBusinessHour == '')),true, false)}"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+
+
+
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Text_Session_Reuse_Time_seconds__c.inlineHelpText}">
+                    <apex:outputLabel id="textSessionReuseTimeInputLabel" for="textSessionReuseTimeInput"
+                            value="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Text_Session_Reuse_Time_seconds__c.Label}"/>
+                    <apex:inputText id="textSessionReuseTimeInput" size="20" maxlength="18"
+                            value="{!textSessionReuseTime}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__ITR_Enabled__c.inlineHelpText}">
+                    <apex:outputLabel id="itrEnabledLbl" for="itrEnabledCheckBox"
+                        value="{!$Label.livetext__itrenabledlbl}" />
+                    <apex:outputPanel id="itrEnabledPanel" layout="block" >
+                        <table cellpadding='0' cellspacing='0'>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <apex:inputCheckbox value="{!isITREnabled}" id="itrEnabledCheckBox">
+                                            <apex:actionSupport event="onchange" rerender="responseManagementSection" />
+                                        </apex:inputCheckbox>
+                                    </td>
+                                    <td style="background-color:yellow;">
+                                        <apex:outputPanel rendered="{!isITREnabled}" layout="inline" >
+                                            <b>
+                                                <span style='padding:5px;'>Warning:</span>
+                                            </b>
+                                            <apex:outputLabel value="{!$Label.livetext__itrenabledwarning}"/>
+                                            &nbsp;<a href='https://heywire.force.com/external/s/' target='_blank'>https://heywire.force.com/external/s/</a>&nbsp;(Documentation tab)&nbsp;
+                                        </apex:outputPanel>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel id="omniChannelQuquqIdLbl" for="omniChannelQueueId" value="{!$Label.livetext__omnichanneldefaultqueuelbl}"/>
+                    <apex:selectList id="omniChannelQueueId" value="{!selectedOmniChannelQueue}" size="1" disabled="{!disableOmniChannelpicklist}">
+                        <apex:selectOptions value="{!omniChannelQueues}" />
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="1" title="{!$Label.livetext__formslbl}" id="formsListSection" rendered="{!displayABCFeatures}">
+                <apex:actionFunction action="{!deleteForm}" name="deleteFormJS" reRender="formsListSection">
+                    <apex:param name="formId" assignTo="{!selectedFormId}" value="" />
+                </apex:actionFunction>
+                <apex:actionFunction action="{!editForm}" name="editFormJS" reRender="heywire_adminForm">
+                    <apex:param name="formId" assignTo="{!selectedFormId}" value="" />
+                </apex:actionFunction>
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton id="addFormBtn"
+                        value="{!$Label.livetext__addformbtn}" action="{!addForm}"/>
+                    </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:pageblockTable value="{!channelFormsList}" var="form"
+                        id="pbtLiveTextNumberForms">
+                        <apex:column headerValue="{!$Label.livetext__actionlbl}">
+                            <apex:commandLink value="{!$Label.livetext__editactionlbl}"
+                                onclick="editFormJS('{!form['Id']}'); return false;">
+                            </apex:commandLink>&nbsp;|&nbsp;
+                            <apex:commandLink value="{!$Label.livetext__deleteactionlbl}"
+                                onclick="if (confirm('Are you sure?')){ deleteFormJS('{!form['Id']}'); } return false;">
+                            </apex:commandLink>
+                        </apex:column>
+                        <apex:column headerValue="{!$Label.livetext__formnamelbl}">
+                            <apex:outputField value="{!form['Name']}" />
+                        </apex:column>
+                        <apex:column headerValue="{!$Label.livetext__formdescriptionlbl}">
+                            <apex:outputField value="{!form.LiveText__Description__c}" />
+                        </apex:column>
+                        <apex:column headerValue="{!$Label.livetext__lastmodifiedbylbl}">
+                            <apex:outputField value="{!form.LastModifiedById}" />
+                        </apex:column>
+                        <apex:column headerValue="{!$Label.livetext__lastmodifieddatelbl}">
+                            <apex:outputField value="{!form.LastModifiedDate}" />
+                        </apex:column>
+                    </apex:pageblockTable>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection columns="1" title="{!$Label.livetext__assignuserlbl}"
+                id="assignUsersSection">
+                <apex:pageBlockSectionItem helpText="{!$Label.livetext__assignusersdesclbl}">
+                    <apex:outputLabel id="assignUsersHeaderLbl" for="assignUsersPanel" value="{!$Label.livetext__assignlbl}" />
+                        <apex:outputPanel id="assignUsersPanel" layout="block">
+                            <apex:outputPanel id="searchUserPanel" layout="block">
+                                <apex:outputLabel id="searchLbl" for="searchUsersList" value="{!$Label.livetext__searchlbl}" />
+                                <apex:selectList id="searchTypeList" value="{!selectedSearchType}" size="1">
+                                    <apex:selectOptions value="{!searchTypeList}" />
+                                </apex:selectList>
+                                <apex:outputLabel id="searchTextLabel" for="searchTextInput" value="{!$Label.livetext__forlbl}" />
+                                <apex:inputtext id="searchTextInput" value="{!searchUserName}" />
+                                <apex:commandButton id="searchUserBtn" value="{!$Label.livetext__findbtn}" onclick="searchUsersJS(); return false;" />
+                            </apex:outputPanel>
+                            <table class="layout">
+                                <tbody>
+                                    <tr>
+                                        <td><apex:image value="/s.gif" styleClass="verticalSpacer" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <apex:outputPanel id="multiselectPanel" layout="block"
+                                                styleClass="duelingListBox">
+                                                <table class="layout">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="selectCell"><apex:outputPanel layout="block"
+                                                                    styleClass="selectTitle">
+                                                                    <apex:outputLabel value="{!$Label.livetext__availablememberslbl}"
+                                                                        for="availableMemberPicklist" />
+                                                                </apex:outputPanel> <apex:selectList id="availableMemberPicklist"
+                                                                    multiselect="true" value="{!availableMembersList}" size="15">
+                                                                    <apex:selectOptions value="{!availableMembers}" />
+                                                                </apex:selectList></td>
+                                                            <td class="buttonCell"><apex:outputPanel layout="block"
+                                                                    styleClass="text">{!$Label.livetext__addlbl}</apex:outputPanel> <apex:outputPanel layout="block" styleClass="text">
+                                                                    <apex:commandLink onclick="moveToRightJS(); return false;">
+                                                                        <apex:image value="/s.gif" styleClass="rightArrowIcon" />
+                                                                    </apex:commandLink>
+                                                                </apex:outputPanel> <apex:outputPanel layout="block" styleClass="text">
+                                                                    <apex:commandLink onclick="moveToLeftJS(); return false;">
+                                                                        <apex:image value="/s.gif" styleClass="leftArrowIcon" />
+                                                                    </apex:commandLink>
+                                                                </apex:outputPanel> <apex:outputPanel layout="block" styleClass="duelingText">{!$Label.livetext__removelbl}</apex:outputPanel>
+                                                            </td>
+                                                            <td class="selectCell">
+                                                                <apex:outputPanel layout="block"
+                                                                    styleClass="selectTitle">
+                                                                    <apex:outputLabel value="{!$Label.livetext__selectedmemberslbl}"
+                                                                        for="selectedMemberPicklist" />
+                                                                </apex:outputPanel> <apex:selectList id="selectedMemberPicklist"
+                                                                    multiselect="true" size="15" value="{!selectedMembersList}">
+                                                                    <apex:selectOptions value="{!selectedMembers}" />
+                                                                </apex:selectList>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </apex:outputPanel>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1" title="{!$Label.livetext__screenpopoptionslbl}" id="screenPopOptionsSection" rendered="{!displayScreenpopOptions}">
+                    <apex:pageBlockSectionItem helpText="{!$Label.livetext__screenpopwithrecordsdescriptionlbl}">
+                        <apex:outputLabel id="screenPopHeaderRecordsLbl" for="screenPopRocordsMultiselectPanel" value="{!$Label.livetext__screenpopwithrecordslbl}" />
+                        <apex:outputPanel id="screenPopRocordsMultiselectPanel" layout="block" styleClass="duelingListBox">
+                            <apex:outputLabel id="screenPopHeaderRecordsDescLbl" value="{!$Label.livetext__screenpopwithrecordsheaderlbl}" />
+                            <table class="layout">
+                                <tbody>
+                                    <tr>
+                                        <td colspan='4'><apex:image value="/s.gif" styleClass="verticalSpacer" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="selectCell">
+                                            <apex:outputPanel layout="block" styleClass="selectTitle">
+                                                <apex:outputLabel value="{!$Label.livetext__availablerecordtypeslbl}"
+                                                    for="availableRecordTypesPicklist" />
+                                            </apex:outputPanel>
+                                            <apex:selectList id="availableRecordTypesPicklist"
+                                                multiselect="true" value="{!screenPopAvailableRecordTypesList}" size="8">
+                                                <apex:selectOptions value="{!screenPopAvailableRecordTypes}" />
+                                            </apex:selectList>
+                                        </td>
+                                        <td class="buttonCell">
+                                            <apex:outputPanel layout="block"
+                                                styleClass="text">{!$Label.livetext__addlbl}
+                                            </apex:outputPanel>
+                                            <apex:outputPanel layout="block" styleClass="text">
+                                                <apex:commandLink onclick="moveSPRecordTypeToRightJS(); return false;">
+                                                    <apex:image value="/s.gif" styleClass="rightArrowIcon" />
+                                                </apex:commandLink>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel layout="block" styleClass="text">
+                                                <apex:commandLink onclick="moveSPRecordTypeToLeftJS(); return false;">
+                                                    <apex:image value="/s.gif" styleClass="leftArrowIcon" />
+                                                </apex:commandLink>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel layout="block" styleClass="duelingText">{!$Label.livetext__removelbl}</apex:outputPanel>
+                                        </td>
+                                        <td class="selectCell">
+                                            <apex:outputPanel layout="block" styleClass="selectTitle">
+                                                <apex:outputLabel value="{!$Label.livetext__selectedrecordtypeslbl}" for="selectedRecordTypesPicklist" />
+                                            </apex:outputPanel>
+                                            <apex:selectList id="selectedRecordTypesPicklist" multiselect="true" size="8" value="{!screenPopSelectedRecordTypesList}">
+                                                <apex:selectOptions value="{!screenPopSelectedRecordTypes}" />
+                                            </apex:selectList>
+                                        </td>
+                                        <td class="buttonCell">
+                                            <apex:outputPanel layout="block" styleClass="text">
+                                                <apex:commandLink onclick="moveSPRecordTypeUpJS(); return false;">
+                                                    <apex:image value="/s.gif" styleClass="upArrowIcon" />
+                                                </apex:commandLink>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel layout="block" styleClass="text">
+                                                <apex:commandLink onclick="moveSPRecordTypeDownJS(); return false;">
+                                                    <apex:image value="/s.gif" styleClass="downArrowIcon" />
+                                                </apex:commandLink>
+                                            </apex:outputPanel>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:image value="/s.gif" width="1" height="10" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$Label.livetext__screenpopnorecordsdescriptionlbl}">
+                    <apex:outputLabel id="screenPopHeaderNoRecordsLbl" for="screenPopNoRecordsSelectPanel" value="{!$Label.livetext__screenpopnorecordslbl}" />
+                    <apex:outputPanel id="screenPopNoRecordsSelectPanel" layout="block" styleClass="duelingListBox">
+                        <apex:outputLabel id="screenPopHeaderNoRecordsDescLbl" value="{!$Label.livetext__screenpopnorecordsheaderlbl}" />
+                        <table class="layout">
+                            <tbody>
+                                <tr>
+                                    <td><apex:image value="/s.gif" styleClass="verticalSpacer" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <apex:selectList id="screenPopNoRecordsList"
+                                            value="{!screenPopDefaultRecordType}" size="1"
+                                            disabled="{!defaultRecordTypes.size<=1}">
+                                            <apex:selectOptions value="{!defaultRecordTypes}" />
+                                        </apex:selectList>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" title="{!$Label.livetext__txt_workspace_options}" id="workspaceOptionsSection" rendered="{!displayWorkspaceOptions}">
+                <apex:pageBlockSectionItem helpText="{!$Label.livetext__autolinkingdescriptionlbl}">
+                    <apex:outputLabel id="screenPopHeaderNoRecordsLbl" for="autoLinkingSelectPanel" value="{!$Label.livetext__autolinkinglbl}" />
+                    <apex:outputPanel id="autoLinkingSelectPanel" layout="block" styleClass="duelingListBox">
+                        <apex:outputLabel id="autoLinkingHeaderDescLbl" value="{!$Label.livetext__autolinkingheaderlbl}" />
+                        <table class="layout">
+                            <tbody>
+                                <tr>
+                                    <td colspan='3'><apex:image value="/s.gif" styleClass="verticalSpacer" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="selectCell">
+                                        <apex:outputPanel layout="block" styleClass="selectTitle">
+                                            <apex:outputLabel value="{!$Label.livetext__availablerecordtypeslbl}"
+                                                for="autoLinkingAvailableRecordTypesPicklist" />
+                                        </apex:outputPanel>
+                                        <apex:selectList id="autoLinkingAvailableRecordTypesPicklist"
+                                            multiselect="true" value="{!autoLinkingAvailableRecordTypesList}" size="8">
+                                            <apex:selectOptions value="{!autoLinkingAvailableRecordTypes}" />
+                                        </apex:selectList>
+                                    </td>
+                                    <td class="buttonCell">
+                                        <apex:outputPanel layout="block"
+                                            styleClass="text">{!$Label.livetext__addlbl}
+                                        </apex:outputPanel>
+                                        <apex:outputPanel layout="block" styleClass="text">
+                                            <apex:commandLink onclick="moveALRecordTypeToRightJS(); return false;">
+                                                <apex:image value="/s.gif" styleClass="rightArrowIcon" />
+                                            </apex:commandLink>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel layout="block" styleClass="text">
+                                            <apex:commandLink onclick="moveALRecordTypeToLeftJS(); return false;">
+                                                <apex:image value="/s.gif" styleClass="leftArrowIcon" />
+                                            </apex:commandLink>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel layout="block" styleClass="duelingText">{!$Label.livetext__removelbl}</apex:outputPanel>
+                                    </td>
+                                    <td class="selectCell">
+                                        <apex:outputPanel layout="block" styleClass="selectTitle">
+                                            <apex:outputLabel value="{!$Label.livetext__selectedrecordtypeslbl}" for="autoLinkingSelectedRecordTypesPicklist" />
+                                        </apex:outputPanel>
+                                        <apex:selectList id="autoLinkingSelectedRecordTypesPicklist" multiselect="true" size="8" value="{!autoLinkingSelectedRecordTypesList}">
+                                            <apex:selectOptions value="{!autoLinkingSelectedRecordTypes}" />
+                                        </apex:selectList>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!NOT(displayAutolinkingOnly)}">
+                    <apex:image value="/s.gif" styleClass="verticalSpacer" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$Label.livetext__allownewlblhelp}" >
+                    <apex:outputLabel id="subtabsHeaderLbl" for="subtabsSelectPanel" value="{!$Label.livetext__newtabslbl}" />
+                    <apex:outputPanel id="subtabsSelectPanel" layout="block">
+                        <apex:outputLabel id="subtabsHeaderDescLbl" value="{!$Label.livetext__newtabsheaderlbl}" />
+                        <table class="layout">
+                            <tbody>
+                                <tr>
+                                    <td><apex:image value="/s.gif" styleClass="verticalSpacer" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <apex:selectCheckboxes value="{!selectedNewTabs}" id="newItemsCheckBoxes" layout="pageDirection">
+                                            <apex:selectOptions value="{!newTabOptions}"/>
+                                        </apex:selectCheckboxes>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Critical_Alert_Time__c.inlineHelpText}">
+                    <apex:outputLabel id="timeoutInputLabel" for="timeoutInput"
+                            value="{!$ObjectType.LiveText__LiveText_Number__c.Fields.LiveText__Critical_Alert_Time__c.Label}"/>
+                    <apex:inputText id="timeoutInput" size="20" maxlength="18"
+                            value="{!criticalAlertTime}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$Label.livetext__countrycodesdescriptionlbl}" rendered="{!NOT(displayAutolinkingOnly)}">
+                    <apex:outputLabel id="countryCodesHeaderLbl" for="countryCodesSelectPanel" value="{!$Label.livetext__countrycodeslbl}" />
+                    <apex:outputPanel id="countryCodesSelectPanel" layout="block" style="margin-left:10px;">
+                        <apex:inputCheckbox value="{!isPrependCountryCode}" id="prependCountryCodeCheckBox" />
+                        <apex:outputLabel value="{!$Label.livetext__countrycodesheaderlbl}" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="transcriptOptions" columns="1" title="{!$Label.livetext__txt_transcript_options}">
+                <apex:pageBlockSectionItem helpText="{!$Label.livetext__createactivityrecordslbl}">
+                    <apex:outputLabel id="createActivityRecordsLabel" for="createActivityRecordsPanel" value="{!$Label.livetext__createactivitylbl}"/>
+                    <apex:outputPanel id="createActivityRecordsPanel" layout="block">
+                        <apex:outputLabel id="createActivityHeaderLbl" value="{!$Label.livetext__createactivityheaderlbl}"/>
+                        <table>
+                            <tr>
+                                <td><apex:image value="/s.gif" styleClass="verticalSpacer" /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:selectCheckboxes value="{!selectedCreateActivityItems}" id="createActivityCheckBoxes" layout="pageDirection">
+                                        <apex:selectOptions value="{!createActivityItemsOptions}"/>
+                                    </apex:selectCheckboxes>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <apex:pageBlock title="{!editModeTitle}" mode="edit"
+            id="formDetailsBlock" rendered="{!displayFormDetailsSection}">
+
+            <div id="formDetailsErrorMsg">
+                <apex:pageBlock id="pageFormErrors">
+                    <apex:pageMessages rendered="{!NOT(displayMessagesOnTop)}" id="formDetailsMessages" />
+                </apex:pageBlock>
+            </div>
+
+            <apex:actionFunction name="resetStateAfterFormSave" action="{!resetStateAfterFormSave}" />
+            <apex:actionFunction name="saveForm" action="{!saveForm}" onComplete="insertFromImages('{!selectedFormId}')" />
+            <apex:actionFunction name="showFormErrorMsg" action="{!showFormErrorMsg}" reRender="pageFormErrors" onComplete="displayFormErrorMsg()">
+                <apex:param name="errorMessage" assignTo="{!formErrorMessage}" value=""/>
+            </apex:actionFunction>
+
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton id="formUploadBtn" value="{!$Label.livetext__uploadbtnlbl}" onclick="validateImageBeforeUpload(); return false;" style="display:none" />
+                <apex:commandButton id="formSaveBtn" value="{!$Label.livetext__savebtn}" onClick="savingForm(); return false;" styleClass="saveButtons" style="display:none" />
+                <apex:commandButton id="formNextBtn" value="{!$Label.livetext__nextbtnlbl}" onClick="validateJSON(); return false;" />
+                <apex:commandButton id="formBackBtn" value="{!$Label.livetext__bulkbackbutton}" onclick="backStep(); return false;" style="display:none" />
+                <apex:commandButton id="formCancelBtn" value="{!$Label.livetext__cancelbtn}" action="{!cancelForm}" />
+            </apex:pageBlockButtons>
+
+            <div id="formDetails">
+                <apex:pageBlockSection columns="1" title="{!$Label.livetext__formsdetailslbl}" id="formsDetailsSection" rendered="{!displayFormJSONDetailsSection}">
+                    <apex:pageBlockSectionItem helpText="{!$Label.livetext__formsnamehelptextlbl}">
+                        <apex:outputLabel id="formNameLbl" for="formNameInput"
+                            value="{!$Label.livetext__formnamelbl}"/>
+                        <apex:outputPanel styleClass="requiredInput" layout="block">
+                            <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                            <apex:inputText id="formNameInput" size="50" maxlength="255" value="{!formObject.Name}"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$ObjectType.LiveText__Structured_Form__c.Fields.LiveText__Description__c.inlineHelpText}">
+                        <apex:outputLabel id="formDescLbl" for="formDescInput"
+                            value="{!$Label.livetext__formdesclbl}" />
+                        <apex:outputPanel styleClass="requiredInput" layout="block">
+                            <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                            <apex:inputText id="formDescInput" size="50" maxlength="255"
+                                value="{!formObject.LiveText__Description__c}">
+                            </apex:inputText>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$ObjectType.LiveText__Structured_Form__c.Fields.LiveText__Form_JSON__c.inlineHelpText}">
+                        <apex:outputLabel id="formJSONLbl" for="formJSONInput"
+                            value="{!$Label.livetext__formjsonlbl}" />
+                        <apex:outputPanel styleClass="requiredInput" layout="block">
+                            <apex:outputPanel styleClass="requiredBlock" layout="block" />
+                            <apex:inputTextarea id="formJSONInput"
+                                value="{!formObject.LiveText__Form_JSON__c}"
+                                rows="20"
+                                cols="60">
+                            </apex:inputTextarea>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputHidden id="formIsStatic" value="{!formObject.LiveText__Is_Static__c}"/>
+                    <apex:inputHidden id="formType" value="{!formObject.LiveText__Type__c}"/>
+                </apex:pageBlockSection>
+            </div>
+
+            <div id="formImagesToUpload" style="display:none">
+                <apex:pageBlockSection columns="1" id="formsDetailsImagesSection" title="">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="formNameOutput" value="{!$Label.livetext__formnameimageuploadlbl}"/>
+                        <apex:outputText id="formNameOutput"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.livetext__formtitlehelptextlbl}">
+                        <apex:outputLabel for="formImageTitle" value="{!$Label.livetext__formtitlelbl}"/>
+                        <apex:outputText id="formImageTitle"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.livetext__formsubtitlehelptextlbl}">
+                        <apex:outputLabel for="formImageTitle" value="{!$Label.livetext__formsubtitlelbl}"/>
+                        <apex:outputText id="formImageSubtitle"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.livetext__formdocumenthelptextlbl}">
+                        <apex:outputLabel value="{!$Label.livetext__formdocumentlbl}" for="inputImage"/>
+                        <input type="file" id="inputImage" onchange="handleFileSelect(event); return false;" />
+                    </apex:pageBlockSectionItem>
+                    <apex:inputHidden id="formImageId"/>
+                    <img id="formImage" style="display: none;" />
+                </apex:pageBlockSection>
+            </div>
+
+            <div id="formDetailsToSave" style="display:none">
+                <apex:pageBlockSection columns="1" id="formsDetailsToSaveSection" title="">
+                    <apex:pageBlockSectionItem helpText="{!$Label.livetext__formsnamehelptextlbl}">
+                        <apex:outputLabel for="formNameDetailsOutput" value="{!$Label.livetext__formnamelbl}"/>
+                        <apex:outputText id="formNameDetailsOutput"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.livetext__formconfirmdesclbl}">
+                        <apex:outputLabel for="formDescDetailsOutput" value="{!$Label.livetext__formdescriptionlbl}"/>
+                        <apex:outputText id="formDescDetailsOutput"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem helpText="{!$Label.livetext__formconfirmjsonlbl}">
+                        <apex:outputLabel for="formJSONDetailsOutput" value="{!$Label.livetext__formjsonlbl}" />
+                        <apex:inputTextarea id="formJSONDetailsOutput"
+                            rows="20"
+                            cols="60"
+                            readonly="true">
+                        </apex:inputTextarea>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </div>
+
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

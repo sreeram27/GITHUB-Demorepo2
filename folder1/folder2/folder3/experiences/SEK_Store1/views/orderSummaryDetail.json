@@ -1,0 +1,74 @@
+{
+  "appPageId" : "65550390-4173-4ae0-8693-b0aeef889a0d",
+  "componentName" : "siteforce:sldsTwoCol48Layout",
+  "id" : "f8d18fdf-0b42-47ec-b632-4c590c7dcf08",
+  "label" : "Order Summary Detail",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:recordHeadline",
+      "id" : "66e91902-4303-4700-86bb-e7d0856085d5",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "8a39b632-1e2e-4efc-ba8c-e3da17dfc8de",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "columns" : [ "OrderSummary.TotalAdjustedProductAmount.TotalAdjustedProductAmount", "OrderSummary.TotalAdjDistAmount.TotalAdjDistAmount", "OrderSummary.TotalAdjustedDeliveryAmount.TotalAdjustedDeliveryAmount", "OrderSummary.TotalTaxAmount.TotalTaxAmount", "OrderSummary.GrandTotalAmount.GrandTotalAmount" ],
+        "showTaxColumn" : true,
+        "taxColumn" : "OrderSummary.TotalTaxAmount.TotalTaxAmount",
+        "taxLabel" : "Tax (included)",
+        "title" : "Totals",
+        "vatColumns" : [ "OrderSummary.TotalAdjProductAmtWithTax.TotalAdjProductAmtWithTax", "OrderSummary.TotalAdjDistAmountWithTax.TotalAdjDistAmountWithTax", "OrderSummary.TotalAdjDeliveryAmtWithTax.TotalAdjDeliveryAmtWithTax", "OrderSummary.GrandTotalAmount.GrandTotalAmount" ]
+      },
+      "componentName" : "runtime_commerce_oms:OrderSummary",
+      "id" : "4b7b4c32-9776-42dc-8b68-bca0e5e30fbd",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "22d8ebf5-e8c7-4980-8c12-84c7d8cc9c40",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "runtime_commerce_oms:deliveryGroup",
+      "id" : "fbc230dd-e881-43f2-8db9-cfa6d495c27d",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "4d0e2175-3de1-4fd3-a866-5dfe840412c9",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "5a762794-bb5a-4f4f-a4c3-e2d4cf376952",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "description" : "",
+        "metaTags" : "",
+        "title" : "{!Record._Object}: {!Record._Title}"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "c0cfbcf6-0208-47ef-a610-4df1eee3986b",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "5b4e1056-fac3-423c-80bf-18d6b9bcdbf4",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "detail-1Os"
+}
