@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>49.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
         <members>A0001</members>
+        <members>A0009</members>
         <members>A0071</members>
+        <members>A009</members>
+        <members>A0123</members>
         <members>A01234</members>
         <members>A01234567</members>
         <members>A0123678</members>
@@ -273,6 +276,7 @@
         <members>qaclass2</members>
         <members>rtclass1</members>
         <members>s1</members>
+        <members>sai007</members>
         <members>tejaclass1</members>
         <members>v8</members>
         <members>yclass3</members>
@@ -285,6 +289,11 @@
         <members>zcc</members>
         <members>zcc1</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>SiteFooter</members>
+        <members>SiteHeader</members>
+        <name>ApexComponent</name>
     </types>
     <types>
         <members>ACCObjTest1Page</members>
@@ -389,10 +398,14 @@
         <members>ACCObjTest1__c.ACCField1__c</members>
         <members>ACCObjTest1__c.ACCField2__c</members>
         <members>ACCObjTest1__c.AutorabitExtId__c</members>
+        <members>ACCObjTest1__c.N1__c</members>
+        <members>ACCObjTest1__c.PLNew1__c</members>
+        <members>ACCObjTest1__c.PLnew3__c</members>
         <members>ACCObjTest1__c.PLt1__c</members>
         <members>ACCObjTest1__c.Plt3__c</members>
         <members>ACCObjTest1__c.TextField15__c</members>
         <members>ACCObjTest1__c.f8__c</members>
+        <members>ACCObjTest1__c.pl1__c</members>
         <members>ACCObjTest1__c.test__c</members>
         <members>ACCObject2__c.Field1__c</members>
         <members>ACCObject2__c.Field2__c</members>
@@ -724,6 +737,8 @@
         <members>AC67</members>
         <members>AC8</members>
         <members>ACCL1</members>
+        <members>ACCL3</members>
+        <members>ACCTest</members>
         <members>ACCt3</members>
         <members>ACL1</members>
         <members>ACL101</members>
@@ -1019,6 +1034,7 @@
         <members>ACLObj1__c</members>
         <members>ACOBJT1__c</members>
         <members>ACObj123__c</members>
+        <members>ACR3__c</members>
         <members>ACR5__c</members>
         <members>ACROBj1__c</members>
         <members>ACRameshObj2__c</members>
@@ -1038,6 +1054,7 @@
         <members>AYObj2__c</members>
         <members>AYObj3__c</members>
         <members>Accobj4__c</members>
+        <members>Account</members>
         <members>Aobj1__c</members>
         <members>Aobj2__c</members>
         <members>Ar1__c</members>
@@ -1050,11 +1067,13 @@
         <members>Baxter__c</members>
         <members>Bj1__c</members>
         <members>CAcobj1__c</members>
+        <members>Contact</members>
         <members>CustomMetadataType_Test1__mdt</members>
         <members>DBObj11__c</members>
         <members>DBObj1__c</members>
         <members>DBObj201__c</members>
         <members>DBObj2__c</members>
+        <members>DLCObj18__c</members>
         <members>DLConfigTestObj__c</members>
         <members>DLObj1__c</members>
         <members>DObj1__c</members>
@@ -1246,6 +1265,8 @@
     <types>
         <members>Folder1</members>
         <members>Folder1/DocTest1.text</members>
+        <members>Folder2</members>
+        <members>Folder2/Doc5.png</members>
         <members>TestFolder</members>
         <members>TestFolder/Test2.png</members>
         <members>TestFolder/ar4.png</members>
@@ -1575,6 +1596,10 @@
         <name>ManagedContentType</name>
     </types>
     <types>
+        <members>Catch up</members>
+        <name>ManagedTopics</name>
+    </types>
+    <types>
         <members>Contact.ContactMatchingRule1</members>
         <name>MatchingRule</name>
     </types>
@@ -1716,6 +1741,8 @@
         <name>RecordActionDeployment</name>
     </types>
     <types>
+        <members>ACCObjTest1__c.SairecordType1</members>
+        <members>ACCObjTest1__c.SairecordType2</members>
         <members>Account.ARC1</members>
         <members>Contact.CRT1</members>
         <members>DLCObj18__c.DLCObj18_RcType1</members>
@@ -1923,6 +1950,7 @@
     </types>
     <types>
         <members>ACOBJT1__c.Button1</members>
+        <members>Account.Billing</members>
         <name>WebLink</name>
     </types>
     <types>
