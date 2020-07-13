@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>45.0</version>
+    <version>49.0</version>
     <types>
         <members>A0</members>
         <members>A0001</members>
+        <members>A0009</members>
         <members>A0071</members>
+        <members>A009</members>
         <members>A0123</members>
+        <members>A0233</members>
         <members>A027</members>
         <members>A028</members>
         <members>A08089</members>
@@ -41,6 +44,10 @@
         <name>AssignmentRule</name>
     </types>
     <types>
+        <members>Case</members>
+        <name>AssignmentRules</name>
+    </types>
+    <types>
         <members>ACDemoOBj1__c.Ftest12__c</members>
         <members>DLCObj18__c.Field1__c</members>
         <members>DLCObj18__c.Field2__c</members>
@@ -62,6 +69,10 @@
     <types>
         <members>AC1</members>
         <members>AC2</members>
+        <members>ACCt3</members>
+        <members>ACL101</members>
+        <members>ACL11</members>
+        <members>ACL12</members>
         <members>ACL24</members>
         <members>ACL25</members>
         <members>CustomLabelTest2</members>
@@ -78,6 +89,11 @@
         <members>Dbj1__c</members>
         <members>Obj900__c</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <members>DLCObj18__c.All</members>
+        <members>DLObj1__c.All</members>
+        <name>ListView</name>
     </types>
     <types>
         <members>PRS1</members>
@@ -140,5 +156,11 @@
         <members>Work%2Ecom Only User</members>
         <members>clone profile</members>
         <name>Profile</name>
+    </types>
+    <types>
+        <members>Dbj1__c.Dbj_RC1</members>
+        <members>Dbj1__c.Dbj_RC2</members>
+        <members>Obj900__c.Obj900RC1</members>
+        <name>RecordType</name>
     </types>
 </Package>
