@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ACCObjTest1</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ACCObjTest1s</value>
+    </caseValues>
+    <fields>
+        <label><!-- ACCField1 --></label>
+        <name>ACCField1__c</name>
+    </fields>
+    <fields>
+        <help><!-- qwsdcfvc --></help>
+        <label><!-- ACCField2 --></label>
+        <name>ACCField2__c</name>
+    </fields>
+    <fields>
+        <label><!-- AutorabitExtId__c --></label>
+        <name>AutorabitExtId__c</name>
+    </fields>
+    <fields>
+        <label><!-- N1 --></label>
+        <name>N1__c</name>
+        <picklistValues>
+            <masterLabel>12345</masterLabel>
+            <translation><!-- 12345 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PLNew1 --></label>
+        <name>PLNew1__c</name>
+        <picklistValues>
+            <masterLabel>007</masterLabel>
+            <translation><!-- 007 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PLnew3 --></label>
+        <name>PLnew3__c</name>
+        <picklistValues>
+            <masterLabel>sd</masterLabel>
+            <translation><!-- sd --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PLt1 --></label>
+        <name>PLt1__c</name>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Plt3 --></label>
+        <name>Plt3__c</name>
+        <picklistValues>
+            <masterLabel>latest</masterLabel>
+            <translation><!-- latest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- pl13 --></label>
+        <name>pl1__c</name>
+        <picklistValues>
+            <masterLabel>fg</masterLabel>
+            <translation><!-- fg --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <description><!-- test --></description>
+        <label><!-- SairecordType1 --></label>
+        <name>SairecordType1</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- zxc --></description>
+        <label><!-- SairecordType2 --></label>
+        <name>SairecordType2</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AcntrObj1</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AcntrObj1s</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccFt1 --></label>
+        <name>AccFt1s__c</name>
+    </fields>
+    <fields>
+        <label><!-- AcntrOrg2F1 --></label>
+        <name>AcntrOrg2F1__c</name>
+    </fields>
+    <fields>
+        <label><!-- AcntrOrg3F1 --></label>
+        <name>AcntrOrg3F1__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
