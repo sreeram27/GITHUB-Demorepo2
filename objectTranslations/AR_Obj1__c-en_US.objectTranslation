@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AR-Obj1</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AR-Obj1s</value>
+    </caseValues>
+    <fields>
+        <label><!-- AR-SField1 --></label>
+        <name>AR_SField1__c</name>
+    </fields>
+    <fields>
+        <label><!-- AR-SField2 --></label>
+        <name>AR_SField2__c</name>
+    </fields>
+    <fields>
+        <label><!-- AR-SField3 --></label>
+        <name>AR_SField3__c</name>
+    </fields>
+    <fields>
+        <label><!-- AR-SField4 --></label>
+        <name>AR_SField4__c</name>
+    </fields>
+    <fields>
+        <label><!-- F2 --></label>
+        <name>F2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pl2 --></label>
+        <name>Pl2__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please Enter a value --></errorMessage>
+        <name>ARPValidationRule1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a phone number --></errorMessage>
+        <name>ARSValidationRule1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter avalue --></errorMessage>
+        <name>ARSValidationRule3</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- PLease enter avalue --></errorMessage>
+        <name>ARpValidationRule4</name>
+    </validationRules>
+</CustomObjectTranslation>
