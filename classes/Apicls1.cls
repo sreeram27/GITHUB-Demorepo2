@@ -1,4 +1,4 @@
-public Class ApiRl1
+public Class Apicls1
 {
 public Account createAccount(String name)  //method to create account
 {
