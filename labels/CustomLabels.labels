@@ -302,13 +302,6 @@
         <value>2</value>
     </labels>
     <labels>
-        <fullName>APICL1</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>APICL1</shortDescription>
-        <value>1</value>
-    </labels>
-    <labels>
         <fullName>APXL1</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -406,6 +399,13 @@
         <protected>true</protected>
         <shortDescription>AnLabel11</shortDescription>
         <value>1</value>
+    </labels>
+    <labels>
+        <fullName>Apicl2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Apicl2</shortDescription>
+        <value>1234</value>
     </labels>
     <labels>
         <fullName>At1</fullName>
