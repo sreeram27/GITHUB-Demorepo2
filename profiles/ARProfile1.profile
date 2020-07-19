@@ -2,13 +2,13 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>true</visible>
+        <default>true</default>
+        <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Chatter</application>
-        <default>false</default>
-        <visible>true</visible>
+        <default>true</default>
+        <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Community</application>
@@ -27,8 +27,8 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__LightningSales</application>
-        <default>false</default>
-        <visible>true</visible>
+        <default>true</default>
+        <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Marketing</application>
@@ -47,8 +47,8 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__SalesforceCMS</application>
-        <default>false</default>
-        <visible>false</visible>
+        <default>true</default>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Service</application>
@@ -102,12 +102,12 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A022233444</apexClass>
-        <enabled>true</enabled>
+        <apexClass>A01</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0233</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A025</apexClass>
@@ -115,15 +115,15 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A027</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>A028</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A036</apexClass>
+        <apexClass>A028</apexClass>
         <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A036</apexClass>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0456</apexClass>
@@ -291,7 +291,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A2</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A20</apexClass>
@@ -419,7 +419,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A6</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A7</apexClass>
@@ -499,15 +499,15 @@
     </classAccesses>
     <classAccesses>
         <apexClass>AS106</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>AS107</apexClass>
-        <enabled>false</enabled>
+        <apexClass>AS123</apexClass>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>AY1</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>AY2</apexClass>
@@ -515,7 +515,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>AY3</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>AY4</apexClass>
@@ -543,7 +543,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Ac2</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Ac314</apexClass>
@@ -591,7 +591,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Aug21stClass3</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Aug21stClass4</apexClass>
@@ -602,15 +602,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>AutoCommit2</apexClass>
+        <apexClass>AutoCommit21</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>B0</apexClass>
+        <apexClass>B01</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>BusinessClass</apexClass>
+        <apexClass>BusinessClass1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -618,12 +618,12 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>C1</apexClass>
-        <enabled>false</enabled>
+        <apexClass>C11</apexClass>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ChangePasswordController</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ChangePasswordControllerTest</apexClass>
@@ -663,11 +663,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>D0</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>D3</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>D4</apexClass>
@@ -687,11 +687,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>D8</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>DLSClass4</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Dec18</apexClass>
@@ -700,11 +700,7 @@
     <classAccesses>
         <apexClass>DemoClass</apexClass>
         <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>DemoClass2</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
+    </classAccesses>    
     <classAccesses>
         <apexClass>DemoClass3</apexClass>
         <enabled>false</enabled>
@@ -746,7 +742,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>Feb523</apexClass>
+        <apexClass>Feb521</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -774,7 +770,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>KKK3</apexClass>
+        <apexClass>KKK31</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -818,7 +814,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>NA23Class1</apexClass>
+        <apexClass>NA231Class11</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -863,7 +859,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>RGvc02</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>S10</apexClass>
@@ -894,8 +890,8 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SKVClass1</apexClass>
-        <enabled>false</enabled>
+        <apexClass>SKV1Class11</apexClass>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>SKVClass2</apexClass>
@@ -927,15 +923,15 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SaiNov19</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>SaiRallyClass1</apexClass>
+        <apexClass>SaiRally1Class12</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>SaiTFS1</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>SampathAug16thClass1</apexClass>
@@ -991,11 +987,11 @@
     </classAccesses>
     <classAccesses>
         <apexClass>a14testclass</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>a16testclass</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>a17testclass</apexClass>
@@ -1008,11 +1004,7 @@
     <classAccesses>
         <apexClass>a1testclass</apexClass>
         <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>a200testclass</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
+    </classAccesses>    
     <classAccesses>
         <apexClass>a22testclass</apexClass>
         <enabled>false</enabled>
@@ -1027,7 +1019,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>a32testclass</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>a50testclass</apexClass>
@@ -1055,7 +1047,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>b_saiclass</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>c_saiclass</apexClass>
@@ -1067,7 +1059,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>n1</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>nc1</apexClass>
@@ -1111,7 +1103,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>v8</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
     <description>add</description>
@@ -1148,7 +1140,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjt1__c.FT2__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1158,12 +1150,12 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACDemoOBj1__c.AutorabitExtId__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACDemoOBj1__c.Ftest12__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1172,22 +1164,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ACObject25__c.ACCField1__c</field>
+        <field>ACObject25__c.ACCField11__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ACObject25__c.ACCField3__c</field>
+        <field>ACObject25__c.ACCField31__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACR2__c.AutorabitExtId__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ACR2__c.F12__c</field>
+        <field>ACR2__c.F121__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1213,28 +1205,23 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACR3__c.AutorabitExtId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACR3__c.field1__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>ACR3__c.field1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>ACR3__c.field2__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>ACR4__c.Field1__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>ACR4__c.field2__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    </fieldPermissions>   
     <fieldPermissions>
         <editable>true</editable>
         <field>ACR5__c.field1__c</field>
@@ -1268,7 +1255,7 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ACRObj1__c.Field4__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1311,14 +1298,14 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>AR_Obj1__c.F2__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>AR_Obj1__c.Pl2__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1468,7 +1455,7 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.NumberOfEmployees</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -1608,7 +1595,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Asset.AssetLevel</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
