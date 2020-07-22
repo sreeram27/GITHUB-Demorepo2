@@ -19,7 +19,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC100</shortDescription>
-        <value>1111</value>
+        <value>22222</value>
     </labels>
     <labels>
         <fullName>AC11</fullName>
@@ -61,7 +61,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC8</shortDescription>
-        <value>111</value>
+        <value>222</value>
     </labels>
     <labels>
         <fullName>ACCL1</fullName>
