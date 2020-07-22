@@ -55,7 +55,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.ACCField1__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -75,7 +75,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACR5__c.field1__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -122,7 +122,7 @@
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>CAcobj1__c</object>
