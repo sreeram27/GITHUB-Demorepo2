@@ -2,7 +2,7 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>standard__AppLauncher</application>
-        <default>false</default>
+        <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
@@ -123,10 +123,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A036</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A0456</apexClass>
+        <apexClass>A045611</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -135,7 +135,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A052</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A080123</apexClass>
