@@ -143,7 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>false</enableActivities>
+    <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -157,7 +157,7 @@
         <fullName>field1__c</fullName>
         <externalId>false</externalId>
         <label>field1</label>
-        <length>7</length>
+        <length>8</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -167,8 +167,8 @@
         <fullName>field2__c</fullName>
         <externalId>false</externalId>
         <label>field2</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
+        <required>true</required>
+        <trackTrending>true</trackTrending>
         <type>Phone</type>
     </fields>
     <label>ACR5</label>
