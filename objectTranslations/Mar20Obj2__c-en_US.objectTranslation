@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mar20Obj2</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mar20Obj2s</value>
+    </caseValues>
+    <fields>
+        <label><!-- Mar20Obj2Field1 --></label>
+        <name>Mar20Obj2Field1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mar20Obj2Field2 --></label>
+        <name>Mar20Obj2Field2__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
