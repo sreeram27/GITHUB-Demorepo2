@@ -2,7 +2,7 @@
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>A0</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A012378</apexClass>
@@ -72,7 +72,7 @@
 	<fieldPermissions>
         <editable>true</editable>
         <field>ACRObj1__c.Field4__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
 	<fieldPermissions>
         <editable>true</editable>
