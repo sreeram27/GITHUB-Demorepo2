@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ACCObjt1</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ACCObjt1s</value>
+    </caseValues>
+    <fields>
+        <label><!-- FT1 --></label>
+        <name>FT1__c</name>
+    </fields>
+    <fields>
+        <label><!-- FT2 --></label>
+        <name>FT2__c</name>
+    </fields>
+    <fields>
+        <label><!-- FT5 --></label>
+        <name>FT5__c</name>
+        <picklistValues>
+            <masterLabel>1213</masterLabel>
+            <translation><!-- 1213 --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

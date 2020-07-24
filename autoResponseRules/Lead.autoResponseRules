@@ -16,4 +16,8 @@
         <fullName>AutoresponseRule2</fullName>
         <active>false</active>
     </autoResponseRule>
+    <autoResponseRule>
+        <fullName>ECSLeadAutoResponseRule</fullName>
+        <active>false</active>
+    </autoResponseRule>
 </AutoResponseRules>

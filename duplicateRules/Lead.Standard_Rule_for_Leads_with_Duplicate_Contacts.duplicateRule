@@ -15,6 +15,14 @@
                 <outputField>FirstName</outputField>
             </mappingFields>
             <mappingFields>
+                <inputField>PostalCode</inputField>
+                <outputField>MailingPostalCode</outputField>
+            </mappingFields>
+            <mappingFields>
+                <inputField>Title</inputField>
+                <outputField>Title</outputField>
+            </mappingFields>
+            <mappingFields>
                 <inputField>LastName</inputField>
                 <outputField>LastName</outputField>
             </mappingFields>
@@ -33,14 +41,6 @@
             <mappingFields>
                 <inputField>Street</inputField>
                 <outputField>MailingStreet</outputField>
-            </mappingFields>
-            <mappingFields>
-                <inputField>PostalCode</inputField>
-                <outputField>MailingPostalCode</outputField>
-            </mappingFields>
-            <mappingFields>
-                <inputField>Title</inputField>
-                <outputField>Title</outputField>
             </mappingFields>
             <mappingFields>
                 <inputField>Company</inputField>
