@@ -35,6 +35,7 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>AnswersHome</members>
         <members>ApexPage</members>
         <members>ApexPage5</members>
         <members>Apexpage1</members>
