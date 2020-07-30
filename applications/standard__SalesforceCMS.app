@@ -6,31 +6,11 @@
     <label>Salesforce CMS</label>
     <navType>Console</navType>
     <tabs>standard-CmsAuthorHome</tabs>
-    <tabs>DLConfigTestObj__c</tabs>
-    <tabs>ACR2__c</tabs>
-    <tabs>ACR3__c</tabs>
-    <tabs>Sai_Obj500__c</tabs>
     <tabs>standard-CmsChannel</tabs>
     <tabs>standard-CmsWorkspaces</tabs>
     <tabs>standard-CmsExperiences</tabs>
-    <tabs>ContactPointPhone_Contact_Point_Phone_La__c</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
-        <mappings>
-            <tab>ACR2__c</tab>
-        </mappings>
-        <mappings>
-            <tab>ACR3__c</tab>
-        </mappings>
-        <mappings>
-            <tab>ContactPointPhone_Contact_Point_Phone_La__c</tab>
-        </mappings>
-        <mappings>
-            <tab>DLConfigTestObj__c</tab>
-        </mappings>
-        <mappings>
-            <tab>Sai_Obj500__c</tab>
-        </mappings>
         <mappings>
             <tab>standard-CmsAuthorHome</tab>
         </mappings>
