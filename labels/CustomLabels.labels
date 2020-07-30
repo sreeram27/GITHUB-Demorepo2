@@ -10,9 +10,9 @@
     <labels>
         <fullName>AC1</fullName>
         <language>en_US</language>
-        <protected>true</protected>
+        <protected>false</protected>
         <shortDescription>ac111</shortDescription>
-        <value>true</value>
+        <value>https://pilot.autorabit.com</value>
     </labels>
     <labels>
         <fullName>AC100</fullName>
