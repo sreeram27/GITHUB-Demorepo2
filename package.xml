@@ -320,6 +320,10 @@
         <name>ApexTrigger</name>
     </types>
     <types>
+        <members>PG_Metric__c.PG_Metric_SME_Approval_Process_withemail</members>
+        <name>ApprovalProcess</name>
+    </types>
+    <types>
         <members>Case.Standard</members>
         <name>AssignmentRule</name>
     </types>
@@ -1966,6 +1970,7 @@
         <members>OrgDeleteRequest</members>
         <members>OrgMetricScanResult</members>
         <members>OrgMetricScanSummary</members>
+        <members>PG_Metric__c</members>
         <members>PartnerFundAllocation</members>
         <members>PartnerFundClaim</members>
         <members>PartnerFundRequest</members>
