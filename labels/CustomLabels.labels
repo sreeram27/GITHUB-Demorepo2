@@ -5,14 +5,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AAtest456</shortDescription>
-        <value>11111</value>
+        <value>11111111</value>
     </labels>
     <labels>
         <fullName>AC1</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ac111</shortDescription>
-        <value>https://test.autorabit.com11111</value>
+        <value>https://test.autorabit.com1111111111</value>
     </labels>
     <labels>
         <fullName>AC100</fullName>
@@ -26,7 +26,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC11</shortDescription>
-        <value>123e4</value>
+        <value>123e411</value>
     </labels>
     <labels>
         <fullName>AC133</fullName>
