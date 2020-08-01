@@ -170,17 +170,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>F12__c</fullName>
-        <description>Zfvxcvbn</description>
-        <externalId>false</externalId>
-        <label>F12</label>
-        <length>8</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>LookUpField1__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -208,7 +197,7 @@
         <fullName>field1__c</fullName>
         <externalId>false</externalId>
         <label>field1</label>
-        <length>7</length>
+        <length>9</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -216,7 +205,7 @@
     </fields>
     <fields>
         <fullName>field2__c</fullName>
-        <externalId>false</externalId>
+        <externalId>true</externalId>
         <label>field2</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
