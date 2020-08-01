@@ -99,7 +99,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A012378</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A022233444</apexClass>
