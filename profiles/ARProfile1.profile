@@ -15,6 +15,11 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
+	  <applicationVisibilities>
+        <application>standard__AppLauncher</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Chatter</application>
         <default>false</default>
@@ -488,6 +493,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AD2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+	 <classAccesses>
         <apexClass>AD2</apexClass>
         <enabled>false</enabled>
     </classAccesses>
