@@ -1,0 +1,7 @@
+.modal-hidden {
+    display: none;
+}
+
+.svg.slds-button_icon .slds-button_icon-inverse{
+    color: rgb(0,0, 0);
+}
