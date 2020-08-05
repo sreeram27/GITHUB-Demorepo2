@@ -5644,4 +5644,8 @@
         <enabled>true</enabled>
         <name>ViewSetup</name>
     </userPermissions>
+     <loginIpRanges>
+        <endAddress>255.234.123.223</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
 </Profile>
