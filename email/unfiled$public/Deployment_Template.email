@@ -1,0 +1,24 @@
+Hi Team,
+
+A case has been created and it has been assigned to the {!Case.Reason} Team, below are the details of the case and also the owner to work on the case.
+
+Case Number: {!Case.CaseNumber}
+Name of User: 	{!Case.SuppliedName}
+Email of User: {!Case.SuppliedEmail}
+Case Assigned to: {!Case.Assigned_To__c}
+
+Note: Please do not change the subject while replying.
+
+Thanks
+AutoRABIT Support Team.
+Case Reference:  [{!Case.Thread_Id}]
+Please find below email from user with details:
+--------------- Original Message ---------------
+
+From: {!EmailMessage.FromName} [{!EmailMessage.FromAddress}]
+Sent: {!EmailMessage.MessageDate}
+To: {!EmailMessage.ToAddress};
+Cc: {!EmailMessage.CcAddress};
+Subject: {!EmailMessage.Subject}
+
+{!EmailMessage.TextBody}

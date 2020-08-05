@@ -1,0 +1,8 @@
+Dear {!Opportunity.OwnerFirstName}
+
+The trial period is ended for {!Opportunity.Account}.
+{!Opportunity.Link}
+Please get in touch with client and discuss on further Steps.
+
+Thank you very much,
+Pre Sales - AutoRABIT

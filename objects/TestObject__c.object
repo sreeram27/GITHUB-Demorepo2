@@ -149,19 +149,44 @@
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
-    <enableSearch>true</enableSearch>
+    <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
-        <fullName>TestField__c</fullName>
+        <fullName>MultiTest__c</fullName>
         <externalId>false</externalId>
-        <label>TestField</label>
-        <length>32</length>
+        <label>MultiTest</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
     </fields>
     <label>TestObject</label>
     <nameField>

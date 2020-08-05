@@ -1,0 +1,23 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+  <title>Sample Page</title>
+  <apex:composition template="smlfcom__SMLTemplateV2">
+    <apex:define name="body">
+      <div class="page-container">
+        <div class="sidebar">
+          <h3>Sidebar</h3>
+          <p class="description"></p>
+          <div class="form-group">
+            <label for="field01">Fieldname</label>
+            <select class="custom-select">
+              <option value="OptionOne">Option One</option>
+              <option value="OptionTwo">Option Two</option>
+            </select>
+          </div>
+        </div>
+        <div class="content">
+          <p></p>
+        </div>
+      </div>
+    </apex:define>
+  </apex:composition>
+</apex:page>

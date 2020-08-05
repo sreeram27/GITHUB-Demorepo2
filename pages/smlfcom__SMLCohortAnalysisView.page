@@ -1,0 +1,121 @@
+<apex:page controller="smlfcom.SMLCohortAnalysisController"  docType="html-5.0" sidebar="false" showHeader="false" readOnly="true" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <head>
+        <title>Cohort Analysis</title>
+    </head>
+
+    <style>
+        .filter-card{
+        background-color: #FFF;
+        padding: 20px;
+        margin-bottom: 30px;
+        }
+    </style>
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <apex:form id="form">
+                <div class="page-header">
+                    <div class="container-bs">
+                        <div class="title">
+                            <h1>Highlights: </h1>
+                            <h2>{!pageLabel}</h2>
+                        </div><!-- /.title -->
+                    </div><!-- /.container-bs -->
+                </div><!-- /.page-header -->
+
+                <div class="container-bs">
+                    <div class="page-container">
+                        <div class="sidebar">
+                            <apex:outputPanel id="filterPanel">
+                                <div class="form-group">
+                                    <label>Cohort Type</label>
+                                    <apex:selectList styleClass="form-control custom-select" value="{!seletedCohortType}" multiselect="false" size="1" onchange="loadCohortValues();">
+                                        <apex:selectOption itemLabel="- None -" itemValue=""></apex:selectOption>
+                                        <apex:selectOptions value="{!listOfFields}"></apex:selectOptions>
+                                    </apex:selectList>
+                                 </div>
+                                 <div class="form-group">
+                                    <label>Cohort 1</label>
+                                    <apex:selectList styleClass="form-control custom-select" value="{!CohortType1}" multiselect="false" size="1" disabled="{!disableFilter1}" onchange="loadCohortTwoValues();" id="filterOne">
+                                        <apex:selectOption itemLabel="- None -" itemValue=""></apex:selectOption>
+                                        <apex:selectOptions value="{!cohortOneValues}"></apex:selectOptions>
+                                    </apex:selectList>
+                                </div>
+                                <div class="form-group">
+                                    <label>Cohort 2</label>
+                                    <apex:selectList styleClass="form-control custom-select" value="{!CohortType2}" multiselect="false" size="1" disabled="{!disableFilter2}" id="filterTwo">
+                                        <apex:selectOption itemLabel="- None -" itemValue=""></apex:selectOption>
+                                        <apex:selectOptions value="{!cohortTwoValues}"></apex:selectOptions>
+                                    </apex:selectList>
+                                </div>
+                                <div class="controls flex">
+                                    <div class="left">
+                                        <button id="comparebtnid" type="button" class="btn-bs btn-sm btn-primary" onclick="compare();">Compare</button>
+                                    </div>
+                                    <div class="right">
+                                        <button type="button" class="btn-bs btn-sm btn-default" onclick="resetAll();">Reset</button>
+                                    </div>
+                                </div>
+                                <div class="container-bs wide">
+                                    <div>
+                                        <apex:actionFunction action="{!compare}" name="compare" oncomplete="createDataTable();" reRender="tablePanel" status="renderingStatus"/>
+                                        <apex:actionFunction action="{!resetAll}" name="resetAll" oncomplete="destroyTable();" reRender="form,filterPanel,tablePanel" status="renderingStatus"/>
+                                        <apex:actionFunction action="{!loadCohortValues}" name="loadCohortValues" reRender="filterPanel" status="renderingStatus"/>
+                                        <apex:actionFunction action="{!loadCohortTwoValues}" name="loadCohortTwoValues" reRender="filterPanel" status="renderingStatus"/>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                        </div>
+                         <div class="content">
+                            <apex:outputPanel id="tablePanel">
+                                <div class="table-content hidden">
+                                    <!-- <div class="heading">Results</div> -->
+                                    <table id="cohortDataTable" class="table table-striped table-bordered" width="100%">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th>COHORT ANALYSIS</th>
+                                                <th>{!CohortType1}</th>
+                                                <th>{!CohortType2}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <apex:repeat value="{!tableList}" var="data">
+                                                <tr>
+                                                    <td>{!data.rowName}</td>
+                                                    <td>{!data.valueOne}</td>
+                                                    <td>{!data.valueTwo}</td>
+                                                </tr>
+                                            </apex:repeat>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </apex:outputPanel>
+                         </div>
+                    </div>
+                </div><!-- /.container-bs -->
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+
+    <script>
+    var _valuesTable = null;
+    function createDataTable(){
+        if(_valuesTable) {
+            _valuesTable.destroy(true);
+        }
+        $(".table-content").removeClass('hidden');
+        _valuesTable = $('#cohortDataTable').DataTable({
+            "paging":   false,
+            "ordering": false,
+            "info":     false,
+            "searching": false
+        });
+    }
+
+    function destroyTable(){
+        if(_valuesTable) {
+            _valuesTable.destroy(true);
+        }
+        $(".table-content").addClass('hidden');
+    }
+    </script>
+</apex:page>

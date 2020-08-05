@@ -1,0 +1,224 @@
+<apex:page controller="smlfcom.SMLDataSourcesController" id="page" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <title>SML Data sources</title>
+
+    <style>
+        .modal-body {
+            max-height: calc(100vh - 210px);
+            overflow-y: scroll;
+        }
+        .removeEmpltySpace {
+            padding-bottom: 0px !important;
+        }
+        .content {
+            padding-top:30px;
+        }
+        .card {
+            margin-top:50px;
+        }
+    </style>
+
+    <apex:composition template="smlfcom__SMLTemplateV2">
+
+        <apex:define name="body">
+            <apex:form id="form">
+                <div class="page-header">
+                    <div class="container-bs">
+                        <div class="title">
+                            <h1>Config: </h1>
+                            <h2>{!pageLabel}</h2>
+                        </div><!-- /.title -->
+                    </div>
+                </div><!-- /.page-header -->
+                <div class="container-bs" style="max-width:700px !important">
+                    <apex:outputPanel id="dataSourceRec">
+
+                        <!--
+                        <div class="sidebar"></div>
+                        <div class="content"></div>
+                        -->
+                        <div class="content" style="padding-bottom:0">
+                            <table id="oppDataTable" class="table table-striped table-bordered dataTable no-footer" width="100%" style="margin-bottom:20px;">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Sources</th>
+                                        <th>Target Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <apex:repeat value="{!smlStoreList}" var="dataRec">
+                                    <tr>
+                                        <td><a  href="#" onClick="getSelectedDataSource('{!dataRec.id}')">{!dataRec.Data_Source_Name__c}</a></td>
+                                        <td>{!dataRec.System__c}</td>
+                                        <td>
+                                            <apex:outputPanel rendered="{!(dataRec.smlfcom__Type__c == 'Snapshot')}" >
+                                                <a href="#" onClick="populateSnapshotPopup('{!dataRec.id}');"> {!dataRec.smlfcom__Type__c}</a>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel rendered="{!!(dataRec.smlfcom__Type__c == 'Snapshot')}" >{!dataRec.smlfcom__Type__c}</apex:outputPanel>
+                                        </td>
+                                    </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </table>
+
+                            <input type="button" onclick="getSelectedDataSource();" value="Create New" class="btn-bs btn-primary" />
+
+                            <apex:outputPanel id="snapshotDetails" rendered="{!showSnapshotRec}">
+
+                                <div class="card reset">
+                                    <div class="card-heading">
+                                        <h2>Snapshot Details for {!selectedDataSourceName}</h2>
+                                    </div><!-- /.section-heading -->
+                                    <apex:outputPanel id="snapshotDet" rendered="{!(responseList != null && responseList.size > 0)}">
+                                    <div class="table-card">
+                                        <table class="table table-striped table-bordered  no-footer" >
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>File</th>
+                                                </tr>
+                                            </thead>
+                                            <apex:repeat value="{!responseList}" var="resRec" >
+                                            <tr>
+                                                <td><apex:outputLabel value="{!resRec.path}" /></td>
+                                                <td><input type="button" onclick="window.open('{!JSENCODE(resRec.download_uri)}')" value="Click To Download" class="btn-bs btn-sm btn-default" /></td>
+                                            </tr>
+                                            </apex:repeat>
+                                        </table>
+                                    </div><!-- /.table-card -->
+                                </apex:outputPanel>
+                                </div><!--/.card -->
+                            </apex:outputPanel>
+                        </div><!--/.content -->
+
+                        <apex:outputPanel rendered="{!showSmlStoreRec}" >
+                            <div id="mySuccessWindow" class="modal-backdrop modal-springml" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content" >
+                                        <div class="modal-header" >
+                                            <!--004973-->
+                                            <h4 class="modal-title" >Data Source Details</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="flex-row form-group">
+                                                <label>Name</label>
+                                                <div class="field">
+                                                    <apex:inputField value="{!selectedSmlStoreRec.smlfcom__Data_Source_Name__c}" styleClass="form-control" />
+                                                </div><!-- /.field -->
+                                            </div><!-- /.flex-row -->
+
+                                            <h3>Source</h3>
+                                            <div class="flex-row form-group">
+                                                <label>System</label>
+                                                <div class="field">
+                                                    <apex:inputField value="{!selectedSmlStoreRec.smlfcom__System__c}" styleClass="form-control custom-select" />
+                                                </div><!-- /.field -->
+                                            </div>
+
+                                            <div class="flex-row form-group">
+                                                <label>Object</label>
+                                                <div class="field">
+                                                    <apex:inputField value="{!selectedSmlStoreRec.smlfcom__Object__c}" styleClass="form-control custom-select" />
+                                                </div><!-- /.field -->
+                                            </div>
+                                            <div class="flex-row form-group link">
+                                                <label for=""></label>
+                                                <div class="field">
+                                                    <a class="ion-plus-circled " onClick="reqDetShowToggle();" id="reqDetShow" href="#">Request Details</a>
+                                                    <a class="ion-minus-circled hidden" onClick="reqDetHideToggle();" id="reqDetHide" href="#">Request Details</a>
+                                                    <apex:inputField value="{!selectedSmlStoreRec.smlfcom__Request_Details__c}" id="reqDetTextArea" styleClass="form-control hidden reqDetTextArea" />
+                                                </div><!-- /.field -->
+                                            </div>
+
+                                            <div class="flex-row form-group link" style="margin-bottom:40px;">
+                                                <label for=""></label>
+                                                <div class="field">
+                                                    <a class="ion-plus-circled " id="endPoiShow" onClick="endPoiShowToggle();" href="#">Endpoint parameters</a>
+                                                    <a class="ion-minus-circled hidden" id="endPoiHide" onClick="endPoiHideToggle();" href="#">Endpoint parameters</a>
+                                                    <apex:inputField value="{!selectedSmlStoreRec.smlfcom__Endpoint_parameters__c}" id="endPoiTextArea" styleClass="form-control hidden endPoiTextArea" />
+                                                </div>
+                                            </div>
+
+                                            <h3>Target</h3>
+                                            <div class="flex-row form-group">
+                                                <label>Action</label>
+                                                <div class="field">
+                                                    <apex:inputField value="{!selectedSmlStoreRec.smlfcom__Type__c}" styleClass="form-control custom-select" />
+                                                </div><!-- /.field -->
+                                            </div>
+                                            <div class="flex-row form-group">
+                                                <label>Load</label>
+                                                <div class="field">
+                                                    <apex:inputField value="{!selectedSmlStoreRec.smlfcom__Load__c}" styleClass="form-control custom-select" />
+                                                </div><!-- /.field -->
+                                            </div>
+                                            <div class="flex-row form-group">
+                                                <label>Timing</label>
+                                                <div class="field flex-row">
+                                                    <apex:inputField value="{!selectedSmlStoreRec.smlfcom__Timing__c}" styleClass="form-control custom-select" />
+                                                    <apex:inputField value="{!selectedSmlStoreRec.smlfcom__Timing_Picklist_2__c}" styleClass="form-control custom-select" style="margin-left:10px" />
+                                                </div><!-- /.field -->
+                                            </div>
+                                        </div><!-- /.modal-body -->
+                                        <div class="modal-footer flex">
+                                            <div class="left">
+                                                <input type="button" onclick="closeRec();" value="Close" class="btn-bs btn-default" />
+                                                <!-- <apex:commandButton action="{!closeAlertWindow}" value="Close" styleClass="btn-bs btn-primary"/> -->
+                                            </div><!-- /.left -->
+                                            <div class="right">
+                                                <input type="button" onclick="saveRec();" value="Save" class="btn-bs btn-primary" />
+                                            </div><!-- /.right -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+
+                    </apex:outputPanel>
+
+                </div><!-- /.container-bs -->
+
+                <apex:actionFunction action="{!editSelectedDataSource}" name="getSelectedDataSource" rerender="dataSourceRec" status="renderingStatus">
+                    <apex:param assignTo="{!selectedDataSource}" value="" name="selectedDataSource"/>
+                </apex:actionFunction>
+                <apex:actionFunction action="{!saveDataSource}" name="saveRec" rerender="dataSourceRec" status="renderingStatus" />
+                <apex:actionFunction action="{!populatePopup}" name="populateSnapshotPopup" rerender="dataSourceRec" status="renderingStatus" >
+                    <apex:param assignTo="{!selectedDataSource}" value="" name="selectedDataSource"/>
+                </apex:actionFunction>
+                <apex:actionFunction action="{!closePopup}" name="closeRec" rerender="dataSourceRec" status="renderingStatus"/>
+
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+
+    <script>
+        function endPoiHideToggle(){
+            $("#endPoiHide").addClass("hidden");
+            $(".endPoiTextArea").addClass("hidden");
+            $("#endPoiShow").removeClass("hidden");
+        }
+        function endPoiShowToggle(){
+            $("#endPoiHide").removeClass("hidden");
+            $(".endPoiTextArea").removeClass("hidden");
+            $("#endPoiShow").addClass("hidden");
+        }
+        function reqDetHideToggle(){
+            $("#reqDetHide").addClass("hidden");
+            $(".reqDetTextArea").addClass("hidden");
+            $("#reqDetShow").removeClass("hidden");
+        }
+        function reqDetShowToggle(){
+            $("#reqDetHide").removeClass("hidden");
+            $(".reqDetTextArea").removeClass("hidden");
+            $("#reqDetShow").addClass("hidden");
+        }
+        $(document).ready(function() {
+            $('.dataTable').DataTable( {
+                paging: false,
+                searching: false,
+                info: false
+            } );
+        });
+    </script>
+
+</apex:page>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This Email template is to notify the Customer when Trial Period is Inititated</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Mass_email_for_Campaigning</letterhead>
+    <name>AutoRABIT Trial - Activation</name>
+    <style>freeForm</style>
+    <subject>Trial is Activated!!!</subject>
+    <textOnly>Dear {!Contact.Name},
+
+Your two week trial of AutoRABIT starts today.
+
+Please go ahead and log into www.AutoRABIT.com with the credentials, which have been provided to you in a separate email. Should you have any issues or technical questions contact support@autorabit.com for immediate assistance.
+
+For questions regarding our pricing model, next steps for purchasing and professional services contact sales@autorabit.com.
+
+Thank you very much,
+Team AutoRABIT</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

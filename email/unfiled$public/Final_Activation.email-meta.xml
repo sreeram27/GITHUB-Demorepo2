@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This Email template is used when Last week of Trial is completed</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AutoRABIT Trial Expired Notification Aler</name>
+    <style>none</style>
+    <subject>AutoRABIT Trial is Ended for {!Opportunity.Account}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

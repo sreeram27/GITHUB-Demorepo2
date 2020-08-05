@@ -1,0 +1,446 @@
+<apex:page controller="smlfcom.SMLConfigurationController" sidebar="false" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+    <head>
+        <title>SML Configuration View</title>
+        <apex:stylesheet value="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
+    </head>
+    
+    <style>
+        .rule-card{
+        background-color: #EEE;
+        padding: 20px;
+        margin: 20px;
+        }
+        
+        .condition-card{
+        padding:10px;
+        }
+        
+        .rule-label{
+        line-height:30px;
+        }
+        
+        .icon-add{
+        color: green;
+        font-size: 24px;
+        }
+        
+        .icon-remove{
+        color: red;
+        font-size: 24px;
+        }
+        
+        .control-container{
+        padding: 3px;
+        }
+        
+        .rule-card h2{
+        margin:0!important;
+        padding:0!important;
+        }
+    </style>
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+        
+            <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"/>
+            <apex:form id="form">
+                <div class="page-header">
+                    <div class="container-bs">
+                        <div class="title">
+                            <h1>Highlights: </h1>
+                            <h2>{!pageLabel}</h2>
+                            <a class="btn-bs add-rule" href="javascript:syncRules();addRule()" style="position:absolute;right:0">Add New Rule</a>
+                        </div>
+                    </div><!-- /.container-bs -->
+                </div>
+                <div class="container-bs config-rules">
+                    <apex:variable value="{!0}" var="ruleCount"/>
+                    <apex:repeat value="{!listOfRules}" var="rl">
+                        <div class="rule">
+                            <div class="details">
+                                <a href="javascript:deleteRule('{!rl.rule_Opp.id}',{!ruleCount})" class="btn-delete"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/trash.svg')}" alt="Delete Rule"/></a>
+                                <div class="flex-row">
+                                    <div class="rule-info">
+                                        <div class="form-group">
+                                            <label for="rule01-title">Title</label>
+                                            <div class="field">
+                                                <apex:inputText styleClass="form-control" value="{!rl.eDesc}" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="rule01-description">Message</label>
+                                            <div class="field">
+                                                <apex:inputText styleClass="form-control" value="{!rl.action}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="notifications">
+                                        <label>Notify</label>
+                                        <div class="check-group">
+                                            <apex:outputPanel rendered="{!isGlobalVisible}" styleClass="sp-check" layout="block">
+                                                <label for="{!$Component.rule_global}">
+                                                    <apex:inputCheckbox value="{!rl.rule_Opp.smlfcom__Global__c}" id="rule_global"/>
+                                                    <span class="icon"></span>
+                                                    <span>Global</span>
+                                                </label>
+                                            </apex:outputPanel>
+                                            
+                                            <div class="sp-check">
+                                                <label for="{!$Component.rule_owner}">
+                                                    <apex:inputCheckbox value="{!rl.rule_Opp.smlfcom__Notify_Owner__c}" id="rule_owner"/>
+                                                    <span class="icon"></span>
+                                                    <span>Owner</span>
+                                                </label>
+                                            </div><!-- /.sp-check -->
+                                            
+                                            <div class="sp-check">
+                                                <label for="{!$Component.rule_manager}">
+                                                    <apex:inputCheckbox value="{!rl.rule_Opp.smlfcom__Notify_Manager__c}" id="rule_manager"/>
+                                                    <span class="icon"></span>
+                                                    <span>Manager</span>
+                                                </label>
+                                            </div><!-- /.sp-check -->
+                                            
+                                            <div class="sp-check">
+                                                <label for="{!$Component.rule_management}">
+                                                    <apex:inputCheckbox value="{!rl.rule_Opp.smlfcom__Notify_Management__c}" id="rule_management"/>
+                                                    <span class="icon"></span>
+                                                    <span>Management</span>
+                                                </label>
+                                            </div><!-- /.sp-check -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <apex:variable value="{!0}" var="conditonCount"/>
+                                <apex:repeat value="{!rl.rule_conditions}" var="condition">
+                                    <apex:outputPanel layout="block" styleClass="item" id="optionType">
+                                        <div class="no"></div>
+                                        <div class="col-sm-2">
+                                            
+                                            <apex:selectList styleClass="custom-select" value="{!condition.field_type}" multiselect="false" size="1">
+                                                <apex:selectOption itemLabel="- Field -" itemValue=""></apex:selectOption>
+                                                <apex:selectOptions value="{!listOfFieldTypeSelectOptions}" id="selectOption"></apex:selectOptions>
+                                                <apex:actionSupport event="onchange" reRender="form" action="{!onChangeConditionFieldType}" oncomplete="handleAccount(this.name,this.value);manageUI()" status="renderingStatus">
+                                                    <apex:param name="ruleIndex" assignTo="{!ruleIndex}" value="{!ruleCount}"/>
+                                                    <apex:param name="ruleConditionIndex" assignTo="{!ruleConditionIndex}" value="{!conditonCount}"/>
+                                                </apex:actionSupport>
+                                            </apex:selectList>
+                                            
+                                        </div>
+                                        <apex:outputPanel layout="none">
+                                            <apex:outputPanel layout="none" rendered="{!condition.field_type == 'Attribute'}">
+                                                <div>
+                                                    <apex:selectList styleClass="custom-select" value="{!condition.field_values}" multiselect="false" size="1">
+                                                        <apex:selectOptions value="{!listOfAttributeSelectOptions}"></apex:selectOptions>
+                                                    </apex:selectList>
+                                                </div>
+                                                <div>
+                                                    <apex:selectList styleClass="custom-select" value="{!condition.evaluation.eType}" multiselect="false" size="1" >
+                                                        <apex:selectOptions value="{!listOfFieldAttributeTypeSelectOptions}"></apex:selectOptions>
+                                                    </apex:selectList>
+                                                </div>
+                                                <div>
+                                                    <apex:selectList styleClass="custom-select" value="{!condition.evaluation.operator}"  multiselect="false" size="1" >
+                                                        <apex:selectOptions value="{!listOfFieldOperatorsSelectOptions}"></apex:selectOptions>
+                                                    </apex:selectList>
+                                                </div>
+                                                <div class="sm">
+                                                    <apex:inputText styleClass="form-control" value="{!condition.evaluation.value}"/>
+                                                </div>
+                                            </apex:outputPanel>
+                                            
+                                            <apex:outputPanel layout="none" rendered="{!condition.field_type == 'Opportunity__r.AccountId'}">
+                                                <div class="tags">
+                                                    <apex:inputText styleClass="hidden account-search-field-hidden" value="{!condition.evaluation.value}"/>
+                                                    <select class="form-control account-search-field" multiple="true" size="1"/>
+                                                </div>
+                                            </apex:outputPanel>
+                                            
+                                            <apex:outputPanel layout="none" rendered="{!condition.field_type == 'Opportunity__r.Type'}">
+                                                <div class="tags">
+                                                    <apex:inputText styleClass="hidden type-search-field-hidden" value="{!condition.evaluation.value}"/>
+                                                    <select class="form-control type-search-field" multiple="true" size="1">
+                                                        <apex:repeat value="{!listOfOppTypeSelectOptions}" var="type">
+                                                            <option value="{!type.value}">{!type.label}</option>
+                                                        </apex:repeat>
+                                                    </select>
+                                                </div>
+                                            </apex:outputPanel>
+                                            
+                                            <apex:outputPanel layout="none" rendered="{!condition.field_type == 'Product'}">
+                                                <div class="tags">
+                                                    <apex:inputText styleClass="hidden product-search-field-hidden" value="{!condition.evaluation.value}"/>
+                                                    <select class="form-control product-search-field" multiple="true" size="1">
+                                                        <apex:repeat value="{!listOfProductFamiliySelectOptions}" var="family">
+                                                            <option value="{!family.value}">{!family.label}</option>
+                                                        </apex:repeat>
+                                                    </select>
+                                                </div>
+                                            </apex:outputPanel>
+                                            
+                                            <apex:outputPanel layout="none" rendered="{!condition.field_type == 'Region'}">
+                                                <div>
+                                                    <apex:inputText styleClass="form-control" value="{!condition.evaluation.value}"/>
+                                                </div>
+                                            </apex:outputPanel>
+                                        </apex:outputPanel>
+                                        <div class="control">
+                                            <a class="delete-btn" href="javascript:syncRules();removeRuleCondition({!ruleCount}, {!conditonCount})"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/remove.svg')}" alt="Remove Item"/></a>
+                                        </div>
+                                    </apex:outputPanel>
+                                    <apex:variable value="{!conditonCount+1}" var="conditonCount"/>
+                                </apex:repeat>
+                                <a href="javascript:syncRules();addRuleCondition({!ruleCount})" class="btn-add">Add a row</a>
+                            </div>
+                        </div>
+                        <apex:variable value="{!ruleCount+1}" var="ruleCount"/>
+                    </apex:repeat>
+                </div>
+                
+                <div class="footer-controls">
+                    <div class="container-bs">
+                        <div></div>
+                        <div>
+                            <a class="btn-bs add-rule" href="javascript:syncRules();addRule()">Add New Rule</a>
+                            <a class="btn-bs btn-primary" href="javascript:saveRules()">Save Changes</a>
+                        </div>
+                    </div><!-- /.container-bs -->
+                    
+                </div>
+                
+                <apex:actionFunction name="saveRules_Action" action="{!saveRules}" reRender="form" status="renderingStatus" oncomplete="manageUI()"/>
+                <apex:actionFunction name="addRule" action="{!addRule}" reRender="form" status="renderingStatus" oncomplete="manageUI()"/>
+                <apex:actionFunction name="addRuleCondition" action="{!addRuleCondition}" reRender="form" status="renderingStatus" oncomplete="manageUI()">
+                    <apex:param name="ruleIndex" assignTo="{!ruleIndex}" value=""/>
+                </apex:actionFunction>
+                <apex:actionFunction name="deleteRule" action="{!deleteRuleRec}" reRender="form" status="renderingStatus" oncomplete="manageUI()">
+                    <apex:param name="ruleId" assignTo="{!ruleId}" value=""/>
+                    <apex:param name="ruleIndex" assignTo="{!ruleIndex}" value=""/>
+                </apex:actionFunction>                
+                <apex:actionFunction name="removeRuleCondition" action="{!removeRuleCondition}" reRender="form" status="renderingStatus" oncomplete="manageUI()">
+                    <apex:param name="ruleIndex" assignTo="{!ruleIndex}" value=""/>
+                    <apex:param name="ruleConditionIndex" assignTo="{!ruleConditionIndex}" value=""/>
+                </apex:actionFunction>
+                
+            </apex:form>
+            
+            
+            
+            
+        
+        </apex:define>
+    </apex:composition>
+    <!-- remote object for fetching account records -->
+    <apex:remoteObjects jsNamespace="remote_account">
+        <apex:remoteObjectModel name="Account" fields="Id,Name"/>
+    </apex:remoteObjects>
+    
+    <script>
+    
+    $(function(){
+        manageUI();
+    });
+    function handleAccount(accName , accVal){
+        if(accVal.indexOf('AccountId') !== -1){
+            //$('[name="'+accName+'"]').parent().next().children().children().val('');
+        }
+    }
+    function manageUI(){
+        $(".custom-select").fancySelect();
+        //$('.select2').select2();
+        getListOfAccounts();
+        getListOfProducts();
+        getListOfTypes();
+    }
+    function saveRules(){
+        var selectedVal;
+        $(".account-search-field").each(function(){
+            selectedVal = $(this).val();  
+            if(selectedVal && selectedVal != null)
+                $(this).siblings(".account-search-field-hidden").val(selectedVal.join());
+            else
+                $(this).siblings(".account-search-field-hidden").val('');
+        });
+        
+        
+        $(".product-search-field").each(function(){
+            selectedVal = $(this).val();  
+            if(selectedVal && selectedVal != null)
+                $(this).siblings(".product-search-field-hidden").val(selectedVal.join());
+            else
+                $(this).siblings(".product-search-field-hidden").val('');
+        });
+        
+        $(".type-search-field").each(function(){
+            selectedVal = $(this).val();  
+            if(selectedVal && selectedVal != null)
+                $(this).siblings(".type-search-field-hidden").val(selectedVal.join());
+            else
+                $(this).siblings(".type-search-field-hidden").val('');
+        });
+        
+        
+        saveRules_Action();    
+    }
+    function syncRules(){
+        var selectedVal;
+        $(".account-search-field").each(function(){
+            selectedVal = $(this).val();  
+            if(selectedVal && selectedVal != null)
+                $(this).siblings(".account-search-field-hidden").val(selectedVal.join());
+            else
+                $(this).siblings(".account-search-field-hidden").val('');
+        });
+        
+        
+        $(".product-search-field").each(function(){
+            selectedVal = $(this).val();  
+            if(selectedVal && selectedVal != null)
+                $(this).siblings(".product-search-field-hidden").val(selectedVal.join());
+            else
+                $(this).siblings(".product-search-field-hidden").val('');
+        });
+        
+        $(".type-search-field").each(function(){
+            selectedVal = $(this).val();  
+            if(selectedVal && selectedVal != null)
+                $(this).siblings(".type-search-field-hidden").val(selectedVal.join());
+            else
+                $(this).siblings(".type-search-field-hidden").val('');
+        });
+        
+    }
+    
+    
+    function getListOfProducts(){
+        $(".product-search-field").each(function(){
+            var $select = $(this);
+            $(this).siblings('.product-search-field-hidden').each(function(){
+                var families = $(this).val();
+                if(families != '' && families != null){
+                    $.each(families.split(','), function(index, value){
+                        $select.find("option[value='"+value+"']").attr("selected","selected");
+                    });
+                }
+            });
+        });
+        $(".product-search-field").select2();
+    }
+    
+    function getListOfTypes(){
+        $(".type-search-field").each(function(){
+            var $select = $(this);
+            $(this).siblings('.type-search-field-hidden').each(function(){
+                var types = $(this).val();
+                if(types != '' && types != null){
+                    $.each(types.split(','), function(index, value){
+                        $select.find("option[value='"+value+"']").attr("selected","selected");
+                    });
+                }
+            });
+        });
+        $(".type-search-field").select2();
+    }
+    
+    var mapOfIdAndAccount = new Array();
+    
+    function getListOfAccounts(){
+        var set_acc_id = [];
+        var acc_id_val = '';
+        $('.account-search-field-hidden').each(function(){
+            acc_id_val = $(this).val();
+            if(acc_id_val != '' && acc_id_val != null){
+                $.each(acc_id_val.split(','), function(index, value){
+                    if(set_acc_id.indexOf(value) < 0) 
+                        set_acc_id.push(value);
+                });
+            }
+        });
+        var acc = new remote_account.Account(); 
+        if(set_acc_id.length > 0){
+            acc.retrieve(
+                {where:{Id:{in: set_acc_id}}}, 
+                function(error, results) {
+                    if(!error){
+                        $.each(results, function(){
+                            mapOfIdAndAccount[this.get('Id')]= this.get('Name');
+                        }); 
+                        enableAccountSearch();
+                    }else{
+                        console.log(error);    
+                    }
+                }
+            );
+        }else{
+            enableAccountSearch();
+        }
+    }
+    
+    function enableAccountSearch(){
+        
+        $.fn.select2.amd.require([
+            'select2/data/array',
+            'select2/utils'
+        ], function (ArrayData, Utils) {
+            function CustomData ($element, options) {
+                CustomData.__super__.constructor.call(this, $element, options);
+            }
+            
+            Utils.Extend(CustomData, ArrayData);
+            
+            CustomData.prototype.query = function (params, callback) {
+                var data =  [];
+                
+                searchText = params.term;
+                
+                if(searchText && searchText.length > 2){
+                    var acc = new remote_account.Account(); 
+                    acc.retrieve(
+                        {
+                            where: 
+                            {
+                                Name: 
+                                {
+                                    like:  searchText+'%'
+                                }
+                            }
+                        }, 
+                        function(error, results) {
+                            if(!error){
+                                $.each(results, function(){
+                                    data.push({id: this.get('Id'), text: this.get('Name')});
+                                    console.log(this.get('Name'));
+                                });
+                                callback({results : data});
+                            }
+                        }
+                    );
+                }
+                
+                
+                
+            };
+            
+            $(".account-search-field").each(function(){
+                var selectedArray = [];
+                var $select = $(this);
+                $(this).siblings('.account-search-field-hidden').each(function(){
+                    var acc_id_val = $(this).val();
+                    if(acc_id_val != '' && acc_id_val != null){
+                        $.each(acc_id_val.split(','), function(index, value){
+                            $select.append("<option value='"+value+"'>"+mapOfIdAndAccount[value]+"</option>");
+                            selectedArray.push(value);
+                        });
+                    }
+                });
+                
+                $select.select2({
+                    dataAdapter: CustomData
+                }).val(selectedArray).trigger("change");
+            });
+            
+        });
+    }
+    </script>
+</apex:page>

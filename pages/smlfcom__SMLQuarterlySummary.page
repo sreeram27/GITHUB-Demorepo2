@@ -1,0 +1,324 @@
+<apex:page controller="smlfcom.SMLQuarterlySummary" sidebar="false" showHeader="false" standardStylesheets="false" readOnly="true" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+    <title>SML Quarterly Summary</title>
+    <style>
+        .highcharts-credits .highcharts-button-box .highcharts-button-symbol {
+        display: none;
+        }
+        
+        #ui-datepicker-div
+        {
+        z-index:6 !important;
+        }
+        #result {
+        text-align: right;
+        color: gray;
+        min-height: 2em;
+        }
+        #table-sparkline {
+        margin: 0 auto;
+        border-collapse: collapse;
+        }
+        th {
+        font-weight: bold;
+        text-align: left;
+        }
+        td, th {
+        padding: 5px;
+        border-bottom: 1px solid silver;
+        height: 20px;
+        }
+        
+        thead th {
+        border-top: 2px solid gray;
+        border-bottom: 2px solid gray;
+        }
+        .highcharts-tooltip>span {
+        background: white;
+        border: 1px solid silver;
+        border-radius: 3px;
+        box-shadow: 1px 1px 2px #888;
+        padding: 8px;
+        }
+    </style>
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <apex:includeScript value="https://code.highcharts.com/highcharts.js"/>
+            <apex:includeScript value="https://code.highcharts.com/highcharts-more.js"/>
+            <apex:includeScript value="https://code.highcharts.com/modules/exporting.js"/>
+            <div class="page-header">
+                <div class="container-bs">
+                    <div class="title" data-step="1" data-intro="View how your pipeline has progressed over a period of time (demo data)">
+                        <h1>Forecast: </h1>
+                        <h2>{!smlFilter.pageLabelNameMapping['SMLQuarterlySummary'].pageLabel}</h2>
+                    </div><!-- /.title -->
+                </div><!-- /.container-bs -->
+            </div><!-- /.page-header -->
+            
+            <div class="container-bs">
+                <div class="page-container">
+                    
+                    <apex:form styleClass="sidebar" id="frm">
+                        <div data-step="2" data-intro="Set Snapshot Duration to the length of time for which you want to see pipeline movements">
+                            <div class="form-group">                                
+                                <apex:outputPanel layout="none" rendered="{!smlFilter.textFilterList != null && smlFilter.textFilterList.size > 0}">
+                                    <apex:repeat value="{!smlFilter.textFilterList }" var="filterField">
+                                        <div class="form-group">
+                                            <label>{!filterField.fieldLabel}</label>
+                                            <apex:selectList value="{!filterField.selectedmapValue[filterField.fieldAPIName]}"  multiselect="false" size="1" styleClass="filterField form-control custom-select {!filterField.isFieldLinked} {!filterField.fieldAPIName}">
+                                                <apex:selectOption itemLabel="All" itemValue="All"></apex:selectOption>
+                                                <apex:selectOptions value="{!filterField.fieldValues}"></apex:selectOptions>
+                                            </apex:selectList>
+                                            
+                                        </div>
+                                    </apex:repeat>
+                                </apex:outputPanel>
+                                
+                                
+                            </div>
+                            <div class="controls flex">
+                                <div class="left">
+                                    <a href="javascript:reset()" class="btn-bs btn-default btn-sm">Reset</a>
+                                </div>
+                                <div class="right">
+                                    <a href="javascript:refresh();" class="btn-bs btn-primary btn-sm">Refresh</a>
+                                </div>
+                            </div><!-- /.controls -->
+                            
+                            <apex:actionFunction action="{!refreshData}" name="refresh" status="renderingStatus" />
+                            <apex:actionFunction action="{!resetFilters}" name="reset" status="renderingStatus"/>
+                        </div>  
+                    </apex:form><!-- /.sidebar -->
+                    
+                    
+                    <apex:outputPanel layout="block" id="contentDiv" styleClass="content">  
+                        <div class="stats">
+                            <apex:repeat value="{!mapToKPI}" var="stat" >
+                                <apex:outputPanel >
+                                    <div class="item">
+                                        <div class="title">{!stat}</div>
+                                        <apex:outputPanel rendered="{!mapToKPI[stat].isPercent}">
+                                            <div class="result">{!mapToKPI[stat].numericValue}%</div>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!!mapToKPI[stat].isPercent}">
+                                            <div class="result">${!mapToKPI[stat].numericValue}M</div>
+                                        </apex:outputPanel>
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:repeat>
+                        </div>
+                        
+                        <apex:outputPanel rendered="{!(forecastValue.size > 0)}">
+                            <div class="table-responsive">
+                                <table id="table-sparkline" class="table table-striped table-hover table-bordered ">
+                                    <thead>
+                                        <tr>
+                                            <th>Owner Name</th>
+                                            <th>{!mapOfChartLabel['Metric__c']}</th>
+                                            <th>{!mapOfChartLabel['Metric2__c']}</th>
+                                            <th style="width: 15%;">{!mapOfChartLabel['Dimension6__c']}</th>
+                                            <th style="width: 15%;">{!mapOfChartLabel['Dimension7__c']}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody-sparkline">
+                                        
+                                        <apex:repeat value="{!forecastValue}" var="forVal" >
+                                            <tr>
+                                                <th><apex:outputLink value="/{!forVal.sfId}" target="_blank" >{!forVal.name }</apex:outputLink></th>
+                                                <td>{!forVal.metric }</td>
+                                                <td>{!forVal.metric2 }</td>
+                                                <td data-sparkline="{!forVal.dimension6}  "/>
+                                                <td data-sparkline="{!forVal.dimension7} ; column"/>
+                                            </tr>
+                                        </apex:repeat>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </apex:outputPanel>
+                        
+                    </apex:outputPanel><!-- /.content -->
+                    
+                </div>
+            </div><!-- /.container-bs -->
+        </apex:define>
+    </apex:composition>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+    var $j = jQuery.noConflict();
+    $(function(){
+        createChart();
+        //$('.select2').select2();
+    });
+    function createChart(){
+        Highcharts.SparkLine = function (a, b, c) {
+            var hasRenderToArg = typeof a === 'string' || a.nodeName,
+                options = arguments[hasRenderToArg ? 1 : 0],
+                defaultOptions = {
+                    chart: {
+                        renderTo: (options.chart && options.chart.renderTo) || this,
+                        backgroundColor: null,
+                        borderWidth: 0,
+                        type: 'area',
+                        margin: [2, 0, 2, 0],
+                        width: 120,
+                        height: 20,
+                        style: {
+                            overflow: 'visible'
+                        },
+                        
+                        // small optimalization, saves 1-2 ms each sparkline
+                        skipClone: true
+                    },
+                    title: {
+                        text: ''
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    xAxis: {
+                        labels: {
+                            enabled: false
+                        },
+                        title: {
+                            text: null
+                        },
+                        startOnTick: false,
+                        endOnTick: false,
+                        tickPositions: []
+                    },
+                    yAxis: {
+                        endOnTick: false,
+                        startOnTick: false,
+                        labels: {
+                            enabled: false
+                        },
+                        title: {
+                            text: null
+                        },
+                        tickPositions: [0]
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        backgroundColor: null,
+                        borderWidth: 0,
+                        shadow: false,
+                        useHTML: true,
+                        hideDelay: 0,
+                        shared: true,
+                        padding: 0,
+                        positioner: function (w, h, point) {
+                            return { x: point.plotX - w / 2, y: point.plotY - h };
+                        }
+                    },
+                    plotOptions: {
+                        series: {
+                            animation: false,
+                            lineWidth: 1,
+                            shadow: false,
+                            states: {
+                                hover: {
+                                    lineWidth: 1
+                                }
+                            },
+                            marker: {
+                                radius: 1,
+                                states: {
+                                    hover: {
+                                        radius: 2
+                                    }
+                                }
+                            },
+                            fillOpacity: 0.25
+                        },
+                        column: {
+                            negativeColor: '#910000',
+                            borderColor: 'silver'
+                        }
+                    }
+                };
+            
+            options = Highcharts.merge(defaultOptions, options);
+            
+            return hasRenderToArg ?
+                new Highcharts.Chart(a, options, c) :
+            new Highcharts.Chart(options, b);
+        };
+        
+        var start = +new Date(),
+            $tds = $('td[data-sparkline]'),
+            fullLen = $tds.length,
+            n = 0;
+        
+        function doChunk() {
+            var time = +new Date(),
+                i,
+                len = $tds.length,
+                $td,
+                stringdata,
+                arr,
+                data,
+                chart;
+            
+            for (i = 0; i < len; i += 1) {
+                $td = $($tds[i]);
+                stringdata = $td.data('sparkline');
+                arr = stringdata.split('; ');
+                data = $.map(arr[0].split(', '), parseFloat);
+                chart = {};
+                var dataLen = 4;
+                
+                if (arr[1]) {
+                    chart.type = arr[1];
+                
+                var myPoint = 1;
+                
+                $td.highcharts('SparkLine', {
+                    series: [{
+                        data: data,
+                        pointStart: 1
+                    }],
+                    tooltip: {
+                        
+                        headerFormat: '<span style="font-size: 10px">' + $td.parent().find('th').html() +':</span><br/>',
+                        
+                        pointFormat: '<b>{point.y}.00</b> %'
+                        
+                    },
+                    chart: chart
+                });
+                }else{
+                    $td.highcharts('SparkLine', {
+                    series: [{
+                        data: data,
+                        pointStart: 1
+                    }],
+                    tooltip: {
+                        
+                        headerFormat: '<span style="font-size: 10px">' + $td.parent().find('th').html() + ':</span><br/>',
+                        
+                        pointFormat: '<b>{point.y}.00</b> USD'
+                        
+                    },
+                    chart: chart
+                });
+                }
+                n += 1;
+                
+                // If the process takes too much time, run a timeout to allow interaction with the browser
+                if (new Date() - time > 500) {
+                    $tds.splice(0, i + 1);
+                    setTimeout(doChunk, 0);
+                    break;
+                }
+            }
+        }
+        doChunk();
+        $('.highcharts-button-box').hide();
+        $('.highcharts-button-symbol').hide();
+    }
+    </script>
+    
+</apex:page>

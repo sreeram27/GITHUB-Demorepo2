@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template to use when ES Team updates SR Status to &apos;Provided to Sales&apos;</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>AutoRABIT_LinkedIn_Banner</letterhead>
+    <name>ES Team Notification to Sales Team</name>
+    <style>formalLetter</style>
+    <subject>Status for account {!Services_Request__c.Account__c} - {!Services_Request__c.Request_Type__c} updated to &apos;Provided to Sales&apos;</subject>
+    <textOnly>Dear {!Services_Request__c.Requesting_Employee__c},
+Enterprise Services Team had reviewed and updated the service request status to &apos;{!Services_Request__c.SR_Status__c}&apos; for the opportunity &apos;{!Services_Request__c.Opportunity__c}&apos;.
+
+For more information, click on the folowing link {!Services_Request__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

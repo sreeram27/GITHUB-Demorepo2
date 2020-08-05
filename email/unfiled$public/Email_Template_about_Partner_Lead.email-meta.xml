@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email Template to use in notifying Partner Account Managers about new Partner Lead</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>AutoRABIT_LinkedIn_Banner</letterhead>
+    <name>Email Template about Partner Lead</name>
+    <style>freeForm</style>
+    <subject>New Partner Lead, &apos;{!Lead.Full_Name__c}&apos; added to our CRM</subject>
+    <textOnly>Hello Partner Account Managers,
+
+This is to inform you that there is a new partner lead, &apos;{!Lead.Name}&apos;, from Company, &apos;{!Lead.Company}&apos;, is created in our CRM.
+
+CRM link for the lead record: {!Lead.Link}
+
+Please reach out to Lead Owner, &apos;{!Lead.OwnerFullName}&apos;, and/or SDR, &apos;{!Lead.SDR__c}&apos;, for additional information.
+
+
+Thank You!</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

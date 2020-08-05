@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This Email template is used in Workflow to send an email when a new Lead is created</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AutoRABIT - New Lead Notification</name>
+    <style>none</style>
+    <subject>New Lead Notification</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

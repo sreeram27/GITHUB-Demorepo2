@@ -1,0 +1,13 @@
+Hi Team,
+
+A case has been created and it needs your immediate attention.
+
+Case Number: {!Case.CaseNumber}
+Created By: {!Case.SuppliedName}
+Email of User: {!Case.SuppliedEmail} 
+Subject : {!Case.Subject}
+Description of Issue: {!Case.Description}
+
+Please find more details in : {!Case.Link}
+
+Please do not change the subject while replying: Case Reference [{!Case.Thread_Id}]

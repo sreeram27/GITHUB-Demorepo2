@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Lead Notification (Web to Lead)_Webinar</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Lead Notification (Web to Lead)_Webinar</name>
+    <style>none</style>
+    <subject>{!Lead.Name} has registered for AutoRABIT webinar</subject>
+    <textOnly>A new Lead is trying to reach AutoRABIT.
+
+Name: {!Lead.Name}
+Company:{!Lead.Company}
+Email to Contact: {!Lead.Email}
+Phone:{!Lead.Phone}
+
+Get in touch with the customer at the earliest.
+
+Thank you,
+AutoRabit Customer Support</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

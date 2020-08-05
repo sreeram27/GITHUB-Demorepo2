@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[Dear&nbsp;{!Task.SDR_Name__c},]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font face="arial" style=""><span style="font-size: 12pt;">The scheduled Discovery Call/Demo task</span>&nbsp;<span style="font-size: 12pt;">had been sent back to marketing. Please check to see if&nbsp;</span></font><span style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">any action is needed.&nbsp;</span><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size: 12pt;"><br></span></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">For more details, click the following link:&nbsp;</span><font face="arial">{!Task.Link}</font></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

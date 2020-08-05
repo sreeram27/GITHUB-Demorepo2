@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>34.0</apiVersion>
+    <available>true</available>
+    <description>This Email template is used to send an Email whenever a Lead is converted</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AutoRABIT - Lead Convert</name>
+    <style>none</style>
+    <subject>Lead Convert VF</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

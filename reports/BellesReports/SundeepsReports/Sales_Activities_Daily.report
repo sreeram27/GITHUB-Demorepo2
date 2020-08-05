@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Activity.CallType__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Number of calls</description>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>ASSIGNED</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel># of Calls</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Activity.EmailType__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Number of Emails</description>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>ASSIGNED</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel># of Emails</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Activity.Interactions__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Number of Interactions</description>
+        <developerName>FORMULA3</developerName>
+        <downGroupingContext>ASSIGNED</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel># of Interactions</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>LEAD_STATUS</field>
+    </columns>
+    <columns>
+        <field>Activity.Call_Status__c</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>ASSIGNED</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Sundeep</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ASSIGNED</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>TASK_TYPE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Sales Activities Daily</name>
+    <params>
+        <name>closed</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>type</name>
+        <value>te</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadActivity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <endDate>2018-04-05</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-04-04</startDate>
+    </timeFrameFilter>
+</Report>

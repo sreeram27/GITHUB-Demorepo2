@@ -1,0 +1,9 @@
+<apex:page sidebar="false" showHeader="false"  >
+<apex:stylesheet value="{!$Resource.questionnaireStyles}"/>
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:form styleClass="form-style">
+  Thank you! We appreciate your time and effort.
+  <p>Please visit our <a href="http://www.autorabit.com/">website</a> to know more.</p> 
+  </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

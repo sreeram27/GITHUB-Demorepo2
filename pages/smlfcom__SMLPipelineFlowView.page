@@ -1,0 +1,437 @@
+<apex:page controller="smlfcom.SMLPipelineFlowController" sidebar="false" showHeader="false" standardStylesheets="false" readOnly="true" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+    <title>SML Pipeline Flow View</title>
+    <style>
+        /* sankey styles */
+        .node rect {
+        cursor: move;
+        fill-opacity: .9;
+        }
+        .node text {
+        pointer-events: none;
+        text-shadow: 0 1px 0 #fff;
+        }
+        .link {
+        fill: none;
+        stroke: #444;
+        stroke-opacity: .2;
+        }
+        .link:hover {
+        stroke: #1E95D3;
+        stroke-opacity: .2;
+        }
+        .link.selected{
+        stroke: #1E95D3;
+        stroke-opacity: .6;
+        }
+    </style>
+
+    <style>html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        max-width: 100%;
+        padding: 0px 50px;
+    }
+    </style>
+    
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <apex:includeScript value="//d3js.org/d3.v3.min.js"/>
+            <apex:includeScript value="{!$Resource.smlfcom__sankey}"/>
+            <div class="page-header">
+                <div class="container-bs">
+                    <div class="title" data-step="1" data-intro="View how your pipeline has progressed over a period of time (demo data)">
+                        <h1>Trending: </h1>
+                        <h2>{!smlFilter.pageLabelNameMapping['SMLPipelineFlowView'].pageLabel}</h2>
+                    </div><!-- /.title -->
+                </div><!-- /.container-bs -->
+            </div><!-- /.page-header -->
+
+            <div class="container-bs">
+                <div class="page-container">
+
+                    <apex:form styleClass="sidebar">
+                       <div data-step="2" data-intro="Set Snapshot Duration to the length of time for which you want to see pipeline movements">
+                        <c:Account_and_owner_filter />  
+                        <apex:repeat value="{!smlFilter.listOfDefaultFields}" var="filterField">
+                                <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'STRING'}">
+                                    <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndLabel[filterField] == 'Account'}">
+                                        <apex:inputText value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}"  styleClass="form-control hidden account-search-field-hidden"/>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndLabel[filterField] == 'Owner'}">
+                                        <apex:inputText value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}"  styleClass="form-control hidden user-search-field-hidden"/>
+                                        <hr/>
+                                        <div class="form-group">
+                                            <label for="snapshot_date_type_select">Snapshot Duration</label>
+                                            <apex:selectList id="snapshot_date_type_select" styleClass="item custom-select" value="{!filterData.snapShotFilter}" multiselect="false" size="1">
+                                                <apex:selectOptions value="{!listOfSnapshotDateTypeOptions}"></apex:selectOptions>
+                                            </apex:selectList>
+                                        </div>
+                                    </apex:outputPanel>
+                                 </apex:outputPanel>
+                                <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'DATE_RANGE'}">
+                                <hr/>
+                                    <div class="form-group">
+                                            <label>{!smlFilter.mapOfFieldNameAndLabel[filterField]}</label>
+                                            <apex:selectList value="{!smlFilter.dateFilter }" multiselect="false" size="1" styleClass="filterField form-control custom-select">
+                                                <apex:selectOptions value="{!smlFilter.listOfDateFilter }"></apex:selectOptions>
+                                            </apex:selectList>
+                                        </div>
+                            </apex:outputPanel>
+                        </apex:repeat>
+                        <hr/>
+                        <apex:repeat value="{!smlFilter.listOfFields}" var="filterField">
+                            <div class="form-group">
+                                <label>{!smlFilter.mapOfFieldNameAndLabel[filterField]}</label>
+                                <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'PICKLIST'}">
+                                    <apex:selectList value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}" multiselect="false" size="1" styleClass="item custom-select">
+                                        <apex:selectOption itemLabel="All" itemValue="All"></apex:selectOption>
+                                        <apex:selectOptions value="{!smlFilter.mapOfFieldAndValue[filterField]}"></apex:selectOptions>
+                                    </apex:selectList>
+                                </apex:outputPanel>
+                            </div>
+                        </apex:repeat>
+                        <hr />
+                        <div class="controls flex">
+                            <div class="left">
+                                <a href="javascript:reset()" class="btn-bs btn-default btn-sm">Reset</a>
+                            </div>
+                            <div class="right">
+                                <a href="javascript:saveRules();javascript:refresh()" class="btn-bs btn-primary btn-sm">Refresh</a>
+                            </div>
+                        </div><!-- /.controls -->
+
+                        <apex:actionFunction action="{!refreshData}" name="refresh" status="renderingStatus" />
+                        <apex:actionFunction action="{!resetFilters}" name="reset" status="renderingStatus"/>
+                      </div>  
+                    </apex:form><!-- /.sidebar -->
+
+
+                    <apex:outputPanel layout="block" id="contentDiv" styleClass="content">
+                        <div class="flex-row two-col" style="margin-bottom:10px">
+                            <div class="form-group"></div>
+                            <div class="form-group">
+                                <a href="javascript:openSliderViewModal()" class="btn-blank" style="float: right;"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/insights.svg')}" /></a>
+                            </div>
+                        </div>
+                        <div id="chart"  data-step="3" data-intro="Click on any of the flow lines to see related list of opportunities"></div>
+                        <br/>
+                        <div class="hidden" id="demoMessage"></div>
+                        <div id="recordTableContainer" class="hidden">
+                            <table id="recordTable" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Opportunity</th>
+                                        <th>Owner</th>
+                                        <th>{!stageLabel}</th>
+                                        <th>{!amountLabel}</th>
+                                        <th>Previous Amount</th>
+                                        <th>Amount Difference</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </apex:outputPanel><!-- /.content -->
+
+                </div>
+            </div><!-- /.container-bs -->
+            <apex:form >
+                <apex:outputPanel id="modalPanel">
+                    <div class="modal fade" id="sliderModal" tabindex="-1" role="dialog" aria-labelledby="sliderModalLabel">
+                    <apex:outputPanel id="modPanel">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <center>
+                                <h3>Highlights</h3>
+                            </center>
+                        </div>
+                        <div class="modal-body" style="height: 300px"> 
+                            <div class="swiper-container">
+                              <div class="swiper-wrapper" id="swiperbody">
+                                  <apex:repeat value="{!sliderTexts}" var="data">
+                                     <div class="swiper-slide"><apex:outputText value="{!data}" escape="false"/></div> 
+                                  </apex:repeat> 
+                              </div>
+                              <div class="swiper-pagination"></div>
+                
+                              <div class="swiper-button-next"></div>
+                              <div class="swiper-button-prev"></div>
+                            </div>
+                        </div> 
+                    </div>
+                    </div>  
+                    <script type="text/javascript">
+                        var swiper = new Swiper('.swiper-container', {
+                                  pagination: '.swiper-pagination',
+                                  nextButton: '.swiper-button-next',
+                                  prevButton: '.swiper-button-prev',
+                                  slidesPerView: 1,
+                                  paginationClickable: true,
+                                  spaceBetween: 30, 
+                                  loop: true
+                     });
+                    </script>                  
+                    </apex:outputPanel> 
+                    </div>
+                 </apex:outputPanel>
+                 <apex:actionFunction name="showModal" rerender="modPanel" status="renderingStatus" />
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+    <!-- remote object for fetching account records -->
+    <apex:remoteObjects jsNamespace="remote_account">
+        <apex:remoteObjectModel name="Account" fields="Id,Name"/>
+    </apex:remoteObjects>
+    <apex:remoteObjects jsNamespace="remote_user">
+        <apex:remoteObjectModel name="User" fields="Id,Name"/>
+    </apex:remoteObjects>
+
+    <apex:outputPanel layout="none" id="scriptPanel">
+        <script>
+        var _oppTable;
+        $(function(){
+            drawSankeyChart();
+            //$('.select2').select2();
+        });
+
+        function openSliderViewModal(){
+           $("#sliderModal").modal('show');
+           showModal();
+        }
+
+        var PF_DATA = jQuery.parseJSON('{!JSENCODE(plData_JSON)}');
+        var titToamnt = {!titleToAmountJSON };
+        var isDemo = {!isDemo};
+        var sankey_data = {
+            "nodes": jQuery.parseJSON('{!JSENCODE(nodeData_JSON)}'),
+            "links": jQuery.parseJSON('{!JSENCODE(linkData_JSON)}')
+        }
+
+        console.log(PF_DATA );
+
+
+        var units = "Opportunities";
+
+        var margin = {top: 10, right: 10, bottom: 10, left: 10}
+        var width = $("#chart").parent(".content").width() - margin.left - margin.right;
+        var height = 600 - margin.top - margin.bottom;
+
+        var formatNumber = d3.format(",.0f");    // zero decimal places
+        var format = function(d) { return formatNumber(d) + " " + units; }
+        var color = d3.scale.category20();
+
+        var svg;
+        var link;
+        var node;
+        var sankey;
+        var path;
+
+        function drawSankeyChart(){
+            // append the svg canvas to the page
+            svg = d3.select("#chart").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform",
+                  "translate(" + margin.left + "," + margin.top + ")");
+
+            // Set the sankey diagram properties
+            sankey = d3.sankey()
+            .nodeWidth(50)
+            .nodePadding(40)
+            .size([width, height]);
+
+            path = sankey.link();
+
+
+            sankey
+            .nodes(sankey_data.nodes)
+            .links(sankey_data.links)
+            .layout(32);
+
+            // add in the links
+            link = svg.append("g").selectAll(".link")
+            .data(sankey_data.links)
+            .enter().append("path")
+            .attr("class", "link")
+            .attr("d", path)
+            .attr("data-start-node", function(d){ return d.source.name; })
+            .attr("data-end-node", function(d){ return d.target.name; })
+            .style("stroke-width", function(d) { return Math.max(1, d.dy); })
+            .sort(function(a, b) { return b.dy - a.dy; })
+            .on({
+                "mouseover": function() { },
+                "mouseout":  function() { },
+                "click":  function() { selectLink(this); },
+            });
+
+            // add the link titles
+            link.append("title")
+            .text(function(d) {
+                   
+                var dRec = d.source.name + " → " + d.target.name + "\n" + format(d.value);
+                if(!(titToamnt[d.source.name + '_' + d.target.name] === undefined)){
+                    dRec = dRec +"\nAmount: " + formatNumber(titToamnt[d.source.name + '_' + d.target.name]) ;
+                }
+                return dRec;  });
+
+            // add in the nodes
+            node = svg.append("g").selectAll(".node")
+            .data(sankey_data.nodes)
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")"; })
+            .call(d3.behavior.drag()
+                  .origin(function(d) { return d; })
+                  .on("dragstart", function() {
+                      this.parentNode.appendChild(this); })
+                  .on("drag", dragmove))
+            .on({
+                "click":  function() { selectNode(this); },
+            });
+
+            // add the rectangles for the nodes
+            node.append("rect")
+            .attr("height", function(d) { return d.dy; })
+            .attr("width", sankey.nodeWidth())
+            .style("fill", function(d) {
+                if(d.x == 0){
+                    return 'rgb(31, 119, 180)';
+                }else if(d.x > 0 && (d.name.includes('won') || d.name.includes('Won') || d.name.includes('WON'))){
+                    return 'rgb(0,128,0)';
+                }else if(d.x > 0 && (d.name.includes('lost') || d.name.includes('Lost') || d.name.includes('LOST'))){
+                    return 'rgb(214, 39, 40)';
+                }
+                return 'rgb(152, 223, 138)'; 
+            })
+            .style("stroke", function(d) {
+                return d3.rgb(d.color).darker(1); })
+            .append("title")
+            .text(function(d) {
+                return d.name + "\n" + format(d.value);});
+
+            // add in the title for the nodes
+            node.append("text")
+            .attr("x", -6)
+            .attr("y", function(d) { return d.dy / 2; })
+            .attr("dy", ".35em")
+            .attr("text-anchor", "end")
+            .attr("transform", null)
+            .text(function(d) { return d.name; })
+            .filter(function(d) { return d.x < width / 2; })
+            .attr("x", 6 + sankey.nodeWidth())
+            .attr("text-anchor", "start");
+
+        }
+
+        // the function for moving the nodes
+        function dragmove(d) {
+            d3.select(this).attr("transform",
+                                 "translate(" + d.x + "," + (
+                                     d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))
+                                 ) + ")");
+            sankey.relayout();
+            link.attr("d", path);
+        }
+
+        function selectLink(elem){
+            if(d3.select(elem).classed("selected")){
+                d3.selectAll(".link.selected").classed("selected",false);
+                showRelatedRecords(elem, false);
+            }else{
+                d3.selectAll(".link.selected").classed("selected",false);
+                d3.select(elem).classed("selected",true);
+                showRelatedRecords(elem, true);
+            }
+
+        }
+
+        function selectNode(elem){
+            //console.log(elem);
+        }
+
+        function showRelatedRecords(elem, isShow){
+            if(!isShow){
+                $("#recordTableContainer").addClass("hidden");
+                return;
+            }
+            if(isDemo){
+              $('#demoMessage').html('<strong>Note:</strong> Related opportunities view is disabled in demo mode.  Contact info@springml.com to enable this view.');   
+              $("#demoMessage").removeClass("hidden");
+            }
+            else{
+            if(_oppTable)
+                _oppTable.destroy();
+
+            $("#recordTableContainer").removeClass("hidden");
+
+            var startNode = d3.select(elem).attr('data-start-node');
+            var endNode = d3.select(elem).attr('data-end-node');
+
+            //got to pipeline JSON and get the related records
+
+            var opp_table = $("#recordTableContainer tbody");
+            opp_table.empty();
+
+            var row;
+            var amount_diff_class = '';
+            $.each(PF_DATA[startNode][endNode], function(index, value){
+                row = $("<tr></tr>");
+                if(value.oppId && value.oppId != '')
+                    row.append('<td><a href="/'+value.oppId+'" target="_blank">'+value.opportunity+'</a></td>');
+                else
+                    row.append("<td>"+value.opportunity+"</td>");
+                if(value.ownerId && value.ownerId != '')
+                    row.append('<td><a href="/'+value.ownerId +'" target="_blank">'+value.owner+'</a></td>');
+                else
+                    row.append("<td>"+value.owner+"</td>");
+                row.append("<td>"+value.stageName+"</td>");
+                row.append("<td>"+value.amount+"</td>");
+                row.append("<td>"+value.prevAmount+"</td>");
+
+                amount_diff_class = value.amountDifference.includes('-')?'font-red':'font-green';
+                row.append("<td class='"+amount_diff_class+"'>"+value.amountDifference+"</td>");
+                opp_table.append(row);
+            });
+            _oppTable = $("#recordTable").DataTable();
+          }  
+        }
+
+        </script>
+    </apex:outputPanel>
+</apex:page>

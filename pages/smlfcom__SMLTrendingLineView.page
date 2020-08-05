@@ -1,0 +1,287 @@
+<apex:page controller="smlfcom.SMLTrendingLineController" id="page" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" readOnly="true" applyBodyTag="false" applyHtmlTag="false">
+ <title>SML Trending Line</title>
+ <style>
+     .highcharts-credits {
+        display: none;
+    }   
+ </style>   
+ <apex:composition template="smlfcom__SMLTemplateV2">
+     <apex:define name="body">
+        <apex:form id="form">
+            <apex:includeScript value="https://code.highcharts.com/highcharts.js"/>
+            <apex:includeScript value="https://code.highcharts.com/modules/exporting.js"/>
+            <apex:includeScript value="https://code.highcharts.com/highcharts-more.js"/>
+            <apex:includeScript value="https://code.highcharts.com/modules/heatmap.js"/>
+            <apex:includeScript value="{!URLFOR($Resource.smlfcom__PSDesign, 'js/highchart-themes.js')}"/>
+
+            <div class="page-header">
+                <div class="container-bs">
+                    <div class="title" data-step="1" data-intro="View changes to your current quarter pipeline (demo data)">
+                        <h1>Comparisons: </h1>
+                        <h2>{!smlFilter.pageLabelNameMapping['SMLTrendingLineView'].pageLabel}</h2>
+                    </div><!-- /.title -->
+                </div>
+            </div>
+            <div class="container-bs">
+               <div class="page-container">
+                 <div class="sidebar">
+                   <div class="form-group">
+                     <apex:repeat value="{!smlFilter.listOfFields}" var="filterField">
+                       <div>
+                         <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'STRING'}">   
+                           <apex:outputPanel layout="none" rendered="{!(smlFilter.mapOfFieldNameAndLabel[filterField] != 'ACCOUNT' && smlFilter.mapOfFieldNameAndLabel != 'OWNER')}"> 
+                              <br/>
+                               <label>{!mapOfDimensionAPIAndLabelName[filterField]}</label>          
+                               <apex:selectList value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}" multiselect="false" size="1" styleClass="filterField form-control custom-select">
+                                   <apex:selectOption itemLabel="All" itemValue="All"></apex:selectOption>
+                                   <apex:selectOptions value="{!smlFilter.mapOfFieldAndValue[filterField]}"></apex:selectOptions>
+                               </apex:selectList>
+                           </apex:outputPanel>
+                         </apex:outputPanel>
+                       </div>
+                     </apex:repeat>
+                     <apex:repeat value="{!smlFilter.listOfDefaultFields}" var="filterField">
+                       <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'DATE_RANGE'}">
+                           <hr/>
+                           <div>
+                               <label>{!mapOfDimensionAPIAndLabelName[filterField]}</label>
+                           <div class="form-group">
+                               <apex:input type="date" value="{!smlFilter.closeDateRange.start_Date}" styleClass="form-control filterField"/>
+                           </div>
+                           </div>
+                           <div>
+                               <label for="closed-date-to">To</label>
+                           <div class="form-group">
+                               <apex:input type="date" value="{!smlFilter.closeDateRange.end_Date}" styleClass="form-control filterField"/>
+                           </div>
+                           </div>
+                       </apex:outputPanel>
+                     </apex:repeat>
+                   </div>
+                   <div class="controls flex">
+                       <div class="left">
+                           <a class="btn-bs btn-sm btn-default" href="javascript:reset()">Reset</a>
+                       </div> 
+                       <div class="right">
+                           <a class="btn-bs btn-sm btn-primary" href="javascript:refresh()">Refresh</a>
+                       </div>
+                       <apex:actionFunction action="{!refreshData}" name="refresh" status="renderingStatus" reRender="initPanel"/>
+                       <apex:actionFunction action="{!resetFilters}" name="reset" status="renderingStatus"/>
+                   </div>
+                 </div>
+
+                 <div class="content">
+                     <div class="flex-row" style="margin-bottom:10px">
+                         <div class="notifications">
+                             <div class="check-group">
+                               <div class="sp-check">
+                                  <label for="{!$Component.met_One}">
+                                      <apex:inputCheckbox value="{!metOne}" id="met_One"/>
+                                      <span class="icon"></span>
+                                     <span style="font-size: small;color: black">{!listOfSubFilterLabels[0].label}</span>
+                                  </label>
+                               </div>
+                             </div>
+                         </div>
+                          <div class="notifications" Style="padding-left: 50px">
+                             <div class="check-group">
+                                 <div class="sp-check">
+                                     <label for="{!$Component.met_Two}">
+                                       <apex:inputCheckbox value="{!metTwo}" id="met_Two"/>
+                                       <span class="icon"></span>
+                                       <span style="font-size: small;color: black">{!listOfSubFilterLabels[1].label}</span>  
+                                     </label>  
+                                 </div>  
+                             </div> 
+                         </div>   
+                    </div>
+                    <div class="flex-row two-col" style="margin-bottom:10px">
+                     <div class="form-group">
+                       <label>From</label>
+                       <apex:selectList styleClass="form-control custom-select" value="{!fromValue}" multiselect="false" size="1" id="filterOne">
+                          <apex:selectOptions value="{!fromValues}"></apex:selectOptions>
+                       </apex:selectList>
+                     </div>
+                     <div class="form-group">
+                       <label>To</label>
+                       <apex:selectList styleClass="form-control custom-select" value="{!toValue}" multiselect="false" size="1" id="filterTwo">
+                          <apex:selectOptions value="{!toValues}"></apex:selectOptions>
+                       </apex:selectList>
+                     </div>
+                    </div>
+                    <div id="forecastChart"></div>
+                 </div>
+
+                 <apex:outputPanel id="initPanel" rendered="{!trendingData != null}">
+                    <script>
+                    $(function(){
+                        var obj = jQuery.parseJSON('{!JSENCODE(trending_JSON)}');
+                        if(obj.showAllLegends){
+                            createSubFilterChart(obj, '{!fromValue}', '{!toValue}');
+                        }else{
+                          createSubFilter(obj, '{!fromValue}', '{!toValue}');
+                        }
+                    });
+                    </script>
+                </apex:outputPanel>
+
+               </div>
+            </div>
+        </apex:form>.
+     </apex:define>
+ </apex:composition>
+ <script>
+   var _forecastChart = null;
+   var jsData ='{!JSENCODE(trending_JSON)}';
+   var forecastData = JSON.parse(jsData);
+   console.log('forecastData++'+jsData);
+
+   function init(){
+     //disablePeriodFilters();
+     var categoriesArray = [];
+     var actualArray = [];
+     var forecastedArray = [];
+     var metricValue = '';
+    }
+       
+    function updateChartData(categoriesArray, actualArray, forecastedArray){
+       console.log(categoriesArray);
+        _forecastChart.xAxis[0].update( {categories : categoriesArray}, false);
+        _forecastChart.series[0].update({ data : actualArray},false);
+        _forecastChart.series[1].update({ data : forecastedArray}, false);
+        _forecastChart.redraw()
+    }
+
+    function getAmount(amountData){
+        var returnVal = parseFloat(amountData);
+        return returnVal < 0 ? 0 : returnVal;
+    }
+    
+    function createSubFilterChart(data, fromValue, toValue ){
+        $('#forecastChart').highcharts({
+            chart: {
+                height: 600,
+                marginTop: 80,
+                spacingTop: 5,
+                spacingBottom: 20,
+                spacingLeft: 20,
+                spacingRight: 20
+            },
+            xAxis: {
+                categories: data.categoryArray,
+                tickInterval: 1,
+          
+            },
+            title: {
+                text: ''
+            },
+            series: [{
+                type: 'line',
+                name: 'Metric1-'+fromValue,
+                data: data.fromMetricsArray,
+                marker: {
+                    enabled: false
+                },
+                states: {
+                    hover: {
+                        lineWidth: 0
+                    }
+                },
+                color: "#FF5500"
+            },{
+                type: 'line',
+                name: 'Metric1-'+toValue,
+                data: data.toMetricsArray,
+                marker: {
+                    enabled: false
+                },
+                states: {
+                    hover: {
+                        lineWidth: 0
+                    }
+                },
+                color: "#0088FF"
+            },{
+                type: 'line',
+                name: 'Metric2-'+toValue,
+                data: data.toMetricsArray1,
+                marker: {
+                    enabled: false
+                },
+                states: {
+                    hover: {
+                        lineWidth: 0
+                    }
+                },
+                color: "#A52A2A"
+            },{
+                type: 'line',
+                name: 'Metric2-'+fromValue,
+                data: data.fromMetricsArray1,
+                marker: {
+                    enabled: false
+                },
+                states: {
+                    hover: {
+                        lineWidth: 0
+                    }
+                },
+                color: "#000000"
+            }]
+        });
+
+        _forecastChart = $('#forecastChart').highcharts();
+    }
+
+    function createSubFilter(data, fromValue, toValue ){
+        $('#forecastChart').highcharts({
+            chart: {
+                height: 600,
+                marginTop: 80,
+                spacingTop: 5,
+                spacingBottom: 20,
+                spacingLeft: 20,
+                spacingRight: 20
+            },
+            xAxis: {
+                categories: data.categoryArray,
+                tickInterval: 1,
+          
+            },
+            title: {
+                text: ''
+            },
+            series: [{
+                type: 'line',
+                name: fromValue,
+                data: data.fromMetricsArray,
+                marker: {
+                    enabled: false
+                },
+                states: {
+                    hover: {
+                        lineWidth: 0
+                    }
+                },
+                color: "#FF5500"
+            },{
+                type: 'line',
+                name: toValue,
+                data: data.toMetricsArray,
+                marker: {
+                    enabled: false
+                },
+                states: {
+                    hover: {
+                        lineWidth: 0
+                    }
+                },
+                color: "#0088FF"
+            }]
+        });
+
+        _forecastChart = $('#forecastChart').highcharts();
+    }
+
+ </script>   
+</apex:page>

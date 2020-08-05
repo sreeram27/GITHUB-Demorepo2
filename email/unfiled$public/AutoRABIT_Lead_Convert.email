@@ -1,0 +1,36 @@
+<messaging:emailTemplate subject="Lead Converted - Ready for Poc" recipientType="User" relatedToType="Lead">
+<messaging:htmlEmailBody >
+<html>
+      <body>
+       
+        <font face="arial" size="2">
+          <p>Dear {!recipient.name},</p>
+          <p>This Lead has been converted to an Opportunity.</p>
+<p>Lead Name : {!relatedTo.name}</p>
+<p>Lead Email : {!relatedTo.email}</p>
+<p>The PoC period has been initiated – Please make sure you take a look at the account and make sure that the Implementation Questionnaire has been added.
+</p>
+<p>Thank you very much. </p>
+<p>
+Yours Truly,</p>
+<p>Sales Team</p>
+        </font>
+      </body>
+    </html>
+  </messaging:htmlEmailBody> 
+  <messaging:plainTextEmailBody >
+    <p>Dear {!recipient.name},</p>
+          <p>This Lead has been converted to an Opportunity.</p>
+
+<p>Lead Name : {!relatedTo.name}</p>
+<br/>
+<p>Lead Email : {!relatedTo.email}</p>
+<p>The PoC period has been initiated – Please make sure you take a look at the account and make sure that the Implementation Questionnaire has been added.
+</p>
+<p>Thank you very much. </p>
+<p>
+Yours Truly, </p>
+<p>Sales Team</p>
+    
+  </messaging:plainTextEmailBody>
+</messaging:emailTemplate>

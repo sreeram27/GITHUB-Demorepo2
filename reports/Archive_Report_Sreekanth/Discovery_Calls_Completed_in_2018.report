@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_99802355</developerName>
+        <masterLabel>% DC Completed within 30 days</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Lead.Days_in_DC__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>-31</to>
+            </sourceValues>
+            <value>out of the month</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>-31</from>
+                <to>1</to>
+            </sourceValues>
+            <value>within the month</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1</from>
+            </sourceValues>
+            <value>out of the month2</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>HorizontalBarGrouped</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Lead.SDR__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <secondaryGroupingColumn>BucketField_99802355</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Lead.DC_Completed_Date__c</field>
+    </columns>
+    <columns>
+        <field>Lead.DC_Scheduled_On__c</field>
+    </columns>
+    <columns>
+        <field>Lead.Days_in_DC__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Discovery Calls Completed in 30 days in 2018</description>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_99802355</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead.SDR__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>2 Discovery Calls Completed in 2018</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadAuditHistory</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Lead.DC_Scheduled_On__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

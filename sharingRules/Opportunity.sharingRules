@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Opp_data_to_users</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Opp data to users</label>
+        <sharedTo>
+            <roleAndSubordinates>Director_of_Custmer_Success</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>jo</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Opp_sharing_rule_for_Divya</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Opp sharing rule for Divya</label>
+        <sharedTo>
+            <group>US_SF_Admin</group>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

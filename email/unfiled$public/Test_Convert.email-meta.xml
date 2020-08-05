@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Mass_email_for_Campaigning</letterhead>
+    <name>Test Convert</name>
+    <style>freeForm</style>
+    <subject>Lead is Converted - Activate Trial!!</subject>
+    <textOnly>Hi ,
+
+This Lead has been converted to an Opportunity.
+
+Lead Name : {!Lead.Name}
+Lead Email : {!Lead.Email}
+
+The PoC period has been initiated – Please make sure you take a look at the account and make sure that the Implementation Questionnaire has been added.
+
+Thank you very much.
+
+Yours Truly,
+Sales Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

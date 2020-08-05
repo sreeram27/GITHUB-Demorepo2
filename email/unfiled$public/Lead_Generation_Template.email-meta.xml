@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template used to send to self generated leads</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>New_Logo_AutorRABIT</letterhead>
+    <name>Lead Generation Template</name>
+    <style>freeForm</style>
+    <subject>Release Automation for Salesforce!</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+
+
+Hope you are doing well.  Are you interested in Automating your Salesforce Release Process?
+
+
+AutoRABIT is a  Release Automation Suite specifically designed for Salesforce.  Many of our customer&apos;s procured AutoRABIT to achieve the following:
+
+
+
+1. Version Control Integration (GIT, SVN, TFS and Perforce) with EZ      Commits
+
+2. Deployment Automation
+
+3. Test Automation
+
+4. Sync Sandboxes/Orgs between development and production
+
+5. Advanced Data Loader
+
+
+Ask your Salesforce Architect about us as we are very well known throughout the Salesforce community.
+
+
+Our customers on average have increased time to market up to 40% allowing for more releases and time to innovate along with giving you the visibility, control and ease of management needed by all.
+
+
+Let us know if we can schedule a time to perform a demonstration of the product to create a Faster, Better and more Powerful Development Team for Salesforce Release Management.
+
+
+See our 2 minute on YouTube (2 min. Video) YouTube: What is AutoRABIT? (2 min. Video) or go to our Website: www.autorabit.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>TITLE</field>
+    </columns>
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>RATING</field>
+    </columns>
+    <columns>
+        <field>STREET</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Leads not contacted in 90 days and not a Named Account.</description>
+    <filter>
+        <criteriaItems>
+            <column>OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Mike Samboy</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>COMPANY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Abbott,Adobe,AECOM,Aflac,AllState,Ally,AMD,American Airlines,American Express,Amgen,Applied Materials,Arthur J Gallagher,AstraZeneca,AT&amp;T,Auto Club of America,AAA,BBVA,Compass,Becton Dickinson,Berkshire Hathaway,Blu Cross,Blue Shield,BMS,brystol Myers Squibb,Booz Allen Hamilton,Boston Consulting Group,Bridgestone,Firestone Brocade</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Matt - Inactive Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

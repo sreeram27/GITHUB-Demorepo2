@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Use this object to create Project per account to keep track of the amount of time spent on a certain tasks.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates weather a Project is Active or not</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is the Project Active?</inlineHelpText>
+        <label>Active</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AutorabitExtId__c</fullName>
+        <description>External Id created by AutoRABIT</description>
+        <externalId>true</externalId>
+        <label>AutorabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billable_Rate__c</fullName>
+        <defaultValue>250</defaultValue>
+        <description>Hourly rate of billing</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Per hour bill rate</inlineHelpText>
+        <label>Billable Rate</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Dollar__c</fullName>
+        <externalId>false</externalId>
+        <formula>PS__c * Billable_Rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Auto calculated as Allocated PS hours * Billable rate ($250 per Hr)</inlineHelpText>
+        <label>Budget ($)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Unused__c</fullName>
+        <description>Remaining budget hours</description>
+        <externalId>false</externalId>
+        <formula>PS__c  -  Hours_billed__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Remaining hours</inlineHelpText>
+        <label>PS Unused (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <description>Budget allocated to the Project/Task</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the budget allocated to the Project/Task.</inlineHelpText>
+        <label>Budget</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Budget_in_Hrs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of PS hours assigned to this Project</inlineHelpText>
+        <label>Budget (in Hrs)</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Primary SPOC of the Account against whom this Project/Task is being billed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Primary SPOC</inlineHelpText>
+        <label>Customer Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Project</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Customer against whom this Project is being billed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account to which the Project/Task is allocated.</inlineHelpText>
+        <label>Customer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Professional Services</relationshipLabel>
+        <relationshipName>Project</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Evaluation_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Evaluation_End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Evaluation End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Evaluation_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Evaluation_Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Evaluation Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hours_billed__c</fullName>
+        <description>Total hours excluding &quot;No Charge&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of billable working hours - time entries that are marked &quot;no charge&quot; are excluded</inlineHelpText>
+        <label>Hours Billed</label>
+        <summarizedField>TimeLog__c.Duration__c</summarizedField>
+        <summaryFilterItems>
+            <field>TimeLog__c.No_Charge__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>TimeLog__c.Related_Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Invoiced_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoiced Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Professional Services</relationshipLabel>
+        <relationshipName>Professional_Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>No_of_Subscriptions__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.No_of_Subscriptions__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>No of Subscriptions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Contact_Name__r.Contact_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Contact Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Oppty, if any?</inlineHelpText>
+        <label>Opportunity</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Customer__c</field>
+                <operation>equals</operation>
+                <valueField>Opportunity.Account.Id</valueField>
+            </filterItems>
+            <infoMessage>Please choose the relavent Opportunity</infoMessage>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>Project</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PS__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.PS_Hrs__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is pulled from the PS hours field in Opportunity</inlineHelpText>
+        <label>Allocated PS Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PS_item__c</fullName>
+        <externalId>false</externalId>
+        <label>PS Item</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Turn Key Continuous Delivery Set up with AutoRABIT</fullName>
+                    <default>false</default>
+                    <label>Turn Key Continuous Delivery Set up with AutoRABIT</label>
+                </value>
+                <value>
+                    <fullName>Standard Professional Services - Annual Packs</fullName>
+                    <default>false</default>
+                    <label>Standard Professional Services - Annual Packs</label>
+                </value>
+                <value>
+                    <fullName>Onsite AutoRABIT Customer Success Engineer</fullName>
+                    <default>false</default>
+                    <label>Onsite AutoRABIT Customer Success Engineer</label>
+                </value>
+                <value>
+                    <fullName>Onsite AutoRABIT Customer Success Architect</fullName>
+                    <default>false</default>
+                    <label>Onsite AutoRABIT Customer Success Architect</label>
+                </value>
+                <value>
+                    <fullName>PreSales Activity</fullName>
+                    <default>false</default>
+                    <label>PreSales Activity</label>
+                </value>
+                <value>
+                    <fullName>CS Core</fullName>
+                    <default>false</default>
+                    <label>CS Core</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pre_Sales_Engg__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Pre_SalesEngineer__r.FirstName+&quot; &quot;+Opportunity__r.Pre_SalesEngineer__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pre-Sales Engg</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue__c</fullName>
+        <description>Revenue generated from this project so far (excluding &quot;No Charge&quot;)</description>
+        <externalId>false</externalId>
+        <formula>Hours_billed__c * Billable_Rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Revenue generated till now.</inlineHelpText>
+        <label>Revenue Generated</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Team_Size__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Team_Size__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Team Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Hours_Spent__c</fullName>
+        <description>Total number of hours spent on the Project</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total hours spent</inlineHelpText>
+        <label>Total Hours Spent</label>
+        <summarizedField>TimeLog__c.Duration__c</summarizedField>
+        <summaryForeignKey>TimeLog__c.Related_Project__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Professional Service</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Simon</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>PS__c</columns>
+        <columns>Hours_billed__c</columns>
+        <columns>Budget_Unused__c</columns>
+        <columns>PS_item__c</columns>
+        <columns>Total_Hours_Spent__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Pre_Sales_Engg__c</field>
+            <operation>equals</operation>
+            <value>simon wilson</value>
+        </filters>
+        <label>Simon</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>PS - {0000000}</displayFormat>
+        <label>PS Item#</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Professional Services</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Billable_Rate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Budget__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer_Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Hours_billed__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Opportunity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Hours_Spent__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

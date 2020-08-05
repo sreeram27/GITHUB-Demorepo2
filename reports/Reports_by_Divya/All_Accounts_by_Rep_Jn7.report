@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <description>All accounts by rep report for the reps below:
+Mukesh Kumar, Kendrick Carson, Paul Cerami, Nai Saechao, Nick Garcia, Jeff Shemano</description>
+    <filter>
+        <criteriaItems>
+            <column>USERS.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Mukesh,Kendrick,Garcia,Saechao,Cerami,Shemano</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>USERS.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>All Accounts by Rep</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

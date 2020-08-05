@@ -57,30 +57,30 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>EditAllProduct</actionName>
+        <actionName>Edit</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>EditAllProduct</actionName>
+        <actionName>Edit</actionName>
         <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>EditAllProduct</actionName>
+        <actionName>Edit</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Edit</actionName>
+        <actionName>EditAllProduct</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Edit</actionName>
+        <actionName>EditAllProduct</actionName>
         <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Edit</actionName>
+        <actionName>EditAllProduct</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
@@ -115,17 +115,130 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>Quantity* UnitPrice* of_Months__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Amount New</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AutorabitExtId__c</fullName>
+        <description>External Id created by AutoRABIT</description>
+        <externalId>true</externalId>
+        <label>AutorabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomCreatedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CustomCreatedBy</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomCreatedDate__c</fullName>
+        <externalId>false</externalId>
+        <label>CustomCreatedDate</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CustomModifiedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CustomModifiedBy</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunity_Product1</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomModifiedDate__c</fullName>
+        <externalId>false</externalId>
+        <label>CustomModifiedDate</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
     </fields>
     <fields>
         <fullName>Discount</fullName>
     </fields>
     <fields>
+        <fullName>Discount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Discount percentage based on Total price and Sale Price.</inlineHelpText>
+        <label>Discount Given (%)</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Is_Renewal_Opportunity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Renewal Opportunity</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_this_PS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is this PS?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>ListPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>New_or_Upsell_Amount__c</fullName>
+        <description>Set amount for renewal opportunities as zero for Forecasting new or upsell amounts only.</description>
+        <externalId>false</externalId>
+        <formula>IF(   Is_Renewal_Opportunity__c = False ,
+if( Is_this_PS__c = false, (Quantity* UnitPrice* of_Months__c),Quantity* UnitPrice), 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New or Upsell Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
     </fields>
     <fields>
         <fullName>OpportunityId</fullName>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Line_Item_ID__c</fullName>
+        <description>Opportunity Line Item record ID</description>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Line Item ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(PricebookEntry.Product2.Product_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Product Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Product2Id</fullName>
@@ -135,7 +248,42 @@
         <fullName>ProductCode</fullName>
     </fields>
     <fields>
+        <fullName>ProductName__c</fullName>
+        <externalId>false</externalId>
+        <label>ProductName</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Group__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(PricebookEntry.Product2.Product_Group__c)</formula>
+        <label>Product Group</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>PricebookEntry.Product2.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Quantity</fullName>
+    </fields>
+    <fields>
+        <fullName>Recurring_Revenue__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Recurring Revenue</label>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>ServiceDate</fullName>
@@ -147,6 +295,67 @@
         <fullName>TotalPrice</fullName>
     </fields>
     <fields>
+        <fullName>Total_List_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>Quantity *  ListPrice</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( OR(of_Months__c =0,ISBLANK(of_Months__c)) ,(Quantity* UnitPrice),(Quantity* UnitPrice* of_Months__c))</formula>
+        <inlineHelpText>Quantity*Sale Price*number of months</inlineHelpText>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>UnitPrice</fullName>
     </fields>
+    <fields>
+        <fullName>isProfessional__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>isProfessional</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>of_Days__c</fullName>
+        <description>If this is NOT an annual subs, please enter the number of Days</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this is NOT an annual subs, please enter the number of Days</inlineHelpText>
+        <label># of Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_Months__c</fullName>
+        <defaultValue>12</defaultValue>
+        <description>Contract period</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this is NOT an annual subs, please enter the number of Months.</inlineHelpText>
+        <label># of Months</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>Product_Group</fullName>
+        <active>false</active>
+        <description>Product Group to be selected</description>
+        <errorConditionFormula>true</errorConditionFormula>
+        <errorMessage>Product Group cannot be empty</errorMessage>
+    </validationRules>
 </CustomObject>

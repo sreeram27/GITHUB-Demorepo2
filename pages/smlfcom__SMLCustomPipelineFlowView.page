@@ -1,0 +1,415 @@
+<apex:page controller="smlfcom.SMLCustomPipelineFlowController" sidebar="false" showHeader="false" standardStylesheets="false" readOnly="true" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+    <title>SML Pipeline Flow View</title>
+    <style>
+        /* sankey styles */
+        .node rect {
+        cursor: move;
+        fill-opacity: .9;
+        }
+        .node text {
+        pointer-events: none;
+        text-shadow: 0 1px 0 #fff;
+        }
+        .link {
+        fill: none;
+        stroke: #444;
+        stroke-opacity: .2;
+        }
+        .link:hover {
+        stroke: #1E95D3;
+        stroke-opacity: .2;
+        }
+        .link.selected{
+        stroke: #1E95D3;
+        stroke-opacity: .6;
+        }
+        #ui-datepicker-div
+        {
+            z-index:6 !important;
+        }
+    </style>
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <apex:includeScript value="//d3js.org/d3.v3.min.js"/>
+            <apex:includeScript value="{!$Resource.smlfcom__sankey}"/>
+            <div class="page-header">
+                <div class="container-bs">
+                    <div class="title" data-step="1" data-intro="View how your pipeline has progressed over a period of time (demo data)">
+                        <h1>Trending: </h1>
+                        <h2>{!smlFilter.pageLabelNameMapping['SMLCustomPipelineFlowView'].pageLabel}</h2>
+                    </div><!-- /.title -->
+                </div><!-- /.container-bs -->
+            </div><!-- /.page-header -->
+
+            <div class="container-bs">
+                <div class="page-container">
+
+                    <apex:form styleClass="sidebar">
+                       <div data-step="2" data-intro="Set Snapshot Duration to the length of time for which you want to see pipeline movements">
+                            <div class="form-group">
+                                <c:Account_and_owner_filter />  <hr/>                                 
+                                <apex:outputPanel layout="none" rendered="{!smlFilter.listOfRoleFilters.size > 0}">
+                                <div class="form-group">
+                                    <label>Role</label>
+                                    <apex:selectList value="{!smlFilter.selectedRole}" multiselect="false" size="1" styleClass=" filterField item custom-select">
+                                        <apex:selectOptions value="{!smlFilter.listOfRoleFilters}"/>
+                                    </apex:selectList>
+                                </div> 
+                                </apex:outputPanel>
+                                
+                                <apex:repeat value="{!smlFilter.listOfFields}" var="filterField">
+                                    <div>
+                                    <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'REFERENCE'}">
+                                     <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndLabel[filterField] == 'Account'}">
+                                          <apex:inputText value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}"  styleClass="form-control hidden account-search-field-hidden"/>
+                                      </apex:outputPanel>
+                                      <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndLabel[filterField] == 'Owner'}">
+                                        <apex:inputText value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}"  styleClass="form-control hidden user-search-field-hidden"/>
+                                        <hr/>
+                                        <div class="form-group">
+                                            <label for="snapshot_date_type_select">Snapshot Duration</label>
+                                            <apex:selectList id="snapshot_date_type_select" styleClass="filterField snapshot item custom-select" value="{!filterData.snapShotFilter}" multiselect="false" size="1">
+                                                <apex:selectOptions value="{!listOfSnapshotDateTypeOptions}"></apex:selectOptions>
+                                            </apex:selectList>
+                                        </div>
+                                      </apex:outputPanel>
+                                    </apex:outputPanel>  
+                                    <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'STRING'}">   
+                                        <apex:outputPanel layout="none" rendered="{!(smlFilter.mapOfFieldNameAndLabel[filterField] != 'ACCOUNT' && smlFilter.mapOfFieldNameAndLabel != 'OWNER')}"> 
+                                           <br/>
+                                            <label>{!mapOfDimensionAPIAndLabelName[filterField]}</label>          
+                                            <apex:selectList value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}" multiselect="false" size="1" styleClass="filterField form-control custom-select">
+                                                <apex:selectOption itemLabel="All" itemValue="All"></apex:selectOption>
+                                                <apex:selectOptions value="{!smlFilter.mapOfFieldAndValue[filterField]}"></apex:selectOptions>
+                                            </apex:selectList>
+                                        </apex:outputPanel>
+                                    </apex:outputPanel>
+                                    </div>
+                                </apex:repeat>
+                                <apex:repeat value="{!smlFilter.listOfDefaultFields}" var="filterField">
+                                    <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'DATE_RANGE'}">
+                                        <hr/>
+                                        <div>
+                                            <label>{!mapOfDimensionAPIAndLabelName[filterField]}</label>
+                                        <div class="form-group">
+                                            <apex:input type="date" value="{!smlFilter.closeDateRange.start_Date}" styleClass="form-control filterField"/>
+                                        </div>
+                                        </div>
+                                        <div>
+                                            <label for="closed-date-to">To</label>
+                                        <div class="form-group">
+                                            <apex:input type="date" value="{!smlFilter.closeDateRange.end_Date}" styleClass="form-control filterField"/>
+                                        </div>
+                                        </div>
+                                    </apex:outputPanel>
+                                </apex:repeat>
+                            </div>
+                        <div class="controls flex">
+                            <div class="left">
+                                <a href="javascript:reset()" class="btn-bs btn-default btn-sm">Reset</a>
+                            </div>
+                            <div class="right">
+                                <a href="javascript:saveRules();javascript:refresh()" class="btn-bs btn-primary btn-sm">Refresh</a>
+                            </div>
+                        </div><!-- /.controls -->
+
+                        <apex:actionFunction action="{!refreshData}" name="refresh" status="renderingStatus" />
+                        <apex:actionFunction action="{!resetFilters}" name="reset" status="renderingStatus"/>
+                      </div>  
+                    </apex:form><!-- /.sidebar -->
+
+
+                    <apex:outputPanel layout="block" id="contentDiv" styleClass="content">
+                        <div id="chart"  data-step="3" data-intro="Click on any of the flow lines to see related list of opportunities"></div>
+                        <br/>
+                        <div class="content hidden" id="demoMessage"></div> 
+                        <div class="table-content hidden" id = "recordTableContainer">
+                            <div class="content">
+                                <table id="oppDataTable" class="table table-striped table-bordered" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>{!mapOfDimensionAPIAndLabelName['smlfcom__Name']}</th>
+                                            <apex:repeat value="{!fieldsToBeShownInTable}" var="ftst" >
+                                            <th>{!fieldsToBeShownInTable[ftst]}</th>
+                                            </apex:Repeat>
+                                           <!-- <th>Amount Difference</th>-->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </apex:outputPanel><!-- /.content -->
+
+                </div>
+            </div><!-- /.container-bs -->
+        </apex:define>
+    </apex:composition>
+    <!-- remote object for fetching account records -->
+    <apex:remoteObjects jsNamespace="remote_account">
+        <apex:remoteObjectModel name="Account" fields="Id,Name"/>
+    </apex:remoteObjects>
+    <apex:remoteObjects jsNamespace="remote_user">
+        <apex:remoteObjectModel name="User" fields="Id,Name"/>
+    </apex:remoteObjects>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+      <!-- <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>-->
+      <!-- Javascript -->
+      <script>
+      var $j = jQuery.noConflict();
+  
+      </script>
+    <apex:outputPanel layout="none" id="scriptPanel">
+        <script>
+        var _oppTable;
+        $(function(){
+            drawSankeyChart();
+            //$('.select2').select2();
+        });
+
+        var PF_DATA = jQuery.parseJSON('{!JSENCODE(plData_JSON)}');
+        var titToamnt = {!titleToAmountJSON };
+        var isDemo = {!isDemo};
+        var sankey_data = {
+            "nodes": jQuery.parseJSON('{!JSENCODE(nodeData_JSON)}'),
+            "links": jQuery.parseJSON('{!JSENCODE(linkData_JSON)}')
+        }
+        
+        $("#oppDataTable").on( 'draw.dt', function () {
+            $('.hover-item').tooltip({
+                content: function () {
+                    return $(this).prop('title');
+                }
+            });
+        });
+    
+        $('.hover-item').tooltip({
+            content: function () {
+                return $(this).prop('title');
+            }
+        });
+
+        console.log('{!JSENCODE(nodeData_JSON)}' );
+
+
+        var units = "Opportunities";
+
+        var margin = {top: 10, right: 10, bottom: 10, left: 10}
+        var width = $("#chart").parent(".content").width() - margin.left - margin.right;
+        var height = 600 - margin.top - margin.bottom;
+
+        var formatNumber = d3.format(",.0f");    // zero decimal places
+        var format = function(d) { return formatNumber(d) + " " + units; }
+        var color = d3.scale.category20();
+
+        var svg;
+        var link;
+        var node;
+        var sankey;
+        var path;
+
+        function drawSankeyChart(){
+            // append the svg canvas to the page
+            svg = d3.select("#chart").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform",
+                  "translate(" + margin.left + "," + margin.top + ")");
+
+            // Set the sankey diagram properties
+            sankey = d3.sankey()
+            .nodeWidth(50)
+            .nodePadding(40)
+            .size([width, height]);
+
+            path = sankey.link();
+
+
+            sankey
+            .nodes(sankey_data.nodes)
+            .links(sankey_data.links)
+            .layout(32);
+
+            // add in the links
+            link = svg.append("g").selectAll(".link")
+            .data(sankey_data.links)
+            .enter().append("path")
+            .attr("class", "link")
+            .attr("d", path)
+            .attr("data-start-node", function(d){ return d.source.name; })
+            .attr("data-end-node", function(d){ return d.target.name; })
+            .style("stroke-width", function(d) { return Math.max(1, d.dy); })
+            .sort(function(a, b) { return b.dy - a.dy; })
+            .on({
+                "mouseover": function() { },
+                "mouseout":  function() { },
+                "click":  function() { selectLink(this); },
+            });
+
+            // add the link titles
+            link.append("title")
+            .text(function(d) {
+                   
+                var dRec = d.source.name + " → " + d.target.name + "\n" + format(d.value);
+                if(!(titToamnt[d.source.name + '_' + d.target.name] === undefined)){
+                    dRec = dRec +"\nAmount: " + formatNumber(titToamnt[d.source.name + '_' + d.target.name]) ;
+                }
+                return dRec;  });
+
+            // add in the nodes
+            node = svg.append("g").selectAll(".node")
+            .data(sankey_data.nodes)
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")"; })
+            .call(d3.behavior.drag()
+                  .origin(function(d) { return d; })
+                  .on("dragstart", function() {
+                      this.parentNode.appendChild(this); })
+                  .on("drag", dragmove))
+            .on({
+                "click":  function() { selectNode(this); },
+            });
+
+            // add the rectangles for the nodes
+            node.append("rect")
+            .attr("height", function(d) { return d.dy; })
+            .attr("width", sankey.nodeWidth())
+            .style("fill", function(d) {
+                if(d.x == 0){
+                    return 'rgb(31, 119, 180)';
+                }else if(d.x > 0 && (d.name.includes('won') || d.name.includes('Won') || d.name.includes('WON'))){
+                    return 'rgb(0,128,0)';
+                }else if(d.x > 0 && (d.name.includes('lost') || d.name.includes('Lost') || d.name.includes('LOST'))){
+                    return 'rgb(214, 39, 40)';
+                }
+                return 'rgb(152, 223, 138)'; 
+            })
+            .style("stroke", function(d) {
+                return d3.rgb(d.color).darker(1); })
+            .append("title")
+            .text(function(d) {
+                return d.name + "\n" + format(d.value);});
+
+            // add in the title for the nodes
+            node.append("text")
+            .attr("x", -6)
+            .attr("y", function(d) { return d.dy / 2; })
+            .attr("dy", ".35em")
+            .attr("text-anchor", "end")
+            .attr("transform", null)
+            .text(function(d) { return d.name; })
+            .filter(function(d) { return d.x < width / 2; })
+            .attr("x", 6 + sankey.nodeWidth())
+            .attr("text-anchor", "start");
+
+        }
+
+        // the function for moving the nodes
+        function dragmove(d) {
+            d3.select(this).attr("transform",
+                                 "translate(" + d.x + "," + (
+                                     d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))
+                                 ) + ")");
+            sankey.relayout();
+            link.attr("d", path);
+        }
+
+        function selectLink(elem){
+            if(d3.select(elem).classed("selected")){
+                d3.selectAll(".link.selected").classed("selected",false);
+                showRelatedRecords(elem, false);
+            }else{
+                d3.selectAll(".link.selected").classed("selected",false);
+                d3.select(elem).classed("selected",true);
+                showRelatedRecords(elem, true);
+            }
+
+        }
+
+        function selectNode(elem){
+            //console.log(elem);
+        }
+
+        function showRelatedRecords(elem, isShow){
+            if(!isShow){
+                $("#recordTableContainer").addClass("hidden");
+                return;
+            }
+            if(isDemo){
+              $('#demoMessage').html('<strong>Note:</strong> Related opportunities view is disabled in demo mode.  Contact info@springml.com to enable this view.');   
+              $("#demoMessage").removeClass("hidden");
+            }
+            else{
+                var startNode = d3.select(elem).attr('data-start-node');
+                var endNode = d3.select(elem).attr('data-end-node');
+                var amount_diff_class = '';
+                var myMap = {};
+                $('.filterField' ).each(function() {
+                    var keyVal = $(this).parent().parent().find('label').text();
+                    var objVal = $(this).val();
+                    myMap[keyVal] = objVal;
+                });
+                var accValue = $(".account-search-field-hidden").val();
+                var usrValue = $(".user-search-field-hidden").val();
+                var selectedSnapshot = $(".snapshot").val();
+                Visualforce.remoting.Manager.invokeAction(
+                              '{!$RemoteAction.SMLCustomPipelineFlowController.testOppTable}',
+                              startNode,endNode,selectedSnapshot,JSON.stringify(myMap),accValue,usrValue,function(result,event){
+                    var table = $('#oppDataTable').DataTable();
+                    table.destroy();
+                    var opp_table = $("#recordTableContainer tbody");
+                    opp_table.empty();
+                    var row;         
+                    var obj = JSON.parse(result);
+                    $.each(obj, function(index, valu){                          
+                        $.each(valu, function(index1, val){  
+                            row = $("<tr></tr>");
+                            var value = val.changeRec;
+                            var varId = value.Id;
+                            if(value.{!$Label.smlfcom__namespace_prefix}SF_Id__c != undefined ){
+                                varId = value.{!$Label.smlfcom__namespace_prefix}SF_Id__c ;
+                            }
+                            if(value.{!$Label.smlfcom__namespace_prefix}Record_Name__c != undefined){
+                                row.append("<td><a href=\"/"+varId +"\" target=\"_blank\">"+value.{!$Label.smlfcom__namespace_prefix}Record_Name__c+"</a></td>");
+                            }else{
+                                row.append("<td><a href=\"/"+varId +"\" target=\"_blank\">"+value.Name+"</a></td>");
+                            }
+                            <apex:repeat value="{!fieldsToBeShownInTable}" var="ftst" >
+                                if(value["{!ftst}"] != undefined){
+                                if("{!ftst}" .indexOf('Account__c') > 0 ){
+                                    row.append("<td>"+value.Account__r.Name+"</td>");
+                                }else if("{!ftst}".indexOf('Owner__c') > 0 ){
+                                    row.append("<td>"+value.Owner__r.Name+"</td>");
+                                }else if("{!ftst}".indexOf('Metric__c') > -1 && value.{!$Label.smlfcom__namespace_prefix}Previous_Metric__c != undefined && value.{!$Label.smlfcom__namespace_prefix}Previous_Metric__c != 0){                                                  
+                                    row.append("<td><div class=\"hover-item\" data-toggle=\"tooltip\" data-html=\"true\" data-placement=\"right\" data-trigger=\"hover\" title=\"Previous value: "+value.{!$Label.smlfcom__namespace_prefix}Previous_Metric__c+"\">"+value["{!ftst}"]+"</div></td>");                                                    
+                                }else if("{!ftst}".indexOf('ref_date') > -1 && value.{!$Label.smlfcom__namespace_prefix}previous_ref_date__c != undefined){                                                  
+                                    row.append("<td><div class=\"hover-item\" data-toggle=\"tooltip\" data-html=\"true\" data-placement=\"right\" data-trigger=\"hover\" title=\"Previous value: "+value.{!$Label.smlfcom__namespace_prefix}previous_ref_date__c+"\">"+value["{!ftst}"]+"</div></td>");                                                    
+                                }else{                                                  
+                                    row.append("<td>"+value["{!ftst}"]+"</td>");                                                    
+                                }
+                                }else{
+                                    row.append("<td></td>");
+                                }
+                            </apex:Repeat>
+                          //  amount_diff_class = val.amountDifference.includes('-')?'font-red':'font-green';
+                            //row.append("<td class='"+amount_diff_class+"'>"+val.amountDifference+"</td>");
+                            opp_table.append(row);
+                        });
+                    });
+                    _oppTable = $("#oppDataTable").DataTable({
+                        "order": []
+                    });
+                    $(".table-content").removeClass('hidden');
+              },{escape: false});           
+       }  
+        }
+
+        </script>
+    </apex:outputPanel>
+</apex:page>

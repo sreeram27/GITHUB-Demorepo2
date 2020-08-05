@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case Escalation to Vijay &amp; Niranjan</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Case Escalation-3 Day</name>
+    <style>none</style>
+    <subject>Case Escalation: AutoRABIT Case Number {!Case.CaseNumber} has been open for 1 day</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

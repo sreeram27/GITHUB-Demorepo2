@@ -1,0 +1,234 @@
+<apex:page controller="smlfcom.SMLForecastDetails" sidebar="false" showHeader="false" standardStylesheets="false" readOnly="true" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+    <title>SML Forecast Detail</title>
+    <style>
+        .highcharts-credits {
+            display: none;
+        }
+        /* sankey styles */
+
+        .node rect {
+            cursor: move;
+            fill-opacity: .9;
+        }
+
+        .node text {
+            pointer-events: none;
+            text-shadow: 0 1px 0 #fff;
+        }
+
+        .link {
+            fill: none;
+            stroke: #444;
+            stroke-opacity: .2;
+        }
+
+        .link:hover {
+            stroke: #1E95D3;
+            stroke-opacity: .2;
+        }
+
+        .link.selected {
+            stroke: #1E95D3;
+            stroke-opacity: .6;
+        }
+
+        #ui-datepicker-div {
+            z-index: 6 !important;
+        }
+    </style>
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <apex:includeScript value="https://code.highcharts.com/highcharts.js" />
+            <apex:includeScript value="https://code.highcharts.com/highcharts-more.js" />
+            <apex:includeScript value="https://code.highcharts.com/modules/exporting.js" />
+            <div class="page-header">
+                <div class="container-bs">
+                    <div class="title" data-step="1" data-intro="View how your pipeline has progressed over a period of time (demo data)">
+                        <h1>Forecast: </h1>
+                        <h2>{!smlFilter.pageLabelNameMapping['SMLForecastDetails'].pageLabel}</h2>
+                    </div>
+                    <!-- /.title -->
+                </div>
+                <!-- /.container-bs -->
+            </div>
+            <!-- /.page-header -->
+
+            <div class="container-bs">
+                <div class="page-container">
+
+                    <apex:form styleClass="sidebar" id="frm">
+                        <div data-step="2" data-intro="Set Snapshot Duration to the length of time for which you want to see pipeline movements">
+                            <div class="form-group">
+
+
+                                <apex:outputPanel layout="none" rendered="{!smlFilter.textFilterList != null && smlFilter.textFilterList.size > 0}">
+                                    <apex:repeat value="{!smlFilter.textFilterList }" var="filterField">
+                                        <div class="form-group">
+                                            <label>{!filterField.fieldLabel}</label>
+                                            <apex:selectList value="{!filterField.selectedmapValue[filterField.fieldAPIName]}" onChange="resetValue(this.options[this.selectedIndex].value+'#{!filterField.fieldAPIName}')" multiselect="false" size="1" styleClass="filterField form-control custom-select {!filterField.isFieldLinked} {!filterField.fieldAPIName}">
+                                                <apex:selectOptions value="{!filterField.fieldValues}"></apex:selectOptions>
+                                            </apex:selectList>
+
+                                        </div>
+                                    </apex:repeat>
+                                </apex:outputPanel>
+                            </div>
+                            <div class="controls flex">
+                                <div class="left">
+                                    <a href="javascript:reset()" class="btn-bs btn-default btn-sm">Reset</a>
+                                </div>
+                                <div class="right">
+                                    <a href="javascript:refresh();" class="btn-bs btn-primary btn-sm">Refresh</a>
+                                </div>
+                            </div>
+                            <!-- /.controls -->
+
+                            <apex:actionFunction action="{!refreshData}" name="refresh" status="renderingStatus" />
+                            <apex:actionFunction action="{!resetFilters}" name="reset" status="renderingStatus" />
+                            <apex:actionFunction action="{!resetFilterValues}" reRender="frm" name="resetValue" status="renderingStatus">
+                                <apex:param assignTo="{!key}" name="key" value="" />
+                            </apex:actionFunction>
+                        </div>
+                    </apex:form>
+                    <!-- /.sidebar -->
+
+
+                    <apex:outputPanel layout="block" id="contentDiv" styleClass="content">
+                        <div class="stats">
+                            <apex:repeat value="{!mapToKPI}" var="stat">
+                                <apex:outputPanel >
+                                    <div class="item" style= "width: 250px;" >
+                                        <div class="title">{!stat}</div>
+                                        <apex:outputPanel rendered="{!mapToKPI[stat].isPercent}">
+                                            <div class="result">{!mapToKPI[stat].numericValue}%</div>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!!mapToKPI[stat].isPercent}">
+                                            <div class="result">${!mapToKPI[stat].numericValue}M<br/> <div style= "font-size: 14px;" >{!mapToKPI[stat].range } </div></div>
+                                        </apex:outputPanel>
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:repeat>
+                        </div>
+                        <div>
+
+                            <div id="container" style="min-width: 310px;  margin: 0 auto"></div>
+                        </div>
+                    </apex:outputPanel>
+                    <!-- /.content -->
+
+                </div>
+            </div>
+            <!-- /.container-bs -->
+        </apex:define>
+    </apex:composition>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+        var $j = jQuery.noConflict();
+        $(function() {
+            createChart();
+            //$('.select2').select2();
+        });
+
+        var forecastData = JSON.parse('{!JSENCODE(forecastValueJSON)}');
+        var mapJSON = JSON.parse('{!JSENCODE(mapOfChartLabelJSON)}');
+
+        function createChart() {
+            var categoriesArray = [];
+            var metric1Array = [];
+            var metric2Array = [];
+            var metric3Array = [];
+            var metric4Array = [];
+            var metric5Array = [];
+
+            $.each(forecastData, function(index, value) {
+                //filter check
+
+                if (categoriesArray.indexOf(value.dateVal) < 0)
+                    categoriesArray.push(value.dateVal);
+
+                if (value.metric != null) {
+                    metric1Array.push(value.metric);
+                } else {
+                    metric1Array.push('');
+                }
+                if (value.metric2 != null) {
+                    metric2Array.push(value.metric2);
+                } else {
+                    metric2Array.push('');
+                }
+                if (value.metric3 != null) {
+                    metric3Array.push(value.metric3);
+                } else {
+                    metric3Array.push('');
+                }
+                if (value.metric4 != null) {
+                    metric4Array.push(value.metric4);
+                } else {
+                    metric4Array.push('');
+                }
+                if (value.metric5 != null) {
+                    metric5Array.push(value.metric5);
+                } else {
+                    metric5Array.push('');
+                }
+            });
+
+            Highcharts.chart('container', {
+
+                title: {
+                    text: ''
+                },
+                tooltip: {
+                    enabled: true,
+                    formatter: function() {
+                        return Highcharts.dateFormat('%b %y', this.x) +
+                            '</b> Amount is <b>' + this.y + '</b>';
+                    }
+                },
+
+
+                yAxis: {
+                    title: {
+                        text: 'Amount'
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle'
+                },
+                xAxis: {
+                    categories: categoriesArray,
+                    tickInterval: 3,
+                    // type:'datetime', 
+                    labels: {
+                        formatter: function() {
+                            return Highcharts.dateFormat('%b %y', this.value);
+                        }
+                    },
+                    title: {
+                        text: 'Close Date By Month'
+                    }
+                },
+
+                series: [{
+                        name: mapJSON["Metric__c"],
+                        data: metric1Array
+                    }, {
+                        name: mapJSON["Metric2__c"],
+
+                        data: metric2Array
+                    }, {
+                        name: mapJSON["Metric_3__c"],
+                        data: metric3Array
+                    }
+
+                ]
+
+            });
+        }
+    </script>
+
+</apex:page>

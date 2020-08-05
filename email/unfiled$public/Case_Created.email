@@ -1,0 +1,24 @@
+Dear Customer, 
+
+Thank you for reaching out to support@autorabit.com. We regret the inconvenience caused to you. 
+
+We have registered your concern with Case Number#: {!Case.CaseNumber}.
+
+We are looking into your issue and be rest assured that we will be getting back to you once the analysis is complete. 
+
+Note: We might need to get back to you to schedule a call or a WebEx session to understand more about the issue and provide a solution. Please do not change the subject line.
+
+Thanks & Regards,
+
+AutoRABIT Support 
+support@autorabit.com.
+Case Reference: [{!Case.Thread_Id}]
+--------------- Original Message ---------------
+
+From: {!EmailMessage.FromName} [{!EmailMessage.FromAddress}]
+Sent: {!EmailMessage.MessageDate}
+To: {!EmailMessage.ToAddress};
+Cc: {!EmailMessage.CcAddress};
+Subject: {!EmailMessage.Subject}
+
+{!EmailMessage.TextBody}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>New_Logo_AutorRABIT</letterhead>
+    <name>Auto Notification on Renewal Automation</name>
+    <style>freeForm</style>
+    <subject>Auto Notification of Upcoming Renewal Opportunity</subject>
+    <textOnly>Hi {!Opportunity.OwnerFullName},
+
+Your upcoming Renewal &apos;{!Opportunity.Name}&apos; has been auto created in CRM for your reference and further action.
+
+In case of any clarifications, please reach out to me on sreekanth.u@autorabit.com.
+
+Kind regards,
+Salesforce CRM
+Biz Operations</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

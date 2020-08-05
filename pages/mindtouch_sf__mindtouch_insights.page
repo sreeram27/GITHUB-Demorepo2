@@ -1,0 +1,73 @@
+<apex:page controller="mindtouch_sf.MindTouchController" showHeader="false" sidebar="false" standardStylesheets="true" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <html>
+        <head>
+            <link rel="stylesheet" href="{!URLFOR($Resource.mindtouchBundle, '/assets/styles/style.css')}" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.mindtouchBundle, '/assets/styles/font-style.css')}" />
+
+            <script type="text/javascript">
+                var __sfdcSessionId = '{!GETSESSIONID()}';
+            </script>
+        </head>
+        <body>
+            <div id="maincontainer">
+                <div id="MindTouch-GeniusLink"></div>
+            </div>
+        </body>
+        <script type="text/javascript" src="{!URLFOR($Resource.mindtouchBundle, '/assets/build/min/insights.js')}"></script>
+        <script src="../../soap/ajax/29.0/connection.js" type="text/javascript"></script>
+        <script src="../../soap/ajax/29.0/apex.js" type="text/javascript"></script>
+
+        <apex:include pageName="mindtouch_sf__mindtouch_labels"/>
+
+        <script>
+            var customerActivityIdField = '{!JSENCODE($Setup.mindtouch_sf__settings__c.mindtouch_sf__Customer_Activity_ID_Field__c)}';
+            if(customerActivityIdField) {
+                var settings = new MindTouch.MindTouchSettings({
+                    objectId: '{!ObjectId}',
+                    objectType: '{!IF(ObjectId != NULL, ObjectType, '')}',
+                    formSource: '{!$Setup.mindtouch_sf__settings__c.mindtouch_sf__url__c}' + '/@app/sfdc/publish',
+                    siteUrl: '{!JSENCODE($Setup.mindtouch_sf__settings__c.mindtouch_sf__url__c)}',
+                    type: 'insight'
+                });
+
+                var sfConnector = new MindTouch.MindTouchSalesForceConnector({
+                    settings: settings
+                });
+
+                sfConnector.getCustomerActivityId(customerActivityIdField).then(function(customerActivityId) {
+                    settings.set('customerId', customerActivityId);
+
+                    var mtHistory = new MindTouch.MindTouchHistory({
+                        settings: settings
+                    });
+                    var mtSession = new MindTouch.MindTouchSession({
+                        settings: settings
+                    });
+                    $.when(mtSession.setUserStatus(), mtHistory.getUserHistory()).done(function(e) {
+                        React.render(React.createElement(MindTouch.MindTouchInsights, {
+                            results: mtHistory,
+                            settings: settings,
+                            mtSession: mtSession,
+                            poweredBy: "{!URLFOR($Resource.mindtouch_sf__MindTouch_Logo)}",
+                        }), document.getElementById('MindTouch-GeniusLink'));
+                    }).fail(function(data) {
+                        React.render(React.createElement(MindTouch.MindTouchInsights, {
+                            fail: true,
+                            message: data.message
+                        }), document.getElementById('MindTouch-GeniusLink'));
+                    });
+                }, function() {
+                    React.render(React.createElement(MindTouch.MindTouchInsights, {
+                        fail: true,
+                        message: MindTouch.labels.noCustomerActivityId
+                    }), document.getElementById('MindTouch-GeniusLink'));
+                });
+            } else {
+                React.render(React.createElement(MindTouch.MindTouchInsights, {
+                    fail: true,
+                    message: MindTouch.labels.customerActivityIdNotConfigured
+                }), document.getElementById('MindTouch-GeniusLink'));
+            }
+        </script>
+    </html>
+</apex:page>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_7217811</developerName>
+        <masterLabel>Group by SDR</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Opportunity.SDR__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Sherdah Moca</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Amrita Sen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Belinda Trevor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Krishna Chaitanya</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Arvind Tripathy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Christina Blanco</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matthew Pursley</sourceValue>
+            </sourceValues>
+            <value>Marketing</value>
+        </values>
+        <values>
+            <value>Self Generated</value>
+        </values>
+        <values>
+            <value>None</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Product_Name__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Type_New_Renewal_Upsell__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Opportunity_Amount__c</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SDR__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Partner_Name_New__c</field>
+    </columns>
+    <columns>
+        <field>Account.Partner_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Partner_Sourced__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>All New Logo Closed won Opportunities in FY 2019 based on SDR field (Marketing, Self Generated and Other).</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Opportunity_Type_New_Renewal_Upsell__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_7217811</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>New Opportunity Analysis for Sulochana</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <endDate>2019-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2019-01-01</startDate>
+    </timeFrameFilter>
+</Report>

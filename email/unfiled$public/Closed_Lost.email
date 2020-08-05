@@ -1,0 +1,14 @@
+Hi All,
+
+Below Opportunity has been moved to "Closed Lost" by {!Opportunity.OwnerFullName}
+
+Account Name              : {!Opportunity.Account}
+Opportunity Name        : {!Opportunity.Name}
+Opportunity Amount      : {!Opportunity.Opportunity_Amount__c}
+Closed Lost Reason    : {!Opportunity.Closed_Lost_Reason__c}
+
+Let us know for any further details. Thank you !
+
+Regards,
+Corp Admin - Salesforce CRM
+Sreekanth.u@autorabit.com

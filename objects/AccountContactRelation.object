@@ -48,6 +48,34 @@
         <fullName>IsDirect</fullName>
     </fields>
     <fields>
+        <fullName>Relationship_Strength__c</fullName>
+        <externalId>false</externalId>
+        <label>Relationship Strength</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Strong</fullName>
+                    <default>false</default>
+                    <label>Strong</label>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>false</default>
+                    <label>Neutral</label>
+                </value>
+                <value>
+                    <fullName>Weak</fullName>
+                    <default>false</default>
+                    <label>Weak</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Roles</fullName>
         <type>Picklist</type>
     </fields>

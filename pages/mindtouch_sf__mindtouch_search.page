@@ -1,0 +1,84 @@
+<apex:page controller="mindtouch_sf.MindTouchController" showHeader="false" sidebar="false" standardStylesheets="true" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <html>
+        <head>
+            <link rel="stylesheet" href="{!URLFOR($Resource.mindtouchBundle, '/assets/styles/style.css')}" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.mindtouchBundle, '/assets/styles/font-style.css')}" />
+
+            <script type="text/javascript">
+                var __sfdcSessionId = '{!GETSESSIONID()}';
+            </script>
+        </head>
+        <body>
+            <div id="maincontainer">
+                <div id="MindTouch-GeniusLink"></div>
+            </div>
+        </body>
+        <script type="text/javascript" src="{!URLFOR($Resource.mindtouchBundle, '/assets/build/min/geniussearch.js')}"></script>
+        <script src="../../soap/ajax/29.0/connection.js" type="text/javascript"></script>
+        <script src="../../soap/ajax/29.0/apex.js" type="text/javascript"></script>
+        <script src="../../support/console/30.0/integration.js" type="text/javascript"></script>
+
+        <apex:include pageName="mindtouch_sf__mindtouch_labels"/>
+
+        <script>
+            var settings = new MindTouch.MindTouchSettings({
+                // namespace (how to get it in visualforce?)
+                sfNamespace: 'mindtouch_sf__',
+                // common record settings
+                objectId: '{!ObjectId}',
+                objectType: '{!IF(ObjectId != NULL, ObjectType, '')}',
+                // specific Case settings
+                caseSubject: '{!JSENCODE(CaseSubject)}',
+                caseSearchField: '{!JSENCODE($Setup.mindtouch_sf__settings__c.mindtouch_sf__case_search_field__c)}' || 'Subject',
+                commentString: '{!JSENCODE(CaseCommentString)}',
+                // common settings
+                siteUrl: '{!JSENCODE($Setup.mindtouch_sf__settings__c.mindtouch_sf__url__c)}',
+                type: 'search',
+                publishPath: '{!JSENCODE($Setup.mindtouch_sf__settings__c.mindtouch_sf__publish_article_path__c)}',
+                constraint: '{!JSENCODE($Setup.mindtouch_sf__settings__c.mindtouch_sf__search_constraint__c)}',
+                siteName: ('{!JSENCODE($Setup.mindtouch_sf__settings__c.mindtouch_sf__site_name__c)}' || 'MindTouch')
+            });
+
+            var sfConnector = new MindTouch.MindTouchSalesForceConnector({
+                settings: settings
+            });
+
+            var mtSession = new MindTouch.MindTouchSession({
+                settings: settings
+            });
+
+            mtSession.setUserStatus();
+            mtSession.on('change', function(e) {
+                if(e.get('loggedIn')) {
+                    var searchResults = new MindTouch.MindTouchSearchResults({
+                        settings: settings
+                    });
+                    searchResults.updateQuery(settings.get('defaultSearch'));
+
+                    var renderLayout = function() {
+                        React.render(React.createElement(MindTouch.MindTouchGeniusSearch, {
+                            sfConnector: sfConnector,
+                            results: searchResults,
+                            settings: settings,
+                            session: mtSession,
+                            poweredBy: "{!URLFOR($Resource.mindtouch_sf__MindTouch_Logo)}",
+                        }), document.getElementById('MindTouch-GeniusLink'));
+                    };
+
+                    sfConnector.findRecordLinks()
+                        .then(renderLayout)
+                        .catch(function() {
+                            renderLayout();
+                            MindTouch.MindTouchUi.createInfoMessage('warning', MindTouch.labels.errorLoadingLinked);
+                        });
+                } else {
+                    React.render(React.createElement(MindTouch.MindTouchLoginPage, {
+                        fail: true,
+                        settings: settings,
+                        mtSession: mtSession
+                    }), document.getElementById('MindTouch-GeniusLink'));
+                }
+            });
+        </script>
+    </html>
+</apex:page>

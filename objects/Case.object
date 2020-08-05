@@ -43,30 +43,30 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>CloneAsChild</actionName>
+        <actionName>Clone</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>CloneAsChild</actionName>
+        <actionName>Clone</actionName>
         <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>CloneAsChild</actionName>
+        <actionName>Clone</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Clone</actionName>
+        <actionName>CloneAsChild</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Clone</actionName>
+        <actionName>CloneAsChild</actionName>
         <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Clone</actionName>
+        <actionName>CloneAsChild</actionName>
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
@@ -196,9 +196,41 @@
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
+    <businessProcesses>
+        <fullName>Customer Support</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future Release</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pending Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending Fix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on User</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>true</enableFeeds>
-    <externalSharingModel>ReadWriteTransfer</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>AccountId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
@@ -214,17 +246,75 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>AutorabitExtId__c</fullName>
-        <description>External Id created by AutoRABIT</description>
-        <externalId>true</externalId>
-        <label>AutorabitExtId__c</label>
-        <length>18</length>
+        <fullName>Assigned_On__c</fullName>
+        <description>captures the date on when the case has been assigned to a resource</description>
+        <externalId>false</externalId>
+        <label>Assigned On</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_Status__c</fullName>
+        <description>captures the information if the case is assigned to a resource or not</description>
+        <externalId>false</externalId>
+        <label>Assigned Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Assigned_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Build_Deployement_log_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Build/Deployement log Check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Build_Log_in_Path__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Build Log in Path</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>BusinessHoursId</fullName>
@@ -234,12 +324,210 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>CCBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case Closed By</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Cases (Case Closed By)</relationshipLabel>
+        <relationshipName>CCBy</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CI_Build__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CI_Build</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CI_Deployment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CI_Deployment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CI_Job_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>CI Job Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CI_Jobs__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created for Customer Support Survey</description>
+        <externalId>false</externalId>
+        <label>CI Jobs</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Case1Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Case1Check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CaseType__c</fullName>
+        <defaultValue>&quot;Web&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>CaseType</label>
+        <length>3</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>&apos;1. Issue Related To =&apos;+&apos;Build:&apos;+ IF( 
+CI_Build__c = True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++&quot;.&quot;+&apos;Deployment:&apos;+
+IF( 
+CI_Deployment__c= True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++BR()+
+&apos;2. Checked Build/Deployment logs in UI:&apos;+
+IF( 
+Build_Deployement_log_Check__c= True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++BR()+
+&apos;3. Any Error in Step 2:&apos;+
+IF( 
+Error_In_Step_2_Check__c= True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++&quot;.&quot;+
+&apos;Error : &apos; +
+Step_2_Url__c
++BR()+
+&apos;4. Any Error in Rabitcs.log:&apos;+IF( 
+Error_in_rabics_log_check__c= True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++&quot;.&quot;+
+&apos;Error :&apos; +
+case1_Text__c
++BR()+
+&apos;5. Error in Step 3 and 4 is User Related: &apos; +
+IF( 
+Step_3_4_Related_Chek__c= True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++BR()+
+&apos;6. Error in Step 3 and 4 is AR Related: &apos; +
+IF( 
+X3_4_AR_Related_check__c= True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++BR()+
+&apos;7. Check Build log in Path: &apos; +
+IF( 
+Build_Log_in_Path__c= True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++BR()+
+&apos;8. Check Deployment log in Path: &apos; +
+IF( 
+Deployment_log_in_path__c= True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++BR()+
+&apos;9. Check Catalina in Path: &apos; +
+IF( 
+Catalina_log_path_check__c= True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++BR()+ 
+&apos;10. Check CRUISCONTROL Path: &apos; +
+IF( 
+CruisControl_Path_Check__c= True, 
+&apos;Yes&apos; ,&apos;No&apos;)
++BR()+
+&apos;11. Any Other Details:&apos; +
+Other_Details__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Analysis Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Catalina_log_path_check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Catalina log path check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>ClosedDate</fullName>
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Closure_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Status,&quot;Closed&quot;),(ClosedDate-CreatedDate),0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Closure Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Code_C_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>captures the information if there is a code change required or not.</description>
+        <externalId>false</externalId>
+        <label>Code Change Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Comments</fullName>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Commit_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Commit Revision Number</label>
+        <length>26</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>ContactEmail</fullName>
@@ -265,22 +553,564 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
-        <fullName>Description</fullName>
+        <fullName>Contactfromcase__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contactfromcase</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Cases (Contactfromcase)</relationshipLabel>
+        <relationshipName>Contactfromcase1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Creating_metadata_connection__c</fullName>
+        <externalId>false</externalId>
+        <label>Creating metadata connection</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CruisControl_Path_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CruisControl Path Check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
-        <fullName>EngineeringReqNumber__c</fullName>
+        <fullName>Data_Loader__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created for Customer Support Survey</description>
         <externalId>false</externalId>
-        <label>Engineering Req Number</label>
-        <length>12</length>
+        <label>Data Loader</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Days_since_last_update__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY()- Account.LastActivityDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days since last update</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Depl_AR_Error_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Depl AR Error Check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Depl_AR_Error__c</fullName>
+        <externalId>false</externalId>
+        <label>Depl AR Error</label>
+        <length>100</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Depl_Salesforce_Error_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Depl Salesforce Error Check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Depl_Salesforce_Error__c</fullName>
+        <externalId>false</externalId>
+        <label>Depl Salesforce Error</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deployment_Destination__c</fullName>
+        <externalId>false</externalId>
+        <label>Deployment Destination</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deployment_Label__c</fullName>
+        <externalId>false</externalId>
+        <label>Deployment Label</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deployment_log_in_path__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Deployment log in path</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Deployments__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created for Customer Support Survey</description>
+        <externalId>false</externalId>
+        <label>Deployments</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Deplyoment_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Deplyoment Source</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>EZ_Adding_new_files__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ Adding new files</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EZ_Commit_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ Commit Process</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EZ_Commits__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created for Customer Support Survey</description>
+        <externalId>false</externalId>
+        <label>EZ Commits</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EZ_Creating_version_control__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ Creating version control</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EZ_Deleted_destructive__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ Deleted destructive</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EZ_Deleting_destructive__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ Deleting destructive</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EZ_Preparing_destructive__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ Preparing destructive</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EZ_Preparing_package__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ Preparing package</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EZ_SCM_working_copy__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ SCM working copy</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EZ_Valdating_version_control__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ Valdating version control</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EZ_Working_Copy_Not_Exists__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ Working Copy Not Exists</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EZ_Working_copy__c</fullName>
+        <externalId>false</externalId>
+        <label>EZ Working copy</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Error_In_Step_2_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Error In Step 2 Check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Error_in_rabics_log_check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Error in rabics.log check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Final_Resolution__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Resolution</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Configuration Fix</fullName>
+                    <default>false</default>
+                    <label>Configuration Fix</label>
+                </value>
+                <value>
+                    <fullName>Duplicate/Invalid</fullName>
+                    <default>false</default>
+                    <label>Duplicate/Invalid</label>
+                </value>
+                <value>
+                    <fullName>Fixed</fullName>
+                    <default>false</default>
+                    <label>Fixed</label>
+                </value>
+                <value>
+                    <fullName>Knowledge Issue</fullName>
+                    <default>false</default>
+                    <label>Knowledge Issue</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>How_Often__c</fullName>
+        <description>Created for Customer Support Survey</description>
+        <externalId>false</externalId>
+        <label>How Often</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Instance__c</fullName>
+        <externalId>false</externalId>
+        <label>Instance</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
     </fields>
     <fields>
         <fullName>IsClosedOnCreate</fullName>
@@ -295,11 +1125,132 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>L1Eng__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>L1 Engineer</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Cases (L1 Engineer)</relationshipLabel>
+        <relationshipName>L1Eng</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>L2Eng__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>L2 Engineer</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Cases (L2 Engineer)</relationshipLabel>
+        <relationshipName>L2Eng</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>L3Eng__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>L3 Engineer</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Cases (L3 Engineer)</relationshipLabel>
+        <relationshipName>L3Eng</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Language</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Login_Url__c</fullName>
+        <description>This captures the AR instance used by User.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Please Enter your AutoRABIT Login URL</inlineHelpText>
+        <label>Login Url</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Response__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>No Response</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Open_A_Assignment__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Assigned_Status__c, &quot;Yes&quot;) ,( IF(ISPICKVAL(Status, &quot;In Progress&quot;), TODAY() - DATEVALUE(Assigned_On__c), IF(ISPICKVAL(Status, &quot;Closed&quot;), (ClosedDate-Assigned_On__c),0) )),0 )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open After Assignment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Since__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISPICKVAL(Status, &quot;Closed&quot;)), TODAY() - DATEVALUE(CreatedDate) , ClosedDate-CreatedDate )</formula>
+        <label>Open Since</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Org_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Org Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Origin</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Other_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Details</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
@@ -316,26 +1267,27 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>PotentialLiability__c</fullName>
+        <fullName>Preparing_package__c</fullName>
         <externalId>false</externalId>
-        <label>Potential Liability</label>
+        <label>Preparing package</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
-                <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                    <label>No</label>
-                </value>
                 <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
                     <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -348,64 +1300,44 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Product__c</fullName>
+        <fullName>Processing_the_userId_changes__c</fullName>
         <externalId>false</externalId>
-        <label>Product</label>
+        <label>Processing the userId  Changes</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
+            <restricted>true</restricted>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>GC1040</fullName>
+                    <fullName>Yes</fullName>
                     <default>false</default>
-                    <label>GC1040</label>
+                    <label>Yes</label>
                 </value>
                 <value>
-                    <fullName>GC1060</fullName>
+                    <fullName>No</fullName>
                     <default>false</default>
-                    <label>GC1060</label>
-                </value>
-                <value>
-                    <fullName>GC3020</fullName>
-                    <default>false</default>
-                    <label>GC3020</label>
-                </value>
-                <value>
-                    <fullName>GC3040</fullName>
-                    <default>false</default>
-                    <label>GC3040</label>
-                </value>
-                <value>
-                    <fullName>GC3060</fullName>
-                    <default>false</default>
-                    <label>GC3060</label>
-                </value>
-                <value>
-                    <fullName>GC5020</fullName>
-                    <default>false</default>
-                    <label>GC5020</label>
-                </value>
-                <value>
-                    <fullName>GC5040</fullName>
-                    <default>false</default>
-                    <label>GC5040</label>
-                </value>
-                <value>
-                    <fullName>GC5060</fullName>
-                    <default>false</default>
-                    <label>GC5060</label>
-                </value>
-                <value>
-                    <fullName>GC1020</fullName>
-                    <default>false</default>
-                    <label>GC1020</label>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>QA_Agent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>QA Agent</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Cases (QA Agent)</relationshipLabel>
+        <relationshipName>Cases1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Reason</fullName>
@@ -415,9 +1347,34 @@
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>SLAViolation__c</fullName>
+        <fullName>Reference_ID__c</fullName>
         <externalId>false</externalId>
-        <label>SLA Violation</label>
+        <formula>(Source:EmailMessage.ThreadIdentifier)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reference ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remdine_Case_No__c</fullName>
+        <description>This captures the redmine case number created for the respective case.</description>
+        <externalId>false</externalId>
+        <label>JIRA Case No</label>
+        <length>24</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reproduce_Issue__c</fullName>
+        <externalId>false</externalId>
+        <label>Reproduce Issue</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -427,30 +1384,83 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>No</fullName>
-                    <default>false</default>
-                    <label>No</label>
-                </value>
-                <value>
                     <fullName>Yes</fullName>
                     <default>false</default>
                     <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
     <fields>
-        <fullName>Status</fullName>
+        <fullName>Solution_Text__c</fullName>
+        <description>captures the information of the interactions had with user and also if any steps provided to test by user</description>
+        <externalId>false</externalId>
+        <label>Solution Steps</label>
+        <length>131071</length>
         <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SourceId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Step_2_Url__c</fullName>
+        <externalId>false</externalId>
+        <label>Step 2 Url</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Step_3_4_Related_Chek__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Step 3&amp;4 Related Chek</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>Subject</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Suggestions__c</fullName>
+        <description>Clients Suggestions on Support</description>
+        <externalId>false</externalId>
+        <label>Suggestions</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>SuppliedCompany</fullName>
@@ -469,14 +1479,631 @@
         <trackTrending>false</trackTrending>
     </fields>
     <fields>
+        <fullName>Support_Engineer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Support Engineer</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Cases (Support Engineer)</relationshipLabel>
+        <relationshipName>contact1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Support_Rating__c</fullName>
+        <description>Created for Customer Support Survey</description>
+        <externalId>false</externalId>
+        <label>Support Rating</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Highly Satisfied</fullName>
+                    <default>false</default>
+                    <label>Highly Satisfied</label>
+                </value>
+                <value>
+                    <fullName>Moderately Satisfied</fullName>
+                    <default>false</default>
+                    <label>Moderately Satisfied</label>
+                </value>
+                <value>
+                    <fullName>Not Satisfied</fullName>
+                    <default>false</default>
+                    <label>Not Satisfied</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Support_Shift_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>(CASE(VALUE(MID(TEXT(CreatedDate),12,2)),
+0, &quot;Night&quot;,
+1,&quot;Night&quot;,
+2,&quot;Day&quot;,
+3,&quot;Day&quot;,
+4,&quot;Day&quot;,
+5,&quot;Day&quot;,
+6,&quot;Day&quot;,
+7,&quot;Day&quot;,
+8,&quot;Day&quot;,
+9,&quot;Day&quot;,
+10,&quot;Day&quot;,
+11,&quot;Day&quot;,
+12,&quot;Day&quot;,
+13,&quot;Day&quot;,
+14,&quot;Day&quot;,
+15,&quot;Day&quot;,
+16,&quot;Day&quot;,
+17,&quot;Night&quot;,
+18,&quot;Night&quot;,
+19,&quot;Night&quot;,
+20,&quot;Night&quot;,
+21,&quot;Night&quot;,
+22,&quot;Night&quot;,
+23,&quot;Night&quot;,
+&quot;The formula did not calculate correctly. please inform the system admin.&quot;))</formula>
+        <label>Support Shift Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TAF__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created for Customer Support Survey</description>
+        <externalId>false</externalId>
+        <label>TAF</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TToCase__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TsbL1__c+TsbL2__c+TsbL3__c)/60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Time on Case in Hrs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TsbL1__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Spent by L1</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TsbL2__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Spent by L2</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TsbL3__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Spent by L3</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
+    <fields>
+        <fullName>User_Rating__c</fullName>
+        <description>Created for Customer Support Survey</description>
+        <externalId>false</externalId>
+        <label>User Rating</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Exceptional</fullName>
+                    <default>false</default>
+                    <label>Exceptional</label>
+                </value>
+                <value>
+                    <fullName>Good</fullName>
+                    <default>false</default>
+                    <label>Good</label>
+                </value>
+                <value>
+                    <fullName>Not Good</fullName>
+                    <default>false</default>
+                    <label>Not Good</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>X3_4_AR_Related_check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>3 &amp;4 AR Related check</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>agf__ADM_Work__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>A connection to the Agile Accelerator Work object used to track Bugs, Investigations and User Stories</description>
+        <externalId>false</externalId>
+        <label>Work</label>
+        <referenceTo>agf__ADM_Work__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>AgileAcceleratorCases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>case1_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>case1 Text</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ebsta1__Ebsta_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Ebsta Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Browser__c</fullName>
+        <externalId>false</externalId>
+        <label>Browser</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Device__c</fullName>
+        <externalId>false</externalId>
+        <label>Device</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_First_Click_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>First Click Campaign</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_First_Click_Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>First Click Channel</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_First_Click_Content__c</fullName>
+        <externalId>false</externalId>
+        <label>First Click Content</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_First_Click_Landing_Page__c</fullName>
+        <externalId>false</externalId>
+        <label>First Click Landing Page</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_First_Click_Medium__c</fullName>
+        <externalId>false</externalId>
+        <label>First Click Medium</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_First_Click_Referrer__c</fullName>
+        <externalId>false</externalId>
+        <label>First Click Referrer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_First_Click_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>First Click Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_First_Click_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>First Click Term</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Google_Analytics_Client_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Google Analytics Client ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Google_Analytics_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( (&quot;https://analytics.google.com/analytics/web/#report/visitors-user-activity/a72840801w110617423p115383936/%3F_r.userId%3D&quot; &amp; gaconnector_Google_Analytics_Client_ID__c &amp; &quot;%26_r.userListReportStates%3D%26_r.userListReportId%3Dvisitors-legacy-user-id/&quot;), &quot;Open in Google Analytics&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Google Analytics Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_IP_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>IP Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Last_Click_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Click Campaign</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Last_Click_Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Click Channel</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Last_Click_Content__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Click Content</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Last_Click_Landing_Page__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Click Landing Page</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Last_Click_Medium__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Click Medium</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Last_Click_Referrer__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Click Referrer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Last_Click_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Click Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Last_Click_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Click Term</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Latitude_from_IP__c</fullName>
+        <externalId>false</externalId>
+        <label>Latitude (from IP)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>9</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Location_approx__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://maps.google.com/maps?q=loc:&quot; &amp; TEXT( gaconnector_Latitude_from_IP__c ) &amp; &quot;,&quot; &amp; TEXT( gaconnector_Longitude__c ), &quot;Open in Google Maps&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Location (approx.)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Longitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Longitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>9</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Number_of_Website_Visits__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Website Visits</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Operating_System__c</fullName>
+        <externalId>false</externalId>
+        <label>Operating System</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Pages_visited__c</fullName>
+        <externalId>false</externalId>
+        <label>Pages visited</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Time_Spent_on_Website__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Spent on Website</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Time_Spent_on_Website_formul__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(ROUND(gaconnector_Time_Spent_on_Website__c / 60000,0)) &amp; &quot;:&quot; &amp; 
+TEXT(MOD(ROUND(	gaconnector_Time_Spent_on_Website__c / 1000,0), 60))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time Spent on Website</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>gaconnector_Time_Zone__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Zone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <listViews>
-        <fullName>AllClosedCases</fullName>
+        <fullName>AIB_Ben_Issues</fullName>
         <columns>CASES.CASE_NUMBER</columns>
         <columns>NAME</columns>
         <columns>CASES.SUBJECT</columns>
@@ -486,11 +2113,12 @@
         <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>CASES.CLOSED</field>
+            <field>CASES.NAME</field>
             <operation>equals</operation>
-            <value>1</value>
+            <value>Ben Aird</value>
         </filters>
-        <label>All Closed Cases</label>
+        <label>AIB Ben Issues</label>
+        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>AllOpenCases</fullName>
@@ -501,6 +2129,54 @@
             <value>0</value>
         </filters>
         <label>All Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Closed_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.CLOSED_DATE</columns>
+        <columns>Closure_Days__c</columns>
+        <columns>CASES.NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </filters>
+        <label>Closed Cases</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Deployment_Team_Case</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.REASON</columns>
+        <columns>CASES.TYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.REASON</field>
+            <operation>equals</operation>
+            <value>Builds/Project Failures,Deployments,Sync Orgs</value>
+        </filters>
+        <label>Deployment Team</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Deployment_Team_Case1</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Deployment Team</label>
+        <queue>Deployment_Team</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <listViews>
         <fullName>MyCases</fullName>
@@ -517,6 +2193,1029 @@
         </filters>
         <label>My Open Cases</label>
     </listViews>
+    <listViews>
+        <fullName>Open_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>CASES.NAME</columns>
+        <columns>CASES.COMPANY</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Support_Engineer__c</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </filters>
+        <label>Open Cases</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>test_Case</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Bhargavi v</label>
+        <queue>test</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Internal_Bug</fullName>
+        <active>true</active>
+        <businessProcess>Customer Support</businessProcess>
+        <label>Internal Bug</label>
+        <picklistValues>
+            <picklist>Assigned_Status__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Creating_metadata_connection__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Adding_new_files__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Commit_Process__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Creating_version_control__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Deleted_destructive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Deleting_destructive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Preparing_destructive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Preparing_package__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_SCM_working_copy__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Valdating_version_control__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Working_Copy_Not_Exists__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Working_copy__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Final_Resolution__c</picklist>
+            <values>
+                <fullName>Configuration Fix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate%2FInvalid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Knowledge Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preparing_package__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Processing_the_userId_changes__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Builds%2FProject Failures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Loader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deployments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EZ - Commits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Login Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sync Orgs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Automation Factory%28TAF%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Version Control</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reproduce_Issue__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Support_Rating__c</picklist>
+            <values>
+                <fullName>Highly Satisfied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately Satisfied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Satisfied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>AutoRABIT Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bug in AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>User_Rating__c</picklist>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Good</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Good</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Problem</fullName>
+        <active>true</active>
+        <businessProcess>Customer Support</businessProcess>
+        <label>Problem</label>
+        <picklistValues>
+            <picklist>Assigned_Status__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Creating_metadata_connection__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Adding_new_files__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Commit_Process__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Creating_version_control__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Deleted_destructive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Deleting_destructive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Preparing_destructive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Preparing_package__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_SCM_working_copy__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Valdating_version_control__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Working_Copy_Not_Exists__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Working_copy__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Final_Resolution__c</picklist>
+            <values>
+                <fullName>Configuration Fix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate%2FInvalid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Knowledge Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preparing_package__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Processing_the_userId_changes__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Builds%2FProject Failures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Loader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deployments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EZ - Commits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Login Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sync Orgs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Automation Factory%28TAF%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Version Control</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reproduce_Issue__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Support_Rating__c</picklist>
+            <values>
+                <fullName>Highly Satisfied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately Satisfied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Satisfied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>AutoRABIT Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bug in AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>User_Rating__c</picklist>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Good</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Good</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>User_Story</fullName>
+        <active>true</active>
+        <businessProcess>Customer Support</businessProcess>
+        <label>User Story</label>
+        <picklistValues>
+            <picklist>Assigned_Status__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Creating_metadata_connection__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Adding_new_files__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Commit_Process__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Creating_version_control__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Deleted_destructive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Deleting_destructive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Preparing_destructive__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Preparing_package__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_SCM_working_copy__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Valdating_version_control__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Working_Copy_Not_Exists__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EZ_Working_copy__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Final_Resolution__c</picklist>
+            <values>
+                <fullName>Configuration Fix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate%2FInvalid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Knowledge Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Preparing_package__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Processing_the_userId_changes__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Builds%2FProject Failures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Loader</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deployments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EZ - Commits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Login Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sync Orgs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Automation Factory%28TAF%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Version Control</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reproduce_Issue__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Support_Rating__c</picklist>
+            <values>
+                <fullName>Highly Satisfied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moderately Satisfied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Satisfied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>AutoRABIT Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bug in AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce Issue</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>User_Rating__c</picklist>
+            <values>
+                <fullName>Exceptional</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Good</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Good</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
         <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
@@ -538,24 +3237,25 @@
         <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWriteTransfer</sharingModel>
+    <sharingModel>Private</sharingModel>
     <webLinks>
-        <fullName>UpsellCrosssellOpportunity</fullName>
+        <fullName>activities__Create_Tasks_Cases</fullName>
         <availability>online</availability>
-        <displayType>link</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <hasMenubar>true</hasMenubar>
-        <hasScrollbars>true</hasScrollbars>
-        <hasToolbar>true</hasToolbar>
-        <height>600</height>
-        <isResizable>true</isResizable>
-        <linkType>url</linkType>
-        <masterLabel>Up-sell / Cross-sell Opportunity</masterLabel>
-        <openType>newWindow</openType>
-        <position>none</position>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Tasks</masterLabel>
+        <openType>onClickJavaScript</openType>
         <protected>false</protected>
-        <showsLocation>true</showsLocation>
-        <showsStatus>true</showsStatus>
-        <url>https://na1.salesforce.com/opp/oppedit.jsp?accid={!Account_ID}&amp;opp3=Up-sell+/+Cross-sell&amp;opp5=Existing+Customer&amp;opp6=Customer+Support</url>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/connection.js&quot;)}
+var records = {!GETRECORDIDS( $ObjectType.Case)};
+var returnURL = window.location.href;
+if(records != null &amp;&amp; records != &apos;&apos;){
+mywin = window.open(&apos;/apex/activities__createTasks?Ids=&apos;+records+&apos;&amp;retURL=&apos;+returnURL+&apos;&amp;type=whatId&apos; , &apos;_top&apos;,
+&apos;height=400,width=600,status=yes,toolbar=no,menubar=no,location=no,center=yes,resizable=no&apos;);
+mywin.focus();
+}else{
+alert(&apos;Please select atleast one record.&apos;);
+}</url>
     </webLinks>
 </CustomObject>

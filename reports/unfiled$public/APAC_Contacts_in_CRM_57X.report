@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Account</field>
+    </columns>
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact$Email</field>
+    </columns>
+    <columns>
+        <field>Contact$Secondary_Email__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Linkedin__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Contact$MailingCountry</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Australia,Hong Kong,Malaysia,New Zealand,Singapore,China,Philippines,Indonesia,Japan,Cambodia,Thailand,Vietnam,South Korea,North Korea,Maldives</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>APAC Contacts in CRM</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>All_Contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,14 @@
+Dear Sir or Madam, 
+
+Thank you for reaching out to us. Here is your  Case # :{!Case.CaseNumber}.
+
+Currently, we are looking into your issue. Rest assured that we will be getting back to you with a solution in the shortest amount of time possible.
+
+We might need to schedule a call or a WebEx session to understand more about the issue and provide a solution. Please do not change the subject line. [{!Case.Thread_Id}]
+
+We hope you will enjoy the rest of your day and apologize for any inconvenience.
+
+Sincerely, 
+Your AutoRABIT Support
+support@autorabit.com.
+----------------------------------------------------------------------------------------------

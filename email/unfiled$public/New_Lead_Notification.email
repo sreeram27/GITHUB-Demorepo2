@@ -1,0 +1,13 @@
+Hi ,
+
+A new lead is trying to reach Autorabit
+
+Name: {!Lead.Name}
+Company:{!Lead.Company}
+Email to Contact: {!Lead.Email}
+Phone:{!Lead.Phone}
+
+Get in touch with the customer at the earliest.
+
+Thank you,
+AutoRabit Customer Support

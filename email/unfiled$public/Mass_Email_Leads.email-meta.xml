@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This Email template is used to send Mass Email to All Leads</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>New_Logo_AutorRABIT</letterhead>
+    <name>AutoRABIT - Mass Email for Leads - Paul</name>
+    <style>formalLetter</style>
+    <subject>{!Lead.Name},It&apos;s time to automate with AutoRABIT!</subject>
+    <textOnly>Dear {!Lead.Name},
+
+Hope you are doing well.  I wanted to follow-up and see if now was a good time to revisit using AutoRABIT to help you automate your Salesforce release management process.  
+
+Automation and Continuous Integration:
+Have you been thinking about automating part of your Release Management process? You have seen a demo of our solution yet? If not now, then when?  
+
+Playground Environment:
+We have launched a new playground to help you test our solution; everything you need is setup and ready to go. Customize our environment, it is easy to use and our support staff will help you along the way.
+
+AutoRABIT 3.9 Release:
+We have have also made significant improvements with our latest release  - http://www.autorabit.com/autorabit-3-9-ga-release-highlights-salesforce-release-management/
+
+Here are some more links:
+- Website - http://www.autorabit.com/
+- Data Sheet - http://www.autorabit.com/wp-content/uploads/datasheet.pdf
+- 2 Min Video - https://www.youtube.com/watch?v=fug--A7xuFo
+
+Looking forward to hearing from you and helping you get to a faster and easier release management environment.
+
+Thanks
+
+Paul D&apos;Souza
+Sales - Central &amp; Eastern Region
+paul.d@autorabit.com
+408-529-2385 m (Eastern Time Zone)</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

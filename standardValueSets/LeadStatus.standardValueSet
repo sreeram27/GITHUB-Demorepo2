@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Open</fullName>
+        <default>true</default>
+        <label>Open</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Qualified</fullName>
+        <default>false</default>
+        <label>Qualified</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Contacted</fullName>
+        <default>false</default>
+        <label>Contacted</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Discovery Call Completed</fullName>
+        <default>false</default>
+        <label>Discovery Call Completed</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Demo Performed</fullName>
+        <default>false</default>
+        <label>Demo Performed</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Unresponsive</fullName>
+        <default>false</default>
+        <label>Unresponsive</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Unqualified</fullName>
+        <default>false</default>
+        <label>Unqualified</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Lost</fullName>
+        <default>false</default>
+        <label>Lost</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>DNC</fullName>
+        <default>false</default>
+        <label>DNC</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Converted</fullName>
+        <default>false</default>
+        <label>Converted</label>
+        <converted>true</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Re-qualify</fullName>
+        <default>false</default>
+        <label>Re-qualify</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Bad Contact Info</fullName>
+        <default>false</default>
+        <label>Bad Contact Info</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Interested</fullName>
+        <default>false</default>
+        <label>Not Interested</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Nurture</fullName>
+        <default>false</default>
+        <label>Nurture</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Bad Email</fullName>
+        <default>false</default>
+        <label>Bad Email</label>
+        <converted>false</converted>
+    </standardValue>
+    <standardValue>
+        <fullName>Back to Marketing</fullName>
+        <default>false</default>
+        <label>Back to Marketing</label>
+        <converted>false</converted>
+    </standardValue>
+</StandardValueSet>

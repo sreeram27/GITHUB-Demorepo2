@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Builds/Project Failures</fullName>
+        <default>false</default>
+        <label>Builds/Project Failures</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Data Loader</fullName>
+        <default>false</default>
+        <label>Data Loader</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Deployments</fullName>
+        <default>false</default>
+        <label>Deployments</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>EZ - Commits</fullName>
+        <default>false</default>
+        <label>EZ - Commits</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>FAQ</fullName>
+        <default>false</default>
+        <label>FAQ</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Functionality</fullName>
+        <default>false</default>
+        <label>Functionality</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Login Issue</fullName>
+        <default>false</default>
+        <label>Login Issue</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Sync Orgs</fullName>
+        <default>false</default>
+        <label>Sync Orgs</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Test Automation Factory(TAF)</fullName>
+        <default>false</default>
+        <label>Test Automation Factory(TAF)</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Version Control</fullName>
+        <default>false</default>
+        <label>Version Control</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+</StandardValueSet>

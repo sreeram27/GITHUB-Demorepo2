@@ -1,0 +1,67 @@
+<apex:page controller="smlfcom.SMLGettingStartedController" sidebar="false" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <title>SML Getting Started</title>
+    <apex:form >
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <div class="page-header">
+                <div class="container-bs">
+                    <div class="title">
+                        <h1>Getting Started </h1>
+                    </div>
+                </div><!-- /.container-bs -->
+            </div>
+            <div class="container-bs">
+                <div class="page-container">
+                    <div class="content">
+                        <h2>
+                            SML App Configurations 
+                        </h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th width="20px">#</th>
+                                    <th>Configuration</th>
+                                    <th width="50px">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <apex:variable value="{!1}" var="index"/>
+                                <apex:repeat value="{!listOfConfig}" var="config">
+                                    <tr>
+                                        <td>{!index}</td>
+                                        <td>{!config.configText}</td>
+                                        <td>
+                                            <apex:outputPanel layout="none" rendered="{!config.configStatus == true}">
+                                                <span class="marker-green"/>
+                                            </apex:outputPanel>
+                                            <apex:outputPanel layout="none" rendered="{!config.configStatus == false}">
+                                                <span class="marker-red"/>
+                                            </apex:outputPanel>
+                                        </td>
+                                    </tr>
+                                    <apex:variable value="{!index+1}" var="index"/>
+                                </apex:repeat>
+                            </tbody>
+                        </table>
+                        <hr/>
+                        <h2>
+                            Sample Opportunity Changes Data
+                        </h2>
+                        <apex:dataTable id="sampleRecordTable" styleClass="table" value="{!listToDisplay}" var="data">
+                            <apex:column headerValue="Opportunity Name" value="{!data.smlfcom__Opportunity__c}"/>
+                            <apex:column headerValue="Lowest Amount" value="{!data.smlfcom__LowestAmount__c}"/>
+                            <apex:column headerValue="Highest Amount" value="{!data.smlfcom__HighestAmount__c}"/>
+                            <apex:column headerValue="Days in Current Stage" value="{!data.smlfcom__DaysInCurrentStage__c}"/>
+                        </apex:dataTable>
+                    </div>
+                </div>
+            </div><!-- /.container-bs -->
+        </apex:define>
+    </apex:composition>
+    </apex:form>
+    <script>
+    $(function(){
+        $("[id$='sampleRecordTable']").DataTable();
+    });
+    </script>
+</apex:page>

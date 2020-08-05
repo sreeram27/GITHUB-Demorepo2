@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Remind to enter contract dates for closed won opportunity</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>AutoRABIT_LinkedIn_Banner</letterhead>
+    <name>Past Due: Update Contract Dates</name>
+    <style>formalLetter</style>
+    <subject>PAST DUE: Closed Won Opportunity WITH OUT Contract Dates</subject>
+    <textOnly>Hello Customer Success Team, This is an auto generated email to inform you that the opportunity, &quot;{!Opportunity.Name}&quot;, is closed won for 24 hours.
+
+Please update the record with Contract Start and End Dates.
+
+Thank You!</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>I18N de contenu riche CC</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>I18Ns de contenu riche CC</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <nameFieldLabel>I18N de nom de contenu riche</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

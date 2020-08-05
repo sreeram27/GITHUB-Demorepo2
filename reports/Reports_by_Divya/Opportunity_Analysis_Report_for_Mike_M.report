@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_7217811</developerName>
+        <masterLabel>Group by SDR</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Opportunity.SDR__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Sherdah Moca</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Amrita Sen</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Belinda Trevor</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Krishna Chaitanya</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Arvind Tripathy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Christina Blanco</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Matthew Pursley</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Kainaz D</sourceValue>
+            </sourceValues>
+            <value>Marketing</value>
+        </values>
+        <values>
+            <value>Self Generated</value>
+        </values>
+        <values>
+            <value>None</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Product_Name__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Type_New_Renewal_Upsell__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Opportunity_Amount__c</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>PROBABILITY</field>
+    </columns>
+    <columns>
+        <field>FISCAL_QUARTER</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Country__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Partner_Namee__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Other_Partner__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Partner_Influence__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Partner_Sourced__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>All new/upsell opportunities pipeline analysis created in FY 2019 for reps Mukesh, Kendrick &amp; Paul.</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Opportunity_Type_New_Renewal_Upsell__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Upsell</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Kendrick,Mukesh,Paul</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_7217811</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FULL_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Opportunity Analysis Report for Mike M.</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

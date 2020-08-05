@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Give_account_access_to_SDR_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>None</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Give account access to SDR Team</label>
+        <sharedTo>
+            <group>SDR_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Sales_team</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

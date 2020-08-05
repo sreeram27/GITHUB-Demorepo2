@@ -1,0 +1,87 @@
+Dear All, 
+
+A Demo Questionnaire has been received from {!Questionnaire_Implementation__c.Company_Name__c}
+
+____________________________________________________
+Company : {!Questionnaire_Implementation__c.Company_Name__c}
+Email id : {!Questionnaire_Implementation__c.Email__c} 
+                  _________________________________________________
+
+                                General Questions :
+___________________________________________________
+
+1. Which Version Control System is used for Salesforce ? {!Questionnaire_Implementation__c.X1_Which_Version_Control_System_is_used__c}
+
+2. Which tool is used for Project Management (ALM)? {!Questionnaire_Implementation__c.X2_Which_tool_is_used_for_Project_Manage__c}
+
+3. What is the current team structure w/ their role(s)?
+      
+     a. Number of Developers :  {!Questionnaire_Implementation__c.Number_of_Developers__c}
+     b. Number of Admins : {!Questionnaire_Implementation__c.Number_of_Admins__c}
+     c. Number of Release Managers/Architect : {!Questionnaire_Implementation__c.Number_of_Release_Managers_Architect__c}
+     d. Number of Primary SI Partners : {!Questionnaire_Implementation__c.Number_of_Primary_SI_Partners__c}
+
+4. Are you evaluating any other CI/CD tools currently?
+  {!Questionnaire_Implementation__c.Any_other_CI_CD_tools__c}
+
+5. Please upload attachments, if any
+{!Questionnaire_Implementation__c.What_does_your_current_release_process__c}
+Deployment User : {!Questionnaire_Implementation__c.Deployment_User__c}
+
+                                    Version Control : 
+____________________________________________________
+
+Go to : {!Questionnaire_Implementation__c.Link} for more details on Version Control                                  ____________________________________________________
+
+                                      Deployment: 
+____________________________________________________
+
+1. How are metadata components being deployed currently? {!Questionnaire_Implementation__c.How_are_metadata_components_being_dep__c}
+
+2. How often do you encounter errors? 
+    What is the average turnaround time for successful deployment? {!Questionnaire_Implementation__c.How_Often__c}
+
+3. What are the pain points during the deployment process?
+{!Questionnaire_Implementation__c.What_are_the_pain_points_during_the_d__c}  
+
+4. How much time does it take for a production deployment? 
+{!Questionnaire_Implementation__c.Time_taken_for__c}
+
+5. Time taken for pre/post deployment steps (Attach any relevant documents describing manual steps)
+{!Questionnaire_Implementation__c.How_long_does_it_take_for_pre_post_de__c}
+
+6. Select use cases to evaluate
+{!Questionnaire_Implementation__c.Select_use_cases_for_Deployment__c}
+
+7. What are your short term / long-term goals with Deployments? {!Questionnaire_Implementation__c.Short_Long_Term_goals_with_Deployments__c}
+
+                                             Testing :
+____________________________________________________
+
+1. What kind of testing do you perform? {!Questionnaire_Implementation__c.What_kind_of_testing_do_you_perform__c}
+
+2. What are your short term / long-term goals with Testing? {!Questionnaire_Implementation__c.a_What_tools_are_you_using_Text_Field__c}
+
+                                             Data Loader :
+____________________________________________________
+
+1. Any ETL tool currently being used? {!Questionnaire_Implementation__c.X1_Any_ETL_tool_currently_being_used__c}
+
+2. Typically, how many records do you migrate per data load?
+{!Questionnaire_Implementation__c.Typically_how_many_records_do_you_mi__c}
+
+3. How often do you do data loading?{!Questionnaire_Implementation__c.How_often_Data_Loader__c}
+
+What is the average time taken per data load?
+{!Questionnaire_Implementation__c.average_time_taken_per_data_load__c}
+
+4. Select use cases to evaluate: {!Questionnaire_Implementation__c.Select_use_VC__c}
+
+5. What are your short term / long-term goals with Data loader Pro?  
+{!Questionnaire_Implementation__c.Short_Long_Term_goals_with_Data_Loader__c}
+
+
+Please map the IQ Information to the appropriate Lead/Opportunity.
+
+Thanks & Regards,
+Corp Admin - AutoRABIT CRM

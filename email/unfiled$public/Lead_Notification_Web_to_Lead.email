@@ -1,0 +1,16 @@
+Hello {!Lead.OwnerFirstName}, <br><br>
+
+A new Lead is trying to reach AutoRABIT.<br><br>
+
+Name: <a href="https://login.salesforce.com/{!Lead.Id}">{!Lead.Name}</a><br> 
+Company: {!Lead.Company}<br> 
+Email Address: {!Lead.Email}<br> 
+Phone: {!Lead.Phone}<br>
+Country: {!Lead.Country}<br><br>
+
+
+
+Get in touch with the customer at the earliest.<br><br>
+
+Thank you,<br> 
+AutoRabit Customer Support

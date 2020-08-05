@@ -1,0 +1,69 @@
+<messaging:emailTemplate subject="Quote submission for Approval - {!relatedTo.Opportunity.name} for {!relatedTo.Client_Name__c}" recipientType="Contact" relatedToType="Quote">
+  <messaging:htmlEmailBody >
+    <style>
+      .main{
+      width:700px;
+      min-height:500px;
+      margin:auto;
+      border:2px solid #cdcdcd;
+      padding:20px;
+      border-radius:6px;
+      position:relative;
+      font-family: "Salesforce Sans",Arial,sans-serif;
+      font-size:13px;
+      }
+      .footer{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      margin:5px auto;
+      border-top:1px solid #FF9900;
+      width:95%;
+      background:#dcdcdc;
+      padding:5px 0;
+      text-align:center;
+      font-size:10px;      
+      }
+      .header{
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      margin:auto;
+      width:95%;   
+      }
+      .body{
+         margin-top:50px;
+      }
+    </style>
+    <div class='main'>
+      <div class="header">
+        <img src="https://c.na43.content.force.com/servlet/servlet.ImageServer?id=015F00000063Mvo&oid=00DF00000006kwt" />
+        <br/>
+        <br/>
+        <div style="border-bottom:1px solid #FF9900;"></div>
+      </div>
+      <div class="body">
+      Dear <b>Roy</b>, <br/> <br/>
+      A Quote has been submitted for your approval. Please find the details below<br/><br/>
+     
+      Here are the details:<br/>
+       Quote No#:  {!relatedTo.QuoteNumber}  <br/><br/>
+      <a href="http://login.salesforce.com/{!relatedTo.Id}" target="__blank">http://login.salesforce.com/{!relatedTo.Id}</a><br/><br/>
+      
+      Created By: {!relatedTo.CreatedBy.name}<br/> 
+      Client Name : {!relatedTo.Client_Name__c} <br/>
+      Opportunity: {!relatedTo.Opportunity.name} <br/><br/>
+      <c:QuoteLineItems QuoteId="{!relatedTo.id}"/>
+      <br/><br/>
+      Regards,<br/>
+      <b>CRM Team</b>
+      </div>
+      <div class='footer'>
+        <span>CONTACT US: 2400 Camino Ramon Suite 280, San Ramon, CA 94583</span>
+        <br/><span>Phone: +1 925 500 1004 &nbsp;&nbsp;|&nbsp;&nbsp; Email:info@autorabit.com</span>
+      </div>
+    </div>
+  </messaging:htmlEmailBody>
+</messaging:emailTemplate>

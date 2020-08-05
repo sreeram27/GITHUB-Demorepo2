@@ -1,0 +1,372 @@
+<apex:page controller="smlfcom.SMLDashboardController" sidebar="false" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+    <title>Dashboard</title>
+
+    <style type="text/css">
+        .forecast-grid {
+            border: 1px solid #ccc;
+            padding: 20px 50px;
+            background-color: #4babd3;
+            margin: 0 10px;
+        }
+        .forecast-grid .stats .item {
+            background-color: #fff;
+        }
+        .forecast-grid h2.title a {
+            color: white;
+        }
+        .flex-row.two-col {
+            margin-bottom: 20px;
+        }
+        .card-grid .card{
+            width : 31% !important;
+            min-width : 180 px !important;
+            margin-bottom: 30px !important;
+            padding-bottom: 20px !important;
+            transition: all 0.5s !important;
+        }
+        
+        .card-grid{
+         max-width: 100% !important;
+        }
+    </style>
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <div class="container-bs">
+                <div class="page-container">
+                    <div class="content">
+                        <div class="card-grid">
+                            <!--Forecast-->
+                            <div class="card reset" style="display : {!IF(showForecastView,'block','none')}" title="{!pageLabelNameMapping['SMLForecastView'].pageHover}">
+                                <a href="SMLForecastView">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLForecastView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'flow.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--WHat If-->
+                            <div class="card reset" style="display : {!IF(showWhatIf,'block','none')}"  title="{!pageLabelNameMapping['SMLWhatIfView'].pageHover}">
+                                <a href="SMLWhatIfView">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLWhatIfView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'rules_configuration.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--Forecast Detail-->
+                            <div class="card reset" style="display : {!IF(showForecastDetail,'block','none')}" title="{!pageLabelNameMapping['SMLForecastDetails'].pageHover}">
+                                <a href="SMLForecastDetails">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLForecastDetails'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'flow.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--SMLQuarterlySummary-->
+                            <div class="card reset" style="display : {!IF(showQuarterlysummary,'block','none')}" title="{!pageLabelNameMapping['SMLQuarterlySummary'].pageHover}">
+                                <a href="SMLQuarterlySummary">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLQuarterlySummary'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'quarter_summary.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--SMLWhatIfProjection-->
+                            <div class="card reset" style="display : {!IF(showWhatIfProjection,'block','none')}" title="{!pageLabelNameMapping['SMLWhatIfProjection'].pageHover}">
+                                <a href="SMLWhatIfProjection">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLWhatIfProjection'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'whatif_and_projection.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--attainment-->
+                            <div class="card reset" style="display : {!IF(showPipelineCoverage,'block','none')}" title="{!pageLabelNameMapping['SMLPipelineCoverage'].pageHover}">
+                                <a href="SMLPipelineCoverage">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLPipelineCoverage'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'quarter_summary.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--SMLOppDataView-->
+                            <div class="card reset" style="display : {!IF(showInsightsOpportunity,'block','none')}" title="{!pageLabelNameMapping['SMLOppDataView'].pageHover}">
+                                <a href="SMLOppDataView">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLOppDataView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'highlights.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--SMLOppRisk-->
+                            <div class="card reset" style="display : {!IF(showOppRisk,'block','none')}" title="{!pageLabelNameMapping['SMLOpportunityRisk'].pageHover}">
+                                <a href="SMLOpportunityRisk">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLOpportunityRisk'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'highlights.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--SMLCohortAnalysisView-->
+                            <div class="card reset" style="display : {!IF(showCohortAnalysisView,'block','none')}" title="{!pageLabelNameMapping['SMLCohortAnalysisView'].pageHover}">
+                                <a href="SMLCohortAnalysisView">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLCohortAnalysisView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'rules_configuration.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--SMLDurationAnalysis-->
+                            <div class="card reset" style="display : {!IF(showDurationAnalysis,'block','none')}" title="{!pageLabelNameMapping['SMLDurationAnalysis'].pageHover}">
+                                <a href="SMLDurationAnalysis">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLDurationAnalysis'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'duration.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--SML_Comparisions-->
+                            <div class="card reset" style="display : {!IF(showComparisions,'block','none')}" title="{!pageLabelNameMapping['SMLComparisions'].pageHover}">
+                                <a href="SML_Comparisions">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLComparisions'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'outliers_and_comparison.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--Pipeline-->
+                            <div class="card reset" style="display : {!IF(showPipleineFlow,'block','none')}" title="{!pageLabelNameMapping['SMLPipelineFlowView'].pageHover}">
+                                <a href="SMLPipelineFlowView">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLPipelineFlowView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'forecast.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--Waterfall-->
+                            <div class="card reset" style="display : {!IF(showPipelineChanges,'block','none')}" title="{!pageLabelNameMapping['SMLWaterfallView'].pageHover}">
+                                <a href="SMLWaterfallView">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLWaterfallView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'waterfall.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--Custom pipeline-->
+                            <div class="card reset" style="display : {!IF(showCustomPipleineFlow ,'block','none')}" title="{!pageLabelNameMapping['SMLCustomPipelineFlowView'].pageHover}">
+                                <a href="SMLCustomPipelineFlowView">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLCustomPipelineFlowView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'forecast.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            
+                            <!--Custom Waterfall-->
+                            <div class="card reset" style="display : {!IF(showCustomPipelineChanges,'block','none')}" title="{!pageLabelNameMapping['SMLCustomWaterFallView'].pageHover}">
+                                <a href="SMLCustomWaterFallView">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLCustomWaterFallView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'waterfall.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>   
+                            <!--SMLTrendingLineView-->
+                            <div class="card reset" style="display : {!IF(showTrendingLineView,'block','none')}" title="{!pageLabelNameMapping['SMLTrendingLineView'].pageHover}">
+                                <a href="SMLTrendingLineView">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLTrendingLineView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'forecast.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            
+                            <!--SMLDatasourcesView-->
+                            <div class="card reset" style="display : {!IF(showDatasourcesView,'block','none')}" title="{!pageLabelNameMapping['SMLDatasourcesView'].pageHover}">
+                                <a href="SMLDatasourcesView">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLDatasourcesView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'rules_configuration.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            <!--Rule Cofig-->
+                            <div class="card reset" style="display : {!IF(showRulesConfig,'block','none')}" title="{!pageLabelNameMapping['SMLConfigurationView'].pageHover}">
+                                <a href="SMLConfigurationView">
+                                    <div class="heading">
+
+                                        <h2 class="title">{!pageLabelNameMapping['SMLConfigurationView'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'rules_configuration.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>
+                            
+                            <!--SMLInsightsConfiguration-->
+                            <div class="card reset" style="display : {!IF(showInsightsConfiguration,'block','none')}" title="{!pageLabelNameMapping['SMLInsightsConfiguration'].pageHover}">
+                                <a href="SMLInsightsConfiguration">
+                                    <div class="heading">
+                                        <h2 class="title">{!pageLabelNameMapping['SMLInsightsConfiguration'].pageLabel}</h2>
+                                        <svg aria-hidden="true" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+                                            <circle fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" cx="12" cy="12" r="11" stroke-linejoin="miter" />
+                                            <polyline data-color="color-2" fill="none" stroke="#343434" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="10,8 14,12 10,16 " stroke-linejoin="miter" />
+                                        </svg>
+                                    </div>
+                                    <apex:outputPanel layout="none" rendered="{!isInsight}">
+                                        <center>
+                                            <apex:image url="{!URLFOR($Resource.smlfcom__Dashboard_Icons,'rules_configuration.png')}" width="50" height="50" />
+                                        </center>
+                                    </apex:outputPanel>
+                                </a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-bs -->
+        </apex:define>
+    </apex:composition>
+</apex:page>

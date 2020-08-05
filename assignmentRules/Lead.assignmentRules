@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Lead Assignment By Region</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>US_SDR_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Argentina,Aruba,Bolivia,Brazil,Canada,Chile,Columbia,Curacao,Ecuador,French Guiana,Guyana,Paraguay,Peru,Suriname,Uruguay,Venezuela,Belize,Costa Rica,El Salvador,Guatemala,Honduras,Nicaragua,Panama</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>United States,United States of America,USA,US</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.CreatedDate</field>
+                <operation>equals</operation>
+                <value>TODAY</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>EMEA_SDR_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>(1 OR 2 OR 3) AND 4</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Albania,Algeria,Armenia,Austria,Azerbaijan,Bangladesh,Belgium,Belarus,Bosnia,Bulgaria,Croatia,Cyprus,Czech Republic,Denmark,Egypt,Estonia,Finland,France,Germany,Greece,Hungary,Iceland,India,Ireland,Israel,Italy,Kuwait</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Latvia,Lebanon,Lithuania,Luxembourg,Macedonia,Malta,Monaco,Morocco,Netherlands,Norway,Pakistan,Poland,Portugal,Rwanda,Romania,Russia,Slovakia,Slovenia,South Africa,Spain,Sri Lanka,Sweden,Switzerland,Turkey</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Ukraine,United Arab Emirates,UAE,United Kingdom,UK</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.CreatedDate</field>
+                <operation>equals</operation>
+                <value>TODAY</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>kainaz.p@autorabit.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 AND 2</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Australia,Hong Kong,Malaysia,New Zealand,Singapore,China,Philippines,Indonesia,Japan,Cambodia,Thailand,Vietnam,South Korea,North Korea,Maldives</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.CreatedDate</field>
+                <operation>equals</operation>
+                <value>TODAY</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>shashankashok.d@autorabit.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Unknown,Other</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.CreatedDate</field>
+                <operation>equals</operation>
+                <value>TODAY</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

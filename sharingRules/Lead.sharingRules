@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>US_Team_Lead</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>US Team Lead</label>
+        <sharedTo>
+            <group>US_Team_Lead</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>SDR__c</field>
+            <operation>contains</operation>
+            <value>Nick,Sherdah</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>BPM_Sales_Group</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>BPM Sales Group</label>
+        <sharedTo>
+            <group>BPM_Services_Group</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>BPM_Services_Group</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>US_SF_ADMIN</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>US SF ADMIN</label>
+        <sharedTo>
+            <group>US_SF_Admin</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>US_SF_Admin</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

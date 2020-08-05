@@ -140,6 +140,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>CanUseQuantitySchedule</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CanUseRevenueSchedule</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -170,7 +182,86 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>NumberOfQuantityInstallments</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>NumberOfRevenueInstallments</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>ProductCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Product_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Group</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AR</fullName>
+                    <default>false</default>
+                    <label>AR</label>
+                </value>
+                <value>
+                    <fullName>Services</fullName>
+                    <default>false</default>
+                    <label>Services</label>
+                </value>
+                <value>
+                    <fullName>Mulesoft</fullName>
+                    <default>false</default>
+                    <label>Mulesoft</label>
+                </value>
+                <value>
+                    <fullName>Vault</fullName>
+                    <default>false</default>
+                    <label>Vault</label>
+                </value>
+                <value>
+                    <fullName>Support</fullName>
+                    <default>false</default>
+                    <label>Support</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Recurring</fullName>
+                    <default>false</default>
+                    <label>Recurring</label>
+                </value>
+                <value>
+                    <fullName>Non-recurring</fullName>
+                    <default>false</default>
+                    <label>Non-recurring</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>QuantityInstallmentPeriod</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>QuantityScheduleType</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -179,11 +270,25 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>RevenueInstallmentPeriod</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>RevenueScheduleType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>StockKeepingUnit</fullName>
         <trackHistory>false</trackHistory>
     </fields>
     <listViews>
         <fullName>AllProducts</fullName>
+        <columns>Product_Type__c</columns>
+        <columns>PRODUCT2.NAME</columns>
+        <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+        <columns>PRODUCT2.DESCRIPTION</columns>
+        <columns>PRODUCT2.FAMILY</columns>
+        <columns>PRODUCT2.CREATED_DATE</columns>
         <filterScope>Everything</filterScope>
         <label>All Products</label>
     </listViews>

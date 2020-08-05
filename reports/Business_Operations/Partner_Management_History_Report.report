@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Partner_Management__c.Quota__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Partner_Management__c.Actual__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Partner_Management__c.Quota_Count__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Partner_Management__c.Actual_Count_of_Pipeline__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Partner_Management__c.Opportunity_Source__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Partner_Management__c.Month__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Partner Pipeline - 2020 (SK)</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntityAuditHistory$Partner_Management__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

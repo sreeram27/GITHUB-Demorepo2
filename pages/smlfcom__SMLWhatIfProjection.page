@@ -1,0 +1,365 @@
+<apex:page id="page" controller="smlfcom.SMLWhatIfProjectionCtrl" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" readOnly="true" applyBodyTag="false" applyHtmlTag="false">
+    <apex:includeScript value="https://code.highcharts.com/highcharts.js" />
+    <apex:includeScript value="https://code.highcharts.com/highcharts-more.js" />
+    <apex:includeScript value="https://code.highcharts.com/modules/exporting.js" />
+    <title>SML Forecast Changes</title>
+    <style>
+        .highcharts-credits {
+            display: none;
+        }
+        .flex-row {
+            display: initial !important;
+        }
+        .range-slider {
+            margin: 60px 0 0 0%;
+        }
+        .range-slider {
+            width: 100%;
+        }
+        .range-slider__range {
+            -webkit-appearance: none;
+            width: calc(100% - (73px));
+            height: 10px;
+            border-radius: 5px;
+            background: #d7dcdf;
+            outline: none;
+            padding: 0;
+            margin: 0;
+        }
+        .range-slider__range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2c3e50;
+            cursor: pointer;
+            -webkit-transition: background .15s ease-in-out;
+            transition: background .15s ease-in-out;
+        }
+        .range-slider__range::-webkit-slider-thumb:hover {
+            background: #1abc9c;
+        }
+        .range-slider__range:active::-webkit-slider-thumb {
+            background: #1abc9c;
+        }
+        .range-slider__range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border: 0;
+            border-radius: 50%;
+            background: #2c3e50;
+            cursor: pointer;
+            -webkit-transition: background .15s ease-in-out;
+            transition: background .15s ease-in-out;
+        }
+        .range-slider__range::-moz-range-thumb:hover {
+            background: #1abc9c;
+        }
+        .range-slider__range:active::-moz-range-thumb {
+            background: #1abc9c;
+        }
+        .range-slider__value {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            color: #fff;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 3px;
+            background: #2c3e50;
+            padding: 5px 10px;
+            margin-left: 8px;
+        }
+        .range-slider__value:after {
+            position: absolute;
+            top: 8px;
+            left: -7px;
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-right: 7px solid #2c3e50;
+            border-bottom: 7px solid transparent;
+            content: '';
+        }
+        ::-moz-range-track {
+            background: #d7dcdf;
+            border: 0;
+        }
+        input::-moz-focus-inner,
+        input::-moz-focus-outer {
+            border: 0;
+        }
+        .submitButton {
+            color: white !important;
+        }
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #3e8e41;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* Change color of dropdown links on hover */
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        
+        .show {
+            display: block;
+        }
+    </style>
+
+    <apex:composition template="smlfcom__SMLTemplateV2">
+
+        <apex:define name="body">
+            <apex:form >
+                <div class="page-header">
+                    <div class="container-bs">
+                        <div class="title" data-step="1" data-intro="Allows users to change variables to see its impact on forecasted values (demo data)">
+                            <h1>Forecast: </h1>
+                            <h2>{!smlFilter.pageLabelNameMapping['SMLWhatIfProjection'].pageLabel}</h2>
+                        </div>
+                        <!-- /.title -->
+                    </div>
+                </div>
+
+                <div class="container-bs">
+                    <div class="page-container">
+                        <div class="sidebar">
+                            <apex:outputpanel id="sideBar">
+                                <div data-step="2" data-intro="Select Filter Type and Filter Value fields to view forecast for a particular business dimension">
+                                    <div class="form-group">
+                                        <apex:outputPanel layout="none" rendered="{!smlFilter.textFilterList != null && smlFilter.textFilterList.size > 0}">
+                                            <apex:repeat value="{!smlFilter.textFilterList }" var="filterField">
+                                                <div class="form-group">
+                                                    <label>{!filterField.fieldLabel}</label>
+                                                    <apex:selectList value="{!filterField.selectedmapValue[filterField.fieldAPIName]}" onChange="resetValue(this.options[this.selectedIndex].value+'#{!filterField.fieldAPIName}')" multiselect="false" size="1" styleClass="filterField form-control custom-select {!filterField.isFieldLinked} {!filterField.fieldAPIName}">
+                                                        <apex:selectOption itemLabel="None" itemValue="All"></apex:selectOption>
+                                                        <apex:selectOptions value="{!filterField.fieldValues}"></apex:selectOptions>
+                                                    </apex:selectList>
+
+                                                </div>
+                                            </apex:repeat>
+                                            <div class="form-group">
+                                                <label>Business days elapsed</label>
+                                                <apex:inputText value="{!Dim6tab3}" styleClass="filterField form-control" />
+
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Won this quarter</label>
+                                                <apex:inputText value="{!Metric5tab3}" styleClass="filterField form-control" />
+
+                                            </div>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="controls flex">
+                                    <div class="left">
+                                        <a class="btn-bs btn-sm btn-default" href="javascript:resetWhatIfAnalysis()">Reset</a>
+                                    </div>
+                                    <div class="right">
+                                        <a class="btn-bs btn-sm btn-primary" href="javascript:refresh()">Refresh</a>
+                                    </div>
+                                </div>
+                            </apex:outputpanel>
+                        </div>
+
+                        <div class="content">
+                            <apex:outputPanel id="tabOpp3">
+                                
+
+                                <div class="flex-row one-col">
+                                    <div style="margin: 20px;">
+                                        <div class="flex-row" style="margin-bottom:10px">
+                                            <div class="form-group">
+                                                <div class="form-field">
+                                                    <div class="row">
+
+                                                        <div class="col-sm-12">
+                                                            <div id="container" style=" height: 450px; margin: 0 auto"></div>
+                                                        </div>
+                                                        <br/>
+                                                        <div class="col-sm-7">
+                                                            <table class="table table-bordered" >
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Projection based on quarter</th>
+                                                                        <th>Projected Amount</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="tableData">
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="col-sm-5">
+                                                            <div class="card">
+                                                                <apex:outputText escape="false" value="{!messageText }"></apex:outputText>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                        </div>
+                    </div>
+                </div>
+                <apex:actionFunction name="refresh" action="{!refreshTab3}" rerender="tabOpp3,sideBar,ScriptPanel" status="renderingStatus" oncomplete="rerenderChart()" />
+                <apex:actionFunction action="{!resetFilterValues}" reRender="sideBar" name="resetValue" status="renderingStatus">
+                    <apex:param assignTo="{!key}" name="key" value="" />
+                </apex:actionFunction>
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+    <apex:includeScript value="{!$Resource.smlfcom__rangeSlider}" />
+    <apex:outputPanel id="ScriptPanel">
+        <script>
+            $(document).ready(function() {
+                initChart();
+            });
+
+            function initChart() {
+                var jsData = '{!JSENCODE(jsonChart)}';
+                var forecastData = JSON.parse(jsData);
+                console.log(forecastData);
+
+                console.log();
+                Highcharts.setOptions({
+                global: {
+                  useUTC: false,
+                },
+                lang: {
+                  decimalPoint: '.',
+                  thousandsSep: ','
+                }
+              });
+                Highcharts.chart('container', {
+                    chart: {
+                        zoomType: 'xy'
+                    },
+                    title: {
+                        text: ''
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: [{
+                        categories: forecastData.Dim5,
+                        crosshair: true
+                    }],
+                    yAxis: [{ // Primary yAxis
+                        labels: {
+                            format: '{value:.0f} ',
+                            style: {
+                                color: Highcharts.getOptions().colors[1]
+                            }
+                        },
+                        title: {
+                            text: 'Number of quarter days',
+                            style: {
+                                color: Highcharts.getOptions().colors[1]
+                            }
+                        }
+                    }, { // Secondary yAxis
+                        title: {
+                            text: ' Amount ',
+                            style: {
+                                color: Highcharts.getOptions().colors[0]
+                            }
+                        },
+                        labels: {
+                            format: '{value} ',
+                            style: {
+                                color: Highcharts.getOptions().colors[0]
+                            }
+                        },
+                        opposite: true
+                    }],
+                    tooltip: {
+                        shared: true
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'left',
+                        x: 120,
+                        verticalAlign: 'top',
+                        y: 100,
+                        floating: true,
+                        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                    },
+                    series: [{
+                        name: 'Quarter Total',
+                        type: 'column',
+                        yAxis: 1,
+                        data: forecastData.metric2,
+                        tooltip: {
+                            valuePrefix: ' '
+                        }
+
+                    }, {
+                        name: 'As of {!Dim6tab3} days',
+                        type: 'column',
+                        yAxis: 1,
+                        data: forecastData.metric1,
+                        tooltip: {
+                            valuePrfeix: ' '
+                        }
+
+                    }, {
+                        name: 'Number of quarter days',
+                        type: 'spline',
+                        data: forecastData.metric3,
+                        tooltip: {
+                            valueSuffix: ''
+                        }
+                    }]
+                });
+                $('#tableData').html('');
+                var tableString = '';
+                for (var i = 0; i < forecastData.Dim5Proj.length; i++) {
+                    tableString += '<tr>';
+                    tableString += '<td>';
+                    tableString += forecastData.Dim5Proj[i].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                    tableString += '</td><td>';
+                    tableString += forecastData.projAmount[i].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+                    tableString += '</td>';
+                    tableString += '</tr>';
+                }
+                $('#tableData').append(tableString);
+            }
+            
+            function rerenderChart() {
+                initChart();
+            }
+        </script>
+    </apex:outputPanel>
+</apex:page>

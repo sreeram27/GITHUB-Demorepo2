@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$LeadSource</field>
+    </columns>
+    <columns>
+        <field>Contact$FirstName</field>
+    </columns>
+    <columns>
+        <field>Contact$LastName</field>
+    </columns>
+    <columns>
+        <field>Contact$Email</field>
+    </columns>
+    <columns>
+        <field>Contact$MailingCountry</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Converted Leads or Contacts created in FY 2018 from East and North East states of United States where Lead Source is SFDC Event</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact$LeadSource</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>SFDC Event</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$MailingCountry</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>United States,USA,US</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$MailingState</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New York,New Jersey,Connecticut,Pennsylvania,Vermont,New Hampshire,Maine,Massachusetts,Rhode Island,Delaware,District of Columbia,Virginia,Ohio,Michigan,Illinois,North Carolina,South Carolina,Georgia,Florida</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact$MailingState</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>FY2018 SFDC Contacts from E and NE of US</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>All_Contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <endDate>2018-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-01-01</startDate>
+    </timeFrameFilter>
+</Report>

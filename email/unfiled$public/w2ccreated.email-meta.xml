@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>New_Logo_AutorRABIT</letterhead>
+    <name>w2ccreated</name>
+    <style>freeForm</style>
+    <subject>AutoRABIT - {!Case.Subject}. [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear Customer,
+
+Thank you for sharing your concern with us. We regret the inconvenience caused to you. 
+Your concern has been registered with us as Case Number#: {!Case.CaseNumber}.
+
+We are currently analyzing your concern and be rest assured that we will be contacting you as soon as we complete the analysis.
+
+Note: We may be contacting you to schedule a call or a WebEx session to understand more about your issue and provide a solution to it. If you wish to know the status of your case, please reply to this email. One of our Support Engineers will contact you.
+
+While replying, please do not change the subject or body of the email.
+
+Thanks
+AutoRABIT Support
+support@autorabit.com.
+Case Reference:  [{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

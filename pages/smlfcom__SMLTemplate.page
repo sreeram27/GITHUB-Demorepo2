@@ -1,0 +1,180 @@
+<apex:page controller="smlfcom.SMLTemplateController" docType="html-5.0" showHeader="false" standardStylesheets="false" cache="true" applyBodyTag="false" applyHtmlTag="false">
+    <html lang="en">
+        <head>
+            <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="description" content=""/>
+
+            <meta name="msapplication-config" content="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/browserconfig.xml')}"/>
+            <meta name="theme-color" content="#A42665"/>
+
+            <link rel="apple-touch-icon" sizes="180x180" href="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/apple-touch-icon.png')}" />
+            <link rel="icon" type="image/png" href="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/favicon-32x32.png')}" sizes="32x32" />
+            <link rel="icon" type="image/png" href="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/favicon-16x16.png')}" sizes="16x16" />
+            <link rel="manifest" href="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/manifest.json')}"/>
+            <link rel="mask-icon" href="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/safari-pinned-tab.svg')}" color="#a42665" />
+            <link rel="shortcut icon" href="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/favicon.ico')}"/>
+
+            <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" />
+            <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.1.0/css/responsive.bootstrap.min.css" />
+            <link rel="stylesheet" href="{!URLFOR($Resource.SMLTemplateV2, 'css/main.css')}" />
+            <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"/>
+            <apex:includeScript value="https://www.gstatic.com/charts/loader.js"/>
+            
+            <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.css"/>
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.css"/>-->
+
+            <!-- Temporary icon stylesheet -->
+            <apex:stylesheet value="//i.icomoon.io/public/9bc07b849f/SpringML/style.css" />
+            <!-- END Temporary icon stylesheet -->
+
+            <style>
+                /* This is for the full screen DIV */
+                .popupBackground {
+                    /* Background color */
+                    background-color:black;
+                    opacity: 0.20;
+                    filter: alpha(opacity = 20);
+
+                    /* Dimensions */
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 998;
+                    position: absolute;
+
+                    /* Mouse */
+                    cursor:wait;
+                }
+
+                /* This is for the message DIV */
+                .PopupPanel {
+                    /* Background color */
+                    border: solid 2px blue;
+                    background-color: white;
+
+                    /* Dimensions */
+                    left: 50%;
+                    width: 300px;
+                    margin-left: -100px;
+                    top: 50%;
+                    height: 50px;
+                    margin-top: -25px;
+                    z-index: 999;
+                    position: fixed;
+
+                    /* Mouse */
+                    cursor:pointer;
+                }
+                
+                .loading { position: fixed; z-index: 999; height: 2em; width: 2em; overflow: show; margin: auto; top: 0; left: 0; bottom: 0; right: 0; }
+                .loading:before { content: ''; display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.8); }
+                .loading:not(:required) { /* hide "loading..." text */ font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
+                .loading:not(:required):after { content: ''; display: block; font-size: 10px; width: 1em; height: 1em; margin-top: -0.5em; -webkit-animation: spinner 1500ms infinite linear; animation: spinner 1500ms infinite linear; border-radius: 0.5em; box-shadow: rgba(30, 149, 211, 0.75) 1.5em 0 0 0, rgba(30, 149, 211, 0.75) 1.1em 1.1em 0 0, rgba(30, 149, 211, 0.75) 0 1.5em 0 0, rgba(30, 149, 211, 0.75) -1.1em 1.1em 0 0, rgba(30, 149, 211, 0.75) -1.5em 0 0 0, rgba(30, 149, 211, 0.75) -1.1em -1.1em 0 0, rgba(30, 149, 211, 0.75) 0 -1.5em 0 0, rgba(30, 149, 211, 0.75) 1.1em -1.1em 0 0; }
+                
+                @-webkit-keyframes spinner { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+                100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+                @keyframes spinner { 0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+                100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+            </style>
+
+        </head>
+
+        <apex:includeScript value="//code.jquery.com/jquery-2.2.4.min.js" />
+        <apex:includeScript value="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
+        <apex:includeScript value="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"/>
+        <apex:includeScript value="//cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"/>
+        <apex:includeScript value="//cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js" />
+        <apex:includeScript value="//cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js" />
+        
+        <!-- <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.js" />
+        <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.js" />-->
+  
+        <apex:includeScript value="{!URLFOR($Resource.smlfcom__SMLTemplateV2, 'js/fancyselect.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.smlfcom__SMLTemplateV2, 'js/main.js')}"/>
+        <apex:includeScript value="https://www.gstatic.com/charts/loader.js"/>
+        <apex:includeScript value="{!$Resource.smlfcom__modernizr_date_check}"/>
+        
+        <body>
+
+            <apex:actionStatus id="renderingStatus">
+                <apex:facet name="start">
+                    <div class="loading">Loading&#8230;</div>
+                </apex:facet>
+            </apex:actionStatus>
+
+            <header>
+                <nav class="navbar navbar-springml">
+                    <div class="container-bs container-flex">
+                        <div class="navbar-header">
+                            <button type="button" data-toggle="collapse" data-target="#MainNav" aria-expanded="false" class="navbar-toggle collapsed">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="SMLDashboardView" class="navbar-brand"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/logo_springml.svg')}" alt="SpringML"/></a>
+                        </div>
+                        <div id="MainNav" class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <!-- <li class="{!IF(isForecastView,'active','')}"  style = "display : {!IF(isForecastVisible,'block','none')}" ><a href="SMLForecastView"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/forecast.svg')}" alt="Forecast"/><span>Forecast</span></a></li> -->
+                                <li class="dropdown {!IF(isForecastView,'active','')}"><a href="javascript:void(0)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/forecast.svg')}" alt="Forecast"/><span>Forecast</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="{!IF(isForecastView,'active','')}"><a href="SMLForecastView">Forecast View</a></li>
+                                        <li class="{!IF(isWhatIfView,'active','')}"><a href="SMLWhatIfView">What-if Analysis</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown {!IF(isInsightView,'active','')}"><a href="javascript:void(0)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/insights.svg')}" alt="Highlights"/><span>Highlights</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="{!IF(isInsightPage,'active','')}"><a href="SMLOppDataView">Opportunity</a></li>
+                                        <li class="{!IF(isCohortView,'active','')}"><a href="SMLCohortAnalysisView">Cohort Analysis</a></li>
+                                        <li class="{!IF(isStagePage,'active','')}"><a href="SMLStageView">Stage View</a></li>
+                                        <li class="{!IF(isDurationPage,'active','')}"><a href="SMLDurationAnalysis">Duration Analysis</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown {!IF(isTrendingView,'active','')}"><a href="javascript:void(0)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/trending.svg')}" alt="Trending"/><span>Trending</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="{!IF(isPipelineView,'active','')}"><a href="SMLPipelineFlowView">Pipeline Flow</a></li>
+                                        <li class="{!IF(isWaterfallView,'active','')}"><a href="SMLWaterfallView">Pipeline Changes</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown {!IF(isConfigIconView,'active','')}"><a href="javascript:void(0)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/config.svg')}" alt="Config"/><span>Config</span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="{!IF(isDataSourcesView,'active','')}"><a href="SMLDatasourcesView">Data Sources</a></li>
+                                        <apex:outputPanel layout="none" rendered="{!isconfigurationVisible}">
+                                            <li class="{!IF(isConfigPage,'active','')}"><a href="SMLConfigurationView">Rule Configuration</a></li>
+                                        </apex:outputPanel>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav right">
+                                <li class="hidden-xs"><a href="/apex/SMLDashboardView"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/home.svg')}" alt="Home"/></a></li>
+                                <li class="dropdown user"><a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><span>{!currentUser.FirstName} {!currentUser.LastName}<span class="arrow-down"></span></span></a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="/home/home.jsp">Logout</a></li>
+                                        <!-- <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Separated link</a></li> -->
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            
+            <apex:insert name="body"/>
+            <script>
+            $(function(){
+                if(!Modernizr.inputtypes.date) {
+                    $("input[type='date']").datepicker();
+                }
+            });
+            
+            </script>
+        </body>
+    </html>
+</apex:page>

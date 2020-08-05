@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Cold Call</fullName>
+        <default>false</default>
+        <label>Cold Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Conference</fullName>
+        <default>false</default>
+        <label>Conference</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Customer</fullName>
+        <default>false</default>
+        <label>Customer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Data.com</fullName>
+        <default>false</default>
+        <label>Data.com</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Demand Generation</fullName>
+        <default>false</default>
+        <label>Demand Generation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Digital Marketing Reference</fullName>
+        <default>false</default>
+        <label>Digital Marketing Reference</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Direct Mail</fullName>
+        <default>false</default>
+        <label>Direct Mail</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Employee</fullName>
+        <default>false</default>
+        <label>Employee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Employee Referral</fullName>
+        <default>false</default>
+        <label>Employee Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Existing Customer</fullName>
+        <default>false</default>
+        <label>Existing Customer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>External Referral</fullName>
+        <default>false</default>
+        <label>External Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Flosum</fullName>
+        <default>false</default>
+        <label>Flosum</label>
+    </standardValue>
+    <standardValue>
+        <fullName>LeadFeeder</fullName>
+        <default>false</default>
+        <label>LeadFeeder</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Linkedin</fullName>
+        <default>false</default>
+        <label>Linkedin</label>
+    </standardValue>
+    <standardValue>
+        <fullName>List Service</fullName>
+        <default>false</default>
+        <label>List Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MSConnect18</fullName>
+        <default>false</default>
+        <label>MSConnect18</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Paid Ads</fullName>
+        <default>false</default>
+        <label>Paid Ads</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partner</fullName>
+        <default>false</default>
+        <label>Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Prospect Cloud</fullName>
+        <default>false</default>
+        <label>Prospect Cloud</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Public Relations</fullName>
+        <default>false</default>
+        <label>Public Relations</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Self Generated</fullName>
+        <default>false</default>
+        <label>Self Generated</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Seminar - Internal</fullName>
+        <default>false</default>
+        <label>Seminar - Internal</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Seminar - Partner</fullName>
+        <default>false</default>
+        <label>Seminar - Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SFDC Event</fullName>
+        <default>false</default>
+        <label>SFDC Event</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SFDC Referral</fullName>
+        <default>false</default>
+        <label>SFDC Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Trade Show</fullName>
+        <default>false</default>
+        <label>Trade Show</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Web Site</fullName>
+        <default>false</default>
+        <label>Web Site</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Word of mouth</fullName>
+        <default>false</default>
+        <label>Word of mouth</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Zoom Info</fullName>
+        <default>false</default>
+        <label>Zoom Info</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Google</fullName>
+        <default>false</default>
+        <label>Google</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Market Research</fullName>
+        <default>false</default>
+        <label>Market Research</label>
+    </standardValue>
+</StandardValueSet>

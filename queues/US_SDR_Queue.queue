@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>US SDR Queue</name>
+    <queueMembers>
+        <users>
+            <user>christina.b@autorabit.com</user>
+            <user>matt.p@autorabit.com</user>
+            <user>susan.michael@autorabit.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+</Queue>

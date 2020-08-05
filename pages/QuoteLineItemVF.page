@@ -1,0 +1,3 @@
+<apex:page >
+ <c:QuoteLineItems QuoteId="0Q00G000001B4GF"/>
+</apex:page>

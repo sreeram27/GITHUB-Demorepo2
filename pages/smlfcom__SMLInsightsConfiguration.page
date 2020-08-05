@@ -1,0 +1,187 @@
+<apex:page controller="smlfcom.SMLInsightsConfigurationController" sidebar="false" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+    <head>
+        <title>SML Highlights Configuration</title>
+        <apex:stylesheet value="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
+    </head>
+    
+    <style>
+        .rule-card{
+        background-color: #EEE;
+        padding: 20px;
+        margin: 20px;
+        }
+        
+        .condition-card{
+        padding:10px;
+        }
+        
+        .rule-label{
+        line-height:30px;
+        }
+        
+        .icon-add{
+        color: green;
+        font-size: 24px;
+        }
+        
+        .icon-remove{
+        color: red;
+        font-size: 24px;
+        }
+        
+        .control-container{
+        padding: 3px;
+        }
+        
+        .rule-card h2{
+        margin:0!important;
+        padding:0!important;
+        }
+    </style>
+    
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"/>
+            <apex:form id="form">
+                <div class="page-header">
+                    <div class="container-bs">
+                        <div class="title">
+                            <h1>Trending: </h1>
+                            <h2>{!pageLabel}</h2>
+                            <a class="btn-bs add-rule" href="javascript:syncRules();addRule()" style="position:absolute;right:0">Add New Config</a>
+                        </div>
+                    </div>
+                    </div>
+                <div class="container-bs config-rules">
+                    <apex:variable value="{!0}" var="ConfigCount"/>
+                    <apex:repeat value="{!listOfConfigs}" var="rl">
+                        <div class="rule">
+                            <div class="details">
+                                <a href="javascript:deleteRule('{!rl.config_Opp.id}',{!ConfigCount})" class="btn-delete"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/trash.svg')}" alt="Delete Config"/></a>
+                                <div class="flex-row">
+                                    <div class="rule-info">
+                                        <div class="form-group">
+                                            <label for="rule01-title">Name</label>
+                                            <div class="field">
+                                                <apex:inputText styleClass="form-control" value="{!rl.config_Opp.smlfcom__Insight_Chart_Name__c}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="items">
+                                <apex:variable value="{!0}" var="conditonCount"/>
+                                <apex:repeat value="{!rl.config_conditions }" var="condition">
+                                    <apex:outputPanel layout="block" styleClass="item" id="optionType">
+                                        <div class="no"></div>
+                                        <div class="col-sm-2">
+                                            <apex:selectList styleClass="custom-select" value="{!condition.selectedField}" multiselect="false" size="1">
+                                                <apex:selectOption itemLabel="- Field -" itemValue=""></apex:selectOption>
+                                                <apex:selectOptions value="{!listOfFieldTypeSelectOptions}" id="selectOption"></apex:selectOptions>
+                                                <apex:actionSupport event="onchange" reRender="form" action="{!onChangeConditionFieldType}" oncomplete="manageUI()" status="renderingStatus">
+                                                    <apex:param name="configIndex" assignTo="{!configIndex}" value="{!ConfigCount}"/>
+                                                    <apex:param name="ruleConditionIndex" assignTo="{!configConditionIndex}" value="{!conditonCount}"/>
+                                                </apex:actionSupport>
+                                            </apex:selectList>
+                                            
+                                        </div>
+                                        <apex:outputPanel layout="none">
+                                            
+                                                <div class="tags">
+                                                    <apex:inputText styleClass="hidden type-search-field-hidden" value="{!condition.selectedValues}"/>
+                                                    <select class="form-control type-search-field" multiple="true" size="1">
+                                                        <apex:repeat value="{!condition.selectedOptionValues}" var="type">
+                                                            <option value="{!type.value}">{!type.label}</option>
+                                                        </apex:repeat>
+                                                    </select>
+                                                </div>
+                                        </apex:outputPanel>
+                                        <div class="control">
+                                            <a class="delete-btn" href="javascript:syncRules();removeConfigCondition({!ConfigCount}, {!conditonCount})"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/remove.svg')}" alt="Remove Item"/></a>
+                                        </div>
+                                    </apex:outputPanel>
+                                    <apex:variable value="{!conditonCount+1}" var="conditonCount"/>
+                                </apex:repeat>
+                                <a href="javascript:syncRules();addRuleCondition({!ConfigCount})" class="btn-add">Add a row</a>
+                            </div>
+                        </div>
+                        <apex:variable value="{!ConfigCount+1}" var="ConfigCount"/>
+                    </apex:repeat>
+                </div>
+                <br/><br/><br/>
+                <div class="footer-controls">
+                    <div class="container-bs">
+                        <div></div>
+                        <div>
+                            <a class="btn-bs add-rule" href="javascript:syncRules();addRule()">Add New Config</a>
+                            <a class="btn-bs btn-primary" href="javascript:saveRules()">Save Changes</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <apex:actionFunction name="saveRules_Action" action="{!saveConfigs}" reRender="form" status="renderingStatus" oncomplete="manageUI()"/>
+                <apex:actionFunction name="addRule" action="{!addConfig}" reRender="form" status="renderingStatus" oncomplete="manageUI()"/>
+                <apex:actionFunction name="addRuleCondition" action="{!addConfigCondition}" reRender="form" status="renderingStatus" oncomplete="manageUI()">
+                    <apex:param name="configIndex" assignTo="{!configIndex}" value=""/>
+                </apex:actionFunction>
+                <apex:actionFunction name="deleteRule" action="{!deleteConfigRec}" reRender="form" status="renderingStatus" oncomplete="manageUI()">
+                    <apex:param name="ruleId" assignTo="{!configId}" value=""/>
+                    <apex:param name="configIndex" assignTo="{!configIndex}" value=""/>
+                </apex:actionFunction>                
+                <apex:actionFunction name="removeConfigCondition" action="{!removeConfigCondition}" reRender="form" status="renderingStatus" oncomplete="manageUI()">
+                    <apex:param name="configIndex" assignTo="{!configIndex}" value=""/>
+                    <apex:param name="ruleConditionIndex" assignTo="{!configConditionIndex}" value=""/>
+                </apex:actionFunction>
+                
+            </apex:form>
+            
+            
+            
+            
+        </apex:define>
+    </apex:composition>
+    
+    
+    <script>
+    
+    $(function(){
+        manageUI();
+    });
+    function manageUI(){
+        $(".custom-select").fancySelect();
+        getListOfTypes();
+    }
+    function saveRules(){
+        syncRules();
+        saveRules_Action();   
+    }
+    function syncRules(){
+        var selectedVal;
+        
+        $(".type-search-field").each(function(){
+            selectedVal = $(this).val();  
+            if(selectedVal && selectedVal != null)
+                $(this).siblings(".type-search-field-hidden").val(selectedVal.join());
+            else
+                $(this).siblings(".type-search-field-hidden").val('');
+        });
+    }
+    
+    
+    function getListOfTypes(){
+        $(".type-search-field").each(function(){
+            var $select = $(this);
+            $(this).siblings('.type-search-field-hidden').each(function(){
+                var types = $(this).val();
+                if(types != '' && types != null){
+                    $.each(types.split(','), function(index, value){
+                        $select.find("option[value='"+value+"']").attr("selected","selected");
+                    });
+                }
+            });
+        });
+        $(".type-search-field").select2();
+    }
+    </script>
+</apex:page>

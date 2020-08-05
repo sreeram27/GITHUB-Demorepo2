@@ -1,0 +1,221 @@
+<apex:page controller="smlfcom.SMLOppRiskController" id="page" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" readOnly="true" applyBodyTag="false" applyHtmlTag="false">
+    <title>SML Opportunity View</title>
+     <style>
+        
+         
+         .ui-tooltip-content hr{
+            margin : .75rem 0!important;
+         }
+        
+     </style>
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <apex:includeScript value="https://code.highcharts.com/highcharts.js"/>
+            <apex:includeScript value="https://code.highcharts.com/highcharts-more.js"/>
+            <apex:includeScript value="https://code.highcharts.com/modules/exporting.js"/>
+            <div class="page-header">
+                <div class="container-bs">
+                    <div class="title" data-step="1" data-intro="View highlights for individual opportunities, with visual cues (dot, exclamation) indicating outliers - hover on these cues to see more detail (live data)">
+                        <h1>Highlights: </h1>
+                        <h2>{!smlFilter.pageLabelNameMapping['SMLOpportunityRisk'].pageLabel}</h2>
+                    </div><!-- /.title -->
+                </div><!-- /.container-bs -->
+            </div><!-- /.page-header -->
+
+            <div class="container-bs">
+               
+                   <div id="oppView">
+
+                        <div class="page-container">
+
+                            <apex:form styleClass="sidebar">
+                              <div data-step="2" data-intro="Select filter values and click on refresh to narrow down opportunities">
+                               <c:Account_and_owner_filter />  
+                               <apex:repeat value="{!smlFilter.listOfDefaultFields}" var="filterField">
+                                   <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'STRING'}">
+                                      <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndLabel[filterField] == 'Account'}">
+                                          <apex:inputText value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}"  styleClass="form-control hidden account-search-field-hidden"/>
+                                      </apex:outputPanel>
+                                      <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndLabel[filterField] == 'Owner'}">
+                                          <apex:inputText value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}"  styleClass="form-control hidden user-search-field-hidden"/>
+                                      </apex:outputPanel>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'DATE_RANGE'}">
+                                        <hr/>
+                                          <div class="form-group">
+                                             <label>{!smlFilter.mapOfFieldNameAndLabel[filterField]}</label>
+                                             <apex:selectList value="{!smlFilter.dateFilter }" multiselect="false" size="1" styleClass="filterField form-control custom-select">
+                                                <apex:selectOptions value="{!smlFilter.listOfDateFilter }"></apex:selectOptions>
+                                             </apex:selectList>
+                                         </div>
+
+
+                                    </apex:outputPanel>
+                                </apex:repeat>
+                                <hr/>
+                                <!-- ROLE Filter -->
+                                <apex:outputPanel layout="none" rendered="{!smlFilter.listOfRoleFilters.size > 0}">
+                                    <div class="form-group">
+                                        <label>Role</label>
+                                        <apex:selectList value="{!smlFilter.selectedRole}" multiselect="false" size="1" styleClass="item custom-select">
+                                            <apex:selectOptions value="{!smlFilter.listOfRoleFilters}"/>
+                                        </apex:selectList>
+                                    </div>
+                                    <hr/>    
+                                </apex:outputPanel>
+                                <apex:repeat value="{!smlFilter.listOfFields}" var="filterField">
+                                    <div class="form-group">
+                                        <label>{!smlFilter.mapOfFieldNameAndLabel[filterField]}</label>
+                                        <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'PICKLIST'}">
+                                            <apex:selectList value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}" multiselect="false" size="1" styleClass="item custom-select">
+                                                <apex:selectOption itemLabel="All" itemValue="All"></apex:selectOption>
+                                                <apex:selectOptions value="{!smlFilter.mapOfFieldAndValue[filterField]}"></apex:selectOptions>
+                                            </apex:selectList>
+                                        </apex:outputPanel>
+                                    </div>
+                                </apex:repeat>
+                                <hr/>
+                                <div class="controls flex">
+                                    <div class="left">
+                                        <a class="btn-bs btn-sm btn-default" href="javascript:reset()">Reset</a>
+                                    </div>
+                                    <div class="right">
+                                        <a class="btn-bs btn-sm btn-primary" href="javascript:saveRules();javascript:refresh()">Refresh</a>
+                                    </div>
+                                </div>
+
+
+                                <apex:actionFunction action="{!refreshData}" name="refresh" status="renderingStatus" />
+                                <apex:actionFunction action="{!resetFilters}" name="reset" status="renderingStatus" />
+                              </div>  
+                            </apex:form><!-- /.sidebar -->
+
+                            <div class="content">
+                                <div id="container"  style="height: 120%; min-width: 72%; max-width: 100%; margin: 0 auto"  ></div>
+                                
+                                <!-- <a href="javascript:highlightUpdatedRecords()">Test</a> -->
+                            </div><!-- /.content -->
+
+                        </div><!-- /.page-container -->
+                    </div>
+            </div><!-- /.container-bs -->
+        </apex:define>
+    </apex:composition>
+        <!-- remote object for fetching account records -->
+    <apex:remoteObjects jsNamespace="remote_account">
+        <apex:remoteObjectModel name="Account" fields="Id,Name"/>
+    </apex:remoteObjects>
+    <apex:remoteObjects jsNamespace="remote_user">
+        <apex:remoteObjectModel name="User" fields="Id,Name"/>
+    </apex:remoteObjects>
+    
+
+
+    <script>
+    $(document).ready(function() {
+            createChart();
+        });
+
+    function createChart(){
+    var dataBlue = jQuery.parseJSON('{!JSENCODE(blueBubbleJSON)}');
+    var dataRed = jQuery.parseJSON('{!JSENCODE(redBubbleJSON)}');
+    var catJSON = jQuery.parseJSON('{!JSENCODE(categoriesJSON)}');
+     var categoriesArray = [];
+     $.each(catJSON, function(index, value){
+         var myDate = getDateOfWeek(value,2017);
+         categoriesArray.push(myDate);
+     });
+    console.log(dataBlue );
+    Highcharts.setOptions({
+                global: {
+                  useUTC: false,
+                },
+                lang: {
+                  decimalPoint: '.',
+                  thousandsSep: ','
+                }
+              });
+    Highcharts.chart('container', {
+
+    chart: {
+        type: 'bubble',
+        plotBorderWidth: 1,
+        zoomType: 'xy'
+    },
+    credits:false,
+    title: {
+        text: ''
+    },
+    plotOptions: {
+           bubble:{
+               minSize:'20',
+               maxSize:'20'
+           }
+       },
+    
+    tooltip: {
+      enabled: true,
+      useHTML: true,
+      style: {
+        pointerEvents: 'auto'
+      },
+      headerFormat: '',
+      pointFormat: '<a href="/{point.url}" target = "_blank">{point.name}</a> | <a href="/{point.ownerUrl}" target = "_blank">{point.ownerName}</a><br/>${point.y} | {point.stage} | Close {point.closeDate}<br/>Days in current stage is  {point.daysInStage}<br/>Last activity was {point.lstActivity} days ago.{point.positiveReason}{point.negativeReason}'
+    },
+    xAxis: {
+                    title: {
+                        text: 'Close Date'
+                    },
+                    categories: categoriesArray
+                },
+
+    yAxis: {
+        title: {
+            text: 'Amount'
+        },
+        startOnTick: false,
+        endOnTick: false
+    },
+
+    series: [{
+        name: 'Low Risk',
+        data: dataBlue,
+        marker: {
+            fillColor: {
+                radialGradient: { cx: 0.4, cy: 0.3, r: 0.7 },
+                stops: [
+                    [0, 'rgba(255,255,255,0.5)'],
+                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.5).get('rgba')]
+                ]
+            }
+        }
+    },{
+        name: 'High Risk',
+        data: dataRed ,
+        marker: {
+            fillColor: {
+                radialGradient: { cx: 0.4, cy: 0.3, r: 0.7 },
+                stops: [
+                    [0, 'rgba(255,255,255,0.5)'],
+                    [1, 'rgba(164,38,101,0.5)']
+                ]
+            }
+        }
+    } ]
+
+});
+    }
+function getDateOfWeek(weekNumber,year){
+   var dt = new Date(year, 0, 2+((weekNumber-1)*7));
+   
+        var m_names = new Array("Jan", "Feb", "Mar", 
+        "Apr", "May", "Jun", "Jul", "Aug", "Sep", 
+        "Oct", "Nov", "Dec");
+        var curr_date = dt.getDate();
+        var curr_month = dt.getMonth();
+        var curr_year = dt.getFullYear();
+        return   m_names[curr_month] + " " +curr_date
+        + ", " + curr_year;
+}
+    </script>
+</apex:page>

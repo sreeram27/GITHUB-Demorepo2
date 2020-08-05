@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>sulochana@autorabit.com</contactEmail>
+    <label>Single Sign test</label>
+    <samlConfig>
+        <acsUrl>https://login.salesforce.com?so=00D36000000HFjN</acsUrl>
+        <encryptionType>AES_128</encryptionType>
+        <entityUrl>https://sa1ml.salesforce.com</entityUrl>
+        <issuer>https://autorabit-test.my.salesforce.com</issuer>
+        <samlNameIdFormat>Unspecified</samlNameIdFormat>
+        <samlSubjectType>FederationId</samlSubjectType>
+    </samlConfig>
+</ConnectedApp>

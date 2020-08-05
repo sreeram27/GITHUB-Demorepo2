@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>divya.t@autorabit.com</email>
+    <name>Round Robin Queue</name>
+    <queueMembers>
+        <users>
+            <user>justin.d@autorabit.com</user>
+            <user>kendrick.c@autorabit.com</user>
+            <user>mike.m@autorabit.com</user>
+            <user>mukesh.k@autorabit.com.sfdc</user>
+            <user>nai.s@autorabit.com.sfdc</user>
+            <user>nick.g@autorabit.com.sfdc</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

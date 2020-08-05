@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Niveau de prix d’article de panier CC</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Niveaux de prix d’article de panier CC</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nom de niveau de prix d’article de panie</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

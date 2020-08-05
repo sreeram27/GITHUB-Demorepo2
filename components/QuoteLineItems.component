@@ -1,0 +1,51 @@
+<apex:component controller="QuoteLineItemCtrl" access="global">
+    <apex:attribute name="QuoteId" type="Id" description="Quote Id" assignTo="{!qId}"/>
+    <style>
+        #quote-line-item-table{
+            border-collapse:collapse;
+            border: 1px solid #767676;
+        }
+        #quote-line-item-table thead{
+            color:#fff;
+        }    
+        #quote-line-item-table tbody{
+            color:#000;
+        }             
+        #quote-line-item-table td,#quote-line-item-table th{
+            padding:5px;
+            border: 1px solid #767676;
+        }
+    </style>
+    <table width="100%" cellpadding='1' id="quote-line-item-table">
+        <thead>
+            <tr bgcolor="#767676">
+            <th>Product</th>
+            <th>Date</th>
+            <th>Sales Price</th>
+            <th>List Price</th>           
+            <th>Quantity</th>
+            <th># of Months</th>
+            <th>Discount(%)</th>
+            <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        <apex:repeat value="{!QuoteItemsList}" var="prod">
+            <tr>
+            <td>{!prod.product2.Name}</td>
+            <td>
+            <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                <apex:param value="{!prod.CreatedDate}" /> 
+            </apex:outputText>
+            </td>           
+            <td>${!prod.UnitPrice}</td>
+             <td>${!prod.ListPrice}</td>
+            <td>{!prod.Quantity}</td>
+            <td>{!prod.of_Months__c}</td>
+            <td>{!prod.Discount_Given__c}</td>
+            <td>{!prod.Total_Amount__c}</td>
+            </tr>
+        </apex:repeat>
+        </tbody>
+    </table>
+</apex:component>

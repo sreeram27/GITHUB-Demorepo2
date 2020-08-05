@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>AutoRABIT VIP Party at DF17 on Nov.6th|7PM V1</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AutoRABIT VIP Party at DF17 on Nov.6th|7PM V1 Contact</name>
+    <style>none</style>
+    <subject>AutoRABIT VIP Party at DF17 on Nov.6th|7PM</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+Hope you are well.
+
+I wanted to personally invite you to AutoRABIT VIP Party at DF17 on Nov.6th|7PM Pl join us on Monday evening for cocktails and food overlooking the city, and networking with fellow IT execs and the Salesforce DX team.
+
+I would love to save you a seat and therefore can you RSVP back to this email?
+
+Thank you for your time.
+
+Regards,
+Navneeth Rokalla
+Account Management
+Phone US : +1 925 218 1947 |</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,6 @@
+Hi,
+
+A new case is created and assigned to you.
+Case #:{!Case.CaseNumber}
+Subject : {!Case.Subject}
+{!Case.Link}.

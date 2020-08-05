@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sales Order Form Approved</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>New_Logo_AutorRABIT</letterhead>
+    <name>Sales Order Form ApprovedHTML</name>
+    <style>freeForm</style>
+    <subject>Sales Order Form Approved</subject>
+    <textOnly>Dear {!Sales_Order_Form__c.OwnerFirstName},
+
+{!Sales_Order_Form__c.Name} Sales Order Form has been APPROVED.
+
+Created By: {!Sales_Order_Form__c.CreatedBy}
+Client Name : {!Sales_Order_Form__c.Client_Name__c}
+Opportunity: {!Sales_Order_Form__c.Opportunity__c}
+
+Thank you.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

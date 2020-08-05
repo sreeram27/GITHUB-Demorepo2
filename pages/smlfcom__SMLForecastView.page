@@ -1,0 +1,294 @@
+<apex:page controller="smlfcom.SMLForecastController" sidebar="false" showHeader="false" standardStylesheets="false" readOnly="true" applyBodyTag="false" applyHtmlTag="false">
+
+    <title>SML Forecast View</title>
+    <style>
+    .highcharts-credits {
+    display: none;
+    }
+    </style>
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+         <apex:form >
+            <apex:includeScript value="https://code.highcharts.com/highcharts.js"/>
+            <apex:includeScript value="https://code.highcharts.com/modules/exporting.js"/>
+            <apex:includeScript value="https://code.highcharts.com/highcharts-more.js"/>
+            <apex:includeScript value="https://code.highcharts.com/modules/heatmap.js"/>
+                <div class="page-header">
+                    <div class="container-bs">
+                        <div class="title" data-step="1" data-intro="This screen shows the predicted sales forecast (demo data)">
+                            <h1 class="title">Forecast: </h1>
+                            <h2>{!pageLabel}</h2>
+                        </div><!-- /.title -->
+                    </div>
+                </div><!-- /.page-header -->
+                <div class="container-bs">
+                <div class="page-container">
+                <div class="sidebar">
+                    <apex:outputpanel rendered="{!isForecastVisible}">
+                        <div data-step="2" data-intro="Select Filter Type and Filter Value fields to view forecast for a particular business dimension">
+                        <div class="form-group">
+                            <label for="dim_type_select">Filter Type</label>
+                            <select id="dim_type_select" class="item form-control" onchange="onChange_DimType()"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dim_value_select">Filter Value</label>
+                            <select id="dim_value_select" class="item form-control" onchange="onChange_DimValue()"></select>
+                        </div>
+                        </div>
+                        <hr/>
+                        <div class="controls flex">
+                            <div class="left">
+                                <a class="btn-bs btn-sm btn-default" href="javascript:resetWhatIfAnalysis()">Reset</a>
+                            </div>
+                            <div class="right">
+                                <a class="btn-bs btn-sm btn-primary" href="javascript:setWhatIfAnalysis()">Refresh</a>
+                            </div>
+                        </div>
+                    </apex:outputpanel>
+
+                </div>
+
+                <div class="content">
+                    
+                    <div class="stats">
+                        <div class="item">
+                            <div class="title">This Quarter</div>
+                            <div class="result">${!amountVal_ThisQtr}M</div>
+                        </div>
+                        <div class="item">
+                            <div class="title">Next Quarter</div>
+                            <div class="result">${!amountVal_NextQtr}M</div>
+                        </div>
+                    </div><!-- /.stats -->
+                    <div class="flex-row two-col" style="margin-bottom:10px">
+                      <div class="form-group"></div>
+                      <div class="form-group">
+                        <a href="javascript:openSliderViewModal()" class="btn-blank" style="float: right;"><img src="{!URLFOR($Resource.SMLTemplateV2, 'img/icons/insights.svg')}" /></a>
+                      </div>
+                    </div>
+
+                    <apex:outputpanel rendered="{!!isForecastVisible}">
+                         <p class="lead">You do not have permission on this. Please contact your administrator for the same.</p>
+                    </apex:outputpanel>
+                    <apex:outputpanel rendered="{!isForecastVisible}">
+                        <div id="forecastChart" data-step="3" data-intro="Forecast chart with predicted numbers appearing in blue"></div>
+                    </apex:outputpanel>
+                </div>
+
+                <apex:outputPanel rendered="{!fData != null}">
+                    <script>
+                    $(function(){
+                        init();
+                    });
+                    </script>
+                </apex:outputPanel>
+            </div>
+            </div>
+            <apex:outputPanel id="modalPanel">
+                    <div class="modal fade" id="sliderModal" tabindex="-1" role="dialog" aria-labelledby="sliderModalLabel">
+                    <apex:outputPanel id="modPanel">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <center>
+                                <h3>Insights</h3>
+                            </center>
+                        </div>
+                        <div class="modal-body" style="height: 300px"> 
+                            <div class="swiper-container">
+                              <div class="swiper-wrapper" id="swiperbody">
+                                  <apex:repeat value="{!sliderTexts}" var="data">
+                                     <div class="swiper-slide"><apex:outputText value="{!data}" escape="false"/></div> 
+                                  </apex:repeat> 
+                              </div>
+                              <div class="swiper-pagination"></div>
+                
+                              <div class="swiper-button-next"></div>
+                              <div class="swiper-button-prev"></div>
+                            </div>
+                        </div> 
+                    </div>
+                    </div>  
+                    <script type="text/javascript">
+                        var swiper = new Swiper('.swiper-container', {
+                                  pagination: '.swiper-pagination',
+                                  nextButton: '.swiper-button-next',
+                                  prevButton: '.swiper-button-prev',
+                                  slidesPerView: 1,
+                                  paginationClickable: true,
+                                  spaceBetween: 30, 
+                                  loop: true
+                     });
+                    </script>                  
+                    </apex:outputPanel> 
+                    </div>
+                 </apex:outputPanel>
+                 <apex:actionFunction name="showModal" rerender="modPanel" status="renderingStatus" />
+           </apex:form>
+        </apex:define>
+    </apex:composition>
+
+
+    <script>
+    var _forecastChart = null;
+    var jsData ='{!JSENCODE(fData_JSON)}';
+    var forecastData = JSON.parse(jsData);
+    console.log('********'+jsData);
+    var dimType_Filter = '';
+    var dimValue_Filter = '';
+    var forecastAmountMultiplier = 1;
+    
+    function init(){
+        $('#dim_type_select').empty();
+        $('#dim_type_select').append("<option value=''></option>");
+        $.each(forecastData.listOfDimType, function(index, value){
+            $('#dim_type_select').append("<option value='"+value+"'>"+value+"</option>");
+        });
+        $('#dim_type_select').val('Aggregate');
+        onChange_DimType();
+    }
+
+    function onChange_DimType(){
+        dimType_Filter = $('#dim_type_select').val();
+        $('#dim_value_select').empty();
+        $('#dim_value_select').val('');
+        if(dimType_Filter != ''){
+            $('#dim_value_select').empty();
+            $.each(forecastData.mapOfDimTypeAndSetofValues[dimType_Filter], function(index, value){
+                $('#dim_value_select').append("<option value='"+value+"'>"+value+"</option>");
+            });
+            onChange_DimValue();
+        }else{
+            dimValue_Filter = '';
+            openForecastChart();
+        }
+    }
+
+    function onChange_DimValue(){
+        dimValue_Filter = $('#dim_value_select').val();
+        openForecastChart();
+    }
+
+    function setWhatIfAnalysis(){
+        forecastAmountMultiplier += 0.1;
+        openForecastChart();
+    }
+
+    function resetWhatIfAnalysis(){
+        forecastAmountMultiplier = 1;
+        $(".range-control").val("50");
+        openForecastChart();
+    }
+
+    function openForecastChart(){
+        var categoriesArray = [];
+        var actualArray = [];
+        var forecastedArray = [];
+        
+        $.each(forecastData.listOfForecastValues, function(index, value){
+            //filter check
+            if(dimValue_Filter != '' && value.dimValue != dimValue_Filter)
+                return true;
+
+            if(categoriesArray.indexOf(value.dateVal) < 0)
+                categoriesArray.push(value.dateVal);
+
+            if(value.forecastType == 'Actuals'){
+                actualArray.push(getAmount(value.amount, false));
+                forecastedArray.push('');
+            }else if(value.forecastType == 'Forecast'){
+                forecastedArray.push(getAmount(value.amount, true));
+                actualArray.push('');
+            }
+        });
+     
+        if(_forecastChart == null)
+            createChart(categoriesArray, actualArray, forecastedArray);
+        else
+            updateChartData(categoriesArray, actualArray, forecastedArray);
+
+    }
+
+    function openSliderViewModal(){
+           $("#sliderModal").modal('show');
+           showModal();
+    }
+
+    function createChart(categoriesArray, actualArray, forecastedArray){
+        $('#forecastChart').highcharts({
+            chart: {
+                height: 600,
+                marginTop: 80,
+                spacingTop: 5,
+                spacingBottom: 20,
+                spacingLeft: 20,
+                spacingRight: 20
+            },
+            tooltip: {
+               enabled:true,
+               formatter: function() {
+                 return Highcharts.dateFormat('%b %y', this.x) +
+                 '</b> Amount is <b>' + this.y + '</b>';
+               }   
+            },
+            xAxis: {
+                categories: categoriesArray,
+                tickInterval: 3,
+               // type:'datetime', 
+                labels: {
+                    formatter: function() {
+                        return Highcharts.dateFormat('%b %y', this.value);
+                    }
+                }
+            },
+            title: {
+                text: ''
+            },
+            series: [{
+                type: 'line',
+                name: 'Actuals',
+                data: actualArray,
+                marker: {
+                    enabled: false
+                },
+                states: {
+                    hover: {
+                        lineWidth: 0
+                    }
+                },
+                color: "#FF5500"
+            },{
+                type: 'line',
+                name: 'Forecast',
+                data: forecastedArray,
+                marker: {
+                    enabled: false
+                },
+                states: {
+                    hover: {
+                        lineWidth: 0
+                    }
+                },
+                color: "#0088FF"
+            }]
+        });
+
+        _forecastChart = $('#forecastChart').highcharts();
+    }
+
+    function updateChartData(categoriesArray, actualArray, forecastedArray){
+       console.log(categoriesArray);
+        _forecastChart.xAxis[0].update( {categories : categoriesArray}, false);
+        _forecastChart.series[0].update({ data : actualArray},false);
+        _forecastChart.series[1].update({ data : forecastedArray}, false);
+        _forecastChart.redraw()
+    }
+
+    function getAmount(amountData, isForecast){
+        var returnVal = isForecast == true ? parseFloat(amountData) * forecastAmountMultiplier : parseFloat(amountData);
+        return returnVal < 0 ? 0 : returnVal;
+    }
+
+    </script>
+</apex:page>

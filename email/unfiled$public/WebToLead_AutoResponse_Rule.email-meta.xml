@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>WebToLead AutoResponse Rule</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>WebToLead AutoResponse Rule</name>
+    <style>none</style>
+    <subject>Thank you for your interest in AutoRABIT!</subject>
+    <textOnly>Dear {!Lead.Name},
+
+Thank you for your interest in AutoRABIT. We have received your request and one of our sales team members will contact you shortly.
+
+Meanwhile, get some valuable insights on Salesforce Release Management Best Practices by subscribing to our blog for regular updates on offers and topics that are of interest to you. You can also visit our other resources mentioned below.
+
+Regards,
+AutoRABIT</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

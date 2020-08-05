@@ -129,6 +129,21 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>AutorabitExtId__c</fullName>
+        <description>External Id created by AutoRABIT</description>
+        <externalId>true</externalId>
+        <label>AutorabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
         <fullName>IsPublished</fullName>
         <trackHistory>true</trackHistory>
     </fields>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank_Personal_Email_Template</letterhead>
+    <name>NY Thank Email</name>
+    <style>freeForm</style>
+    <subject>World Tour NY AutoRABIT Follow up</subject>
+    <textOnly>Dear {!Lead.FirstName},
+
+
+We hope you had a great World Tour NY experience.  It was a pleasure to meet you at the event.  I want to personally thank you for your support of making our day an awesome one as we had a huge positive response for AutoRABIT.
+
+
+Now that we’ve all had a week to recover from the event, we welcome the opportunity to schedule a personalized discussion with you and the {!Lead.Company} Salesforce development team for next steps with AutoRABIT.
+
+
+I’ve included a Link for Data Sheet with details on the features and benefits along with a Link for Implementation Questionnaire which will give us some insights on your environment, current challenges and goals you would like to achieve with AutoRABIT.
+
+
+Let us know a couple of calendar slots you would prefer for next steps.
+
+
+Thank you for your time and consideration.
+
+
+Brad Benz
+
+Sr. Business Development Manager
+
+702-234-6800 – Mobile
+
+Brad.b@autorabit.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

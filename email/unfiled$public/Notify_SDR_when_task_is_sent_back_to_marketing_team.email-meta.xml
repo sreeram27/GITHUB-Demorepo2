@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use this when a DC or Demo task is sent back to marketing</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>AutoRABIT_LinkedIn_Banner</letterhead>
+    <name>Notify SDR when task is sent back to marketing team</name>
+    <style>formalLetter</style>
+    <subject>Discovery Call/Demo sent back to marketing</subject>
+    <textOnly>Dear {!Task.SDR_Name__c},
+The scheduled Discovery Call/Demo task had been sent back to marketing. Please check to see if any action is needed.
+
+For more details, click the following link: {!Task.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

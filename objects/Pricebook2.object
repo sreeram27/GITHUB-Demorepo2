@@ -130,6 +130,55 @@
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>ReadSelect</externalSharingModel>
     <fields>
+        <fullName>AutorabitExtId__c</fullName>
+        <description>External Id created by AutoRABIT</description>
+        <externalId>true</externalId>
+        <label>AutorabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomCreatedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CustomCreatedBy</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Price_Books</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomCreatedDate__c</fullName>
+        <externalId>false</externalId>
+        <label>CustomCreatedDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CustomModifiedBy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CustomModifiedBy</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Price_Books1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomModifiedDate__c</fullName>
+        <externalId>false</externalId>
+        <label>CustomModifiedDate</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>Description</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -145,6 +194,16 @@
         <fullName>Name</fullName>
         <trackHistory>false</trackHistory>
     </fields>
+    <listViews>
+        <fullName>All_Price_Books</fullName>
+        <columns>PRICEBOOK2.IS_ACTIVE</columns>
+        <columns>PRICEBOOK2.NAME</columns>
+        <columns>PRICEBOOK2.DESCRIPTION</columns>
+        <columns>PRICEBOOK2.LAST_UPDATE</columns>
+        <columns>PRICEBOOK2.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Price Books</label>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>PRICEBOOK2.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>PRICEBOOK2.DESCRIPTION</customTabListAdditionalFields>

@@ -1,0 +1,360 @@
+<apex:page id="page" controller="smlfcom.SMLWhatIfController" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" readOnly="true" applyBodyTag="false" applyHtmlTag="false">
+    <title>SML Forecast Changes</title>
+    <style>
+        .flex-row {
+            display: initial !important;
+        }
+
+        .range-slider {
+            margin: 60px 0 0 0%;
+        }
+
+        .range-slider {
+            width: 100%;
+        }
+
+        .range-slider__range {
+            -webkit-appearance: none;
+            width: calc(100% - (73px));
+            height: 10px;
+            border-radius: 5px;
+            background: #d7dcdf;
+            outline: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .range-slider__range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #2c3e50;
+            cursor: pointer;
+            -webkit-transition: background .15s ease-in-out;
+            transition: background .15s ease-in-out;
+        }
+
+        .range-slider__range::-webkit-slider-thumb:hover {
+            background: #1abc9c;
+        }
+
+        .range-slider__range:active::-webkit-slider-thumb {
+            background: #1abc9c;
+        }
+
+        .range-slider__range::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border: 0;
+            border-radius: 50%;
+            background: #2c3e50;
+            cursor: pointer;
+            -webkit-transition: background .15s ease-in-out;
+            transition: background .15s ease-in-out;
+        }
+
+        .range-slider__range::-moz-range-thumb:hover {
+            background: #1abc9c;
+        }
+
+        .range-slider__range:active::-moz-range-thumb {
+            background: #1abc9c;
+        }
+
+        .range-slider__value {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            color: #fff;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 3px;
+            background: #2c3e50;
+            padding: 5px 10px;
+            margin-left: 8px;
+        }
+
+        .range-slider__value:after {
+            position: absolute;
+            top: 8px;
+            left: -7px;
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-right: 7px solid #2c3e50;
+            border-bottom: 7px solid transparent;
+            content: '';
+        }
+
+         ::-moz-range-track {
+            background: #d7dcdf;
+            border: 0;
+        }
+
+        input::-moz-focus-inner,
+        input::-moz-focus-outer {
+            border: 0;
+        }
+
+        .submitButton {
+            color: white !important;
+        }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #3e8e41;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* Change color of dropdown links on hover */
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+
+        .show {
+            display: block;
+        }
+    </style>
+
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <apex:form >
+                <div class="page-header">
+                    <div class="container-bs">
+                        <div class="title" data-step="1" data-intro="Allows users to change variables to see its impact on forecasted values (demo data)">
+                            <h1>Forecast:  </h1>
+                            <h2>{!pageLabel}</h2>
+                        </div>
+                        <!-- /.title -->
+                    </div>
+                </div>
+
+                <div class="container-bs">
+                    <div class="page-container">
+                        <div class="sidebar">
+                            <apex:outputpanel id="sideBar">
+                                <div data-step="2" data-intro="Select Filter Type and Filter Value fields to view forecast for a particular business dimension">
+                                    <div class="form-group">
+                                        <apex:outputPanel layout="none" rendered="{!smlFilter.textFilterList != null && smlFilter.textFilterList.size > 0}">
+                                            <apex:repeat value="{!smlFilter.textFilterList }" var="filterField">
+                                                <div class="form-group">
+                                                    <label>{!filterField.fieldLabel}</label>
+                                                    <apex:selectList value="{!filterField.selectedmapValue[filterField.fieldAPIName]}" onChange="resetValue(this.options[this.selectedIndex].value+'#{!filterField.fieldAPIName}')" multiselect="false" size="1" styleClass="filterField form-control custom-select {!filterField.isFieldLinked} {!filterField.fieldAPIName}">
+                                                        <apex:selectOption itemLabel="None" itemValue="All"></apex:selectOption>
+                                                        <apex:selectOptions value="{!filterField.fieldValues}"></apex:selectOptions>
+                                                    </apex:selectList>
+
+                                                </div>
+                                            </apex:repeat>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="controls flex">
+                                    <div class="left">
+                                        <a class="btn-bs btn-sm btn-default" href="javascript:resetWhatIfAnalysis()">Reset</a>
+                                    </div>
+                                    <div class="right">
+                                        <a class="btn-bs btn-sm btn-primary" href="javascript:refresh()">Refresh</a>
+                                    </div>
+                                </div>
+                            </apex:outputpanel>
+                        </div>
+
+                        <div class="content">
+                            <div class="flex-row one-col" style="margin-bottom:30px">
+                                <div class="stats" style="margin: 0 auto">
+                                    <div class="item">
+                                        <div class="result" style="font-size: 20px;">Predicted Next Quarter</div>
+                                    </div>
+                                    <div class="item">
+                                        <div id="amountValue" class="result"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-row one-col">
+                                <div style="margin: 50px;">
+                                    <center>
+                                        <div class="flex-row" style="margin-bottom:10px" data-step="2" data-intro="Increase or decrease values here and click on Recalculate to see new forecasted value">
+                                            <div class="form-group">
+                                                <div class="range-slider">
+                                                    <div class="row">
+                                                        <div class="col-sm-3">
+                                                            <font style="font-size: large;"> Percentage Wins </font>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <center>
+                                                                <div id="sliderVal" class="sliderVal">{!storeObj.percent_wins__c}</div>
+                                                            </center>
+                                                            <input class="range-slider__range" type="range" min="{!storeObj.percent_wins__c * 0.2}" max="{!storeObj.percent_wins__c * 2}" step="1" id="Percentage_Wins" value="{!storeObj.percent_wins__c}" />
+                                                            <!-- <input class="form-control" type="number" id="Percentage_Wins" value="{!storeObj.percent_wins__c}" min="1" />-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-row " style="margin-bottom:10px">
+                                            <div class="form-group">
+                                                <div class="range-slider">
+                                                    <div class="row">
+                                                        <div class="col-sm-3">
+                                                            <font style="font-size: large;"> Average Deal Amount </font>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <center>
+                                                                <div id="sliderVal" class="sliderVal">{!storeObj.Avg_deal_amount__c }</div>
+                                                            </center>
+                                                            <input class="range-slider__range" type="range" min="{!(storeObj.Avg_deal_amount__c * 0.2)}" max="{!(storeObj.Avg_deal_amount__c * 2)}" step="1" id="Avg_Dealamt" value="{!storeObj.Avg_deal_amount__c}" />
+                                                            <!--     <input class="form-control" type="number" id="Avg_Dealamt" value="{!storeObj.Avg_deal_amount__c}" min="1" />-->
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-row " style="margin-bottom:10px">
+                                            <div class="form-group">
+                                                <div class="range-slider">
+                                                    <div class="row">
+                                                        <div class="col-sm-3">
+                                                            <font style="font-size: large;"> Number Of Sales Reps </font>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <center>
+                                                                <div id="sliderVal" class="sliderVal">{!storeObj.Num_sales_reps__c}</div>
+                                                            </center>
+                                                            <input class="range-slider__range" type="range" min="{!(storeObj.Num_sales_reps__c* 0.2)}" max="{!(storeObj.Num_sales_reps__c* 2)}" step="1" id="Sales_Reps" value="{!storeObj.Num_sales_reps__c}" />
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-row" style="margin-bottom:10px">
+                                            <div class="form-group">
+                                                <div class="range-slider">
+                                                    <div class="row">
+                                                        <div class="col-sm-3">
+                                                            <font style="font-size: large;"> Number Of Opportunities </font>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <center>
+                                                                <div id="sliderVal" class="sliderVal">{!storeObj.Num_of_opps__c}</div>
+                                                            </center>
+                                                            <input class="range-slider__range" type="range" min="{!(storeObj.Num_of_opps__c* 0.2)}" max="{!(storeObj.Num_of_opps__c* 2)}" step="1" id="Opps_No" value="{!storeObj.Num_of_opps__c}" />
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-row " style="margin-bottom:10px">
+                                            <div class="form-group">
+                                                <div class="range-slider">
+                                                    <div class="row">
+                                                        <div class="col-sm-3">
+                                                            <font style="font-size: large;"> Average Days To Close </font>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <center>
+                                                                <div id="sliderVal" class="sliderVal">{!storeObj.Avg_days_to_close__c}</div>
+                                                            </center>
+                                                            <input class="range-slider__range" type="range" min="{!(storeObj.Avg_days_to_close__c* 0.2)}" max="{!(storeObj.Avg_days_to_close__c* 2)}" step="1" id="Avgdays_Close" value="{!storeObj.Avg_days_to_close__c}" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+
+                            <div class="controls flex">
+                                <div style="margin: 0 auto">
+                                    <a class="btn-bs btn-sm btn-primary submitButton" href="javascript:calculateForecast()">Re-calculate Forecast</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+    <apex:includeScript value="{!$Resource.smlfcom__rangeSlider}" />
+
+    <script>
+        var qtrAmt = '{!kpiInteger }';
+        qtrAmt = '$' + qtrAmt + 'M';
+        var content = $("#amountValue").append(qtrAmt);
+
+        function resetWhatIfAnalysis() {
+            location.reload();
+        }
+
+        function calculateForecast() {
+            var linearFormula = '{!JSENCODE(storeObj.smlfcom__linear_regression_formula__c)}';
+            if (content) {
+                content.empty();
+            }
+            var percentWins = $("#Percentage_Wins").val();
+            linearFormula = linearFormula.replace("percent_wins__c", percentWins);
+            var avgDealAmt = $("#Avg_Dealamt").val();
+            var linearFormula = linearFormula.replace("avg_deal_amount__c", avgDealAmt);
+            var noOfSalesReps = $("#Sales_Reps").val();
+            var linearFormula = linearFormula.replace("num_sales_reps__c", noOfSalesReps);
+            var noOfOpps = $("#Opps_No").val();
+            var linearFormula = linearFormula.replace("num_opps__c", noOfOpps);
+            var avgCloseDays = $("#Avgdays_Close").val();
+            var linearFormula = linearFormula.replace("avg_days_to_close__c", avgCloseDays);
+            var fore_Amount = eval(linearFormula);
+            fore_Amount = (fore_Amount / 1000000).toFixed(2);
+            fore_Amount = '$' + fore_Amount + 'M';
+            content = $("#amountValue").append(fore_Amount);
+
+        }
+        $(document).ready(function() {
+            $('input[type="range"]').rangeslider();
+            $('input[type="range"]').change(function() {
+                var sliderVal = parseInt($(this).val());
+                // sliderVal = sliderVal.toFixed(0);
+                $(this).siblings().find("#sliderVal").html(sliderVal);
+            });
+        });
+    </script>
+</apex:page>

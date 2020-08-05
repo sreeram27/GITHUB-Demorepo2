@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>WebToLead AutoResponse Rule for Webinar</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>WebToLead AutoResponse Rule_ Webinar</name>
+    <style>none</style>
+    <subject>Thank you for registering</subject>
+    <textOnly>Untitled Document
+
+Dear {!Lead.Name},
+
+Thank you for registering to attend this upcoming live webinar.
+
+Meanwhile, get some valuable insights on Salesforce Release Management Best Practices by subscribing to our blog for regular updates on offers and topics that are of interest to you. You can also visit our other resources mentioned below.
+
+
+Using AutoRABIT is very simple and convenient. Check it out here
+
+
+We look forward to your participation in this upcoming event. If you want to make sure your system is all set to view the webinar prior to go-live, you can  test your system now.
+
+
+Download Insights for Your Business
+
+Data Sheet    White Paper  Case Study
+
+Follow Us
+
+CONTACT US: 5700, Stoneridge Mall Rd. Suite# 370, Pleasanton, CA 94588.
+Phone:+1 925 500 1004        |             Email: info@autorabit.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

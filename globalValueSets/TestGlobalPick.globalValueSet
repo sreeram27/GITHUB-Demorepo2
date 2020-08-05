@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Testing the values</fullName>
+        <default>false</default>
+        <label>Testing the values</label>
+    </customValue>
+    <customValue>
+        <fullName>Super</fullName>
+        <default>false</default>
+        <label>Super</label>
+    </customValue>
+    <customValue>
+        <fullName>Normal</fullName>
+        <default>false</default>
+        <label>Normal</label>
+    </customValue>
+    <customValue>
+        <fullName>Urgent</fullName>
+        <default>false</default>
+        <label>Urgent</label>
+    </customValue>
+    <customValue>
+        <fullName>Lower</fullName>
+        <default>false</default>
+        <label>Lower</label>
+    </customValue>
+    <masterLabel>TestGlobalPick</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

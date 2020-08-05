@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Paris WT 16</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank_Personal_Email_Template</letterhead>
+    <name>Paris WT 16</name>
+    <style>freeForm</style>
+    <subject>AutoRABIT at the Salesforce World Tour Paris</subject>
+    <textOnly>{!Lead.FirstName},
+
+Hope all is well. The Salesforce World Tour Paris is almost upon us(Thursday, June 23.2016). AutoRABIT is a sponsor and exhibitor this year. Come in and visit us at our booth to learn about all of our exciting product features. It would be an honor to have you join us at our booth for a friendly chat.
+
+We will be in town from the 20th to the 24th and it would be great to meet you sometime during the week if you are not available to meet us at our booth. We would be glad to come by and say hi to at your office.
+
+We are conducting discovery sessions and we would be glad to offer a 1hr ‘Express’ Discovery Session, during which we would discuss your CI /release management needs, goals and later provide an Audit report with recommendations along with best practices.
+
+Please let us your availability and we look forward to seeing you.
+
+https://www.salesforce.com/fr/events/details/paris/
+
+
+Sincerely,
+Navneeth Rokalla|Phone : +1 925 218 1947</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Services_Request_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Services_Request_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>ARM_Functionality__c</fullName>
+        <externalId>false</externalId>
+        <label>ARM Functionality</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AR_Test_Automation_Framework_TAF__c</fullName>
+        <externalId>false</externalId>
+        <label>AR Test Automation Framework (TAF)</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Account_Executive__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Owner.FirstName + &apos; &apos; + Opportunity__r.Account.Owner.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Executive</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Services Request</relationshipLabel>
+        <relationshipName>Services_Request</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Notes</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Salesforce_DevOps_MaturityLevel__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Salesforce DevOps MaturityLevel</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Beginner</fullName>
+                    <default>false</default>
+                    <label>1 - Beginner</label>
+                </value>
+                <value>
+                    <fullName>2 - Novice</fullName>
+                    <default>false</default>
+                    <label>2 - Novice</label>
+                </value>
+                <value>
+                    <fullName>3 - Practitioner</fullName>
+                    <default>false</default>
+                    <label>3 - Practitioner</label>
+                </value>
+                <value>
+                    <fullName>4 - Leader</fullName>
+                    <default>false</default>
+                    <label>4 - Leader</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Data_Loader_Functionality__c</fullName>
+        <externalId>false</externalId>
+        <label>Data Loader Functionality</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Discounted_Services_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Discounted Services Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Existing_Test_Environment__c</fullName>
+        <externalId>false</externalId>
+        <label>Existing Test Environment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Geography__c</fullName>
+        <externalId>false</externalId>
+        <label>Geography</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Americas</fullName>
+                    <default>false</default>
+                    <label>Americas</label>
+                </value>
+                <value>
+                    <fullName>EMEA</fullName>
+                    <default>false</default>
+                    <label>EMEA</label>
+                </value>
+                <value>
+                    <fullName>APAC</fullName>
+                    <default>false</default>
+                    <label>APAC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>High_Urgency_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>High Urgency Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Integrations__c</fullName>
+        <externalId>false</externalId>
+        <label>Integrations</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Test Automation Integration</fullName>
+                    <default>false</default>
+                    <label>Test Automation Integration</label>
+                </value>
+                <value>
+                    <fullName>nCino Integration</fullName>
+                    <default>false</default>
+                    <label>nCino Integration</label>
+                </value>
+                <value>
+                    <fullName>Vlocity Integration</fullName>
+                    <default>false</default>
+                    <label>Vlocity Integration</label>
+                </value>
+                <value>
+                    <fullName>Provar Integration</fullName>
+                    <default>false</default>
+                    <label>Provar Integration</label>
+                </value>
+                <value>
+                    <fullName>Other (Detail in Notes)</fullName>
+                    <default>false</default>
+                    <label>Other (Detail in Notes)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Level_of_Partner_Involvement__c</fullName>
+        <externalId>false</externalId>
+        <label>Level of Partner Involvement</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Partner_Involved_2__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Leading the Engagement</fullName>
+                    <default>false</default>
+                    <label>Leading the Engagement</label>
+                </value>
+                <value>
+                    <fullName>Keep Informed</fullName>
+                    <default>false</default>
+                    <label>Keep Informed</label>
+                </value>
+                <value>
+                    <fullName>Hands Off</fullName>
+                    <default>false</default>
+                    <label>Hands Off</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Leading the Engagement</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Keep Informed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Hands Off</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>List_Service_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>List Services Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Notes_to_Requestor__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes to Requestor</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_ARM_Subs__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Number_of_Product_Subscriptions__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of ARM Subs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Line_of_Business__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of Line of Business (Separate Items)</inlineHelpText>
+        <label>Number of Line of Business</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Orgs__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Orgs</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_VPN_Connections__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText># of VPN Connections</inlineHelpText>
+        <label>Number of VPN Connections</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Vault_Subs__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.No_of_Product_Subs_Vault__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of Vault Subs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.OpportunityID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Owner.FirstName  &amp; &apos; &apos; &amp;  Opportunity__r.Owner.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Stage_at_Request__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Opportunity__r.StageName )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Stage at Request</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Opportunity_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Services Request</relationshipLabel>
+        <relationshipName>Services_Request</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Involved_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Involved</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Partner_Involved__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Opportunity__r.Partner__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Partner Involved</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partner_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Partner_Name_New__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Partner Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Presales_Architect__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Presales Architect</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Services_Request_SA</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Country__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remote_Access_Verification__c</fullName>
+        <externalId>false</externalId>
+        <label>Remote Access Verification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Request_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Type</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Budgetary Quote</fullName>
+                    <default>false</default>
+                    <label>Budgetary Quote</label>
+                </value>
+                <value>
+                    <fullName>ES Consultation/Scoping</fullName>
+                    <default>false</default>
+                    <label>ES Consultation/Scoping</label>
+                </value>
+                <value>
+                    <fullName>POC Assistance</fullName>
+                    <default>false</default>
+                    <label>POC Assistance</label>
+                </value>
+                <value>
+                    <fullName>SOW Document Required</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SOW Document Required</label>
+                </value>
+                <value>
+                    <fullName>SOW - Implementation Services</fullName>
+                    <default>false</default>
+                    <label>SOW - Implementation Services</label>
+                </value>
+                <value>
+                    <fullName>SOW - Managed Services</fullName>
+                    <default>false</default>
+                    <label>SOW - Managed Services</label>
+                </value>
+                <value>
+                    <fullName>SOW - POC</fullName>
+                    <default>false</default>
+                    <label>SOW - POC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Requested_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE( CreatedDate )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requested Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Requesting_Employee__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName +&apos; &apos; + CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requesting Employee</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SFDX__c</fullName>
+        <externalId>false</externalId>
+        <label>SFDX</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SR_Notes_and_Attachments__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://ap6.lightning.force.com/lightning/r/&quot;&amp;Id&amp;&quot;/related/CombinedAttachments/view&quot;, &quot;Click here to view/add&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SR Notes and Attachments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SR_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>SR Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>1 - New</fullName>
+                    <default>true</default>
+                    <label>1 - New</label>
+                </value>
+                <value>
+                    <fullName>2 - In Progress</fullName>
+                    <default>false</default>
+                    <label>2 - In Progress</label>
+                </value>
+                <value>
+                    <fullName>3 - Provided to Sales</fullName>
+                    <default>false</default>
+                    <label>3 - Provided to Sales</label>
+                </value>
+                <value>
+                    <fullName>4 - Revisions in Progress</fullName>
+                    <default>false</default>
+                    <label>4 - Revisions in Progress</label>
+                </value>
+                <value>
+                    <fullName>5 - Closed Won</fullName>
+                    <default>false</default>
+                    <label>5 - Closed Won</label>
+                </value>
+                <value>
+                    <fullName>6 - Closed Lost</fullName>
+                    <default>false</default>
+                    <label>6 - Closed Lost</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Not Started</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Upsell_Opportunities__c</fullName>
+        <externalId>false</externalId>
+        <label>Upsell Opportunities</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Urgency_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Urgency Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>1 - High</fullName>
+                    <default>false</default>
+                    <label>1 - High</label>
+                </value>
+                <value>
+                    <fullName>2 - Medium</fullName>
+                    <default>false</default>
+                    <label>2 - Medium</label>
+                </value>
+                <value>
+                    <fullName>3 - Low</fullName>
+                    <default>false</default>
+                    <label>3 - Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VPN_Connectivity__c</fullName>
+        <externalId>false</externalId>
+        <label>VPN Connectivity</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Vault_Functionality__c</fullName>
+        <externalId>false</externalId>
+        <label>Vault Functionality</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Services Request</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Requesting_Employee__c</columns>
+        <columns>SR_Status__c</columns>
+        <columns>Service_Hours__c</columns>
+        <columns>List_Service_Price__c</columns>
+        <columns>Discounted_Services_Price__c</columns>
+        <columns>Notes_to_Requestor__c</columns>
+        <columns>SR_Notes_and_Attachments__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>SR-{0000}</displayFormat>
+        <label>Services Request Number</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Services Request</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Request_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Requesting_Employee__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SR_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Service_Hours__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>List_Service_Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Discounted_Services_Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Notes_to_Requestor__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SR_Notes_and_Attachments__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Requesting_Employee__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Requesting_Employee__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>Requesting_Employee__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Request_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Requesting_Employee__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SR_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service_Hours__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>List_Service_Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Discounted_Services_Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Notes_to_Requestor__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SR_Notes_and_Attachments__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Mandate_High_Urgency_Reason</fullName>
+        <active>true</active>
+        <description>High Urgency Reason will be required when the &apos;Urgency Level&apos; is selected as &apos;High&apos;.</description>
+        <errorConditionFormula>AND(
+ISPICKVAL( Urgency_Level__c , &apos;High&apos;),
+ISBLANK(High_Urgency_Reason__c) 
+)</errorConditionFormula>
+        <errorMessage>Please enter the &apos;High Urgency Reason&apos; to save the record.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mandate_Services_Hours_and_Price_Fields</fullName>
+        <active>true</active>
+        <description>Mandate Service Details (ES Team to Update)
+Service Hours
+List Services Price
+Discounted Services Price</description>
+        <errorConditionFormula>AND ( ISPICKVAL( SR_Status__c , &apos;3 - Provided to Sales&apos;) ,  
+OR(
+ISBLANK( Service_Hours__c ),
+ISBLANK(List_Service_Price__c) , 
+ISBLANK( Discounted_Services_Price__c)
+)
+)</errorConditionFormula>
+        <errorMessage>&apos;Service Hours&apos;, &apos;List Service Price&apos;, and &apos;Discounted Services Price&apos; are required when &apos;SR Status&apos; is &apos;Provided to Sales&apos;. Please enter all the required fields to save the record.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>To_Mandate_Number_of_VPN_Connections</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( VPN_Connectivity__c, &apos;Yes&apos;),   ISBLANK(Number_of_VPN_Connections__c)
+)</errorConditionFormula>
+        <errorMessage>Please enter &apos;Number of VPN Connections&apos; since you have choosen &apos;VPN Connectivity&apos; as &apos;Yes&apos;.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

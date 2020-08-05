@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use this when a DC or Demo task is completed with create opportunity</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>AutoRABIT_LinkedIn_Banner</letterhead>
+    <name>DC or Demo Complete - Create Opportunity Email Notification</name>
+    <style>formalLetter</style>
+    <subject>Discovery Call/Demo Completed - Please create and associate opportunity to the task</subject>
+    <textOnly>Dear {!Task.Sales_Rep_Name__c},
+It has been 48 hours since Discovery Call/Demo task is completed. Gentle reminder to create opportunity and associate the opportunity with the task.
+
+For more details, click the following link: {!Task.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

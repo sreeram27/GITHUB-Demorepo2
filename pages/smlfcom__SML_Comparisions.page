@@ -1,0 +1,114 @@
+<apex:page controller="smlfcom.MyInsightController" sidebar="false" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+
+    <html>
+
+    <head>
+        <title>SML Outliers</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <style>
+            .carousel-inner > .item > img,
+            .carousel-inner > .item > a > img {
+                width: 70%;
+                margin: auto;
+            }
+            .carousel-control {
+                background-color : #ffffff;
+                color : #A42665;
+            }
+            .centerImage{
+              width: auto;
+              height: 700px;
+              max-height: 700px;
+            }
+            .carousel-inner {
+                overflow: visible;
+            }
+            .carousel-indicators .active {
+                background-color : #A42665; 
+            }
+            .carousel-indicators li {
+                border : 1px solid #A42665;
+            }
+            .carousel {
+              max-height: 750px;
+              min-height: 750px;
+              overflow: hidden;
+            
+            }
+            .myCaption{
+                position: absolute;
+                right: 10%;
+                top: 20px;
+                left: 10%;
+                z-index: 10;
+                text-align: center;            
+            }
+            .carousel-control.right1 {
+                right: 0;
+                left: auto;
+            }
+            .pclass {
+                margin-left: 60px;
+                margin-right: 60px;
+                word-wrap: break-word;
+            }
+        </style>
+    </head>
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+
+            <div class="container">
+                <br></br>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <apex:variable var="count" value="{!0}" /> 
+                        <apex:repeat value="{!insightsRecords}" var="slid">
+                            <li data-target="#myCarousel" data-slide-to="{!count}" class="slideLi"></li>
+                            <apex:variable var="count" value="{!count+1}" />
+                        </apex:repeat>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <apex:repeat value="{!insightsRecords}" var="slid">
+                            <div class="item">
+                                <img class="centerImage" src="{!$Resource.White}" alt="dfdf" width="460" height="345" />
+                                     <div class="myCaption" >
+                                     <h1><apex:outputText value="{!slid.smlfcom__Insight_Title__c}" escape="false" /></h1>
+                                <center>
+                                     <apex:outputText value="{!slid.smlfcom__Insight_HTML__c}" escape="false" />
+                                </center>
+                                    <hr/>
+                                   <P class="pclass">  <apex:outputText value="{!slid.smlfcom__Insight_Message__c}" escape="false" /></P>
+                                   </div>
+                            </div>
+                        </apex:repeat>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right1 carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </apex:define>
+    </apex:composition>
+    <script type="text/javascript">
+        $(document).ready(function() {
+             $( ".slideLi" ).first().addClass("active");$( ".item" ).first().addClass("active");
+            setTimeout(function(){ $('.carousel').carousel('pause'); $( ".slideLi" ).first().addClass("active");$( ".item" ).first().addClass("active");}, 3000);   
+        });
+        
+    </script>
+
+    </html>
+
+    <!--<apex:image url="{!URLFOR($Action.Attachment.Download, '00P90000011kM61')}" /> -->
+</apex:page>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>For users who need access to all of Brad&apos;s records</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Access to Brads records</label>
+    <license>Salesforce</license>
+</PermissionSet>

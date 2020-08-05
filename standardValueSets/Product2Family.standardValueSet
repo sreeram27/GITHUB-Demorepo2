@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <label>None</label>
+    </standardValue>
+    <standardValue>
+        <fullName>AutoRABIT</fullName>
+        <default>false</default>
+        <label>AutoRABIT</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Advisory Services</fullName>
+        <default>false</default>
+        <label>Advisory Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Vault</fullName>
+        <default>false</default>
+        <label>Vault</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MuleSoft</fullName>
+        <default>false</default>
+        <label>MuleSoft</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Professional Services</fullName>
+        <default>false</default>
+        <label>Professional Services</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Support</fullName>
+        <default>false</default>
+        <label>Support</label>
+    </standardValue>
+</StandardValueSet>

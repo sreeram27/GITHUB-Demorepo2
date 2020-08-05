@@ -1,0 +1,1121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The ZoomInfo object stores all Person and Company data for the associated Lead, Contact, or Account.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>zisf__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Associated account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Associated account.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>ZoomInfo</relationshipLabel>
+        <relationshipName>ZoomInfo_Records</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zisf__Calculated_Job_Function__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Inferred Job Function Based on the Title Input Parameter.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Inferred Job Function Based on the Title Input Parameter.</inlineHelpText>
+        <label>Calculated Job Function</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Calculated_Management_Level__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Inferred Management Level Based on Title Input Parameter.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Inferred Management Level Based on Title Input Parameter.</inlineHelpText>
+        <label>Calculated Management Level</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_City__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Company HQ city address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Company HQ city address.</inlineHelpText>
+        <label>Company City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Company HQ country address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Company HQ country address.</inlineHelpText>
+        <label>Company Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description of business.</inlineHelpText>
+        <label>Company Description</label>
+        <length>15000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Employee_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Employee count for Company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Employee count for Company.</inlineHelpText>
+        <label>Company Employee Count</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Employee_Range__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Employee Range for Company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Employee Range for Company.</inlineHelpText>
+        <label>Company Employee Range</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Fax__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Company HQ Fax number.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Company HQ Fax number.</inlineHelpText>
+        <label>Company Fax</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Industry__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Industry of Company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Industry of Company.</inlineHelpText>
+        <label>Company Industry</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Is_Defunct__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Flag to determine whether company is defunct.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Flag to determine whether company is defunct.</inlineHelpText>
+        <label>Company Is Defunct</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_NAICS_Codes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>List of NAICS codes associated with company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of NAICS codes associated with company.</inlineHelpText>
+        <label>Company NAICS Codes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of business.</inlineHelpText>
+        <label>Company Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Parent_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ZoomInfo ID of Parent company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ZoomInfo ID of Parent company.</inlineHelpText>
+        <label>Company Parent ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Parent_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of Parent company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Parent company.</inlineHelpText>
+        <label>Company Parent Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Company HQ phone.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Company HQ phone.</inlineHelpText>
+        <label>Company Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Ranking__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reported company rankings.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reported company rankings.</inlineHelpText>
+        <label>Company Ranking</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Revenue_Range__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Revenue range associated with Company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Revenue range associated with Company.</inlineHelpText>
+        <label>Company Revenue Range</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Revenue__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Revenue associated with Company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Revenue associated with Company.</inlineHelpText>
+        <label>Company Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_SIC_Codes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>List of SIC classification codes associated with company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of SIC classification codes associated with company.</inlineHelpText>
+        <label>Company SIC Codes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_State__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Company business state address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Company business state address.</inlineHelpText>
+        <label>Company State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Street__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Company HQ street address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Company HQ street address.</inlineHelpText>
+        <label>Company Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Ticker__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stock Ticker for publicly traded companies.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stock Ticker for publicly traded companies.</inlineHelpText>
+        <label>Company Ticker</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Ultimate_Parent_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ZoomInfo ID for Ultimate Parent company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ZoomInfo ID for Ultimate Parent company.</inlineHelpText>
+        <label>Company Ultimate Parent ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Ultimate_Parent_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of Ultimate parent of company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of Ultimate parent of company.</inlineHelpText>
+        <label>Company Ultimate Parent Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Website__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Corporate website associated with Company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Corporate website associated with Company.</inlineHelpText>
+        <label>Company Website</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>zisf__Company_Zip_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Company HQ Zip code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Company HQ Zip code.</inlineHelpText>
+        <label>Company Zip Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Confidence_Match_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Numeric value for confidence match score.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Numeric value for confidence match score (0-100).</inlineHelpText>
+        <label>Confidence Match Score</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Associated contact.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Associated contact.</inlineHelpText>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>ZoomInfo</relationshipLabel>
+        <relationshipName>ZoomInfo_Records</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zisf__Email_Matches_Company_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if ZoomInfo Recognizes a Match Between the Email Domain Input Value and Known Domains for the Company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if ZoomInfo Recognizes a Match Between the Email Domain Input Value and Known Domains for the Company.</inlineHelpText>
+        <label>Email Matches Company Name</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Email_Matches_Person_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the Email Address Contains the Person&apos;s Full Name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if the Email Address Contains the Person&apos;s Full Name.</inlineHelpText>
+        <label>Email Matches Person Name</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person Business Email Address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person Business Email Address.</inlineHelpText>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__First_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>First Name of Person.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>First Name of Person.</inlineHelpText>
+        <label>First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Free_Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if ZoomInfo Recognizes an Email Address Input Value as Managed by a Free or Temporary Email Service Provider.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if ZoomInfo Recognizes an Email Address Input Value as Managed by a Free or Temporary Email Service Provider.</inlineHelpText>
+        <label>Free Email</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Generic_Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if ZoomInfo Recognizes Email Input Value as a Role Based Username.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if ZoomInfo Recognizes Email Input Value as a Role Based Username.</inlineHelpText>
+        <label>Generic Email</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Job_Function__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person&apos;s organizational job function.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person&apos;s organizational job function.</inlineHelpText>
+        <label>Job Function</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Job_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person current  job title.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person current  job title.</inlineHelpText>
+        <label>Job Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Known_First_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if ZoomInfo Recognizes a First Name Input Value as a Known First Name Using Multiple Sources Including the U.S. Census.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if ZoomInfo Recognizes a First Name Input Value as a Known First Name Using Multiple Sources Including the U.S. Census.</inlineHelpText>
+        <label>Known First Name</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Known_Full_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if ZoomInfo Recognizes a First Name Input Value as a Known Full Name Using Multiple Sources Including the U.S. Census.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if ZoomInfo Recognizes a First Name Input Value as a Known Full Name Using Multiple Sources Including the U.S. Census.</inlineHelpText>
+        <label>Known Full Name</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Known_Last_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if ZoomInfo Recognizes a First Name Input Value as a Known Last Name Using Multiple Sources Including the U.S. Census.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if ZoomInfo Recognizes a First Name Input Value as a Known Last Name Using Multiple Sources Including the U.S. Census.</inlineHelpText>
+        <label>Known Last Name</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Last_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last Name of Person.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Name of Person.</inlineHelpText>
+        <label>Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Associated lead.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Associated lead.</inlineHelpText>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>ZoomInfo</relationshipLabel>
+        <relationshipName>ZoomInfo_Records</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zisf__Malformed_Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if ZoomInfo Recognizes and Email Address Input Value is Malformed and does not Follow the xyz@domain.com Syntax.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if ZoomInfo Recognizes and Email Address Input Value is Malformed and does not Follow the xyz@domain.com Syntax.</inlineHelpText>
+        <label>Malformed Email</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Management_Level__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person&apos;s management level.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person&apos;s management level.</inlineHelpText>
+        <label>Management Level</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Match_Inputs__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Values passed in to match to ZoomInfo data.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Values passed in to match to ZoomInfo data.</inlineHelpText>
+        <label>Match Inputs</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>zisf__Normalized_First_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ZoomInfo Normalized First Name Based on Input Value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ZoomInfo Normalized First Name Based on Input Value.</inlineHelpText>
+        <label>Normalized First Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Normalized_Last_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ZoomInfo Normalized Last Name Based on Input Value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ZoomInfo Normalized Last Name Based on Input Value.</inlineHelpText>
+        <label>Normalized Last Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_City__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person business city address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person business city address.</inlineHelpText>
+        <label>Person City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person business country address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person business country address.</inlineHelpText>
+        <label>Person Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Direct_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Person Direct Phone</label>
+        <length>64</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Education__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person educational history.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person educational history.</inlineHelpText>
+        <label>Person Education</label>
+        <length>15000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Employment_History__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person&apos;s employment history.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person&apos;s employment history.</inlineHelpText>
+        <label>Person Employment History</label>
+        <length>15000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Gender__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Person Gender</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Has_Moved__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates ZoomInfo Recognizes the Person Company Input Value does not match ZoomInfo Current Company but does Match Known Employment History.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates ZoomInfo Recognizes the Person Company Input Value does not match ZoomInfo Current Company but does Match Known Employment History.</inlineHelpText>
+        <label>Person Has Moved</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Image_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person Image URL</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person Image URL</inlineHelpText>
+        <label>Person Image URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Looks_Like_EU__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Inferred Person European Union Geographic Region Designation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Inferred Person European Union Geographic Region Designation.</inlineHelpText>
+        <label>Person Looks Like EU</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person Business Phone Number.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person Business Phone Number.</inlineHelpText>
+        <label>Person Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_State__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person business state address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person business state address.</inlineHelpText>
+        <label>Person State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Street__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person business street address.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person business street address.</inlineHelpText>
+        <label>Person Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Within_EU__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Denotes whether person is within EU, based on ZoomInfo person location. email and phone data.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes whether person is within EU, based on ZoomInfo person location. email and phone data.</inlineHelpText>
+        <label>Person Within EU</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__Person_Zip_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Person business Zip code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Person business Zip code.</inlineHelpText>
+        <label>Person Zip Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__ZoomInfo_Company_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL for ZoomInfo company profile.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL for ZoomInfo company profile.</inlineHelpText>
+        <label>ZoomInfo Company URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>zisf__ZoomInfo_Last_Verified_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date person record was last verified in ZoomInfo&apos;s database.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date person record was last verified in ZoomInfo&apos;s database.</inlineHelpText>
+        <label>ZoomInfo Last Verified Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>zisf__ZoomInfo_Person_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ZoomInfo unique identified for Person record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ZoomInfo ID for person record.</inlineHelpText>
+        <label>ZoomInfo Person ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__ZoomInfo_Person_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL for ZoomInfo person.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Click to view ZoomInfo person profile.</inlineHelpText>
+        <label>ZoomInfo Person URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>zisf__ZoomInfo_Source2__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>ZoomInfo Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Clean</fullName>
+                    <default>false</default>
+                    <label>Clean</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>zisf__ZoomInfo_Source__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>ZoomInfo Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Clean</fullName>
+                    <default>false</default>
+                    <label>Clean</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>zisf__Zoominfo_Company_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ZoomInfo unique identified for Company.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ZoomInfo unique identified for Company.</inlineHelpText>
+        <label>Zoominfo Company ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>ZoomInfo</label>
+    <listViews>
+        <fullName>zisf__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>ZoomInfo Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>ZoomInfo Records</pluralLabel>
+    <recordTypes>
+        <fullName>zisf__ZoomInfo_Company</fullName>
+        <active>true</active>
+        <description>Use for ZoomInfo Company records</description>
+        <label>ZoomInfo Company</label>
+        <picklistValues>
+            <picklist>zisf__ZoomInfo_Source2__c</picklist>
+            <values>
+                <fullName>Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zisf__ZoomInfo_Source__c</picklist>
+            <values>
+                <fullName>Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>zisf__ZoomInfo_Person</fullName>
+        <active>true</active>
+        <description>Use for ZoomInfo Person records</description>
+        <label>ZoomInfo Person</label>
+        <picklistValues>
+            <picklist>zisf__ZoomInfo_Source2__c</picklist>
+            <values>
+                <fullName>Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zisf__ZoomInfo_Source__c</picklist>
+            <values>
+                <fullName>Clean</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

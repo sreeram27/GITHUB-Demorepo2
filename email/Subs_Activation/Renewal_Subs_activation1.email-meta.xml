@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Subscription_Activation_Request</letterhead>
+    <name>Renewal-Subs activation1</name>
+    <style>formalLetter</style>
+    <subject>{!Opportunity.Account} - Subs Activation Request for {!Opportunity.Name}</subject>
+    <textOnly>Team,
+
+Request you to activate the Subscriptions for {!Opportunity.Name}.
+
+Below are the details for your reference.
+Type
+
+{!Opportunity.Opportunity_Type_New_Renewal_Upsell__c}
+
+Account ID
+
+{!Opportunity.AccountId}
+
+Account Name
+
+{!Opportunity.Account}
+
+Opportunity Name
+
+{!Opportunity.Name}
+
+Opp ID
+
+{!Opportunity.ID__c}
+
+Opp Amount
+
+{!Opportunity.Opportunity_Amount__c}
+
+Contact Person
+
+{!Opportunity.Contact_Name__c}
+
+Customer Email
+
+{!Opportunity.Contact_Email__c}
+
+Phone Number
+
+{!Opportunity.Contact_Phone__c}
+
+Product Name
+
+{!Opportunity.Product_Name__c}
+
+Subscriptions
+
+
+#  Current Subs
+
+{!Opportunity.Current_Subs__c}
+
+#  Subs Renewal  {!Opportunity.Renewal_Subs__c}
+#  Subs after Renewal  {!Opportunity.Total_Subs_After_Renewal__c}
+# of Vault Subs  {!Opportunity.No_of_Product_Subs_Vault__c}
+# of Hours (Service)  {!Opportunity.No_of_Hours_Service__c}
+
+Premium Support(Y/N)
+
+{!Opportunity.Premium_Support__c}
+
+Prof Services
+
+{!Opportunity.No_of_Hours_Service__c}
+
+Contract Period
+
+{!Opportunity.Contract_Period__c}
+
+Activation Date
+
+{!Opportunity.Tentative_Activation_Date__c}
+
+Hosting Type
+
+{!Opportunity.Hosting_Type__c}
+
+Type(Std., Prof., Ent.)
+
+{!Opportunity.Plan_Details__c}
+
+Geography
+
+{!Opportunity.Country__c}
+
+Address
+
+{!Account.BillingAddress}
+
+Comments
+
+{!Opportunity.Any_commitments_from_AR__c}
+
+In case of any further details required, please write back to me on sreekanth.u@autorabit.com
+
+
+Thanks &amp; Regards,
+Corp Admin - Sales Force CRM
+----------------------------------------------------------------------------------
+Disclaimer : The contents of this email message are intended solely for the
+addressee(s)and may contain confidential and/or privileged information and may be legally protected from disclosure.
+----------------------------------------------------------------------------------</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

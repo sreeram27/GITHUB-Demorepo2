@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Subscription_Activation_Request</letterhead>
+    <name>Subscription Activation Request (Old)</name>
+    <style>formalLetter</style>
+    <subject>Subs Activation Request for {!Opportunity.Name}</subject>
+    <textOnly>Team,
+
+Request you to activate the Subscriptions for {!Opportunity.Name}.
+
+Below are the details for your reference.
+Customer Name                  : {!Opportunity.Name}
+Geography                             : {!Opportunity.Country__c}
+Contact Person                     : {!Opportunity.Contact_Name__c}
+Email                                       : {!Opportunity.OwnerEmail}
+Phone Number                      : {!Opportunity.Contact_Phone__c}
+# of Subs                                 : {!Opportunity.No_of_Subscriptions__c}
+Premium Support (Y/N)        : {!Opportunity.Premium_Support__c}
+Prof Services (# hours)         : {!Opportunity.Professional_Services_hours__c}
+Contract Period                      : {!Opportunity.00N0G00000DLaow}
+Activation Date                        : {!Opportunity.Tentative_Activation_Date__c}
+Hosting Type                           : {!Opportunity.Hosting_Type__c}
+Plan Details (Std, Prof., Ent) :{!Opportunity.Plan_Details__c}
+Comm : {!Opportunity.Any_commitments_from_AR__c}
+
+In case of any further details required, please reply all. Thank you !
+
+Thanks &amp; Regards,
+Corp Admin - Sales Force CRM
+
+------------------------------------------------------------------------------------------------------
+Disclaimer : The contents of this email message are intended solely for the addressee(s) and may contain confidential and/or privileged information and may be legally protected from disclosure
+-------------------------------------------------------------------------------------------------------</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

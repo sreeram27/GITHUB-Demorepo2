@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER_FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>Contact.Contact_Name__c</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Lead Source for the customer accounts</description>
+    <filter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>(ISC,ABB I,Accenture L,Accor,Adecco,Aetna,African L,ALD A,Aligh T,American In,Ancestry,Anthem,Appfolio,Artisan P,Ascential,Australian I,Baxter H,Benefitmall,Blue Cross,BMJ,Boehringer,Capital O,Carahsoft,Care First,Caterpillar,CBRE,Charter C,Clayton H,Concur,Credit Ka,Dexcom,DMG E,EF Edu,FACS,Fannie,Fanteva,Farm Credit,Fiat C,FinGlobal,Flagstar,Forrester,Freddie,Fujitsu,General Mic,Grainger,Groupe Atl,Haufe-,Health Care,Homeaway,ICMARC,Illumina,Informa G,Intuit I,Intuitive S,Irvine M,IUP 2,Jefferies L,Land O,Lennar C,Macquarie G,Maquet H,Mastercard,Mercer,Merck,Merieux N,Molex L,Money Ser,Motorola S,Natixis N,Nortia,NSW - Coca,nthrive,Nutanix,NVIDIA,Origin E,PNC F,Qantas A,Randstad,Regions B,Relativity,Restorat,Riverbed T,Rodan,Royal Au,Royal Ca,Rubrik,S&amp;P,Sanofi U,Schneider E,Schwartz I,Select He,Service Ti,ServiceWise,Silver P,SNCF M,SUEZ Re,Sydney Ch,Talent Ro,Tata C,Texas C,The Coca,The Truste,Thinkahe,Uniball,Value Re,Voya S,We Wo,Wells F,Western U,Windstream,Wiz S,Wolters,Zene,Zu</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACCOUNT.NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Lead Source for Customer Accounts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CREATED_DATE</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Use this when the scheduled Discovery Call task status does not change from &apos;Scheduled&apos;</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>AutoRABIT_LinkedIn_Banner</letterhead>
+    <name>Discovery Call Task Due Email Notification</name>
+    <style>formalLetter</style>
+    <subject>Scheduled Discovery Call task is due to complete</subject>
+    <textOnly>Dear {!Task.Sales_Rep_Name__c},
+This is to notify you that it has been 24 hours and no action is taken on the scheduled Discovery Call or Demo task. Please complete the task by updating the status.
+
+For more details, click the following link: {!Task.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

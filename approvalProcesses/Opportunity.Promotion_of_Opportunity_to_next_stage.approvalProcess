@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>StageName</field>
+        <field>ExpectedRevenue</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>adhoc</type>
+            </approver>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Opportunity.StageName</field>
+                <operation>equals</operation>
+                <value>Closed Won</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Step 1</label>
+        <name>Step_1</name>
+    </approvalStep>
+    <emailTemplate>unfiled$public/Submitted_for_Approval</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Promotion of Opportunity to next stage</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>true</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <postTemplate>Stage_promotion_approved</postTemplate>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

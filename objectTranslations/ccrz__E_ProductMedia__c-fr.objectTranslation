@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Média de produit CC</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Média de produit CC</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Numéro automatique de média de produit</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

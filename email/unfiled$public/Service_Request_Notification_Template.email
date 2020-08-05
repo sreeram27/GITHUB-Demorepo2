@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[Dear ES Team,]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div><font face="arial" style=""><span style="font-size: 12pt;">This is to notify you that a new service request, '</span>{!Services_Request__c.Request_Type__c}',&nbsp;<span style="font-size: 12pt;">has been submmited&nbsp;</span></font><span style="font-family: arial; font-size: 12pt;">for the opportunity, '</span><span style="font-family: arial;">{!Services_Request__c.Opportunity__c}'.&nbsp;</span><div><font face="arial" style=""><span style="font-size: 12pt;"><br></span></font></div><div><font face="arial" style=""><span style="font-size: 12pt;">Request the team to take the necessary action required.</span></font><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">For more details, please click the following link: {!Services_Request__c.Link}</div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div></div></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

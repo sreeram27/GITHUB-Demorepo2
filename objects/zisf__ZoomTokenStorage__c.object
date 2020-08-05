@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>zisf__pass__c</fullName>
+        <deprecated>false</deprecated>
+        <description>partner password</description>
+        <externalId>false</externalId>
+        <label>pass</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__pc__c</fullName>
+        <deprecated>false</deprecated>
+        <description>parnter code</description>
+        <externalId>false</externalId>
+        <label>pc</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zisf__token__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>token</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>ZoomTokenStorage</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,11 @@
+<apex:page standardController="Opportunity"   extensions="Renewal_Page" >
+    <apex:form >
+        <apex:pageBlock title="Upsell Opportunity">     
+            <apex:pageBlockSection title="Select The Opportunity" >
+                <apex:inputField value="{!opp.Opportunity__c}" id="Fieldvalue"    />
+            </apex:pageBlockSection>
+            <apex:pageMessages />
+            <apex:commandButton value="Upsell" action="{!getDetails}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

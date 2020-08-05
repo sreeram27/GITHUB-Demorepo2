@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>MindTouch Settings.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>mindtouch_sf__Customer_Activity_ID_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>MindTouch UserID Field to query history API.</description>
+        <externalId>false</externalId>
+        <label>Customer Activity ID Field</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mindtouch_sf__case_search_field__c</fullName>
+        <defaultValue>&quot;Subject&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Case Search Field</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mindtouch_sf__publish_article_path__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Path in MindTouch site where Published Articles will be placed.</description>
+        <externalId>false</externalId>
+        <label>Publish Article Path</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>mindtouch_sf__search_constraint__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Search Constraint</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mindtouch_sf__site_name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of your MindTouch site</description>
+        <externalId>false</externalId>
+        <label>Site Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>mindtouch_sf__url__c</fullName>
+        <defaultValue>&quot;https://yoursite.com&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>URL to MindTouch Site</description>
+        <externalId>false</externalId>
+        <label>MindTouch URL</label>
+        <length>80</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>MindTouch Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

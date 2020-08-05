@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_46631274</developerName>
+        <masterLabel>Fortune 500</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Account.Account_Sub_Type__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Fortune 500</sourceValue>
+            </sourceValues>
+            <value>Yes</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Non Fortune 500</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>System Integrator (SI)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Reseller (VAR)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Referral Partner (RP)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Alliance Partner (AP)/Technology Partner (TP)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Global 2,000</sourceValue>
+            </sourceValues>
+            <value>No</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>BucketField_46631274</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Type__c</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SDR__c</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Type_New_Renewal_Upsell__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Fortune 500/Non-fortune 500 New Logo Marketing Attributed Opportunities created in FY20 YTD.</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Partner_Sourced__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marketing Attributed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Opportunity_Type_New_Renewal_Upsell__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Logo</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Account_Sub_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Fortune 500 Break-down</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

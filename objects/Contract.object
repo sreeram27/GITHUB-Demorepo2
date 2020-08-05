@@ -169,11 +169,32 @@
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Custom_Header_Layaout</fullName>
+        <fields>ContractNumber</fields>
+        <fields>AccountId</fields>
+        <fields>Opportunity__c</fields>
+        <fields>Contract_Start_date_Custom_Field__c</fields>
+        <fields>Contract_End_Date__c</fields>
+        <fields>ContractTerm</fields>
+        <fields>OwnerId</fields>
+        <label>Custom Header Layaout</label>
+    </compactLayouts>
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>AccountId</fullName>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Account ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>ActivatedById</fullName>
@@ -202,6 +223,46 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Contract_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>End Date from Strikedeck for Bulk Push</inlineHelpText>
+        <label>Contract End Date(from SD)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Start_date_Custom_Field__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATE (
+      
+    YEAR (  Contract_End_Date__c  ) - FLOOR(  ContractTerm   / 12) - IF (MONTH ( Contract_End_Date__c ) - MOD( ContractTerm , 12) &gt; 0, 0, 1),
+ 
+    
+    IF (MONTH ( Contract_End_Date__c ) - MOD ( ContractTerm , 12) &gt; 0, MONTH ( Contract_End_Date__c ) - MOD ( ContractTerm , 12), MONTH ( Contract_End_Date__c ) - MOD ( ContractTerm , 12) + 12),
+ 
+     
+    MIN (DAY ( Contract_End_Date__c ), 
+        CASE (
+   
+       
+   IF (MONTH ( Contract_End_Date__c ) - MOD ( ContractTerm , 12) &gt; 0, MONTH ( Contract_End_Date__c ) - MOD ( ContractTerm , 12), MONTH ( Contract_End_Date__c ) - MOD ( ContractTerm , 12) + 12), 9, 30, 4, 30, 6, 30, 11, 30, 2, 
+   
+    
+   IF (MOD (YEAR ( Contract_End_Date__c ) - FLOOR( ContractTerm / 12) - IF (MONTH ( Contract_End_Date__c ) - MOD( ContractTerm , 12) &gt; 0, 0, 1), 400) = 0 || (MOD (YEAR ( Contract_End_Date__c ) - FLOOR( ContractTerm / 12) - IF (MONTH ( Contract_End_Date__c ) - MOD( ContractTerm , 12) &gt; 0, 0, 1) ,4) = 0 &amp;&amp; MOD (YEAR ( Contract_End_Date__c ) - FLOOR( ContractTerm / 12) - IF (MONTH ( Contract_End_Date__c ) - MOD( ContractTerm , 12) &gt; 0, 0, 1) ,100) &lt;&gt; 0 ), 29, 28), 31)
+    )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract Start date(Custom Field)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
         <fullName>CustomerSignedDate</fullName>
         <trackHistory>true</trackHistory>
     </fields>
@@ -227,16 +288,33 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Number_of_Seats_Vault__c</fullName>
+        <externalId>false</externalId>
+        <label># of Seats Vault (from SD)</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Contracts</relationshipLabel>
+        <relationshipName>Contracts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>OwnerExpirationNotice</fullName>
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
-        <trackHistory>true</trackHistory>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>Pricebook2Id</fullName>
         <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
@@ -257,6 +335,27 @@
         <trackHistory>true</trackHistory>
         <type>Picklist</type>
     </fields>
+    <fields>
+        <fullName>Total_AR_Subs_Closed_Won__c</fullName>
+        <externalId>false</externalId>
+        <label>Total # of AR Subs Closed Won</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_Seats_CI_CD__c</fullName>
+        <externalId>false</externalId>
+        <label># of Seats CI/CD (from SD)</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <listViews>
         <fullName>AllActivatedContracts</fullName>
         <filterScope>Everything</filterScope>
@@ -269,8 +368,17 @@
     </listViews>
     <listViews>
         <fullName>AllContracts</fullName>
+        <columns>CONTRACT.CONTRACT_NUMBER</columns>
+        <columns>Account_ID__c</columns>
+        <columns>SALES.ACCOUNT.NAME</columns>
+        <columns>Contract_Start_date_Custom_Field__c</columns>
+        <columns>Contract_End_Date__c</columns>
+        <columns>CONTRACT_TERM</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Total_AR_Subs_Closed_Won__c</columns>
         <filterScope>Everything</filterScope>
         <label>All Contracts</label>
+        <language>en_US</language>
     </listViews>
     <listViews>
         <fullName>AllDraftContracts</fullName>
@@ -341,5 +449,5 @@
         <searchResultsAdditionalFields>CONTRACT.END_DATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CONTRACT_TERM</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Read</sharingModel>
 </CustomObject>

@@ -1,0 +1,14 @@
+Hello {!Lead.OwnerFirstName}, <br><br>
+
+A new webinar Lead has registered on the AutoRABIT website.<br><br>
+
+Name: <a href="https://login.salesforce.com/{!Lead.Id}">{!Lead.Name}</a><br> 
+Company: {!Lead.Company}<br> 
+Email Address: {!Lead.Email}<br> 
+Phone: {!Lead.Phone}<br>
+Country: {!Lead.Country}<br><br>
+
+Do get back to them with the webinar details.<br><br>
+
+Thank you,<br> 
+AutoRabit Customer Support

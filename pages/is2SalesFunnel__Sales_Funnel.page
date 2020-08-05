@@ -1,0 +1,574 @@
+<apex:page controller="is2SalesFunnel.SalesFunnelController" showHeader="true" sidebar="false" standardStylesheets="false">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,500,700,900' rel='stylesheet' type='text/css'></link>
+  <apex:includeScript value="{!URLFOR($Resource.is2SalesFunnel__lib, '/lib/js/jQuery1.7.2.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.is2SalesFunnel__lib, '/lib/js/jquery.tools.tooltip.min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.is2SalesFunnel__lib, '/lib/js/jquery.cookie.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.is2SalesFunnel__lib, '/lib/js/jquery.zclip.min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.is2SalesFunnel__lib, '/lib/js/jquery.ui.js')}"/>
+  <apex:stylesheet value="{!$Resource.is2SalesFunnel__baseCSS}"/>
+
+  <apex:variable var="chartOptions" value="
+        chart: {
+            borderColor:'',
+            height: 400,
+            renderTo: 'chart-container',
+            type: 'bar',
+            spacingLeft: -2,
+            spacingRight: 15
+        },
+        credits: {
+            enabled: false
+        },
+        title: {
+            text: null
+        },
+        yAxis: {
+            title: {
+                text: 'Opportunity Count'
+            },
+            labels: {
+                enabled: false
+            },
+            gridLineWidth: 0,
+            maxPadding: 0,
+            minPadding: 0,
+            opposite: true
+        },
+        xAxis: [
+            {
+                categories: {!chart.categories},
+                gridLineWidth: 0,
+                lineWidth: 0,
+                reversed: true,
+                tickWidth: 0,
+                title: {
+                    text: 'Opportunity Stage'
+                }
+            },
+            {
+                gridLineWidth: 0,
+                lineWidth: 0,
+                opposite: true,
+                reversed: true,
+                tickWidth: 0,
+                labels: {
+                    enabled: false
+                }
+            }
+        ],
+        tooltip: {
+            formatter: function() {
+                var tt = false;
+                
+                if (this.series.index <= 1) { /* Missed Conversion */
+                    tt = '<b>'+this.x+'</b><br/>'+
+                         'Unconverted Count: <b>'+Math.abs(this.y*2)+'</b>';
+                }
+                else if (this.series.index <= 3) { /* Conversions */
+                    tt = '<b>'+this.x+'</b><br/>'+
+                         'Count: <b>'+Math.abs(this.y*2)+'</b>';
+                    
+                    var pointIndex = this.point.x;
+                    
+                    /* extraVals is an array of arrays, index is point-id
+                        e.g. [ [title], ...] */
+                    var convPer = {!extraVals}[pointIndex][0];
+                    
+                    if (convPer != '') {
+                        tt += '<br/>Converted: <b>'+convPer+'</b>';
+                    }
+                }
+                
+                return tt;
+            }
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            },
+            bar: {
+                borderWidth: 0.0,
+                states: {
+                    hover: {
+                        brightness: 0.0
+                    }
+                },
+                color: '#ffc23e',
+                dataLabels: {
+                    enabled: {!showDataLabels},
+                    x: {!IF(fontSize<=15,-15,-18)},
+                    style: {
+                        color: '#333',
+                        fontSize: '{!IF(fontSize<=12,fontSize,12)}px',
+                        lineHeight: '{!fontSize}px'
+                    },
+                    formatter: function() {
+                        if (this.y === 0) {
+                            return '';
+                        }
+                        var lbl = (this.y*2).toString();
+                        
+                        /* Looks a bit funky with 1 or 2 digits */
+                        if (lbl.length === 1) {
+                            lbl = '&nbsp;&nbsp;' + lbl;
+                        }
+                        else if (lbl.length === 2) {
+                            lbl = '&nbsp;' + lbl;
+                        }
+                        
+                        lbl = '<span style={!strQuote}font-weight: bold;{!strQuote}>'+lbl+'</span>';
+                        
+                        var pointIndex = this.point.x;
+                        
+                        /* extraVals is an array of arrays, index is point-id
+                            e.g. [ [title], ...] */
+                        var convPer = {!extraVals}[pointIndex][0];
+                        
+                        if (convPer != '') {
+                            lbl += '<br/><span style={!strQuote}color: #999;{!strQuote}>'+convPer+'</span>';
+                        }
+                        
+                        return lbl;
+                    }
+                }
+            },
+            line: {
+                color: '#aaa',
+                dashStyle: 'LongDash',
+                enableMouseTracking: false,
+                lineWidth: 1,
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        series: [
+            {
+                color: '#eee',
+                dataLabels: { formatter: function() { return ''; } },
+                stack: 1
+            }, /* Right Missed Bar */
+            {
+                color: '#eee',
+                dataLabels: { formatter: function() { return ''; } },
+                stack: 1
+            }, /* Left Missed Bar */
+
+            {
+                zIndex: 4,
+                stack: 1
+            }, /* Right Count Bar */
+            {
+                dataLabels: { formatter: function() { return ''; } },
+                zIndex: 4,
+                stack: 1
+            } /* Left Count Bar */
+        ]
+    "/>
+
+  <style>
+  .modal_container {
+    background-image: url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/white_stripe_bk.png')}), linear-gradient(to bottom, rgba(0,179,233,0.7) 0%,rgba(0,0,0,0.7) 30%,rgba(0,0,0,0.7) 100%);
+    background-image: url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/white_stripe_bk.png')}), -moz-linear-gradient(top, rgba(0,179,233,0.7) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.7) 100%);
+    background-image: url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/white_stripe_bk.png')}), -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,179,233,0.7)), color-stop(30%,rgba(0,0,0,0.7)), color-stop(100%,rgba(0,0,0,0.7)));
+    background-image: url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/white_stripe_bk.png')}), -webkit-linear-gradient(top, rgba(0,179,233,0.7) 0%,rgba(0,0,0,0.7) 30%,rgba(0,0,0,0.7) 100%);
+    background-image: url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/white_stripe_bk.png')}), -ms-linear-gradient(top, rgba(0,179,233,0.7) 0%,rgba(0,0,0,0.7) 30%,rgba(0,0,0,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b300b3e9', endColorstr='#b3000000',GradientType=0 ); }
+
+  #is2 .cta_button {
+    background: #5FBA50;
+    background-color: #5FBA50;
+    background-image: -webkit-linear-gradient(top, #5FBA50 0%,#50AA41 100%),url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/white_cta_arrow.png')});
+    background-image: -ms-linear-gradient(top, #5FBA50 0%,#409F31 100%),url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/white_cta_arrow.png')});
+    background-image: linear-gradient(to bottom, #5FBA50 0%,#409F31 100%),url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/white_cta_arrow.png')});
+    background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, from(rgba(0, 0, 0, 0.0976563)), to(rgba(255, 255, 255, 0.0976563))),url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/white_cta_arrow.png')});
+    background-image: url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/white_cta_arrow.png')}), -moz-linear-gradient(top, #5FBA50 0%, #409F31 100%);
+    background-position: 91% center;
+    background-repeat: no-repeat;
+    border: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0,0,0,.3);
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 30px;
+    padding: 12px 31px 12px 16px;
+    text-decoration: none !important;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    -moz-transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    -ms-transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    -webkit-transition: background-position 0 none;
+    -webkit-transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    vertical-align: middle; }
+
+  #is2 .cta_button:hover {
+    background-color: #00B3E9 !important;
+    cursor: pointer; }
+
+  #is2 .cta_button.unlock_now_button {
+    background-color: #00B3E9 !important; }
+
+  #is2 .cta_button.unlock_now_button:hover {
+    background-color: #5FBA50 !important; }
+
+  #is2 .pivot_demo_footer .logo {
+    background: url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/is_logo_white4.png')}); }
+
+  #is2 .modal .modal_footer .modal_logo {
+    background: url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/is_logo_white4.png')}); }
+
+  .zeroclipboard-is-hover {
+    background: #000; }
+
+  .zeroclipboard-is-active { 
+    background: #f00; }
+
+  .chart_error {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 400px;
+    line-height: 400px;
+    background: url({!URLFOR($Resource.is2SalesFunnel__lib, '/lib/img/funnel_grey_img.png')}) no-repeat center center;
+  }
+
+  .chart_error .is_error_msg {
+    color: #0f9cc9;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  </style>
+
+  <script type="text/javascript">
+    $j = jQuery.noConflict();
+
+    function showModal(contentsId, large) {
+        $j('.modal_inner').hide();
+        $j(contentsId+'.modal_inner').show();
+        $j('.modal_container').fadeIn();
+        $j('.tooltip').removeClass('tooltip_visible');
+        $j('.tooltip').addClass('tooltip_invisible');
+        $j("body").css("overflow", "hidden");
+        if (large) {
+            $j('.modal').addClass('large');
+        }
+    }
+
+    function closeModal() {
+        if ($j('.unlocked').is(':visible')) {
+            location.reload();
+        }
+        else {
+            $j('.modal_container').fadeOut(function() {
+                $j('.modal').removeClass('large');
+                if (typeof clearFilterChanges === 'function') {
+                    clearFilterChanges();
+                }
+                $j("body").css("overflow", "auto");
+                $j('.tooltip').removeClass('tooltip_invisible');
+            });
+        }
+    }
+
+    $j(function() {
+      $j('.error_config_link').click(function() {
+          showModal('#configure_stage_list');
+      });
+
+      $j('.modal').draggable();
+    })
+
+  </script>
+
+  <div id="is2">
+    <c:CTA />
+    <c:ISPivots />
+    <div class="pivots">
+      <div id="by_stage_pivot" class="pivot">
+        <c:ISHeader question="{!header.question}" 
+                    majorAnswer="{!header.majorAnswer}" 
+                    minorAnswer="{!header.minorAnswer}" 
+                    isFilteringEnabled="{!isFilteringEnabled}" 
+                    filtersActive="{!filtersActive}" 
+                    customDateRange="{!customDateRange}"/>
+
+        <apex:outputPanel rendered="{!hasChartError}">
+          <div class="chart_error">{!chartErrorMessage}  
+            <apex:outputPanel rendered="{!showConfigLink}">
+              <span class='is_error_msg error_config_link'>Click to configure your stage list.</span>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!showConfigContact}">
+              <span class='is_error_msg'><a href="mailto:contact@insightsquared.com">Contact us.</a></span>
+            </apex:outputPanel>
+          </div>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!NOT(hasChartError)}">
+          <c:ISChart chartOptions="{!chartOptions}" seriesData="{!chart.seriesData}"/>
+        </apex:outputPanel>
+        <c:ISTable rows="{!table.tableRows}" colNames="{!colNames}" colCount="{!colCount}" colTTs="{!colTTs}"/>
+        <div id="more_info">
+          <apex:outputPanel styleClass="excluded_opps_msg_container" rendered="{!hasExcludedOpps}">
+            <span class="excluded_opps_msg"><span class="excluded_opps_msg_num">{!numExcludedOpps}</span> {!excludedOppsLabel} excluded. <a href="http://insightsquared.com/info/sales-funnel-help/" target="_blank">Learn why</a></span>
+          </apex:outputPanel>
+          <a href="http://insightsquared.com/info/sales-funnel-help/" target="_blank" class="help_link">Get help with this report&nbsp;&nbsp;&rsaquo;</a>
+        </div>
+      </div>
+      <div id="by_time_pivot" class="pivot">
+        <h2 class="pivot_example_title">Slice and dice your Sales Funnel for more insight</h2>
+        <div class="pivot_demo by_time_demo">
+          <h1 class="header_text">By Time</h1>
+          <h2 class="subheader_text">View your win rate over time to track performance</h2>
+          <img id="by_time_screenshot" class="screenshot" src="{!URLFOR($Resource.lib, '/lib/img/apex_funnel_bytime_img.png')}"/>
+        </div>
+        <div class="pivot_demo by_emp_demo">
+          <h1 class="header_text">By Employee</h1>
+          <h2 class="subheader_text">Compare how employees perform at each stage</h2>
+          <img id="by_employee_screenshot" class="screenshot" src="{!URLFOR($Resource.lib, '/lib/img/apex_funnel_emp_img.png')}"/>
+        </div>
+        <div class="pivot_demo_footer">
+          <span class="vertical_aligner"></span>
+          <div class="footer_container">
+            <div class="footer_logo_container">
+              <span class="logo_label">Available in</span>
+            </div>
+            <div class="footer_cta_button_container">
+              <a href="http://www.insightsquared.com/" target="_blank" class="logo"></a>
+              <a href="http://www.insightsquared.com/connectors/salesforce-reporting/" target="_blank" class="cta_button">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="by_employee_pivot" class="pivot">
+        <h2 class="pivot_example_title">Slice and dice your Sales Funnel for more insight</h2>
+        <div class="pivot_demo by_emp_demo">
+          <h1 class="header_text">By Employee</h1>
+          <h2 class="subheader_text">Compare how employees perform at each stage</h2>
+          <img id="by_employee_screenshot" class="screenshot" src="{!URLFOR($Resource.lib, '/lib/img/apex_funnel_emp_img.png')}"/>
+        </div>
+        <div class="pivot_demo by_time_demo">
+          <h1 class="header_text">By Time</h1>
+          <h2 class="subheader_text">View your win rate over time to track performance</h2>
+          <img id="by_time_screenshot" class="screenshot" src="{!URLFOR($Resource.lib, '/lib/img/apex_funnel_bytime_img.png')}"/>
+        </div>
+        <div class="pivot_demo_footer">
+          <span class="vertical_aligner"></span>
+          <div class="footer_container">
+            <div class="footer_logo_container">
+              <span class="logo_label">Available in</span>
+            </div>
+            <div class="footer_cta_button_container">
+              <a href="http://www.insightsquared.com/" target="_blank" class="logo"></a>
+              <a href="http://www.insightsquared.com/connectors/salesforce-reporting/" target="_blank" class="cta_button">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <c:ISFooter />
+    </div>
+
+    <div class="modal_container">
+      <div class="modal">
+
+        <div id="filter_demo" class="modal_inner">
+          <apex:outputPanel rendered="{!isFilteringEnabled}">
+            <h1 class="header_text">Filtering</h1>
+            <c:ISFilter oppTypeList="{!oppTypeList}" oppTypeOptions="{!oppTypeOptions}"/>
+            <div class="get_more_pitch">
+              <h2 class="subheader_text want_more">Want to filter by any other field in Salesforce?
+              <a href="http://www.insightsquared.com/connectors/salesforce-reporting/" target="_blank">Click here to learn more.</a>
+              </h2>
+            </div>
+          </apex:outputPanel>
+          <!--
+          <apex:outputPanel rendered="{!NOT(isFilteringEnabled)}">
+            <h1 class="header_text">Real-time Filtering</h1>
+            <h2 class="subheader_text">Filter your funnel based on any field in Salesforce.</h2>
+            <img src="{!URLFOR($Resource.lib, '/lib/img/apex_funnel_filter_modal_img.png')}"/>
+          </apex:outputPanel>
+          -->
+          <apex:outputPanel rendered="{!NOT(isFilteringEnabled)}">
+            <div class="want_to_unlock">
+              <h1 class="header_text">Unlock Filtering By Opportunity Type</h1>
+              <h2 class="subheader_text">Share on Twitter to unlock the Filtering feature</h2>
+              <div class="filter_image_container">
+                <img class="filter_example_img" src="{!URLFOR($Resource.lib, '/lib/img/locked_filter.png')}"/>
+              </div>
+              <a class="cta_button unlock_now_button">Unlock Now</a>
+            </div>
+            <div class="share_to_unlock">
+              <h1 class="header_text">Share to unlock your filter</h1>
+              <h2 class="subheader_text">Tweet @insightsquared about our funnel and we'll send your code within 24 hours!</h2>
+              <div class="linkedin_message_container">
+              <img class="linkedin_message_img" src="{!URLFOR($Resource.lib, '/lib/img/twitter-logo.png')}"/>
+                <span class="linkedin_message">
+                Just tried free #SalesFunnel on #AppExchange by @insightsquared. Showed me my real conversion rates for every stage http://bit.ly/19w79P1
+                </span>
+                <a href="http://bit.ly/17JOBaW" target="_blank" class="linked_in_message_btn goto_linkedin">Go to Twitter</a>
+                <!--<span class="linked_in_message_btn copy_clipboard">Copy to clipboard</span> Couldn't figure this out. Will try again some other time. -->
+              </div>
+              <h2 class="subheader_text have_a_code">Already have your unlock code?</h2>
+              <form class="unlock_form">
+                <input class="unlock_input" type="text"></input>
+                <input class="unlock_button cta_button unlock_now_button" type="submit" value="Unlock"></input>
+                <img class="unlocking_spinner" src="{!URLFOR($Resource.lib, '/lib/img/ajax-loader.gif')}"/>
+                <div class="bad_code_message">
+                  <span class="bad_code_message_inner">Invalid code</span>
+                </div>
+              </form>
+            </div>
+            <div class="unlocked">
+              <h1 class="header_text">Congratulations!</h1>
+              <h2 class="subheader_text">Filtering by opportunity type has been unlocked.</h2>
+              <span class="cta_button try_it_now">Try it now</span>
+            </div>
+          </apex:outputPanel>
+          <div class="modal_footer">
+            <a href="http://www.insightsquared.com/" target="_blank" class="modal_logo"></a>
+          </div>
+        </div>
+
+        <div id="datepicker_demo" class="modal_inner">
+          <h1 class="header_text">Date Picker</h1>
+          <h2 class="subheader_text">Choose any time period with just a click</h2>
+          <img src="{!URLFOR($Resource.lib, '/lib/img/apex_funnel_datepick_modal_img.png')}"/>
+          <a href="http://www.insightsquared.com/connectors/salesforce-reporting/" target="_blank" class="cta_button datepicker_cta">Learn More</a>
+          <div class="modal_footer">
+            <a href="http://www.insightsquared.com/" target="_blank" class="modal_logo"></a>
+            <span class="modal_logo_label">Available in</span>
+          </div>
+        </div>
+
+        <div id="configure_stage_list" class="modal_inner">
+          <h1 class="header_text">Configure Stage List</h1>
+          <h2 class="subheader_text">Select which stages to show and put them in correct order</h2>
+          <c:ISConfigureStageList opportunityStages="{!stageList}" />
+        </div>
+
+        <div id="by_time_screenshot_zoom" class="modal_inner screenshot_zoom">
+          <img src="{!URLFOR($Resource.lib, '/lib/img/apex_funnel_bytime_img_zoom.png')}"/>
+        </div>
+        <div id="by_employee_screenshot_zoom" class="modal_inner screenshot_zoom">
+          <img src="{!URLFOR($Resource.lib, '/lib/img/apex_funnel_emp_img_zoom.png')}"/>
+        </div>
+        <div class="modal_close">
+          <img class="modal_close_img" src="{!URLFOR($Resource.lib, '/lib/img/icon_close_x.png')}"/>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $j(document).ready(function() {
+        $j('.screenshot').click(function() {
+            showModal('#'+$j(this).attr('id')+'_zoom', true);
+        });
+
+        $j('.bad_code_message').hide();
+
+        $j('.modal_container').click(function(e) {
+            closeModal();
+            e.preventDefault();
+            return false;
+        });
+        $j('.modal').click(function(e) {
+            e.stopPropagation();
+        });
+        $j('.modal_close').click(function(e) {
+            closeModal();
+        });
+
+        $j('.want_to_unlock .cta_button').click(function(e) {
+            $j('.want_to_unlock').hide();
+            $j('.share_to_unlock').fadeIn();
+        });
+
+        $j('.try_it_now').click(function() {
+            $j.cookie("is2openfilters", "true");
+            closeModal();
+        });
+
+        function unlockResponse(result, event) {
+            if (event.status) {
+                if (result) {
+                    $j('.share_to_unlock').hide(0);
+                    $j('.unlocked').fadeIn();
+                }
+                else {
+                    $j('.unlocking_spinner').hide(0, function() {
+                        $j('.bad_code_message').show(0, function() {
+                            $j('.bad_code_message_inner').addClass('visible');
+                        });
+                    });
+                }
+            }
+            else if (event.type === 'exception') {
+                // TODO: need to handle errors
+                // event.message
+            }
+            else {
+                // TODO: need to handle errors
+                // event.message
+            }
+        }
+
+        function unlock(code) {
+            $j('.bad_code_message').hide(0, function() {
+                $j('.bad_code_message_inner').removeClass('visible');
+                $j('.unlocking_spinner').show(0, function() {
+                    Visualforce.remoting.Manager.invokeAction(
+                        '{!$RemoteAction.SalesFunnelController.unlock}',
+                        code,
+                        unlockResponse
+                    );
+                });
+            });
+        }
+
+        $j('.unlock_form').submit(function(e) {
+            unlock($j('.unlock_input').val());
+            e.preventDefault();
+            return false;
+        });
+
+        window.saveStageList = function(data) {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.SalesFunnelController.setOpportunityStageList}',
+                JSON.stringify(data),
+                function(result, event) { window.location.reload()}
+            );
+        }
+        window.resetStageList = function() {
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.SalesFunnelController.resetOpportunityStageList}',
+                function(result, event) { window.location.reload()}
+            );
+        }
+        
+    });
+  </script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41556131-1', 'force.com');
+  ga('send', 'pageview');
+  </script>
+
+</apex:page>

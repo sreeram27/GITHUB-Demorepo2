@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank_Personal_Email_Template</letterhead>
+    <name>2020-06-Intro to SFDC Architects</name>
+    <style>freeForm</style>
+    <subject>AutoRABIT kicks off DevOps learning series for Solution Architects. Reaches Crest Partner level</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+We wanted you to be amongst the first to know that AutoRABIT has reached the Crest level in the AppExchange partner program, putting us in the Top 10% of the Salesforce ISV partners.
+
+Thanks to your support, DevOps and CI/CD within the Salesforce Developer Community is getting a lot of recognition. AutoRABIT has been on the forefront of helping customers respond to the needs of their business to move their applications into the cloud, speed up development cycles and push enhancements to production without missing a beat.
+
+In addition, AutoRABIT also delivers the Vault Cloud Backup and Recovery solution, just in time to provide an alternative to the discontinued Salesforce Data Recovery solution.
+
+As a special thank you to the program architects, solution architects and engineers, AutoRABIT is initiating a DevOps program that includes educational webinars led by DevOps experts, case studies and real customer stories that highlight a different approach to DevOps.
+
+Over 150 Salesforce large and mid-size customers have adopted the AutoRABIT approach. This approach allows them to openly integrate with preferred developer tools for planning, version control and automated testing. IDE enhancements like VS Code extensions for AutoRABIT allow developers to use their favorite tools for Salesforce development.
+
+Please join me in the coming weeks as we share more about our success with you. You will be receiving a webinar invite and a few select resources related to DevOps best practices. We would love for you to join us to learn more.
+
+Best regards.
+
+Adrian
+
+Adrian Szwarcburg
+VP Channels and Partnerships
+Ph: +1 415 505 5446</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

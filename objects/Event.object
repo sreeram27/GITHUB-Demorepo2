@@ -228,5 +228,5 @@
         <type>Lookup</type>
     </fields>
     <searchLayouts/>
-    <sharingModel>Private</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

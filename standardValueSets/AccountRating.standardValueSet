@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Hot</fullName>
+        <default>false</default>
+        <label>Hot</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Warm</fullName>
+        <default>false</default>
+        <label>Warm</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Cold</fullName>
+        <default>false</default>
+        <label>Cold</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Acquired</fullName>
+        <default>false</default>
+        <label>Acquired</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Active</fullName>
+        <default>false</default>
+        <label>Active</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Market Failed</fullName>
+        <default>false</default>
+        <label>Market Failed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Project Cancelled</fullName>
+        <default>false</default>
+        <label>Project Cancelled</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Shutdown</fullName>
+        <default>false</default>
+        <label>Shutdown</label>
+    </standardValue>
+</StandardValueSet>

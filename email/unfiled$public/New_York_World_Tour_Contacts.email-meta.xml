@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank_Personal_Email_Template</letterhead>
+    <name>New York World Tour(Contacts)</name>
+    <style>freeForm</style>
+    <subject>AutoRABIT at booth #129 for the Salesforce World Tour New York!</subject>
+    <textOnly>{!Contact.FirstName},
+
+
+
+Hope all is well. The Salesforce World Tour New York is almost upon us(Wednesday, May 25.2016). AutoRABIT is a sponsor and exhibitor this year. Come in and visit us at booth #129 to learn about all of our exciting product features. It would be an honor to have you join us at our booth for a friendly chat.
+
+
+
+We will be in town from the 23rd to the 26th and it would be great to meet you sometime during the week if you are not available to meet us at our booth. We would be glad to come by and say hi to at your office.
+
+
+
+We are conducting discovery sessions and we would be glad to offer a 1hr ‘Express’ Discovery Session, during which we would discuss your CI /release management needs, goals and later provide an Audit report with recommendations along with best practices.
+
+
+Please let us your availability and we look forward to seeing you.
+
+
+
+http://www.salesforce.com/events/worldtour/nyc/
+
+Brad Benz
+Sales Director
+brad.b@autorabit.com
+m:702-234-6800</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

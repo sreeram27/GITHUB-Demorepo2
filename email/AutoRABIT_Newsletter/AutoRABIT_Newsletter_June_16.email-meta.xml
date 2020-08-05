@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>AutoRABIT Newsletter - June&apos;16, WE - 17Jun</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AutoRABIT Newsletter - June&apos;16</name>
+    <style>none</style>
+    <subject>RABIT FORCE - AutoRABIT Newsletter - June 2016</subject>
+    <textOnly>FROM THE CEO’S DESK
+
+I am pleased to present the inaugural issue of our newsletter, RABIT FORCE. It is my earnest hope that this newsletter would serve as a cohesive force to deepen our association with clients, partners and Salesforce developer community. Our vision is to be a customer-centric company that empowers customers to increase their efficiency and productivity, and enables the Salesforce development community to focus on more innovative endeavors.
+
+The current issue of the newsletter highlights the following:
+•    Overview of our 3.9.2 Release &amp; sneak-peek into 4.0 GA Release
+•    Key complex issues we have solved for our clients
+•    ROI analysis with examples to justify deployment automation
+•    Automation of custom manual tasks for your Salesforce release
+
+We hope the content will enrich you and be a worthy investment of your time.
+We would love to hear your feedback as we continue to strengthen our association.
+
+Please send in your comments to vishnu@autorabit.com.
+Sincerely,
+Vishnu Datla
+
+
+Vishnu Datla
+CEO, AutoRABIT
+
+AutoRABIT Version 3.9.2 Release
+
+AutoRABIT, very recently, released a new version of its product. The main features include:
+
+1. Bulk Retrieve and Commit for AutoRABIT
+This feature allows users to retrieve and commit
+unlimited metadata from any source to any
+version control.
+
+2. Validate Only Option &amp; Metadata Exclusion
+List for CI Jobs
+Users can now validate, track and pre-check the deployment status of the changes in developer’s code on a daily basis. They can now exclude those metadata types that they don’t want as a part of CI jobs.
+
+3. Preview Code Differences Before Check-in
+With this functionality, a user can check the changes
+between the files in VCM and sandbox before
+committing.
+
+
+
+Sneak-Peek of V4.0 GA Release
+
+AutoRABIT will be releasing Version 4.0 GA shortly.
+Here are a few of the key features you can expect:
+
+•    Pre and post-destruction support for deployments
+•   Deployment support for AutoRABIT Version Control labels
+•      Merge editor for SVN and GIT.
+•   Audit trial log for Salesforce Orgs
+
+
+
+Customer Success
+
+How AutoRABIT Helped its Customer Win
+
+Split Salesforce Production Org into two orgs
+Version control enablement, training and release automation for 100+ users
+Deployments based on ALM story status with Rational Team Concert
+End-to-end CI process set up with TFS
+Deployment Governance
+Orchestra CMS configuration automation
+Check-in Editor for Version Control System for ease of use
+End-to-end CI set up and automation
+SVN driven release management
+Regression Test Automation
+
+
+
+Insights for Your Business
+
+Follow Us
+
+CONTACT US: 5700, Stoneridge Mall Rd. Suite# 370, Pleasanton, CA 94588.
+Phone:+1 925 500 1004        |             Email: info@autorabit.com</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

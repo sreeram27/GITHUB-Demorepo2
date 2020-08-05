@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Opportunity.Opportunity_Amount__c:SUM</calculatedFormula>
+        <datatype>currency</datatype>
+        <description>Monthly Actual Count</description>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>CLOSE_DATE</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Monthly Actual</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>CDF1:MAX</calculatedFormula>
+        <datatype>currency</datatype>
+        <description>Monthly Target Amount</description>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>CLOSE_DATE</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Monthly Target</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>5760*4</calculatedFormula>
+        <datatype>currency</datatype>
+        <description>Budgeted Amount SUM</description>
+        <developerName>FORMULA3</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Budgeted Amount</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_23194634</developerName>
+        <masterLabel>Oppty Source Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Opportunity.Partner_Sourced__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Marketing Attributed</sourceValue>
+            </sourceValues>
+            <value>Marketing</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Rep Attributed</sourceValue>
+            </sourceValues>
+            <value>Rep</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Partner Team Attributed</sourceValue>
+            </sourceValues>
+            <value>Partner Team</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA2</column>
+        </chartSummaries>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>CLOSE_DATE</groupingColumn>
+        <legendPosition>Bottom</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>false</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>FY20 Marketing Partner Sourced Oppty $$</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Type_New_Renewal_Upsell__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Opportunity_Amount__c</field>
+    </columns>
+    <columns>
+        <field>CDF1</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Partner_Sourced__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Partner_Name_New__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Partner_Influence__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SDR__c</field>
+    </columns>
+    <currency>USD</currency>
+    <customDetailFormulas>
+        <calculatedFormula>CASE(MONTH(CLOSE_DATE),
+1,5760,
+2,5760,
+3,5760,
+4,5760,
+5,5760,
+6,0,
+7,17280,
+8,17280,
+9,17280,
+10,17280,
+11,17280,
+12,17280,0)</calculatedFormula>
+        <dataType>Double</dataType>
+        <description>Row Level Budgeted Amount</description>
+        <developerName>CDF1</developerName>
+        <label>Monthly Budgeted Amount</label>
+        <scale>0</scale>
+    </customDetailFormulas>
+    <description>Closed Won New Logo + Upsell Marketing Partner Sourced Opportunity Revenue in FY 2020 showing against budget projections.</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Partner__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Opportunity_Type_New_Renewal_Upsell__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Logo,Upsell</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Partner_Sourced__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Marketing Attributed</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Month</dateGranularity>
+        <field>CLOSE_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>FY20 Marketing Partner Sourced Oppty $$</name>
+    <params>
+        <name>open</name>
+        <value>closedwon</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style></head>
+
+<body>
+<table width="748" border="0" cellpadding="0" cellspacing="0" style="margin:20px;">
+  <tr>
+    <td style="border:1px solid #d0d0d0;"><table width="748" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="748" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><a href="http://www.autorabit.com/" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/AutoRABIT-logo.jpg" width="242" height="86" alt="AutoRABIT" border="0" /></a></td>
+            <td align="right" valign="middle"><table border="0" cellspacing="3" cellpadding="3">
+              <tr>
+                <td><a href="https://twitter.com/autorabit" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/tw.jpg" width="32" height="32" alt="twitter" border="0"  /></a></td>
+                <td><a href="https://www.linkedin.com/company/autorabit" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/l-in.jpg" width="32" height="32" alt="linkedin" border="0"  /></a></td>
+                <td><a href="https://www.facebook.com/autorabit/?fref=ts" target="_blank" style="border:0px;"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/fb.jpg" width="32" height="32" alt="facebook" border="0"  /></a></td>
+                <td><a href="https://plus.google.com/u/0/+AutorabitCI" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/youtube-icon2.jpg" width="32" height="32" alt="Youtube" border="0"  /></a></td>
+                <td>&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+        </tr>
+      <tr>
+        <td style="border-top:1px solid #cdcdcd;">&nbsp;</td>
+        </tr>
+      <tr>
+        <td><table width="748" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="20">&nbsp;</td>
+            <td width="485"><p style="margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#1d5386;">Dear {!Lead.Name},</p>
+              <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px;">Thank you for your interest in AutoRABIT. We have received your request and one of our sales team members will contact you shortly.</p>
+              <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px;">Meanwhile, get some valuable insights on Salesforce Release Management Best Practices by subscribing to our <a href="http://www.autorabit.com/blog/" target="_blank">blog</a> for regular updates on offers and topics that are of interest to you. You can also visit our other resources mentioned below.<br />
+                <br />
+                </p>
+              <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px;">Using AutoRABIT is very simple and convenient.<a href="https://www.youtube.com/watch?v=fug--A7xuFo" target="_blank"> Check it out here</a></p>
+              <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px;">&nbsp;</p></td>
+            <td width="20">&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><table width="708" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="40" colspan="3" align="left" valign="middle"><p style="margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#383838;"> Download Insights for Your Business </p></td>
+                </tr>
+              <tr>
+                <td width="100" align="left" valign="middle">
+                <a href="http://www.autorabit.com/wp-content/uploads/2016/05/Datasheet-2.pdf" target="_blank" style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px; color:#06F;">
+                Data Sheet
+                </a>
+                  </td>
+                <td width="100" align="left" valign="middle"><a href="http://www.autorabit.com/wp-content/uploads/2016/06/CI-White-Paper.pdf" target="_blank" style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px; color:#06F;">White Paper</a></td>
+                <td align="left" valign="middle"><a href="http://www.autorabit.com/wp-content/uploads/2016/07/Coke-Case-Study_V2-S.pdf" target="_blank" style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px; color:#06F;">Case Study</a></td>
+                </tr>
+              </table></td>
+            <td>&nbsp;</td>
+          </tr>
+        </table></td>
+        </tr>
+      <tr>
+        <td style="border-bottom:1px solid #cdcdcd;">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><table width="748" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="40" colspan="4" align="center" valign="middle"><p style="margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:24px; color:#383838;">Follow Us</p></td>
+            </tr>
+          <tr>
+            <td width="187" align="right" valign="middle"><a href="https://twitter.com/autorabit" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/tw-b.jpg" alt="twitter" width="160" height="46" border="0" /></a></td>
+            <td width="187" align="center" valign="middle"><a href="https://www.linkedin.com/company/autorabit" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/l-in-b.jpg" alt="linkedin" width="160" height="46"  border="0"/></a></td>
+            <td width="175" align="left" valign="middle"><a href="https://www.facebook.com/autorabit/?fref=ts" target="_blank" style="border:0px;"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/fb-b.jpg" alt="facebook" width="160" height="46"  border="0"/></a></td>
+            <td width="199" align="left" valign="middle"><a href="https://www.youtube.com/channel/UCwFkuGbV_C9ZoaEpOt9oSjQ" target="_blank" style="border:0px;"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/yt-b.jpg" alt="youtube" width="160" height="46"  border="0"/></a></td>
+            </tr>
+          </table></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="40" align="center" valign="middle" bgcolor="#f2f2f2"><p style="margin:0px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#7b7b7b; line-height:15px;">CONTACT US: 5700, Stoneridge Mall Rd. Suite# 370, Pleasanton, CA 94588. <br />
+          Phone:+1 925 500 1004 &nbsp;  &nbsp; &nbsp; |  &nbsp;  &nbsp; &nbsp;     Email:<a href="mailto:info@autorabit.com" style="color:#666;"> info@autorabit.com</a><br /></p></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

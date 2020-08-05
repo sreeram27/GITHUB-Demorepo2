@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>COMPANY</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>Lead.SDR_Name__c</field>
+    </columns>
+    <columns>
+        <field>LAST_ACTIVITY</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>Lead.Lead_Source_Type__c</field>
+    </columns>
+    <columns>
+        <field>STATE</field>
+    </columns>
+    <columns>
+        <field>COUNTRY</field>
+    </columns>
+    <columns>
+        <field>Lead.SDR__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Christina&apos;s Named Account Leads that are not owned by Christina Blanco</description>
+    <filter>
+        <booleanFilter>(((1 OR 2 OR 3) AND 4 AND 5)) AND 6</booleanFilter>
+        <criteriaItems>
+            <column>EMAIL</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>albertsons,allergan,andeavor,@adm.com,assurant,autodesk,@bbt,bbandt,bestbuy,bostonprivate,cargill,cheniere,chevron,cnoinc,costco,cydcor,@dnb.c,dell.c,@delek,dentaquest,directenergy,evhc.net,exceloncorp,esmark,eogresources,familycareinc,globalfoundries,groupon,google,halyardhealth,hearst,heineken,hmhco.c,honeywell,@intel.c,@jnj.com,keysight,@kcc.c,kroger,lamresearch,linked,lockheed,@lowes.c,@lpl.c,marathonpetroleum,massmutual,masterbrand,metlife,molsoncoors,montefio,multiplan,mylan.com,newscorp,@nike,netflix,pearson,penfed.org,@pxd.com,@pg.com,progrexion,publix,@qlik,quarterretail,@rjrt,@salesforce.c,sasktel,silgan,sotheybys,tesla,@ugi.c,valero,evine,@vistra,wfscorp.com,wyndham</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>COMPANY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Albertsons,Allergan,Alphabet,Andeavor,Apple,Archer Daniels,Assurant,Autodesk,BB&amp;T,Best Buy,Boston Private,Cargill,CCC,Cheniere Energy,Chevron,Chrysler,Cno Financial,Costco,Cydcor,D&amp;B,Delek US Holdings,Dell,DentaQuest,Direct Energy,Discovery,Envision Healthcare,EOG Resources,Esmark,Exelon,Exxon Mobil,Familycare,Global Foundries,Groupon,Halyard Health,HCA Healthcare,Healthcare Services,Hearst Corporation,Heineken,HMH,Honeywell International,Intel,Jersey Standard,Johnson &amp; Johnson,Keysight Technologies,Kimberly-Clark,Kroger,LA Care Health Plan,LAM Research,Linkedin,Lockheed Martin,Lowe’s,LPL Financial,Magellan Health,Marathon Petroleum,Mass Mutual,Masterbrand Cabinets,Metlife,Mobil,Molson Coors,Montefiore,Multiplan,Mylan,Netflix,News Corp,Nike,Pearson,PenFed,Pioneer Natural,Procter &amp; Gamble,Progrexion,Prudential Insurance,Publix Super Markets,Qliktech,Qurate Retail,RJ Reynolds,Rockwell Collins,Safeway</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>COMPANY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Safeway,Salesforce,Sasktel,Silgan,Sotheby&apos;s,State Grid,Tesla,TIAA CREF,TJX,Tyson Foods,U.S. Steel,UGI,UPS,Valero Energy,Valuevision Media (Evine),Vistra Energy,World Fuel,Wydham</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Unqualified,DNC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Christina B</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>COUNTRY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>United States,US</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Christina Named Account Leads</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

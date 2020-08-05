@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Use this object to enter the time log for particular Project under an Account</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Customer__c</fullName>
+        <externalId>false</externalId>
+        <formula>Related_Project__r.Customer__r.Name</formula>
+        <label>Account (Customer)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AutorabitExtId__c</fullName>
+        <description>External Id created by AutoRABIT</description>
+        <externalId>true</externalId>
+        <label>AutorabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Break__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Any unbillable hours spent?</inlineHelpText>
+        <label>Break</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description of the TimeLog entry</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is this about?</inlineHelpText>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Duration__c</fullName>
+        <description>Hours spent</description>
+        <externalId>false</externalId>
+        <formula>ROUND((DATETIMEVALUE(End_Time__c) - DATETIMEVALUE(Start_Time__c)) * 24 - Break__c, 2)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calculates time spent in hours. End - Start - Break = Duration</inlineHelpText>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Time__c</fullName>
+        <description>End time</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the End time for the TimeLog</inlineHelpText>
+        <label>End Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Next_Discussion_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Next Discussion with the Customer</inlineHelpText>
+        <label>Next Discussion Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>No_Charge__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates weather a customer should be charged for his TimeLog entry</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check the box to avoid billing the client for this TimeLog entry</inlineHelpText>
+        <label>No Charge</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PS_Item__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Related_Project__r.PS_item__c)</formula>
+        <label>PS Item</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PS_Main_Item__c</fullName>
+        <externalId>false</externalId>
+        <label>PS Main Item</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AutoRABIT Implementation</fullName>
+                    <default>false</default>
+                    <label>AutoRABIT Implementation</label>
+                </value>
+                <value>
+                    <fullName>Annual Activities</fullName>
+                    <default>false</default>
+                    <label>Annual Activities</label>
+                </value>
+                <value>
+                    <fullName>Playground</fullName>
+                    <default>false</default>
+                    <label>Playground</label>
+                </value>
+                <value>
+                    <fullName>CS Core</fullName>
+                    <default>false</default>
+                    <label>CS Core</label>
+                </value>
+                <value>
+                    <fullName>Other activities</fullName>
+                    <default>false</default>
+                    <label>Other activities</label>
+                </value>
+                <value>
+                    <fullName>Demo</fullName>
+                    <default>false</default>
+                    <label>Demo</label>
+                </value>
+                <value>
+                    <fullName>Internal Training</fullName>
+                    <default>false</default>
+                    <label>Internal Training</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PS_Sub_Item__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose the PS sub item related to the PS Item</inlineHelpText>
+        <label>PS Sub Item</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>PS_Main_Item__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Release Automation Discovery</fullName>
+                    <default>false</default>
+                    <label>Release Automation Discovery</label>
+                </value>
+                <value>
+                    <fullName>AutoRABIT Administration Set Up</fullName>
+                    <default>false</default>
+                    <label>AutoRABIT Administration Set Up</label>
+                </value>
+                <value>
+                    <fullName>AutoRABIT User Training</fullName>
+                    <default>false</default>
+                    <label>AutoRABIT User Training</label>
+                </value>
+                <value>
+                    <fullName>Release Automation Modelling with AutoRABIT</fullName>
+                    <default>false</default>
+                    <label>Release Automation Modelling with AutoRABIT</label>
+                </value>
+                <value>
+                    <fullName>Annual - AutoRABIT Training Pack</fullName>
+                    <default>false</default>
+                    <label>Annual - AutoRABIT Training Pack</label>
+                </value>
+                <value>
+                    <fullName>Annual - Pre-CI Sandbox Alignment</fullName>
+                    <default>false</default>
+                    <label>Annual - Pre-CI Sandbox Alignment</label>
+                </value>
+                <value>
+                    <fullName>Annual - Complex Sandbox Metadata Deployment [ Upto 4 Sandboxes ]</fullName>
+                    <default>false</default>
+                    <label>Annual - Complex Sandbox Metadata Deployment [ Upto 4 Sandboxes ]</label>
+                </value>
+                <value>
+                    <fullName>Annual - Production Deployment Hotline 	[ Upto 6 client releases]</fullName>
+                    <default>false</default>
+                    <label>Annual - Production Deployment Hotline 	[ Upto 6 client releases]</label>
+                </value>
+                <value>
+                    <fullName>Annual - Salesforce Production Org Split/ setup</fullName>
+                    <default>false</default>
+                    <label>Annual - Salesforce Production Org Split/ setup</label>
+                </value>
+                <value>
+                    <fullName>Playground Infrastructure Prep</fullName>
+                    <default>false</default>
+                    <label>Playground Infrastructure Prep</label>
+                </value>
+                <value>
+                    <fullName>Playground Task Review and sign-off</fullName>
+                    <default>false</default>
+                    <label>Playground Task Review and sign-off</label>
+                </value>
+                <value>
+                    <fullName>Playground session running through the scenarios</fullName>
+                    <default>false</default>
+                    <label>Playground session running through the scenarios</label>
+                </value>
+                <value>
+                    <fullName>Playground Review sessions, touch points</fullName>
+                    <default>false</default>
+                    <label>Playground Review sessions, touch points</label>
+                </value>
+                <value>
+                    <fullName>Discussion and Follow-ups with Product team for any issues</fullName>
+                    <default>false</default>
+                    <label>Discussion and Follow-ups with Product team for any issues</label>
+                </value>
+                <value>
+                    <fullName>Playground wrap-up and transition to Sales Team</fullName>
+                    <default>false</default>
+                    <label>Playground wrap-up and transition to Sales Team</label>
+                </value>
+                <value>
+                    <fullName>Overview Demo</fullName>
+                    <default>false</default>
+                    <label>Overview Demo</label>
+                </value>
+                <value>
+                    <fullName>CS Core - Working with Salesforce Architect Community</fullName>
+                    <default>false</default>
+                    <label>CS Core - Working with Salesforce Architect Community</label>
+                </value>
+                <value>
+                    <fullName>CS Core - Working with Salesforce Product Management Team</fullName>
+                    <default>false</default>
+                    <label>CS Core - Working with Salesforce Product Management Team</label>
+                </value>
+                <value>
+                    <fullName>CS Core - Working with Marketing Team</fullName>
+                    <default>false</default>
+                    <label>CS Core - Working with Marketing Team</label>
+                </value>
+                <value>
+                    <fullName>CS Core - Work with Account Management Team</fullName>
+                    <default>false</default>
+                    <label>CS Core - Work with Account Management Team</label>
+                </value>
+                <value>
+                    <fullName>CS Core - AutoRABIT CRM</fullName>
+                    <default>false</default>
+                    <label>CS Core - AutoRABIT CRM</label>
+                </value>
+                <value>
+                    <fullName>CS Core - AutoRABIT Academy</fullName>
+                    <default>false</default>
+                    <label>CS Core - AutoRABIT Academy</label>
+                </value>
+                <value>
+                    <fullName>CI Job Setup</fullName>
+                    <default>false</default>
+                    <label>CI Job Setup</label>
+                </value>
+                <value>
+                    <fullName>EZ-Commits Setup</fullName>
+                    <default>false</default>
+                    <label>EZ-Commits Setup</label>
+                </value>
+                <value>
+                    <fullName>Org Synchronization setup</fullName>
+                    <default>false</default>
+                    <label>Org Synchronization setup</label>
+                </value>
+                <value>
+                    <fullName>TAF Setup</fullName>
+                    <default>false</default>
+                    <label>TAF Setup</label>
+                </value>
+                <value>
+                    <fullName>Data Loader Pro setup</fullName>
+                    <default>false</default>
+                    <label>Data Loader Pro setup</label>
+                </value>
+                <value>
+                    <fullName>Customization</fullName>
+                    <default>false</default>
+                    <label>Customization</label>
+                </value>
+                <value>
+                    <fullName>Playground Planning Session</fullName>
+                    <default>false</default>
+                    <label>Playground Planning Session</label>
+                </value>
+                <value>
+                    <fullName>Initial Discovery Call w/ Sales</fullName>
+                    <default>false</default>
+                    <label>Initial Discovery Call w/ Sales</label>
+                </value>
+                <value>
+                    <fullName>Internal Calls</fullName>
+                    <default>false</default>
+                    <label>Internal Calls</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>AutoRABIT Training</fullName>
+                    <default>false</default>
+                    <label>AutoRABIT Training</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Training</fullName>
+                    <default>false</default>
+                    <label>Salesforce Training</label>
+                </value>
+                <value>
+                    <fullName>Follow up/Technical calls with client</fullName>
+                    <default>false</default>
+                    <label>Follow up/Technical calls with client</label>
+                </value>
+                <value>
+                    <fullName>Implementation Touch Point Calls</fullName>
+                    <default>false</default>
+                    <label>Implementation Touch Point Calls</label>
+                </value>
+                <value>
+                    <fullName>Live Demo</fullName>
+                    <default>false</default>
+                    <label>Live Demo</label>
+                </value>
+                <value>
+                    <fullName>TAF Demo</fullName>
+                    <default>false</default>
+                    <label>TAF Demo</label>
+                </value>
+                <value>
+                    <fullName>Fremont SFDUG Meetup</fullName>
+                    <default>false</default>
+                    <label>Fremont SFDUG Meetup</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>AutoRABIT Implementation</controllingFieldValue>
+                <valueName>Release Automation Discovery</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AutoRABIT Implementation</controllingFieldValue>
+                <valueName>AutoRABIT Administration Set Up</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AutoRABIT Implementation</controllingFieldValue>
+                <valueName>AutoRABIT User Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AutoRABIT Implementation</controllingFieldValue>
+                <valueName>CI Job Setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AutoRABIT Implementation</controllingFieldValue>
+                <valueName>EZ-Commits Setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AutoRABIT Implementation</controllingFieldValue>
+                <valueName>Org Synchronization setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AutoRABIT Implementation</controllingFieldValue>
+                <valueName>TAF Setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AutoRABIT Implementation</controllingFieldValue>
+                <valueName>Data Loader Pro setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AutoRABIT Implementation</controllingFieldValue>
+                <valueName>Customization</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AutoRABIT Implementation</controllingFieldValue>
+                <valueName>Implementation Touch Point Calls</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Annual Activities</controllingFieldValue>
+                <valueName>Annual - AutoRABIT Training Pack</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Annual Activities</controllingFieldValue>
+                <valueName>Annual - Pre-CI Sandbox Alignment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Annual Activities</controllingFieldValue>
+                <valueName>Annual - Complex Sandbox Metadata Deployment [ Upto 4 Sandboxes ]</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Annual Activities</controllingFieldValue>
+                <valueName>Annual - Production Deployment Hotline 	[ Upto 6 client releases]</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Annual Activities</controllingFieldValue>
+                <valueName>Annual - Salesforce Production Org Split/ setup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playground</controllingFieldValue>
+                <valueName>Playground Infrastructure Prep</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playground</controllingFieldValue>
+                <valueName>Playground Task Review and sign-off</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playground</controllingFieldValue>
+                <valueName>Playground session running through the scenarios</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playground</controllingFieldValue>
+                <valueName>Playground Review sessions, touch points</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playground</controllingFieldValue>
+                <valueName>Playground wrap-up and transition to Sales Team</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Playground</controllingFieldValue>
+                <valueName>Playground Planning Session</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CS Core</controllingFieldValue>
+                <valueName>CS Core - Working with Salesforce Architect Community</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CS Core</controllingFieldValue>
+                <valueName>CS Core - Working with Salesforce Product Management Team</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CS Core</controllingFieldValue>
+                <valueName>CS Core - Working with Marketing Team</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CS Core</controllingFieldValue>
+                <valueName>CS Core - Work with Account Management Team</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CS Core</controllingFieldValue>
+                <valueName>CS Core - AutoRABIT CRM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>CS Core</controllingFieldValue>
+                <valueName>CS Core - AutoRABIT Academy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other activities</controllingFieldValue>
+                <valueName>Discussion and Follow-ups with Product team for any issues</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other activities</controllingFieldValue>
+                <valueName>Initial Discovery Call w/ Sales</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other activities</controllingFieldValue>
+                <valueName>Internal Calls</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other activities</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other activities</controllingFieldValue>
+                <valueName>Follow up/Technical calls with client</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other activities</controllingFieldValue>
+                <valueName>Fremont SFDUG Meetup</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Demo</controllingFieldValue>
+                <valueName>Overview Demo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Demo</controllingFieldValue>
+                <valueName>Live Demo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Demo</controllingFieldValue>
+                <valueName>TAF Demo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Internal Training</controllingFieldValue>
+                <valueName>AutoRABIT Training</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Internal Training</controllingFieldValue>
+                <valueName>Salesforce Training</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Related_Project__c</fullName>
+        <description>Look-up to Project.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Project to which you would need the time to be rolled up.</inlineHelpText>
+        <label>Professional Service</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>TimeLogs</relationshipLabel>
+        <relationshipName>TimeLogs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Revenue__c</fullName>
+        <description>Total Revenue generated by this Timelog</description>
+        <externalId>false</externalId>
+        <formula>IF(No_Charge__c, 0, Duration__c *  Related_Project__r.Billable_Rate__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Revenue generated by this timelog</inlineHelpText>
+        <label>Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Start_Time__c</fullName>
+        <description>Start Time</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter your start time for this entry</inlineHelpText>
+        <label>Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates the user who filed the Time Log</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Your Name?</inlineHelpText>
+        <label>AutoRABIT Engg</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>TimeLogs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>TimeLog</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Wiz_Time_Logs</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Customer__c</columns>
+        <columns>Start_Time__c</columns>
+        <columns>End_Time__c</columns>
+        <columns>Related_Project__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Duration__c</columns>
+        <columns>PS_Item__c</columns>
+        <columns>PS_Main_Item__c</columns>
+        <columns>PS_Sub_Item__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Account_Customer__c</field>
+            <operation>contains</operation>
+            <value>Wiz</value>
+        </filters>
+        <label>Wiz Time Logs</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>TL-{YYYY}{MM}-{0}</displayFormat>
+        <label>TimeLog ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>TimeLogs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

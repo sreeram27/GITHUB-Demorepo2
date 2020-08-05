@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2020-06-AutoRABIT SFDC Architect Intro</name>
+    <style>none</style>
+    <subject>AutoRABIT kicks off DevOps learning series for Solution Architects. Reaches Crest Partner level</subject>
+    <textOnly>Hi {!Contact.FirstName},  
+
+I want you to be amongst the first to know that AutoRABIT has reached the Crest level in the AppExchange partner program, putting us in the Top 10% of the Salesforce ISV partners.  
+
+Thanks to your support, DevOps and CI/CD within the Salesforce Developer Community is getting a lot of recognition. As a leading provider of automated DevOps for Salesforce, AutoRABIT has been at the forefront of helping customers respond to the needs of their businesses to move more of their applications into the cloud, speed up development cycles, and push out enhancements to production without missing a beat.  
+
+As a special thank you to the program architects, solution architects, and engineers AutoRABIT is initiating a non-commercial program that includes educational webinars led by DevOps experts, case studies, and real customer stories that highlight a different approach to DevOps.
+
+Over 150 Salesforce large and mid-size customers have adopted the AutoRABIT approach. This approach allows them to openly integrate with preferred developer tools for planning, version control, and automated testing. IDE enhancements like the VS Code extension for AutoRABIT allow developers to use their favorite tools for Salesforce development.  
+
+Please join me in the coming weeks as we share more about our success with you. You will be receiving a webinar invite and a few select resources related to DevOps best practices. We would love for you to join us to learn more.   
+
+Best regards. 
+
+Adrian  Adrian Szwarcburg 
+VP Channels and Partnerships 
+Ph: +1 415 505 5446</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

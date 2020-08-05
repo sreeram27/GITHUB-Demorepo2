@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>LEAD_SOURCE</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 OR 2 OR  3 OR 4 OR 5</booleanFilter>
+        <criteriaItems>
+            <column>COMPANY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>ICBC,JPMorgan,Chase,China Construction,Agricultural Bank,Bank of America,Apple,Ping An Insurance,Bank of China,Royal Dutch,Shell,Wells Fargo,ExxonMobil,AT&amp;T,Samsung Electronics,Citigroup,Toyota Motor,Microsoft,Alphabet,Volkswagen Group,Chevron,Verizon,HSBC Holdings,PetroChina,Allianz,BP,Total,Berkshire Hathaway,China Mobile,Amazon,Walmart,Santander,China Merchants,UnitedHealth,Comcast,BNP Paribas,Sinopec,Softbank,Daimler,Johnson,Bank of Communications,Gazprom,RBC,Nestle,Mitsubishi UFJ,Intel,Goldman Sachs,TD Bank,Sberbank,Morgan Stanley,Boeing,Petrobras</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>COMPANY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Nippon,Rosneft,Procter &amp; Gamble,P&amp;g,Pfizer,Industrial Bank,General Motors,BMW,Itaú Unibanco,Alibaba,IBM,Novartis,Postal Savings Bank Of China,PSBC,Facebook,Siemens,Shanghai Pudong,Japan Post,Sumitomo Mitsui,Banco,Anheuser-Busch,The Walt,Disney,Walt Disney,Reliance,CITIC,Sony,Cisco Systems,Tencent,Honda Motor,Enel,United Technologies,Commonwealth,China State,Dow,DuPont,Equinor,American Express,MetLife,AXA,PepsiCo,Bank of Nova Scotia,Roche,ING,Lloyds Banking,Eni,Oracle,China Citic Bank,China Evergrande,UBS,AIRBUS,LukOil,Prudential,BASF,SAIC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>COMPANY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Westpac,British American,US Bancorp,U.S. Bank,US Bank,Credit Agricole,China Life,Unilever,Glencore,Mitsubishi,BHP Group,Ford,Rio Tinto,Prudential,AIA,China Minsheng,Sanofi,Deutsche Telekom,Zurich,Brookfield,Merck &amp; Co.,ANZ,Caterpillar,Saudi Basic,Hon Hai Precision,China Vanke,Mizuho Financial,CNOOC,Home Depot,Taiwan,Country Garden,Capital One,Intesa Sanpaolo,Nissan Motor,Coca-Cola,Bank of Montreal,BBVA,Walgreens,Chubb,NAB,National Australia,Vale,China Pacific,Anthem,Telefónica,Christian Dior,Dior,Generali Group,Iberdrola,PNC Financial,GlaxoSmithKline,Munich Re,Cigna,Medtronic</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>COMPANY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>China Everbright,China Shenhua,Honeywell,Banco do,People&apos;s Insurance,UniCredit,CK Hutchison,Société Générale,ConocoPhillips,United Parcel Service,UPS,VINCI,Visa,Tokio Marine Holdings,Bayer,PTT PCL,Manulife,AbbVie,China Telecom,Phillips,KDDI,Fiat Chrysler,Marathon Petroleum,Costco,Enbridge,Amgen,SAP,Bank of New York Mellon,Broadcom,SK Hynix,China Communications,Lockheed,Itochu,Duke Energy,FedEx,Royal Bank of Scotland,Orange,Barclays,Union Pacific,América Móvil,Canadian Imperial Bank,Credit Suisse,Synchrony,NextEra,Deere,ArcelorMittal,Mitsui,Abbott,China Railway,Gilead Sciences,China Railway Co</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>COMPANY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>L&apos;Oréal,Exelon,Delta,Renault,Charter,Micron,Qatar,Deutsche,HDFC,Altria,Valero,Philip,DBS,BlackRock,Southern,3M,Schlumberger,Peugeot,Linde,Oil &amp; Natural Gas,Dai-ichi,Thermo Fisher,Aflac,Allstate,Hyundai,Travelers,ENGIE,Mondelēz,Suncor,Hitachi,Nordea,Aviva,Target,Lowe&apos;s,General Dynamics,Repsol,AstraZeneca,Eli Lilly,Continental,Charles Schwab,National Grid,Progressive,Tesco,Danone,Poly,Volvo,HCA Healthcare,Accenture,Central Japan,East Japan</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>COMPANY</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Leads from Global Fortune 250 Companies</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>LeadList</reportType>
+    <scope>org</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

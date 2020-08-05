@@ -1,0 +1,609 @@
+<apex:page standardController="Questionnaire_Implementation__c" extensions="Implementation_Questionnaire"  sidebar="false" showHeader="false" wizard="true" applyBodyTag="false" standardStylesheets="false" docType="HTML-5.0" >
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+    
+    
+    <style>
+        .locationError { color: blue; font-weight: strong;}
+        .employeeError { color: green; font-weight: strong;}
+        .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        padding: 0px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: none;
+        }
+        .isVersionControlNotused{
+        display:none;
+        }   
+        .isVersionControl{
+        display:none;
+        }
+        .notbold{
+        font-weight:normal
+        }
+    </style>
+    <script>
+
+    function displaydiv(val)
+    { 
+        
+        if(val=='Used')
+        {
+            document.getElementById('chk4').style.display='table-row';
+            document.getElementById('chk5').style.display='table-row';
+            document.getElementById('chk6').style.display='table-row';
+        }
+        else
+        {
+            document.getElementById('chk4').style.display='none';
+            document.getElementById('chk5').style.display='none';
+            document.getElementById('chk6').style.display='none';
+        }
+      
+        if(val=='NotUsed')
+            
+        {  
+            document.getElementById('chk1').style.display='table-row';
+            document.getElementById('chk2').style.display='table-row';
+            document.getElementById('chk3').style.display='table-row';
+        }
+        else
+        {
+            document.getElementById('chk1').style.display='none';
+            document.getElementById('chk2').style.display='none';
+            document.getElementById('chk3').style.display='none';
+        }
+                
+    }
+    var test=displaydiv(val);
+    
+    
+    
+    </script>
+    
+    <apex:stylesheet value="{!$Resource.questionnaireStyles}" />
+    <div class="header">
+        <img align="left" src="{!$Resource.AutorabitLogo}" />
+    </div>
+    <img align="right" src="{!$Resource.NoDeploymentLogo}" width="80" />
+    <br/>
+    <apex:form styleClass="form-style" style="width:780Px;border-style:solid;border-width:2px;
+                                              border-color:blue;"  id="frm">
+      
+        <apex:pageblock >
+            <h5 style="font-size: 20px; font-weight: bolder; color: #F67F28;text-align: center;" >AutoRABIT Evaluation Questionnaire</h5>
+            <table class="table">
+                <tr>
+                    <td style="width: 70%;text-align: left;">
+                        <apex:outputLabel value="Company name: " ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel style="margin-left: 50px;">
+                            <apex:inputText value="{!companyName}" id="quesObj__comp"  />   
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputLabel value="Email Address:  " style="margin-top: 17px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel style="margin-left: 50px;">
+                            <apex:inputText value="{!Emailval}"  style="margin-top: 10px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="height: 20px;"></td>
+                </tr>    
+                <tr>
+                    <td colspan="2" style="background: grey; color: white; font-size: 15px; font-weight: bolder; text-align: center;">
+                        General Questions
+                    </td>
+                </tr>
+                
+                <tr > 
+                    <td>
+                        <apex:outputLabel value="1.Which Version Control System is used for Salesforce? " style="margin-top: 30px" />
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:actionRegion >
+                                <apex:inputField value="{!quesObj.X1_Which_Version_Control_System_is_used__c}" style="margin-top: 33px;" >
+                                    <apex:actionSupport event="onchange" rerender="t1,f1" />
+                                </apex:inputField>
+                            </apex:actionRegion>
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputPanel id="t1" >
+                            <apex:outputLabel value="Please specify other (VC) :        " rendered="{!quesObj.X1_Which_Version_Control_System_is_used__c=='Other'}" style="margin-top: 17px;font-weight: bold;" > 
+                            </apex:outputLabel>
+                        </apex:outputPanel>
+                    </td> 
+                    <td>
+                        <apex:outputPanel id="f1" >
+                            <apex:outputPanel styleClass="requiredInput" rendered="{!quesObj.X1_Which_Version_Control_System_is_used__c=='Other'}" style="margin-left: 50px;"  >
+                                <apex:inputField value="{!quesObj.Name_of_other_System__c }"  style="font-weight: normal;margin-top:15px" />
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </td> 
+                </tr> 
+                
+                <tr> 
+                    <td>
+                        <apex:outputLabel value="2. Which tool is used for Project Management (ALM)?  : " style="margin-top: 18px" />
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:actionRegion >
+                                <apex:inputField value="{!quesObj.X2_Which_tool_is_used_for_Project_Manage__c}" style="margin-top: 20px;" >
+                                    <apex:actionSupport event="onchange" rerender="t2,f2" />
+                                </apex:inputField>
+                            </apex:actionRegion>
+                        </apex:outputPanel></td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputPanel id="t2" >
+                            <apex:outputLabel value="Please specify other (ALM):        " rendered="{!quesObj.X2_Which_tool_is_used_for_Project_Manage__c=='Other'}"  style="margin-top: 17px;font-weight: bold;" > 
+                            </apex:outputLabel>
+                        </apex:outputPanel>
+                    </td> 
+                    
+                    <td>
+                        <apex:outputPanel id="f2" >
+                            <apex:outputPanel rendered="{!quesObj.X2_Which_tool_is_used_for_Project_Manage__c=='Other'}" style="margin-left: 50px;"  >
+                                <apex:inputField value="{!quesObj.Plz_specify_other_ALM__c}"  style="font-weight: normal;margin-top:15px" />
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </td> 
+                </tr>
+                
+                <tr> 
+                    <td>
+                        <apex:outputLabel value="3. What is the current team structure w/ their role(s)? " style="margin-top: 18px" />
+                    </td>
+                    
+                </tr>
+                
+                <tr>
+                    <td style="width: 25%;text-align: left;">
+                        <apex:outputLabel value="Number of Developers" for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Number_of_Developers__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 25%;text-align: left;">
+                        <apex:outputLabel value="Number of Admins" for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Number_of_Admins__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 25%;text-align: left;">
+                        <apex:outputLabel value="Number of Release Managers/Architect" for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Number_of_Release_Managers_Architect__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 25%;text-align: left;">
+                        
+                        <apex:outputLabel value="Are there any SI partners you work with?" for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Number_of_Primary_SI_Partners__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>                    
+                    </td>
+                </tr> 
+                <tr>
+                    <td style="width: 25%;text-align: left;">  
+                        <apex:outputLabel value="4. Are you evaluating any other CI/CD tools currently?" for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Any_other_CI_CD_tools__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>                    
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="5. What does your current release process look like? " for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td style="text-align: center;">
+                        <apex:outputPanel layout="block" style="margin-left: 50px;">
+                            <apex:inputTextarea rows="4" cols="20"  style="margin-top: 10px;" styleClass="textarea" value="{!quesObj.What_does_your_current_release_process__c}" id="quesObj__site" />
+                        </apex:outputPanel>
+                        <apex:actionRegion >
+                            <apex:inputfile style="margin-left: 50px; margin-bottom: 10px; " value="{!attach.body}" filename="{!attach.name}"></apex:inputfile>
+                        </apex:actionRegion>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2">
+                        <apex:outputPanel id="t3">
+                            <apex:outputLabel value="Please specify other (SI Partners):  " rendered="{!quesObj.What_is_the_current_team_structure_w__c=='Who are your primary SI Partners (if any)?'}" style="margin-top: 17px;" >
+                                
+                                <apex:outputPanel styleClass="requiredInput" >
+                                    <apex:outputPanel styleClass="requiredBlock" style="margin-left: 50px;"/>
+                                    <apex:inputField value="{!quesObj.Plz_specify_others__c}"  style=""/>
+                                </apex:outputPanel>
+                            </apex:outputLabel>
+                        </apex:outputPanel>
+                    </td>
+                </tr> 
+                <tr>
+                    <td colspan="2" style="background: grey; color: white; font-size: 15px; font-weight: bolder; text-align: center;">
+                        Version Control
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        
+                        <apex:outputLabel value="Version Control" style="margin-top:10px" />
+                    </td>
+                    <td>
+                         <apex:selectRadio id="chooseColor" onchange="displaydiv(this.value)"   style="margin-top:10px;margin-left: 50px;"  >  
+                            <apex:selectOption id="notused" itemLabel="Not Used" itemValue="NotUsed"   ></apex:selectOption>                        
+                            <apex:selectOption id="used" itemLabel="Used" itemValue="Used"></apex:selectOption>
+                            
+                        </apex:selectRadio> 
+                        
+                   
+                        
+                    </td>
+                </tr>
+                <tr id="chk1" style="display:none;" >
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="1. How do you keep track of and/or manage developer’s changes?   " for="quesObj__comp" style="margin-top: 10px;"></apex:outputLabel>                     </td>
+                    <td>
+                        <apex:outputPanel style="margin-left: 50px;">
+                            <apex:inputField value="{!quesObj.Developer_Changes_how_do_you_track__c}" style="margin-top: 10px;"  />   
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr id="chk2" style="display:none;">
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="2. What is the plan for code backup? " for="quesObj__email" style="margin-top: 17px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;" >
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.What_is_the_plan_for_code_backup__c}"  style="margin-top: 10px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr> 
+                <tr id="chk3" style="display:none;" >
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="3. How often do your developers overwrite code? " for="quesObj__email" style="margin-top: 17px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.No_of_time_Developers__c}"  style="margin-top: 10px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>  
+                <!--  <apex:outputPanel layout="none" id="Used" rendered="{!showUsed}"> -->
+                <tr id="chk4" style="display:none;">
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="1. How often do you commit changes to version control?" for="quesObj__comp" style="margin-top:10px"></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel style="margin-left: 50px;">
+                            <apex:inputField value="{!quesObj.No_of_time__c}" style="margin-top:10px"  />   
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr id="chk5" style="display:none;">
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="2. How long does it take for commits/merges? " for="quesObj__email" style="margin-top: 19px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Time_taken_for_commits_mer__c}"  style="margin-top: 10px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr> 
+                <tr id="chk6" style="display:none;">
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="3.How are merge conflicts addressed?  " for="quesObj__email" style="margin-top: 17px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.How_are_merge_conflicts_addressed__c}"  style="margin-top: 10px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr> 
+                
+                
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="Select use cases to evaluate: " for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>   
+                    </td>
+                    <td>
+                        <apex:outputPanel style="margin-left: 50px;">
+                            <!--apex:inputField value="{!quesObj.Select_use__c}"  style="margin-top: 15px;" /--> 
+                            <apex:selectList value="{!selectedUseCases}" multiselect="true">
+                                <apex:selectOptions value="{!selUseCases}"/>
+                                
+                            </apex:selectList>                              
+                            <br/>
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="What are your short term / long-term goals with Version Control?  " for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Goals_with_Version_Control_Short_Long__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>  
+                
+                
+                <tr>
+                    <td colspan="2" style="background: grey; color: white; font-size: 15px; font-weight: bolder; text-align: center;">
+                        Deployment
+                    </td>
+                </tr>
+                <tr > 
+                    <td>
+                        <apex:outputLabel value="1. How are metadata components being deployed currently?" style="margin-top: 15px" />
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:actionRegion >
+                                <apex:inputField value="{!quesObj.How_are_metadata_components_being_dep__c}" style="margin-top: 15px;" >
+                                    <apex:actionSupport event="onchange" rerender="t4,f4" />
+                                </apex:inputField>
+                            </apex:actionRegion>
+                        </apex:outputPanel></td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputPanel id="t4" >
+                            <apex:outputLabel value="Please specify other        " rendered="{!quesObj.How_are_metadata_components_being_dep__c=='Other'}"  style="margin-top: 13px;font-weight: bold;" > 
+                            </apex:outputLabel>
+                        </apex:outputPanel>
+                    </td> 
+                    
+                    <td>
+                        <apex:outputPanel id="f4" >
+                            <apex:outputPanel rendered="{!quesObj.How_are_metadata_components_being_dep__c=='Other'}" style="margin-left: 50px;"  >
+                                <apex:inputField value="{!quesObj.Plz_specify_other_Metadata_components__c}"  style="font-weight: normal;margin-top:7px" />
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </td> 
+                </tr>
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="2. What is the average turnaround time for successful deployment, in case you encounter any errors?   " for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.How_Often__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>  
+                
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="3. What are the pain points during the deployment process?" for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.What_are_the_pain_points_during_the_d__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>  
+                
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="4. How much time does it take for a production deployment? " for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Time_taken_for__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="5. Time taken for pre/post deployment steps (Attach any relevant documents describing manual steps)" for="quesObj__email" style="margin-top: 17px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel layout="block" style="margin-left: 50px; margin-top: 15px;">
+                            <apex:inputTextarea rows="1" cols="22" styleClass="requiredBlock" value="{!quesObj.How_long_does_it_take_for_pre_post_de__c}" id="quesObj__site1" />
+                        </apex:outputPanel>
+                        
+                        <apex:actionRegion >
+                            <apex:inputfile value="{!attach1.body}" filename="{!attach1.name}" style="margin-left: 50px; margin-bottom: 10px;"></apex:inputfile>
+                        </apex:actionRegion>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="Select use cases to evaluate" for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <!--apex:inputField value="{!quesObj.Select_use_cases_for__c}"  style="margin-top: 13px;" /> -->
+                            <apex:selectList value="{!selectedUseCasesDeployment}" multiselect="true">
+                                <apex:selectOptions value="{!selUseCasesDeployment}"/>
+                            </apex:selectList>                              
+                            <br/>
+                        </apex:outputPanel>
+                    </td>
+                </tr>  
+                
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="What are your short term / long-term goals with Deployments?" for="quesObj__email" style="margin-top: 10px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Short_Long_Term_goals_with_Deployments__c}"  style="margin-top: 10px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr> 
+                <tr>
+                    <td colspan="2" style="background: grey; color: white; font-size: 15px; font-weight: bolder; text-align: center;">
+                        Testing
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="1. What kind of testing do you perform?"  style="margin-top: 11px;"></apex:outputLabel>
+                    </td>
+                    
+                    <td>
+                        <apex:outputPanel style="margin-left: 50px;">
+                            <apex:actionRegion >
+                                <apex:inputField value="{!quesObj.What_kind_of_testing_do_you_perform__c}" style="margin-top: 15px;"  > 
+                                    <apex:actionSupport event="onchange" rerender="t5,f5" />
+                                </apex:inputField>
+                            </apex:actionRegion>
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <apex:outputPanel id="t5" >
+                            <apex:outputLabel value="What tools are you using in Automation ?" rendered="{!quesObj.What_kind_of_testing_do_you_perform__c=='Automation'}"  style="margin-top: 17px;font-weight: bold;" > 
+                            </apex:outputLabel>
+                        </apex:outputPanel>
+                    </td> 
+                    
+                    <td>
+                        <apex:outputPanel id="f5" >
+                            <apex:outputPanel rendered="{!quesObj.What_kind_of_testing_do_you_perform__c=='Automation'}" style="margin-left: 50px;"  >
+                                <apex:inputField value="{!quesObj.What_tools_are_you_using__c}"  style="font-weight: normal;margin-top:15px" />
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </td> 
+                </tr>
+                
+                
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="What are your short term / long-term goals with Testing?" for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.a_What_tools_are_you_using_Text_Field__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>  
+                
+                <tr>
+                    <td colspan="2" style="background: grey; color: white; font-size: 15px; font-weight: bolder; text-align: center;">
+                        Data Loader
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="1. Any ETL tool currently being used? " for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.X1_Any_ETL_tool_currently_being_used__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>  
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="2. Typically, how many records do you migrate per data load?" for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Typically_how_many_records_do_you_mi__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>  
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="3. How often do you do data loading and what’s the average time per process?  " for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.How_often_Data_Loader__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr>  
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="Select use cases to evaluate: " for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:selectList value="{!selectedUseCasesDataLoader}" multiselect="true">
+                                <apex:selectOptions value="{!selUseCasesDataLoader}"/>
+                            </apex:selectList>                              
+                            <br/>
+                        </apex:outputPanel>
+                    </td>
+                </tr>  
+                <tr>
+                    <td style="width: 50%;text-align: left;">
+                        <apex:outputLabel value="What are your short term / long-term goals with Data loader Pro? " for="quesObj__email" style="margin-top: 15px;" ></apex:outputLabel>
+                    </td>
+                    <td>
+                        <apex:outputPanel styleClass="requiredInput" style="margin-left: 50px;">
+                            <apex:outputPanel styleClass="requiredBlock" />
+                            <apex:inputField value="{!quesObj.Short_Long_Term_goals_with_Data_Loader__c}"  style="margin-top: 15px;" />
+                        </apex:outputPanel>
+                    </td>
+                </tr> 
+            </table> 
+        </apex:pageblock>
+       
+             <div align="center">
+                <apex:commandButton action="{!Save}" value="Submit Form" id="theButton" style="margin-top: 20px;"   styleClass="myButton" />
+                
+                <!-- <apex:message for="quesObj__email" styleClass="locationError" />  -->
+               </div>
+    </apex:form>   
+</apex:page>

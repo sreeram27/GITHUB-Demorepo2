@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style></head>
+
+<body>
+<table width="748" border="0" cellspacing="0" cellpadding="0" align="center" style="margin: 20px;">
+  <tr>
+    <td style="border:1px solid #d0d0d0;"><table width="748" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="748" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><a href="http://www.autorabit.com/" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/AutoRABIT-logo.jpg" width="242" height="86" alt="AutoRABIT" border="0" /></a></td>
+            <td align="right" valign="middle"><table border="0" cellspacing="3" cellpadding="3">
+              <tr>
+                <td><a href="https://twitter.com/autorabit" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/tw.jpg" width="32" height="32" alt="twitter" border="0"  /></a></td>
+                <td><a href="https://www.linkedin.com/company/autorabit" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/l-in.jpg" width="32" height="32" alt="linkedin" border="0"  /></a></td>
+                <td><a href="https://www.facebook.com/autorabit/?fref=ts" target="_blank" style="border:0px;"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/fb.jpg" width="32" height="32" alt="facebook" border="0"  /></a></td>
+                <td><a href="https://plus.google.com/u/0/+AutorabitCI" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/G-.jpg" width="32" height="32" alt="G+" border="0"  /></a></td>
+                <td>&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+        </tr>
+      <tr>
+        <td><img src="http://www.autorabit.com/wp-content/uploads/2014/07/banner.jpg" width="748" height="72" alt="banner" /></td>
+        </tr>
+      <tr>
+        <td><table width="748" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td align="center" valign="middle">&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="20">&nbsp;</td>
+            <td width="485"><p style="margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#1d5386;">FROM THE CEO’S DESK</p>
+              <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px;">I am pleased to present the inaugural issue of our newsletter, RABIT FORCE. It is my earnest hope that this newsletter would serve as a 
+                cohesive force to deepen our association with clients, partners and Salesforce developer community. Our vision is to be a customer-centric company that empowers customers to increase their efficiency and productivity, and enables the Salesforce development community to focus on more innovative endeavors. </p>
+              <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px;"><span style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:13px; color:#353535;">The current issue of the newsletter highlights the following:</span><br />
+                &nbsp; &nbsp; •&nbsp;   Overview of our 3.9.2 Release &amp; sneak-peek into 4.0 GA Release<br />
+                &nbsp; &nbsp; •&nbsp;   Key complex issues we have solved for our clients<br />
+                &nbsp; &nbsp; •&nbsp;   ROI analysis with examples to justify deployment automation<br />
+                &nbsp; &nbsp; •&nbsp;   Automation of custom manual tasks for your Salesforce release</p>
+              <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px;">We hope the content will enrich you and be a worthy investment of your time. <br />
+                We would love to hear your feedback as we continue to strengthen our association.</p>
+              <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px;"><span style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:15px; color:#003d76;">Please send in your comments to vishnu@autorabit.com.<br />
+                Sincerely, <br />
+                Vishnu Datla</span><br />
+                <br />
+              </p></td>
+            <td align="center" valign="middle"><table width="187" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><img src="http://www.autorabit.com/wp-content/uploads/2014/07/vishnu.jpg" width="187" height="187" alt="Vishnu Datla" /></td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle"><p style="margin:10px 0px 0px 0px; text-align:center; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; line-height:18px;"><span style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; line-height:15px; color:#fb7815;">Vishnu Datla</span><br />
+                 <span style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:15px; color:#656565;"> CEO, AutoRABIT</span></p></td>
+              </tr>
+            </table></td>
+            <td width="20">&nbsp;</td>
+          </tr>
+        </table></td>
+        </tr>
+      <tr>
+        <td><img src="http://www.autorabit.com/wp-content/uploads/2014/07/bg.jpg" width="748px" height="9" alt="bg" /></td>
+      </tr>
+      <tr>
+        <td><table width="748" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="20">&nbsp;</td>
+            <td width="430" align="left" valign="top"><table width="410" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><p style="margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#f18134;">AutoRABIT Version 3.9.2 Release</p>
+                  <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:20px;">AutoRABIT, very recently, released a new version of its product. The main features include:</p>
+                  <p style="margin:20px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:20px;"><span style="margin:0px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#009dd3;">1. Bulk Retrieve and Commit for AutoRABIT</span><br />
+                    This feature allows users to retrieve and commit <br />
+                    unlimited metadata from any source to any <br />
+                    version control. </p>
+                  <p style="margin:20px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:18px;"><span style="margin:0px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#009dd3;">2. Validate Only Option &amp; Metadata Exclusion <br />
+                    List for CI Jobs</span><br />
+                    Users can now validate, track and pre-check the 
+                    deployment status of the changes in developer’s code on a daily basis. They can now exclude those metadata types that they don’t want as a part of CI jobs.</p>
+                  <p style="margin:20px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#353535; text-align:justify; line-height:20px;"><span style="margin:0px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#009dd3; font-weight:bold;">3. Preview Code Differences Before Check-in</span><br />
+                    With this functionality, a user can check the changes <br />
+                    between the files in VCM and sandbox before <br />
+                    committing.</p></td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#003d76"><br />
+                  <br /></td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#003d76"><table width="370" border="0" cellspacing="0" cellpadding="0" style="margin-left:15px;">
+                  <tr>
+                    <td><p style="margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#ffe400;">Sneak-Peek of V4.0 GA Release</p>
+                      <p style="margin:10px 0px 0px 0px; padding:0px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#FFF; text-align:justify; line-height:20px;">AutoRABIT will be releasing Version 4.0 GA shortly. <br />
+                        Here are a few of the key features you can expect:</p>
+                      <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#FFF; text-align:justify; line-height:22px;"> &nbsp;  &nbsp;•  &nbsp; Pre and post-destruction support for deployments<br />
+&nbsp;  &nbsp;•  &nbsp;Deployment support for AutoRABIT Version Control labels<br />
+&nbsp;  &nbsp;•  &nbsp;   Merge editor for SVN and GIT.<br />
+&nbsp;  &nbsp;•  &nbsp;Audit trial log for Salesforce Orgs</p></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td bgcolor="#003d76"><br />
+                  <br /></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><p style="margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#f18134;">Customer Success
+                  <br />
+                </p>
+                  <p style="margin:10px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#003d76;">How AutoRABIT Helped its Customer Win</p>
+                  <ul style="margin:10px 0px 0px 35px; padding:0px; font-family:Arial, Helvetica, sans-serif;">
+                    <li style="margin:12px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#353535; line-height:20px;">Split Salesforce Production Org into two orgs</li>
+                    <li style="margin:12px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#353535; line-height:20px;">Version control enablement, training and release automation for 100+ users</li>
+                    <li style="margin:12px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#353535; line-height:20px;">Deployments based on ALM story status with Rational Team Concert</li>
+                    <li style="margin:12px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#353535; line-height:20px;">End-to-end CI process set up with TFS</li>
+                    <li style="margin:12px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#353535; line-height:20px;">Deployment Governance</li>
+                    <li style="margin:12px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#353535; line-height:20px;">Orchestra CMS configuration automation</li>
+                    <li style="margin:12px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#353535; line-height:20px;">Check-in Editor for Version Control System for ease of use</li>
+                    <li style="margin:12px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#353535; line-height:20px;">End-to-end CI set up and automation</li>
+                    <li style="margin:12px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#353535; line-height:20px;">SVN driven release management</li>
+                    <li style="margin:12px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#353535; line-height:20px;">Regression Test Automation</li>
+                  </ul>
+                  <p></p></td>
+              </tr>
+            </table>              <p>&nbsp;</p></td>
+            <td align="center" valign="middle"><table width="187" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><a href="mailto:info@autorabit.com"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/ROI.jpg" width="260" height="153" alt="ROI" border="0" /></a></td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle"><a href="#"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/Automate.jpg" border="0" width="260" height="258" alt="Automate" /></a></td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle"><a href="http://www.autorabit.com/events/" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/UE.jpg" width="261" height="375" alt="upcoming events" border="0" /></a></td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle"><a href="http://www.autorabit.com/events/" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/PE.jpg" width="261" height="235" alt="previous events" border="0" /></a></td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle"><table width="187" border="0" cellspacing="0" cellpadding="2">
+                  <tr>
+                    <td><a href="http://www.autorabit.com/wp-content/uploads/2016/05/Datasheet-2.pdf" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/DS.jpg" width="83" height="90" alt="datasheet" border="0" /></a></td>
+                    <td><a href="http://www.autorabit.com/wp-content/uploads/2015/05/whitepaper-for-autorabit-final.pdf" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/WP.jpg" width="83" height="90" alt="white paper"  border="0"/></a></td>
+                    <td><a href="https://www.youtube.com/channel/UCwFkuGbV_C9ZoaEpOt9oSjQ" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/vid.jpg" width="83" height="75" alt="videos"  border="0"/></a></td>
+                  </tr>
+                  <tr>
+                    <td height="30" colspan="3" align="center" valign="middle"><p style="margin:0px; font-weight:bold; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#e94639;">Insights for Your Business</p></td>
+                    </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">&nbsp;</td>
+              </tr>
+            </table></td>
+            <td width="20">&nbsp;</td>
+          </tr>
+        </table></td>
+        </tr>
+      <tr>
+        <td><table width="748" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td colspan="2"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/media.jpg" width="748" height="55" alt="media" /></td>
+            </tr>
+          <tr>
+            <td><a href="https://www.perforce.com/blog/160210/autorabit-perforce-improve-salesforcecom-deployments" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/perforce.jpg" width="380" height="101" alt="perforce" border="0" /></a></td>
+            <td><a href="http://electric-cloud.com/wiki/display/releasemanagement/AutoRABIT" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/electric.jpg" width="368" height="101" alt="electric cloud" border="0" /></a></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><table width="748" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="40" colspan="3" align="center" valign="middle"><p style="margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:24px; color:#383838;">Follow Us</p></td>
+            </tr>
+          <tr>
+            <td align="right" valign="middle"><a href="https://twitter.com/autorabit" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/tw-b.jpg" width="222" height="64" alt="twitter" border="0" /></a></td>
+            <td align="center" valign="middle"><a href="https://www.linkedin.com/company/autorabit" target="_blank"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/l-in-b.jpg" width="222" height="64" alt="linkedin"  border="0"/></a></td>
+            <td align="left" valign="middle"><a href="https://www.facebook.com/autorabit/?fref=ts" target="_blank" style="border:0px;"><img src="http://www.autorabit.com/wp-content/uploads/2014/07/fb-b.jpg" width="222" height="64" alt="facebook"  border="0"/></a></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="40" align="center" valign="middle" bgcolor="#f2f2f2"><p style="margin:0px 0px 0px 0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#7b7b7b; line-height:15px;">CONTACT US: 5700, Stoneridge Mall Rd. Suite# 370, Pleasanton, CA 94588. <br />
+          Phone:+1 925 500 1004 &nbsp;  &nbsp; &nbsp; |  &nbsp;  &nbsp; &nbsp;     Email:<a href="mailto:info@autorabit.com" style="color:#666;"> info@autorabit.com</a><br /></p></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

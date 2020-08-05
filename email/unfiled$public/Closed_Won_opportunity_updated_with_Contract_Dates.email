@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<div><br></div>Hello Team,]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[Contract dates for the opportunity, "<span style="color: rgb(51, 102, 255);">{!Opportunity.Name}",&nbsp;</span><font face="arial"><span style="font-size: 12pt;">have been updated. Please find details below:</span></font><div style="font-family: arial; font-size: 12pt; color: rgb(0, 0, 0);"><br></div><div style="font-family: arial; font-size: 12pt;"><b style="font-size: 12pt;">Contract Start Date:&nbsp;</b><font face="arial" color="#3366ff" style="font-size: 12pt;">{!Opportunity.Contract_Start_Date__c}</font></div><div style=""><b style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">Contract End Date:&nbsp;</b><font face="arial" color="#3366ff">{!Opportunity.Contract_End_Date__c}</font></div><div style="font-family: arial; font-size: 12pt;"><b style="color: rgb(0, 0, 0);">Updated by:</b>&nbsp;<span style="font-size: 12pt;"><font color="#3366ff">{!User.Name}</font></span></div><div style="font-family: arial; font-size: 12pt; color: rgb(0, 0, 0);"><div><br></div><div>Please reach out to Customer Success Team if you have any questions or concerns.</div><div><br></div><div>Thank you!</div><div><br></div></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

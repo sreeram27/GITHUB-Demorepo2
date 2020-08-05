@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template for Sending Service Request Notification</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>AutoRABIT_LinkedIn_Banner</letterhead>
+    <name>Service Request Notification Template</name>
+    <style>formalLetter</style>
+    <subject>{!Services_Request__c.Account__c} - New Service Request for {!Services_Request__c.Request_Type__c} for opportunity {!Services_Request__c.Opportunity__c}</subject>
+    <textOnly>Dear ES Team,
+This is to notify you that a new service request, &apos;{!Services_Request__c.Request_Type__c}&apos;, has been submmited for the opportunity, &apos;{!Services_Request__c.Opportunity__c}&apos;.
+
+Request the team to take the necessary action required.
+
+For more details, please click the following link: {!Services_Request__c.Link}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

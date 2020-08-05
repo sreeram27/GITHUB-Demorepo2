@@ -1,0 +1,143 @@
+<apex:component access="global">
+<apex:attribute name="Quote" type="Quote" description="Current Quote" />
+    <style>
+      table{
+         border-collapse:collapse;
+         border:1px solid black;
+      }
+      table th,table td{
+         border:1px solid black;
+         text-align:left;
+         padding-left:5px;
+      }
+     table tr th{
+         background:#cfd2d6;
+         color:#000;
+      }
+    </style>
+    <h1> Hello {!$User.FirstName}!</h1>
+   <h2> You are viewing the Sales Order form for {!Quote.Opportunity.Name} </h2>
+    <br/><br/><br/>
+    <h1>Quote Details</h1>
+    <table>
+    <tbody>
+      <tr>
+        <th>Quote Number</th>
+        <td>{!Quote.QuoteNumber}</td>
+        <th>Sales Excecutive</th>
+        <td>{!Quote.Sales_Excecutive__c}</td>
+      </tr>
+      <tr>
+        <th>Quote Name</th>
+        <td>{!Quote.Name}</td>
+        <th>Expiration Date</th>
+        <td>{!Quote.ExpirationDate}</td>
+      </tr>
+      <tr>
+        <th>Opportunity Name</th>
+        <td>{!Quote.Opportunity.Name}</td>
+        <th>Account Name</th>
+        <td>{!Quote.Account.Name}</td>
+      </tr>
+      
+    </tbody>
+    </table>
+    <br/><br/>
+    <h1>Totals</h1>
+    <table>
+    <tbody>
+      <tr>
+        <th>Total Amount</th>
+        <td>{!Quote.Total_Amount__c}</td>
+        <th>Total Discount</th>
+        <td>{!Quote.Total_Discount__c}</td>
+      </tr>      
+    </tbody>
+    </table>
+    <br/><br/>
+    
+    <h1>Payment Info</h1>
+    <table>
+    <tbody>
+      <tr>
+        <th>Net Payment Terms</th>
+        <td>{!Quote.Net_Payment_Terms__c}</td>
+        <th>Currency ISO</th>
+        <td>{!Quote.Currency__c}</td>
+      </tr>
+      <tr>
+        <th>Payment Due</th>
+        <td>{!Quote.Payment_Due_Date__c}</td>
+        <th>Duration of Services</th>
+        <td>{!Quote.Number_of_Months__c}</td>
+      </tr>
+      <tr>
+        <th>Service Acceptance Date</th>
+        <td>{!Quote.Opportunity.Name}</td>
+        <th>End Date of Services</th>
+        <td>{!Quote.Service_Acceptance_Date__c}</td>
+      </tr>
+      
+    </tbody>
+    </table>
+    <br/><br/>
+    
+    <h1>Prepared For</h1>
+    <table>
+    <tbody>
+      <tr>
+        <th>Contact Name</th>
+        <td>{!Quote.Contact.Name}</td>
+        <th>Phone</th>
+        <td>{!Quote.Phone}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{!Quote.Email}</td>
+      </tr>
+    </tbody>
+    </table>
+    <br/><br/>
+    
+    <h1>Address Information</h1>
+    <table>
+    <tbody>
+      <tr>
+        <th>Bill To Name</th>
+        <td>{!Quote.BillingName}</td>
+      </tr>
+      <tr>
+        <th>Bill To</th>
+        <td>{!Quote.BillingStreet}<br/>{!Quote.BillingCity}<br/>{!Quote.BillingState}<br/>{!Quote.BillingCountry}<br/>{!Quote.BillingPostalCode} </td>
+      </tr>
+    </tbody>
+    </table>
+    <br/><br/>
+    
+    <h1>3rd Party Services</h1>
+    <table>
+    <tbody>
+      <tr>
+      &nbsp;&nbsp;  <th>Was any 3rd party services used?</th>
+        <td>{!Quote.Was_any_3rd_party_services_used__c}</td>
+       &nbsp;&nbsp;  <th>3rd Party Billing Contact Name</th>
+        <td>{!Quote.X3rd_Party_Billing_Contact_Name__c}</td>
+      </tr> 
+       <tr>
+        <th>Billing methodology details</th>
+        <td>{!Quote.Billing_methodology_details__c}</td>
+        <th>Who will AutoRABIT pay for item</th>
+        <td>{!Quote.Who_will_AutoRABIT_pay_for_item__c}</td>
+      </tr> 
+      <tr>
+        <th>Hourly Cost</th>
+        <td>{!Quote.Hourly_Cost__c}</td>
+        <th>Address</th>
+        <td>{!Quote.Address__c}</td>
+      </tr>       
+    </tbody>
+    </table>
+    <br/><br/>
+
+<c:QuoteLineItems QuoteId="{!Quote.id}"/>
+</apex:component>

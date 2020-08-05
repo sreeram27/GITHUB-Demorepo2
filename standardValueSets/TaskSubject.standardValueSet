@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Phone Call</fullName>
+        <default>false</default>
+        <label>Phone Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Send Quote</fullName>
+        <default>false</default>
+        <label>Send Quote</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discovery Call Scheduled</fullName>
+        <default>false</default>
+        <label>Discovery Call Scheduled</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Demo Schedueld</fullName>
+        <default>false</default>
+        <label>Demo Schedueld</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Referral from Partner</fullName>
+        <default>false</default>
+        <label>Referral from Partner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Send Email</fullName>
+        <default>false</default>
+        <label>Send Email</label>
+    </standardValue>
+</StandardValueSet>

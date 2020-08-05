@@ -1,0 +1,53 @@
+<apex:page StandardController="Lead" recordSetVar="leads" extensions="Masslead_connverter" >
+    <apex:sectionHeader title="Mass Convert Leads" subtitle="" />
+    <apex:actionStatus id="pageStatus"  >
+    <apex:facet name="start">
+        <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+        </div>
+        <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 20px; z-index: 1001; margin: 15% 50%">
+        <div style="top:61px; position:fixed; right:0px; width:100%; height:100%;  z-index:9999999999 !important; ">
+            <img src="https://c.na43.content.force.com/servlet/servlet.ImageServer?id=0150G000008cHeS&oid=00DF00000006kwt&lastMod=1538056560000" style="top:40%; left:50%; width:45px; height:45px; position:absolute; margin-left:-22px;  margin-top:-22px; display:block; z-index:99999999999 !important;" />
+            <span style="top:45%;  width:100%; text-align:center; position:absolute; display:block; color:#fff; z-index:99999999999 !important; font-size: 17px;">Please Wait...</span>
+        </div>
+        </div>            
+    </apex:facet>
+</apex:actionStatus>
+    <apex:form id="form" >
+        <apex:pageBlock >
+            
+            <apex:pageBlockTable value="{!selected}" var="selectedLead">
+                <apex:column value="{!selectedLead.Name}"/>  
+                <apex:column value="{!selectedLead.Company}"/>
+                <apex:column value="{!selectedLead.Phone}"/>
+                <apex:column value="{!selectedLead.OwnerId} " rendered="false" /> 
+                <apex:column value="{!selectedLead.City} " rendered="false" />  
+                <apex:column value="{!selectedLead.Country} " rendered="false" />  
+                <apex:column value="{!selectedLead.PostalCode} " rendered="false" />  
+                <apex:column value="{!selectedLead.State} " rendered="false" />  
+                <apex:column value="{!selectedLead.Street} " rendered="false" />  
+                <apex:column value="{!selectedLead.Fax} " rendered="false" />  
+                <apex:column value="{!selectedLead.Rating} " rendered="false" />  
+                <apex:column value="{!selectedLead.NumberOfEmployees} " rendered="false" />  
+                <apex:column value="{!selectedLead.Website} " rendered="false" /> 
+                <apex:column value="{!selectedLead.Business_Unit__c} " rendered="false" /> 
+                <apex:column value="{!selectedLead.Company_URL__c} " rendered="false" />  
+                <apex:column value="{!selectedLead.Other_Product_Interests__c} " rendered="false" />  
+                <apex:column value="{!selectedLead.Partner_Margin__c} " rendered="false" />  
+                <apex:column value="{!selectedLead.Partner_Name__c} " rendered="false" /> 
+                <apex:column value="{!selectedLead.Partner_Type__c} " rendered="false" />  
+                <apex:column value="{!selectedLead.Time_Zone__c} " rendered="false" />  
+                
+            </apex:pageBlockTable>
+            
+            
+            
+            <apex:pageMessages />
+            <BR />  
+            <apex:pageBlockButtons location="bottom">   
+                <apex:commandButton value="Convert" rerender="form" action="{!convertLeads}" status="pageStatus" />
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,495 @@
+<apex:page controller="smlfcom.SMLOppDataController" id="page" docType="html-5.0" sidebar="false" showHeader="false" standardStylesheets="false" readOnly="true" applyBodyTag="false" applyHtmlTag="false">
+    <title>SML Opportunity View</title>
+     <style>
+         .orangeNotifier{
+            color: orange;
+         }
+         .blackNotifier{
+            color: black;
+         }
+         
+         .ui-tooltip-content hr{
+            margin : .75rem 0!important;
+         }
+        
+     </style>
+    <apex:composition template="smlfcom__SMLTemplateV2">
+        <apex:define name="body">
+            <apex:includeScript value="https://code.highcharts.com/highcharts.js"/>
+            <apex:includeScript value="https://code.highcharts.com/highcharts-more.js"/>
+            <apex:includeScript value="https://code.highcharts.com/modules/exporting.js"/>
+            <div class="page-header">
+                <div class="container-bs">
+                    <div class="title" data-step="1" data-intro="View highlights for individual opportunities, with visual cues (dot, exclamation) indicating outliers - hover on these cues to see more detail (live data)">
+                        <h1>Highlights: </h1>
+                        <h2>{!smlFilter.pageLabelNameMapping['SMLOppDataView'].pageLabel}</h2>
+                    </div><!-- /.title -->
+                </div><!-- /.container-bs -->
+            </div><!-- /.page-header -->
+
+            <div class="container-bs">
+               
+                   <div id="oppView">
+
+                        <div class="page-container hidden">
+
+                            <apex:form styleClass="sidebar">
+                              <div data-step="2" data-intro="Select filter values and click on refresh to narrow down opportunities">
+                               <c:Account_and_owner_filter />  
+                               <apex:repeat value="{!smlFilter.listOfDefaultFields}" var="filterField">
+                                   <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'STRING'}">
+                                      <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndLabel[filterField] == 'Account'}">
+                                          <apex:inputText value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}"  styleClass="form-control hidden account-search-field-hidden"/>
+                                      </apex:outputPanel>
+                                      <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndLabel[filterField] == 'Owner'}">
+                                          <apex:inputText value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}"  styleClass="form-control hidden user-search-field-hidden"/>
+                                      </apex:outputPanel>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'DATE_RANGE'}">
+                                        <hr/>
+                                          <div class="form-group">
+                                             <label>{!smlFilter.mapOfFieldNameAndLabel[filterField]}</label>
+                                             <apex:selectList value="{!smlFilter.dateFilter }" multiselect="false" size="1" styleClass="filterField form-control custom-select">
+                                                <apex:selectOptions value="{!smlFilter.listOfDateFilter }"></apex:selectOptions>
+                                             </apex:selectList>
+                                         </div>
+
+
+                                    </apex:outputPanel>
+                                </apex:repeat>
+                                <hr/>
+                                <!-- ROLE Filter -->
+                                <apex:outputPanel layout="none" rendered="{!smlFilter.listOfRoleFilters.size > 0}">
+                                    <div class="form-group">
+                                        <label>Role</label>
+                                        <apex:selectList value="{!smlFilter.selectedRole}" multiselect="false" size="1" styleClass="item custom-select">
+                                            <apex:selectOptions value="{!smlFilter.listOfRoleFilters}"/>
+                                        </apex:selectList>
+                                    </div>
+                                    <hr/>    
+                                </apex:outputPanel>
+                                <apex:repeat value="{!smlFilter.listOfFields}" var="filterField">
+                                    <div class="form-group">
+                                        <label>{!smlFilter.mapOfFieldNameAndLabel[filterField]}</label>
+                                        <apex:outputPanel layout="none" rendered="{!smlFilter.mapOfFieldNameAndType[filterField] == 'PICKLIST'}">
+                                            <apex:selectList value="{!smlFilter.mapOfFieldAndSelectedValue[filterField]}" multiselect="false" size="1" styleClass="item custom-select">
+                                                <apex:selectOption itemLabel="All" itemValue="All"></apex:selectOption>
+                                                <apex:selectOptions value="{!smlFilter.mapOfFieldAndValue[filterField]}"></apex:selectOptions>
+                                            </apex:selectList>
+                                        </apex:outputPanel>
+                                    </div>
+                                </apex:repeat>
+                                <hr/>
+                                <div class="controls flex">
+                                    <div class="left">
+                                        <a class="btn-bs btn-sm btn-default" href="javascript:reset()">Reset</a>
+                                    </div>
+                                    <div class="right">
+                                        <a class="btn-bs btn-sm btn-primary" href="javascript:saveRules();javascript:refresh()">Refresh</a>
+                                    </div>
+                                </div>
+
+
+                                <apex:actionFunction action="{!refreshData}" name="refresh" status="renderingStatus" />
+                                <apex:actionFunction action="{!resetFilters}" name="reset" status="renderingStatus" />
+                              </div>  
+                            </apex:form><!-- /.sidebar -->
+
+                            <div class="content">
+                                <div class="flex-row two-col" style="margin-bottom:10px">
+                                    <div class="form-group" style= "display : {!IF(showLikelihoodColumn,'block','none')}">
+                                      <label for="Win_Likelihood">Win Likelihood</label>
+                                      <select id="Win_Likelihood" class="form-control" onchange=""></select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="Exceptions">Exceptions</label>
+                                      <select id="Exceptions" class="form-control" onchange=""></select>
+                                    </div>
+                                </div>
+                                <table id="waveDataTable" class="table table-striped table-bordered" width="100%">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>HIDDEN ACCOUNT</th>
+                                            <th>HIDDENLIKELIHOOD</th>
+                                            <th>HIDDENEXCEPTIONS</th>
+                                             <th>Name</th>
+
+                                             <th>Owner</th>
+                                            <th>Amount</th>
+                                            <th class="date">Close&nbsp;Date</th>
+                                            <th>Forecast</th>
+                                            <th>Stage</th>
+                                            <th style= "display : {!IF(showLikelihoodColumn,'table-cell','none')}">Win&nbsp;Likelihood</th>
+                                           <!-- <th style= "display : {!IF(showActivityColumn,'table-cell','none')}">Activity</th>
+                                            <th class="no-sort">Notify</th>-->
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                        <apex:repeat value="{!listOfSMLOppChanges}" var="data">
+                                            <tr id="sml_{!data.smlfcom__Opportunity__c}">
+                                                <td>{!data.Opportunity__r.AccountId}</td>
+                                                
+                                                <td>
+                                                        <apex:outputPanel layout="none" rendered="{!data.smlfcom__Win_Score__c != null && data.smlfcom__Win_Score__c >= 0.75}">
+                                                           Most Likely
+                                                        </apex:outputPanel>
+                                                        <apex:outputPanel layout="none" rendered="{!data.smlfcom__Win_Score__c != null && data.smlfcom__Win_Score__c < 0.75 && data.smlfcom__Win_Score__c > 0.25}">
+                                                            Medium
+                                                        </apex:outputPanel>
+                                                        <apex:outputPanel layout="none" rendered="{!data.smlfcom__Win_Score__c == null || data.smlfcom__Win_Score__c <= 0.25}">
+                                                            Least Likely
+                                                        </apex:outputPanel>
+                                                        <apex:outputPanel layout="none">
+                                                            All
+                                                        </apex:outputPanel>
+                                                </td>
+                                                <td>
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__AmountChangePercent__c != null && data.smlfcom__AmountChangePercent__c >= averageAmountChangePercent}">
+                                                        Amount
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__CloseDateQuarterChange__c == 'MoveIn'}">
+                                                       Close Date
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__CloseDateQuarterChange__c == 'MoveOut'}">
+                                                       Close Date
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__NumTimesFCRepeated__c != null && data.smlfcom__NumTimesFCRepeated__c > 1}">
+                                                        Forecast
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__NumTimesStageRepeated__c != null && data.smlfcom__NumTimesStageRepeated__c > 1}">
+                                                        Stage
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__DaysSinceLastActivity__c != null && (data.smlfcom__DaysSinceLastActivity__c >= averageDaysSinceLastActivity || data.smlfcom__DaysInCurrentStage__c >= averageDaysInCurrentStage)}">
+                                                        Activity
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none">
+                                                        All
+                                                    </apex:outputPanel>
+                                                    </td>
+                                                <td data-search="{!data.Opportunity__r.Name}">
+                                                    <a href="/{!data.Opportunity__c}" target="_blank">{!data.Opportunity__r.Name}</a>
+                                                </td>
+                                                <td data-search="{!data.Opportunity__r.Owner.Name}">
+                                                    <a href="/{!data.Opportunity__r.OwnerId}" target="_blank">{!data.Opportunity__r.Owner.Name}</a>
+                                                </td>
+
+                                                <td data-search="{!data.Opportunity__r.Amount}" data-sort="{!data.Opportunity__r.Amount}" class="align-right">
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__AmountChangePercent__c != null && ABS(data.smlfcom__AmountChangePercent__c) > averageAmountChangePercent}">
+                                                        <div class="marker-box hover-item" data-toggle="tooltip" data-html="true" data-placement="right" data-trigger="hover" title="Actual amount change: {!data.AmountChangePercent__c}% {!IF(data.NumAmtIncreases__c != null && data.NumAmtIncreases__c >= 2,'<hr/>Number of times amount increased: ' + TEXT(data.NumAmtIncreases__c),'')} {!IF(data.NumAmtDecreases__c != null && data.NumAmtDecreases__c >= 2,'<hr/>Number of times amount decreased: '+ TEXT(data.NumAmtDecreases__c),'')}">
+                                                            <div class="content">
+                                                                <apex:outputField value="{!data.Opportunity__r.Amount}"/>
+                                                            </div>
+                                                            <div class="marker">
+                                                                <span class="{!IF(data.NumAmtIncreases__c != null && data.NumAmtIncreases__c > 0,'icon-arrow-up','icon-arrow-down')}"></span>
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__AmountChangePercent__c == null || ABS(data.smlfcom__AmountChangePercent__c) <= averageAmountChangePercent}">
+                                                        <div class="marker-box">
+                                                            <div class="content">
+                                                                <apex:outputField value="{!data.Opportunity__r.Amount}"/>
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                </td>
+
+                                                <td class="date" data-search="{!TEXT(MONTH(data.Opportunity__r.CloseDate)) & "/" & TEXT( DAY( data.Opportunity__r.CloseDate ) ) & "/" & TEXT( YEAR( data.Opportunity__r.CloseDate ))}" data-sort="{!TEXT(MONTH(data.Opportunity__r.CloseDate)) & "/" & TEXT( DAY( data.Opportunity__r.CloseDate ) ) & "/" & TEXT( YEAR( data.Opportunity__r.CloseDate ))}">
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__CloseDateQuarterChange__c == 'MoveIn'}">
+                                                        <div class="marker-box date hover-item" data-toggle="tooltip" data-placement="right" data-html="true" data-trigger="hover" title="Close date change moved in by at least a quarter {!IF(data.CloseDateChange__c != null && data.CloseDateChange__c > 0,'<hr/>Close Date changed by days: '+TEXT(data.CloseDateChange__c),'')} {!IF(data.NumCloseDtIncreases__c!=null && data.NumCloseDtIncreases__c >= 2,'<hr/>Number of times close date moved in: '+TEXT(data.NumCloseDtIncreases__c),'')}">
+                                                            <div class="content">
+                                                                <apex:outputField value="{!data.Opportunity__r.CloseDate}"/>
+                                                            </div>
+                                                            <div class="marker">
+                                                                <span class="marker-green"></span>
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__CloseDateQuarterChange__c == 'MoveOut'}">
+                                                        <div class="marker-box hover-item" data-toggle="tooltip" data-placement="right" data-html="true" data-trigger="hover" title="Close date change moved out by at least a quarter {!IF(data.CloseDateChange__c != null && data.CloseDateChange__c > 0,'<hr/>Close Date changed by days: '+TEXT(data.CloseDateChange__c),'')} {!IF(data.NumCloseDtDecreases__c!=null && data.NumCloseDtDecreases__c >= 2,'<hr/>Number of times close date moved out: '+TEXT(data.NumCloseDtDecreases__c),'')}">
+                                                            <div class="content">
+                                                                <apex:outputField value="{!data.Opportunity__r.CloseDate}"/>
+                                                            </div>
+                                                            <div class="marker">
+                                                                <span class="marker-red"></span>
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                    
+                                                    <apex:outputPanel layout="none" rendered="{!(data.smlfcom__CloseThisQuarterProbability__c != null && data.smlfcom__CloseThisQuarterProbability__c < 0.25) &&  (YEAR(data.Opportunity__r.CloseDate) == YEAR(Today()) && CEILING( MONTH(data.Opportunity__r.CloseDate) / 3 ) == CEILING( MONTH( Today() ) / 3 ) && (data.smlfcom__CloseDateQuarterChange__c != 'MoveIn' && data.smlfcom__CloseDateQuarterChange__c != 'MoveOut' && data.smlfcom__CloseDateQuarterChange__c != 'NoQrtrChange'))}">
+                                                        <div class="marker-box hover-item" data-toggle="tooltip" data-placement="right" data-html="true" data-trigger="hover" title="Our model predicts that this opportunity is not likely to close this quarter">
+                                                            <div class="content">
+                                                                <apex:outputField value="{!data.Opportunity__r.CloseDate}"/>
+                                                            </div>
+                                                            <div class="marker">
+                                                                <span class="icon-exclamation red"></span>
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                    
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__CloseDateQuarterChange__c == 'NoQrtrChange'}">
+                                                        <div class="marker-box">
+                                                            <div class="content">
+                                                                <apex:outputField value="{!data.Opportunity__r.CloseDate}"/>
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                </td>
+
+                                                <td data-search="{!data.Opportunity__r.ForecastCategory}" data-sort="{!data.Opportunity__r.ForecastCategory}">
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__NumTimesFCRepeated__c != null && data.smlfcom__NumTimesFCRepeated__c > 1}">
+                                                        <div class="marker-box hover-item" data-toggle="tooltip" data-placement="right" data-html="true" data-trigger="hover" title="{!data.RepeatedForecastCat__c} has repeated more than once">
+                                                            <div class="content">
+                                                                {!data.Opportunity__r.ForecastCategory}
+                                                            </div>
+                                                            <div class="marker">
+                                                                <span class="icon-update red"></span>
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__NumTimesFCRepeated__c == null || data.smlfcom__NumTimesFCRepeated__c <= 1}">
+                                                        <div class="marker-box">
+                                                            <div class="content">
+                                                                {!data.Opportunity__r.ForecastCategory}
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+
+                                                </td>
+
+                                                <td data-search="{!data.Opportunity__r.Stagename}" data-sort="{!data.Opportunity__r.Stagename}" class="align-right">
+                                                    <apex:outputPanel layout="none" rendered="{!data.smlfcom__NumTimesStageRepeated__c != null && data.smlfcom__NumTimesStageRepeated__c > 1}">
+                                                        <div class="marker-box hover-item" data-toggle="tooltip" data-placement="right" data-html="true" data-trigger="hover" title="{!data.RepeatedStageName__c} has repeated more than once">
+                                                            <div class="content">
+                                                                {!data.Opportunity__r.Stagename}
+                                                            </div>
+                                                            <div class="marker">
+                                                                <span class="icon-update red"></span>
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!(data.smlfcom__NumTimesStageRepeated__c == null || data.smlfcom__NumTimesStageRepeated__c <= 1) && data.smlfcom__DaysInCurrentStage__c != null &&  data.smlfcom__DaysInCurrentStage__c >= averageDaysInCurrentStage}">
+                                                        <div class="marker-box hover-item" data-toggle="tooltip" data-placement="right" data-html="true" data-trigger="hover" title="Days in current stage: {!data.DaysInCurrentStage__c}">
+                                                            <div class="content">
+                                                                {!data.Opportunity__r.Stagename}
+                                                            </div>
+                                                            <div class="marker">
+                                                                <span class="icon-exclamation red"></span>
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                    <apex:outputPanel layout="none" rendered="{!NOT((data.smlfcom__NumTimesStageRepeated__c == null || data.smlfcom__NumTimesStageRepeated__c <= 1) && data.smlfcom__DaysInCurrentStage__c != null &&  data.smlfcom__DaysInCurrentStage__c >= averageDaysInCurrentStage) && NOT(data.smlfcom__NumTimesStageRepeated__c != null && data.smlfcom__NumTimesStageRepeated__c > 1)}">
+                                                        <div class="marker-box">
+                                                            <div class="content">
+                                                                {!data.Opportunity__r.Stagename}
+                                                            </div>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                </td>
+
+                                                <td style= "display : {!IF(isDemo,'none','table-cell')}" data-search="{!data.Win_Score__c}" data-sort="{!data.Win_Score__c}" class="likelihood">
+                                                    <div class="hover-item" data-toggle="tooltip" data-html="true" data-placement="right" data-trigger="hover" title="{!IF(data.PositiveReason__c == '','',data.PositiveReason__c)} {!IF(data.NegativeReason__c == '','','<hr/>'+data.NegativeReason__c)}">
+                                                        <apex:outputPanel layout="none" rendered="{!data.smlfcom__Win_Score__c != null && data.smlfcom__Win_Score__c >= 0.75}">
+                                                            <span class="font-green">Most Likely</span>
+                                                        </apex:outputPanel>
+                                                        <apex:outputPanel layout="none" rendered="{!data.smlfcom__Win_Score__c != null && data.smlfcom__Win_Score__c < 0.75 && data.smlfcom__Win_Score__c > 0.25}">
+                                                            <span class="font-yellow">Medium</span>
+                                                        </apex:outputPanel>
+                                                        <apex:outputPanel layout="none" rendered="{!data.smlfcom__Win_Score__c == null || data.smlfcom__Win_Score__c <= 0.25}">
+                                                            <span class="font-red">Least Likely</span>
+                                                        </apex:outputPanel>
+                                                    </div>
+                                                </td>
+<!--
+                                                <td  style= "display : {!IF(showActivityColumn,'table-cell','none')}" data-search="{!data.DaysSinceLastActivity__c}" data-sort="{!data.DaysSinceLastActivity__c}" class="align-right">
+                                                       <apex:outputPanel layout="none" rendered="{!(data.ActivityCount__c != null) && (data.ActivityCount__c < averageActivityCount || data.LatestActivityEmotion__c == 'negative')}">
+                                                           <div class="marker-box hover-item" data-toggle="tooltip" data-placement="right" data-html="true" data-trigger="hover" title="{!data.ActivityCountDetails__c} {!IF(data.LatestActivityEmotionDetails__c != null,'<hr/>Close Date changes: '+TEXT(data.CloseDateChange__c),'')}">
+                                                               <div class="content">
+                                                                  {!data.ActivityCount__c} 
+                                                               </div>
+                                                               <div class="marker">
+                                                                   <span class="icon-exclamation red"></span>
+                                                               </div>
+                                                           </div>
+                                                       </apex:outputPanel>
+                                                       <apex:outputPanel layout="none" rendered="{!(data.ActivityCount__c != null) && NOT(data.ActivityCount__c < averageActivityCount || data.LatestActivityEmotion__c == 'negative')}">
+                                                           <div class="marker-box">
+                                                               <div class="content">
+                                                                  {!data.ActivityCount__c}
+                                                               </div>
+                                                           </div>
+                                                       </apex:outputPanel>
+                                                </td>
+
+                                                <td style="text-align:center">
+                                                    <a href="javascript:openOppViewModal()" class="btn-blank">
+                                                      <apex:outputPanel layout="none" rendered="{!data.Matched_Rule_Details__c == ''}">
+                                                       <div class="marker-box hover-item" data-toggle="tooltip" data-placement="right" data-html="true" data-trigger="hover" title="No notifications">
+                                                       <span class="ion-android-notifications-none blackNotifier" aria-hidden="true"></span>
+                                                       </div>
+                                                      </apex:outputPanel>
+                                                      <apex:outputPanel layout="none" rendered="{!data.Matched_Rule_Details__c != ''}">
+                                                       <div class="marker-box hover-item" data-toggle="tooltip" data-placement="right" data-html="true" data-trigger="hover" title="{!data.Matched_Rule_Details__c}">
+                                                       <span class="ion-android-notifications-none orangeNotifier"  aria-hidden="true"></span>
+                                                       </div>
+                                                      </apex:outputPanel>
+                                                    </a>
+                                                </td>-->
+                                            </tr>
+                                        </apex:repeat>
+                                    </tbody>
+                                </table>
+                                <!-- <a href="javascript:highlightUpdatedRecords()">Test</a> -->
+                            </div><!-- /.content -->
+
+                        </div><!-- /.page-container -->
+                    </div>
+            </div><!-- /.container-bs -->
+        </apex:define>
+    </apex:composition>
+        <!-- remote object for fetching account records -->
+    <apex:remoteObjects jsNamespace="remote_account">
+        <apex:remoteObjectModel name="Account" fields="Id,Name"/>
+    </apex:remoteObjects>
+    <apex:remoteObjects jsNamespace="remote_user">
+        <apex:remoteObjectModel name="User" fields="Id,Name"/>
+    </apex:remoteObjects>
+    <apex:outputPanel id="streamingAPIPanel">
+
+
+        <apex:includeScript value="{!$Resource.smlfcom__StreamingAPI}/cometd.js"/>
+        <apex:includeScript value="{!$Resource.smlfcom__StreamingAPI}/json2.js"/>
+        <apex:includeScript value="{!$Resource.smlfcom__StreamingAPI}/jquery.cometd.js"/>
+
+        <script>
+
+        var updated_records = ['0061500000SFdWhAAL'];
+
+        $(document).ready(function() {
+            // Connect to the CometD endpoint
+            $.cometd.init({
+                url: window.location.protocol+'//'+window.location.hostname+'/cometd/36.0/',
+                requestHeaders: { Authorization: 'OAuth {!$Api.Session_ID}'},
+                appendMessageTypeToURL : false
+            });
+
+            // Subscribe to a topic. JSON-encoded update will be returned
+            // in the callback
+            $.cometd.subscribe('/topic/PSOppUpdate', function(message){
+                handleOppUpdate(message);
+            });
+        });
+
+        function handleOppUpdate(message){
+            updated_records.add(message.data.sobject.Id);
+        }
+
+        var updateRecordBlinker;
+
+        function highlightUpdatedRecords(){
+            if(updateRecordBlinker != null)
+                window.clearInterval(updateRecordBlinker);
+            $.each(updated_records, function(index, value){
+                $('#sml_'+value+' .amount').text('1245.25');
+                $('#sml_'+value+' .amount').addClass('updatedData');
+                updateRecordBlinker = setInterval(function(){
+                    $('#sml_'+value).toggleClass("updated");
+                },1000);
+            });
+        }
+        </script>
+    </apex:outputPanel>
+
+
+    <script>
+
+    var changesDataTable;
+    
+    $(function(){
+        $('#Win_Likelihood').empty();
+        $('#Exceptions').empty();
+        $('#Win_Likelihood').append("<option value='All'>All</option>");
+        $('#Win_Likelihood').append("<option value='Most Likely'>Most Likely</option>");
+        $('#Win_Likelihood').append("<option value='Medium'>Medium</option>");
+        $('#Win_Likelihood').append("<option value='Least Likely'>Least Likely</option>");
+        $('#Win_Likelihood').fancySelect();
+
+        $('#Exceptions').append("<option value='All'>All</option>");
+        $('#Exceptions').append("<option value='Amount'>Amount</option>");
+        $('#Exceptions').append("<option value='Close Date'>Close Date</option>");
+        $('#Exceptions').append("<option value='Forecast'>Forecast</option>");
+        $('#Exceptions').append("<option value='Stage'>Stage</option>");
+        $('#Exceptions').append("<option value='Activity'>Activity</option>");
+        $('#Exceptions').fancySelect();
+
+        $(".page-container").removeClass('hidden');
+
+        changesDataTable = $("#waveDataTable").DataTable({
+            "columnDefs": [
+                {
+                    "targets"  : 'no-sort',
+                    "orderable": false,
+                }, {
+                    "targets"  : [0,1,2],
+                    "orderable": false,
+                    'visible': false,
+                },
+                {
+                    "targets": 'date',
+                    "type": "date"
+                }
+            ]
+        });
+        $("#waveDataTable").on( 'draw.dt', function () {
+            $('.hover-item').tooltip({
+                content: function () {
+                    return $(this).prop('title');
+                }
+            });
+        });
+
+        $('.hover-item').tooltip({
+            content: function () {
+                return $(this).prop('title');
+            }
+        });
+
+
+        $("#oppView .sidebar select").on("change", function(){
+            filterChangesTable();
+        });
+
+        $('#Win_Likelihood').on("change", function(){
+            filterChangesTable();
+        });
+        $('#Exceptions').on("change", function(){
+            filterChangesTable();
+        });
+    });
+
+    function openOppViewModal(){
+        $("#opportunityViewModal").modal('show');
+    }
+
+    function filterChangesTable(){
+        var accountFilterVal =  $("#oppView #accFilter").val();
+        var ownerFilterVal =  $("#oppView #ownerFilter").val();
+        var WinLikelihood = $("#Win_Likelihood").val();
+        var Exceptions = $("#Exceptions").val();
+    
+        changesDataTable.column(0).search(accountFilterVal=='none'?"":accountFilterVal);
+        changesDataTable.column(4).search(ownerFilterVal=='none'?"":ownerFilterVal);
+        changesDataTable.column(1).search(WinLikelihood==''?"":WinLikelihood);
+        changesDataTable.column(2).search(Exceptions==''?"":Exceptions);
+        
+
+        changesDataTable.draw();
+    }
+
+    function getDateText(dateVal){
+        return dateVal;
+    }
+   
+
+    </script>
+</apex:page>

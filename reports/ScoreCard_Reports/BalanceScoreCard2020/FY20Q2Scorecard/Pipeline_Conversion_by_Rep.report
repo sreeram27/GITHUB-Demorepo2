@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <acrossGroupingContext>GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>WON:SUM /PARENTGROUPVAL(RowCount, FULL_NAME, COLUMN_GRAND_SUMMARY)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>FULL_NAME</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Closed Won Rate in % by Rep</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>WON:SUM / PARENTGROUPVAL(RowCount, ROW_GRAND_SUMMARY, COLUMN_GRAND_SUMMARY)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>GRAND_SUMMARY</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Over All Closed Won Rate in %</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_9064027</developerName>
+        <masterLabel>Opportunity Stage</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>STAGE_NAME</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Closed Won</sourceValue>
+            </sourceValues>
+            <value>Closed Won</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Type_New_Renewal_Upsell__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Country__c</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Opportunity_Amount__c</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Partner_Sourced__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Pipeline Conversion Ration for New Logo Opportunities created between July 01, 2019 - March 31, 2020 and Closed Won on or after July 01, 2019</description>
+    <filter>
+        <criteriaItems>
+            <column>ACCOUNT_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Opportunity_Type_New_Renewal_Upsell__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>New Logo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CLOSE_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>7/1/2019</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FULL_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_9064027</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Pipeline Conversion by Rep</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <endDate>2020-03-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2019-07-01</startDate>
+    </timeFrameFilter>
+</Report>

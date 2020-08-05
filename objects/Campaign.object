@@ -142,16 +142,22 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Campaign_Record_Page</content>
         <formFactor>Large</formFactor>
-        <type>Default</type>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Campaign_Record_Page</content>
         <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
@@ -168,6 +174,16 @@
         <fullName>AmountWonOpportunities</fullName>
     </fields>
     <fields>
+        <fullName>AutorabitExtId__c</fullName>
+        <description>External Id created by AutoRABIT</description>
+        <externalId>true</externalId>
+        <label>AutorabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>BudgetedCost</fullName>
     </fields>
     <fields>
@@ -177,6 +193,9 @@
     <fields>
         <fullName>CampaignMemberRecordTypeId</fullName>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
     </fields>
     <fields>
         <fullName>Description</fullName>
@@ -227,6 +246,30 @@
         <fullName>HierarchyNumberSent</fullName>
     </fields>
     <fields>
+        <fullName>HierarchyTotalEmailsDelivered</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyTotalFormSubmissions</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyTotalFormViews</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyTotalLandingPageFormSubmissions</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyTotalLandingPageViews</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyUniqueEmailOpens</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyUniqueEmailTrackedLinkClicks</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyUniqueMarketingLinkClicks</fullName>
+    </fields>
+    <fields>
         <fullName>IsActive</fullName>
     </fields>
     <fields>
@@ -269,11 +312,63 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>TotalEmailsDelivered</fullName>
+    </fields>
+    <fields>
+        <fullName>TotalFormSubmissions</fullName>
+    </fields>
+    <fields>
+        <fullName>TotalFormViews</fullName>
+    </fields>
+    <fields>
+        <fullName>TotalLandingPageFormSubmissions</fullName>
+    </fields>
+    <fields>
+        <fullName>TotalLandingPageViews</fullName>
+    </fields>
+    <fields>
         <fullName>Type</fullName>
         <type>Picklist</type>
     </fields>
+    <fields>
+        <fullName>UniqueEmailOpens</fullName>
+    </fields>
+    <fields>
+        <fullName>UniqueEmailTrackedLinkClicks</fullName>
+    </fields>
+    <fields>
+        <fullName>UniqueMarketingLinkClicks</fullName>
+    </fields>
+    <fields>
+        <fullName>pi__Pardot_Campaign_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>The Pardot identifier for the connected campaign record</description>
+        <externalId>true</externalId>
+        <label>Pardot Campaign Id</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>pi__Pardot_Has_Dependencies__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines if Pardot has marketing assets using this campaign</description>
+        <externalId>false</externalId>
+        <label>Pardot Has Dependencies</label>
+        <type>Checkbox</type>
+    </fields>
     <listViews>
         <fullName>AllActiveCampaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>CAMPAIGN.ID</columns>
         <filterScope>Everything</filterScope>
         <filters>
             <field>CAMPAIGN.ACTIVE</field>
@@ -284,6 +379,11 @@
     </listViews>
     <listViews>
         <fullName>MyActiveCampaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
         <filterScope>Mine</filterScope>
         <filters>
             <field>CAMPAIGN.ACTIVE</field>
@@ -291,6 +391,17 @@
             <value>1</value>
         </filters>
         <label>My Active Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>Org_Campaign_Hierarchy</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.ACTIVE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>Org_Campaign_Hierarchy</label>
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>CAMPAIGN.NAME</customTabListAdditionalFields>
@@ -308,6 +419,26 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>FullAccess</sharingModel>
+    <webLinks>
+        <fullName>ViewAllCampaignMembers</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View All Campaign Members</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/camp/rptcmpgncalldown.jsp?scope=1&amp;scopeid={!Campaign_Name}</url>
+        <width>500</width>
+    </webLinks>
     <webLinks>
         <fullName>ViewCampaignInfluenceReport</fullName>
         <availability>online</availability>
@@ -327,5 +458,16 @@
         <showsStatus>false</showsStatus>
         <url>/00O?rt=117&amp;break0=CAN&amp;scope=1&amp;scopeid_lkid={!Campaign.Id}&amp;scopeid={!Campaign_Name}&amp;c=CAN&amp;c=MR&amp;c=PCS&amp;c=CFN&amp;c=RN&amp;c=ON&amp;c=OA&amp;c=OS&amp;c=OCD&amp;c=AN&amp;s=OA&amp;duel0=CAN%2CMR%2CCFN%2CRN%2CAN%2CON%2CPCS%2COS%2COCD%2COA&amp;details=yes&amp;format=t</url>
         <width>500</width>
+    </webLinks>
+    <webLinks>
+        <fullName>pi__Send_Single_Pardot_Email</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Send Engage Email</masterLabel>
+        <openType>sidebar</openType>
+        <page>pi__MicroCampaignSingleCampaign</page>
+        <protected>false</protected>
     </webLinks>
 </CustomObject>

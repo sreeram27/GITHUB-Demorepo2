@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email used to follow up with leads after demo</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank_Personal_Email_Template</letterhead>
+    <name>Demo Performed Follow-up</name>
+    <style>freeForm</style>
+    <subject>{!Lead.Company} Next Steps with AutoRABIT</subject>
+    <textOnly>Hi {!Lead.FirstName},
+
+Hope all is well. The purpose of this email is to find out if you are still interested in automating your deployment process? Please let us know if we could be of assistance.
+
+Also wanted to make sure that you are aware that AuroRABIT has a new YouTube channel.
+Here’s a link to the channel: https://www.youtube.com/AutoRABIT
+
+Look forward to hearing from you soon.
+
+Best,
+
+Abhilash Murali | Sales Executive
+
+Cell Phone : 408-332-6690|Office +1 925 500 1004</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

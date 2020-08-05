@@ -1,0 +1,7 @@
+Dear Ravi,
+
+Could you please approve the Case Number# {!Case.CaseNumber} so that we can proceed with Case Closure.
+
+Thanks & Regards,
+{!Case.Support_Engineer__c}
+AutoRABIT - Support

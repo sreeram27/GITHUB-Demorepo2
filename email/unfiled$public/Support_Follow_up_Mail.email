@@ -1,0 +1,22 @@
+Dear {!Case.SuppliedName},
+
+This is a follow up mail to your concern "{!Case.Subject}" which has been registered with AutoRABIT Support.
+
+Could you please let us know the status on the issue whether it has been resolved now or not so that we can assist you further.
+
+In-case of any questions or concerns please feel free to drop a note to support@autorabit.com so that one of our Support Engineers will get back to you and assist further.
+
+Thanks & Regards,
+
+AutoRABIT Support 
+support@autorabit.com.
+Case Reference: [{!Case.Thread_Id}]
+
+--------------- Original Message --------------- 
+From: {!EmailMessage.FromName} [{!EmailMessage.FromAddress}] 
+Sent: {!EmailMessage.MessageDate} 
+To: {!EmailMessage.ToAddress}; 
+Cc: {!EmailMessage.CcAddress}; 
+Subject: {!EmailMessage.Subject} 
+
+{!EmailMessage.TextBody}

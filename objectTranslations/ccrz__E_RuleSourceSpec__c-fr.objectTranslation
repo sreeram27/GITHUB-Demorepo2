@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Spécification source de règle</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Spécifications source de règle</value>
+    </caseValues>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nom de spécification de source de règle</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Blank_Personal_Email_Template</letterhead>
+    <name>2020-05-nCino Webinar Invitation</name>
+    <style>freeForm</style>
+    <subject>Thursday - nCino Accelerates Cloud Banking DevOps</subject>
+    <textOnly>In an effort to speed up digital transformation, banks are moving their core banking applications to the cloud. There are high expectations that this will yield results in the form of increased agility, the ability to introduce new and exciting innovations faster, and help reduce the overall cost of deploying new solutions.
+
+Hear from leading cloud banking solution provider, nCino, as we explore cloud adoption. Learn how they are leveraging DevOps and CI/CD tools purpose-built for the cloud to increase development velocity and deliver real agility to gain an advantage in a highly competitive market.
+
+You won&apos;t want to miss this webinar! Save your seat now! 
+
+OUR SPEAKERS:
+
+     
+Nick Joseph
+Associate Director Solution Architecture, nCino
+
+
+Peter Sengelnathan
+Solution Architect and Manager, AutoRABIT
+
+
+http://go.pardot.com/e/667623/l-667623-2020-05-07-w49t/wkdp/79645590?h=-EzWHGGLPKjjKS8aLz317FvlE5wtKUAEJoxVZ0v6Z5w</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

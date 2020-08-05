@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Account</fullName>
+        <default>false</default>
+        <label>Account</label>
+    </customValue>
+    <customValue>
+        <fullName>Case</fullName>
+        <default>false</default>
+        <label>Case</label>
+    </customValue>
+    <customValue>
+        <fullName>Companies</fullName>
+        <default>false</default>
+        <label>Companies</label>
+    </customValue>
+    <customValue>
+        <fullName>Forecast</fullName>
+        <default>false</default>
+        <label>Forecast</label>
+    </customValue>
+    <customValue>
+        <fullName>Invoice</fullName>
+        <default>false</default>
+        <label>Invoice</label>
+    </customValue>
+    <customValue>
+        <fullName>Opportunity</fullName>
+        <default>false</default>
+        <label>Opportunity</label>
+    </customValue>
+    <customValue>
+        <fullName>Opportunity Lines</fullName>
+        <default>false</default>
+        <label>Opportunity Lines</label>
+    </customValue>
+    <customValue>
+        <fullName>Payments</fullName>
+        <default>false</default>
+        <label>Payments</label>
+    </customValue>
+    <customValue>
+        <fullName>Subscriptions</fullName>
+        <default>false</default>
+        <label>Subscriptions</label>
+    </customValue>
+    <description>getting used on Data Source Page</description>
+    <masterLabel>Object Picklist</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

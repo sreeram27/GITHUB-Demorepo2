@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to give permissions to Guest Users outside of AR to access to reports and dashboards.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Guest User Reports/Dashboard Access</label>
+    <license>Salesforce</license>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManagePvtRptsAndDashbds</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewPublicDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewPublicReports</name>
+    </userPermissions>
+</PermissionSet>
