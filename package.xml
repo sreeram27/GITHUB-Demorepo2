@@ -303,6 +303,10 @@
         <name>AppMenu</name>
     </types>
     <types>
+        <members>PG_Metric__c.PG_Metric_SME_Approval_Process_withemail</members>
+        <name>ApprovalProcess</name>
+    </types>
+    <types>
         <members>Case.Standard</members>
         <members>Lead.Standard</members>
         <name>AssignmentRule</name>
@@ -1916,6 +1920,7 @@
         <members>OrgDeleteRequest</members>
         <members>OrgMetricScanResult</members>
         <members>OrgMetricScanSummary</members>
+        <members>PG_Metric__c</members>
         <members>PartnerFundAllocation</members>
         <members>PartnerFundClaim</members>
         <members>PartnerFundRequest</members>
@@ -2641,6 +2646,10 @@
     <types>
         <members>Catch up</members>
         <name>ManagedTopics</name>
+    </types>
+    <types>
+        <members>Default_Navigation</members>
+        <name>NavigationMenu</name>
     </types>
     <types>
         <members>Catch up</members>
