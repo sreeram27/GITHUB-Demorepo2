@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InboundCertificate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <expirationDate>2021-07-22</expirationDate>
+    <issuer>C=USA,ST=CA,L=San Francisco,O=Salesforce.com,OU=00D0T0000008aYk,CN=Test</issuer>
+    <masterLabel>Test</masterLabel>
+    <serialId>29430332450645047315860498218150</serialId>
+</InboundCertificate>
