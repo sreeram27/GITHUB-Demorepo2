@@ -6,16 +6,6 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>standard__Chatter</application>
         <default>false</default>
         <visible>true</visible>
@@ -4692,11 +4682,7 @@
     </layoutAssignments>
     <loginHours/>
     <loginIpRanges>
-        <endAddress>255.234.123.223</endAddress>
-        <startAddress>0.0.0.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>255.234.123.223</endAddress>
+        <endAddress>255.234.123.224</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
     <loginIpRanges>
