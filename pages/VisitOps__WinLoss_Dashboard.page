@@ -1,0 +1,81 @@
+<apex:page controller="VisitOps.WinLossDashboardCtrl" sidebar="false">
+<div style="height: 30px;font-size: 20px;">Visit Win / Loss Dashboard </div>
+<apex:form id="theForm">
+	<apex:actionfunction name="testAF" action="{!getnewFilter}" rerender="pbid,pbid1,pbid2,pbid3,pbid4,pbid5,pbid6,pbid7,pbid8,pbid9,pbid10,pbid11,pbidWinLoss"/>
+		<apex:panelGrid columns="4" cellpadding="20%" cellspacing="20%" style="margin-top: 15px;">
+                <font> <b>Filter By : Location</b></font>
+                    <apex:selectList value="{!locName}" multiselect="false" size="1" onChange="testAF();">
+                    	<apex:selectOptions value="{!AvailableLocations}" />
+                    </apex:selectList>
+     	</apex:panelGrid>
+     	
+     	<apex:panelgrid columns="3">
+            <apex:pageBlock id="pbidWinLoss">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt}"/>
+                <analytics:reportChart reportId="{!reportId}" filter="{!newfilter1}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid1">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt1}"/>
+                <!-- <analytics:reportChart reportId="{!reportId1}" filter="{!newFilter}" size="small" cacheResults="false"/> -->
+                <analytics:reportChart reportId="{!reportId1}" filter="{!newFilter1}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+           	<apex:pageBlock id="pbid11">
+             <iframe src="/apex/IncrementalRevenuefromVisits?incrementalRevenue=IncrementalRevenue&locName={!locName}" id="iFrame2" style="width:100%;height:250px;"/>
+            </apex:pageBlock>
+           
+            <apex:pageBlock id="pbid2">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt2}"/>
+                <analytics:reportChart reportId="{!reportId2}" filter="{!newFilter1}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid3">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt3}"/>
+                <analytics:reportChart reportId="{!reportId3}" filter="{!newFilter1}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid4">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt4}"/>
+                <analytics:reportChart reportId="{!reportId4}" filter="{!newfilter1}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid5">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt5}"/>
+                <analytics:reportChart reportId="{!reportId5}" filter="{!newfilter1}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid6">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt6}"/>
+                <analytics:reportChart reportId="{!reportId6}" filter="{!newfilter1}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid7">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt7}"/>
+                <analytics:reportChart reportId="{!reportId7}" filter="{!newfilter1}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid8">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt8}"/>
+                <analytics:reportChart reportId="{!reportId8}" filter="{!newfilter1}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <!-- <apex:pageBlock id="pbid10">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt7}"/>
+                <analytics:reportChart reportId="{!reportId10}" filter="{!newfilter1}" size="small" />
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid8">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt8}"/>
+                <analytics:reportChart reportId="{!reportId8}" filter="{!newfilter1}" size="small" />
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid9">
+                <apex:actionfunction name="testAF1" action="{!redirectRpt9}"/>
+                <analytics:reportChart reportId="{!reportId9}" filter="{!newfilter1}" size="small" />
+            </apex:pageBlock> -->
+            
+        </apex:panelgrid>
+
+</apex:form>
+</apex:page>

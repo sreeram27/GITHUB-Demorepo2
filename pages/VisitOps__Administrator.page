@@ -1,0 +1,53 @@
+<apex:page id="Administrator" controller="VisitOps.AdministratorController" docType="html-5.0" sidebar="{!$Label.visitops__sidebar}">
+<!-- <apex:pageMessages id="showmsg"></apex:pageMessages> -->
+    <style>
+    <!-- Style Added for Lightning Experience -->
+    			body {  
+            			font-size:75% !important;
+    				}
+      .activeTab {background-color:orange;size:30px; color:white; 
+         background-image:none}
+      .inactiveTab { background-color: lightgrey; color:black; 
+         background-image:none}
+      .diplayNone {display:none}
+   </style>
+        <apex:sectionHeader title="Administrator Settings" />
+        <apex:tabPanel switchType="client" selectedTab="tabdetails" 
+                  id="AccountTabPanel" tabClass="activeTab" 
+                  inactiveTabClass="inactiveTab">
+             
+            <apex:tab label="Survey" name="Survey" id="Survey">
+                <iframe src="/apex/Administrator1" id="surveyf" style="width:100%;height:300px;"/>        
+            </apex:tab>
+           
+           <apex:tab label="Visit Types Mapping" name="VisitMapping" id="VisitMapping">                          
+                <iframe src="/apex/Administrator2" id="visitform" style="width:100%;height:300px;"/>                   
+            </apex:tab>
+            
+            <apex:tab label="Calendar" name="Calendar" id="CalendarSetting" >    
+                <iframe src="/apex/Administrator3" id="calendarform" style="width:100%;height:300px;"/>          
+            </apex:tab> 
+            
+            <apex:tab label="General Settings" name="GeneralSettings" id="GeneralSettings" >    
+                <iframe src="/apex/Administrator4" id="generalSettingsForm" style="width:100%;height:300px;"/>          
+            </apex:tab> 
+            
+            <apex:tab label="Search Help Text" name="GridSettingsAO" id="GridSettingsAO" >    
+                <iframe src="/apex/Administrator5" id="GridSettingsAOForm" style="width:100%;height:300px;"/>          
+            </apex:tab>
+            
+        </apex:tabPanel>
+            
+    <script type="text/javascript">         
+        
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");
+            for(var i=0; i<inputCheckBox.length; i++){
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+              
+    </script>
+</apex:page>

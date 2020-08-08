@@ -1,0 +1,247 @@
+<apex:page id="pg" Controller="VisitOps.makeRoomAvailableController"   tabStyle="Calendar__tab" sidebar="{!$Label.visitops__sidebar}" > 
+ <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jquery-1.11.1.min.js')}"/>
+ <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/functions.js')}"/>
+
+<style>
+  .dateFormat{
+    visibility:hidden;
+  }
+  /*
+  table#table2 td{
+  	width : 13%;
+  }
+  table#table2 th{
+  	width : 13%;
+  }
+  */
+  input[type="text"] {
+	width: 90%;
+  }
+</style>
+
+   <apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/styles.css')}" />
+     <div id="top"  style="font-size:1.0em;">
+        <apex:sectionHeader subtitle="Room Name - {!markAvailableRoomName}" title="Make Room Available"/>
+     </div>
+     <apex:pageMessages id="pgMsgsId"/>
+     <div class="bPageBlock">      
+       <div class="roomUnavailTxt" >You have {!rmSchListUnavailableWrpList.size} Room Unavailable at this duration. Please select the rooms you want to make available </div> 
+          <div id="noSelectItemCheckMsg" style="display:none;">
+            <apex:pageMessage summary="Please select a record" severity="warning" strength="3" />
+          </div>
+ <div class="pbBody">
+    <!-- Component to provide ajax loading support -->
+        <c:AjaxStatusIndicator statusText="Processing..." />
+        
+        <apex:form id="frm1">
+             <div class="roomTableDiv" style="table-layout:fixed;width: 100%;">
+                      <div class="btnfld">
+                              <apex:commandButton value="Mark Available"  id="cmdId" onclick="prepareSelectedRecordJS(this,'Mark Available');"  rerender="dummy" />
+                              <apex:commandButton value="Save Changes"  onclick="prepareSelectedRecordJS(this,'Save');"  rerender="dummy"  />
+                              <apex:commandButton value="Cancel"  onclick="windowCloseAndfocusParent('Cancel',false);" rerender="dummy" />
+
+                      </div><br/>
+                     <table id="table2" class="scroll markAvailable" cellpadding="0" cellspacing="0">
+                         <thead>    
+                        <tr>
+                            <th style="width:5%"><input type="checkbox" checked="" name="selectAllUnavailable" onclick="checkAll(this,checked)"/></th>
+                            <th style="width:10%">Unavailable Room Id </th>
+                            <th style="width:12%">Start Time (Location)</th> 
+                            <th style="width:12%">End Time (Location)</th>
+                            <th style="width:12%">Start Time (User)</th> 
+                            <th style="width:12%">End Time (User)</th>
+                            <th style="width:20%">Reason</th> 
+                            <th style="width:10%">Point Of Contact</th>
+            
+                       </tr>
+                       </thead>
+                       <tbody>
+                    <apex:repeat value="{!rmSchListUnavailableWrpList}" var="rmSchwrp" id="listIterator">
+                        <tr>       
+                          <td style="width:5%"><input type="checkbox"  checked="" name="roomUnAvail" value="{!rmSchwrp.rmsh.id}"  />
+                          </td>
+                          <td style="width:10%"> <a href="../{!rmSchwrp.rmsh.Id}"  > {!rmSchwrp.rmsh.Name} </a></td>
+                          <!-- Timezone Changes -->
+                          <!-- 
+                          <td><apex:inputField value="{!rmSchwrp.rmsh.Start_DateTime__c}" /></td>
+                          <td><apex:inputField value="{!rmSchwrp.rmsh.EndDateTime__c}" /></td>
+                          -->
+                          <td style="width:12%">
+                          	<div class="requiredInput">
+                            	<div class="requiredBlock"></div>
+                             	<apex:actionRegion >
+	                             	<apex:inputText value="{!rmSchwrp.locationTZMRUStartTimeString}" id="startTimeTZID" onfocus="DatePicker.pickDate(true, '{!$Component.startTimeTZID}', true);">
+	                              	<apex:actionSupport event="onchange" action="{!calculateUserTZDateTimeValuesForMakeRoomUnavailable}" rerender="startTimeID,pgMsgsId" status="progressIndicator">
+	                              		<apex:param name="mruContextField" value="roomUnavailableStartTime"/>
+	                              		<apex:param name="rmshId" value="{!rmSchwrp.rmsh.Id}"/>
+	                              	</apex:actionSupport>
+	                             	</apex:inputText>
+                            	</apex:actionRegion>
+                           	</div>
+                          </td>
+                          <td style="width:12%">
+                          	<div class="requiredInput">
+                            	<div class="requiredBlock"></div>
+                             	<apex:actionRegion >
+	                             	<apex:inputText value="{!rmSchwrp.locationTZMRUEndTimeString}" id="endTimeTZID" onfocus="DatePicker.pickDate(true, '{!$Component.endTimeTZID}', true);">
+	                              	<apex:actionSupport event="onchange" action="{!calculateUserTZDateTimeValuesForMakeRoomUnavailable}" rerender="endTimeID,pgMsgsId" status="progressIndicator">
+	                              		<apex:param name="mruContextField" value="roomUnavailableEndTime"/>
+	                              		<apex:param name="rmshId" value="{!rmSchwrp.rmsh.Id}"/>
+	                              	</apex:actionSupport>
+	                             	</apex:inputText>
+                            	</apex:actionRegion>
+                           	</div>
+                          </td>
+                          <td style="width:12%">
+                          	<div class="requiredInput">
+				       	   		<div class="requiredBlock"></div>
+				       			<apex:inputText required="true" value="{!rmSchwrp.userTZMRUStartTimeString}" id="startTimeID" disabled="true"/>
+							</div>
+                          </td>
+                          <td style="width:12%">
+                          	<div class="requiredInput">
+				       	   		<div class="requiredBlock"></div>
+				       			<apex:inputText required="true" value="{!rmSchwrp.userTZMRUEndTimeString}" id="endTimeID" disabled="true"/>
+							</div>
+                          </td>
+                          <td style="width:20%"><apex:inputField value="{!rmSchwrp.rmsh.VisitOps__Reason__c}"/> </td>
+                          <td style="width:10%"> {!rmSchwrp.point_of_contact} </td>
+                            </tr>
+                   </apex:repeat>
+                   </tbody>
+                    </table>
+                </div>
+                
+        <apex:actionFunction name="callSaveRoomAvailableAction" action="{!saveMarkRoomAvailable}" oncomplete="windowCloseAndfocusParent('Save',{!isError});" status="progressIndicator" reRender="pgMsgsId"  >
+               <apex:param name="room" value="" assignTo="{!markroomid}"  />
+               <apex:param name="buttonName" value="" assignTo="{!markAvailablecheckedStatus}"  />
+             </apex:actionFunction>           
+     </apex:form> 
+     
+   </div>
+   </div>
+  <script>function setFocusOnLoad() {}</script>     
+  <script>
+
+  $ = jQuery.noConflict();
+ function  prepareSelectedRecordJS(cb,buttonName){
+  
+    var elem ='';
+    var namelist = "";
+    
+    elem = document.getElementsByName('roomUnAvail');
+    
+    
+    for(var i = 0; i < elem.length; i++){
+      if(elem[i].checked){
+        namelist += elem[i].value + ";";
+      }
+     }
+    if(namelist ==''){
+    
+    $('#noSelectItemCheckMsg').show();
+        return false;
+      }
+      else{
+     $('#noSelectItemCheckMsg').hide();
+     } 
+     
+     
+    if(buttonName=='Mark Available'){
+    
+      callSaveRoomAvailableAction(namelist,buttonName);
+    }
+    else if (buttonName=='Save'){
+    
+      callSaveRoomAvailableAction(namelist,buttonName);
+    }
+  
+  
+  }
+
+ // ****Select all checkbox functionality for available rooms
+ 
+function checkAll(cb,checked)
+    {
+
+ var elem ='';
+ if(cb.name=='selectAllUnavailable'){
+        elem = document.getElementsByName('roomUnAvail');
+     }  
+ 
+          var namelist = "";
+          for(var i = 0; i < elem.length; i++)
+          {
+          
+             if(cb.checked){
+              elem[i].checked=true;
+             }
+             else
+             {
+              elem[i].checked=false;
+             }
+          
+        namelist += elem[i].value + ";";
+        }
+ 
+
+      
+    }
+  function windowCloseAndfocusParent(buttonName,isError)
+    {
+     console.log('isError--'+isError);
+     if(isError){
+     	return;
+     }
+     if( window.opener!=null){
+     window.opener.focus();
+    }
+    
+     window.close();
+   if( window.opener!=null){
+     window.opener.focus();
+    }
+     var fullURL= '{!JSENCODE($CurrentPage.URL)}';
+     pathArray = fullURL.split( '/' );
+     var Protocol = pathArray[0]; 
+     var host = pathArray[2];
+     var hostURL = Protocol+'//'+host;
+     
+   if(buttonName == 'Save'||buttonName == 'Mark Available'){
+     var parentUrl = hostURL+'/apex/CalendarPage';
+     var currentURL = window.location.href;  
+     var name1= 'arrivaldate';
+     var name2 = 'depdate';
+     var name3 = 'LocationName';
+     var name4 = 'NumberOfAttendee';
+     var name5 = 'placeValue';
+     var name6 = 'source';
+     var name7 = 'arrivaldateonform';
+    
+     var arrival = decodeURI((RegExp(name1 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var departure = decodeURI((RegExp(name2 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var location = decodeURI((RegExp(name3 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var numberOfAttendees = decodeURI((RegExp(name4 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var placeValue = decodeURI((RegExp(name5 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var source = decodeURI((RegExp(name6 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var start = decodeURI((RegExp(name7 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     
+     var isUnavailableForm = 'true';
+     window.opener.location.href = parentUrl+'?arrivaldate='+arrival+'&source='+source+'&arrivaldateonform='+start+'&isUnavailableForm='+isUnavailableForm+'&depDate='+departure+'&LocationName='+location+'&placeValue='+placeValue+'&NumberOfAttendee='+numberOfAttendees;
+      
+    }
+  }    
+    
+    
+  /*function windowCloseAndfocusParent(){
+  if(window.opener!=null){
+   window.opener.focus();
+   }
+   window.close();
+  }  */
+    
+    
+    
+  </script>                
+                
+</apex:page>

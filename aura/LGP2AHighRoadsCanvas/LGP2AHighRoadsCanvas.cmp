@@ -1,0 +1,93 @@
+<!--
+    Name               :    LGP2AHighRoadsCanvas.cmp 
+    Description        :    AURA scripts to display the quote line item content as well as canvas app to send the data to HighRoads App
+    Created By         :    Arun Siddappa
+-->
+<aura:component controller = "LGP2AIntegrationController" implements="force:lightningQuickAction,lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+     <aura:html tag="style">
+        .slds-modal__container{
+        height : auto;
+        width: 70%;
+        max-width: 70rem;
+        }
+        .modal-body{
+        height : 500px !important;
+        max-height: 500px !important;
+        }
+        
+        .customFooter{
+        display: inline !important;
+        }
+    </aura:html> 
+    
+    <aura:attribute name="QuoteLineId" type="String" />
+    <aura:attribute name="GroupName" type="String" />
+    <aura:attribute name="ProductName" type="String" />
+    <aura:attribute name="ProductStage" type="String" />
+    <aura:attribute name="ProductContractCode" type="String" />
+    <aura:attribute name="GroupId" type="String" />
+    <aura:attribute name="GroupSize" type="String" />
+    <aura:attribute name="AdministrativeType" type="String" />
+    <aura:attribute name="attributeValue" type="String" />
+    <aura:attribute name="Source" type="String"/>
+    <aura:attribute name="QuoteId" type="String"/>
+   
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:layout class="slds-page-header slds-page-header--object-home">
+    <lightning:layoutItem>
+        <lightning:icon iconName="standard:quotes" alternativeText="Sample Request" />
+    </lightning:layoutItem>
+    <lightning:layoutItem padding="horizontal-small">
+        <div class="page-section page-header">
+            <p class="slds-text-heading_label">GROUP OPPORTUNITY</p>
+            <h2 class="slds-page-header__title slds-m-right_small slds-truncate slds-align-left">{!v.GroupName}</h2>
+        </div>
+    </lightning:layoutItem>
+ </lightning:layout>
+ 
+  <div class="slds-card slds-has-bottom-magnet">
+      <div class="slds-grid slds-wrap">
+  <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-title_bold">Product Name</span>
+  </div>
+  <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-title_bold">Product Stage</span>
+  </div>
+  <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-title_bold">Product Contract Code</span>
+  </div>
+  <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-title_bold">Group Id</span>
+  </div>
+  <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-title_bold">Group Size</span>
+  </div>    <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-title_bold">Administrative Type</span>
+  </div>  
+      </div>
+      
+        <div class="slds-grid slds-wrap">
+  <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-color_default ">{!v.ProductName}</span>
+  </div>
+  <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-color_default ">{!v.ProductStage}</span>
+  </div>
+  <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-color_default ">{!v.ProductContractCode}</span>
+  </div>
+  <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-color_default ">{!v.GroupId}</span>
+  </div>
+  <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-color_default ">{!v.GroupSize}</span>
+  </div>    <div class="slds-col slds-size_2-of-12">
+    <span class = "slds-text-color_default ">{!v.AdministrativeType}</span>
+  </div>     
+      </div>
+    </div>
+    <div style="max-height : 1400px; overflow-y:scroll;">
+        <force:canvasApp developerName="HighRoads" parameters="{!v.attributeValue}" namespacePrefix="" width="1500px" maxWidth ="1700px" height = "1000px" maxHeight ="1200px" border ="10 px"/>	
+    </div>
+    </aura:component>

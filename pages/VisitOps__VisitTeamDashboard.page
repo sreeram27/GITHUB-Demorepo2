@@ -1,0 +1,521 @@
+<apex:page action="{!view}"  standardController="VisitOps__Visit__c" extensions="VisitOps.VisitTeamWorks" sidebar="false" showHeader="false" docType="html-5.0" tabstyle="VisitOpsReports__tab">
+<script>
+function paneldisplay(){
+
+
+}
+</script>   
+   <style>
+.bckColorGreen{
+ color : black;
+ border:3px solid;
+ border-color:green;
+ padding-left: 3px;
+padding-right: 3px;
+}
+
+.bckColorRed{
+color : black;
+ border:3px solid;
+ border-color:red;
+ padding-left: 3px;
+padding-right: 3px;
+}
+
+
+
+.bckColorOrange{
+color : black;
+ border:3px solid;
+ border-color:orange;
+ padding-left: 3px;
+padding-right: 3px;
+}
+
+.bckColorBlack{
+color : black;
+ border:3px solid;
+ border-color:black;
+ padding-left: 3px;
+padding-right: 3px;
+}
+
+.bckColorEmpty{
+color : black;
+ border:0px ;
+ border-color:black;
+ padding-left: 3px;
+padding-right: 3px;
+}
+
+
+.tdWidth{
+width :160px;
+height: 23px;
+
+}
+
+.tdWidthHeight{
+width :160px;
+height: 50px;
+
+}
+
+.tdWidthDetail{
+width :140px;
+}
+
+.visitDetailCls{
+padding-left: 10px;
+}
+
+
+.display{
+display :block;
+}
+
+/* To statically display same color as VisitOps Reports Tab color */
+.bPageBlock {
+border-top: 3px solid #77b900;
+}
+.tertiaryPalette {
+/*
+background-color: #b4c374;
+border-color: #b4c374;
+*/
+background-color: #77b900;
+border-color: #77b900;
+}
+
+.tdWidth{
+width :38%;
+}
+#workStatusTable .tdWidth{
+	/*width :35%;*/
+	width :27%;
+}
+   </style>
+
+    <apex:form >
+       <c:AjaxStatusIndicator statusText="Processing..." />
+            <apex:actionFunction name="searchFilters" action="{!searchFilters}"
+            rerender="pbTable" status="progressIndicator">
+            </apex:actionFunction>
+            <apex:actionFunction name="reloadView" action="{!view}"
+            rerender="pbTable,visitOP" status="progressIndicator">
+            </apex:actionFunction>
+    <div style="height: 30px;font-size: 20px;">Visit Team Work Dashboard</div>
+    <!-- End Default Content REMOVE THIS -->
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Location</apex:outputLabel>
+                    <apex:selectList label="Location" multiselect="false" size="1"
+                    value="{!selectedLocations}">
+                    <apex:selectOptions value="{!locations}" />
+                    </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Visit Manager</apex:outputLabel>
+                    <apex:selectList label="Visit Manager" multiselect="false" size="1"
+                    value="{!selectedVisitManagers}">
+                    <apex:selectOptions value="{!visitManagers}" />
+                    </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                    <apex:outputText value="By Date Range"/>
+	               <apex:outputPanel >
+	               <apex:selectList value="{!arrivalOrDepartureDate}" size="1">
+		             <apex:selectOption itemValue="ArrivalDateTime__c" itemLabel="Arrival Date"/>
+		             <apex:selectOption itemValue="DepartureDateTime__c" itemLabel="Departure Date"/>
+		           </apex:selectList>
+		           <br/>(Search is based on user time zone date/time fields)
+		           </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                   <!--  
+                    <apex:outputPanel >
+	                <apex:outputText value="From : " />
+	                <apex:inputField value="{!visit.VisitOps__SearchVisitFromDate__c}" required="false"/>
+	               </apex:outputPanel>
+	               <apex:outputPanel >
+	                <apex:outputText value="To : "/>
+	                <apex:inputField value="{!visit.VisitOps__SearchVisitToDate__c}" required="false"/>
+	               </apex:outputPanel>
+	                -->
+	                <apex:panelGrid columns="4">
+	                	<apex:outputText value="From : " />
+	                	<apex:inputField value="{!visit.VisitOps__SearchVisitFromDate__c}" required="false"/>
+	                	<apex:outputText value="To : "/>
+	                	<apex:inputField value="{!visit.VisitOps__SearchVisitToDate__c}" required="false"/>
+	                </apex:panelGrid>
+	               </apex:pageBlockSectionItem>
+                    
+                    <!-- <apex:pageBlockSectionItem >
+                    <apex:outputPanel >
+                    <apex:outputLabel >Visit Team Members</apex:outputLabel>
+                    <apex:selectList multiselect="true" size="5"
+                    value="{!selectedVisitTeamMembers}">
+                    <apex:selectOptions value="{!visitTeamMembers}" />
+                    </apex:selectList>
+                    </apex:outputPanel>
+                    </apex:pageBlockSectionItem>-->
+                </apex:pageBlockSection>
+                
+                    <apex:pageBlockButtons location="bottom">
+                    <input type="button" value="Go" onclick="reloadView();" />
+                    <!--<apex:commandLink action="{!previous}" onclick="searchFilters();"  status="progressIndicator" value="Go" id="Go"/>
+                    --><apex:actionStatus startText="Please Wait..." id="actionStatus" />
+                    </apex:pageBlockButtons>
+            </apex:pageBlock>
+            
+    <apex:pageBlock id="pbTable"  >
+            <apex:outputPanel >
+            <apex:pageBlockSection title="Visit Results -  Page #{!pageNumber}" columns="1">
+            
+                <apex:pageBlockTable value="{!visitsByCriterea}" var="wrapvisit">
+                      <apex:column headerValue="Visit Number">
+                     <apex:commandLink action="{!view}"  onclick="paneldisplay();" status="progressIndicator" reRender="visitOP,Prop">
+                     {!wrapvisit.Name}
+                     <apex:param value="{!wrapvisit.id}" name="Visit Number" assignTo="{!visitRecordId}"/>
+                     </apex:commandLink>
+                       </apex:column>
+                    <apex:column headerValue="Visit Name" value="{!wrapvisit.VisitOps__VisitName__c}" />
+                   <apex:column headerValue="Visit Type " value="{!wrapvisit.VisitType__r.Name}" />
+                    <!-- <apex:column headerValue="Visit Manager " value="{!wrapvisit.VisitManager__r.name}" /> -->
+                    <apex:column headerValue="Visit Manager " value="{!wrapvisit.Owner.name}" />
+                    <apex:column headerValue="Arrival Date and Time (User)" value="{!wrapvisit.VisitOps__ArrivalDateTime__c}" />
+                    <apex:column headerValue="Departure Date and Time (User)" value="{!wrapvisit.VisitOps__DepartureDateTime__c}" />
+                     <apex:column headerValue="Visit Status" value="{!wrapvisit.VisitStatus__r.Name}" />
+                    <apex:column headerValue="Room Reserved" value="{!wrapvisit.Room__r.Name}" />
+                  
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            
+              </apex:outputPanel>
+              <apex:pageblockbuttons >
+              	
+              	<apex:commandButton action="{!first}" value="First" id="firstButton"/>
+	            <apex:commandButton action="{!previous}" rendered="{!hasPrevious}" value="Previous" id="theButton"/>
+    			<apex:commandButton action="{!next}" rendered="{!hasNext}" value="Next" id="theButton1"/>
+    			<apex:commandButton action="{!last}" value="Last" id="lastButton"/>
+			    
+	          </apex:pageblockbuttons>
+        </apex:pageBlock>
+        
+        
+  
+ <apex:outputPanel id="visitOP" StyleClass="display">
+ 
+   <table style="float:left;width:100%;" id="table0">
+  <thead>
+               <tr>
+                  <th colspan="2"  style="font-size: 15px;width: 20px;text-decoration: underline;font-weight:bold;color:blue;">Visit Detail</th>
+               </tr>
+     
+           </thead>
+        <tbody>
+       <tr> 
+            <td class="tdWidthDetail"><apex:outputLabel style="font-weight: bold;" for="visitNumber" value="Visit Number : " />
+            </td>
+            <td> <apex:outputText id="visitNumber" value="{!visitNumber}"/>
+            </td>
+            
+            <td class="tdWidthDetail"><apex:outputLabel style="font-weight: bold;" for="visitArrivalDate" value="Visit Arrival Date : " />
+            </td>
+            <td> 
+            	<!-- <apex:outputText id="visitArrivalDate" value="{!visitArrivalDate}"/> -->
+            	<apex:outputText id="visitArrivalDate" value="{!visitArrivalDateString}"/>
+            </td>
+            
+        </tr>  
+           
+        <tr> 
+            <td class="tdWidthDetail"><apex:outputLabel style="font-weight: bold;" for="visitName" value="Visit Name :" />
+            </td>
+            <td> <apex:outputText id="visitName" value="{!visitName}"/>
+            </td>
+            
+            <td class="tdWidthDetail"><apex:outputLabel style="font-weight: bold;" for="visitDepartureDate" value="Visit Departure Date :" />
+            </td>
+            <td> 
+            	<!-- <apex:outputText id="visitDepartureDate" value="{!visitDepartureDate}"/> -->
+            	<apex:outputText id="visitDepartureDate" value="{!visitDepartureDateString}"/>
+            </td>
+         </tr> 
+           
+       <tr> 
+            <td class="tdWidthDetail"><apex:outputLabel style="font-weight: bold;" for="visitOwner" value="Visit Owner :" />
+            </td>
+            <td> <apex:outputText id="visitOwner" value="{!VisitOwnerName}"/>
+            </td>
+            <td class="tdWidthDetail"><apex:outputLabel style="font-weight: bold;" for="visitStatus" value="Visit Status :" />
+            </td>
+            <td> <apex:outputText id="visitStatus" value="{!visitStatus}"/>
+            </td>
+         </tr>           
+      </tbody>         
+  </table>
+ <br></br> <br></br>
+   <div class="container">
+    
+          <table style="float:left;width:33%;" id="table1">
+           <thead>
+               <tr>
+                  <th colspan="2"  style="font-size: 18px;width: 20px;border-bottom:2px solid;">Work Flow</th>
+                   
+               </tr>
+             
+           </thead>
+           <tbody>
+     <apex:repeat value="{!vlist1}" var="attach" >
+          <tr> 
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="leadershipApproval" value="Leadership Approval " />
+            </td>
+            <td> <apex:outputText styleClass="{!IF(attach.VisitOps__Leadership_Approval_Status__c == 'Leadership Approved','bckColorGreen', IF(attach.VisitOps__Leadership_Approval_Status__c == 'Leadership Approval Requested','bckColorOrange', IF(attach.VisitOps__Leadership_Approval_Status__c == 'Leadership Declined','bckColorRed', IF(attach.VisitOps__Leadership_Approval_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}" id="leadershipApproval" value="{!attach.VisitOps__Leadership_Approval_Status__c}"/>
+            </td>
+           </tr>
+           
+            <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="Strategy Call" value="Strategy Call " />
+           </td>
+           <td>
+             <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Strategy_Call_Status__c== 'Strategy Call Complete',visitControlsForSelectedVisit.VisitOps__Strategy_Call_Status__c== 'Strategy Call Not Needed'),'bckColorGreen', IF(visitControlsForSelectedVisit.VisitOps__Strategy_Call_Status__c == 'Strategy Call Scheduled','bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Strategy_Call_Status__c == 'Strategy Call Cancelled','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Strategy_Call_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="Strategy_Call" value="{!visitControlsForSelectedVisit.VisitOps__Strategy_Call_Status__c}"/>
+            </td>
+            </tr>
+            <!-- <apex:outputField id="Strategy_Call" value="{!attach.Strategy_Call_Status__c}"/><br/>  --> 
+             <!--  <apex:outputField id="Agenda_Approval" value="{!attach.VisitOps__Agenda_Approval_Status__c}"/><br/>
+            <apex:outputField value="{!attach.Items_to_Remember__c}"/><br/>
+            <apex:outputField value="{!attach.Visit_Team_Notes__c}"/><br/> -->
+            <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="Agenda_Approval" value="Agenda Approval " />      
+              </td>
+               <td > <apex:outputText styleClass="{!IF(attach.VisitOps__Agenda_Approval_Status__c== 'Agenda Approved','bckColorGreen', IF(attach.VisitOps__Agenda_Approval_Status__c == 'Agenda Approval Requested','bckColorOrange', IF(attach.VisitOps__Agenda_Approval_Status__c == 'Agenda Declined','bckColorRed',IF(attach.VisitOps__Agenda_Approval_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="Agenda_Approval" value="{!attach.VisitOps__Agenda_Approval_Status__c}"/>
+            </td>
+            </tr>
+  <tr > <td colspan="2" style="border-top:2px solid black;"> </td>
+          </tr>   <tr >  
+            <td class="tdWidthHeight"><apex:outputLabel style="font-weight: bold;" for="itemsRememberId " value="Items to Remember " />
+             </td>
+             <td>
+             <apex:outputText id="itemsRememberId" value="{!visitControlsForSelectedVisit.VisitOps__Items_to_Remember__c}"/>
+            </td>
+            </tr>
+           <tr > <td colspan="2" style="border-top:2px solid black;"> </td></tr> 
+             <tr>  
+            <td class="tdWidthHeight"><apex:outputLabel style="font-weight: bold;" for="visitTeamNotesId" value="Strategy Call Notes " />   
+             </td>
+             <td><apex:outputField id="visitTeamNotesId" value="{!visitControlsForSelectedVisit.VisitOps__Strategy_Call__c}"/>
+            </td>
+            <td>
+            </td>
+             </tr>
+ </apex:repeat>
+ </tbody>
+           </table> 
+
+      <table style="float:left;width:33%;" id="workStatusTable"> 
+ 
+      <thead>
+               <tr>
+                  <th colspan="2"  style="font-size: 18px;border-bottom:2px solid;" >Work Status        </th>
+               </tr>
+       </thead>
+        <tbody>     
+              <apex:repeat value="{!vlist1}" var="attach" >
+            <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="attachAgendaId" value="Agenda " />   
+             </td>
+            <td>
+             <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Agenda__c == 'Agenda complete', visitControlsForSelectedVisit.VisitOps__Agenda__c == 'Agenda draft complete'),'bckColorGreen', IF(OR(visitControlsForSelectedVisit.VisitOps__Agenda__c == 'Presenters needed',visitControlsForSelectedVisit.VisitOps__Agenda__c== 'Rooms needed'),'bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Agenda__c == 'Agenda issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Agenda__c == 'Select','bckColorBlack','bckColorEmpty'))))}" id="attachAgendaId" value="{!visitControlsForSelectedVisit.VisitOps__Agenda__c}"/>
+            </td>
+             </tr>
+             
+             <tr>  
+            <td class="tdWidth" ><apex:outputLabel style="font-weight: bold;" for="catering" value="Catering " />  
+            </td>
+            <td>
+             <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Catering_Status__c == 'Catering Confirmed', visitControlsForSelectedVisit.VisitOps__Catering_Status__c == 'No catering needed'),'bckColorGreen', IF(OR(visitControlsForSelectedVisit.VisitOps__Catering_Status__c == 'Special catering needed/not ordered',visitControlsForSelectedVisit.VisitOps__Catering_Status__c== 'Catering requested'),'bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Catering_Status__c == 'Catering issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Catering_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="catering"  value="{!visitControlsForSelectedVisit.VisitOps__Catering_Status__c}"/>
+            </td>
+             </tr>
+             
+             <tr>  
+            <td class="tdWidth" ><apex:outputLabel style="font-weight: bold;" for="grnd" value="Ground Trans. " /> 
+            </td>  
+            <td>
+             <apex:outputText id="grnd" styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Ground_Transportation_Status__c == 'Ground transportation arranged', visitControlsForSelectedVisit.VisitOps__Ground_Transportation_Status__c == 'Ground transportation partially arranged',visitControlsForSelectedVisit.VisitOps__Ground_Transportation_Status__c == 'Ground transportation not needed'),'bckColorGreen', IF(visitControlsForSelectedVisit.VisitOps__Ground_Transportation_Status__c == 'Ground transportation requested','bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Ground_Transportation_Status__c == 'Ground transportation issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Ground_Transportation_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}" value="{!SUBSTITUTE(visitControlsForSelectedVisit.VisitOps__Ground_Transportation_Status__c,'transportation','trans.')}"/>
+            </td>
+             </tr>
+             
+            <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="facility" value="Facilities " />   
+            </td>
+            <td> 
+             <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Facilities_Status__c == 'Facilities services arranged', visitControlsForSelectedVisit.VisitOps__Facilities_Status__c == 'Facilities services not needed'),'bckColorGreen', IF(OR(visitControlsForSelectedVisit.VisitOps__Facilities_Status__c == 'Facilities services requested',visitControlsForSelectedVisit.VisitOps__Facilities_Status__c=='Facilities services needed / not arranged'),'bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Facilities_Status__c == 'Facilities issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Facilities_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}" id="facility" value="{!visitControlsForSelectedVisit.VisitOps__Facilities_Status__c}"/>
+            </td>
+             </tr>
+             
+              <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="security" value="Security " /> 
+            </td>  
+            <td>
+             <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Security_Status__c == 'Security arranged', visitControlsForSelectedVisit.VisitOps__Security_Status__c == 'Security not needed'),'bckColorGreen', IF(OR(visitControlsForSelectedVisit.VisitOps__Security_Status__c == 'Security needed / not arranged',visitControlsForSelectedVisit.VisitOps__Security_Status__c =='Security services requested'),'bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Security_Status__c == 'Security issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Security_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="security"  value="{!visitControlsForSelectedVisit.VisitOps__Security_Status__c}"/>
+            </td>
+             </tr>
+             
+              <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="signange" value="Signage " />   
+             </td>
+             <td><apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Signage_Status__c== 'Signage confirmed', visitControlsForSelectedVisit.VisitOps__Signage_Status__c == 'Signage In Production',visitControlsForSelectedVisit.VisitOps__Signage_Status__c== 'Signage not needed'),'bckColorGreen', IF(OR(visitControlsForSelectedVisit.VisitOps__Signage_Status__c == 'Signage needed / not arranged',visitControlsForSelectedVisit.VisitOps__Signage_Status__c =='Signage requested'),'bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Signage_Status__c == 'Signage issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Signage_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"   id="signange" value="{!visitControlsForSelectedVisit.VisitOps__Signage_Status__c}"/>
+            </td>
+             </tr>
+             
+              <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="gifts" value="Gifts " />   
+             </td>
+             <td>
+             <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Gifts_Status__c == 'Gifts not needed', visitControlsForSelectedVisit.VisitOps__Gifts_Status__c == 'Gifts confirmed'),'bckColorGreen', IF(OR(visitControlsForSelectedVisit.VisitOps__Gifts_Status__c == 'Gifts needed / not ordered',visitControlsForSelectedVisit.VisitOps__Gifts_Status__c =='Gifts requested'),'bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Gifts_Status__c == 'Gift issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Gifts_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"   id="gifts" value="{!visitControlsForSelectedVisit.VisitOps__Gifts_Status__c}"/>
+            </td>
+           
+             </tr>
+             
+                <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="res" value="Restaurant " />   
+            </td>
+            <td> <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Restaurant_Status__c== 'Restaurant arranged', visitControlsForSelectedVisit.VisitOps__Restaurant_Status__c == 'Restaurant not needed'),'bckColorGreen', IF(visitControlsForSelectedVisit.VisitOps__Restaurant_Status__c == 'Restaurant needed / not arranged','bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Restaurant_Status__c == 'Restaurant issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Restaurant_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="res" value="{!visitControlsForSelectedVisit.VisitOps__Restaurant_Status__c}"/>
+            </td>
+             </tr>
+                <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="lodging" value="Lodging " />   
+             </td>
+             <td><apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Lodging_Status__c== 'Lodging confirmed', visitControlsForSelectedVisit.VisitOps__Lodging_Status__c== 'Lodging not needed'),'bckColorGreen', IF(OR(visitControlsForSelectedVisit.VisitOps__Lodging_Status__c == 'Lodging requested',visitControlsForSelectedVisit.VisitOps__Lodging_Status__c=='Lodging needed / not ordered'),'bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Lodging_Status__c == 'Lodging issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Lodging_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="lodging" value="{!visitControlsForSelectedVisit.VisitOps__Lodging_Status__c}"/>
+            </td>
+             </tr>
+                 
+                 <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="exp" value="Expenses  " />   
+            </td><td> <apex:outputText styleClass="{!IF(visitControlsForSelectedVisit.VisitOps__Expenses__c== 'Expenses entered','bckColorGreen', IF(visitControlsForSelectedVisit.VisitOps__Expenses__c == 'Invoices needed','bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Expenses__c == 'Expense issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Expenses__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="exp" value="{!visitControlsForSelectedVisit.VisitOps__Expenses__c}"/>
+            </td>
+            </tr>
+            <!-- <tr>
+             <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="hotel" value="Hotel " />   
+             </td>
+             <td><apex:outputText styleClass="{!IF(OR(attach.Pre_Survey_Status__c== 'Pre-surveys sent', attach.Pre_Survey_Status__c== 'Pre-surveys distributed to presenters',attach.Pre_Survey_Status__c=='Pre-surveys not needed'),'bckColorGreen', IF(attach.Pre_Survey_Status__c == 'Pre-surveys needed / not sent','bckColorOrange', IF(attach.Pre_Survey_Status__c == 'Pre-survey issues exist','bckColorRed',IF(attach.Pre_Survey_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}" id="hotel" value="{!attach.Pre_Survey_Status__c}"/>
+            </td>
+             </tr>  -->
+             <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="videographer" value="Videographer  " />   
+            </td><td> <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Videographer_Status__c== 'Videographer confirmed', visitControlsForSelectedVisit.VisitOps__Videographer_Status__c== 'Videographer not needed'),'bckColorGreen', IF((visitControlsForSelectedVisit.VisitOps__Videographer_Status__c == 'Videographer requested'),'bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Videographer_Status__c == 'Videographer issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Videographer_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="videographer" value="{!visitControlsForSelectedVisit.VisitOps__Videographer_Status__c}"/>
+            </td>
+             </tr>
+               <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="photographer" value="Photographer  " />   
+            </td><td> <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Photographer_Status__c== 'Photographer confirmed', visitControlsForSelectedVisit.VisitOps__Photographer_Status__c== 'Photographer not needed'),'bckColorGreen', IF((visitControlsForSelectedVisit.VisitOps__Photographer_Status__c == 'Photographer requestsed'),'bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Photographer_Status__c == 'Photographer issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Photographer_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="photographer" value="{!visitControlsForSelectedVisit.VisitOps__Photographer_Status__c}"/>
+            </td>
+             </tr>
+             <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="preSurvey" value="Pre Survey " />   
+             </td>
+             <td><apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Pre_Survey_Status__c== 'Pre-surveys sent', visitControlsForSelectedVisit.VisitOps__Pre_Survey_Status__c== 'Pre-surveys distributed to presenters',visitControlsForSelectedVisit.VisitOps__Pre_Survey_Status__c=='Pre-surveys not needed'),'bckColorGreen', IF(visitControlsForSelectedVisit.VisitOps__Pre_Survey_Status__c == 'Pre-surveys needed / not sent','bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Pre_Survey_Status__c == 'Pre-survey issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Pre_Survey_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}" id="preSurvey" value="{!visitControlsForSelectedVisit.VisitOps__Pre_Survey_Status__c}"/>
+            </td>
+             </tr>
+                 <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="postSurvey" value="Post Survey " />   
+             </td>
+             <td> <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Post_Survey_Status__c== 'Post-surveys sent to attendees', visitControlsForSelectedVisit.VisitOps__Post_Survey_Status__c== 'Post-surveys distributed',visitControlsForSelectedVisit.VisitOps__Post_Survey_Status__c=='Post-surveys not needed'),'bckColorGreen', IF(visitControlsForSelectedVisit.VisitOps__Post_Survey_Status__c == 'Post-surveys needed / not sent','bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Post_Survey_Status__c == 'Post-survey issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Post_Survey_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="postSurvey" value="{!visitControlsForSelectedVisit.VisitOps__Post_Survey_Status__c}"/>
+            </td>
+             </tr>
+             <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="decisionSurvey" value="Decision Survey " />   
+             </td>
+             <td> <apex:outputText styleClass="{!IF(OR(visitControlsForSelectedVisit.VisitOps__Decision_Survey_Status__c== 'Decision survey sent', visitControlsForSelectedVisit.VisitOps__Decision_Survey_Status__c=='Decision survey not needed'),'bckColorGreen', IF(visitControlsForSelectedVisit.VisitOps__Decision_Survey_Status__c == 'Decision survey needed / not sent','bckColorOrange', IF(visitControlsForSelectedVisit.VisitOps__Decision_Survey_Status__c == 'Decision survey issues exist','bckColorRed',IF(visitControlsForSelectedVisit.VisitOps__Decision_Survey_Status__c == 'Select','bckColorBlack','bckColorEmpty'))))}"  id="decisionSurvey" value="{!visitControlsForSelectedVisit.VisitOps__Decision_Survey_Status__c}"/>
+            </td>
+             </tr>  
+             
+           
+             <!--  
+                <apex:outputField value="{!attach.Agenda__c}"/><br/>
+                <apex:outputField value="{!attach.Catering_Status__c}"/><br/>
+                <apex:outputField value="{!attach.Ground_Transportation_Status__c}"/><br/>
+                <apex:outputField value="{!attach.Facilities_Status__c}"/><br/>
+                <apex:outputField value="{!attach.Security_Status__c}"/><br/>
+                <apex:outputField value="{!attach.Signage_Status__c}"/><br/>
+                <apex:outputField value="{!attach.Gifts_Status__c}"/><br/>
+                <apex:outputField value="{!attach.Restaurant_Status__c}"/><br/>
+                <apex:outputField value="{!attach.Lodging_Status__c}"/><br/>
+                <apex:outputField value="{!attach.Pre_Survey_Status__c}"/><br/>
+                <apex:outputField value="{!attach.Post_Survey_Status__c}"/><br/>
+                <apex:outputField value="{!attach.Expenses__c}"/><br/>--> 
+      </apex:repeat>
+    </tbody>
+
+           </table>  
+     <table style="float:left;width:33%;"> 
+      <thead>
+               <tr>
+                  <th colspan="2" style="font-size: 18px;border-bottom:2px solid;" >Agenda with Unconfirmed Presenters</th>
+<!--                   <th colspan="2" style="font-size: 20px;border-bottom:2px solid;" >Agenda with Tentative Presenters</th> -->
+                  
+               </tr>
+       </thead>
+        <tbody>     
+<!--               <apex:repeat value="{!presenterswithAgendaMap1}" var="Presenter" >
+            <tr>  
+            <td><apex:outputLabel style="font-weight: bold;" for="agendaTitle" value="Agenda Title " />   
+             <apex:outputText id="agendaTitle" value=" {!presenterswithAgendaMap1[Presenter]}"/>
+            </td>
+             </tr>
+
+
+    
+    <apex:repeat value="{!presenterswithAgendaMap1[Presenter]}" var="Presentername" >
+            <tr>  
+            <td style="color:orange;"><apex:outputLabel style="font-weight: bold;" for="agendamap" value="Name " />   
+             <apex:outputText id="agendamap" value="{!presenterswithAgendaMap[Presentername]} "/>
+            </td>
+             </tr>
+    </apex:repeat>
+        </apex:repeat>
+ -->
+	<apex:repeat value="{!presenterWrapperList}" var="each" >
+            <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;" for="agendaTitle" value="Agenda Title " />   
+            </td>
+            <td> <apex:outputText id="agendaTitle" value="{!each.Title}"/>
+            </td>
+             </tr>
+
+    
+    <apex:repeat value="{!each.pNameList}" var="presenter" >
+            <tr>  
+            <td class="tdWidth"><apex:outputLabel style="font-weight: bold;color:orange;" for="agendamap" value="Presenter Name " />   
+            </td>
+            <td>
+             <apex:outputText style="color:orange;" id="agendamap" value="{!presenter}"/>
+            </td>
+             </tr>
+	
+	</apex:repeat>
+        </apex:repeat>
+
+    </tbody>
+    </table>
+    </div> 
+   </apex:outputPanel>   
+      <!--    <apex:outputPanel id="Prop">
+        {!presenterswithAgenda}
+             <apex:repeat var="Presenter" value="{!presenterswithAgenda}" >
+             {!presenterswithAgenda[Presenter]} xxxxx
+                <p>{!presenterswithAgenda[Presenter].Agenda__r.Agenda_Title__c}</p>
+            </apex:repeat>
+      </apex:outputPanel>  -->
+    
+    
+       
+
+    
+    </apex:form>
+	
+</apex:page>

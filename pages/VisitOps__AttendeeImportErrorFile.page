@@ -1,0 +1,6 @@
+<apex:page controller="VisitOps.AttendeesImportCls" cache="true" action="{!generateErrorFile}" contentType="text/csv#AttendeeImportErrorFile.csv" language="en-US" >
+<apex:outputText value="{!csvErrorFileHeader}" escape="false"/>
+<apex:repeat value="{!ErrorWrapperList}" var="item">
+{!item.RowData}
+</apex:repeat>  
+</apex:page>

@@ -1,0 +1,28 @@
+<apex:page controller="VisitOps.MultiLanguageSurveyController" showHeader="false" sidebar="false">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Multi Language Survey Page" collapsible="false">
+                <apex:repeat value="{!languageSet}" var="lang">
+                    <apex:outputLink rendered="{!IF(view == 'Owner', true, false)}" onclick="openPostPrintForm('{!lang}')" >{!languageMap[lang]}</apex:outputLink>
+                    <apex:outputLink rendered="{!IF(view == 'Customer', true, false)}" onclick="openCustPostPrintForm('{!lang}')" >{!languageMap[lang]}</apex:outputLink>
+                </apex:repeat>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+    <script>
+        function openPostPrintForm(lang){
+            var uri = '{!$Label.visitops__printownerpostsurvey}?visitId={!visitId}&lang=' + lang;
+            uri = encodeURI(uri);
+            window.open(uri, '_blank');
+        }
+    </script>
+
+<script>
+    function openCustPostPrintForm(lang){
+        var uri = '{!$Label.visitops__printcustomerpostsurvey}?visitId={!visitId}&lang=' + lang;
+        uri = encodeURI(uri);
+        window.open(uri, '_blank');
+    }
+</script>
+</apex:page>

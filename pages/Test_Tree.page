@@ -1,0 +1,302 @@
+<apex:page standardController="Test_Execution_Cycle__c" extensions="VFC_EmployeeCycle_Releasee" id="pg">
+<!-- Include the Jquery Script files -->
+
+
+ <script src="//code.jquery.com/jquery-1.10.2.min.js"/>
+    <script>
+        $(document).ready(function(){
+            $(esc('pg:frm:pb1:dateTable:tb')+" > tr").attr("onmouseover","");
+            $("[id$='stageTable:tb'] > tr").attr("onmouseover","");
+            $(esc('pg:frm:pb1:dateTable:tb')+" > tr > td").hover(function(){$(this).css("background-color","ghostwhite");}, function(){$(this).css("background-color","white");});
+            $("[id$='stageTable:tb'] > tr > td").hover(function(){$(this).css("background-color","#cfeef8");}, function(){$(this).css("background-color","white");});
+            $("[id$='stageTable'] > thead .headerRow").css("background-color","deepskyblue");
+        });
+         
+        function toggleDateTable(index){
+            var signtext = $("#date-sign-"+index).text();
+            var tableId = 'pg:frm:pb1:dateTable:'+index+':stageTable';
+            if(signtext == '+'){
+                $("#date-sign-"+index).text('-').css("padding", " 0px 7px");
+                $(esc(tableId)).show();
+            }
+            else{
+                $("#date-sign-"+index).text('+').css("padding", " 0px 5px");
+                $(esc(tableId)).hide();
+            }
+        }
+         
+        function toggleStagesTable(rootindex, childindex){
+            var signtext = $("#stage-sign-"+rootindex+"-"+childindex).text(); //address-sign-index-addIndex
+            var tableId = 'pg:frm:pb1:dateTable:'+rootindex+':stageTable:'+childindex+':opportunityTable';
+            if(signtext == '+'){
+                $("#stage-sign-"+rootindex+"-"+childindex).text('-').css("padding", " 0px 7px");
+                $(esc(tableId)).show();
+            }
+            else{
+                $("#stage-sign-"+rootindex+"-"+childindex).text('+').css("padding", " 0px 5px");
+                $(esc(tableId)).hide();
+            }
+        }
+         
+        function esc(myid) {
+            return '#' + myid.replace(/(:|\.)/g,'\\\$1');
+        } 
+         
+  
+    </script> 
+    
+  <style>
+  
+
+
+.modal-content {
+    background-color: #B7D8E2;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 39%; /* Could be more or less, depending on screen size */
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #1797C0;
+    color: white;
+}
+.modal-footer {
+    padding: 0px 49px;
+    
+    color: white;
+}
+
+
+.button {
+    position: relative;
+    left: 14px;    
+    bottom: 16px;
+    background-color: #363DD6;
+    border: none;
+    font-size: 10px;
+    color: #FFFFFF;
+    padding: 1px;
+    width: 50px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+</style>  
+     
+
+ <style>
+        .sign-class{
+            font-size: 12px;
+            font-weight: 700;
+            padding: 0px 5px;
+            margin-right: 10px;
+            border: 1px solid black;
+            background: black;
+            color: whitesmoke;
+            margin-bottom:10px;
+            cursor:pointer;
+        }
+        .pbBody table.list tr.dataRow td {
+            font-family: verdana;
+            font-weight: normal;
+        }
+ 
+    </style>
+<!-- Start TreeView -->
+
+<!-- End of TreeView -->    
+
+<apex:form id="frm">
+        <apex:pageBlock id="pb2" title="Test Execution Cycle :-">
+        
+        <apex:pageBlockButtons location="top">
+               
+               <apex:commandButton action="{!submitStpStaus}" id="saveButton" value="Save"/>
+               <apex:commandButton action="{!cancelB}" onclick="resetInlineEdit()" id="cancelButton" value="Cancel"/>
+          
+          </apex:pageBlockButtons>
+        
+              <apex:pageBlockSection columns="2" title="Test Execution Cycle Details">
+          
+              <apex:outputField value="{!Test_Execution_Cycle__c.Name}" />
+              
+                  
+              <apex:outputField value="{!Test_Execution_Cycle__c.Environment__c}" />
+               <apex:outputField value="{!Test_Execution_Cycle__c.Execution_Start_Date__c}" />
+              <apex:outputField value="{!Test_Execution_Cycle__c.Execution_End_Date__c}" />                                      
+                 
+              <apex:outputField value="{!Test_Execution_Cycle__c.Release_Name__c}"/>
+              
+              <apex:inputField value="{!Test_Execution_Cycle__c.Status__c}"/>
+              <apex:outputField value="{!Test_Execution_Cycle__c.Execution_Type__c}"/>
+               <apex:outputField value="{!Test_Execution_Cycle__c.ownerid}"/>
+            <apex:pageBlockSectionItem >
+
+                    <!---<apex:outputLabel value="Test Executor" for="usr"/>
+
+                   <apex:inputField value="{!$User.Name}" id="usr" />-->
+
+            </apex:pageBlockSectionItem>
+
+              
+          </apex:pageBlockSection>
+               </apex:pageBlock>
+        
+        
+  <apex:pageBlock id="pb1" title=" Test Script Executions :-" >
+  <apex:pageBlockButtons location="top">               
+               <apex:commandButton action="{!submitStpStaus}" id="saveButton" value="Save"/>
+               <apex:commandButton action="{!cancelB}" onclick="resetInlineEdit()" id="cancelButton" value="Cancel"/>         
+          </apex:pageBlockButtons> 
+        
+
+                <!--<apex:commandButton action="{!submitStpStaus}" id="saveButton" value="Save"/>
+               <apex:commandButton action="{!cancel}" onclick="resetInlineEdit()" id="cancelButton" value="Cancel"/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                     
+               <apex:commandButton action="{!submitStpStaus}" id="saveButtonn" value="Submit"/>-->
+          
+      
+          
+            <apex:variable value="{!0}" var="dateIndex"/>
+            <apex:pageBlockTable value="{!testEctn}" var="dateKey" id="dateTable">
+                <apex:column style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                    <apex:facet name="header">
+                        <span style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                         <b style="text-align:center;">Test Execution ID</b>                                                     
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                           
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                       
+                            <b style="text-align:center;">STATUS</b> 
+                        </span>    
+                    </apex:facet>
+                    
+                     <!-- Date(MM:DD:YYYY): 01/02/2020 Added JSENCODE for fixing Code scan issue PRDCRM-49422 by Accenture Offshore --> 
+                    <span id="date-sign-{!dateIndex}" class="sign-class" onclick="toggleDateTable('{!JSENCODE(TEXT(dateIndex))}');">+</span>
+                    <span style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                     <a href="/{!dateKey.Id}"  target="_blank" >
+                    <b style="text-align:center;">{!dateKey.Name}</b>
+                   </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     <b style="text-align:center;">{!dateKey.Status__c}</b>                                    
+                    </span>
+                    <apex:variable value="{!0}" var="stageIndex"/>
+                    <apex:pageBlockTable value="{!0}" var="d" id="stageTable" style="display:none;margin-top:10px;margin-left:20px;width:98%;">
+                        <apex:column style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                            <apex:facet name="header">
+                                <span style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                               
+                               <!-- Request ID: {!dateKey.Status__c}
+                                Executor: {!dateKey.Test_Executor__r.name}-->  
+                                </span>    
+                            </apex:facet>
+                            <!--<span id="stage-sign-{!dateIndex}-{!stageIndex}" class="sign-class" onclick="toggleStagesTable('{!dateIndex}','{!stageIndex}');">+</span>-->
+                            <span style="color: #000;font-size: 11px;font-family:verdana;font-weight: bold;">
+                            {!dateKey.Description_of_Script__c}                         
+                            </span>
+                            
+                            <apex:variable value="{!0}" var="recordIndex"/>
+                                <table width="100%">
+                                <tr>
+                                    <th></th>
+                                    <th style="color: #1797c0;font-size:13px;font-family:sans-serif;font-weight: bold;" >Execution Step Name</th>
+                                    <th style="color: #1797c0;font-size:13px;font-family:sans-serif;font-weight: bold;">Expected Result</th>
+                                    <th style="color: #1797c0;font-size:13px;font-family:sans-serif;font-weight: bold;">Input Data</th>
+                                    <th style="color: #1797c0;font-size:13px;font-family:sans-serif;font-weight: bold;">User Login Details</th>
+                                    <th style="color: #c00;font-size:13px;font-family:sans-serif;font-weight: bold;">Status</th>
+                                    <th style="color: #c00;font-size:13px;font-family:sans-serif;font-weight: bold;">Actual Result</th>
+                                </tr>
+                                <apex:repeat value="{!wrpexctnsptsLst}" var="c">
+                                    <apex:outputpanel rendered="{!if(dateKey.Id == c.tes.Test_Execution_Name__r.Id,true,false)}">
+                                        <tr>
+                                            <td>
+                                              <!-- <apex:inputCheckbox value="{!c.checkSelectd}" id="chxbx" />-->
+                                              <apex:outputField value="{!c.tes.Step_Order__c}" /> 
+                                            </td>
+                                            <td>
+                                                <apex:outputlink value="/{!c.tes.id};" target="_Blank">{!c.tes.Name}</apex:outputLink>
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!c.tes.Expected_Result__c}" />
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!c.tes.Input_Data__c}"  />
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!c.tes.User_Login_Details__c}" />
+                                            </td>
+                                            <td>
+                                                <apex:inputField value="{!c.tes.Status__c}" />
+                                            </td>
+                                            <td>
+                                                <apex:inputText value="{!c.tes.Actual_Result__c}" />
+                                            </td>
+                                            
+                                            
+                                           
+                                        </tr>
+                                        </apex:outputpanel>
+                                </apex:repeat>
+                                
+                            </table>
+                        
+                            <apex:variable value="{!stageIndex+1}" var="stageIndex"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+                    <apex:variable value="{!dateIndex+1}" var="dateIndex"/>
+                </apex:column>    
+            </apex:pageBlockTable>    
+        </apex:pageBlock>    
+    </apex:form>
+ <style>
+    .pbBody table.list tr.dataRow td {
+    border-width: inherit;
+    vertical-align: inherit;
+}
+ 
+ </style>
+   
+</apex:page>

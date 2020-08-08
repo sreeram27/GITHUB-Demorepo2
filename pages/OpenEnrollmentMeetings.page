@@ -1,0 +1,5 @@
+<apex:page standardStylesheets="false" showHeader="true" standardController="Open_Enrollment_Meetings__c" extensions="vlocity_ins.VFPageControllerBase" sidebar="true" docType="html-5.0" >
+<apex:outputPanel layout="block" style="overflow:scroll;height:240px">
+<vlocity_ins:OmniScriptInstanceComponent standardController="{!stdController}"/>
+</apex:OutputPanel>
+</apex:page>

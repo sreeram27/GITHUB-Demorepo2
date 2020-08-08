@@ -1,0 +1,594 @@
+<!-- <apex:page docType="html-5.0" controller="VisitNonSFCtrl" id="visitNonSFScreenPageId" showHeader="false" sidebar="false" readOnly="true" renderAs="pdf" standardStylesheets="false" applyBodyTag="false"> -->
+
+    <!--====================================================-->
+    <!--Name:VisitNonSFView                                                                           -->
+    <!--Copyright notice:  © 2020  VisitOps                                                                                                 -->
+    <!--====================================================-->
+    <!--====================================================-->
+    <!-- Purpose:  Display Package View                                                                                                         -->
+    <!---------                                                                                                                -->
+    <!--====================================================-->
+    <!-- History    -->
+    <!-- -------     -->
+    <!-- VERSION  AUTHOR           DATE              Change#            RELEASE/CSR        -->
+    <!--   1.0 -  Tanuj            01/06/2020       Ticket-I-0722       Visit Package: Update sections to be Configurable with New Field Sets                 -->
+    <!--====================================================-->
+
+
+
+<apex:page docType="html-5.0" controller="VisitOps.VisitNonSFCtrl" id="visitNonSFScreenPageId" showHeader="false" sidebar="false" readOnly="true" cache="false">
+    <html>
+        <head>
+            <title>Visit Package</title>
+            
+            <!--Common styles-->
+            <apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/styles.css')}" />
+            <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jquery-1.11.1.min.js')}"/>
+            <style>
+                
+                <!-- Style Added for Lightning Experience -->
+                body {  
+                font-size:75% !important;
+                }
+                
+                
+                @page {
+                size: landscape;
+                margin:none;
+                }
+                .paginationDiv {
+                margin: 15px 5px 0;
+                }
+                .visitViewContent .bPageBlock{
+                /*border-top-color: #cc6600;*/
+                /* border-top-color: #F7B87A; */
+                border-top-color: {!$Label.VisitPackage_LineColor} ;
+                }
+                td:first-child.dataCol{
+                text-align: right;
+                }
+                
+                .hideHeader .pbSubheader{
+                display:none;
+                }
+                /*table.detailList{
+                width : 50% !important;
+                }*/
+                .bPageBlock .detailList .dataCol {
+                	width: auto;
+                }
+                .bPageBlock .detailList .dataCol:first-child {
+                	width: 20%;
+                }
+                .applyPadding{
+                padding-left: 93px !important;
+                padding-right: 93px !important;
+                }
+                .iframeStyle{
+                    padding-left: 4%;
+                    padding-right: 4%;
+                    width: 92% !important;
+                }
+                .visitViewContent{
+                padding: 1px 10px 0px 10px !important;
+                }
+                .custom-table {
+                border: 1px solid #eaeaea;
+                border-top: 3px solid #F7B87A;
+                border-radius: 4px;
+                margin: 5px 0px 10px;
+                }
+                .custom-table > tbody > tr > td {
+                padding: 0px 24px;
+                }
+                
+                .custom-table-01 td {
+                border-bottom: 1px solid #eaeaea;
+                }
+                .custom-table-01 tbody tr:last-child td {
+                border-bottom: 0;
+                }
+                .scroll-x {
+                	overflow-x: auto;
+                }
+                @media (max-width:768px) {
+                    .applyPadding{
+                        padding-left: 15px !important;
+                        padding-right: 15px !important;
+                    }
+                }
+            </style>
+            
+            <script type="text/javascript">
+            var widthofIframe = "0px";
+            function iframeLoaded() {                
+                var iFrameID = document.getElementById('agendasSectionId');
+                
+                if(iFrameID) {
+                    
+                    //$("[id$='agendasSectionId']").contents().find("img")[0].remove();
+                    //Removing the attendees to be displayed from AgendaPrintView
+                    // $("[id$='agendasSectionId']").contents().find("[id$='attendeesRow']").remove();
+                    
+                    var iframe = document.getElementById("agendasSectionId");
+                    //iframe.contentDocument.getElementsByTagName("img")[0].src="";
+                    var elem = iframe.contentDocument.getElementsByTagName("img")[0];
+                    elem.parentNode.removeChild(elem);
+                    iframe.contentDocument.getElementById("attendeesRow").innerHTML = "";
+                    
+                    //Removing the logo from agendasprintviewpage
+                    
+                    // Dymanically assigning the dimensions of Iframe, based on the content of the Iframe
+                    iFrameID.style.height = 'auto';                
+                    iFrameID.style.height = iFrameID.contentWindow.document.body.scrollHeight + 70 +"px";
+                    iFrameID.style.width = iFrameID.contentWindow.document.body.scrollWidth-85 +"px";
+                    widthofIframe = iFrameID.style.width;
+                }   
+            }
+            
+            (function() {
+                
+                var beforePrint = function() {
+                    $("[id$='iframePanel']").removeClass('applyPadding');
+                    $("[id$='firstDiv']").removeClass('applyPadding');
+                    $("[id$='rightContentDiv']").removeClass('applyPadding');
+                    $("[id$='agendasSectionId']").removeClass("iframeStyle");
+                    $("[id$='agendasSectionId']").css("width","100%");
+                    $("[id$='iframePanel']").css("width",'1423px');
+                    //console.log('Functionality to run before printing.');
+                };
+                
+                var afterPrint = function() {
+                    $("[id$='iframePanel']").addClass('applyPadding');
+                    $("[id$='firstDiv']").addClass('applyPadding');
+                    $("[id$='rightContentDiv']").addClass('applyPadding');
+                    $("[id$='agendasSectionId']").addClass("iframeStyle");
+                    $("[id$='iframePanel']").css("width",widthofIframe);
+                    //console.log('Functionality to run after printing');
+                };
+                
+                if (window.matchMedia) {
+                    var mediaQueryList = window.matchMedia('print');
+                    mediaQueryList.addListener(function(mql) {
+                        if (mql.matches) {
+                            //console.log('1');
+                            beforePrint();
+                        } else {
+                            //console.log('2');
+                            afterPrint();
+                        }
+                    });
+                }
+                
+                window.onbeforeprint = beforePrint;
+                window.onafterprint = afterPrint;
+                
+            }());
+            
+            // Printing VF Page
+            
+            function printpage() {
+                try{
+                    var printButton = document.getElementById("printpagebutton");
+                    printButton.style.visibility = 'hidden';
+                    window.print();
+                    printButton.style.visibility = 'visible';
+                }catch(err){
+                    var printButton = $("[id$='printpagebutton']");
+                    printButton.hide();
+                    window.print();
+                    printButton.show();
+                }
+                window.print();
+            }
+
+            </script>
+            
+        </head>
+        
+        <body>
+            <!-- <apex:form id="visitFormId"> -->
+            
+            
+            <div class="bPageTitle applyPadding" id="firstDiv">
+                <apex:pageMessages id="pgMsgsId"/>
+                <div class="ptBody">
+                    <div class="content">
+                        <h2 class="pageDescription" style="margin-left: 0px;">
+                            <apex:outputLabel value="{!visitRecord.VisitOps__VisitName__c} - {!visitRecord.Name}"/>
+                        </h2>
+                        <div class="blank">&nbsp;</div> 
+                        
+                    </div>
+                    <div style="float:right">
+                        <!-- <a href="javascript:window.print()"  ><button>Print</button></a> -->
+                        <input id="printpagebutton" type="button" value="Print this page" onclick="printpage()"/>
+                    </div>
+                </div>
+                <div class="ptBreadcrumb"></div>
+            </div>
+            
+            <apex:outputPanel id="visitScreenViewPanelId">
+                <!--Right Content Starts-->
+                <div class="rightContent applyPadding" style="width:inherit !important;" id="rightContentDiv">
+                    <!--Visit View-->
+                    <div class="visitView bPageBlock" style="border-top: none;">
+                        
+                        
+                        <!--Form starts-->
+                        <div class="pbBody">
+                            <div class="pbSubheader brandTertiaryBgr first tertiaryPalette">                                    
+                                <!-- <h3>Visit<span class="titleSeparatingColon">:</span></h3> -->
+                                <h3>Details<span class="titleSeparatingColon">:</span></h3>
+                            </div>         
+                            
+                            <div class="visitViewContent">
+                                <div class="hideHeader">
+                                    <apex:pageBlock >
+                                        <apex:pageBlockSection title="Details" columns="2" id="visitDetailsId2" collapsible="false">
+                                            <apex:outputLabel value="{!$ObjectType.VisitOps__Visit__c.fields.Name.Label}"/>
+                                            <apex:outputLabel value="{!visitRecord.Name}" id="visitNumberID"/>
+                                            
+                                            <apex:outputLabel value="{!$ObjectType.VisitOps__Visit__c.fields.VisitOps__VisitName__c.Label}"/>
+                                            <apex:outputLabel value="{!visitRecord.VisitOps__VisitName__c}" id="visitNameId"/>
+                                            
+                                            <apex:outputLabel value="{!$ObjectType.VisitOps__Visit__c.fields.VisitOps__Arrival_Date_and_Time_LocationFormula__c.Label}"/>
+                                            <apex:outputLabel value="{!visitRecord.VisitOps__Arrival_Date_and_Time_LocationFormula__c}" id="arrDateLocTZID"/>
+                                            
+                                            <apex:outputLabel value="{!$ObjectType.VisitOps__Visit__c.fields.VisitOps__Departure_Date_and_Time_LocationFormula__c.Label}"/>
+                                            <apex:outputLabel value="{!visitRecord.VisitOps__Departure_Date_and_Time_LocationFormula__c}" id="depDateLocTZID"/>
+                                            
+                                            <apex:repeat value="{!visitDetailFieldList}" var="fieldSet"> 
+                                                <apex:outputLabel value="{!visitDetailfieldSetHeaderMap[fieldSet]}" rendered="{!$ObjectType.Visit__c.fields[fieldSet].Accessible && visitDetailfieldSetHeaderMap[fieldSet] != 'Owner ID' }" />
+                                                <apex:outputLabel value="Visit Team Owner" rendered="{!$ObjectType.VisitOps__Visit__c.fields[fieldSet].Accessible && visitDetailfieldSetHeaderMap[fieldSet] == 'Owner ID'}"/>
+                                                <apex:outputLabel value="{!if(contains(fieldSet,'VisitOwner__c'), visitRecord['VisitOwner__r.Name'], if(contains(fieldSet,'VisitCoordinator__c'), visitRecord['VisitCoordinator__r.Name'],if(contains(fieldSet,'Alternate_Manager__c'), visitRecord['Alternate_Manager__r.Name'],if(contains(fieldSet,'Portal_Visit__c'), visitRecord['Owner_Portal__c'] ,if(contains(fieldSet,'Owner'), visitRecord['Owner.Name'], visitRecord[fieldSet])))))}" rendered="{!if(OR(NOT($ObjectType.VisitOps__Visit__c.fields[fieldSet].Accessible), contains(fieldSet,'Visit_Owner_Survey_Language__c')) , false, true)}"/>
+                                                <apex:outputField value="{!visitRecord[fieldSet]}" rendered="{!if(AND($ObjectType.VisitOps__Visit__c.fields[fieldSet].Accessible, contains(fieldSet,'Visit_Owner_Survey_Language__c')), true, false)}" />
+                                            </apex:repeat>   
+                                            <!--
+<apex:outputLabel value="{!$ObjectType.Visit__c.fields.DressCode__c.Label}"/>
+<apex:outputLabel value="{!visitRecord.DressCode__c}" id="dressCodeId"/>
+
+<apex:outputLabel value="{!$ObjectType.Visit__c.fields.VisitOwner__c.Label}"/>
+<apex:outputLabel value="{!IF(visitRecord.Portal_Visit__c,visitRecord.Owner_Portal__c,visitRecord.VisitOwner__r.Name)}" id="visitOwnerId"/>
+
+<apex:outputLabel value="Visit Team Owner"/>
+<apex:outputLabel value="{!visitRecord.Owner.Name}" id="OwnerId"/>
+
+<apex:outputLabel value="{!$ObjectType.Visit__c.fields.Line_of_Business__c.Label}"/>
+<apex:outputLabel value="{!visitRecord.Line_of_Business__c}" id="lineOfBusinessId"/>
+<apex:outputLabel value="{!$ObjectType.Visit__c.fields.Classification__c.Label}"/>
+<apex:outputLabel value="{!visitRecord.Classification__c}" id="classificationId"/>
+<apex:outputLabel value="{!$ObjectType.Visit__c.fields.VisitCoordinator__c.Label}"/>
+<apex:outputLabel value="{!visitRecord.VisitCoordinator__r.Name}" id="visitCoordinatorId"/> -->
+                                        </apex:pageBlockSection>
+                                    </apex:pageBlock>   
+                                </div>
+                            </div>
+                            
+                          <apex:outputPanel rendered="{!strategySectionFieldList.size > 0}"> 
+                            
+                            <div class="pbSubheader brandTertiaryBgr tertiaryPalette">                                    
+                                <!-- <h3>Visit Strategy<span class="titleSeparatingColon">:</span></h3> -->
+                                <h3>Strategy<span class="titleSeparatingColon">:</span></h3>
+                            </div>
+                            
+                            <div class="visitViewContent">
+                                
+                                <div class="hideHeader">
+                                    <apex:pageBlock >
+                                        <apex:pageBlockSection title="Details" columns="2" id="visitDetailsId2" collapsible="false">
+                                            <apex:repeat value="{!strategySectionFieldList}" var="fieldSet"> 
+                                                <apex:outputLabel value="{!strategySectionfieldSetHeaderMap[fieldSet]}" rendered="{!$ObjectType.VisitOps__Visit__c.fields[fieldSet].Accessible}" />
+                                                <apex:outputLabel value="{!visitRecordStrategy[fieldSet]}" rendered="{!$ObjectType.VisitOps__Visit__c.fields[fieldSet].Accessible}" />
+                                            </apex:repeat>
+                                            
+                                            
+                                            <!--    <apex:outputLabel value="{!$ObjectType.Visit__c.fields.ReasonForYourVisit__c.Label}"/>
+<apex:outputLabel value="{!visitRecordStrategy.ReasonForYourVisit__c}" id="reasonForYourVisitID"/>
+<apex:outputLabel value="{!$ObjectType.Visit__c.fields.TopicsAndPeopleNeeded__c.Label}"/>
+<apex:outputLabel value="{!visitRecordStrategy.TopicsAndPeopleNeeded__c}" id="topicsAndPeopleNeededId"/>
+<apex:outputLabel value="{!$ObjectType.Visit__c.fields.MeasureOfSuccess__c.Label}"/>
+<apex:outputLabel value="{!visitRecordStrategy.MeasureOfSuccess__c}" id="measureOfSuccessID"/>
+<apex:outputLabel value="{!$ObjectType.Visit__c.fields.WhatElseDoWeNeedToKnow__c.Label}"/>
+<apex:outputLabel value="{!visitRecordStrategy.WhatElseDoWeNeedToKnow__c}" id="whatElseDoWeNeedToKnowID"/>
+-->
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:pageBlock>
+                                </div>
+                                
+                            </div>
+                            </apex:outputPanel>  
+                             
+                           <apex:outputPanel rendered="{!if(companySectionFieldList.size > 0,true,if(vbSectionFieldList.size > 0,true,if(attendeeSectionFieldList.size > 0,true,false)))}"> 
+                            
+                            
+                            <div class="pbSubheader brandTertiaryBgr tertiaryPalette">                                    
+                                <h3>Companies, Opportunities and Attendees<span class="titleSeparatingColon">:</span></h3>
+                            </div>  
+                            
+                            <div class="visitViewContent">
+                                
+                                
+                               <apex:outputPanel rendered="{!companySectionFieldList.size > 0}">                                
+                                <!-- Companies Grid -->
+                                <div class="bPageBlock">
+                                    <div class="pbHeader">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="pbTitle">
+                                                        <h3>Company Details</h3>
+                                                    </td>
+                                                    <td class="pbButton">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="pbBody">                                            
+                                        <apex:outputPanel id="companiesGrid">
+                                        <div class="scroll-x">
+                                            <table cellpadding="0" cellspacing="0" class="list">
+                                                <tr class="headerRow">
+                                                  <!--  <th>{!$Label.Non_Sf_Company_Header} Name</th> -->
+                                                    <apex:repeat value="{!companySectionFieldList}" var="fieldSetcomp"> 
+                                                        <apex:outputPanel rendered="{!if($ObjectType.VisitOps__Company__c.fields[fieldSetcomp].Accessible,true,false)}">
+                                                            <th>{!if(contains(fieldSetcomp,'Company_Name__c'), 'Company Name', companySectionfieldSetHeaderMap[fieldSetcomp])}</th>
+                                                        </apex:outputPanel> 
+                                                        
+                                                    </apex:repeat>
+                                                    
+                                                    <!-- <th>Annual Revenue</th>
+<th>Industry</th>
+<th>Website</th>
+<th>Objective for this Account</th>	
+-->
+                                                    
+                                                </tr>
+                                                <apex:repeat value="{!companiesOfVisit}" var="sobj" id="companiesTable">
+                                                    <tr class="dataRow">
+                                                        <!-- <td><apex:outputText value="{!sobj.Name}"/></td> 
+                                                        <td><apex:outputText value="{!sobj.Company_Name__c}"/></td>-->
+                                                        <apex:repeat value="{!companySectionFieldList}" var="fieldSetcom"> 
+                                                            
+                                                            <apex:outputPanel rendered="{!if(OR(NOT($ObjectType.VisitOps__Company__c.fields[fieldSetcom].Accessible), contains(fieldSetcom,'Company_Website__c')) , false, true)}">
+                                                                <td>
+                                                                    <apex:outputText value="{!sobj[fieldSetcom]}"  />
+                                                                </td>
+                                                            </apex:outputPanel>
+                                                            <apex:outputPanel rendered="{!if(AND($ObjectType.VisitOps__Company__c.fields[fieldSetcom].Accessible, contains(fieldSetcom,'Company_Website__c')), true, false)}">
+                                                                <td>
+                                                                    <apex:outputField value="{!sobj[fieldSetcom]}"  />
+                                                                </td>
+                                                            </apex:outputPanel>
+                                                            
+                                                        </apex:repeat>
+                                                                                                                
+                                                        <!--           <td><apex:outputText value="{!sobj.Account__r.AnnualRevenue}"/></td>
+<td><apex:outputText value="{!sobj.Account__r.Industry}"/></td>
+<td><apex:outputField value="{!sobj.Account__r.Website}"/></td>
+<td><apex:outputText value="{!sobj.ObjectiveForThisAccount__c}"/></td> -->
+                                                        <!-- <td><apex:outputText value="{!wrp.sobj.Account__r.TickerSymbol}"/></td> -->
+                                                    </tr>
+                                                </apex:repeat>
+                                            </table>
+                                        </div>
+                                        </apex:outputPanel>
+                                        
+                                    </div>
+                                </div> <!-- end of Account Details-->
+                                
+                                   </apex:outputPanel> 
+                                
+                                
+                                
+                                
+                                
+                                <!-- Visit Opportunities Grid -->
+                               <apex:outputPanel rendered="{!vbSectionFieldList.size > 0}">
+                                <apex:outputPanel layout="none" rendered="{!AND(isOpportunityAvailable,isOpportunityAccessible)}">
+                                    <div class="bPageBlock" style="margin: 25px 0;">
+                                        <div class="pbHeader">
+                                            <table cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="pbTitle">
+                                                            <h3>Opportunity Details</h3>
+                                                        </td>
+                                                        <td class="pbButton">
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        
+                                        <div class="pbBody">                                            
+                                            
+                                            <apex:outputPanel id="visitOppsGrid">
+                                            <div class="scroll-x">                             
+                                                
+                                                <table cellpadding="0" cellspacing="0" class="list">
+                                                    <tr class="headerRow">
+                                                        <!-- <th>Name</th> 
+                                                        <th>Opportunity Name</th>
+                                                        <th>Company Name</th> -->
+                                                        <apex:repeat value="{!vbSectionFieldList}" var="fieldSetcomp"> 
+                                                            <apex:outputPanel rendered="{!$ObjectType.VisitOps__VisitBundle__c.fields[fieldSetcomp].Accessible}">
+                                                                <th>{!vbSectionfieldSetHeaderMap[fieldSetcomp]}</th>
+                                                            </apex:outputPanel>
+                                                            
+                                                        </apex:repeat>
+                                                        
+                                                        <!--    <th>Stage</th>
+<th>Amount</th>
+<th>Close Date</th>
+<th>Objective for this Opportunity</th>   -->
+                                                        
+                                                    </tr>
+                                                    <apex:repeat value="{!oppsForVisit}" var="sobj" id="visitOppsTable">
+                                                        <tr class="dataRow">
+                                                            <!-- <td><apex:outputText value="{!sobj.Name}"/></td>
+                                                            <td><apex:outputText value="{!sobj.VB_OppName__c}"/></td>
+                                                            <td><apex:outputText value="{!sobj.VB_CompanyName__c}"/></td> -->
+                                                            <apex:repeat value="{!vbSectionFieldList}" var="fieldSetVB"> 
+                                                                <apex:outputPanel rendered="{!if(AND($ObjectType.VisitOps__VisitBundle__c.fields[fieldSetVB].Accessible, contains(fieldSetVB,'VB_OppCloseDate__c')), true, false)}">
+                                                                    <td>
+                                                                        <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                                                            <apex:param value="{!sobj[fieldSetVB]}"/>
+                                                                        </apex:outputText>   
+                                                                    </td>
+                                                                </apex:outputPanel>
+                                                                <apex:outputPanel rendered="{!if(OR(NOT($ObjectType.VisitOps__VisitBundle__c.fields[fieldSetVB].Accessible), contains(fieldSetVB,'VB_OppCloseDate__c')) , false, true)}">
+                                                                    <td>
+                                                                        <apex:outputText value="{!sobj[fieldSetVB]}"  />
+                                                                    </td>
+                                                                </apex:outputPanel>
+                                                                
+                                                            </apex:repeat>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            <!-- <td><apex:outputLink value="/{!sobj.Opportunity__r.id}" target="_blank">{!sobj.Opportunity__r.Name}</apex:outputLink></td> -->
+                                                            <!--   <td><apex:outputText value="{!sobj.Opportunity__r.StageName}"/></td>
+<td><apex:outputText value="{!sobj.Opportunity__r.Amount}"/></td>
+<td>
+<apex:outputText value="{0,date,MM/dd/yyyy}">
+<apex:param value="{!sobj.Opportunity__r.CloseDate}"/>
+</apex:outputText>
+</td>
+<td><apex:outputText value="{!sobj.Objective_for_this_Opportunity__c}"/></td>
+<td><apex:outputText value="{!sobj.SF_Opportunity_ID__c}"/></td>
+-->
+                                                            
+                                                        </tr>
+                                                    </apex:repeat>                        
+                                                </table>
+                                            </div>
+                                            </apex:outputPanel>
+                                        </div>
+                                    </div> <!-- end of Opportunity Details-->
+                                </apex:outputPanel>
+                                </apex:outputPanel>
+                                
+
+                                 <apex:outputPanel rendered="{!attendeeSectionFieldList.size > 0}">
+                                
+                                <!-- Attendees grid - Attendee Details-->
+                                <div class="bPageBlock" style="margin: 25px 0;">
+                                    <div class="pbHeader">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="pbTitle">
+                                                        <h3>Attendee Details</h3> 
+                                                    </td>
+                                                    <td class="pbButton">
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="pbBody">
+                                        
+                                        <apex:outputPanel id="attendeesGrid"> 
+                                        <div class="scroll-x">
+                                            <table cellpadding="0" cellspacing="0" class="list">
+                                                <tr class="headerRow">
+                                                    <!-- <th>First Name</th>
+<th>Last Name</th> -->
+                                                    <!-- <th>Attendee Number</th> -->
+                                                  <!--  <th>Name</th>
+                                                    <th>Company</th>
+                                                    <th>Title</th> -->
+                                                    
+                                                    <apex:repeat value="{!attendeeSectionFieldList}" var="fieldSetcomp"> 
+                                                        <apex:outputPanel rendered="{!$ObjectType.VisitOps__Attendee__c.fields[fieldSetcomp].Accessible}">
+                                                            <th>{!attendeeSectionfieldSetHeaderMap[fieldSetcomp]}</th>
+                                                        </apex:outputPanel>
+                                                        
+                                                    </apex:repeat>
+                                                    <!-- <th>Primary Decision Maker?</th> -->
+                                                    <!--  <th>PDM</th>
+<th>LinkedIn</th>
+<th>Objective for this Attendee</th>  -->
+                                                    <!-- <th>Email</th> -->
+                                                </tr>
+                                                <apex:repeat value="{!attendeesForVisit}" var="sobj" id="attendeesTable">
+                                                    <tr class="dataRow">
+                                                        <!-- <td><apex:outputText value="{!sobj.FirstName__c}"/></td>
+<td><apex:outputText value="{!sobj.LastName__c}"/></td> -->
+                                                        <!-- <td><apex:outputText value="{!sobj.Name}"/></td>
+                                                        <td><apex:outputText value="{!sobj.FirstName__c} {!sobj.LastName__c}"/></td> -->
+                                                        <!-- <td><apex:outputLink value="/{!sobj.Id}" target="_blank">{!sobj.FirstName__c} {!sobj.LastName__c}</apex:outputLink></td> 
+                                                        <td><apex:outputText value="{!sobj.Company__c}"/></td>
+                                                        <td><apex:outputText value="{!sobj.Title__c}"/></td>-->
+                                                        <apex:repeat value="{!attendeeSectionFieldList}" var="fieldSetAtt"> 
+                                                            
+                                                            <apex:outputPanel rendered="{!if(AND($ObjectType.VisitOps__Attendee__c.fields[fieldSetAtt].Accessible, contains(fieldSetAtt,'LinkedIn_Url__c')), true, false)}">
+                                                                <td>
+                                                                    <apex:outputLink value="{!IF(CONTAINS(sobj.VisitOps__LinkedIn_Url__c,'http') || CONTAINS(sobj.VisitOps__LinkedIn_Url__c,'https') || (ISBLANK(sobj.VisitOps__LinkedIn_Url__c)),sobj.VisitOps__LinkedIn_Url__c,'http://'+sobj.VisitOps__LinkedIn_Url__c)}" target="_blank">
+                                                                        <apex:image id="theImage" value="{!$Resource.VisitOps__LinkedInIcon}" width="20" height="20" rendered="{!IF(sobj.VisitOps__LinkedIn_Url__c =='',false,true)}" />
+                                                                    </apex:outputLink>  
+                                                                </td>
+                                                            </apex:outputPanel>
+                                                            
+                                                            <apex:outputPanel rendered="{!if(AND($ObjectType.VisitOps__Attendee__c.fields[fieldSetAtt].Accessible, contains(fieldSetAtt,'IsPrimaryDecisionMakerForVisit__c')), true, false)}">
+                                                                <td>
+                                                                    <apex:outputField value="{!sobj[fieldSetAtt]}"  /> 
+                                                                </td>
+                                                            </apex:outputPanel>
+                                                            
+                                                            <apex:outputPanel rendered="{!if(NOT($ObjectType.VisitOps__Attendee__c.fields[fieldSetAtt].Accessible) || contains(fieldSetAtt,'LinkedIn_Url__c') || contains(fieldSetAtt,'IsPrimaryDecisionMakerForVisit__c'),false,true)}">
+                                                                <td>
+                                                                    <apex:outputText value="{!If(contains(fieldSetAtt,'Attendee_Name'),sobj.VisitOps__FirstName__c+' '+sobj.VisitOps__LastName__c,sobj[fieldSetAtt])}"  />
+                                                                </td>
+                                                            </apex:outputPanel>
+                                                            
+                                                        </apex:repeat> 
+                                                        
+                                                        <!-- <td><apex:outputLink value="{!sobj.LinkedInUrlFormula__c}" target="_blank">{!sobj.LinkedInUrlFormula__c}</apex:outputLink></td> -->
+                                                        <!-- <td><apex:outputField value="{!sobj.IsPrimaryDecisionMakerForVisit__c}"/></td>
+<td>
+<apex:outputLink value="{!IF(CONTAINS(sobj.VisitOps__LinkedIn_Url__c,'http') || CONTAINS(sobj.VisitOps__LinkedIn_Url__c,'https') || (ISBLANK(sobj.VisitOps__LinkedIn_Url__c)),sobj.VisitOps__LinkedIn_Url__c,'http://'+sobj.VisitOps__LinkedIn_Url__c)}" target="_blank">
+<apex:image id="theImage" value="{!$Resource.VisitOps__LinkedInIcon}" width="20" height="20" rendered="{!IF(sobj.VisitOps__LinkedIn_Url__c =='',false,true)}"/>
+</apex:outputLink>
+</td>
+<td><apex:outputText value="{!sobj.Objectives_for_this_Attendee__c}"/></td> -->
+                                                        <!-- <td><apex:outputText value="{!sobj.Email__c}"/></td> -->
+                                                        <!-- <td><apex:outputText value="{!sobj.LinkedInUrlFormula__c}"/></td> -->
+                                                    </tr>
+                                                </apex:repeat>  
+                                            </table>
+                                        </div>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div> <!-- end of Attendee Details-->
+                                </apex:outputPanel>   
+                            </div>
+                            
+                            </apex:outputPanel>                            
+                        </div>
+                        
+                        
+                    </div><!--End of Visit View-->      
+                </div><!--End of Right Content-->
+            </apex:outputPanel>
+            <!-- </apex:form> -->
+            
+            <!-- Presenter View of all agenda sessions -->
+            <apex:outputPanel layout="block" id="iframePanel" style="overflow: hidden;" styleClass="applyPadding">
+                <!-- <apex:iframe src="/apex/AgendaPrintView?visitId={!$CurrentPage.parameters.id}&viewType=Presenter"  id="agendasSectionId"/> -->
+                <!--{!$Label.VisitOps_Site_Url} <iframe src="/apex/AgendaPrintView?visitId={!$CurrentPage.parameters.id}&viewType=Presenter" id="agendasSectionId" style="width:100%; height:200px;" onload="iframeLoaded()" /> -->
+                <iframe src="{!$Label.VisitOps_Site_Url}/{!$Label.AgendaPrint}?visitId={!$CurrentPage.parameters.id}&viewType=Presenter" id="agendasSectionId" class="iframeStyle" style="width:100%; height:200px;" onload="iframeLoaded()" />
+            </apex:outputPanel>
+            
+        </body>
+    </html>
+    
+</apex:page>

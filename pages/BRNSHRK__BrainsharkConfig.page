@@ -1,0 +1,48 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" action="{!initPage}"  applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="BRNSHRK.BrainsharkConfigController" >
+
+<html lang="en" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="description" content=""/>
+	<meta name="author" content=""/>
+	<title>Brainshark</title>
+	<apex:stylesheet value="{!staticHost}/s2/Styles/salesforce-lightning-design-system-vf.css"/>
+	<apex:stylesheet value="{!staticHost}/s2/Styles/slide-drawer.css"/>
+	<apex:stylesheet value="{!staticHost}/s2/Styles/bskux.css" />
+	<apex:stylesheet value="{!staticHost}/s2/Styles/bsk-config-master.css"/>
+	<apex:stylesheet value="{!staticHost}/s2/Styles/configurator.css" />
+
+	<script>
+		var BSKpage = {
+			sldsIconsPrefix: '{!URLFOR($Resource.SLDS_Icons)}',
+			apiHost: '{!apiHost}',
+			session: {!sessionJson},
+			companyId: {!companyId},
+			ControllerMethods: {
+				getConfigurations: '{!$RemoteAction.BrainsharkConfigController.getConfigurations}',
+				saveConfiguration: '{!$RemoteAction.BrainsharkConfigController.saveConfiguration}',
+				deleteConfiguration: '{!$RemoteAction.BrainsharkConfigController.deleteConfiguration}',
+				getSalesforceObjects: '{!$RemoteAction.BrainsharkConfigController.getSalesforceObjects}',
+				refreshSession: '{!$RemoteAction.BrainsharkConfigController.refreshSession}',
+				getComponents: '{!$RemoteAction.BrainsharkConfigController.getComponents}',
+				searchPreview: '{!$RemoteAction.BrainsharkConfigController.searchPreview}',
+				getSalesforceObjectPicklistFields: '{!$RemoteAction.BrainsharkConfigController.getSalesforceObjectPicklistFields}'
+			}
+		};
+	</script>
+	<script data-main="{!staticHost}/s2/Scripts/configuration" type="text/javascript" src="{!staticHost}/s2/Scripts/libraries/require/require.js"></script>
+</head>
+<body class="slds">
+	<form>
+		<div class="js-configuration-notification"></div>
+		<div class="slds-page-header js-configuration-header"></div>
+		<div class="container js-configuration-view"></div>
+		<div class="cd-panel from-right js-tab-preview-panel"></div>
+	</form>
+	<div class="js-templates" style="display: none;"></div>
+</body>
+</html>
+
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page standardController="Group_Outsourcing_Approval__c">
+<script>
+window.document.onload = new function(e){
+     
+    if("{!$Profile.Name}" == "National Sales" || "National Sales Dual" || "System Administrator"){
+        var redirect = confirm('Please use \'Submit Group Offshoring Approval\' button from the Group Offshoring Restriction record to Create a new Group Offshoring Restriction Approval record.  ');
+        //alert(redirect); 
+        var txtRedirect = "{!$Label.GOA_Create_Update_Restrict}";
+        window.open(txtRedirect,"_self");                
+        window.close();
+    }
+}
+</script>
+</apex:page>

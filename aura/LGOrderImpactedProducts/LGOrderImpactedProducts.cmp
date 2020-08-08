@@ -1,0 +1,85 @@
+<aura:component controller="LGOrderImpactedProducts_Ctrl" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="QuoteId" type="String" description="Qutoe Id from Vlocity Action - Impacted Product"/>
+    <aura:attribute name="Id" type="string" description="Order Id from Vlocity Action - Impacted Product"/>
+    <aura:attribute name="data" type="List" description="Data wrapper with Qli and isImpacted values from server"/>
+    <aura:attribute name="result" type="Object" description="Copy of data from server"/>
+    <aura:attribute name="qliIdsList" type="list" description="Id of Qlis that got impacted "/>
+    <aura:attribute name="showSaveCancelBtn" type="Boolean" default="true" description="Boolean to know whether to enable or disable save button"/>
+    <aura:attribute name="isError" type="Boolean" default="false" description="Boolean to show if there is any error"/>
+    <aura:attribute name="domainUrl" type="String" description="Domain Url to Order page"/>
+    <aura:attribute name="HideSpinner" type="Boolean" default="true" description="Boolean to show or hide Spinner"/>
+    <aura:attribute name="isNoneChecked" type="Boolean" default="false" description="Boolean to show if there is any error"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="aura:waiting" action="{!c.waiting}" />
+    <aura:handler event="aura:doneWaiting" action="{!c.doneWaiting}" />
+    
+    <aura:if isTrue="{!v.HideSpinner}">
+        <lightning:spinner alternativeText="Loading" size="large" />
+    </aura:if>
+    
+    <lightning:card title="Select Products for Implementation Case" >
+        <aura:set attribute ="actions"> 
+            <lightning:button class="slds-float_right slds-m-horizontal_large slds-m-vertical_large" label="Cancel" onclick="{!c.handleCancel}" />
+            <lightning:button class="slds-float_right  slds-m-vertical_large" label="Save" variant="brand" disabled="{!v.showSaveCancelBtn}" onclick="{!c.handleSave}" />
+        </aura:set>
+      <aura:if isTrue="{!v.isNoneChecked}">
+          <div class="slds-p-left_large">
+        <div class="slds-text-heading_medium  backgroundclr slds-text-color_inverse slds-size_1-of-2 ">
+             Please select atleast one impacted product before proceeding to next step!
+        </div>
+          </div>
+        </aura:if>
+        <div>   
+            <aura:if isTrue="{!!v.isError}">
+                <!-- the container element determine the height of the datatable -->
+                <div class="slds-m-around_large">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-p-around_medium">
+                        <thead class="tab-header">
+                            <tr class="slds-text-title--caps tab-header">
+                                <th>
+                                </th>
+                                <th scope="col"><div class="slds-truncate" title="Name"><strong>PRODUCT NAME</strong></div>
+                                </th>
+                                <th scope="col"><div class="slds-truncate" title="Line Of Business"><strong>LINE OF BUSINESS</strong></div>
+                                </th>
+                                
+                                <th scope="col"><div class="slds-truncate" title="Stage"><strong>STAGE</strong></div>
+                                </th>
+                                <th scope="col"><div class="slds-truncate slds-align_absolute-center" title="ImpactedProduct"><strong>IMPACTED PRODUCT</strong></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <aura:iteration items="{!v.data}" var="data" indexVar="index">
+                                <tr>
+                                    <td>
+                                        <div class="slds-truncate">{!index+1}</div>
+                                    </td>
+                                    <td><div class="slds-truncate" title="Name">
+                                        <lightning:formattedText value="{!data.item.Product2.Name}" /></div>
+                                    </td>
+                                    <td><div class="slds-truncate" title="Id">
+                                        <lightning:formattedText value="{!data.item.Product_Type__c}" /></div>
+                                    </td>
+                                    
+                                    <td><div class="slds-truncate" title="Stage" data-value="{!index}">
+                                        <lightning:formattedText value="{!data.item.ProductStage__c}" />
+                                        </div>
+                                    </td>
+                                    <td >
+                                        <div class=" slds-truncate slds-align_absolute-center" title="impactedProduct" data-value="{!index}">
+                                            <lightning:input type="checkbox" name="impactedProduct" checked="{!data.IsImpacted}" onchange="{!c.handleOnChange}"/></div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+                <aura:set attribute="else">
+                        <div class="slds-align_absolute-center"><strong>No Quote Line Items Found !!!</strong></div>
+                    </aura:set>
+            </aura:if>
+        </div>
+    </lightning:card>
+</aura:component>

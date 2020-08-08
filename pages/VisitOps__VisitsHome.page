@@ -1,0 +1,294 @@
+<!--
+/**********************************************************************
+Name:  VisitHome
+Copyright © 2019  VisitOps  
+======================================================
+Purpose: Visit Home Screen - To Search Visits & View the List                                                                                                                     
+======================================================
+======================================================
+History                                                            
+-------                                                            
+VERSION AUTHOR       DATE           DETAIL                 								    FEATURES/CSR/TTP
+1.0 -   Tanuj       08/22/2019      Update Window Url to make Lightning Compatible
+									(redirectToVisitNew Method)         					Lightning Readiness Compatible
+***********************************************************************/
+-->
+<apex:page showHeader="true" controller="VisitOps.VisitsHomeCtrl" tabStyle="VisitOps__Visit__c" sidebar="{!$Label.visitops__sidebar}" >
+<style type="text/css">
+    .col1 {width:100px; text-align:left;}
+    .col2 {width:100px; text-align:left;}
+    .cola {width:100px; text-align:left;}
+    .colb {width:100px; text-align:left;}
+    .colc {width:100px; text-align:left;}  
+    .cold {width:100px; text-align:left;}
+    .cole {width:100px; text-align:left;}
+    .colf {width:100px; text-align:left;}
+    .hideClass{ visibility:hidden;}      
+    
+    div#filterContainer td:first-child{
+        text-align : right;
+        padding-right: 10px;
+    }
+
+    <!-- Style Added for Lightning Experience -->
+    body { font-size:75% !important;
+    }
+    
+    
+</style>
+<script type="text/javascript">
+    function noenter(ev)  {
+        if (window.event && window.event.keyCode == 13 || ev.which == 13) {
+            populateSearchVisitsOnEnter();
+            
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+    // Code Commented By Lirik on 12/6/18
+   // Commented Code for Lightning Experience  & no longer used 
+ /**
+   
+    function redirectToVisit(vPrefix){
+        window.location = '/vPrefix?nooverride=1';
+    }
+    */
+    
+    function redirectToVisitList(listViewId)  {
+        if('{!$User.UITheme}'=='Theme4d') 
+        { 
+             var listViewId = '{!listViewId}';
+            console.log('Redirect To List');
+             sforce.one.navigateToList(listViewId, 'All', 'Visit__c');
+        } 
+        /*else{ 
+            window.open('/'+ visitid) 
+        }*/
+    } 
+    function redirectToVisitNew(visitid){
+       
+        if('{!$User.UITheme}'=='Theme4d') 
+        { 
+            sforce.one.navigateToURL('/'+ visitid); 
+        } 
+        else{ 
+            
+            // window.open('/'+ visitid) 
+            // Window.open Replaced by sforce.one.navigateToURL
+            sforce.one.navigateToURL('/'+ visitid) 
+        }
+    }
+</script>
+<apex:form id="theForm">
+          <!-- Tab title with logo -->
+          <div class="bPageTitle">
+            <div class="ptBody">
+                <div class="content">
+                    <img src="/s.gif" alt="Visit" class="pageTitleIcon" title="Visit"></img>
+                    <h1 class="pageType">Visits<span class="titleSeparatingColon">:</span></h1>
+                    <h2 class="pageDescription"> Home</h2>
+                    <div class="blank">&nbsp;</div>
+                </div>
+            </div>
+            <div class="ptBreadcrumb"></div>
+          </div>
+          
+          <!-- Component to provide ajax loading support -->
+          <c:AjaxStatusIndicator statusText="Processing..."/>
+            
+          <apex:pageBlock id="mainBlock">
+          <apex:pageBlockButtons location="top">
+           <!-- <apex:commandButton value="New Visit - Mobile" action="{!navigateToVisitScreenMobile}"/>-->
+            <apex:commandButton value="New Visit" action="{!navigateToVisitScreen}"/>
+            <apex:commandButton value="Search Visits" action="{!search}" rerender="pbid" status="progressIndicator"/>
+            <apex:commandButton value="Reset Search Criteria" action="{!reload}" status="progressIndicator"/>
+            <!--<apex:commandButton value="Visit List" rendered="{!isVisitTeamUser}" onclick="redirectToVisit({!visitprefix})"/>-->
+            <apex:commandButton value="Visit List" rendered="{!AND(isVisitTeamUser , $User.UITheme!='Theme4d')}" action="{!URLFOR($Action.Visit__c.List, $ObjectType.Visit__c)}"/>
+            <apex:commandButton value="Visit List" rendered="{!AND(isVisitTeamUser , $User.UITheme =='Theme4d')}" onclick="redirectToVisitList();"/>
+            
+            </apex:pageBlockButtons>
+          <div id="filterContainer">
+          <apex:panelGrid columns="4" id="theGrid" width="100%">
+              <!--start1 removing the And and OR filter-->
+              <!--<apex:outputLabel ><b>FILTER </b> :</apex:outputLabel>  
+              <apex:selectList value="{!Condition}" size="1">
+                <apex:selectOption itemValue="AND" itemLabel="Visits matching ALL criteria"/>
+                <apex:selectOption itemValue="OR" itemLabel="Visits matching ANY criteria"/>
+              </apex:selectList>
+              <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>-->
+              <!--End1 removing the And and OR filter-->
+              <!-- 
+              <apex:outputPanel >
+                  <apex:commandButton value="Search Visits" action="{!search}" rerender="pbid"/>
+                  <apex:commandButton value="Reset" action="{!reload}"/>
+              </apex:outputPanel>
+               -->
+               <!--start2 removing the And and OR filter-->
+              <!--<apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+
+<apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+<apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+<apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+<apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>-->
+<!--End2 removing the And and OR filter-->
+              
+              
+              <apex:outputText value="By Visit Owner"/>
+              <apex:inputField value="{!visit.VisitOps__VisitOwner__c}" onkeypress="return noenter(event);"/>
+              <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+              <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+              
+              <apex:outputText value="By Visit Team" rendered="{!isVisitTeamUser}"/>
+              <apex:inputField value="{!visit.OwnerId}" rendered="{!isVisitTeamUser}" required="false" onkeypress="return noenter(event);"/>
+              <apex:outputLabel styleClass="hideClass" rendered="{!isVisitTeamUser}">Hide this</apex:outputLabel>
+              <apex:outputLabel styleClass="hideClass" rendered="{!isVisitTeamUser}">Hide this</apex:outputLabel>
+              
+              <apex:outputText value="By Date Range"/>
+                   <apex:outputPanel >
+               <apex:selectList value="{!arrivalOrDepartureDate}" size="1" onkeypress="return noenter(event);">
+                 <apex:selectOption itemValue="ArrivalDateTime__c" itemLabel="Arrival Date"/>
+                 <apex:selectOption itemValue="DepartureDateTime__c" itemLabel="Departure Date"/>
+               </apex:selectList>
+                   (Search is based on user time zone date/time fields)
+                   </apex:outputPanel>
+               <apex:outputPanel >
+                <apex:outputText value="From : " />
+                <apex:inputField value="{!visit.VisitOps__SearchVisitFromDate__c}" required="false" onkeypress="return noenter(event);"/>
+               </apex:outputPanel>
+               <apex:outputPanel >
+                <apex:outputText value="To : "/>
+                <apex:inputField value="{!visit.VisitOps__SearchVisitToDate__c}" required="false" onkeypress="return noenter(event);"/>
+               </apex:outputPanel>
+               
+                   <apex:outputText value="By Location"/>
+                   <apex:outputPanel >
+                    <apex:selectList value="{!selectedLocationId}" size="1" onkeypress="return noenter(event);">
+                        <apex:selectOptions value="{!locationOptions}"/>
+                    </apex:selectList>
+                   </apex:outputPanel>
+                   <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+                   <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+                  
+               <apex:outputText value="By Visit Number"/> 
+               <apex:inputText value="{!ByVisitNumber}" onkeypress="return noenter(event);"/>
+               <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+               <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+               
+               <apex:outputText value="By Visit Name"/> 
+               <apex:inputText value="{!ByVisitName}" onkeypress="return noenter(event);"/>
+               <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+               <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+               
+               <apex:outputText value="By Company Name"/> 
+               <apex:inputText value="{!ByCompanyName}" onkeypress="return noenter(event);"/>
+               <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+               <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+               
+               
+               <apex:outputText value="By Guest Name"/>
+               <apex:inputText value="{!ByGuestName}" onkeypress="return noenter(event);"/>
+               <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+               <apex:outputLabel styleClass="hideClass">Hide this</apex:outputLabel>
+               
+          </apex:panelGrid>
+          </div>     
+<p/>
+<apex:pageBlock id="pbid" title="{!searchResultsGridTitle}">
+<apex:outputPanel rendered="{!AND(setCon!=null,visitSearchCount!=0)}" id="accPopupGridPanel" >
+        <apex:pageBlockTable value="{!visits}" var="v">
+            <!-- <apex:column value="{!v.Name}"/> -->
+            <apex:column headerValue="Visit Number">
+                <!--<apex:outputLink value="/{!v.id}" target="_blank">{!v.Name}</apex:outputLink>-->
+                <!--<apex:outputLink onclick="redirectToVisitNew('{!v.id}')">{!v.Name}</apex:outputLink>-->
+                
+                <apex:outputLink value="/{!JSENCODE(v.id)}" id="link" onclick="redirect ToVisitNew('{!JSENCODE(v.id)}');"
+                target="_blank" rendered="{!($User.UITheme =='Theme4d')}">{!JSENCODE(v.Name)}</apex:outputLink>
+           
+                <apex:outputLink value="/{!JSENCODE(v.id)}"
+                  id="linuk"
+                  onclick="redirectToVisitNew('{!JSENCODE(v.id)}');"
+                  onblur="LookupHoverDetail.getHover('{!JSENCODE(v.id)}').hide();"
+                  onfocus="LookupHoverDetail.getHover('{!JSENCODE(v.id)}', '/{!JSENCODE(v.id)}/m?retURL=%2F{!JSENCODE(v.id)}&isAjaxRequest=1').show();"
+                  onmouseout="LookupHoverDetail.getHover('{!JSENCODE(v.id)}').hide();"
+                  onmouseover="LookupHoverDetail.getHover('{!JSENCODE(v.id)}', '/{!JSENCODE(v.id)}/m?retURL=%2F{!JSENCODE(v.id)}&isAjaxRequest=1').show();"
+                  target="_blank" rendered="{!($User.UITheme !='Theme4d')}">{!JSENCODE(v.Name)}</apex:outputLink>
+                          
+            </apex:column>
+
+            <apex:column value="{!v.VisitOps__VisitName__c}"/>
+            <apex:column value="{!v.VisitOps__LocationNameFormula__c}"/>
+            <!-- <apex:column value="{!v.VisitType__c}"/> -->
+            <apex:column headerValue="Visit Type" value="{!v.VisitType__r.Name}"/>
+            <apex:column value="{!v.VisitOps__ArrivalDateTime__c}"/>
+            <apex:column value="{!v.VisitOps__DepartureDateTime__c}"/>
+            <!-- <apex:column value="{!v.VisitOwner__c}"/> -->
+            <apex:column >
+                <apex:facet name="header">Visit Owner</apex:facet>
+                <a href="/{!v.VisitOwner__c}"
+                  id="{!v.id+'_visitowner_'+v.VisitOwner__c}"
+                  onblur="LookupHoverDetail.getHover('{!v.id+'_visitowner_'+v.VisitOwner__c}').hide();"
+                  onfocus="LookupHoverDetail.getHover('{!v.id+'_visitowner_'+v.VisitOwner__c}', '/{!v.VisitOwner__c}/m?retURL=%2F{!v.VisitOwner__c}&isAjaxRequest=1').show();"
+                  onmouseout="LookupHoverDetail.getHover('{!v.id+'_visitowner_'+v.VisitOwner__c}').hide();"
+                  onmouseover="LookupHoverDetail.getHover('{!v.id+'_visitowner_'+v.VisitOwner__c}', '/{!v.VisitOwner__c}/m?retURL=%2F{!v.VisitOwner__c}&isAjaxRequest=1').show();">
+                {!v.VisitOwner__r.Name}
+                </a>
+            </apex:column>
+            
+            <apex:column >
+                <apex:facet name="header">Owner</apex:facet>
+                <apex:outputPanel rendered="{!NOT(BEGINS(v.OwnerId,'00G'))}" layout="none">
+                    <a href="/{!v.OwnerId}"
+                      id="{!v.id+'_owner_'+v.OwnerId}"
+                      onblur="LookupHoverDetail.getHover('{!v.id+'_owner_'+v.OwnerId}').hide();"
+                      onfocus="LookupHoverDetail.getHover('{!v.id+'_owner_'+v.OwnerId}', '/{!v.OwnerId}/m?retURL=%2F{!v.OwnerId}&isAjaxRequest=1').show();"
+                      onmouseout="LookupHoverDetail.getHover('{!v.id+'_owner_'+v.OwnerId}').hide();"
+                      onmouseover="LookupHoverDetail.getHover('{!v.id+'_owner_'+v.OwnerId}', '/{!v.OwnerId}/m?retURL=%2F{!v.OwnerId}&isAjaxRequest=1').show();">
+                    {!v.Owner.Name}
+                    </a>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!BEGINS(v.OwnerId,'00G')}" layout="none">
+                    <a href="/setup/own/groupdetail.jsp?id={!v.OwnerId}"> {!v.Owner.Name} </a>
+                </apex:outputPanel>
+            </apex:column>
+            <!-- <apex:column value="{!v.VisitStatus__c}"/> -->
+            <apex:column headerValue="Status" value="{!v.VisitOps__VisitStatusName__c}"/>
+            <!-- <apex:column value="{!v.Room__c}"/> -->
+            <apex:column >
+                <apex:facet name="header">Room</apex:facet>
+                <a href="/{!v.Room__c}"
+                  id="{!v.id+'_room_'+v.Room__c}"
+                  onblur="LookupHoverDetail.getHover('{!v.id+'_room_'+v.Room__c}').hide();"
+                  onfocus="LookupHoverDetail.getHover('{!v.id+'_room_'+v.Room__c}', '/{!v.Room__c}/m?retURL=%2F{!v.Room__c}&isAjaxRequest=1').show();"
+                  onmouseout="LookupHoverDetail.getHover('{!v.id+'_room_'+v.Room__c}').hide();"
+                  onmouseover="LookupHoverDetail.getHover('{!v.id+'_room_'+v.Room__c}', '/{!v.Room__c}/m?retURL=%2F{!v.Room__c}&isAjaxRequest=1').show();">
+                {!v.Room__r.Name}
+                </a>
+            </apex:column>
+            
+         </apex:pageBlockTable>
+   <p/>
+   <apex:outputLabel value="Page {!pageNumber} of {!totalPages}" style="float:right;"/>
+   <apex:commandLink action="{!doPrevious}" rendered="{!hasPrevious}" value="Previous" rerender="accPopupGridPanel"/>
+   <apex:outputLabel rendered="{!NOT(hasPrevious)}" value="Previous" />
+   &nbsp;&nbsp;
+   <apex:commandLink action="{!doNext}" rendered="{!hasNext}" value="Next" rerender="accPopupGridPanel"/>
+   <apex:outputLabel rendered="{!NOT(hasNext)}" value="Next" />      
+         </apex:outputPanel>
+         <apex:outputPanel rendered="{!visitSearchCount==0}" id="norecords" >
+        <!-- No records to display -->
+        No visits found   
+         </apex:outputPanel>
+         
+         
+         
+    </apex:pageBlock>
+    </apex:pageBlock>  
+   
+    <apex:actionFunction name="populateSearchVisitsOnEnter" action="{!search}" rerender="pbid" status="progressIndicator">
+        
+    </apex:actionFunction> 
+</apex:form>
+
+</apex:page>

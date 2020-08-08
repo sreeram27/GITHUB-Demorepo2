@@ -1,0 +1,38 @@
+<apex:page controller="VisitOps.AdministratorController" id="surveyPage"  showHeader="false"  sidebar="false" action="{!doUpsertSurveySettings}" >    
+                 <apex:PageMessages id="myMsg"></apex:PageMessages>
+                    <apex:form id="surveyForm">
+                        
+                        <apex:pageBlock title="Survey Time Setting" id="SurveyDurationBlock">
+                            <!--Pre Survey Duration<apex:inputText required="true"  value="{!preSurveyDuration}" id="preSurveyDuration"  style="margin-left:50px" maxlength="5">
+                            </apex:inputText>  Days  -->
+                            <!--<apex:selectList >
+                                <apex:selectOption itemValue="Days"></apex:selectOption>
+                            </apex:selectList>-->
+                             <!--<br/>-->
+                            
+                           <!-- Post Survey Duration<apex:inputText required="true" value="{!postSurveyDuration}" id="postSurveyDuration" style="margin-left:44px" maxlength="5"/>  Days -->
+                            <!--<apex:selectList >
+                                <apex:selectOption itemValue="Days"></apex:selectOption>
+                            </apex:selectList>--><br/> 
+                            <!-- Survey Header Text<apex:inputText required="true" value="{!headerText}" id="headerText" style="margin-left:50px" /><br/> -->
+
+                            <!--Survey Logo<apex:actionRegion >
+                            <a href="/{!tempdocument.Id}" target='_blank' style="padding-left:84px">{!tempdocument.Name}</a>
+                              <apex:inputFile value="{!document.body}" filename="{!document.name}" id="file" style="margin-left:0px;padding-left:14px"/><br/><br/>
+                            Survey Footer<a href="/{!tempDocument1.Id}" target='_blank'  style="padding-left:77px">{!tempDocument1.Name}</a>
+                              <apex:inputFile value="{!document1.body}" filename="{!document1.name}" id="file1" style="margin-left:0px;padding-left:9px"/><br/><br/>
+                            
+                            
+                            </apex:actionRegion>
+
+                            <apex:commandButton value="Apply" status="progressIndicator" style="margin-left:15%" action="{!insertSurveyTimeSetting}" id="surveyPageApplyBtn" />-->
+                            <apex:actionRegion >
+                            <apex:commandButton status="progressIndicator" id="startschedulerBtn" rerender="surveyForm"  disabled="{!if(NOT(showinput),false,true)}" value="Start Scheduler" action="{!runScheduler}" />
+                            <apex:commandButton status="progressIndicator" id="stopschedulerBtn" rerender="surveyForm" disabled="{!if(NOT(disStop),false,true)}"  value="Stop Scheduler" action="{!stopScheduler}"  />
+                        
+                        </apex:actionRegion>
+                        
+                        </apex:pageBlock>
+                        
+                    </apex:form>
+                  </apex:page>

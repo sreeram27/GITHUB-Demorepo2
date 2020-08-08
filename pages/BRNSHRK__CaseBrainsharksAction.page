@@ -1,0 +1,5 @@
+<apex:page standardController="Case" extensions="BRNSHRK.BrainsharksActionController" action="{!initPage}">
+
+<c:BrainsharksAction recordId="{!Case.Id}"/>
+
+</apex:page>

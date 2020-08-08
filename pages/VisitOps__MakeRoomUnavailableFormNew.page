@@ -1,0 +1,147 @@
+<!-- ASSUMPTIONS / CONSTRAINTS -->
+<!-- For the custom datepicker for locationTZMRUStartTimeString, locationTZMRUEndTimeString fields to work, set API Version of this page to 29.0 or less.
+	https://success.salesforce.com/issues_view?id=a1p300000008XU5AAM
+-->
+<apex:page id="pg" Controller="VisitOps.CalendarController" tabStyle="Calendar__tab" sidebar="{!$Label.visitops__sidebar}">
+ <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jquery-1.11.1.min.js')}"/>
+ <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/functions.js')}"/>
+ <apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/styles.css')}" />
+   
+ <apex:sectionHeader subtitle="Make Room Unavailable" title="Room Unavailable form"/>
+   <apex:form id="frm1" >    
+    <c:AjaxStatusIndicator statusText="Processing..." />
+   	  <apex:pageMessages id="pgMsgsId"/>
+      <apex:actionFunction name="calculateUserTZDateTimeValuesForMakeRoomUnavailableJS" action="{!calculateUserTZDateTimeValuesForMakeRoomUnavailable}" rerender="startTimeID,startTimeTZID,endTimeID,endTimeTZID,pgMsgsId" status="progressIndicator">
+      	<apex:param name="mruContextField" value=""/>	
+      </apex:actionFunction>
+      <apex:pageBlock id="pb">
+         <apex:pageBlockButtons location="both">
+            <!-- Timezone Changes -->
+            <!-- <apex:commandButton id="cmd1" value="Save"   oncomplete="makeRoomUnavailableJS();" reRender="pgSec,pgMsgsId" /> -->
+            <apex:commandButton id="cmd1" value="Save" action="{!makeRoomUnavailableAction}" oncomplete="windowCloseAndfocusParent('Save','startTimeID',{!isMruValid});" status="progressIndicator" reRender="frm1"/>
+            <!-- <apex:commandButton value="Cancel" rerender="dummy" onclick="windowCloseAndfocusParent('Cancel','pg:frm1:pb:pgSec:r2');"/> -->
+            <apex:commandButton value="Cancel" rerender="dummy" onclick="windowCloseAndfocusParent('Cancel','startTimeID',true);"/>
+         </apex:pageBlockButtons>
+         <apex:pageBlockSection id="pgSec" columns="1">
+           
+           <!-- Timezone Changes -->
+           <!--
+           <apex:inputField id="r1" required="true" value="{!room_sch.VisitOps__Room__c}"/>
+           <apex:inputField id="r2" required="true" value="{!room_sch.Start_DateTime__c}"/>
+           <apex:inputField id="r3" required="true" value="{!room_sch.EndDateTime__c}"/>
+           -->
+           	<apex:pageblocksectionItem >
+	           	<apex:outputText value="Room "/>
+	           	<apex:outputPanel >
+		           	<div class="requiredInput">
+		       	   		<div class="requiredBlock"></div>
+       					<apex:inputField id="r1" required="false" value="{!room_sch.VisitOps__Room__c}"/>
+       				</div>
+   				</apex:outputPanel>
+			</apex:pageblocksectionItem>	
+           	<apex:pageblocksectionItem >
+	           	<apex:outputText value="Start Time (Location) "/>
+	           	<apex:outputPanel >
+		           	<div class="requiredInput">
+		       	   		<div class="requiredBlock"></div>
+                       	<apex:inputText value="{!locationTZMRUStartTimeString}" id="startTimeTZID" onchange="calculateUserTZDateTimeValuesForMakeRoomUnavailableJS('roomUnavailableStartTime')" onfocus="DatePicker.pickDate(true, '{!$Component.startTimeTZID}', true);"/>
+					</div>
+				</apex:outputPanel>
+			</apex:pageblocksectionItem>
+			<apex:pageblocksectionItem >
+	           	<apex:outputText value="End Time (Location) "/>
+	           	<apex:outputPanel >
+		           	<div class="requiredInput">
+		       	   		<div class="requiredBlock"></div>
+                       	<apex:inputText value="{!locationTZMRUEndTimeString}" id="endTimeTZID" onchange="calculateUserTZDateTimeValuesForMakeRoomUnavailableJS('roomUnavailableEndTime')" onfocus="DatePicker.pickDate(true, '{!$Component.endTimeTZID}', true);"/> 
+					</div>
+				</apex:outputPanel>
+			</apex:pageblocksectionItem>
+           	<apex:pageblocksectionItem >
+	           	<apex:outputText value="Start Time (User) "/>
+	           	<apex:outputPanel >
+		           	<div class="requiredInput">
+		       	   		<div class="requiredBlock"></div>
+		       			<apex:inputText required="true" value="{!userTZMRUStartTimeString}" id="startTimeID" disabled="true"/>
+					</div>
+				</apex:outputPanel>
+			</apex:pageblocksectionItem>
+			<apex:pageblocksectionItem >
+	           	<apex:outputText value="End Time (User) "/>
+	           	<apex:outputPanel >
+		           	<div class="requiredInput">
+		       	   		<div class="requiredBlock"></div>
+		       			<apex:inputText required="true" value="{!userTZMRUEndTimeString}" id="endTimeID" disabled="true"/>
+					</div>
+				</apex:outputPanel>
+			</apex:pageblocksectionItem>
+           <apex:inputField id="r4" value="{!room_sch.VisitOps__Reason__c}"/>
+           <apex:inputField id="r5" value="{!room_sch.VisitOps__Point_Of_Contact__c}"/>
+           <apex:outputText id="r6" value="Unavailable" label="Status"/>
+          </apex:pageBlockSection>
+     </apex:pageBlock>
+   <!-- Timezone Changes -->  
+   <!-- <apex:actionFunction name="makeRoomUnavailableAction" action="{!makeRoomUnavailableAction}" oncomplete="windowCloseAndfocusParent('Save','pg:frm1:pb:pgSec:r2');" status="progressIndicator" reRender="frm1"  /> -->
+ </apex:form>
+ 
+ <script>
+   /*
+   function makeRoomUnavailableJS(isError)
+    { 
+      if (jQuery('.errorMsg').length > 0){
+    }
+      else{
+        makeRoomUnavailableAction();
+       }
+    }
+    */
+   function windowCloseAndfocusParent(buttonName,startDate,isMruValid)
+    {
+   //Timezone Changes
+   console.log('isMruValid---'+isMruValid);
+   if(!isMruValid){
+   	window.close();
+   //	return;
+   }
+    
+   //var start = document.getElementById(startDate).value;
+    var start = $("[id$='"+ startDate +"']").val();
+    console.log('start---'+start);
+    
+     if( window.opener!=null){
+     window.opener.focus();
+    }
+     window.close();
+   
+     var fullURL= '{!JSENCODE($CurrentPage.URL)}';
+     pathArray = fullURL.split( '/' );
+     var Protocol = pathArray[0]; 
+     var host = pathArray[2];
+     var hostURL = Protocol+'//'+host;
+     
+   if(buttonName=='Save'){
+     var parentUrl = hostURL+'/apex/CalendarPage';
+     var currentURL = window.location.href;  
+     var name1= 'arrivaldate';
+     var name2 = 'depdate';
+     var name3 = 'LocationName';
+     var name4 = 'NumberOfAttendee';
+     var name5 = 'PlaceValue';
+     var name6 = 'source';
+    
+     var arrival = decodeURI((RegExp(name1 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var departure = decodeURI((RegExp(name2 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var location = decodeURI((RegExp(name3 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var numberOfAttendees = decodeURI((RegExp(name4 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var PlaceValue = decodeURI((RegExp(name5 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var source  = decodeURI((RegExp(name6 + '=' + '(.+?)(&|$)').exec(currentURL)||[,null])[1]);
+     var isUnavailableForm = 'true';
+     window.opener.location.href = parentUrl+'?arrivaldate='+arrival+'&source='+source+'&isUnavailableForm='+isUnavailableForm+'&arrivaldateonform='+start+'&depDate='+departure+'&LocationName='+location+'&PlaceValue='+PlaceValue+'&NumberOfAttendee='+numberOfAttendees;
+      
+    }
+  }  
+  function setFocusOnLoad() {}
+    
+ </script>
+
+</apex:page>

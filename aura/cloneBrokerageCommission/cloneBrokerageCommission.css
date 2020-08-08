@@ -1,0 +1,15 @@
+.THIS .attach-to-bottom{
+    position: relative;
+}
+.THIS .attach-to-top{
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    width: 100%;
+}
+.THIS .attach-to-top1{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+}

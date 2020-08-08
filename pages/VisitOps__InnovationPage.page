@@ -1,0 +1,95 @@
+<apex:page showHeader="false" controller="VisitOps.InnovationCtrl" sidebar="false">
+    <head>
+        <style>
+            td.pbTitle{
+                width: 100% !important;
+                text-align: center;
+                /*background-color: rgb(205, 201, 201);*/
+                background-color: rgb(221, 221, 221);
+                padding: 5px 0px !important;
+                display: table-cell !important;
+            }
+            h2.mainTitle{
+                /*font-size: 90% !important;*/
+                font-family : sans-serif !important;
+                font-size: medium;
+                font-stretch: extra-condensed;
+            }
+            div.apexp{
+                /*margin-top: 15px !important;*/
+            }
+            div.pbHeader td{
+                display:none;
+            }
+            
+        </style>
+        <script>
+        	function redirectJS(reportId,reportLocfilter){
+        	
+        	if(reportLocfilter=="" || reportLocfilter=="All")
+        		parent.location.href = '/'+reportId;
+        	else if(reportLocfilter!=''){
+        			// Change drillcol Value in each deployment
+        			parent.location.href = '/'+reportId+'?pv0='+reportLocfilter;
+        		}
+        	}
+        </script>
+    </head>
+    <apex:form id="theForm">
+        <apex:actionfunction name="testAF" action="{!getnewFilter}" rerender="pbid,pbid1,pbid2,pbid3,pbid4,pbid5"/>
+        <apex:panelGrid columns="4" cellpadding="20%" cellspacing="20%" style="margin-top: 15px;">
+            <font> <b>Filter By : Location</b></font>
+            <apex:selectList value="{!locName}" multiselect="false" size="1" onChange="testAF();">
+            <apex:selectOptions value="{!AvailableLocations}" />
+            </apex:selectList>
+        </apex:panelGrid>
+        <apex:panelGrid columns="3">
+           
+            <apex:pageBlock id="pbid" onclick="redirectJS('{!JSENCODE(reportId)}','{!JSENCODE(locName)}');">
+            	<analytics:reportChart reportId="{!reportId}" filter="{!newFilter}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid1" onclick="redirectJS('{!JSENCODE(reportId1)}','{!JSENCODE(locName)}');">
+            	<analytics:reportChart reportId="{!reportId1}" filter="{!newFilter}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <!-- <apex:pageBlock id="pbid2">
+            <apex:actionfunction name="testAF3" action="{!redirectRpt2}"/>
+            <analytics:reportChart reportId="{!reportId2}" filter="{!newFilter}" size="small" cacheResults = "false"/>
+            </apex:pageBlock>
+             -->
+            <apex:pageBlock id="pbid2" title="Areas Impacted" >
+               <apex:chart height="220" width="500" data="{!InnovationData}">
+                    <apex:axis type="Numeric" position="left" fields="value"
+                        title="Record Count" grid="true" minimum="0"/>
+                    <apex:axis type="Category" position="bottom" fields="area"
+                        title="Impact Area">
+                        <apex:chartLabel rotate="325"/>
+                    </apex:axis>
+                    <!-- <apex:barSeries title="Areas Impacted" orientation="vertical" axis="left"
+                        xField="area" yField="value" colorsProgressWithinSeries="true" colorSet="#0000FF,#800080,#00FF00,#DF013A,#008000,#9912EC,#FFFF00,#FFA500"/> -->
+                        <apex:barSeries title="Areas Impacted" orientation="vertical" axis="left"
+                        xField="area" yField="value" colorsProgressWithinSeries="true" colorSet="#1a7dd8,#8ddb66,#e67920,#b853e2,#72ecc8,#b53d1d,#f5e033,#1231cb"/>
+                </apex:chart>
+            </apex:pageBlock>
+           
+            
+            <apex:pageBlock id="pbid3" onclick="redirectJS('{!JSENCODE(reportId3)}','{!JSENCODE(locName)}');">
+                <analytics:reportChart reportId="{!reportId3}" filter="{!newFilter}" size="small" cacheResults="false"/>
+                <apex:outputLabel >Based on Idea Completed Date</apex:outputLabel>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid4" onclick="redirectJS('{!JSENCODE(reportId4)}','{!JSENCODE(locName)}');">
+	            <analytics:reportChart reportId="{!reportId4}" filter="{!newFilter}" size="small" cacheResults="false"/>
+	            <apex:outputLabel >Based on Idea Completed Date</apex:outputLabel>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid5" onclick="redirectJS('{!JSENCODE(reportId5)}','{!JSENCODE(locName)}');">
+            	<analytics:reportChart reportId="{!reportId5}" filter="{!newFilter}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            
+            
+         </apex:panelGrid>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,74 @@
+<template>
+    <!-- Search Page -->
+    <div class="slds-col slds-size_4-of-4">
+        <lightning-card title="Broker Search Criteria" icon-name="standard:search">
+            <div class="content">
+                    <!--Broker Name -->    
+                <lightning-input
+                    label="Broker Name"
+                    id="BrokerName"
+                    class="validValue inputBrokerName" 
+                    type="text"
+                    placeholder="Broker Name"
+                    value={brokerName}
+                    onchange={changeHandlerName}>
+                </lightning-input>
+                <!--Broker Tax Id -->    
+                <lightning-input
+                    label="Broker Tax Id"
+                    id="BrokerTaxId"
+                    type="text"
+                    class="validValue inputTaxId"
+                    value={brokerTaxId}
+                    required
+                    placeholder="Broker Tax Id"
+                    onchange={changeHandlerTaxId}
+                    message-when-value-missing="Please enter the Tax Id"
+                    minlength="9"
+                    maxlength="9">                                    
+                </lightning-input>
+                <!--Broker Email -->  
+                <lightning-input
+                    label="Broker Email"
+                    id="BrokerEmail"
+                    type="email"
+                    value={brokerEmail}
+                    placeholder="Broker Email"
+                    onchange={changeHandlerEmail}>
+                </lightning-input>
+                <!--Broker Phone -->  
+                <lightning-input
+                    label="Broker Phone"
+                    id="BrokerPhone"
+                    class="validValue inputPhone"
+                    type="tel"
+                    minlength="10"
+                    maxlength="10"
+                    value={brokerPhone}
+                    placeholder="Broker Phone"
+                    onchange={changeHandlerPhone}>
+                </lightning-input>
+                <!--Broker State -->  
+                <lightning-input
+                    label="Broker State"
+                    id="BrokerState"
+                    class="validValue inputState"
+                    type="text"
+                    minlength="2"
+                    maxlength="2"
+                    value={brokerState}
+                    placeholder="Broker State"
+                    onchange={changeHandlerState}>
+                </lightning-input>
+            </div>        
+        </lightning-card>
+        <div class="slds-align_absolute-center slds-m-top_x-small" >
+            <div class="slds-m-right_xx-small">
+                <lightning-button variant="brand" icon-name="utility:clear" label="Clear" alternative-text="Clear Search Input" onclick={handleClearSearchCriteria} ></lightning-button>
+            </div>
+            <div class="slds-m-left_xx-small">
+                <lightning-button variant="brand" icon-name="utility:search" label="Search" alternative-text="Seach Broker" onclick={handleClickSearch} ></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

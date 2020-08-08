@@ -1,0 +1,47 @@
+<apex:page controller="VisitOps.VisitSummaryCtrl" showHeader="false" sidebar="false">
+
+<apex:form >
+
+    <div> 
+         <div class= "header"> Cancellations
+      </div> 
+              <table width= "100%" border="1" cellspacing="5">     
+         
+                      <tr >
+                      <td style="background:#A9D0F5;"><i><b>#Cancelled</b></i></td>                      
+                      <td ><apex:outputtext value="{!canvalue}"/></td>                                  
+                      </tr>
+                     <tr >
+                          <td style="background:#A9D0F5;"><i><b>% of all vists cancelled</b></i></td>                 
+                          <td ><apex:outputLabel value="{!cancellationvalue}"/></td>   
+                         <!-- <td rowspan="2"><apex:actionFunction name="testAF" action="{!redirectRpt}"/>
+                          <analytics:reportChart reportId="{!reportId}" size="small"/></td>   -->                                              
+                     </tr>
+
+              </table>           
+    </div> 
+ </apex:form> 
+ 
+ <style>
+ 
+ <!-- Style Added for Lightning Experience -->
+    			body {  
+            			font-size:75% !important;
+    				}
+ 
+ .header {
+        font-style: oblique;
+        display: block;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        background-color: rgb(221, 221, 221);
+        padding: 5px 0px !important;
+        width: 100% !important;
+        text-align: center;
+     }
+   
+ </style>
+</apex:page>

@@ -1,0 +1,1304 @@
+<apex:page tabstyle="VisitOps__Agenda__c" showHeader="true" sidebar="{!$Label.visitops__sidebar}" standardController="VisitOps__Agenda__c" extensions="VisitOps.AgendaTimelineController">
+<!-- Last Modified : 11/26/18 -->
+   
+    <!-- Include Script files for FullCalendar and Jquery -->
+    <apex:includeScript value="{!URLFOR($Resource.VisitOps__fullcalendar211, 'fullcalendar-2.1.1/lib/jquery.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.VisitOps__fullcalendar211, 'fullcalendar-2.1.1/lib/jquery-ui.custom.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.VisitOps__fullcalendar211, 'fullcalendar-2.1.1/lib/moment.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.VisitOps__fullcalendar211, 'fullcalendar-2.1.1/fullcalendar.js')}"/>
+    
+    
+   <!-- <apex:includeScript value="{!URLFOR($Resource.fullcalendar223, 'fullcalendar-2.2.3/lib/jquery.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.fullcalendar223, 'fullcalendar-2.2.3/lib/jquery-ui.custom.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.fullcalendar223, 'fullcalendar-2.2.3/lib/moment.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.fullcalendar223, 'fullcalendar-2.2.3/fullcalendar.js')}"/>
+    -->    
+    <apex:includeScript value="{!URLFOR($Resource.VisitOps__JqueryFiles, 'jquery-ui.js')}"/>
+    
+    
+    <!--  Include Style sheets for Full Calendar and page styles -->
+     <apex:stylesheet value="{!URLFOR($Resource.VisitOps__fullcalendar211, 'fullcalendar-2.1.1/fullcalendar.css')}"/>
+    <link href="{!URLFOR($Resource.fullcalendar211, 'fullcalendar-2.1.1/fullcalendar.print.css')}" rel='stylesheet' media='print'/>
+    <link href="{!URLFOR($Resource.fullcalendar211, 'fullcalendar-2.1.1/lib/cupertino/jquery-ui.min.css')}" rel='stylesheet'/>
+    
+    <!--<apex:stylesheet value="{!URLFOR($Resource.fullcalendar223, 'fullcalendar-2.2.3/fullcalendar.css')}"/>
+    <link href="{!URLFOR($Resource.fullcalendar223, 'fullcalendar-2.2.3/fullcalendar.print.css')}" rel='stylesheet' media='print'/>
+    <link href="{!URLFOR($Resource.fullcalendar223, 'fullcalendar-2.2.3/lib/cupertino/jquery-ui.min.css')}" rel='stylesheet'/>
+    -->
+    <apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/styles.css')}"/>
+    
+    
+    <script>
+    var p = 1;
+/* Maintains all Initial events in the map and Array*/
+    var eventMap = new Object();
+    var eventArray = new Array();
+    
+/*Deleted Events Array and Map*/
+    var deletedEventsArray = new Array();
+    var deletedEventsMap = new Object();
+    
+/*ParkingLot Events Array and Map*/
+    var parkingLotArray = new Array();
+    var parkingLotMap = new Object();
+    
+/*All Changed Events Array*/
+    var changedEventArray = new Array();
+    var changedEventMap = new Object();
+    
+    /*var timeStringFormat = 'MM/DD/YYYY HH:mm:ss';*/
+    var timeStringFormat = 'YYYY/MM/DD HH:mm:ss';
+    var currentCalendarDate = '{!JSENCODE(visitStartDate)}';
+    var currentCalendarView = 'agendaDay';
+    
+    function EventObj() {
+        this.id= '';
+        this.startTime= '';
+        this.endTime= '';
+        this.agendaTitle= '';
+        this.url = '';
+        this.className = '';
+        this.topicId = '';
+        this.category = '';
+        this.classifier= '';
+        this.isParked = false;
+        this.isDeleted = false;
+        this.isNew = false;
+        this.presenterCount = 0;
+        this.roomBooked = false;
+        this.roomName = '';
+        this.typeOfEvent = '';
+        this.numberOfAttendees = 0;
+        this.cateringDetails = '';
+        this.sessionDuration = 0;
+        this.presenterList = '';
+    }
+    
+    function ActualEventObj() {
+        this.id= '';
+        this.start= '';
+        this.end= '';
+        this.title= '';
+        this.url = '';
+        this.className = '';
+        this.topicId = '';
+        this.category = '';
+        this.classifier= '';
+        this.isParked = false;
+        this.isDeleted = false;
+        this.isNew = false;
+        this.presenterCount = 0;
+        this.roomBooked = false;
+        this.roomName = '';
+        this.typeOfEvent = '';
+        this.numberOfAttendees = 0;
+        this.cateringDetails = '';
+        this.sessionDuration = 0;
+        this.presenterList = '';
+    }
+    
+    $(document).ready(function() {
+        
+        //loadAgendaTimeLine('{!JSENCODE(activeEventsListJSON)}');
+        
+        //console.log(eventMap);
+        //console.log(eventArray);
+        
+    });
+    
+    function instantiateScriptVariables() {
+        eventMap = new Object();
+        eventArray = new Array();
+    
+        deletedEventsArray = new Array();
+        deletedEventsMap = new Object();
+    
+        parkingLotArray = new Array();
+        parkingLotMap = new Object();
+    
+        changedEventArray = new Array();
+        changedEventMap = new Object();
+    }
+     
+    function loadAgendaTimeLine(agendaSessionsListJSON) {
+    
+            var eventsList = [];
+            if(typeof agendaSessionsListJSON === 'undefined'){
+                eventsList = [
+                    <apex:repeat value="{!activeEventsList}" var="e">
+                {
+                        id: "{!e.id}",
+                        title: "{!e.agendaTitle}",
+                        start: '{!e.startTime}',
+                        end: '{!e.endTime}',
+                        locTZStart: '{!e.locationTZStartTime}',
+                        locTZEnd: '{!e.locationTZEndTime}',
+                        url: '{!e.url}',
+                        editable: {!e.editable},
+                        durationEditable: {!e.durationEditable},
+                        startEditable:{!e.startEditable},
+                        className: '{!e.className}',
+                        isParked: {!e.isParked},
+                        isDeleted: {!e.isDeleted},
+                        isNew: {!e.isNew},
+                        presenterCount: {!e.presenterCount},
+                        roomBooked: {!e.roomBooked},
+                        roomName: "{!e.roomName}",
+                        typeOfEvent: "{!e.typeOfEvent}",
+                        numberOfAttendees: {!e.numberOfAttendees},
+                        cateringDetails: "{!e.cateringDetails}",
+                        sessionDuration: {!e.sessionDuration},
+                        presenterList: "{!e.presenterList}"
+                },
+                    </apex:repeat>
+                    
+                    ];
+            }
+            else {
+                eventsList = [];
+                console.log(agendaSessionsListJSON);
+                var agendaSessionsList =[];
+                agendaSessionsList = $.parseJSON(agendaSessionsListJSON);
+                console.log(agendaSessionsList);
+                console.log(agendaSessionsList.length);
+                if(agendaSessionsList!=null && agendaSessionsList!='' && agendaSessionsList.length>0) {
+                    for(var i in agendaSessionsList) {
+                        
+                        if(agendaSessionsList[i].durationEditable==true || agendaSessionsList[i].durationEditable=='true')
+                            agendaSessionsList[i].durationEditable = true;
+                        else
+                            agendaSessionsList[i].durationEditable = false;
+                        
+                        if(agendaSessionsList[i].editable==true || agendaSessionsList[i].editable=='true')
+                            agendaSessionsList[i].editable = true;
+                        else
+                            agendaSessionsList[i].editable = false;
+                            
+                        if(agendaSessionsList[i].startEditable==true || agendaSessionsList[i].startEditable=='true')
+                            agendaSessionsList[i].startEditable = true;
+                        else
+                            agendaSessionsList[i].startEditable = false;
+                        
+                        if(agendaSessionsList[i].isParked==true || agendaSessionsList[i].isParked=='true')
+                            agendaSessionsList[i].isParked = true;
+                        else
+                            agendaSessionsList[i].isParked = false;
+                            
+                        if(agendaSessionsList[i].isDeleted==true || agendaSessionsList[i].isDeleted=='true')
+                            agendaSessionsList[i].isDeleted = true;
+                        else
+                            agendaSessionsList[i].isDeleted = false;
+                        
+                        console.log('agendaSessionsList[i]'+agendaSessionsList[i]);
+                        //eventsList.push({"id": agendaSessionsList[i].id,"title": ""+agendaSessionsList[i].agendaTitle,"start": agendaSessionsList[i].startTime,"end": ""+agendaSessionsList[i].endTime,"url": ""+agendaSessionsList[i].url,"editable": agendaSessionsList[i].editable,"durationEditable": agendaSessionsList[i].durationEditable,"startEditable":agendaSessionsList[i].startEditable,"className": ""+agendaSessionsList[i].className,"isParked": agendaSessionsList[i].isParked,"isDeleted": agendaSessionsList[i].isDeleted,"isNew":agendaSessionsList[i].isNew,"presenterCount": agendaSessionsList[i].presenterCount,"roomBooked": agendaSessionsList[i].roomBooked,"roomName": ""+agendaSessionsList[i].roomName,"typeOfEvent": agendaSessionsList[i].typeOfEvent,"numberOfAttendees": agendaSessionsList[i].numberOfAttendees,"cateringDetails": ""+agendaSessionsList[i].cateringDetails,"sessionDuration":agendaSessionsList[i].sessionDuration});
+                        //Timezone Changes
+                        eventsList.push({"id": agendaSessionsList[i].id,"title": ""+agendaSessionsList[i].agendaTitle.replace(/\\"/g,"\""),"start": agendaSessionsList[i].startTime,"end": ""+agendaSessionsList[i].endTime,"locTZStart": agendaSessionsList[i].locationTZStartTime,"locTZEnd": ""+agendaSessionsList[i].locationTZEndTime,"url": ""+agendaSessionsList[i].url,"editable": agendaSessionsList[i].editable,"durationEditable": agendaSessionsList[i].durationEditable,"startEditable":agendaSessionsList[i].startEditable,"className": ""+agendaSessionsList[i].className,"isParked": agendaSessionsList[i].isParked,"isDeleted": agendaSessionsList[i].isDeleted,"isNew":agendaSessionsList[i].isNew,"presenterCount": agendaSessionsList[i].presenterCount,"roomBooked": agendaSessionsList[i].roomBooked,"roomName": ""+agendaSessionsList[i].roomName,"typeOfEvent": agendaSessionsList[i].typeOfEvent,"numberOfAttendees": agendaSessionsList[i].numberOfAttendees,"cateringDetails": ""+agendaSessionsList[i].cateringDetails,"sessionDuration":agendaSessionsList[i].sessionDuration,"presenterList":agendaSessionsList[i].presenterList});
+                    }
+                }
+            }
+            
+    
+           $('#timelineView').fullCalendar({
+            
+            header : {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'agendaDay,agendaWeek,month'
+                    },
+            scrollTime: '{!JSENCODE(defaultTimeLineFocusTime)}', //format->'09:00:00',
+            slotDuration: '00:15:00',
+            defaultView: currentCalendarView,
+            defaultDate: currentCalendarDate,
+            allDaySlot: false,
+            slotEventOverlap: false,
+            allDayDefault: false,
+            selectable:true,
+            selectHelper:true,
+            forceEventDuration: true,
+            defaultTimedEventDuration: '{!JSENCODE(defaultTimedEventDuration)}',
+            editable:true,
+            droppable: true,
+            eventLimit:true,
+            
+            //Input event data of all the agenda sessions 
+            events: eventsList,
+                
+             // opens events in a popup window       
+            eventClick: function(event) {
+                
+                if(event.typeOfEvent=='Agenda' || event.typeOfEvent=="Agenda") {
+                    redirectUserToSessionForm(event.id);
+                }
+                else if(event.typeOfEvent=='Visit Start' || event.typeOfEvent=="Visit Start" || event.typeOfEvent=='Visit End' || event.typeOfEvent=="Visit End"){
+                    var popup = window.open(event.url, "_blank");
+                    popup.focus();
+                    return false;                       
+                }               
+            }, 
+            
+            eventMouseover: function(calEvent,jsEvent) {
+                
+                var tooltip;
+                if(calEvent.typeOfEvent=='Agenda' || calEvent.typeOfEvent=="Agenda") {
+                    //tooltip = '<div id="toolTipDiv" class="bPageBlock brandSecondaryBrd secondaryPalette"><div class="pbHeader brandSecondaryBrd"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="pbTitle"><h2 class="mainTitle">Session Details</h2></td><td class="pbButton"></td></tr></tbody></table></div><div class="pbBody"><table class="detailList" border="0" cellpadding="0" cellspacing="0" ><tbody><tr><td class="labelCol last" >Session Title</td><td class="dataCol last">'+calEvent.title+'</td></tr><tr><td class="labelCol last" >Start Time</td><td class="dataCol last">'+calEvent.start.format('hh:mm a')+'</td></tr><tr><td class="labelCol last">Room</td><td class="dataCol last">'+calEvent.roomName+'</td></tr><tr><td class="labelCol last">Total Guests</td><td class="dataCol last">'+calEvent.numberOfAttendees+'</td></tr><tr><td class="labelCol last">Catering Details</td><td class="dataCol last">'+calEvent.cateringDetails+'</td></tr></tbody></table></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div>';
+                    //tooltip = '<div id="toolTipDiv" class="bPageBlock brandSecondaryBrd secondaryPalette"><div class="pbHeader brandSecondaryBrd"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="pbTitle"><h2 class="mainTitle">Session Details</h2></td><td class="pbButton"></td></tr></tbody></table></div><div class="pbBody"><table class="detailList" border="0" cellpadding="0" cellspacing="0" ><tbody><tr><td class="labelCol last" >Session Title</td><td class="dataCol last">'+calEvent.title+'</td></tr><tr><td class="labelCol last" >Start Time (Location)</td><td class="dataCol last">'+calEvent.locTZStart+'</td></tr><tr><td class="labelCol last">Room</td><td class="dataCol last">'+calEvent.roomName+'</td></tr><tr><td class="labelCol last">Total Guests</td><td class="dataCol last">'+calEvent.numberOfAttendees+'</td></tr><tr><td class="labelCol last"># Presenters</td><td class="dataCol last">'+calEvent.presenterCount+'</td></tr></tbody></table><table class="detailList" border="0" cellpadding="0" cellspacing="0" ><tbody><tr><td style="padding-left: 15px;text-align: middle;">'+calEvent.presenterList+'</td></tr></tbody></table></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div>';
+                    //tooltip = '<div id="toolTipDiv" class="bPageBlock brandSecondaryBrd secondaryPalette"><div class="pbHeader brandSecondaryBrd"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="pbTitle"><h2 class="mainTitle">Session Details</h2></td><td class="pbButton"></td></tr></tbody></table></div><div class="pbBody"><table class="detailList" border="0" cellpadding="0" cellspacing="0" ><tbody><tr><td class="labelCol last" >Session Title</td><td class="dataCol last">'+calEvent.title+'</td></tr><tr><td class="labelCol last" >Start Time (Location)</td><td class="dataCol last">'+calEvent.locTZStart+'</td></tr><tr><td class="labelCol last">Room</td><td class="dataCol last">'+calEvent.roomName+'</td></tr><tr><td class="labelCol last">Total Guests</td><td class="dataCol last">'+calEvent.numberOfAttendees+'</td></tr><tr><td class="labelCol last"># Presenters</td><td class="dataCol last">'+calEvent.presenterCount+'<br/>'+calEvent.presenterList+'</td></tr></tbody></table></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div>';
+                    tooltip = '<div id="toolTipDiv" style="width:300px;" class="bPageBlock brandSecondaryBrd secondaryPalette"><div class="pbHeader brandSecondaryBrd"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="pbTitle"><h2 class="mainTitle">Session Details</h2></td><td class="pbButton"></td></tr></tbody></table></div><div class="pbBody"><table class="detailList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="labelCol last" >Session Title</td><td class="dataCol last">'+(calEvent.title.replace(/\\"/g,"\""))+'</td></tr><tr><td class="labelCol last" >Start Time (Location)</td><td class="dataCol last">'+calEvent.locTZStart+'</td></tr><tr><td class="labelCol last">Rooms Booked</td><td class="dataCol last">'+calEvent.roomName+'</td></tr><tr><td class="labelCol last"># Catering</td><td class="dataCol last">'+calEvent.numberOfAttendees+'</td></tr><tr><td class="labelCol last"># Presenters</td><td class="dataCol last">'+calEvent.presenterCount+'</td></tr><tr><td style="padding-left:10%;" class="dataCol" colspan="2">'+calEvent.presenterList+'</td></tr></tbody></table></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div>';
+                }
+                else if(calEvent.typeOfEvent=='Visit Start') {
+                    //tooltip = '<div id="toolTipDiv" class="bPageBlock brandSecondaryBrd secondaryPalette"><div class="pbHeader brandSecondaryBrd"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="pbTitle"><h2 class="mainTitle">Visit Start</h2></td><td class="pbButton"></td></tr></tbody></table></div><div class="pbBody"><table class="detailList" border="0" cellpadding="0" cellspacing="0" ><tbody><tr><td class="labelCol last" >Visit Name</td><td class="dataCol last">'+calEvent.title+'</td></tr><tr><td class="labelCol last" >Arrival Time</td><td class="dataCol last">'+calEvent.start.format('hh:mm a')+'</td></tr><tr><td class="labelCol last">Room</td><td class="dataCol last">'+calEvent.roomName+'</td></tr></tbody></table></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div>';
+                    tooltip = '<div id="toolTipDiv" class="bPageBlock brandSecondaryBrd secondaryPalette"><div class="pbHeader brandSecondaryBrd"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="pbTitle"><h2 class="mainTitle">Visit Start</h2></td><td class="pbButton"></td></tr></tbody></table></div><div class="pbBody"><table class="detailList" border="0" cellpadding="0" cellspacing="0" ><tbody><tr><td class="labelCol last" >Visit Name</td><td class="dataCol last">'+calEvent.title.replace(/\\"/g,"\"")+'</td></tr><tr><td class="labelCol last" >Arrival Time (Location)</td><td class="dataCol last">'+calEvent.locTZStart+'</td></tr><tr><td class="labelCol last">Room</td><td class="dataCol last">'+calEvent.roomName+'</td></tr></tbody></table></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div>';
+                }
+                else if(calEvent.typeOfEvent=='Visit End') {
+                    //tooltip = '<div id="toolTipDiv" class="bPageBlock brandSecondaryBrd secondaryPalette"><div class="pbHeader brandSecondaryBrd"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="pbTitle"><h2 class="mainTitle">Visit End</h2></td><td class="pbButton"></td></tr></tbody></table></div><div class="pbBody"><table class="detailList" border="0" cellpadding="0" cellspacing="0" ><tbody><tr><td class="labelCol last" >Visit Name</td><td class="dataCol last">'+calEvent.title+'</td></tr><tr><td class="labelCol last" >Departure Time</td><td class="dataCol last">'+calEvent.start.format('hh:mm a')+'</td></tr><tr><td class="labelCol last">Room</td><td class="dataCol last">'+calEvent.roomName+'</td></tr></tbody></table></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div>';
+                    tooltip = '<div id="toolTipDiv" class="bPageBlock brandSecondaryBrd secondaryPalette"><div class="pbHeader brandSecondaryBrd"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="pbTitle"><h2 class="mainTitle">Visit End</h2></td><td class="pbButton"></td></tr></tbody></table></div><div class="pbBody"><table class="detailList" border="0" cellpadding="0" cellspacing="0" ><tbody><tr><td class="labelCol last" >Visit Name</td><td class="dataCol last">'+calEvent.title.replace(/\\"/g,"\"")+'</td></tr><tr><td class="labelCol last" >Departure Time (Location)</td><td class="dataCol last">'+calEvent.locTZStart+'</td></tr><tr><td class="labelCol last">Room</td><td class="dataCol last">'+calEvent.roomName+'</td></tr></tbody></table></div><div class="pbFooter secondaryPalette"><div class="bg"></div></div></div>';
+                }
+                
+                $("body").append(tooltip);
+                $(this).mouseover(function(e) {
+                    $(this).css('z-index', 10000);
+                    $('#toolTipDiv').fadeIn('500');
+                    $('#toolTipDiv').fadeTo('10', 1.9);
+                    }).mousemove(function(e) {
+                    $('#toolTipDiv').css('top', e.pageY + 10);
+                    $('#toolTipDiv').css('left', e.pageX +20 );
+                });
+            },    
+            eventMouseout: function(calEvent, jsEvent) {
+                   $(this).css('z-index', 8);
+                   $('#toolTipDiv').remove();
+            },
+            
+            eventDrop: function(event, delta, revertFunc) {//Triggered when dragging stops and the event has moved to a different day/time.
+
+                //alert(event.title + " was dropped on " + event.start.format());
+                //alert(event.end.format());
+                //currentCalendarDate = $('#timelineView').fullCalendar('getDate').format(timeStringFormat);
+                currentCalendarDate = $('#timelineView').fullCalendar('getDate');
+                currentCalendarView = $('#timelineView').fullCalendar('getView').name;
+                            
+                var processRequest = false;
+                var hasRoomOrPresenter = false;
+                
+                if((event.presenterCount>0 || (event.roomBooked==true || event.roomBooked=='true'))) {
+                    hasRoomOrPresenter = true;
+                    if(confirm("Invites have been sent or Room Booking has been made on this Agenda Session. Are you sure about this change?")) { 
+                        processRequest = true;
+                    }
+                }
+                else {
+                    processRequest = true;
+                }
+                if(processRequest == true || processRequest == 'true') {
+                    var startTimeString = event.start.format(timeStringFormat);
+                    var endTimeString = event.end.format(timeStringFormat);
+                    var newEventObj = {
+                                    id: event.id,
+                                    start: startTimeString,
+                                    end: endTimeString,
+                                    title: event.title,    /* use the elements text as the event title*/
+                                    url: event.url,
+                                    topicId: event.topicId,
+                                    category: event.category,
+                                    isNew: event.isNew,
+                                    isParked: event.isParked,
+                                    isDeleted: event.isDeleted,
+                                    presenterCount: event.presenterCount,
+                                    roomBooked: event.roomBooked,
+                                    roomName:event.roomName,
+                                    typeOfEvent: event.typeOfEvent,
+                                    numberOfAttendees: event.numberOfAttendees,
+                                    cateringDetails: event.cateringDetails,
+                                    sessionDuration: event.sessionDuration
+                            };
+                    
+                    //alert('In Event drop');
+                    if(eventMap[event.id]!=null) {
+                        if(eventArray!=null && eventArray.length>0) {
+                            for(var i=0;eventArray.length;i++) {
+                                if(eventArray[i].id == event.id) {
+                                    eventArray[i] = newEventObj;
+                                    eventMap[event.id] = newEventObj;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    
+                    if(hasRoomOrPresenter==true || hasRoomOrPresenter=='true') {
+                        openSessionFormForEditing(newEventObj.id,newEventObj.start,newEventObj.end);
+                    }
+                    else {
+                        //console.log('invoking saveIndividualAgendaChanges in--eventDrop event--');
+                        saveIndividualAgendaChanges(newEventObj);
+                    }
+                    
+                    /*
+                    if(changedEventMap[event.id]!=null) {
+                        if(changedEventArray!=null && changedEventArray.length>0) {
+                            for(var i=0;i<changedEventArray.length;i++) {
+                                if(changedEventArray[i].id == event.id) {
+                                    changedEventArray[i] = newEventObj;
+                                    changedEventMap[event.id] = newEventObj;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else if(changedEventArray!=null) {
+                        changedEventArray.push(newEventObj);
+                        changedEventMap[event.id] = newEventObj;
+                    }
+                    */
+                    
+                    
+                    /*if (!confirm("Are you sure about this change?")) {
+                        revertFunc();
+                    }*/
+                }
+                else {
+                    revertFunc();   
+                }
+            },
+                    
+            drop: function(date) { // this function is called when something is dropped (from outside calendar like from parking lot)
+                
+                var currentEvent;
+                var newEvent = false;
+                var d = new Date(date.format(timeStringFormat));
+                var startTimeString = date.format(timeStringFormat);                   
+                var endTime;
+                var endTimeString;
+                //currentCalendarDate = $('#timelineView').fullCalendar('getDate').format(timeStringFormat);
+                currentCalendarDate = $('#timelineView').fullCalendar('getDate');
+                currentCalendarView = $('#timelineView').fullCalendar('getView').name;
+                            
+                /*For Parking Lot Items or Deleted Items*/
+                if(eventMap[$(this).attr("id")]!=null) {
+                    if(eventArray!=null && eventArray.length>0) {
+                        for(var i=0;i<eventArray.length;i++) {
+                            if($(this).attr("id") == eventArray[i].id) {
+                                currentEvent = eventArray[i];
+                                currentEvent.start = startTimeString;
+                                
+                                if(currentEvent.sessionDuration!=null && currentEvent.sessionDuration>0) {
+                                    endTime = new Date((d.getTime() + (currentEvent.sessionDuration*60000)));
+                                }
+                                else {
+                                    endTime = new Date((d.getTime() + (30*60000)));
+                                }
+                                endTimeString = moment(endTime);
+                                endTimeString = endTimeString.format(timeStringFormat);
+                
+                                currentEvent.end = endTimeString;
+                                console.log(currentEvent.start);
+                                console.log(currentEvent.end);
+                                if(currentEvent.isParked==true || currentEvent.isParked=='true') {
+                                    currentEvent.isParked = false;
+                                }
+                                else if (currentEvent.isDeleted==true || currentEvent.isDeleted=='true') {
+                                    currentEvent.isDeleted = false;
+                                }
+                                //console.log(currentEvent.isParked);
+                                eventArray[i] = currentEvent;
+                                eventMap[$(this).attr("id")] = currentEvent;
+                            }                           
+                        }                   
+                        //console.log('invoking saveIndividualAgendaChanges in--drop event--');                   
+                        saveIndividualAgendaChanges(currentEvent);
+                        /*
+                        if(changedEventMap[$(this).attr("id")]!=null) {
+                            if(changedEventArray!=null && changedEventArray.length>0) {
+                                for(var i=0;i<changedEventArray.length;i++) {
+                                    if($(this).attr("id") == changedEventArray[i].id) {
+                                        changedEventArray[i] = currentEvent;
+                                    }                           
+                                }
+                            }
+                        }
+                        else {
+                            changedEventArray.push(currentEvent);
+                        }
+                        changedEventMap[$(this).attr("id")] = currentEvent;
+                        */
+                        //alert(eventMap[$(this).attr("id")].id);
+                        //alert(currentEvent.start);
+                        //alert(currentEvent.toString());
+                    }
+                }
+                else {
+                    //alert('New one');
+                    if(confirm("You will now be navigated to the New Session form with selected times populated as User timezone values. Do you want to proceed?")) {
+                        newEvent = true;
+                        endTime = new Date((d.getTime() + (30*60000)));
+                        endTimeString = moment(endTime);
+                        endTimeString = endTimeString.format(timeStringFormat);
+                    
+                        var eventObject = {
+                            id: 'newEvent'+ p,
+                            start: startTimeString,
+                            end: endTimeString,
+                            title: $.trim($(this).text()),    /* use the element's text as the event title*/
+                            url: '/apex/EventForm?visitId='+'{!JSENCODE(visitId)}',
+                            topicId: $(this).attr("id"),
+                            category: '{!JSENCODE(topicCategory)}',
+                            isNew: true,
+                            isParked: false,
+                            isDeleted: false,
+                            className: 'newEvent',
+                            presenterCount: 0,
+                            roomBooked: false,
+                            roomName: '{!JSENCODE('')}',
+                            typeOfEvent: 'Agenda',
+                            numberOfAttendees: 0,
+                            cateringDetails: '{!JSENCODE('')}',
+                            sessionDuration: 0
+                        };
+                        p=p+1;
+                        currentEvent = eventObject;
+                        //currentEvent.start = moment(eventObject.start,timeStringFormat);
+                        eventMap[eventObject.id] = currentEvent;
+                        eventArray.push(currentEvent); 
+                      /*changedEventMap[eventObject.id] = currentEvent;
+                        changedEventArray.push(currentEvent);
+                      */
+                        //Timezone Changes
+                        //saveIndividualAgendaChanges(currentEvent);
+                        
+                        openSessionForm(startTimeString,endTimeString,eventObject.topicId);
+                    }else{
+                        return;
+                    }
+                }
+                //alert('p--------'+p);
+                
+                //alert('Dropping an item');
+                
+                // render the event on the calendar
+                // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+                $('#timelineView').fullCalendar('renderEvent', currentEvent, true);
+                //alert(currentEvent.id+','+currentEvent.start+','+currentEvent.end+','+currentEvent.title);
+                if(!newEvent)
+                    $(this).remove();
+                
+            
+            },
+            
+            eventDragStop: function(event,jsEvent) { //Triggered when event dragging stops. Used while dropping to parking lot or deleted sessions
+                //alert('>>>>>>>>>dragstop'+event+'*** '+jsEvent);
+                console.log('in--dragstop event--');
+                //currentCalendarDate = $('#timelineView').fullCalendar('getDate').format(timeStringFormat);
+                currentCalendarDate = $('#timelineView').fullCalendar('getDate');
+                currentCalendarView = $('#timelineView').fullCalendar('getView').name;
+                            
+                //alert('In Event Drag Stop');
+                var processRequest = false;
+                
+                var isDeleted = false;
+                var isParked = false;
+                // Deleted Events
+                //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                var deletedEventsDiv = $('#deletedEventsDiv');
+                var dofs = deletedEventsDiv.offset();
+                var dx1 = dofs.left;
+                var dx2 = dofs.left + deletedEventsDiv.outerWidth(true);
+                var dy1 = dofs.top;
+                var dy2 = dofs.top + deletedEventsDiv.outerHeight(true);
+                
+                
+                //Parking Lot
+                var parkingLotDiv = $('#parkingLotEventsDiv');
+                var pofs = parkingLotDiv.offset();
+                var px1 = pofs.left;
+                var px2 = pofs.left + parkingLotDiv.outerWidth(true);
+                var py1 = pofs.top;
+                var py2 = pofs.top + parkingLotDiv.outerHeight(true);
+                
+                //alert('x1:'+px1 + 'y1:'+py1+ 'x2:'+px2 + 'y2:'+py2);
+                //alert('eventId:'+event.id);
+                //alert('in here');
+                if ((jsEvent.pageX >= dx1 && jsEvent.pageX<= dx2 && jsEvent.pageY>= dy1 && jsEvent.pageY <= dy2) || (jsEvent.pageX >= px1 && jsEvent.pageX<= px2 && jsEvent.pageY>= py1 && jsEvent.pageY <= py2)){
+                    //alert('In corrdinates match');
+                    if((event.presenterCount>0 && (event.roomBooked==true || event.roomBooked=='true'))) {
+                        if(confirm("Parking or Deleting this Agenda Session will cancel the Room and send cancellation invites to Presenters. Do you want to proceed?")) 
+                            processRequest = true;
+                    }
+                    else if (event.presenterCount>0) {
+                        if(confirm("Parking or Deleting this Agenda Session will send cancellation invites to Presenters. Do you want to proceed?"))
+                            processRequest = true;
+                    }
+                    else if(event.roomBooked==true || event.roomBooked=='true') {
+                        if(confirm("Parking or Deleting this Agenda Session will cancel the Room. Do you want to proceed?"))                             
+                            processRequest = true;
+                    }
+                    else {
+                        processRequest = true;
+                    }           
+                }
+                
+                if(processRequest==true || processRequest=='true') {
+                    
+                    if (jsEvent.pageX >= dx1 && jsEvent.pageX<= dx2 && jsEvent.pageY>= dy1 && jsEvent.pageY <= dy2){
+                        addElementToDiv('deletedEventsDiv', event, 'eachDeletedItem');
+                        //alert('delete: '+ event.id);
+                        $('#timelineView').fullCalendar('removeEvents', event.id);
+                        event.isDeleted = true;
+                        event.isParked = false;
+                        isDeleted = true;
+                        makeDeletedItemsDraggable();
+                    }
+                    
+                    else if (jsEvent.pageX >= px1 && jsEvent.pageX<= px2 && jsEvent.pageY>= py1 && jsEvent.pageY <= py2){
+                        addElementToDiv('parkingLotEventsDiv', event, 'eachParkingLotItem');
+                        //alert('Park: '+ event.id);
+                        $('#timelineView').fullCalendar('removeEvents', event.id);                  
+                        event.isDeleted = false;
+                        event.isParked = true;
+                        isParked = true;
+                        makeParkingLotItemsDraggable();
+                    }
+                    var startTimeString = event.start.format(timeStringFormat);
+                    var endTimeString = event.end.format(timeStringFormat);
+                    /*alert(event.typeOfEvent);*/
+                    var newEventObj = {
+                                    id: event.id,
+                                    start: startTimeString,
+                                    end: endTimeString,
+                                    title: event.title,    /* use the element's text as the event title*/
+                                    url: event.url,
+                                    topicId: event.topicId,
+                                    category: event.category,
+                                    isNew: event.isNew,
+                                    isParked: event.isParked,
+                                    isDeleted: event.isDeleted,
+                                    presenterCount: event.presenterCount,
+                                    roomBooked: event.roomBooked,
+                                    roomName: event.roomName,
+                                    typeOfEvent: event.typeOfEvent,
+                                    numberOfAttendees: event.numberOfAttendees,
+                                    cateringDetails: event.cateringDetails,
+                                    sessionDuration: event.sessionDuration
+                            };
+                    
+                    if(isDeleted || isParked) {
+                        if(eventArray!=null && eventArray.length>0) {
+                                for(var i=0;i<eventArray.length;i++) {
+                                    if(eventArray[i].id==event.id)
+                                        eventArray[i] = newEventObj;
+                                        break;
+                                }                       
+                                eventMap[event.id] = newEventObj;                       
+                            }
+                      /*
+                        var found = 0;  
+                        if(changedEventArray!=null) {
+                            if(changedEventArray.length>0) {
+                                for(var i=0;i<changedEventArray.length;i++) {
+                                    if(changedEventArray[i].id==event.id) {
+                                        found =1;
+                                        changedEventArray[i] = newEventObj;
+                                        break;
+                                    }
+                                }                       
+                            }
+                            if(found ==0 || changedEventArray.length==0) {
+                                changedEventArray.push(newEventObj);                                                    
+                            }
+                            changedEventMap[event.id] = newEventObj;
+                        }
+                     */
+                     //console.log('invoking saveIndividualAgendaChanges in--dragstop event--');
+                     saveIndividualAgendaChanges(newEventObj);
+                    }
+                }   /* if processRequest ends here*/
+            },
+            
+            eventResize: function(event, delta, revertFunc) {
+                
+                            //currentCalendarDate = $('#timelineView').fullCalendar('getDate').format(timeStringFormat);
+                            currentCalendarDate = $('#timelineView').fullCalendar('getDate');
+                            currentCalendarView = $('#timelineView').fullCalendar('getView').name;
+                            console.log('currentCalendarView:'+currentCalendarView);
+                            /*var processRequest = true;
+                
+                            if((event.presenterCount>0 && (event.roomBooked==true || event.roomBooked=='true'))) {
+                                if(confirm("Rescheduling this Event will cancel the Room and send cancellation invites to Presenters. Do you want to proceed?")) 
+                                    processRequest = false;
+                            }
+                            else if (event.presenterCount>0) {
+                                if(confirm("Rescheduling this Event will send cancellation invites to Presenters. Do you want to proceed?"))
+                                    processRequest = false;
+                            }
+                            else if(event.roomBooked==true || event.roomBooked=='true') {
+                                if(confirm("Rescheduling this Event will cancel the Room. Do you want to proceed?"))                                
+                                    processRequest = false;
+                            }
+                
+                            */
+                            //if(processRequest==false || processRequest=='false') {
+                                //alert('In Event Resize');
+                                //alert('Dragged:'+event.id+','+event.start.format()+','+event.end.format());
+                                //alert('event.start:'+event.start.format(timeStringFormat));
+                                //alert('event.end:'+event.end.format(timeStringFormat));
+                                
+                                var processRequest = false;
+                                var hasRoomOrPresenter = false;
+                
+                                if((event.presenterCount>0 || (event.roomBooked==true || event.roomBooked=='true'))) {
+                                    hasRoomOrPresenter = true;
+                                    if(confirm("Invites have been sent or Room Booking has been made on this Agenda Session. Are you sure about this change?")) { 
+                                        processRequest = true;
+                                    }
+                                }
+                                else {
+                                    processRequest = true;
+                                }
+                                if(processRequest == true || processRequest == 'true') {
+                                
+                                    var startTimeString = event.start.format(timeStringFormat);
+                                    var endTimeString = event.end.format(timeStringFormat);
+                                    var newEventObj = {
+                                        id: event.id,
+                                        start: startTimeString,
+                                        end: endTimeString,
+                                        title: event.title,    /* use the element's text as the event title*/
+                                        url: event.url,
+                                        topicId: event.topicId,
+                                        category: event.category,
+                                        isNew: event.isNew,
+                                        isParked: event.isParked,
+                                        isDeleted: event.isDeleted,
+                                        presenterCount: event.presenterCount,
+                                        roomBooked: event.roomBooked,
+                                        roomName:event.roomName,
+                                        typeOfEvent: event.typeOfEvent,
+                                        numberOfAttendees: event.numberOfAttendees,
+                                        cateringDetails: event.cateringDetails,
+                                        sessionDuration: event.sessionDuration
+                                        }
+                                    if(eventMap[event.id]!=null) {
+                                        if(eventArray!=null && eventArray.length>0) {
+                                            for(var i=0;i<eventArray.length;i++) {
+                                                if(eventArray[i].id == event.id) {
+                                                    eventArray[i] = newEventObj;
+                                                    eventMap[event.id] = newEventObj;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    if(hasRoomOrPresenter==true || hasRoomOrPresenter=='true') {
+                                        openSessionFormForEditing(newEventObj.id,newEventObj.start,newEventObj.end);
+                                    }
+                                    else {
+                                        //console.log('invoking saveIndividualAgendaChanges in--eventResize event--');
+                                        saveIndividualAgendaChanges(newEventObj);
+                                    }
+                                    /*
+                                    if(changedEventMap[event.id]!=null) {
+                                        //alert('there in changedEvent array');
+                                        if(changedEventArray!=null && changedEventArray.length>0) {
+                                            for(var i=0;i<changedEventArray.length;i++) {
+                                                if(changedEventArray[i].id == event.id) {
+                                                    changedEventArray[i] = newEventObj;
+                                                    changedEventMap[event.id] = newEventObj;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        //alert('not there in changedEvent array');
+                                        //console.log('event.start:'+event.start);
+                                        //console.log('event.end:'+event.end);
+                                        //event.start = moment(event.start).format(timeStringFormat);
+                                        //event.end = moment(event.end).format(timeStringFormat);
+                                        //console.log('event.start1:'+event.start);
+                                        //console.log('event.end1:'+event.end);
+                                        
+                                        changedEventArray.push(newEventObj);
+                                        changedEventMap[event.id] = newEventObj;
+                                        //alert('event.isDeleted:'+event.isDeleted);                            
+                                    }
+                                    */
+                                //}
+                                /*else {
+                                    revertFunc();
+                                }    //end processRequest check
+                                */
+                            }
+                            else {
+                                revertFunc();   
+                            }
+                        },
+                        
+        select: function(start, end, jsEvent) {
+                    
+                    //currentCalendarDate = $('#timelineView').fullCalendar('getDate').format(timeStringFormat);
+                    currentCalendarDate = $('#timelineView').fullCalendar('getDate');
+                    currentCalendarView = $('#timelineView').fullCalendar('getView').name;
+                            
+                    var startTimeString = start.format(timeStringFormat);       
+                    var endTimeString = end.format(timeStringFormat);       
+                        
+                    //console.log(start.format());
+                    //console.log(start.format(timeStringFormat));
+                    
+                    if(confirm("You will now be navigated to the New Session form with selected times populated as User timezone values. Do you want to proceed?")) {
+                        
+                        if(changedEventArray!=null && changedEventArray.length>0) {
+                            if(confirm("Do you want to save the changes before navigating?")) {
+                                saveAgendaChanges();
+                            }
+                        }
+                        //console.log('startTimeString:'+startTimeString);
+                        //console.log('endTimeString:'+endTimeString);
+                        
+                        openAgendaSessionForm(startTimeString,endTimeString);
+                    }
+                    $('#timelineView').fullCalendar('unselect');
+                    $('#toolTipDiv').remove();                  
+        }
+        
+        
+        });
+        // Added below Code to Resize Calendar in Lighhtning - Timeline selection has some issues in Lightning
+        $(window).trigger('resize');
+    }
+        
+       
+    
+    /* Function to render the session topics when a Topic category is selected*/
+    function renderSessiontopics(sessionTopicList) {
+        
+        var topicsList = [];
+        if(sessionTopicList!=null && sessionTopicList!='') {
+            topicsList = sessionTopicList;
+        }
+    }
+    
+    function makeTemplatesDraggable() {
+        $('#availableTopics .eachTopicDiv').each(function() {
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+            
+        });
+    }
+    
+    function makeDeletedItemsDraggable() {
+        $('#deletedEventsDiv .eachDeletedItem').each(function() {
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+            
+        });
+    }   
+       
+
+    function makeParkingLotItemsDraggable() {
+        $('#parkingLotEventsDiv .eachParkingLotItem').each(function() {
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+            
+        });
+    }   
+    
+    
+    function addElementToDiv(parentId, event, className) {
+        var elementId = document.getElementById(parentId);
+        var eventDetails = "<div id="+ event.id + " class="+ className + " >" + event.title +"</div>";
+        //alert('eventDetails:'+eventDetails);
+        $('#'+parentId).append(eventDetails);
+        makeDeletedItemsDraggable();
+    }
+    
+    function viewPrintJS() {
+        var selected_View=document.getElementById('selectView').value;
+        var selectedTypeofFile=document.getElementById('selectTypeofFile').value;
+        var urlValue=selected_View+"&selectedTypeofFile="+selectedTypeofFile;
+        window.open(urlValue,'_blank');
+    }
+    
+    function redirectToVisit(visitid)  {
+                
+        if('{!$User.UITheme}'=='Theme4d') 
+        { 
+            sforce.one.navigateToURL('/'+ visitid); 
+        } 
+        else{ 
+            window.open('/'+ visitid) 
+        }
+    }
+    
+    </script>
+    
+    <apex:form id="formId">
+        
+        <c:AjaxStatusIndicator statusText="Processing..."/>
+    
+    <script>
+        /*
+        console.log('currentCalendarDate--'+currentCalendarDate);
+    currentCalendarDate = '{!JSENCODE(visitStartDate)}';
+    console.log('after--currentCalendarDate--'+currentCalendarDate);
+    */
+        instantiateScriptVariables();
+    </script>
+    
+    <div class="bPageTitle">
+        <div class="ptBody">
+            <div class="content">
+                <img title="Agenda" class="pageTitleIcon" alt="Agenda" src="/s.gif"></img>
+                <h1 class="pageType">
+                    <!--<a href="/{!JSENCODE(visitId)}" target="_blank">{!JSENCODE(visitString)}</a>-->
+                    <apex:commandLink onclick="redirectToVisit('{!JSENCODE(visitId)}');" title="visit" value="{!JSENCODE(visitString)}" rerender="dummy"/>
+                    <span class="titleSeparatingColon">:</span>
+                </h1>
+                <h2 class="pageDescription"> Agenda Builder</h2>
+                <div class="blank">&nbsp;</div>
+            </div>
+            <div class="links">
+               <!-- <a title="Help for this Page (New Window)" href="#.">
+                    <span class="helpLink">Help for this Page</span>
+                    <img class="helpIcon" alt="" src="/s.gif"></img>
+                </a>-->
+            </div>
+         </div>
+         <div class="ptBreadcrumb"></div>
+    </div>
+    <!--<div id="full"  style="background:#FFD47F;height:100%;width:100%;overflow-x: auto;overflow-y: auto;">
+        <apex:sectionHeader title="{!visitString}" subtitle="Agenda Timeline"   />
+    </div>-->
+    <apex:pageMessages id="pageMsg"/>
+<div class="bPageBlock">
+    <div class="pbBody">
+<!--Left Panel Starts-->
+    <div class="leftContent">
+        <div class="btnsDiv" >
+            <!--<apex:commandButton value="New Session" action="{!createAgenda}" status="progressIndicator">
+                <apex:param name="visitId" value="{!visitId}"/>
+            </apex:commandButton>-->
+            <!-- <apex:outputPanel id="topPanel" layout="span">
+                <input type="button" class="btn" value="Save Changes" onclick="saveAgendaChanges();"/>
+            </apex:outputPanel>
+             -->
+        </div>
+                
+        <div class="printDiv">
+            <select id="selectView" style="width:45%;">
+                <option value="{!agendaTemplatePage}?visitId={!visitId}&viewType={!$Label.AgendaCustomerView}">Customer View</option>
+                <option value="{!agendaTemplatePage}?visitId={!visitId}&viewType={!$Label.AgendaPresenterView}">Presenter View</option>
+                <option value="{!agendaTemplatePage}?visitId={!visitId}&viewType={!$Label.AgendaVisitTeamView}">Visit Team View</option>
+            </select>
+            &nbsp;
+            <select id="selectTypeofFile" style="width:30%;">
+                <!--<option value="{!$Label.PDF}">PDF</option>-->
+                <option value="{!$Label.Word}">Word</option>
+            </select>
+            &nbsp;
+            <!-- <apex:commandButton value="View/Print" onclick="var urlValue=document.getElementById('selectView').value;window.open(urlValue,'_blank');" rerender="dummy"/> -->
+            <apex:commandButton value="View/Print" onclick="viewPrintJS();" rerender="dummy"/>
+        </div>
+        
+        &nbsp;
+                 
+        <!-- Templates and topics Selection Div -->
+        <div class="row">
+            <div class="label">Topic Categories</div>
+            <div class="field">
+                <apex:selectList value="{!topicCategory}" id="topicCategory" size="1" onchange="getSessionTopics();">
+                    <apex:selectOptions value="{!TopicCategories}"/>
+                </apex:selectList>
+           </div>
+       </div>
+        <div class="row">
+          <!-- <div class="label">Available Templates</div> -->
+          <div class="field">
+            <apex:outputPanel id="availableTopicsPnl">
+              <div id="availableTopics" class="multipleOption" style="display:block;">
+                  <div id="availableTopicsDiv" style="display:block;">
+                      <apex:repeat value="{!sessionTopicList}" var="eachTopic">
+                          <div id="{!eachTopic.Id}" class="eachTopicDiv">
+                              {!eachTopic.TopicName__c}
+                          </div>
+                      </apex:repeat>
+                      <script>
+                          makeTemplatesDraggable();
+                      </script>
+                  </div>
+              </div>
+            </apex:outputPanel>
+          </div>
+      </div>
+        &nbsp;
+        <!-- Parking Lot Div -->
+        <div class="row">
+          <div class="label">Parking Lot</div>
+          <div class="field">
+              <div id="parkingLotEventsDiv" class="multipleOption">
+                  <apex:repeat value="{!parkingLotEventsList}" var="eachParkingLotItem">
+                      <div id="{!eachParkingLotItem.id}" class="eachParkingLotItem">
+                          {!eachParkingLotItem.agendaTitle}
+                      </div>
+                      <script>
+                                var eventArrayObj = new ActualEventObj();
+                                eventArrayObj.id= '{!JSENCODE(eachParkingLotItem.id)}';
+                                eventArrayObj.start= '{!JSENCODE(eachParkingLotItem.startTime)}';
+                                eventArrayObj.end= '{!JSENCODE(eachParkingLotItem.endTime)}';
+                                eventArrayObj.title= '{!JSENCODE(eachParkingLotItem.agendaTitle)}';
+                                eventArrayObj.url = '{!JSENCODE(eachParkingLotItem.url)}';
+                                eventArrayObj.className = '{!JSENCODE(eachParkingLotItem.className)}';
+                                eventArrayObj.topicId = '{!JSENCODE(eachParkingLotItem.topicId)}';
+                                eventArrayObj.category = '{!JSENCODE(eachParkingLotItem.category)}';
+                                eventArrayObj.classifier= '{!JSENCODE(eachParkingLotItem.classifier)}';                               
+                                eventArrayObj.isDeleted = '{!JSENCODE(eachParkingLotItem.isDeleted)}';
+                                eventArrayObj.isParked = '{!JSENCODE(eachParkingLotItem.isParked)}';
+                                eventArrayObj.isNew = '{!JSENCODE(eachParkingLotItem.isNew)}';
+                                eventArrayObj.presenterCount = {!eachParkingLotItem.presenterCount};
+                                eventArrayObj.roomBooked = '{!JSENCODE(eachParkingLotItem.roomBooked)}';
+                                eventArrayObj.roomName = '{!JSENCODE(eachParkingLotItem.roomName)}';
+                                eventArrayObj.typeOfEvent = '{!JSENCODE(eachParkingLotItem.typeOfEvent)}';
+                                eventArrayObj.numberOfAttendees = {!eachParkingLotItem.numberOfAttendees};
+                                eventArrayObj.cateringDetails = '{!JSENCODE(eachParkingLotItem.cateringDetails)}';
+                                eventArrayObj.sessionDuration = {!eachParkingLotItem.sessionDuration};
+                                
+                                eventMap[eventArrayObj.id] = eventArrayObj;
+                                eventArray.push(eventArrayObj);
+                                parkingLotArray.push(eventArrayObj);
+                        </script>
+                  </apex:repeat>
+                        <script>
+                            makeParkingLotItemsDraggable();
+                        </script>
+              </div>
+          </div>
+      </div><!-- End Parking Lot Div -->
+        <apex:repeat value="{!activeEventsList}" var="eachActiveEvent">
+            <script>
+            var eventArrayObj = new ActualEventObj();
+            eventArrayObj.id= '{!JSENCODE(eachActiveEvent.id)}';
+            eventArrayObj.start= '{!JSENCODE(eachActiveEvent.startTime)}';
+            eventArrayObj.end= '{!JSENCODE(eachActiveEvent.endTime)}';
+            eventArrayObj.title= '{!JSENCODE(eachActiveEvent.agendaTitle)}';
+            eventArrayObj.url = '{!JSENCODE(eachActiveEvent.url)}';
+            eventArrayObj.className = '{!JSENCODE(eachActiveEvent.className)}';
+            eventArrayObj.topicId = '{!JSENCODE(eachActiveEvent.topicId)}';
+            eventArrayObj.category = '{!JSENCODE(eachActiveEvent.category)}';
+            eventArrayObj.classifier= '{!JSENCODE(eachActiveEvent.classifier)}';                              
+            eventArrayObj.isDeleted = '{!JSENCODE(eachActiveEvent.isDeleted)}';
+            eventArrayObj.isParked = '{!JSENCODE(eachActiveEvent.isParked)}';
+            eventArrayObj.isNew = '{!JSENCODE(eachActiveEvent.isNew)}';
+            eventArrayObj.presenterCount = {!eachActiveEvent.presenterCount};
+            eventArrayObj.roomBooked = '{!JSENCODE(eachActiveEvent.roomBooked)}';
+            eventArrayObj.roomName = '{!JSENCODE(eachActiveEvent.roomName)}';
+            eventArrayObj.typeOfEvent = '{!JSENCODE(eachActiveEvent.typeOfEvent)}';
+            eventArrayObj.numberOfAttendees = {!eachActiveEvent.numberOfAttendees};
+            eventArrayObj.cateringDetails = '{!JSENCODE(eachActiveEvent.cateringDetails)}';
+            eventArrayObj.sessionDuration = {!eachActiveEvent.sessionDuration};
+                                
+                                
+            //console.log('eventArrayObj.roomBooked:'+eventArrayObj.roomBooked);
+            eventMap[eventArrayObj.id] = eventArrayObj;
+            eventArray.push(eventArrayObj);
+        </script>
+        </apex:repeat>
+        
+        &nbsp;
+        <!-- Deleted Events Div -->        
+        <div class="row">
+          <div class="label">Deleted Sessions</div>
+          <div class="field">
+              <div id="deletedEventsDiv" class="multipleOption"> 
+              </div>
+          </div>
+      </div>  
+    </div><!--End of left panel-->
+     
+    <!-- Right Panel -->                 
+    <div id="agendasidebar2" class="calendarViewDiv">                    
+        <!--<apex:outputPanel id="topPanel" layout="block">
+                <input type="button" class="btn" value="Save Changes" onclick="saveAgendaChanges();"/>
+            </apex:outputPanel>-->    
+        <apex:outputPanel id="bottomPanel" layout="block">
+            <div id="timelineView"></div>
+            
+            <script>
+                loadAgendaTimeLine('{!JSENCODE(activeEventsListJSON)}');
+            </script>
+        </apex:outputPanel>
+    </div>                     
+     <!-- End of Right Panel -->  
+    </div>
+</div>    
+        <apex:actionFunction name="getSessionTopics" action="{!getSessionTopicsforCategory}" status="progressIndicator" oncomplete="renderSessiontopics('{!sessionTopicList}');" rerender="dummy,availableTopicsPnl,sessionTopicPanel"/>  
+        <apex:actionFunction name="saveChanges" action="{!saveAgendaChanges}" status="progressIndicator" rerender="dummy" oncomplete="navigateToTimeline();">
+            <apex:param name="changedArray" value="" assignTo="{!changedEventsJSONString}" />
+        </apex:actionFunction>
+        <apex:actionFunction name="saveImmediateChanges" action="{!saveIndividualAgendaChanges}" rerender="formId" status="progressIndicator">
+            <apex:param name="changedIndividualEventJSONString" value="" assignTo="{!changedIndividualEventJSONString}" />
+        </apex:actionFunction>
+        <apex:actionFunction name="navigateToTimeline" action="{!redirectToTimeLine}" status="progressIndicator" rerender="dummy"/>
+        <!-- Timezone Changes -->
+        <!-- 
+        <apex:actionFunction name="openSessionForm" action="{!createAgenda}" status="progressIndicator" rerender="dummy">
+            <apex:param name="startTime" value=""/>
+            <apex:param name="endTime" value=""/>           
+        </apex:actionFunction>
+         -->
+        <apex:actionFunction name="openSessionForm" action="{!createAgenda}" status="progressIndicator" rerender="dummy">
+            <apex:param name="startTime" value=""/>
+            <apex:param name="endTime" value=""/>           
+            <apex:param name="topicId" value=""/>           
+        </apex:actionFunction>
+        <apex:actionFunction name="openSessionFormForEditing" action="{!editAgenda}" status="progressIndicator" rerender="dummy">
+            <apex:param name="agendaRecordId" value=""/>
+            <apex:param name="newStartTime" value=""/>
+            <apex:param name="newEndTime" value=""/>            
+        </apex:actionFunction>
+        
+        <apex:actionFunction name="redirectUserToClickedSession" action="{!redirectToClickedURL}" status="progressIndicator" rerender="dummy">
+            <apex:param name="clickedURL" value=""/>
+        </apex:actionFunction>        
+    </apex:form>
+        
+            
+        
+           
+           
+           
+            
+            
+                            
+                        
+            
+            
+                        
+            
+
+       
+
+
+    
+       
+    
+    <!-- END OF APEX FORM -->
+    
+    <script>
+        function saveAgendaChanges() {
+            //console.log('-----EventArray:'+eventArray);
+            
+            console.log('-----ChangedEventArray:'+changedEventArray);
+            //console.log('----eventArray'+JSON.stringify(eventArray));
+            //console.log('----changedEventArray:'+JSON.stringify(changedEventArray));
+            
+            var tempArrayObj;
+            tempArray=[];
+            
+            if(changedEventArray!=null && changedEventArray.length>0) {
+                for(var i=0;i<changedEventArray.length;i++) {
+                    tempArrayObj = new EventObj();
+                    tempArrayObj.id= changedEventArray[i].id;
+                    var startTimeMoment = moment(changedEventArray[i].start);
+                    //console.log(changedEventArray[i].start.format());
+                    //console.log(startTimeMoment);
+                    
+                    tempArrayObj.startTime= changedEventArray[i].start;
+                    
+                    tempArrayObj.endTime= changedEventArray[i].end;
+                    tempArrayObj.agendaTitle= changedEventArray[i].title;
+                    tempArrayObj.url = changedEventArray[i].url;
+                    //tempArrayObj.className = changedEventArray[i].className;
+                    tempArrayObj.topicId = changedEventArray[i].topicId;
+                    tempArrayObj.category = changedEventArray[i].category;
+                    tempArrayObj.classifier= changedEventArray[i].classifier;
+                    tempArrayObj.isParked = changedEventArray[i].isParked;
+                    //console.log('changedEventArray[i].isParked:'+changedEventArray[i].isParked);
+                    //console.log('tempArrayObj.isParked:'+tempArrayObj.isParked);
+                    tempArrayObj.isDeleted = changedEventArray[i].isDeleted;
+                    tempArrayObj.isNew = changedEventArray[i].isNew;
+                    tempArrayObj.presenterCount = changedEventArray[i].presenterCount;
+                    tempArrayObj.roomBooked = changedEventArray[i].roomBooked;
+                    tempArrayObj.roomName = changedEventArray[i].roomName;
+                                
+                    tempArray.push(tempArrayObj);
+                }
+            }
+            console.log('---tempArrayObj--'+tempArray);
+            //console.log('---tempArrayObjJSON--'+JSON.stringify(tempArray));
+            saveChanges(JSON.stringify(tempArray));
+        }
+        
+        function openAgendaSessionForm(startTime,endTime) {
+            //console.log('startTime:'+startTime);
+            //console.log('endTime:'+endTime);
+            
+            openSessionForm(startTime,endTime);
+        }
+        
+        function redirectUserToSessionForm(newURL) {
+            redirectUserToClickedSession(newURL);
+        }
+        
+        
+        function saveIndividualAgendaChanges(event) {
+        
+            var tempArrayObj = new EventObj();
+            tempArrayObj.id= event.id;
+            var startTimeMoment = moment(event.start);
+            /*console.log(event.start.format());*/
+            /*console.log(startTimeMoment);*/
+            
+            tempArrayObj.startTime= event.start;
+            
+            tempArrayObj.endTime= event.end;
+            tempArrayObj.agendaTitle= event.title;
+            tempArrayObj.url = event.url;
+            //tempArrayObj.className = event.className;
+            tempArrayObj.topicId = event.topicId;
+            tempArrayObj.category = event.category;
+            tempArrayObj.classifier= event.classifier;
+            tempArrayObj.isParked = event.isParked;
+            /*console.log('event.isParked:'+event.isParked);*/
+            /*console.log('tempArrayObj.isParked:'+tempArrayObj.isParked);*/
+            tempArrayObj.isDeleted = event.isDeleted;
+            tempArrayObj.isNew = event.isNew;
+            tempArrayObj.presenterCount = event.presenterCount;
+            tempArrayObj.roomBooked = event.roomBooked;
+            tempArrayObj.roomName = event.roomName;
+            console.log(JSON.stringify(tempArrayObj));
+            saveImmediateChanges(JSON.stringify(tempArrayObj));
+        }
+        
+   </script>
+    
+
+    <style>
+    
+    <!-- Style Added for Lightning Experience -->
+                body {  
+                        font-size:75% !important;
+                    }
+        .multipleOption {
+            height:100px;
+            overflow-y: auto;
+        }
+        .eachParkingLotItem {
+            cursor:pointer;
+            margin:3%;
+        }
+        .eachTopicDiv {
+            cursor:pointer;
+            margin:3%;
+        }
+        .eachDeletedItem{
+            cursor:pointer;
+            margin:3%;
+        }
+        
+        #parkingLotEventsDiv div{
+            font-weight: bold;
+        }
+        
+        #deletedEventsDiv div{
+            font-weight: bold;
+        }
+        
+        #availableTopics #availableTopicsDiv div{
+            font-weight: bold;
+        }
+        
+        #toolTipDiv {
+            width:250px;
+            height:auto;
+            background:#FFFFFF;
+            position:absolute;
+            z-index:10001;
+            //border-bottom-left-radius: 100%30px;
+            //border-bottom-right-radius: 100%30px;
+            //border-top-right-radius: 100%30px;
+        }
+        .fc-event{
+            background-color:#4444D4;
+            border: 1px solid #ffffff;
+            
+            color: #ffffff !important;
+        }
+        .fc-event:hover{
+            color: #000000 !important;
+        }
+        .fc-today {
+            background-color: white !important;
+        }
+        .startAndEnd {
+            border: 1px solid orange;
+        }
+    </style>
+    
+    <!-- Status counter during AJAX requests -->
+
+    <style>
+        #disablingDiv
+            {           
+                /* Do not display it on entry 
+                Display it on the layer with index 1001.            
+                Make sure this is the highest z-index value         
+                used by layers on that page */
+                z-index:1001;           
+                display : none;
+                /* make it cover the whole screen */
+                
+                position: absolute;         
+                top: 0px;           
+                left: 0px;          
+                //width: 100%;            
+                //height: 100%;           
+                /* make it white but fully transparent */
+                
+                background-color: #6D7B8D;  
+                opacity:0.60;       
+                filter: alpha(opacity=60);  
+            }
+            
+    </style>
+    <div id="disablingDiv"></div>
+        
+    <div style="position:absolute;top:35%;left:50%">
+        <apex:actionStatus id="counterStatus" onstart="showDisablingDiv();" onstop="hideDisablingDiv();"> 
+            <apex:facet name="start">                
+                <apex:outputPanel style="padding-left:29%;">
+                    <img src="{!$Resource.ajaxLoader}" width="40px" height="40px"/>
+                </apex:outputPanel>
+            </apex:facet>
+        </apex:actionStatus>    
+    </div>
+ 
+    <script>
+        function showDisablingDiv(){
+            var divHeight=window.document.body.scrollHeight+'px';
+            document.getElementById('disablingDiv').style.display = 'block';
+            document.getElementById('disablingDiv').style.width= '100%';
+            document.getElementById('disablingDiv').style.height= divHeight;
+        }
+        
+        function hideDisablingDiv(){
+            document.getElementById('disablingDiv').style.display = 'none';
+        }
+    </script>
+
+    <!-- END OF Status counter during AJAX requests  -->    
+
+</apex:page>

@@ -1,0 +1,18 @@
+<apex:page standardController="Opportunity">
+
+	<apex:includeLightning />
+    <div id="lightning" />
+    <script>
+        $Lightning.use("BRNSHRK:BrainsharksCIC", function() {
+            $Lightning.createComponent("BRNSHRK:Brainsharks",{"recordId" : "{!$CurrentPage.parameters.id}" , "isClassic" : true},"lightning",function(cmp){
+                $A.eventService.addHandler({
+                    event: 'force:navigateToURL',
+                    handler: function(event) {   
+                        window.parent.location = event.getParam('url');
+                    }
+                });
+            });                                 
+        });
+    </script>
+
+</apex:page>

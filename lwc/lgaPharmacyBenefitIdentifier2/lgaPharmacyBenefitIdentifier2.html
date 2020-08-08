@@ -1,0 +1,143 @@
+<!--
+  @File Name          : lgaPharmacyBenefitIdentifier2.html
+  @Description        : 
+  @Author             : IDC Offshore 
+  @Group              : 
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    1/28/2020        IDC Offshore            Initial Version
+-->
+<template>
+    <template for:each={usrprofilenames} for:item="usrProfile">
+        <ul key = {usrProfile.userProfileName}>
+            <template if:true={usrProfile.userProfileName}>
+            
+                <div>
+                    <div style="font-size: large;"> 
+                        <lightning-icon icon-name="standard:catalog" ></lightning-icon> Pharmacy Benefit Identifier
+                    </div >
+                    
+                </div>
+                </br>
+                <div style="font-size: medium;">
+                    Enter the Pharmacy Benefit Identifiers below.
+                </div>
+                </br>
+                <div class="slds-m-around_medium slds-wrap" >
+                    <template if:true={currentPageData}>
+                        <lightning-card >
+                            <lightning-layout >
+                                <lightning-layout-item size="12" padding="around-medium">
+                                    <div class="slds-wrap slds-table slds-scrollable " style="width: 100%;height: 100%;" >
+                                    <!-- Start of Table -->
+                                        <table aria-multiselectable="true" class="slds-table slds-table_bordered slds-wrap slds-table_cell-buffer slds-table_striped" role="grid" style="width: 100%;">
+                                            <thead class=" slds-wrap slds-scrollable slds-scrollable_x">
+                                                <tr >
+                                                    <th class ="slds-text slds-text-align_centre  slds-cell-wrap" scope ="col" style="width:10px;color:black;font:bold; " >
+                                                        <div class="  slds-cell-wrap " title="Pharmacy Benefit Identifier">Pharmacy Benefit Identifier</div>
+                                                    </th>
+                                                    <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:10px;color:black;font:bold; ">
+                                                        <div class="  slds-cell-wrap " title="Base Contract Code">Base Contract Code</div>
+                                                    </th>
+                                                    <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:10px;color:black;font:bold; ">
+                                                        <div class="  slds-cell-wrap " title="Custom Contract Code">Custom Contract Code</div>
+                                                    </th>
+                                                    <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:10px;color:black;font:bold; ">
+                                                        <div class="  slds-cell-wrap " title="HPCC Buy-up">HPCC Buy-up</div>
+                                                    </th>
+                                                    <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:10px;color:black;font:bold; ">
+                                                        <div class="  slds-cell-wrap " title="Suffix">Suffix</div>
+                                                    </th>
+                                                    <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:10px;color:black;font:bold; ">
+                                                        <div class="  slds-cell-wrap " title="Plan Name">Plan Name</div>
+                                                    </th>
+                                                    <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:10px;color:black;font:bold; ">
+                                                        <div class="  slds-cell-wrap " title="Plan Type">Plan Type</div>
+                                                    </th>
+                                                    <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:10px;color:black;font:bold; ">
+                                                        <div class="  slds-cell-wrap " title="Funding Type">Funding Type</div>
+                                                    </th>
+                                                    <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:10px;color:black;font:bold; ">
+                                                        <div class="  slds-cell-wrap " title="Description">Description</div>
+                                                    </th>
+                                                    <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:10px;color:black;font:bold; ">
+                                                        <div class="  slds-cell-wrap " title="Effective Date">Effective Date</div>
+                                                    </th>
+                                                    <!-- <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:7px;color:black;font:bold; ">
+                                                        <div class="slds-wrap " title="Group Number">Group Number</div>
+                                                    </th>
+                                                    <th class ="slds-text slds-text-align_centre slds-cell-wrap"  scope ="col" style="width:7px;color:black;font:bold; ">
+                                                        <div class=" slds-wrap " title="Product Stage">Product Stage</div>
+                                                    </th> -->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <template iterator:it={paginationList}>
+                                                    <tr key={it.value.gpdID}>
+                                                        <td >
+                                                            <div >
+                                                                <lightning-input type="text" key={it.value.gpdID} data-id={it.value.qliID} name="input2"  value={it.value.pharBenefit} onchange={updateValues} placeholder="Enter the pharmacy benefit identifier"  ></lightning-input>
+                                                            </div>
+                                                        </td>
+                                                        <td class=" slds-cell-wrap "> <div class=" slds-cell-wrap ">{it.value.grpContractCode} </div></td>
+                                                        <td class=" slds-cell-wrap "> <div class=" slds-cell-wrap ">{it.value.qliCustContractCode} </div> </td>
+                                                        <td class=" slds-cell-wrap "> <div class=" slds-cell-wrap ">{it.value.qliHPCC} </div></td>
+                                                        <td class=" slds-cell-wrap "> <div class=" slds-cell-wrap ">{it.value.grpSuffix} </div></td>
+                                                        <td class=" slds-cell-wrap "> <div class=" slds-cell-wrap ">{it.value.grpPlan} </div></td>
+                                                        <td class=" slds-cell-wrap "> <div class=" slds-cell-wrap ">{it.value.grpPlanType} </div></td>
+                                                        <td class=" slds-cell-wrap "> <div class=" slds-cell-wrap ">{it.value.grpFunding} </div></td>
+                                                        <td class=" slds-cell-wrap "> <div class=" slds-cell-wrap ">{it.value.grpDescription} </div></td>
+                                                        <td class=" slds-cell-wrap "> <div class=" slds-cell-wrap ">{it.value.grpEffDate} </div></td>
+                                                        <!-- <td > {it.value.grpName} </td>
+                                                        <td > {it.value.qliProdStage} </td> -->
+                                                        <!-- <td> type="text" key={myRecord.Id} data-id={myRecord.Id} name="input2"  value={myRecord.Name} onchange={updateValues}
+                                                            <lightning-button-icon icon-name="utility:save" alternative-text="Save" variant="container" size="medium" class="slds-m-left_xx-small" onclick={handleContactClick}></lightning-button-icon>
+                                                        </td> -->
+                                                    </tr>
+                                                </template>
+                                            </tbody>
+                                        </table>
+                                    <!-- End of Table -->
+                                    </div>
+                                </lightning-layout-item>
+                                <br/>
+                            </lightning-layout>
+                            <div >
+
+                                <div class="slds-align_absolute-left">
+                                        
+                                    <div class="slds-align_absolute-left slds-left slds-float--left">
+                                        <template if:false={isFirstPage}>
+                                            <lightning-button label="Previous" variant="brand" class="slds-m-left_x-small" onclick={previous}></lightning-button>
+                                        </template>
+                                    </div>
+                                
+                                </div>
+                                <div class="slds-align_absolute-right">
+                                    
+                                        <div class="slds-align_absolute-right slds-right slds-float--right">
+                                            <template if:false={isLastPage}>
+                                                <lightning-button label="Next" variant="brand" class="slds-m-left_x-small" onclick={next}></lightning-button>
+                                            </template>
+                                        </div>
+                                
+                                </div>
+                                <div class="slds-align_absolute-center">
+                                    
+                                    <div class="slds-align_absolute-center slds-center slds-float--center">
+                                        <lightning-button label="Save" variant="brand" class="slds-m-left_x-small" onclick={handleSave}></lightning-button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </lightning-card>
+                    </template>
+                    <template if:true={dataLoadError}>
+                        <b>This page has no records to display</b>
+                    
+                    </template>
+                </div>
+            </template>
+        </ul>
+    </template>
+ </template>

@@ -1,0 +1,36 @@
+<apex:page id="errorPage">
+	<apex:outputPanel rendered="{!ISBLANK($CurrentPage.parameters.reason)}">
+	<table cellspacing="10">
+		<tbody>
+			<tr>
+				<td>
+					<span style="font-weight: bold; font-size: 12pt;">Insufficient Privileges</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary.
+					<br/><br/>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</apex:outputPanel>
+	<apex:outputPanel rendered="{!$CurrentPage.parameters.reason == 'cancelledVisit'}">
+		<table cellspacing="10">
+			<tbody>
+				<tr>
+					<td>
+						<span style="font-weight: bold; font-size: 12pt;">Access Denied</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						A cancelled visit cant be modified. Please create a new visit or clone an existing cancelled visit to create new visit with same data.
+						<br/><br/>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</apex:outputPanel>
+</apex:page>

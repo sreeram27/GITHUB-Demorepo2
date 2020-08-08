@@ -1,0 +1,60 @@
+<apex:page sidebar="false">
+    <!--====================================================-->
+    <!--Name: NewRequestButtonPageForVisitBundle                                       
+<!--Copyright :VisitOps                                                  
+<!--====================================================-->
+    <!--====================================================-->
+    <!-- Purpose: It opens Create Visit Screen Page(Create Visit) on click of New Request on Opportunity                                                                                                   
+<!---------                                                                                                               
+<!--====================================================-->
+    <!--====================================================-->
+    <!-- History                                                                                                             
+<!-- -------                                                                                                        
+<!-- VERSION  AUTHOR           DATE              DETAIL                                     RELEASE/CSR   
+<!--   1.0 -  Tanuj            02/01/2019      INITIAL DEVELOPMENT                              
+<!--   2.0 -  Tanuj            13/02/2019      Change to Open Page in Same Tab to
+avoid Pop Up issue      
+<!--   3.0 -  Bhagat           01/07/2019      HardCode sidebar tag value as false          Ticket :- I-0573
+<!--   4.0 - Tanuj            09/07/2019       Modified Script because "URL" API
+is not supported in IE11 browser            Ticket :- I-0573
+<!--====================================================-->
+    
+    <apex:includeScript value="../../soap/ajax/20.0/connection.js"/>
+    <script>
+    sforce.connection.sessionId = "{!$Api.Session_ID}";
+    var namespacePrefix = 
+        '{!IF( OR(ISBLANK($Label.visitops__namespaceprefixforschema), LOWER($Label.visitops__namespaceprefixforschema) == 'null') , '', $Label.visitops__namespaceprefixforschema)}'; 
+    
+    
+    //  var parsedUrl = new URL(window.location.href);
+    //  var id = parsedUrl.searchParams.get("id");
+    //  console.log(parsedUrl.searchParams.get("id")); 
+    
+    /** JS Code Added to get Id from URL **/   
+    
+    var parsedUrl = getUrlVars();
+    var id = parsedUrl.id;
+    
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        console.log('vars :: '+JSON.stringify(vars));
+        console.log('ID :: '+vars.id);
+        return vars;
+    }
+    /** JS code Ended **/  
+    
+    if('{!$User.UITheme}'=='Theme4d') 
+    { 
+        sforce.one.navigateToURL('/apex/'+ namespacePrefix + 'VisitScreen_SLDS?OppId='+id);
+    } 
+    else{ 
+        window.top.location = '/'+id;
+        //  window.open('/apex/'+ namespacePrefix +'VisitScreen?OppId='+id);
+        window.open('/apex/'+ namespacePrefix +'VisitScreen?OppId='+id+'&redirectURL=/'+id,'_self');    // Code Change to Open New VF Page in Same Tab 
+    }
+    </script>    
+    
+</apex:page>

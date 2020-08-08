@@ -1,0 +1,19 @@
+<apex:page standardController="Opportunity">
+<script>
+window.document.onload = new function(e){
+     
+
+    if(
+        //// Date(DD:MM:YYYY): 7/11/2019 Added JSENCODE for fixing Code scan issue PRDCRM-46538 by Accenture Offshore 
+       "{!JSENCODE($Profile.Name)}" == "Stop Loss Team" || "{!JSENCODE($Profile.Name)}" == "Stop Loss Team Dual"
+    ){
+
+        window.open("/006/e?nooverride=1","_self");
+    }else{
+        var redirect =confirm('Please navigate to the Account and use the Create Opportunity Button to the right to create a new opportunity');
+        window.open("/006/o","_self");
+        window.close();
+    }
+}
+</script>
+</apex:page>

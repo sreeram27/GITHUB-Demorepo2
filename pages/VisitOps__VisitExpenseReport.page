@@ -1,0 +1,22 @@
+<apex:page controller="VisitOps.VisitExpenseReportController">
+<div style="height: 30px;font-size: 20px;">Visit Expense Report</div>	
+	<apex:form id="formId">
+	
+		<apex:actionfunction name="testAF" action="{!getReportFilters}" rerender="pbid"/>
+	
+		<apex:panelGrid columns="4" cellpadding="20%" cellspacing="20%" style="margin-top: 15px;">
+	         <font> <b>Filter By : Location</b></font>
+		     <apex:selectList value="{!locationId}" multiselect="false" size="1" onChange="testAF();">
+		     <apex:selectOptions value="{!AvailableLocations}" />
+		     </apex:selectList>
+	            </apex:panelGrid>
+	
+	    <apex:panelGrid columns="3">
+			<apex:pageBlock id="pbid">
+	           <!-- <apex:actionFunction name="testAF3" action="{!redirectRpt2}"/> -->
+	           <analytics:reportChart reportId="{!reportId}" filter="{!reportFilter}" size="medium" cacheResults="false"/>
+		   	</apex:pageBlock>
+		</apex:panelGrid>
+
+	</apex:form>
+</apex:page>
