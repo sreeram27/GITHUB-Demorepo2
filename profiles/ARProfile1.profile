@@ -10,11 +10,11 @@
         <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
-    <loginIpRanges>
+      <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
-    <loginIpRanges>
+      <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
@@ -213,6 +213,10 @@
         <name>ViewRoles</name>
     </userPermissions>
     <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewSetup</name>
+    </userPermissions>
+     <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
     </userPermissions>
