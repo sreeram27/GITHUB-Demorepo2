@@ -5,15 +5,6 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
-     <applicationVisibilities>
-        <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>false</visible>
-    </applicationVisibilities> <applicationVisibilities>
-        <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Chatter</application>
         <default>false</default>
@@ -249,6 +240,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A160</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A161</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A161</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
