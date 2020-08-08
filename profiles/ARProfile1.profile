@@ -4682,7 +4682,7 @@
     </layoutAssignments>
     <loginHours/>
     <loginIpRanges>
-        <endAddress>255.234.123.224</endAddress>
+        <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
     <loginIpRanges>
