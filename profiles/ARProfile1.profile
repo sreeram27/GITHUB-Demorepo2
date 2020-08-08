@@ -11,21 +11,6 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>standard__Chatter</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__Chatter</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__Chatter</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>standard__Community</application>
         <default>false</default>
         <visible>true</visible>
@@ -90,7 +75,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A0001</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0071</apexClass>
@@ -1129,7 +1114,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>add</description>
+    <description>testghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh333</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.ACCField1__c</field>
@@ -4697,14 +4682,6 @@
     </layoutAssignments>
     <loginHours/>
     <loginIpRanges>
-        <endAddress>255.234.123.223</endAddress>
-        <startAddress>0.0.0.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
-        <endAddress>255.234.123.223</endAddress>
-        <startAddress>0.0.0.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
         <endAddress>255.255.255.201</endAddress>
         <startAddress>1.0.0.2</startAddress>
     </loginIpRanges>
@@ -4713,7 +4690,19 @@
         <startAddress>1.0.0.9</startAddress>
     </loginIpRanges>
     <loginIpRanges>
-        <endAddress>255.234.123.229</endAddress>
+        <endAddress>255.234.123.223</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.223</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.223</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.133</endAddress>
         <startAddress>1.1.1.1</startAddress>
     </loginIpRanges>
     <loginIpRanges>
