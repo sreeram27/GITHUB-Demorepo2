@@ -8,7 +8,7 @@
      <applicationVisibilities>
         <application>standard__AppLauncher</application>
         <default>false</default>
-        <visible>true</visible>
+        <visible>false</visible>
     </applicationVisibilities> <applicationVisibilities>
         <application>standard__AppLauncher</application>
         <default>false</default>
