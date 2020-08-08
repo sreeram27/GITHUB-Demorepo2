@@ -4690,10 +4690,6 @@
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
     <loginIpRanges>
-        <endAddress>255.234.123.223</endAddress>
-        <startAddress>0.0.0.0</startAddress>
-    </loginIpRanges>
-    <loginIpRanges>
         <endAddress>255.255.255.201</endAddress>
         <startAddress>1.0.0.2</startAddress>
     </loginIpRanges>
