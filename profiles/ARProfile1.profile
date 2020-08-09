@@ -1114,7 +1114,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>testghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh333</description>
+    <description>testghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh333teja</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.ACCField1__c</field>
