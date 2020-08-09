@@ -5,8 +5,12 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>testghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh333</description>
+    <description>testghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh333kumar</description>
     <loginIpRanges>
+        <endAddress>255.234.123.223</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+     <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
