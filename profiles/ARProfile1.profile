@@ -5,7 +5,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>mul</description>
+    <description>goal</description>
     <loginHours/>
     <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
@@ -266,6 +266,14 @@
         <name>ViewSetup</name>
     </userPermissions>
      <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewSetup</name>
+    </userPermissions>
+       <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewSetup</name>
+    </userPermissions>
+       <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
     </userPermissions>
