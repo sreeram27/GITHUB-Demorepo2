@@ -1114,7 +1114,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>add</description>
+    <description>sub</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.ACCField1__c</field>
