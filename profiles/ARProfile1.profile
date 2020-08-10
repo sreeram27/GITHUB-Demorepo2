@@ -5,7 +5,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>testghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh333kumar</description>
+    <description>adddddddddddddddd</description>
     <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>
@@ -221,6 +221,14 @@
         <name>ViewSetup</name>
     </userPermissions>
      <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewSetup</name>
+    </userPermissions>
+      <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewSetup</name>
+    </userPermissions>
+      <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
     </userPermissions>
