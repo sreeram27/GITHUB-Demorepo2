@@ -5,7 +5,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ac111</shortDescription>
-        <value>123345111111</value>
+        <value>123</value>
     </labels>
     <labels>
         <fullName>AC100</fullName>
@@ -34,14 +34,7 @@
         <protected>true</protected>
         <shortDescription>ACL24</shortDescription>
         <value>12111111</value>
-    </labels>
-    <labels>
-        <fullName>ACL25</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>ACL25</shortDescription>
-        <value>76511111</value>
-    </labels>
+    </labels>    
     <labels>
         <fullName>CustomLabelTest2</fullName>
         <language>en_US</language>
