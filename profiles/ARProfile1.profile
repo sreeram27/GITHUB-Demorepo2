@@ -35,6 +35,16 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
+	<applicationVisibilities>
+        <application>standard__Content</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+	<applicationVisibilities>
+        <application>standard__Content</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__LightningInstrumentation</application>
         <default>false</default>
@@ -149,7 +159,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A052</apexClass>
+        <apexClass>A053</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
