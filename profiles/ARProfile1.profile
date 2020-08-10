@@ -2,24 +2,25 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>A0001</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>testghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh333uyuyuyuuuu</description>
+    <description>addsub</description>
+    <loginHours/>
     <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
-      <loginIpRanges>
-        <endAddress>255.234.123.223</endAddress>
-        <startAddress>0.0.0.0</startAddress>
-    </loginIpRanges>
-      <loginIpRanges>
-        <endAddress>255.234.123.223</endAddress>
-        <startAddress>0.0.0.0</startAddress>
+    <loginIpRanges>
+        <endAddress>255.255.255.201</endAddress>
+        <startAddress>1.0.0.2</startAddress>
     </loginIpRanges>
     <loginIpRanges>
-        <endAddress>255.234.123.133</endAddress>
+        <endAddress>255.255.255.207</endAddress>
+        <startAddress>1.0.0.9</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.229</endAddress>
         <startAddress>1.1.1.1</startAddress>
     </loginIpRanges>
     <loginIpRanges>
@@ -166,7 +167,31 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageCategories</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageCssUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageDataCategories</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageDataIntegrations</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageDynamicDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>MassInlineEdit</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>OverrideForecasts</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -203,6 +228,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>UseWebLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewDataCategories</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
