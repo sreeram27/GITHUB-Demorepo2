@@ -34,7 +34,7 @@
         <protected>true</protected>
         <shortDescription>ACL24</shortDescription>
         <value>12111111</value>
-    </labels>    
+    </labels>
     <labels>
         <fullName>CustomLabelTest2</fullName>
         <language>en_US</language>
@@ -55,6 +55,13 @@
         <protected>true</protected>
         <shortDescription>DL1</shortDescription>
         <value>123244</value>
+    </labels>
+    <labels>
+        <fullName>Des12345</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Des12345</shortDescription>
+        <value>1</value>
     </labels>
     <labels>
         <fullName>ESCCustomLabel1</fullName>
