@@ -5,13 +5,17 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>add</description>
+    <description>mul</description>
     <loginHours/>
     <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
     <loginIpRanges>
+        <endAddress>255.234.123.223</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+      <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
         <startAddress>0.0.0.0</startAddress>
     </loginIpRanges>
