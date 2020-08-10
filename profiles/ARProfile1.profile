@@ -3,7 +3,7 @@
     <applicationVisibilities>
         <application>standard__AppLauncher</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
      <applicationVisibilities>
         <application>standard__AppLauncher</application>
@@ -12,7 +12,7 @@
     </applicationVisibilities>
      <applicationVisibilities>
         <application>standard__AppLauncher</application>
-        <default>true</default>
+        <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
      <applicationVisibilities>
