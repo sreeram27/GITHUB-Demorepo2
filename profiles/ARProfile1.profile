@@ -8,6 +8,16 @@
      <applicationVisibilities>
         <application>standard__AppLauncher</application>
         <default>false</default>
+        <visible>testttttttt</visible>
+    </applicationVisibilities>
+     <applicationVisibilities>
+        <application>standard__AppLauncher</application>
+        <default>false</default>
+        <visible>testttttttt</visible>
+    </applicationVisibilities>
+     <applicationVisibilities>
+        <application>standard__AppLauncher</application>
+        <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
 	<applicationVisibilities>
