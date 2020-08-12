@@ -83,7 +83,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A0123</apexClass>
-        <enabled>true</enabled>
+        <enabled>true</enabled><!--test1-->
     </classAccesses>
     <classAccesses>
         <apexClass>A01234</apexClass>
@@ -91,7 +91,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A01234567</apexClass>
-        <enabled>true</enabled>
+        <enabled>true</enabled><!--test1-->
     </classAccesses>
     <classAccesses>
         <apexClass>A0123678</apexClass>
@@ -270,7 +270,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A191</apexClass>
+        <apexClass>A191</apexClass><!--test1-->
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -631,7 +631,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>CommunitiesLandingController</apexClass>
-        <enabled>false</enabled>
+        <enabled>false</enabled><!--test1-->
     </classAccesses>
     <classAccesses>
         <apexClass>CommunitiesLandingControllerTest</apexClass>
@@ -2648,7 +2648,7 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Individual.HasOptedOutProcessing</field>
-        <readable>true</readable>
+        <readable>true</readable><!--test1-->
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -5610,7 +5610,7 @@
         <name>ViewHelpLink</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>true</enabled><!--test1-->
         <name>ViewRoles</name>
     </userPermissions>
     <userPermissions>
