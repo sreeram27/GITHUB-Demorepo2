@@ -83,7 +83,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A01234</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A01234567</apexClass>
@@ -91,7 +91,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A0123678</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A012378</apexClass>
@@ -270,7 +270,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A193</apexClass>
+        <apexClass>A1931233</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -631,7 +631,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>CommunitiesLandingControllerTest</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>CommunitiesLoginController</apexClass>
@@ -2649,7 +2649,7 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Individual.HasOptedOutProfiling</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -5610,7 +5610,7 @@
         <name>ViewRoles</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>ViewSetup</name>
     </userPermissions>
 </Profile>
