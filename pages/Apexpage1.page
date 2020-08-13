@@ -1,8 +1,13 @@
-<apex:page >
-  <!-- Begin Default Content REMOVE THIS -->
-  <h1>Congratulations T11 T2</h1>
-  This is your new Page Test12543111ssss
-  <!-- End Default Content REMOVE 111THI1111Ssss-->
-  <!-- End Default Content REMOVE 111THI1123111111dde12345667777-->
-  <!-- Add Comment line1 1-->
-</apex:page>
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>40.0</apiVersion>
+    <availableInTouch>true</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>007</description>
+    <label>Apexpage1</label>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>7</minorNumber>
+        <namespace>sf_com_apps</namespace>
+    </packageVersions>
+</ApexPage>
