@@ -1,0 +1,47 @@
+<!--
+@Author :Accenture Offshore DevTeam
+@name :ANA_VFP01_ConsultantSelection
+@CreateDate :05-05-2017
+@Description :This visualforce page beaing used in "New Brokerage Commission" on Broker_Consultant_Commissions__c object.
+Whenever a user clicks on this button it will dispaly the consultants and after user selects a consultant
+it will display a screen to create Broker_Consultant_Commissions__c record by prepopulating some values.
+@Version <1.0>
+-->
+<apex:page showHeader="true" sidebar="true" StandardController="Broker_Consultant_Commissions__c" recordSetVar="bcs" extensions="ANA_VFC01_ConsultantSelectionController" id="pge">
+    <apex:form id="frmId">
+        <apex:outputPanel id="messages" >
+            <apex:pageMessages id="msgs" />
+        </apex:outputPanel>
+        <apex:pageBlock id="pbid" >
+            <apex:pageBlockSection rendered="{!IF(showList==true,true,false)}" id="pbsId" >
+                <apex:pageBlockSectionItem id="pbsec1" >
+                    <apex:outputLabel value="{!RelatedConsultant}" id="relcon"/>
+                    <apex:selectList value="{!selectedConsultant}" size="1" id="conoptions">
+                        <apex:selectOption itemValue="none" itemLabel="Select a consultant" id="selOptn"/>
+                        <apex:selectOptions value="{!consultantOptions}" id="selOptns"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection rendered="{!IF(showList==false,true,false)}" id="bccId">
+                <apex:inputfield value="{!bcc.Account__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Account__c.Label}" required="true" id="accid"/>
+                <apex:inputfield value="{!bcc.Payment_Method__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Payment_Method__c.Label}" required="true" id="pmethd" />
+                <apex:inputfield value="{!bcc.Line_of_Business__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Line_of_Business__c.Label}" required="true" id="lofb"/>
+                <apex:inputfield value="{!bcc.Commission_Dollar_Amount__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Commission_Dollar_Amount__c.Label}" id="cda"/>
+                <apex:inputfield value="{!bcc.BrokerageAndConsultant__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.BrokerageAndConsultant__c.Label}" required="true" id="bac"/>
+                <apex:inputfield value="{!bcc.Commission_Percentage__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Commission_Percentage__c.Label}" id="bp"/>
+                <apex:inputfield value="{!bcc.Contact_Relationship__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Contact_Relationship__c.Label}" id="crel"/>
+                <apex:inputfield value="{!bcc.Group_Numbers__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Group_Numbers__c.Label}" id="grpnum" />
+                <apex:inputfield value="{!bcc.Commission_Start_Date__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Commission_Start_Date__c.Label}" required="true" id="comstartdate"/>
+                <apex:inputfield value="{!bcc.Applies_to_only_a_portion_of_group__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Applies_to_only_a_portion_of_group__c.Label}" id="atoopgrp" />
+                <apex:inputfield value="{!bcc.Commission_End_Date__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Commission_End_Date__c.Label}" id="comedate" />
+                <apex:inputfield value="{!bcc.Sub_Groups_Contract_Codes_Package_Code__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Sub_Groups_Contract_Codes_Package_Code__c.Label}" id="subgrpcon"/>
+                <apex:inputfield value="{!bcc.Funding_Type__c}" label="{!$ObjectType.Broker_Consultant_Commissions__c.Fields.Funding_Type__c.Label}" required="true" id="funtype"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom" id="pbbtns">
+                <apex:commandButton action="{!redirectToCreate}" value="{!Create}" rendered="{!IF(showList==true,true,false)}" reRender="frmId" id="crtbtn"/>
+                <apex:commandButton action="{!saveBCC}" value="{!Save}" reRender="frmId" rendered="{!IF(showList==false,true,false)}" id="sbtn" />
+                <apex:commandButton action="{!cancel}" value="{!Cancel}" id="cbtn"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

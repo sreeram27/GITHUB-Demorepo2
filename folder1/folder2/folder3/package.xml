@@ -101,9 +101,13 @@
         <members>AA54</members>
         <members>AAAA07</members>
         <members>AC123</members>
+        <members>ACEBrokerages_ChatterController</members>
+        <members>ACEBrokerages_ChatterControllerTest</members>
         <members>AD1</members>
         <members>AD2</members>
         <members>AN2</members>
+        <members>ANA_AP01_AccountContactList</members>
+        <members>ANA_AP01_AccountContactList_Test</members>
         <members>ANew1</members>
         <members>ANew2</members>
         <members>AP123</members>
@@ -137,6 +141,9 @@
         <members>Aug28</members>
         <members>AutoCommit2</members>
         <members>B0</members>
+        <members>BMSSendEmail</members>
+        <members>BMSSendEmail_Test</members>
+        <members>BRNSHRK__AuthenticateController</members>
         <members>BusinessClass</members>
         <members>BusinessClassTest</members>
         <members>C1</members>
@@ -277,6 +284,12 @@
         <name>ApexComponent</name>
     </types>
     <types>
+        <members>ANAWeeklyOppt</members>
+        <members>ANA_CreateOEMeetings</members>
+        <members>ANA_MassUpdate</members>
+        <members>ANA_MassUpdate_Programs</members>
+        <members>ANA_Membership</members>
+        <members>ANA_VFP01_ConsultantSelection</members>
         <members>AnswersHome</members>
         <members>ApexPage</members>
         <members>ApexPage5</members>
@@ -307,8 +320,15 @@
         <name>ApexPage</name>
     </types>
     <types>
+        <members>ANA_BrokerConCommissionsBeforeInsert</members>
+        <members>ANA_OpportunityBeforeUpdate</members>
+        <members>ANA_ProductSelectionDetailAfterCreate</members>
+        <members>ANA_ProductSelectionDetailAfterDelete</members>
+        <members>ANA_ProductSelectionDetailAfterUpdate</members>
+        <members>ANA_QuoteLineItemsAfterCreate</members>
         <members>AccountTrigger1</members>
         <members>ContactTrigger1</members>
+        <members>FacilitatorFeedback_AfterIns</members>
         <members>Leadtrigger1</members>
         <name>ApexTrigger</name>
     </types>
@@ -332,6 +352,14 @@
         <name>Audience</name>
     </types>
     <types>
+        <members>ANA_LTNG01_CustomLookup</members>
+        <members>ANA_LTNG01_CustomLookup_oppty</members>
+        <members>ANA_LTNG02_BrokerConsultant_Commission</members>
+        <members>ANA_LTNG02_BrokerConsultant_Commission_Oppty</members>
+        <members>ANA_LTNG03_BrokerConsultant_App</members>
+        <members>ANA_LTNG03_BrokerConsultant_App_oppty</members>
+        <members>ANA_LTNG04_BrokerConsultant_Event</members>
+        <members>ANA_LTNG04_BrokerConsultant_Event_oppty</members>
         <members>ARIndexCmp</members>
         <members>AURATest7</members>
         <members>AuRATest1</members>
