@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>A0</apexClass>
@@ -146,6 +145,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A14567</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A15</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -529,7 +532,19 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Aca90</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Acc1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Acc123</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AccnTest5</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -545,7 +560,19 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Apicls2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Ar100</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Asca1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Asca2</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -570,6 +597,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Aug28</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AutoCommit2</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -602,6 +633,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>C1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ChangePasswordController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ChangePasswordControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -685,11 +724,35 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>DLSClass4</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Dclass6</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>Dec18</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass4</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DepCls1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -717,6 +780,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ForgotPasswordController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ForgotPasswordControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>HarishClass2</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -725,7 +796,23 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>July22nd</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>K1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>KKK2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>KKK3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Kl1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -737,11 +824,23 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>MarCls2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>N897</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>NA23Class1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>NA23Class2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>NC22</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -757,6 +856,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PPS</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PUlreqcls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RRRClass1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -769,6 +876,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>S16class1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>S200</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -778,6 +889,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SA100</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SAClS2</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -854,6 +969,22 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Sep1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SiteLoginController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SiteLoginControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SiteRegisterController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SiteRegisterControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1013,11 +1144,31 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>a_saiclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>abc</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>aug13</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>b0testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>bClass1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>b_saiclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>c_saiclass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1029,11 +1180,27 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>dest1234</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>kkkk</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>n09</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>n1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>pavancls2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>pr</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1053,11 +1220,35 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>sai007</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>tejaclass1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>u9</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>v8</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>y10</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>y11</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>y12</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>y3</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1126,6 +1317,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ACCObjTest1__c.N1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACCObjTest1__c.PLNew1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACCObjTest1__c.PLnew3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ACCObjTest1__c.PLt1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1142,6 +1348,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.f8__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACCObjTest1__c.pl1__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1207,6 +1418,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACObj123__c.f1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACR2__c.F12__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2196,6 +2412,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>SaiDX124__c.f2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>SaiKObj1__c.Field1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2633,6 +2854,14 @@
         <layout>ACCObjTest1__c-ACCObjTest1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ACCObjTest1__c-ACCObjTest1 Layout</layout>
+        <recordType>ACCObjTest1__c.SairecordType1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ACCObjTest1__c-ACCObjTest1 Layout</layout>
+        <recordType>ACCObjTest1__c.SairecordType2</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ACCObject2__c-ACCObject2 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2736,6 +2965,9 @@
         <layout>ArObj901__c-ArObj901 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Aug12Obj23__c-Aug12Obj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Aug29_Obj1__c-Aug29-Obj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -2764,6 +2996,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>ConsumptionSchedule-Consumption Schedule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ContactPointPhone_Contact_Point_Phone_La__c-ContactPointPhone-Contact Point Phone La Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>CustomMetadataType_Test1__mdt-CustomMetadataType_Test1 Layout</layout>
@@ -2983,6 +3218,9 @@
         <layout>Oct23obj1__c-Oct23obj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>PG_Metric__c-PG_Metric Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>PavanObj1__c-PavanObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -3089,6 +3327,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SUObj1__c-SUObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SaiDX124__c-SaiDX124 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SaiKObj1__c-SaiKObj1 Layout</layout>
@@ -3310,6 +3551,14 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>BandwidthExceeded</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ChangePassword</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>CommunitiesLanding</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -3330,9 +3579,66 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>Exception</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>FileNotFound</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPassword</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPasswordConfirm</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>InMaintenance</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>MyProfilePage</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>SaiNewPage1</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteLogin</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteRegister</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteRegisterConfirm</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteTemplate</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>StdExceptionTemplate</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Unauthorized</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UnderConstruction</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>ACCObjTest1__c.SairecordType1</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Account.ARC1</recordType>
@@ -3395,6 +3701,10 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>ContactPointPhone_Contact_Point_Phone_La__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>DLConfigTestObj__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
@@ -3447,4 +3757,68 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userLicense>Customer Portal Manager Standard</userLicense>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ActivitiesAccess</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AddDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AllowUniversalSearch</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApexRestServices</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AssignTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChatterOwnGroups</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ContentWorkspaces</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>CreateTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditTopics</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EnableCommunityAppLauncher</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EnableNotifications</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>RemoveDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>SelectFilesFromSalesforce</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ShowCompanyNameAsUserBadge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>UseWebLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>WorkDotComUserPerm</name>
+    </userPermissions>
 </Profile>

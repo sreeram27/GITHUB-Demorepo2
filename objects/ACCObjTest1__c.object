@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>Accept</actionName>
@@ -172,7 +171,7 @@
         <description>swd</description>
         <externalId>false</externalId>
         <label>ACCField1</label>
-        <length>9</length>
+        <length>8</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -203,7 +202,7 @@
         <description>124</description>
         <externalId>false</externalId>
         <label>N1</label>
-        <required>true</required>
+        <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -223,7 +222,7 @@
         <description>Twt`2</description>
         <externalId>false</externalId>
         <label>PLNew1</label>
-        <required>true</required>
+        <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>
@@ -304,26 +303,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>pl1__c</fullName>
-        <description>12356</description>
-        <externalId>false</externalId>
-        <label>pl13</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>fg</fullName>
-                    <default>false</default>
-                    <label>fg</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
         <fullName>TextField15__c</fullName>
         <externalId>false</externalId>
         <label>TextField15</label>
@@ -342,6 +321,26 @@
         <trackTrending>false</trackTrending>
         <type>Email</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pl1__c</fullName>
+        <description>12356</description>
+        <externalId>false</externalId>
+        <label>pl13</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>fg</fullName>
+                    <default>false</default>
+                    <label>fg</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>test__c</fullName>
@@ -389,13 +388,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>PLt1__c</picklist>
-            <values>
-                <fullName>2</fullName>
-                <default>true</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Plt3__c</picklist>
             <values>
                 <fullName>latest</fullName>
@@ -433,13 +425,6 @@
             <picklist>PLnew3__c</picklist>
             <values>
                 <fullName>sd</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>PLt1__c</picklist>
-            <values>
-                <fullName>2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

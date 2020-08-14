@@ -1,5 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayouts>
+        <fullName>Test</fullName>
+        <fields>Name</fields>
+        <label>ContactPointPhone-Contact Point Phone Layout.layout b/src/layouts/ContactPointPh</label>
+    </compactLayouts>
+    <fields>
+        <fullName>F12__c</fullName>
+        <description>Zfvxcvbn</description>
+        <externalId>false</externalId>
+        <label>F12</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <fields>
         <fullName>LookUpField1__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>

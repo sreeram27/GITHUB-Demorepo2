@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>APXTConga4__CongaMerge</application>
@@ -249,6 +248,166 @@
         <dataCategoryGroup>NTO_Product</dataCategoryGroup>
         <visibility>ALL</visibility>
     </categoryGroupVisibilities>
+    <classAccesses>
+        <apexClass>A0</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A000</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A0001</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A01234</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A025</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A027</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A028</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A036</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A0456</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A045678</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A052</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A080123</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A08023424</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A10</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A13</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A14</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A15</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A150</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A151</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A152</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A156</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A158</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A159</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A160</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A161</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A19</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A190</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A191</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A193</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A23</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A29</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A3</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A30</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A301</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A32</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A50</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A999</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AA54</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AAAA07</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <classAccesses>
         <apexClass>ACEBrokerages_ChatterController</apexClass>
         <enabled>true</enabled>
@@ -794,6 +953,38 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AS101</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AS106</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AS107</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Ac1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Ac1221</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Aca90</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Acc1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Acc123</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AccTeamMemberTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -818,6 +1009,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>AccnTest5</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AccountTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -831,6 +1026,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ActWiseNONBControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ActnrClass2</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -858,11 +1057,23 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Apicls2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ApplicationEventAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ApplicationEventActionTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Asca1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Asca2</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -876,6 +1087,18 @@
     <classAccesses>
         <apexClass>AttachedFile</apexClass>
         <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Aug21stClass1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Aug21stClass4</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AutoCommit2</apexClass>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>AutoCompleteV2_Con</apexClass>
@@ -1658,6 +1881,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>D8</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DLSClass4</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>DNC_ApprovalProcess</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1682,7 +1913,31 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Dec18</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>DeleteQLI</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass3</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DemoClass4</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DepCls1</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -2343,6 +2598,30 @@
     </classAccesses>
     <classAccesses>
         <apexClass>JiraSearchIssueResponse</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>July22nd</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>KKK2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>KKK3</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Kl1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LBClass1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LBClass2</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -3026,6 +3305,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>MarCls2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>MedicalBenefitTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -3079,6 +3362,22 @@
     </classAccesses>
     <classAccesses>
         <apexClass>MyProfilePageControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>N897</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>NA23Class1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>NA23Class2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>NC22</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -3191,6 +3490,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>PMO_Task_Assignment</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PPS</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PUlreqcls1</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -3366,6 +3673,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>S16class1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SAClS2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SBCSOBActions</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -3391,6 +3706,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SObjectParentProviders</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SRclass1</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -3627,6 +3946,38 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SaasSessionUserStoriesTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SaiClass150</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SaiClass151</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SaiClass2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SaiNov19</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SaiRallyClass1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SampathAug16thClass1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SampathAug19thClass1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SampathClass1</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -4774,6 +5125,42 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>a0testclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>a14testclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>a18testclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>a1testclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>a27testclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>a30testclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>a32testclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>a50testclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>a_saiclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ambassadorVolunteerHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -4906,6 +5293,22 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>aug13</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>b0testclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>b_saiclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>c_saiclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>caseTrigger_Test</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -4923,6 +5326,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>clsTimeSpentOnStatus_IsTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dest1234</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -5598,6 +6005,22 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>kkkk</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>n09</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>n1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>pr</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>relateiq__OrganizationInfo</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -5627,6 +6050,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>rrd__CPConfigExtensionTester</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>rtclass1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>sai007</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -5887,6 +6318,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>staticVariableClass_Test</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>u9</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -12973,7 +13408,63 @@
         <apexClass>wellpointSubmitFIRSTQuoteReqSrvCallOut</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>y10</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>y11</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>y12</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>y3</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <custom>false</custom>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACCObjTest1__c.ACCField1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACCObjTest1__c.ACCField2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACCObjTest1__c.N1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACCObjTest1__c.PLNew1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACCObjTest1__c.PLnew3__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACCObjTest1__c.Plt3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACCObjTest1__c.pl1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACR2__c.F12__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>ANA_Underwriting__c.ASL__c</field>
@@ -33603,6 +34094,16 @@
         <editable>true</editable>
         <field>Data_Interface_Team__c.X90_Day_File_Load_Date__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Dbj1__c.F1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Dbj1__c.F2__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -67371,6 +67872,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SaiDX124__c.f2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SalesObservation__c.Active__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -94445,6 +94951,20 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>ACCObjTest1__c-ACCObjTest1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ACCObjTest1__c-ACCObjTest1 Layout</layout>
+        <recordType>ACCObjTest1__c.SairecordType1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ACCObjTest1__c-ACCObjTest1 Layout</layout>
+        <recordType>ACCObjTest1__c.SairecordType2</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ACR2__c-ACR2 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ANA_Underwriting__c-ANA Underwriting Layout_LG</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -94696,6 +95216,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>AssetRelationship-Asset Relationship Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Aug12Obj23__c-Aug12Obj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>BPD__c-Benefit Plan Design Layout</layout>
@@ -95130,6 +95653,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>ContactPointPhone-Contact Point Phone Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ContactPointPhone_Contact_Point_Phone_La__c-ContactPointPhone-Contact Point Phone La Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ContactRelationship__c-Account Relationships</layout>
@@ -96350,6 +96876,9 @@
         <recordType>PG_Metric__c.New_Metric_Request</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>PG_Metric__c-PG_Metric Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>PG_Request__c-PG Request Layout Editable</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -96678,6 +97207,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SME_User_Data__c-SME User Data Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SaiDX124__c-SaiDX124 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SalesObservation__c-Observation Layout</layout>
@@ -98411,10 +98943,7 @@
     <layoutAssignments>
         <layout>vlocity_ins__VqResource__c-vlocity_ins__Vlocity Acuity Resource Layout</layout>
     </layoutAssignments>
-    <loginIpRanges>
-        <endAddress>255.255.255.255</endAddress>
-        <startAddress>0.0.0.0</startAddress>
-    </loginIpRanges>
+    <loginHours/>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -98710,6 +99239,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Asset</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Aug12Obj23__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -99402,6 +99940,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>ContactPointPhone_Contact_Point_Phone_La__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>ContactPointTypeConsent</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -99529,6 +100076,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Data_Interface_Team__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Dbj1__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -100978,6 +101534,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>SME_User_Data__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>SaiDX124__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -104812,6 +105377,22 @@
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>ApexPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ApexPage5</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Apexpage1</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Apexpage6</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>ApplicationActionPage</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
@@ -105421,6 +106002,10 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>SaasSessionUserStoriesResult</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SaiNewPage1</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
@@ -107592,6 +108177,11 @@
         <enabled>true</enabled>
     </pageAccesses>
     <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>ACCObjTest1__c.SairecordType1</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
         <default>false</default>
         <recordType>Account.Brokerage</recordType>
         <visible>true</visible>
@@ -108080,6 +108670,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Data_Interface_Team__c.National_and_Local_WGS_Non_Commingled</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Dbj1__c.Dbj_RC1</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
@@ -109855,6 +110450,10 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>ContactPointPhone_Contact_Point_Phone_La__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Contact_To_Group__c</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
@@ -111233,6 +111832,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>EditBillingInfo</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>EditBrandTemplates</name>
     </userPermissions>
     <userPermissions>
@@ -111421,6 +112024,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageEncryptionKeys</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageEntitlements</name>
     </userPermissions>
     <userPermissions>
@@ -111494,6 +112101,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManagePvtRptsAndDashbds</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageQuotas</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -111577,7 +112188,15 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>OverrideForecasts</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>Packaging2</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>Packaging2PromoteVersion</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -111638,6 +112257,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SkipIdentityConfirmation</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>SocialInsightsLogoAdmin</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -111713,6 +112336,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ViewAllForecasts</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ViewAllUsers</name>
     </userPermissions>
     <userPermissions>
@@ -111778,5 +112405,9 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewUserPII</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>WorkCalibrationUser</name>
     </userPermissions>
 </Profile>

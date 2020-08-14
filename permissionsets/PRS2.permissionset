@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>A027</apexClass>
@@ -45,6 +44,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ACCObjTest1__c.N1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACCObjTest1__c.PLNew1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACCObjTest1__c.PLnew3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ACCObjTest1__c.PLt1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -61,6 +75,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.f8__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACCObjTest1__c.pl1__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -126,6 +145,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACObj123__c.f1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACR2__c.F12__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1137,6 +1161,11 @@
         <editable>true</editable>
         <field>STObj2__c.field3__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>SaiDX124__c.f2__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
