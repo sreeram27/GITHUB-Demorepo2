@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>45.0</version>
+<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <version>48.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -131,6 +130,9 @@
         <members>Account8</members>
         <members>ActnrClass2</members>
         <members>AddClass2</members>
+        <members>Apicls2</members>
+        <members>Asca1</members>
+        <members>Asca2</members>
         <members>Aug21stClass1</members>
         <members>Aug21stClass2</members>
         <members>Aug21stClass3</members>
@@ -158,7 +160,12 @@
         <members>D6</members>
         <members>D7</members>
         <members>D8</members>
+        <members>DLSClass4</members>
         <members>Dec18</members>
+        <members>DemoClass</members>
+        <members>DemoClass2</members>
+        <members>DemoClass3</members>
+        <members>DemoClass4</members>
         <members>DepCls1</members>
         <members>DlClass5</members>
         <members>E1</members>
@@ -172,7 +179,10 @@
         <members>ForgotPasswordControllerTest</members>
         <members>HarishClass2</members>
         <members>Jan5</members>
+        <members>July22nd</members>
         <members>K1</members>
+        <members>KKK2</members>
+        <members>KKK3</members>
         <members>Kl1</members>
         <members>LBClass1</members>
         <members>LBClass2</members>
@@ -183,16 +193,22 @@
         <members>MarCls2</members>
         <members>MyProfilePageController</members>
         <members>MyProfilePageControllerTest</members>
+        <members>N897</members>
         <members>NA23Class1</members>
         <members>NA23Class2</members>
+        <members>NC11</members>
+        <members>NC22</members>
         <members>NCLS100</members>
         <members>NCLs1</members>
         <members>NS25Class1</members>
         <members>New1233</members>
         <members>NewSep62</members>
+        <members>PPS</members>
+        <members>PUlreqcls1</members>
         <members>RClass1</members>
         <members>RGvc02</members>
         <members>S10</members>
+        <members>S16class1</members>
         <members>S200</members>
         <members>SA100</members>
         <members>SAClS2</members>
@@ -237,12 +253,19 @@
         <members>a50testclass</members>
         <members>a5testclass</members>
         <members>a7testclass</members>
+        <members>a_saiclass</members>
         <members>abc</members>
+        <members>aug13</members>
         <members>b0testclass</members>
+        <members>b_saiclass</members>
+        <members>c_saiclass</members>
+        <members>dest1234</members>
         <members>kkkk</members>
+        <members>n09</members>
         <members>n1</members>
         <members>nc1</members>
         <members>pavancls2</members>
+        <members>pr</members>
         <members>rtclass1</members>
         <members>sai007</members>
         <members>tejaclass1</members>
@@ -252,6 +275,10 @@
         <members>v6A0</members>
         <members>v7</members>
         <members>v8</members>
+        <members>y10</members>
+        <members>y11</members>
+        <members>y12</members>
+        <members>y3</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -303,6 +330,10 @@
         <name>AppMenu</name>
     </types>
     <types>
+        <members>ACCObjTest1__c.July24thStandardprocess1</members>
+        <members>ACCObjTest1__c.PG_Metric_SME_Approval_Process_withemail</members>
+        <members>PG_Metric__c.PG_Metric_SME_Approval_Process1_withemai</members>
+        <members>PG_Metric__c.PG_Metric_SME_Approval_Process_withemai</members>
         <members>PG_Metric__c.PG_Metric_SME_Approval_Process_withemail</members>
         <name>ApprovalProcess</name>
     </types>
@@ -318,6 +349,7 @@
     </types>
     <types>
         <members>ANA_LTNG01_CustomLookup_oppty</members>
+        <members>ARIndexCmp</members>
         <members>AURATest7</members>
         <members>AuRATest1</members>
         <members>AuRATest2</members>
@@ -364,6 +396,12 @@
         <name>Community</name>
     </types>
     <types>
+        <members>ACR2__c.Test</members>
+        <members>ACR3__c.Layout_layout</members>
+        <members>ACR4__c.Layout_layout</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
         <members>standard__AppLauncher</members>
         <members>standard__Chatter</members>
         <members>standard__Community</members>
@@ -383,8 +421,12 @@
         <members>ACCObjTest1__c.ACCField1__c</members>
         <members>ACCObjTest1__c.ACCField2__c</members>
         <members>ACCObjTest1__c.AutorabitExtId__c</members>
+        <members>ACCObjTest1__c.N1__c</members>
+        <members>ACCObjTest1__c.PLNew1__c</members>
+        <members>ACCObjTest1__c.PLnew3__c</members>
         <members>ACCObjTest1__c.PLt1__c</members>
         <members>ACCObjTest1__c.Plt3__c</members>
+        <members>ACCObjTest1__c.pl1__c</members>
         <members>ACCObjt1__c.FT1__c</members>
         <members>ACCObjt1__c.FT2__c</members>
         <members>ACCObjt1__c.FT5__c</members>
@@ -394,6 +436,7 @@
         <members>ACObject25__c.ACCField1__c</members>
         <members>ACObject25__c.ACCField3__c</members>
         <members>ACR2__c.AutorabitExtId__c</members>
+        <members>ACR2__c.F12__c</members>
         <members>ACR2__c.LookUpField1__c</members>
         <members>ACR2__c.LookUpField2__c</members>
         <members>ACR2__c.field1__c</members>
@@ -1328,6 +1371,7 @@
         <members>SKVObject1__c.SKVField2__c</members>
         <members>SKVObject1__c.SKVField3__c</members>
         <members>SKVObject1__c.SKVField5__c</members>
+        <members>SSObj1__c.F1__c</members>
         <members>STObj1__c.AutorabitExtId__c</members>
         <members>STObj1__c.sf1__c</members>
         <members>STObj1__c.sf2__c</members>
@@ -1337,6 +1381,7 @@
         <members>STobj3__c.f1__c</members>
         <members>STobj3__c.f2__c</members>
         <members>STobj3__c.f3__c</members>
+        <members>SaiDX124__c.f2__c</members>
         <members>SaiKObj1__c.Field1__c</members>
         <members>SaiKObj1__c.Field3__c</members>
         <members>SaiObj10__c.PhoneField__c</members>
@@ -1599,6 +1644,8 @@
         <members>DXCl2</members>
         <members>DemoCl1</members>
         <members>DepCl1</members>
+        <members>Des123</members>
+        <members>Des12345</members>
         <members>ESCCustomLabel1</members>
         <members>ESCCustomLabel2</members>
         <members>FS_Container_AuthenticationFailure_Title_04I0K000000TN7S_1694902</members>
@@ -1816,6 +1863,7 @@
         <members>Asset</members>
         <members>AssetRelationship</members>
         <members>AssistantProgress</members>
+        <members>Aug12Obj23__c</members>
         <members>Aug29_Obj1__c</members>
         <members>AuthorizationForm</members>
         <members>AuthorizationFormConsent</members>
@@ -1843,6 +1891,7 @@
         <members>ConsumptionSchedule</members>
         <members>Contact</members>
         <members>ContactCleanInfo</members>
+        <members>ContactPointPhone_Contact_Point_Phone_La__c</members>
         <members>ContactPointTypeConsent</members>
         <members>ContactRequest</members>
         <members>ContentVersion</members>
@@ -1859,6 +1908,7 @@
         <members>Dbj1__c</members>
         <members>Demo4Obj7__c</members>
         <members>DepTestObj1__c</members>
+        <members>Desobj2__c</members>
         <members>DlConfigObj151__c</members>
         <members>Dobj3__c</members>
         <members>DuplicateRecordItem</members>
@@ -1961,12 +2011,14 @@
         <members>SEObject1__c</members>
         <members>SKVAug16Obj1__c</members>
         <members>SKVObject1__c</members>
+        <members>SSObj1__c</members>
         <members>STObj1__c</members>
         <members>STObj2__c</members>
         <members>STest__c</members>
         <members>STestobj34__c</members>
         <members>STestobj__c</members>
         <members>STobj3__c</members>
+        <members>SaiDX124__c</members>
         <members>SaiKObj1__c</members>
         <members>SaiKObj2__c</members>
         <members>SaiObj10__c</members>
@@ -1997,6 +2049,8 @@
         <members>Task</members>
         <members>Test1obj1__c</members>
         <members>Test54__c</members>
+        <members>Test55__c</members>
+        <members>Test57__c</members>
         <members>TestACObj1__c</members>
         <members>TestAcob1__c</members>
         <members>TestObj1__c</members>
@@ -2191,6 +2245,7 @@
         <members>ACR2__c</members>
         <members>ACR3__c</members>
         <members>ConfigObj1__c</members>
+        <members>ContactPointPhone_Contact_Point_Phone_La__c</members>
         <members>DL1Obj18__c</members>
         <members>DLCObj18__c</members>
         <members>DLConfigTestObj__c</members>
@@ -2266,6 +2321,7 @@
         <members>unfiled$public/CommunityVerificationEmailTemplate</members>
         <members>unfiled$public/CommunityWelcomeEmailTemplate</members>
         <members>unfiled$public/MarketingProductInquiryResponse</members>
+        <members>unfiled$public/QLI_SydneyPreferredProductSoldTemplate</members>
         <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
         <members>unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE</members>
         <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE</members>
@@ -2303,6 +2359,8 @@
         <name>EscalationRule</name>
     </types>
     <types>
+        <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>QuoteLineItem</members>
         <members>TestFlowLabel1</members>
         <name>Flow</name>
     </types>
@@ -2321,15 +2379,19 @@
     <types>
         <members>ACCObjTest1__c-ACCObjTest1 Layout</members>
         <members>ACCObjTest1__c-Custom-Layout1</members>
+        <members>ACCObjTest1__c-sai</members>
         <members>ACCObjt1__c-ACCObjt1 Layout</members>
         <members>ACDemoOBj1__c-ACDemoOBj1 Layout</members>
         <members>ACObj12__c-ACObj12 Layout</members>
         <members>ACObject25__c-ACObject25 Layout</members>
         <members>ACObject25__c-SaiPage1</members>
         <members>ACR2__c-ACR2 Layout</members>
+        <members>ACR2__c-ContactPointPhone-Contact Point Phone Layout%2Elayout b%2Fsrc%2Flayouts%2FContactPointPh</members>
         <members>ACR2__c-SaiPage</members>
         <members>ACR3__c-ACR3 Layout</members>
+        <members>ACR3__c-数据更改请求 Layout%2Elayout</members>
         <members>ACR4__c-ACR4 Layout</members>
+        <members>ACR4__c-âêîôû Layout%2Elayout</members>
         <members>ACR5__c-ACR5 Layout</members>
         <members>ACR6__c-ACR6 Layout</members>
         <members>ACRObj1__c-ACRObj1 Layout</members>
@@ -2355,6 +2417,7 @@
         <members>Aobj2__c-Aobj2 Layout</members>
         <members>Ar1__c-Ar1 Layout</members>
         <members>Asset-Asset Layout</members>
+        <members>Aug12Obj23__c-Aug12Obj1 Layout</members>
         <members>Aug29_Obj1__c-Aug29-Obj1 Layout</members>
         <members>Bj1__c-Bj1 Layout</members>
         <members>CAObj1__c-CAObj1 Layout</members>
@@ -2375,6 +2438,7 @@
         <members>Contact-Contact %28Sales%29 Layout</members>
         <members>Contact-Contact %28Support%29 Layout</members>
         <members>Contact-Contact Layout</members>
+        <members>ContactPointPhone_Contact_Point_Phone_La__c-ContactPointPhone-Contact Point Phone La Layout</members>
         <members>ContentVersion-Content Version Layout</members>
         <members>Contract-Contract Layout</members>
         <members>DL1Obj18__c-DL1Obj18 Layout</members>
@@ -2386,6 +2450,7 @@
         <members>Dbj1__c-Dbj1 Layout</members>
         <members>Demo4Obj7__c-Demo4Obj7 Layout</members>
         <members>DepTestObj1__c-DepTestObj1 Layout</members>
+        <members>Desobj2__c-Desobj2 Layout</members>
         <members>DlConfigObj151__c-DlConfigObj151 Layout</members>
         <members>Dobj3__c-Dobj3 Layout</members>
         <members>DuplicateRecordSet-Duplicate Record Set Layout</members>
@@ -2440,6 +2505,7 @@
         <members>OpportunityLineItem-Opportunity Product Layout</members>
         <members>Order-Order Layout</members>
         <members>OrderItem-Order Product Layout</members>
+        <members>PG_Metric__c-PG_Metric Layout</members>
         <members>Pricebook2-Price Book Layout</members>
         <members>PricebookEntry-Price Book Entry Layout</members>
         <members>Product2-Product Layout</members>
@@ -2459,12 +2525,14 @@
         <members>SEObject1__c-SEObject1 Layout</members>
         <members>SKVAug16Obj1__c-SKVAug16Obj1 Layout</members>
         <members>SKVObject1__c-SKVObject1 Layout</members>
+        <members>SSObj1__c-SSObj1 Layout</members>
         <members>STObj1__c-STObj1 Layout</members>
         <members>STObj2__c-STObj2 Layout</members>
         <members>STest__c-STest Layout</members>
         <members>STestobj34__c-STestobj34 Layout</members>
         <members>STestobj__c-STestobj Layout</members>
         <members>STobj3__c-STobj3 Layout</members>
+        <members>SaiDX124__c-SaiDX124 Layout</members>
         <members>SaiKObj1__c-SaiKObj1 Layout</members>
         <members>SaiKObj2__c-SaiKObj2 Layout</members>
         <members>SaiObj10__c-SaiObj10 Layout</members>
@@ -2491,6 +2559,8 @@
         <members>Task-Task Layout</members>
         <members>Test1obj1__c-Test1obj1 Layout</members>
         <members>Test54__c-Test54 Layout</members>
+        <members>Test55__c-Test55 Layout</members>
+        <members>Test57__c-Test57 Layout</members>
         <members>TestACObj1__c-TestACObj1 Layout</members>
         <members>TestAcob1__c-TestAcob1 Layout</members>
         <members>TestObj1__c-TestObj1 Layout</members>
@@ -2569,6 +2639,7 @@
         <members>Contact.MyContacts</members>
         <members>Contact.NewLastWeek</members>
         <members>Contact.NewThisWeek</members>
+        <members>ContactPointPhone_Contact_Point_Phone_La__c.All</members>
         <members>ContactPointTypeConsent.All_ContactPointTypeConsents</members>
         <members>ContactRequest.My_ContactRequests</members>
         <members>Contract.AllActivatedContracts</members>
@@ -2650,6 +2721,8 @@
         <name>ListView</name>
     </types>
     <types>
+        <members>cms_document</members>
+        <members>cms_image</members>
         <members>news</members>
         <name>ManagedContentType</name>
     </types>
@@ -2793,6 +2866,8 @@
         <name>RecordActionDeployment</name>
     </types>
     <types>
+        <members>ACCObjTest1__c.SairecordType1</members>
+        <members>ACCObjTest1__c.SairecordType2</members>
         <members>Account.ARC1</members>
         <members>Contact.CRT1</members>
         <members>DLCObj18__c.DLCObj18_RcType1</members>
@@ -2815,6 +2890,10 @@
         <members>AccountFolder</members>
         <members>LeadFolder</members>
         <name>Report</name>
+    </types>
+    <types>
+        <members>screen_flows_prebuilt_crt</members>
+        <name>ReportType</name>
     </types>
     <types>
         <members>CEO</members>
@@ -3253,6 +3332,10 @@
         <name>TopicsForObjects</name>
     </types>
     <types>
+        <members>en_US</members>
+        <name>Translations</name>
+    </types>
+    <types>
         <members>APXTConga4__Conga_Solution_Email_Template__c.APXTConga4__CET_Count_Validator</members>
         <members>AR_Obj1__c.ARPValidationRule1</members>
         <members>AR_Obj1__c.ARSValidationRule1</members>
@@ -3273,5 +3356,9 @@
         <members>Case.UpsellCrosssellOpportunity</members>
         <members>Opportunity.DeliveryStatus</members>
         <name>WebLink</name>
+    </types>
+    <types>
+        <members>ACCObjt1__c.QuoteLineItem</members>
+        <name>WorkflowRule</name>
     </types>
 </Package>

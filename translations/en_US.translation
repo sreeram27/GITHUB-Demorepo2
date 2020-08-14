@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>test</label>
+        <name>AC1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AC100 --></label>
+        <name>AC100</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AC211 --></label>
+        <name>AC2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AC56 --></label>
+        <name>AC56</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AC6712 --></label>
+        <name>AC67</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACCL1 --></label>
+        <name>ACCL1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACCL3 --></label>
+        <name>ACCL3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACL11 --></label>
+        <name>ACL11</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACL12 --></label>
+        <name>ACL12</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- S22CL2 --></label>
+        <name>ACL2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACL24 --></label>
+        <name>ACL24</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACL25 --></label>
+        <name>ACL25</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACL3 --></label>
+        <name>ACL3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACL50 --></label>
+        <name>ACL50</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACL541 --></label>
+        <name>ACL51</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ADDL1 --></label>
+        <name>ADDL1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AL2 --></label>
+        <name>AL2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- APXL1 --></label>
+        <name>APXL1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- APXL2 --></label>
+        <name>APXL2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Apicl2 --></label>
+        <name>Apicl2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CLT101 --></label>
+        <name>CLT101</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- CLt200 --></label>
+        <name>CLt200</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DXCl2 --></label>
+        <name>DXCl2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DemoCl1 --></label>
+        <name>DemoCl1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DepCl1 --></label>
+        <name>DepCl1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Des1234 --></label>
+        <name>Des123</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Des12345 --></label>
+        <name>Des12345</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Kl1233 --></label>
+        <name>Kl1233</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LMI --></label>
+        <name>LMI</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LS1 --></label>
+        <name>LS1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mar19ClNew1 --></label>
+        <name>Mar19ClNew1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mar21CL2 --></label>
+        <name>Mar21CL2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NCL1 --></label>
+        <name>NCL1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NCl2 --></label>
+        <name>NCl2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NM101 --></label>
+        <name>NM101</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Nl12 --></label>
+        <name>Nl12</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- RLB1 --></label>
+        <name>RLB1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- S16label1 --></label>
+        <name>S16label1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SACl12 --></label>
+        <name>SACl12</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SC1 --></label>
+        <name>SC1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SL1 --></label>
+        <name>SL1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SL12 --></label>
+        <name>SL12</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SS1 --></label>
+        <name>SS1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SS2 --></label>
+        <name>SS2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sai-FebL2 --></label>
+        <name>Sai_FebL2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sailabel2 --></label>
+        <name>Sailabel2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- TL2 --></label>
+        <name>TL2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Urltestlabel1 --></label>
+        <name>Urltestlabel1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ZCustomCL1 --></label>
+        <name>ZCustomCL1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- b1 --></label>
+        <name>b1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- b2 --></label>
+        <name>b2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- cd1 --></label>
+        <name>cd1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- kkkl --></label>
+        <name>kkkl</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- mar19label3 --></label>
+        <name>mar19label3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- njan12 --></label>
+        <name>njan12</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- pr1 --></label>
+        <name>pr1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- prcl --></label>
+        <name>prcl</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- sai&amp;pradeep --></label>
+        <name>sai_pradeep</name>
+    </customLabels>
+    <flowDefinitions>
+        <flows>
+            <screens>
+                <name>Test</name>
+            </screens>
+        </flows>
+        <fullName>Automated_email_on_QLI_Onduo_product_Created_Updated</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>QuoteLineItem</fullName>
+    </flowDefinitions>
+    <reportTypes>
+        <description><!-- Screen Flows --></description>
+        <label><!-- Screen Flows --></label>
+        <name>screen_flows_prebuilt_crt</name>
+        <sections>
+            <label><!-- Flow Interview Log Entries --></label>
+            <name>Flow Interview Log Entries</name>
+        </sections>
+        <sections>
+            <label><!-- Flow Interview Logs --></label>
+            <name>Flow Interview Logs</name>
+        </sections>
+    </reportTypes>
+</Translations>
