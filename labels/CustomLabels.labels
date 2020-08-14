@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
         <fullName>AAtest456</fullName>
@@ -40,7 +39,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC211</shortDescription>
-        <value>11111</value>
+        <value>11111111</value>
     </labels>
     <labels>
         <fullName>AC56</fullName>
@@ -68,7 +67,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACCL1</shortDescription>
-        <value>211</value>
+        <value>21111</value>
     </labels>
     <labels>
         <fullName>ACCL3</fullName>
@@ -145,7 +144,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACL3</shortDescription>
-        <value>rl21111</value>
+        <value>rl21111111111111</value>
     </labels>
     <labels>
         <fullName>ACL4</fullName>
@@ -166,7 +165,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACL50</shortDescription>
-        <value>50</value>
+        <value>111</value>
     </labels>
     <labels>
         <fullName>ACL501</fullName>
@@ -299,21 +298,21 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AL2</shortDescription>
-        <value>2</value>
+        <value>2qqq</value>
     </labels>
     <labels>
         <fullName>APXL1</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>APXL1</shortDescription>
-        <value>1</value>
+        <value>111</value>
     </labels>
     <labels>
         <fullName>APXL2</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>APXL2</shortDescription>
-        <value>2</value>
+        <value>22222</value>
     </labels>
     <labels>
         <fullName>APXLabel1</fullName>
@@ -618,10 +617,31 @@
         <value>1111</value>
     </labels>
     <labels>
+        <fullName>DemoCl1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DemoCl1</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
         <fullName>DepCl1</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>DepCl1</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>Des123</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Des1234</shortDescription>
+        <value>123</value>
+    </labels>
+    <labels>
+        <fullName>Des12345</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Des12345</shortDescription>
         <value>1</value>
     </labels>
     <labels>
@@ -693,6 +713,13 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>KL1</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>Kl1233</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Kl1233</shortDescription>
         <value>1</value>
     </labels>
     <labels>
@@ -821,7 +848,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Mar21CL2</shortDescription>
-        <value>45y</value>
+        <value>s1234</value>
     </labels>
     <labels>
         <fullName>N12</fullName>
@@ -877,7 +904,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>NCL1</shortDescription>
-        <value>1111</value>
+        <value>s345</value>
     </labels>
     <labels>
         <fullName>NCl2</fullName>
@@ -1080,7 +1107,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>S16label1</shortDescription>
-        <value>1</value>
+        <value>11234</value>
     </labels>
     <labels>
         <fullName>SACl12</fullName>
@@ -1447,6 +1474,13 @@
         <value>1</value>
     </labels>
     <labels>
+        <fullName>Urltestlabel1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Urltestlabel1</shortDescription>
+        <value>https://qa3.autorabit.com/</value>
+    </labels>
+    <labels>
         <fullName>V8</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1522,14 +1556,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>b1</shortDescription>
-        <value>1</value>
+        <value>1233</value>
     </labels>
     <labels>
         <fullName>b2</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>b2</shortDescription>
-        <value>1</value>
+        <value>111</value>
     </labels>
     <labels>
         <fullName>bv12</fullName>
@@ -1550,6 +1584,13 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>c2</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>cd1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>cd1</shortDescription>
         <value>1</value>
     </labels>
     <labels>
@@ -1739,6 +1780,20 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ol1</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>pr1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>pr1</shortDescription>
+        <value>111111</value>
+    </labels>
+    <labels>
+        <fullName>prcl</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>prcl</shortDescription>
         <value>1</value>
     </labels>
     <labels>

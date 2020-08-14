@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>Accept</actionName>
@@ -728,32 +727,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Primary__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>ProductInterest__c</picklist>
-            <values>
-                <fullName>GC1000 series</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC3000 series</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5000 series</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Rating</picklist>
             <values>
                 <fullName>Cold</fullName>
@@ -948,32 +921,6 @@
             </values>
             <values>
                 <fullName>Prof%2E</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Primary__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>ProductInterest__c</picklist>
-            <values>
-                <fullName>GC1000 series</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC3000 series</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>GC5000 series</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
