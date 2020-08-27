@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>49.0</version>
+    <version>48.0</version>
     <types>
         <members>Summer19</members>
         <members>Test_animation</members>
@@ -52,6 +52,10 @@
         <members>a13testclass</members>
         <members>sxs</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>apexEmailNotifications</members>
+        <name>ApexEmailNotifications</name>
     </types>
     <types>
         <members>AnswersHome</members>
@@ -202,6 +206,7 @@
         <members>Account.IsPartner</members>
         <members>Account.Jigsaw</members>
         <members>Account.LiveText__Active__c</members>
+        <members>Account.MyCoolCheckBox__c</members>
         <members>Account.NaicsCode</members>
         <members>Account.NaicsDesc</members>
         <members>Account.Name</members>
@@ -3110,6 +3115,14 @@
         <name>MyDomainDiscoverableLogin</name>
     </types>
     <types>
+        <members>Default_Navigation</members>
+        <members>Default_Navigation1</members>
+        <members>Default_Navigation2</members>
+        <members>Default_Navigation3</members>
+        <members>Default_User_Profile_Menu</members>
+        <name>NavigationMenu</name>
+    </types>
+    <types>
         <members>Community2</members>
         <members>Help Center</members>
         <members>New Customer Portal</members>
@@ -3117,7 +3130,6 @@
         <name>Network</name>
     </types>
     <types>
-        <members>apexEmailNotifications</members>
         <members>cbCommunity2</members>
         <members>cbHelp_Center</members>
         <members>cbNew_Customer_Portal</members>
@@ -3212,6 +3224,7 @@
         <members>SolutionManager</members>
         <members>Standard</members>
         <members>StandardAul</members>
+        <members>System AdministratorClone</members>
         <members>Work%2Ecom Only User</members>
         <name>Profile</name>
     </types>
