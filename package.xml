@@ -2079,6 +2079,10 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>Folder1/folder2/Folder3</members>
+        <name>Dashboard</name>
+    </types>
+    <types>
         <members>Folder1</members>
         <members>Folder1/Folder2</members>
         <members>Folder1/Folder2/Folder3</members>
