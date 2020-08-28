@@ -520,7 +520,6 @@
         <members>AYObj3__c.Ayfd2__c</members>
         <members>Accobj4__c.Field1__c</members>
         <members>Accobj4__c.Field2__c</members>
-        <members>Account.AccountLookUpField__c</members>
         <members>Account.AccountNumber</members>
         <members>Account.AccountSource</members>
         <members>Account.Active__c</members>
@@ -530,15 +529,20 @@
         <members>Account.ChannelProgramLevelName</members>
         <members>Account.ChannelProgramName</members>
         <members>Account.CleanStatus</members>
+        <members>Account.CurrencyIsoCode</members>
         <members>Account.CustomerPriority__c</members>
         <members>Account.DandbCompanyId</members>
         <members>Account.Description</members>
         <members>Account.DunsNumber</members>
         <members>Account.Fax</members>
         <members>Account.Industry</members>
+        <members>Account.IsBuyer</members>
         <members>Account.IsCustomerPortal</members>
+        <members>Account.IsExcludedFromRealign</members>
         <members>Account.IsPartner</members>
         <members>Account.Jigsaw</members>
+        <members>Account.LiveText__Active__c</members>
+        <members>Account.MyCoolCheckBox__c</members>
         <members>Account.NaicsCode</members>
         <members>Account.NaicsDesc</members>
         <members>Account.Name</members>
@@ -2137,10 +2141,6 @@
         <name>CustomTab</name>
     </types>
     <types>
-        <members>Folder1/folder2/Folder3</members>
-        <name>Dashboard</name>
-    </types>
-    <types>
         <members>Folder1</members>
         <members>Folder1/DocTest1.text</members>
         <members>Folder2</members>
@@ -2150,6 +2150,10 @@
         <members>SharedDocuments/Anthem_Logo.jpg</members>
         <members>SharedDocuments/New_Anthem_Logo.png</members>
         <name>Document</name>
+    </types>
+    <types>
+        <members>Test</members>
+        <name>EmailServicesFunction</name>
     </types>
     <types>
         <members>Georgia_COBRA</members>
@@ -2489,7 +2493,7 @@
     <types>
         <members>ACCObjTest1__c.SairecordType1</members>
         <members>ACCObjTest1__c.SairecordType2</members>
-        <members>Account.ARC1</members>
+        <members>Account.Test</members>
         <members>Contact.CRT1</members>
         <members>DLCObj18__c.DLCObj18_RcType1</members>
         <members>DLCObj18__c.DLCObj18_RcType2</members>
@@ -2554,6 +2558,9 @@
     <types>
         <members>ANA_Underwriting__c.Generate_RFQ_Form</members>
         <members>Account.Billing</members>
+        <members>Account.LiveText__Opt_in_for_Text_Messages_list</members>
+        <members>Account.LiveText__Opt_out_for_Text_Messages_list</members>
+        <members>Account.LiveText__Send_Bulk_SMS</members>
         <members>Campaign.ViewCampaignInfluenceReport</members>
         <members>Case.UpsellCrosssellOpportunity</members>
         <members>Opportunity.DeliveryStatus</members>
