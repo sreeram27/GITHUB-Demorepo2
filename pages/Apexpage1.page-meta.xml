@@ -2,8 +2,8 @@
 <ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>40.0</apiVersion>
     <availableInTouch>false</availableInTouch>
-    <confirmationTokenRequired>true</confirmationTokenRequired>
-    <description>007</description>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Page1111111111111</description>
     <label>Apexpage1</label>
     <packageVersions>
         <majorNumber>1</majorNumber>

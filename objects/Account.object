@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>CallHighlightAction</actionName>
@@ -362,6 +361,16 @@
     <fields>
         <fullName>Jigsaw</fullName>
         <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>MyCoolCheckBox__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Some Description</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hello World!</inlineHelpText>
+        <label>MyCoolCheckBox</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>NaicsCode</fullName>
