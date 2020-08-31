@@ -1,0 +1,83 @@
+<!---Author : Ravideep Singh
+Created Date : 03/09/2020
+History : @: 03/10/2020 - PRDCRM-51773 : Revision to Filter for PG Catalog Items-->
+<template>
+    <lightning-card title="Filters" icon-name="standard:calibration">
+        <lightning-button onclick={handleReset} label="Reset" slot="actions"></lightning-button>
+        <div class="slds-m-horizontal_medium">
+            <lightning-input
+                label="Search Key"
+                type="search"
+                onchange={handleSearchKeyChange}
+            ></lightning-input>
+            <section>
+                <h1>PG Type</h1>
+                <template if:true={pgtypes.data}>
+                    <template
+                        for:each={pgtypes.data.values}
+                        for:item="pgtype"
+                    >
+                        <lightning-input
+                            key={pgtype.value}
+                            label={pgtype.label}
+                            data-filter="pgtypes"
+                            data-value={pgtype.value}
+                            type="checkbox"
+                            unchecked
+                            onchange={handleChange}
+                        ></lightning-input>
+                    </template>
+                </template>
+                <template if:true={pgtypes.error}>
+                    <c-inline-message
+                        message="Error loading pgtypes"
+                        errors={pgtypes.error}
+                    ></c-inline-message>
+                </template>
+            </section>
+            <section>
+                <h1>Broad Contract Category</h1>
+                <template if:true={contractcategories.data}>
+                    <template
+                        for:each={contractcategories.data.values}
+                        for:item="contractcategory"
+                    >
+                        <lightning-input
+                            key={contractcategory.value}
+                            label={contractcategory.label}
+                            data-filter="contractcategories"
+                            data-value={contractcategory.value}
+                            type="checkbox"
+                            unchecked
+                            onchange={handleChange}
+                        ></lightning-input>
+                    </template>
+                </template>
+                <template if:true={contractcategories.error}>
+                    <c-inline-message
+                        message="Error loading contractcategories"
+                        errors={contractcategories.error}
+                    ></c-inline-message>
+                </template>
+            </section>
+            <section>
+                <h1>Performance Category</h1>
+                <template if:true={performancecatagoriesdata}>   
+                    <lightning-combobox
+                        name="performancecategory"
+                        value={value}
+                        options={options}
+                        data-filter="performancecategories"
+                        dropdown-alignment = "bottom-left"
+                        onchange={handleChange}></lightning-combobox>
+            </template>
+            <template if:true={performancecategorieserror}>
+                <c-inline-message
+                    message="Error loading performancecatrgories"
+                    errors={performancecategorieserror}
+                ></c-inline-message>
+            </template>
+            </section>
+        </div>
+    </lightning-card>
+</template>

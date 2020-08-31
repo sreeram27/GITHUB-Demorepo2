@@ -1,0 +1,34 @@
+.THIS .scrollable {
+    overflow-y:auto;
+    height : 500px;
+}
+.THIS .changeGreen {
+    color : rgb(0, 204, 0) !important ;
+}
+.THIS .cardHeight{
+    height : 500px;
+    overflow-y: auto;
+}
+.THIS .marginTop{
+    margin-top: 25px;
+}
+.THIS .changeAsBlank {
+    color : rgb(22, 50, 92) !important ;
+}
+.THIS .headingStyles{
+    color : rgb(12, 12, 12) !important;
+    font-size: .90rem;
+}
+.THIS .slds-text-heading_small{
+    text-decoration: underline;
+    margin-left: 30px;
+}
+.THIS .parentName{
+    color:rgb(175, 5, 12);
+}
+.THIS .Mandatory{
+    color: rgb(247, 25, 4) !important;
+}
+.THIS .slds-text-color_error{
+    font-style: italic;
+}

@@ -1,0 +1,25 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
+    <div class="vlocity via-slds" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ng-app="vsAnthemApp">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.2/es6-promise.js"></script>
+    <script>console.info("ANA MassUpdate Page rendered Successfully!!");</script>
+
+        <vlocity_ins:BusinessProcessComponent strOmniScriptType="ANA Library"
+            strOmniScriptSubType="OS-MassUpdate"
+            strOmniScriptLang="English"
+            previewMode="{!$CurrentPage.parameters.previewEmbedded}"
+            verticalMode="{!$CurrentPage.parameters.verticalMode}"
+            strOmniScriptId="{!$CurrentPage.parameters.designerPreviewId}"
+            scriptLayout="lightning"/>
+        <vlocity_ins:BusinessProcessHelperComponent />
+        <vlocity_ins:JSONTreeHTMLTemplateComponent />
+
+        <c:ANA_Membership_Template_Programs />
+        <script type="text/javascript">
+            var modules = ['vlocity-business-process'];
+            var myModule = angular.module('vsAnthemApp', modules);
+        </script>
+        <c:ANA_Membership_Controller />
+
+    </div>
+    <vlocity_ins:VFActionFunction />
+</apex:page>
