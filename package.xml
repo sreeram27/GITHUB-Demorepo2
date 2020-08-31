@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <version>48.0</version>
     <types>
         <members>A0</members>
@@ -162,6 +161,7 @@
         <members>CommunitiesSelfRegConfirmControllerTest</members>
         <members>CommunitiesSelfRegController</members>
         <members>CommunitiesSelfRegControllerTest</members>
+        <members>CreateContactFrmEmail</members>
         <members>D0</members>
         <members>D3</members>
         <members>D4</members>
@@ -195,6 +195,12 @@
         <members>Kl1</members>
         <members>LBClass1</members>
         <members>LBClass2</members>
+        <members>LightningForgotPasswordController</members>
+        <members>LightningForgotPasswordControllerTest</members>
+        <members>LightningLoginFormController</members>
+        <members>LightningLoginFormControllerTest</members>
+        <members>LightningSelfRegisterController</members>
+        <members>LightningSelfRegisterControllerTest</members>
         <members>Mar16saiclass4</members>
         <members>Mar19Cls3</members>
         <members>Mar20Class3</members>
@@ -2129,6 +2135,7 @@
     </types>
     <types>
         <members>Catch_up</members>
+        <members>TestCommunity</members>
         <members>TestSite1</members>
         <name>CustomSite</name>
     </types>
@@ -2139,6 +2146,12 @@
         <members>DLConfigTestObj__c</members>
         <members>Sai_Obj500__c</members>
         <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Folder1</members>
+        <members>Folder1/folder2</members>
+        <members>Folder1/folder2/Folder3</members>
+        <name>Dashboard</name>
     </types>
     <types>
         <members>Folder1</members>
@@ -2186,6 +2199,10 @@
         <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
         <members>QuoteLineItem</members>
         <name>Flow</name>
+    </types>
+    <types>
+        <members>TestCommunity.Banned</members>
+        <name>KeywordList</name>
     </types>
     <types>
         <members>ACCObjTest1__c-ACCObjTest1 Layout</members>
@@ -2407,6 +2424,26 @@
         <name>ManagedTopics</name>
     </types>
     <types>
+        <members>TestCommunity.Block_banned_keywords</members>
+        <members>TestCommunity.Flag_banned</members>
+        <members>TestCommunity.Freeze_for_frequent_posting</members>
+        <members>TestCommunity.Replace_banned</members>
+        <members>TestCommunity.Review_the_first_post</members>
+        <name>ModerationRule</name>
+    </types>
+    <types>
+        <members>Default_Navigation1</members>
+        <name>NavigationMenu</name>
+    </types>
+    <types>
+        <members>TestCommunity</members>
+        <name>Network</name>
+    </types>
+    <types>
+        <members>cbTestCommunity</members>
+        <name>NetworkBranding</name>
+    </types>
+    <types>
         <members>PRS1</members>
         <members>PRS2</members>
         <name>PermissionSet</name>
@@ -2471,6 +2508,7 @@
         <members>System AdministratorClone</members>
         <members>Test1</members>
         <members>Test1Profile</members>
+        <members>TestCommunity Profile</members>
         <members>TestCreateProfile</members>
         <members>TestSite1 Profile</members>
         <members>Teste Profile</members>
@@ -2489,6 +2527,11 @@
         <members>ARProfile1_profileSessionSetting1520692602184</members>
         <members>ARProfile2_profileSessionSetting1522166719446</members>
         <name>ProfileSessionSetting</name>
+    </types>
+    <types>
+        <members>GuestCommunityCase</members>
+        <members>NewCommunityCase</members>
+        <name>QuickAction</name>
     </types>
     <types>
         <members>ACCObjTest1__c.SairecordType1</members>
@@ -2541,6 +2584,12 @@
     <types>
         <members>en_US</members>
         <name>Translations</name>
+    </types>
+    <types>
+        <members>TestCommunity.Customer_Members</members>
+        <members>TestCommunity.Members_without_contribution</members>
+        <members>TestCommunity.Partner_and_Customer_members</members>
+        <name>UserCriteria</name>
     </types>
     <types>
         <members>AR_Obj1__c.ARPValidationRule1</members>
