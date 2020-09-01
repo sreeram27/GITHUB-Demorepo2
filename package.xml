@@ -1444,6 +1444,11 @@
         <name>Flow</name>
     </types>
     <types>
+        <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>QuoteLineItem</members>
+        <name>FlowDefinition</name>
+    </types>
+    <types>
         <members>ACCObjTest1__c-ACCObjTest1 Layout</members>
         <members>ACCObjTest1__c-Custom-Layout1</members>
         <members>ACCObjTest1__c-sai</members>
