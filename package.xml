@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <version>48.0</version>
     <types>
         <members>A0</members>
@@ -363,6 +364,10 @@
     <types>
         <members>Case</members>
         <name>AssignmentRules</name>
+    </types>
+    <types>
+        <members>Default_TestCommunity</members>
+        <name>Audience</name>
     </types>
     <types>
         <members>ACEBrokerages_ChatterPublish</members>
@@ -2199,6 +2204,11 @@
         <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
         <members>QuoteLineItem</members>
         <name>Flow</name>
+    </types>
+    <types>
+        <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>QuoteLineItem</members>
+        <name>FlowDefinition</name>
     </types>
     <types>
         <members>TestCommunity.Banned</members>
