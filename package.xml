@@ -269,6 +269,7 @@
         <members>v8</members>
         <members>y10</members>
         <members>y11</members>
+        <members>y12</members>
         <name>ApexClass</name>
     </types>
     <types>
