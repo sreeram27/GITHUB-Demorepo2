@@ -6292,6 +6292,10 @@
         <name>EmailTemplate</name>
     </types>
     <types>
+        <members>Global-Uni Global Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
         <members>acceptCancelBroker</members>
         <members>addNewShares</members>
         <members>brokerBrokerageModal</members>
