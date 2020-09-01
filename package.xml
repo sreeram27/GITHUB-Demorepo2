@@ -185,11 +185,14 @@
         <members>MyProfilePageControllerTest</members>
         <members>NA23Class1</members>
         <members>NA23Class2</members>
+        <members>NC11</members>
+        <members>NC22</members>
         <members>NCLS100</members>
         <members>NCLs1</members>
         <members>NS25Class1</members>
         <members>New1233</members>
         <members>NewSep62</members>
+        <members>PUlreqcls1</members>
         <members>RClass1</members>
         <members>RGvc02</members>
         <members>S10</members>
@@ -310,6 +313,7 @@
         <name>AssignmentRules</name>
     </types>
     <types>
+        <members>ARIndexCmp</members>
         <members>AURATest7</members>
         <members>AuRATest1</members>
         <members>AuRATest2</members>
@@ -375,8 +379,13 @@
         <members>ACCObjTest1__c.ACCField1__c</members>
         <members>ACCObjTest1__c.ACCField2__c</members>
         <members>ACCObjTest1__c.AutorabitExtId__c</members>
+        <members>ACCObjTest1__c.N1__c</members>
+        <members>ACCObjTest1__c.PLNew1__c</members>
+        <members>ACCObjTest1__c.PLnew3__c</members>
         <members>ACCObjTest1__c.PLt1__c</members>
         <members>ACCObjTest1__c.Plt3__c</members>
+        <members>ACCObjTest1__c.pl1__c</members>
+        <members>ACCObjTest1__c.test__c</members>
         <members>ACCObjt1__c.FT1__c</members>
         <members>ACCObjt1__c.FT2__c</members>
         <members>ACCObjt1__c.FT5__c</members>
@@ -1507,6 +1516,8 @@
         <members>ACL11</members>
         <members>ACL12</members>
         <members>ACL2</members>
+        <members>ACL201</members>
+        <members>ACL22</members>
         <members>ACL24</members>
         <members>ACL25</members>
         <members>ACL3</members>
@@ -2240,6 +2251,8 @@
         <name>EscalationRule</name>
     </types>
     <types>
+        <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>QuoteLineItem</members>
         <members>TestFlowLabel1</members>
         <name>Flow</name>
     </types>
@@ -2595,6 +2608,10 @@
         <name>ManagedTopics</name>
     </types>
     <types>
+        <members>Default_Navigation</members>
+        <name>NavigationMenu</name>
+    </types>
+    <types>
         <members>Catch up</members>
         <name>Network</name>
     </types>
@@ -2658,6 +2675,7 @@
         <members>ProfileTest123</members>
         <members>Profileest</members>
         <members>ReadOnly</members>
+        <members>SaiJun19thprofile</members>
         <members>Silver Partner User</members>
         <members>SolutionManager</members>
         <members>Standard</members>
@@ -2723,6 +2741,8 @@
         <name>RecordActionDeployment</name>
     </types>
     <types>
+        <members>ACCObjTest1__c.SairecordType1</members>
+        <members>ACCObjTest1__c.SairecordType2</members>
         <members>Account.ARC1</members>
         <members>Contact.CRT1</members>
         <members>DLCObj18__c.DLCObj18_RcType1</members>
