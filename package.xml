@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <version>48.0</version>
     <types>
         <members>A0</members>
@@ -1518,6 +1519,8 @@
         <members>EC_AccObj1__c-EC-AccObj1 Layout</members>
         <members>Feb26Obj123__c-Feb26Obj123 Layout</members>
         <members>Formula_objecct1__c-Formula objecct1 Layout</members>
+        <members>Global-Global Layout</members>
+        <members>Global-Uni Global Layout</members>
         <members>HarishObject1__c-HarishObject1 Layout</members>
         <members>Individual-Individual Layout</members>
         <members>JUnObj1__c-JUnObj1 Layout</members>
@@ -1712,6 +1715,10 @@
     <types>
         <members>Contact.ContactMatchingRule1</members>
         <name>MatchingRule</name>
+    </types>
+    <types>
+        <members>Default_Navigation</members>
+        <name>NavigationMenu</name>
     </types>
     <types>
         <members>Catch up</members>

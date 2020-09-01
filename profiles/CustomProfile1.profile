@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>A0</apexClass>
@@ -1382,6 +1383,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Feb26Obj123__c-Feb26Obj123 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Global-Global Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>HarishObject1__c-HarishObject1 Layout</layout>
