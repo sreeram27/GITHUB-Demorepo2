@@ -1,4 +1,4 @@
-public Class A0
+public Class jsonFix1
 {
 public Account createAccount(String name)  //method to create account
 {//comment source line4 srcmodififylast
