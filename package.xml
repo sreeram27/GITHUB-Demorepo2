@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <version>47.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -205,6 +204,7 @@
         <members>SKVClass1</members>
         <members>SKVClass2</members>
         <members>SRclass1</members>
+        <members>STAB203Class</members>
         <members>SaiClass150</members>
         <members>SaiClass151</members>
         <members>SaiClass2</members>
