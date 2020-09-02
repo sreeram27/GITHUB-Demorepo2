@@ -2694,6 +2694,12 @@
         <name>FlexiPage</name>
     </types>
     <types>
+        <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>QuoteLineItem</members>
+        <members>TestFlowLabel1</members>
+        <name>Flow</name>
+    </types>
+    <types>
         <members>FIELD_SERVICE_Default</members>
         <members>Sales_Business</members>
         <members>Test_Service</members>
