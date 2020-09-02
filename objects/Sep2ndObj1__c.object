@@ -153,25 +153,6 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <fields>
-        <fullName>EmailField__c</fullName>
-        <externalId>false</externalId>
-        <label>EmailField</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Email</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>TextField__c</fullName>
-        <externalId>false</externalId>
-        <label>TextField</label>
-        <length>7</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
     <label>Sep2ndObj1</label>
     <nameField>
         <label>Sep2ndObj1 Name</label>
