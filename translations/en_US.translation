@@ -65,6 +65,10 @@
         <name>S16label1</name>
     </customLabels>
     <customLabels>
+        <label><!-- STAB203 Label --></label>
+        <name>STAB203_Label</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Urltestlabel1 --></label>
         <name>Urltestlabel1</name>
     </customLabels>

@@ -3729,6 +3729,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>STAB203Class</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SaaSClientQuestionSearchCtrl</apexClass>
         <enabled>false</enabled>
     </classAccesses>

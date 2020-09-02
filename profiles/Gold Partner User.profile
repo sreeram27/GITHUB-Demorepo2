@@ -957,6 +957,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>STAB203Class</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SaiClass150</apexClass>
         <enabled>false</enabled>
     </classAccesses>

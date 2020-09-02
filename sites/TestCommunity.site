@@ -24,7 +24,6 @@
     <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
     <siteAdmin>saikumar-sb.three@autorabit.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>saikumar-sb.three@autorabit.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
     <subdomain>saisbthree-developer-edition</subdomain>
     <urlPathPrefix>TestCommunity</urlPathPrefix>
