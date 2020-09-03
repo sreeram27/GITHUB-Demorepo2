@@ -225,6 +225,7 @@
         <members>SKVClass2</members>
         <members>SRclass1</members>
         <members>STAB203Class</members>
+        <members>Sa89</members>
         <members>SaiClass150</members>
         <members>SaiClass151</members>
         <members>SaiClass2</members>
@@ -266,6 +267,7 @@
         <members>b_saiclass</members>
         <members>c_saiclass</members>
         <members>dest1234</members>
+        <members>jsonFix1</members>
         <members>kkkk</members>
         <members>n09</members>
         <members>n1</members>
@@ -292,6 +294,7 @@
         <members>SiteHeader</members>
         <members>SiteLogin</members>
         <members>SitePoweredBy</members>
+        <members>tesr</members>
         <name>ApexComponent</name>
     </types>
     <types>
@@ -364,6 +367,8 @@
         <members>Auracomponent4</members>
         <members>AutoComponenent2</members>
         <members>AutoComponenet1</members>
+        <members>LwcTest1</members>
+        <members>Lwctest</members>
         <members>Saiaura</members>
         <members>forgotPassword</members>
         <members>loginForm</members>
@@ -2042,6 +2047,7 @@
         <members>ScorecardAssociation</members>
         <members>ScorecardMetric</members>
         <members>ScratchOrgInfo</members>
+        <members>Sep2ndObj1__c</members>
         <members>SepObj2__c</members>
         <members>Site</members>
         <members>Sob1__c</members>
@@ -2370,6 +2376,10 @@
         <name>EscalationRule</name>
     </types>
     <types>
+        <members>Home_Page_Default</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
         <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
         <members>QuoteLineItem</members>
         <members>TestFlowLabel1</members>
@@ -2564,6 +2574,7 @@
         <members>Scorecard-Scorecard Layout</members>
         <members>ScorecardAssociation-Scorecard Association Layout</members>
         <members>ScorecardMetric-Scorecard Metric Layout</members>
+        <members>Sep2ndObj1__c-Sep2ndObj1 Layout</members>
         <members>SepObj2__c-SepObj2 Layout</members>
         <members>Sob1__c-Sob1 Layout</members>
         <members>Solution-Solution Layout</members>
@@ -3189,6 +3200,7 @@
         <name>StandardValueSet</name>
     </types>
     <types>
+        <members>SRTest1</members>
         <members>SiteSamples</members>
         <name>StaticResource</name>
     </types>

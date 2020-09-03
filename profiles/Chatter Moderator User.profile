@@ -3733,6 +3733,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Sa89</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SaaSClientQuestionSearchCtrl</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -6022,6 +6026,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>iSell__UrlUtils</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>jsonFix1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -97199,6 +97207,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Seismic_Product_Type__c-Seismic Product Type Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Sep2ndObj1__c-Sep2ndObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ServiceContract-Service Contract Layout</layout>

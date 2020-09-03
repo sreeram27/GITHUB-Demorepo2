@@ -3737,6 +3737,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Sa89</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SaaSClientQuestionSearchCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -6026,6 +6030,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>iSell__UrlUtils</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>jsonFix1</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -97265,6 +97273,9 @@
         <layout>Seismic_Product_Type__c-Seismic Product Type Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Sep2ndObj1__c-Sep2ndObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ServiceContract-Service Contract Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -101644,6 +101655,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Seismic_Product_Type__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Sep2ndObj1__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

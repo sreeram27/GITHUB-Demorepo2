@@ -404,6 +404,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Sa89</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SaiClass150</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -505,6 +509,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>dest1234</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>jsonFix1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -640,6 +648,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SaiDX124__c-SaiDX124 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Sep2ndObj1__c-Sep2ndObj1 Layout</layout>
     </layoutAssignments>
     <loginHours/>
     <pageAccesses>
