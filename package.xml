@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <version>47.0</version>
     <types>
         <members>A0</members>
@@ -2209,6 +2210,12 @@
         <name>DuplicateRule</name>
     </types>
     <types>
+        <members>PMO</members>
+        <members>PMO/Defect_Creation_Notification</members>
+        <members>PMO/Question_Log_Send_Email_on_Query_Assignment</members>
+        <members>PMO/Request_Description_Created_Updated</members>
+        <members>PMO/Send_Email_To_Owner_Of_the_Request</members>
+        <members>PMO/Send_Email_To_Submitter_of_the_Question</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityLockoutEmailTemplate</members>
