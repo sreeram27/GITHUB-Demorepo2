@@ -412,6 +412,7 @@
         <name>CompactLayout</name>
     </types>
     <types>
+        <members>AppTest1</members>
         <members>standard__AppLauncher</members>
         <members>standard__Chatter</members>
         <members>standard__Community</members>
@@ -1459,6 +1460,8 @@
         <members>ScratchOrgInfo.SignupUsername</members>
         <members>ScratchOrgInfo.Status</members>
         <members>ScratchOrgInfo.Username</members>
+        <members>Sep2ndObj2__c.f2__c</members>
+        <members>Sep7thObj1__c.F2__c</members>
         <members>SepObj2__c.SepObj2Field1__c</members>
         <members>SepObj2__c.SepObj2Field2__c</members>
         <members>Sob1__c.SF1__c</members>
@@ -2048,6 +2051,8 @@
         <members>ScorecardMetric</members>
         <members>ScratchOrgInfo</members>
         <members>Sep2ndObj1__c</members>
+        <members>Sep2ndObj2__c</members>
+        <members>Sep7thObj1__c</members>
         <members>SepObj2__c</members>
         <members>Site</members>
         <members>Sob1__c</members>
@@ -2575,6 +2580,8 @@
         <members>ScorecardAssociation-Scorecard Association Layout</members>
         <members>ScorecardMetric-Scorecard Metric Layout</members>
         <members>Sep2ndObj1__c-Sep2ndObj1 Layout</members>
+        <members>Sep2ndObj2__c-Sep2ndObj2 Layout</members>
+        <members>Sep7thObj1__c-Sep7thObj1 Layout</members>
         <members>SepObj2__c-SepObj2 Layout</members>
         <members>Sob1__c-Sob1 Layout</members>
         <members>Solution-Solution Layout</members>
