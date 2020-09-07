@@ -380,6 +380,10 @@
         <name>CompactLayout</name>
     </types>
     <types>
+        <members>AppTest1</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
         <members>ACCObjTest1__c.ACCField1__c</members>
         <members>ACCObjTest1__c.ACCField2__c</members>
         <members>ACCObjTest1__c.AutorabitExtId__c</members>
