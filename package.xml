@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>47.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -1453,6 +1453,8 @@
         <members>ScratchOrgInfo.SignupUsername</members>
         <members>ScratchOrgInfo.Status</members>
         <members>ScratchOrgInfo.Username</members>
+        <members>Sep2ndObj2__c.F1__c</members>
+        <members>Sep2ndObj2__c.f2__c</members>
         <members>SepObj2__c.SepObj2Field1__c</members>
         <members>SepObj2__c.SepObj2Field2__c</members>
         <members>Sob1__c.SF1__c</members>
@@ -2025,6 +2027,7 @@
         <members>ScorecardAssociation</members>
         <members>ScorecardMetric</members>
         <members>ScratchOrgInfo</members>
+        <members>Sep2ndObj2__c</members>
         <members>SepObj2__c</members>
         <members>Site</members>
         <members>Sob1__c</members>
