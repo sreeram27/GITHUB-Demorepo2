@@ -32,6 +32,7 @@
         <members>A09876</members>
         <members>A1</members>
         <members>A10</members>
+        <members>A11</members>
         <members>A12</members>
         <members>A13</members>
         <members>A14</members>
@@ -153,6 +154,7 @@
         <members>C1</members>
         <members>ChangePasswordController</members>
         <members>ChangePasswordControllerTest</members>
+        <members>ClassF2Y</members>
         <members>CommunitiesLandingController</members>
         <members>CommunitiesLandingControllerTest</members>
         <members>CommunitiesLoginController</members>
