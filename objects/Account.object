@@ -535,6 +535,28 @@
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <fields>
+        <fullName>field1__c</fullName>
+        <description>this is text field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>tetsing custom1</inlineHelpText>
+        <label>field1</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>field2__c</fullName>
+        <description>this is custom2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>thi is custom2</inlineHelpText>
+        <label>field2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Url</type>
+    </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
         <filterScope>Everything</filterScope>

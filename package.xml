@@ -531,6 +531,8 @@
         <members>Account.UpsellOpportunity__c</members>
         <members>Account.Website</members>
         <members>Account.YearStarted</members>
+        <members>Account.field1__c</members>
+        <members>Account.field2__c</members>
         <members>AccountBrand.AccountId</members>
         <members>AccountBrand.CompanyName</members>
         <members>AccountBrand.Email</members>
