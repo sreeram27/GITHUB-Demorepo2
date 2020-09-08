@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>47.0</version>
     <types>
         <members>A0</members>
         <members>A0001</members>
@@ -232,6 +232,8 @@
         <members>SampathAug19thClass1</members>
         <members>SampathClass1</members>
         <members>Sep1</members>
+        <members>Sep8Cls1</members>
+        <members>Sep8Cls1testclass</members>
         <members>SiteLoginController</members>
         <members>SiteLoginControllerTest</members>
         <members>SiteRegisterController</members>
@@ -2088,6 +2090,8 @@
     </types>
     <types>
         <members>Folder1</members>
+        <members>Folder1/Folder2</members>
+        <members>Folder1/Folder2/Folder3</members>
         <name>Dashboard</name>
     </types>
     <types>
