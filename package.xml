@@ -213,6 +213,7 @@
         <members>PUlreqcls1</members>
         <members>RClass1</members>
         <members>RGvc02</members>
+        <members>S097</members>
         <members>S10</members>
         <members>S16class1</members>
         <members>S200</members>
@@ -238,6 +239,14 @@
         <members>SampathAug19thClass1</members>
         <members>SampathClass1</members>
         <members>Sep1</members>
+        <members>Sep8Cls1</members>
+        <members>Sep8Cls1testclass</members>
+        <members>Sep8Cls2</members>
+        <members>Sep8Cls2testclass</members>
+        <members>Sep8Cls3</members>
+        <members>Sep8Cls3testclass</members>
+        <members>Sep8Cls4</members>
+        <members>Sep8Cls4testclass</members>
         <members>SiteLoginController</members>
         <members>SiteLoginControllerTest</members>
         <members>SiteRegisterController</members>
@@ -1462,6 +1471,7 @@
         <members>ScratchOrgInfo.Username</members>
         <members>Sep2ndObj2__c.f2__c</members>
         <members>Sep7thObj1__c.F2__c</members>
+        <members>Sep8thObj1__c.F2__c</members>
         <members>SepObj2__c.SepObj2Field1__c</members>
         <members>SepObj2__c.SepObj2Field2__c</members>
         <members>Sob1__c.SF1__c</members>
@@ -2053,6 +2063,7 @@
         <members>Sep2ndObj1__c</members>
         <members>Sep2ndObj2__c</members>
         <members>Sep7thObj1__c</members>
+        <members>Sep8thObj1__c</members>
         <members>SepObj2__c</members>
         <members>Site</members>
         <members>Sob1__c</members>
@@ -2582,6 +2593,7 @@
         <members>Sep2ndObj1__c-Sep2ndObj1 Layout</members>
         <members>Sep2ndObj2__c-Sep2ndObj2 Layout</members>
         <members>Sep7thObj1__c-Sep7thObj1 Layout</members>
+        <members>Sep8thObj1__c-Sep8thObj1 Layout</members>
         <members>SepObj2__c-SepObj2 Layout</members>
         <members>Sob1__c-Sob1 Layout</members>
         <members>Solution-Solution Layout</members>

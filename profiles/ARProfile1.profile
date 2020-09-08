@@ -922,6 +922,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>S097</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>S10</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1019,6 +1023,38 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Sep1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls1testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls2testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls3testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls4</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls4testclass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3890,6 +3926,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Sep8thObj1__c.F2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>SepObj2__c.SepObj2Field1__c</field>
         <readable>false</readable>
@@ -4714,6 +4755,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Sep7thObj1__c-Sep7thObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Sep8thObj1__c-Sep8thObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SepObj2__c-SepObj2 Layout</layout>

@@ -1454,6 +1454,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BusinessClassTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CDHPHttpCalloutMock</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -3694,6 +3698,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>S097</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>S16class1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -4035,6 +4043,38 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SendToFirstController_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls1testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls2testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls3testclass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls4</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Sep8Cls4testclass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -68119,6 +68159,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Sep8thObj1__c.F2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>ServiceContract.AccountId</field>
         <readable>true</readable>
@@ -97231,6 +97276,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Sep7thObj1__c-Sep7thObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Sep8thObj1__c-Sep8thObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ServiceContract-Service Contract Layout</layout>

@@ -136,6 +136,11 @@
         <field>Sep7thObj1__c.F2__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Sep8thObj1__c.F2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>PRS1</label>
     <license>Salesforce</license>
