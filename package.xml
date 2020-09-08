@@ -234,6 +234,8 @@
         <members>Sep1</members>
         <members>Sep8Cls1</members>
         <members>Sep8Cls1testclass</members>
+        <members>Sep8Cls2</members>
+        <members>Sep8Cls2testclass</members>
         <members>SiteLoginController</members>
         <members>SiteLoginControllerTest</members>
         <members>SiteRegisterController</members>
