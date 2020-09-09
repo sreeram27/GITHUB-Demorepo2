@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <version>47.0</version>
     <types>
         <members>A0</members>
@@ -364,6 +365,10 @@
         <members>Case</members>
         <members>Lead</members>
         <name>AssignmentRules</name>
+    </types>
+    <types>
+        <members>Default_TestCommunity</members>
+        <name>Audience</name>
     </types>
     <types>
         <members>ARIndexCmp</members>
@@ -2781,6 +2786,7 @@
         <name>ModerationRule</name>
     </types>
     <types>
+        <members>Default_Navigation</members>
         <members>Default_Navigation1</members>
         <name>NavigationMenu</name>
     </types>
