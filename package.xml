@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>47.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -131,6 +131,8 @@
         <members>ActnrClass2</members>
         <members>AddClass2</members>
         <members>Apicls2</members>
+        <members>Asca1</members>
+        <members>Asca2</members>
         <members>Aug21stClass1</members>
         <members>Aug21stClass2</members>
         <members>Aug21stClass3</members>
@@ -151,6 +153,7 @@
         <members>CommunitiesSelfRegConfirmControllerTest</members>
         <members>CommunitiesSelfRegController</members>
         <members>CommunitiesSelfRegControllerTest</members>
+        <members>CreateContactFrmEmail</members>
         <members>D0</members>
         <members>D3</members>
         <members>D4</members>
@@ -184,6 +187,12 @@
         <members>Kl1</members>
         <members>LBClass1</members>
         <members>LBClass2</members>
+        <members>LightningForgotPasswordController</members>
+        <members>LightningForgotPasswordControllerTest</members>
+        <members>LightningLoginFormController</members>
+        <members>LightningLoginFormControllerTest</members>
+        <members>LightningSelfRegisterController</members>
+        <members>LightningSelfRegisterControllerTest</members>
         <members>Mar16saiclass4</members>
         <members>Mar19Cls3</members>
         <members>Mar20Class3</members>
@@ -205,6 +214,7 @@
         <members>PUlreqcls1</members>
         <members>RClass1</members>
         <members>RGvc02</members>
+        <members>S097</members>
         <members>S10</members>
         <members>S16class1</members>
         <members>S200</members>
@@ -216,6 +226,8 @@
         <members>SKVClass1</members>
         <members>SKVClass2</members>
         <members>SRclass1</members>
+        <members>STAB203Class</members>
+        <members>Sa89</members>
         <members>SaiClass150</members>
         <members>SaiClass151</members>
         <members>SaiClass2</members>
@@ -228,6 +240,14 @@
         <members>SampathAug19thClass1</members>
         <members>SampathClass1</members>
         <members>Sep1</members>
+        <members>Sep8Cls1</members>
+        <members>Sep8Cls1testclass</members>
+        <members>Sep8Cls2</members>
+        <members>Sep8Cls2testclass</members>
+        <members>Sep8Cls3</members>
+        <members>Sep8Cls3testclass</members>
+        <members>Sep8Cls4</members>
+        <members>Sep8Cls4testclass</members>
         <members>SiteLoginController</members>
         <members>SiteLoginControllerTest</members>
         <members>SiteRegisterController</members>
@@ -252,9 +272,12 @@
         <members>a7testclass</members>
         <members>a_saiclass</members>
         <members>abc</members>
+        <members>aug13</members>
         <members>b0testclass</members>
         <members>b_saiclass</members>
         <members>c_saiclass</members>
+        <members>dest1234</members>
+        <members>jsonFix1</members>
         <members>kkkk</members>
         <members>n09</members>
         <members>n1</members>
@@ -270,6 +293,10 @@
         <members>v6A0</members>
         <members>v7</members>
         <members>v8</members>
+        <members>y10</members>
+        <members>y11</members>
+        <members>y12</members>
+        <members>y3</members>
         <name>ApexClass</name>
     </types>
     <types>
