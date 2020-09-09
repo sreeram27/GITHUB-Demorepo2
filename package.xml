@@ -255,6 +255,13 @@
         <members>SampathAug19thClass1</members>
         <members>SampathClass1</members>
         <members>Sep1</members>
+        <members>Sep8Cls1</members>
+        <members>Sep8Cls1testclass</members>
+        <members>Sep8Cls2</members>
+        <members>Sep8Cls2testclass</members>
+        <members>Sep8Cls3</members>
+        <members>Sep8Cls3testclass</members>
+        <members>Sep8Cls4</members>
         <members>SiteLoginController</members>
         <members>SiteLoginControllerTest</members>
         <members>SiteRegisterController</members>
