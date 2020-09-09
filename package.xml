@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>47.0</version>
+    <version>48.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -101,6 +101,7 @@
         <members>A999</members>
         <members>AA54</members>
         <members>AAAA07</members>
+        <members>ABC</members>
         <members>AC123</members>
         <members>ACEBrokerages_ChatterController</members>
         <members>ACEBrokerages_ChatterControllerTest</members>
