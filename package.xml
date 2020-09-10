@@ -2357,6 +2357,7 @@
         <members>unfiled$public/CommunityLockoutEmailTemplate</members>
         <members>unfiled$public/CommunityVerificationEmailTemplate</members>
         <members>unfiled$public/CommunityWelcomeEmailTemplate</members>
+        <members>unfiled$public/ET1</members>
         <members>unfiled$public/MarketingProductInquiryResponse</members>
         <members>unfiled$public/QLI_SydneyPreferredProductSoldTemplate</members>
         <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
