@@ -1060,6 +1060,10 @@
         <members>SendToFirstController</members>
         <members>SendToFirstController_Test</members>
         <members>Sep1</members>
+        <members>Sep8Cls1</members>
+        <members>Sep8Cls1testclass</members>
+        <members>Sep8Cls2</members>
+        <members>Sep8Cls2testclass</members>
         <members>ServiceIntegrationMappingUtility</members>
         <members>ShowNONBSendButton</members>
         <members>ShowNONBSendButtonTest</members>
