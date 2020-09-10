@@ -188,7 +188,7 @@
     </fields>
     <fields>
         <fullName>AutorabitExtId__c</fullName>
-        <description>Ex11ternal Id created by AutoRABIT</description>
+        <description>Ex11ternal Id 11111111111created by AutoRABIT</description>
         <externalId>true</externalId>
         <label>AutorabitExtId__c</label>
         <length>19</length>
