@@ -266,6 +266,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>A0123</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>A01234</apexClass>
         <enabled>true</enabled>
     </classAccesses>

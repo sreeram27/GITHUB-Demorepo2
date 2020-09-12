@@ -5,6 +5,10 @@
         <name>AppTest1</name>
     </customApplications>
     <customLabels>
+        <label><!-- AAtest456 --></label>
+        <name>AAtest456</name>
+    </customLabels>
+    <customLabels>
         <label>test</label>
         <name>AC1</name>
     </customLabels>
@@ -27,6 +31,10 @@
     <customLabels>
         <label><!-- S22CL2 --></label>
         <name>ACL2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACL4 --></label>
+        <name>ACL4</name>
     </customLabels>
     <customLabels>
         <label><!-- ACL50 --></label>
