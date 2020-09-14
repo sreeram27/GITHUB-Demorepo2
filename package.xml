@@ -3297,6 +3297,10 @@
         <name>ManagedTopics</name>
     </types>
     <types>
+        <members>Account.TestRule1</members>
+        <name>MatchingRule</name>
+    </types>
+    <types>
         <members>Default_Navigation</members>
         <name>NavigationMenu</name>
     </types>
