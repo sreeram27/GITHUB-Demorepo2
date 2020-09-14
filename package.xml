@@ -1730,6 +1730,7 @@
         <name>ManagedTopics</name>
     </types>
     <types>
+        <members>Account.TestRule1</members>
         <members>Contact.ContactMatchingRule1</members>
         <name>MatchingRule</name>
     </types>
