@@ -5,9 +5,9 @@
         <description>test</description>
         <label>TestMatchingrule20802</label>
         <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>AccountId</fieldName>
-            <matchingMethod>CompanyName</matchingMethod>
+            <blankValueBehavior>MatchBlanks</blankValueBehavior>
+            <fieldName>IndividualId</fieldName>
+            <matchingMethod>Exact</matchingMethod>
         </matchingRuleItems>
         <matchingRuleItems>
             <blankValueBehavior>NullNotAllowed</blankValueBehavior>
