@@ -2449,6 +2449,7 @@
     </types>
     <types>
         <members>AYObj1__c.TestRule1</members>
+        <members>Contact.TestMatchingRule20802</members>
         <name>MatchingRule</name>
     </types>
     <types>
