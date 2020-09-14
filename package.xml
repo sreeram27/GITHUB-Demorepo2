@@ -2448,6 +2448,10 @@
         <name>ManagedTopics</name>
     </types>
     <types>
+        <members>AYObj1__c.TestRule1</members>
+        <name>MatchingRule</name>
+    </types>
+    <types>
         <members>TestCommunity.Block_banned_keywords</members>
         <members>TestCommunity.Flag_banned</members>
         <members>TestCommunity.Freeze_for_frequent_posting</members>
