@@ -2,11 +2,11 @@
 <MatchingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <matchingRules>
         <fullName>TestRule1</fullName>
-        <description>test</description>
+        <description>test12</description>
         <label>TestRule1</label>
         <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>Name</fieldName>
+            <blankValueBehavior>MatchBlanks</blankValueBehavior>
+            <fieldName>AccountNumber</fieldName>
             <matchingMethod>Exact</matchingMethod>
         </matchingRuleItems>
         <ruleStatus>Inactive</ruleStatus>
