@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>Accept</actionName>
@@ -142,7 +143,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>121323</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -152,32 +152,23 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>field1__c</fullName>
-        <description>1112</description>
+        <fullName>Field1__c</fullName>
         <externalId>false</externalId>
-        <label>field1</label>
+        <label>Field1</label>
+        <length>13</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Email</type>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
-    <fields>
-        <fullName>field2__c</fullName>
-        <description>sdfsd</description>
-        <externalId>false</externalId>
-        <label>field2</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Phone</type>
-    </fields>
-    <label>ACR5</label>
+    <label>PradeepObj1</label>
     <nameField>
-        <label>ACR5 Name</label>
+        <label>PradeepObj1 Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>ACR5s</pluralLabel>
+    <pluralLabel>PradeepObj1s</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

@@ -13544,6 +13544,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ACR5__c.field1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ACR5__c.field2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ANA_Underwriting__c.ASL__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -59129,6 +59139,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>PradeepObj1__c.Field1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Prefix_History__c.AccountName__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -96984,6 +96999,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Plan_Relationship__c-Plan Relationship Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Prefix_History__c-Prefix History Layout</layout>

@@ -142,7 +142,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>may13</description>
+    <description>Test1</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -155,7 +155,7 @@
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>F1__c</fullName>
-        <description>May13th</description>
+        <description>test1</description>
         <externalId>false</externalId>
         <label>F1</label>
         <length>37</length>
@@ -166,7 +166,8 @@
     </fields>
     <fields>
         <fullName>F2__c</fullName>
-        <description>test12may13sdsds</description>
+        <businessStatus>Active</businessStatus>
+        <description>test133</description>
         <externalId>false</externalId>
         <label>F2</label>
         <length>80</length>

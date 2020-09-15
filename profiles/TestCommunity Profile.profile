@@ -650,6 +650,16 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>ACR5__c.field1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACR5__c.field2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Account.MyCoolCheckBox__c</field>
         <readable>false</readable>
@@ -662,6 +672,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Dbj1__c.F2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>PradeepObj1__c.Field1__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -709,6 +724,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>PG_Metric__c-PG_Metric Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SaiDX124__c-SaiDX124 Layout</layout>

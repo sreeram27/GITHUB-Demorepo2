@@ -13548,6 +13548,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ACR5__c.field1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACR5__c.field2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ANA_Underwriting__c.ASL__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -59133,6 +59143,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>PradeepObj1__c.Field1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Prefix_History__c.AccountName__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -97050,6 +97065,9 @@
         <layout>Plan_Relationship__c-Plan Relationship Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Prefix_History__c-Prefix History Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -99057,6 +99075,15 @@
         <layout>vlocity_ins__VqResource__c-vlocity_ins__Vlocity Acuity Resource Layout</layout>
     </layoutAssignments>
     <loginHours/>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>ACR5__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -101341,6 +101368,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Plan_Relationship__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>PradeepObj1__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
