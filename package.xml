@@ -207,6 +207,7 @@
         <members>NCLS100</members>
         <members>NCLs1</members>
         <members>NS25Class1</members>
+        <members>Ncn1</members>
         <members>New1233</members>
         <members>NewSep62</members>
         <members>PPS</members>
@@ -281,6 +282,7 @@
         <members>n09</members>
         <members>n1</members>
         <members>nc1</members>
+        <members>ncinos1</members>
         <members>pavancls2</members>
         <members>pr</members>
         <members>rtclass1</members>
@@ -2017,6 +2019,7 @@
         <members>PartnerRole</members>
         <members>PartyConsent</members>
         <members>PradeepObj1__c</members>
+        <members>Pradeep_Custom_Permission__mdt</members>
         <members>Pricebook2</members>
         <members>PricebookEntry</members>
         <members>Product2</members>
@@ -2112,6 +2115,7 @@
         <members>obj1__c</members>
         <members>obj2__c</members>
         <members>obj800__c</members>
+        <members>pradeep__c</members>
         <members>qaobj91__c</members>
         <members>rcobj1__c</members>
         <members>sc1obj1__c</members>
@@ -2268,6 +2272,10 @@
         <name>CustomObjectTranslation</name>
     </types>
     <types>
+        <members>Pradeep_Custom_Permission</members>
+        <name>CustomPermission</name>
+    </types>
+    <types>
         <members>Catch_up</members>
         <members>TestCommunity</members>
         <members>TestSite1</members>
@@ -2399,11 +2407,16 @@
         <name>EscalationRule</name>
     </types>
     <types>
+        <members>Pradeep_External_Data_Sourcc</members>
+        <name>ExternalDataSource</name>
+    </types>
+    <types>
         <members>Home_Page_Default</members>
         <name>FlexiPage</name>
     </types>
     <types>
         <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>Pradeep</members>
         <members>QuoteLineItem</members>
         <members>TestFlowLabel1</members>
         <name>Flow</name>
@@ -2555,6 +2568,7 @@
         <members>OrderItem-Order Product Layout</members>
         <members>PG_Metric__c-PG_Metric Layout</members>
         <members>PradeepObj1__c-PradeepObj1 Layout</members>
+        <members>Pradeep_Custom_Permission__mdt-Pradeep Custom Metadata Layout</members>
         <members>Pricebook2-Price Book Layout</members>
         <members>PricebookEntry-Price Book Entry Layout</members>
         <members>Product2-Product Layout</members>
@@ -2794,6 +2808,10 @@
         <name>ModerationRule</name>
     </types>
     <types>
+        <members>Pradeep_NamedCredential</members>
+        <name>NamedCredential</name>
+    </types>
+    <types>
         <members>Default_Navigation</members>
         <members>Default_Navigation1</members>
         <name>NavigationMenu</name>
@@ -2954,6 +2972,7 @@
         <members>Lead.LeadRecType1</members>
         <members>Lead.RecType1</members>
         <members>Obj900__c.Obj900RC1</members>
+        <members>PradeepObj1__c.Pradeep_Record_Type</members>
         <name>RecordType</name>
     </types>
     <types>

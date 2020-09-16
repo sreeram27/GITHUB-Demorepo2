@@ -3414,6 +3414,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Ncn1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>NewBusiness_QuoteLineItem</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -6095,6 +6099,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>n1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ncinos1</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -13506,6 +13514,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <custom>false</custom>
+    <externalDataSourceAccesses>
+        <enabled>false</enabled>
+        <externalDataSource>Pradeep_External_Data_Sourcc</externalDataSource>
+    </externalDataSourceAccesses>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.ACCField1__c</field>
@@ -97068,6 +97080,13 @@
         <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
+        <recordType>PradeepObj1__c.Pradeep_Record_Type</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Pradeep_Custom_Permission__mdt-Pradeep Custom Metadata Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Prefix_History__c-Prefix History Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -109785,6 +109804,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Pending_Correction__c.Vision</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>PradeepObj1__c.Pradeep_Record_Type</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

@@ -393,6 +393,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Ncn1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PPS</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -577,6 +581,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ncinos1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>pr</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -609,6 +617,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
+    <externalDataSourceAccesses>
+        <enabled>false</enabled>
+        <externalDataSource>Pradeep_External_Data_Sourcc</externalDataSource>
+    </externalDataSourceAccesses>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.ACCField1__c</field>
@@ -727,6 +739,13 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
+        <recordType>PradeepObj1__c.Pradeep_Record_Type</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Pradeep_Custom_Permission__mdt-Pradeep Custom Metadata Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SaiDX124__c-SaiDX124 Layout</layout>
@@ -852,6 +871,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Dbj1__c.Dbj_RC1</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>PradeepObj1__c.Pradeep_Record_Type</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>

@@ -894,6 +894,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Ncn1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>New1233</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1190,6 +1194,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ncinos1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>pavancls2</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1251,6 +1259,10 @@
     </classAccesses>
     <custom>true</custom>
     <description>111111</description>
+    <externalDataSourceAccesses>
+        <enabled>false</enabled>
+        <externalDataSource>Pradeep_External_Data_Sourcc</externalDataSource>
+    </externalDataSourceAccesses>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.ACCField1__c</field>
@@ -4571,6 +4583,13 @@
         <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
+        <recordType>PradeepObj1__c.Pradeep_Record_Type</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Pradeep_Custom_Permission__mdt-Pradeep Custom Metadata Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Pricebook2-Price Book Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -5209,6 +5228,11 @@
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Obj900__c.Obj900RC1</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>PradeepObj1__c.Pradeep_Record_Type</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
