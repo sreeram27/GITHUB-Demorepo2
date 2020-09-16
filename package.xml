@@ -143,6 +143,8 @@
         <members>B0</members>
         <members>BusinessClass</members>
         <members>BusinessClassTest</members>
+         <members>BusinessClass1</members>
+        <members>BusinessClass1Test</members>
         <members>C1</members>
         <members>ChangePasswordController</members>
         <members>ChangePasswordControllerTest</members>
