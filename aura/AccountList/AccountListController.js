@@ -5,11 +5,12 @@
   },
   deleteAccount: function(component, event, helper) {
     // Prevent the form from getting submitted 123
-    //opp
+    //opp Sai New1
     event.preventDefault();
 
     // Get the value from the field that's in the form
     var accountName = event.target.getElementsByClassName('account-name')[0].value;
     confirm('Delete the ' + accountName + ' account? (don’t worry, this won’t actually work!)');
+    //sanew
   }
 })
