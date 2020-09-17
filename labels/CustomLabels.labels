@@ -39,7 +39,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC211</shortDescription>
-        <value>11111111</value>
+        <value>231</value>
     </labels>
     <labels>
         <fullName>AC56</fullName>
@@ -935,6 +935,13 @@ To download selected records please select the desired rows you want to download
         <protected>true</protected>
         <shortDescription>NCL1</shortDescription>
         <value>s345</value>
+    </labels>
+    <labels>
+        <fullName>NCN1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NCN1</shortDescription>
+        <value>123</value>
     </labels>
     <labels>
         <fullName>NCl2</fullName>

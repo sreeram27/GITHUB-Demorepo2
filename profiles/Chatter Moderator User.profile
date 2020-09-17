@@ -3414,6 +3414,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Ncn123</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>NewBusiness_QuoteLineItem</apexClass>
         <enabled>false</enabled>
     </classAccesses>

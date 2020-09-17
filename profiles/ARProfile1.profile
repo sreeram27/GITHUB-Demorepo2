@@ -902,6 +902,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Ncn123</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>New1233</apexClass>
         <enabled>false</enabled>
     </classAccesses>
