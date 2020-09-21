@@ -1438,6 +1438,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BackUpTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>BrokerSearchResult</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -3695,6 +3699,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>RelatedRequestTriggerUtility</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReltrainTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

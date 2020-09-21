@@ -630,6 +630,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BackUpTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>BusinessClass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -927,6 +931,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>RGvc02</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReltrainTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>

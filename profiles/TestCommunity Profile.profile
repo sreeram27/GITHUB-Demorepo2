@@ -241,6 +241,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BackUpTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>BusinessClassTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -410,6 +414,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>PUlreqcls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReltrainTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>

@@ -6,7 +6,7 @@
     </applicationVisibilities>
     <classAccesses>
         <apexClass>A0</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A000</apexClass>
@@ -241,6 +241,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BackUpTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>BusinessClassTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -410,6 +414,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>PUlreqcls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ReltrainTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
