@@ -2391,6 +2391,10 @@
         <name>WaveDashboard</name>
     </types>
     <types>
+        <members>Worldwide_Fundraising_Starter</members>
+        <name>WaveXmd</name>
+    </types>
+    <types>
         <members>ANA_Underwriting__c.Generate_RFQ_Form</members>
         <members>Account.Billing</members>
         <members>Campaign.ViewCampaignInfluenceReport</members>
