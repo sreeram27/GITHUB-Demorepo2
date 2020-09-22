@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>47.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -2175,6 +2175,8 @@
     </types>
     <types>
         <members>Folder1</members>
+        <members>Folder1/folder2</members>
+        <members>Folder1/folder2/Folder3</members>
         <name>Dashboard</name>
     </types>
     <types>
@@ -2637,6 +2639,14 @@
         <members>MergeObject1__c.MergeValRuleObjtest1</members>
         <members>TFSObject2__c.TFSVal2</members>
         <name>ValidationRule</name>
+    </types>
+    <types>
+        <members>Worldwide_Fundraising_Starter</members>
+        <name>WaveDashboard</name>
+    </types>
+    <types>
+        <members>Worldwide_Fundraising_Starter</members>
+        <name>WaveXmd</name>
     </types>
     <types>
         <members>ANA_Underwriting__c.Generate_RFQ_Form</members>
