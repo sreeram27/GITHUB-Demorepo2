@@ -37,18 +37,14 @@
         <members>A14</members>
         <members>A1456</members>
         <members>A14567</members>
-        <members>A15</members>
         <members>A150</members>
         <members>A151</members>
         <members>A152</members>
-        <members>A156</members>
         <members>A158</members>
-        <members>A159</members>
         <members>A16</members>
         <members>A160</members>
         <members>A161</members>
         <members>A16789</members>
-        <members>A17</members>
         <members>A170</members>
         <members>A18</members>
         <members>A180</members>
@@ -153,6 +149,8 @@
         <members>C1</members>
         <members>ChangePasswordController</members>
         <members>ChangePasswordControllerTest</members>
+        <members>Class1844</members>
+        <members>Class1Gd</members>
         <members>ClassF2Y</members>
         <members>CommunitiesLandingController</members>
         <members>CommunitiesLandingControllerTest</members>
@@ -2139,6 +2137,10 @@
         <name>Flow</name>
     </types>
     <types>
+        <members>BigHack__b.BHIndex</members>
+        <name>Index</name>
+    </types>
+    <types>
         <members>addNewShares</members>
         <members>existingShares</members>
         <members>lightningSharingWrapper</members>
@@ -2403,6 +2405,14 @@
         <members>MergeObject1__c.MergeValRuleObjtest1</members>
         <members>TFSObject2__c.TFSVal2</members>
         <name>ValidationRule</name>
+    </types>
+    <types>
+        <members>Worldwide_Fundraising_Starter</members>
+        <name>WaveDashboard</name>
+    </types>
+    <types>
+        <members>Worldwide_Fundraising_Starter</members>
+        <name>WaveXmd</name>
     </types>
     <types>
         <members>ANA_Underwriting__c.Generate_RFQ_Form</members>
