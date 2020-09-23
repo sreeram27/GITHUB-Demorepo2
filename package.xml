@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>47.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -1475,6 +1475,7 @@
         <members>ScratchOrgInfo.Username</members>
         <members>Sep23rdObj1__c.F1__c</members>
         <members>Sep23rdObj1__c.F2__c</members>
+        <members>Sep23rdObj1__c.F3__c</members>
         <members>SepObj2__c.SepObj2Field1__c</members>
         <members>SepObj2__c.SepObj2Field2__c</members>
         <members>Sob1__c.SF1__c</members>

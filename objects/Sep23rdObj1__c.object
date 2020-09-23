@@ -173,6 +173,16 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <fields>
+        <fullName>F3__c</fullName>
+        <externalId>false</externalId>
+        <label>F3</label>
+        <length>6</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <label>Sep23rdObj1</label>
     <nameField>
         <label>Sep23rdObj1 Name</label>
