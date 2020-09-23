@@ -250,6 +250,7 @@
         <members>Sep18class2</members>
         <members>Sep18class2testclass</members>
         <members>Sep18cls1testclass</members>
+        <members>Sep23rdCls3</members>
         <members>Sep8Cls1</members>
         <members>Sep8Cls1testclass</members>
         <members>Sep8Cls2</members>
@@ -1486,6 +1487,7 @@
         <members>ScratchOrgInfo.SignupUsername</members>
         <members>ScratchOrgInfo.Status</members>
         <members>ScratchOrgInfo.Username</members>
+        <members>Sep23rdObj1__c.F8__c</members>
         <members>Sep2ndObj2__c.f2__c</members>
         <members>Sep7thObj1__c.F2__c</members>
         <members>Sep8thObj1__c.F2__c</members>
@@ -2080,6 +2082,7 @@
         <members>ScorecardAssociation</members>
         <members>ScorecardMetric</members>
         <members>ScratchOrgInfo</members>
+        <members>Sep23rdObj1__c</members>
         <members>Sep2ndObj1__c</members>
         <members>Sep2ndObj2__c</members>
         <members>Sep7thObj1__c</members>
@@ -2623,6 +2626,7 @@
         <members>Scorecard-Scorecard Layout</members>
         <members>ScorecardAssociation-Scorecard Association Layout</members>
         <members>ScorecardMetric-Scorecard Metric Layout</members>
+        <members>Sep23rdObj1__c-Sep23rdObj1 Layout</members>
         <members>Sep2ndObj1__c-Sep2ndObj1 Layout</members>
         <members>Sep2ndObj2__c-Sep2ndObj2 Layout</members>
         <members>Sep7thObj1__c-Sep7thObj1 Layout</members>
@@ -2838,6 +2842,8 @@
         <name>NetworkBranding</name>
     </types>
     <types>
+        <members>PRS007</members>
+        <members>PRS008</members>
         <members>PRS1</members>
         <members>PRS2</members>
         <members>PradeepPermSet1</members>
@@ -2984,6 +2990,8 @@
         <members>Lead.RecType1</members>
         <members>Obj900__c.Obj900RC1</members>
         <members>PradeepObj1__c.Pradeep_Record_Type</members>
+        <members>Sep23rdObj1__c.RT1</members>
+        <members>Sep23rdObj1__c.RT8</members>
         <name>RecordType</name>
     </types>
     <types>

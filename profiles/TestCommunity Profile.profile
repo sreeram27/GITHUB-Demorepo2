@@ -501,6 +501,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Sep23rdCls3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Sep8Cls1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -738,6 +742,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Sep23rdObj1__c.F8__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Sep2ndObj2__c.f2__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -789,6 +798,17 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SaiDX124__c-SaiDX124 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Sep23rdObj1__c-Sep23rdObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Sep23rdObj1__c-Sep23rdObj1 Layout</layout>
+        <recordType>Sep23rdObj1__c.RT1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Sep23rdObj1__c-Sep23rdObj1 Layout</layout>
+        <recordType>Sep23rdObj1__c.RT8</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Sep2ndObj1__c-Sep2ndObj1 Layout</layout>
@@ -916,6 +936,16 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>PradeepObj1__c.Pradeep_Record_Type</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Sep23rdObj1__c.RT1</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Sep23rdObj1__c.RT8</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>

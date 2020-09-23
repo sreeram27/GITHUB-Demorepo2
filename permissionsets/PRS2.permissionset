@@ -107,6 +107,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Sep23rdObj1__c.F8__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Sep2ndObj2__c.f2__c</field>
         <readable>false</readable>
     </fieldPermissions>

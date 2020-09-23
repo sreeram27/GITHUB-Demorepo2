@@ -4098,6 +4098,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Sep23rdCls3</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Sep8Cls1</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -68224,6 +68228,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Sep23rdObj1__c.F8__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Sep2ndObj2__c.f2__c</field>
         <readable>true</readable>
@@ -97414,6 +97423,17 @@
         <layout>Seismic_Product_Type__c-Seismic Product Type Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Sep23rdObj1__c-Sep23rdObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Sep23rdObj1__c-Sep23rdObj1 Layout</layout>
+        <recordType>Sep23rdObj1__c.RT1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Sep23rdObj1__c-Sep23rdObj1 Layout</layout>
+        <recordType>Sep23rdObj1__c.RT8</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Sep2ndObj1__c-Sep2ndObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -101823,6 +101843,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Seismic_Product_Type__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Sep23rdObj1__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -110040,6 +110069,16 @@
         <default>true</default>
         <recordType>SME_Approvals__c.SME_Approval_Readonly</recordType>
         <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Sep23rdObj1__c.RT1</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Sep23rdObj1__c.RT8</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
