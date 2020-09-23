@@ -2387,6 +2387,7 @@
     </types>
     <types>
         <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>Pradeep</members>
         <members>QuoteLineItem</members>
         <members>TestFlowLabel1</members>
         <name>Flow</name>
@@ -2918,6 +2919,7 @@
         <members>Lead.RecType1</members>
         <members>Obj900__c.Obj900RC1</members>
         <members>Sep23rdObj1__c.RT1</members>
+        <members>Sep23rdObj1__c.RT2</members>
         <name>RecordType</name>
     </types>
     <types>

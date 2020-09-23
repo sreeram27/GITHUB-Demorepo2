@@ -185,6 +185,11 @@
         <description>test</description>
         <label>RT1</label>
     </recordTypes>
+    <recordTypes>
+        <fullName>RT2</fullName>
+        <active>true</active>
+        <label>RT2</label>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

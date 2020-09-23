@@ -9,19 +9,31 @@
         <enabled>true</enabled>
     </classAccesses>
     <description>Test</description>
+    <flowAccesses>
+        <enabled>true</enabled>
+        <flow>Pradeep</flow>
+    </flowAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>PRS007</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
+        <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Sep23rdObj1__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+    <pageAccesses>
+        <apexPage>Apexpage1</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <recordTypeVisibilities>
         <recordType>Sep23rdObj1__c.RT1</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>Sep23rdObj1__c.RT2</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
 </PermissionSet>
