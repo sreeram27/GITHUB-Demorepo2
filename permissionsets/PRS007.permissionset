@@ -9,11 +9,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <description>Test</description>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Sep23rdObj1__c.F3__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>PRS007</label>
     <objectPermissions>
