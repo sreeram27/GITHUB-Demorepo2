@@ -2,12 +2,12 @@
 *   Name        : clsGlobalInvoiceAPI
 *   Date        : 29-July-2019
 *   Author      : Pragati Goel(FOS TEAM) 
-*   Description : This class is used for Invoice functionality.
+*   Description : This class is used for Invoice functionality. dfsf
 
 *   Change History: 
 *   Author: Pragati Goel(FOS TEAM)
 *   Date:   24-Sep-2020
-*   Reason: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality.
+*   Reason: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality. SaiSRC1223 dsf
 *******************************************************************/
 global with sharing class clsGlobalInvoiceAPI {
     Private Static Final String CLASSNAME = 'clsGlobalInvoiceAPI';
@@ -90,8 +90,9 @@ global with sharing class clsGlobalInvoiceAPI {
         }
     }
     /*
+    sai890
     @purpose: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality for billable.
-    @param: NA
+    @param: NA12
     @return: void
     */
     global static Map<Boolean,String> sendrequestforbillable(set<Id> setWorkorderIds,set<Id> setWOLIIds,String OrganizationRegion){
@@ -585,7 +586,7 @@ global with sharing class clsGlobalInvoiceAPI {
     @param: PCwrapper : - Invoice wrapper.
     username : username.
     password : password.
-    @return: string
+    @return: stringxzcxzc
     */
     private static string convertintoXMLNonBillable(InvoiceWrapper InvoiceWrap){
         String InvoiceOpenTagId = BLANKVALUE;
@@ -594,7 +595,7 @@ global with sharing class clsGlobalInvoiceAPI {
         Map<Id,Global_Technical_Service_Invoice_Tag__mdt> MapofInvoiceMetaDataOpenTag = new Map<Id,Global_Technical_Service_Invoice_Tag__mdt>();
         Map<Id,Global_Technical_Service_Invoice_Tag__mdt> MapofInvoiceMetaDataClosedTag = new Map<Id,Global_Technical_Service_Invoice_Tag__mdt>();
         
-        ////Custom meta data for xml generation
+        ////Custom meta data for xml generationcscxsd
         for(Global_Technical_Service_Invoice_Tag__mdt InvoiceData : [SELECT Id, DeveloperName, MasterLabel, Language, 
                                                                      NamespacePrefix, Label, QualifiedApiName, ServiceRequest__c, 
                                                                      ServiceRequestInvoicingInterface__c, ServiceRequestNumber__c, 
@@ -1081,8 +1082,8 @@ global with sharing class clsGlobalInvoiceAPI {
     }
     /*
     @purpose: (R9.0.00/BS-6309/BS-6101)- This is the Invoice wrapper class
-    @param: NA
-    @return: NA
+    @param: NAdsad
+    @return: NAsadas
     */
     global with sharing class InvoiceWrapper{
         public Workorder workorderList{get;set;}
