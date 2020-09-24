@@ -43,14 +43,14 @@
         </criteriaItems>
         <criteriaItems>
             <column>Contact.vlocity_ins__IsActive__c</column>
-            <columnToColumn>true</columnToColumn>
+            <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>4</value>
         </criteriaItems>
         <criteriaItems>
             <column>Contact.Facilitator_Type__c</column>
-            <columnToColumn>false</columnToColumn>
+            <columnToColumn>true</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
             <value>OE Ambassador</value>
@@ -67,7 +67,7 @@
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
     <sortColumn>Contact.Facilitator_Type__c</sortColumn>
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
