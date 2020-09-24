@@ -2,12 +2,12 @@
 *   Name        : clsGlobalInvoiceAPI
 *   Date        : 29-July-2019
 *   Author      : Pragati Goel(FOS TEAM) 
-*   Description : This class is used for Invoice functionality.
+*   Description : This class is used for Invoice functionality.dest123
 
 *   Change History: 
 *   Author: Pragati Goel(FOS TEAM)
 *   Date:   24-Sep-2020
-*   Reason: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality.
+*   Reason: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality. dest12
 *******************************************************************/
 global with sharing class clsGlobalInvoiceAPI {
     Private Static Final String CLASSNAME = 'clsGlobalInvoiceAPI';
@@ -90,9 +90,9 @@ global with sharing class clsGlobalInvoiceAPI {
         }
     }
     /*
-    @purpose: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality for billable.
+    @purpose: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality for billable. dest567
     @param: NA
-    @return: void
+    @return: void dest007
     */
     global static Map<Boolean,String> sendrequestforbillable(set<Id> setWorkorderIds,set<Id> setWOLIIds,String OrganizationRegion){
         Map<Boolean,String> ResponseUpdateMap = new Map<Boolean,String>();
@@ -585,7 +585,8 @@ global with sharing class clsGlobalInvoiceAPI {
     @param: PCwrapper : - Invoice wrapper.
     username : username.
     password : password.
-    @return: string
+    @return: stringddest
+    Dest12
     */
     private static string convertintoXMLNonBillable(InvoiceWrapper InvoiceWrap){
         String InvoiceOpenTagId = BLANKVALUE;
@@ -594,7 +595,7 @@ global with sharing class clsGlobalInvoiceAPI {
         Map<Id,Global_Technical_Service_Invoice_Tag__mdt> MapofInvoiceMetaDataOpenTag = new Map<Id,Global_Technical_Service_Invoice_Tag__mdt>();
         Map<Id,Global_Technical_Service_Invoice_Tag__mdt> MapofInvoiceMetaDataClosedTag = new Map<Id,Global_Technical_Service_Invoice_Tag__mdt>();
         
-        ////Custom meta data for xml generation
+        ////Custom meta data for xml generation dest123
         for(Global_Technical_Service_Invoice_Tag__mdt InvoiceData : [SELECT Id, DeveloperName, MasterLabel, Language, 
                                                                      NamespacePrefix, Label, QualifiedApiName, ServiceRequest__c, 
                                                                      ServiceRequestInvoicingInterface__c, ServiceRequestNumber__c, 
@@ -1081,8 +1082,8 @@ global with sharing class clsGlobalInvoiceAPI {
     }
     /*
     @purpose: (R9.0.00/BS-6309/BS-6101)- This is the Invoice wrapper class
-    @param: NA
-    @return: NA
+    @param: NA dest
+    @return: NA dest678
     */
     global with sharing class InvoiceWrapper{
         public Workorder workorderList{get;set;}
