@@ -5,8 +5,23 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
+     <applicationVisibilities>
+        <application>standard__AppLauncher</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+     <applicationVisibilities>
+        <application>standard__AppLauncher</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Chatter</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+     <applicationVisibilities>
+        <application>standard__AppLauncher</application>
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
@@ -27,6 +42,11 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__LightningSales</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+     <applicationVisibilities>
+        <application>standard__AppLauncher</application>
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
@@ -160,6 +180,18 @@
     <classAccesses>
         <apexClass>A08123</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A081234</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A081234</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A081234</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A081234</apexClass>
@@ -4440,6 +4472,15 @@
     <layoutAssignments>
         <layout>QObj2__c-QObj2 Layout</layout>
     </layoutAssignments>
+     <layoutAssignments>
+        <layout>QObj2__c-QObj2 Layout</layout>
+    </layoutAssignments>
+     <layoutAssignments>
+        <layout>QObj2__c-QObj2 Layout</layout>
+    </layoutAssignments>
+     <layoutAssignments>
+        <layout>QObj2__c-QObj2 Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>QuickText-Quick Text Layout</layout>
     </layoutAssignments>
@@ -5082,6 +5123,21 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>EC_AccObj1__c.Test1</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+     <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>EC_AccObj1__c.Test1</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+     <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>EC_AccObj1__c.Test1</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+     <recordTypeVisibilities>
         <default>false</default>
         <recordType>EC_AccObj1__c.Test1</recordType>
         <visible>false</visible>
