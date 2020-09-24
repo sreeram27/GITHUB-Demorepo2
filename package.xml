@@ -2301,6 +2301,10 @@
         <name>HomePageLayout</name>
     </types>
     <types>
+        <members>BigHack__b.BHIndex</members>
+        <name>Index</name>
+    </types>
+    <types>
         <members>sf_com_apps</members>
         <name>InstalledPackage</name>
     </types>
