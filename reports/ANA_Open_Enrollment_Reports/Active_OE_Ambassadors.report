@@ -43,10 +43,10 @@
         </criteriaItems>
         <criteriaItems>
             <column>Contact.vlocity_ins__IsActive__c</column>
-            <columnToColumn>false</columnToColumn>
+            <columnToColumn>true</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>1</value>
+            <value>4</value>
         </criteriaItems>
         <criteriaItems>
             <column>Contact.Facilitator_Type__c</column>
