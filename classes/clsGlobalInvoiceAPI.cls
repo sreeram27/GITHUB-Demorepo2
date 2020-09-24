@@ -2,7 +2,7 @@
 *   Name        : clsGlobalInvoiceAPI
 *   Date        : 29-July-2019
 *   Author      : Pragati Goel(FOS TEAM) 
-*   Description : This class is used for Invoice functionality.dest123
+*   Description : This class is used for Invoice functionality. dfsf
 
 *   Change History: 
 *   Author: Pragati Goel(FOS TEAM)
@@ -585,8 +585,7 @@ global with sharing class clsGlobalInvoiceAPI {
     @param: PCwrapper : - Invoice wrapper.
     username : username.
     password : password.
-    @return: stringddest
-    Dest12
+    @return: stringxzcxzc
     */
     private static string convertintoXMLNonBillable(InvoiceWrapper InvoiceWrap){
         String InvoiceOpenTagId = BLANKVALUE;
@@ -595,7 +594,7 @@ global with sharing class clsGlobalInvoiceAPI {
         Map<Id,Global_Technical_Service_Invoice_Tag__mdt> MapofInvoiceMetaDataOpenTag = new Map<Id,Global_Technical_Service_Invoice_Tag__mdt>();
         Map<Id,Global_Technical_Service_Invoice_Tag__mdt> MapofInvoiceMetaDataClosedTag = new Map<Id,Global_Technical_Service_Invoice_Tag__mdt>();
         
-        ////Custom meta data for xml generation dest123
+        ////Custom meta data for xml generationcscxsd
         for(Global_Technical_Service_Invoice_Tag__mdt InvoiceData : [SELECT Id, DeveloperName, MasterLabel, Language, 
                                                                      NamespacePrefix, Label, QualifiedApiName, ServiceRequest__c, 
                                                                      ServiceRequestInvoicingInterface__c, ServiceRequestNumber__c, 
