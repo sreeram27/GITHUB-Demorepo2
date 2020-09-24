@@ -9,7 +9,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A18</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A57</apexClass>
@@ -43,7 +43,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.PLnew3__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
