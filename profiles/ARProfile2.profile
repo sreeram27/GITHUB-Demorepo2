@@ -1,7 +1,7 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>A0</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A000</apexClass>
@@ -29,7 +29,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A022233444</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0233</apexClass>
@@ -49,7 +49,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A036</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0456</apexClass>
