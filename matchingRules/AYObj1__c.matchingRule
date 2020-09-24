@@ -3,7 +3,7 @@
     <matchingRules>
         <fullName>TestRule1</fullName>
         <description>test &lt;Sai&gt;&amp; Modify1</description>
-        <label>TestRule1</label>
+        <label>TestRule21</label>
         <matchingRuleItems>
             <blankValueBehavior>NullNotAllowed</blankValueBehavior>
             <fieldName>AYField1__c</fieldName>
