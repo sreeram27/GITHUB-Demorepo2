@@ -731,6 +731,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>PradeepObj1__c.F1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>PradeepObj1__c.Field1__c</field>
         <readable>true</readable>
@@ -791,7 +796,7 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
-        <recordType>PradeepObj1__c.Pradeep_Record_Type</recordType>
+        <recordType>PradeepObj1__c.RT1</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Pradeep_Custom_Permission__mdt-Pradeep Custom Metadata Layout</layout>
@@ -937,6 +942,11 @@
         <default>true</default>
         <recordType>PradeepObj1__c.Pradeep_Record_Type</recordType>
         <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>PradeepObj1__c.RT1</recordType>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>

@@ -82,6 +82,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>PradeepObj1__c.F1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>PradeepObj1__c.Field1__c</field>
         <readable>false</readable>
     </fieldPermissions>
