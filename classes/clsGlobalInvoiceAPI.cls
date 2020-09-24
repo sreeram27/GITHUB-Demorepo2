@@ -6,13 +6,13 @@
 
 *   Change History: 
 *   Author: Pragati Goel(FOS TEAM)
-*   Date:   29-July-2019
+*   Date:   29-oct-2021
 *   Reason: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality.
 *******************************************************************/
 global with sharing class clsGlobalInvoiceAPI {
     Private Static Final String CLASSNAME = 'clsGlobalInvoiceAPI';
     /**
-    asdfasdfa < < > > && & % $ # @ ! * ()
+    asdfasdfa < < > > && & % $ # @ ! * () saidest change
     */
     Private Static Final String SOBJECTNAME = 'Work Order Line Item';
     Private static Final string  APIMETHOD = 'POST';
@@ -260,7 +260,7 @@ global with sharing class clsGlobalInvoiceAPI {
         }else{
             PCDONOTSENTNONBILLABLEREQUEST = FALSE;
         }
-        ////ALL EXPENSE TRACKER ARE BILLABLE
+        ////ALL EXPENSE TRACKER ARE BILLABLE sai dest comment
         Boolean ETDONOTSENTNONBILLABLEREQUEST = FALSE;
         Boolean NOTALLBILLABLEET = FALSE;
         Map<Id,Boolean> ExpenseTrackerbillbaleMap = new Map<Id,Boolean>();
@@ -345,7 +345,7 @@ global with sharing class clsGlobalInvoiceAPI {
         Map<Id,Global_Technical_Service_Invoice_Tag__mdt> MapofInvoiceMetaDataOpenTag = new Map<Id,Global_Technical_Service_Invoice_Tag__mdt>();
         Map<Id,Global_Technical_Service_Invoice_Tag__mdt> MapofInvoiceMetaDataClosedTag = new Map<Id,Global_Technical_Service_Invoice_Tag__mdt>();
         
-        ////Custom meta data for xml generation
+        ////Custom meta data for xml generation sai dest 007
         for(Global_Technical_Service_Invoice_Tag__mdt InvoiceData : [SELECT Id, DeveloperName, MasterLabel, Language, 
                                                                      NamespacePrefix, Label, QualifiedApiName, ServiceRequest__c, 
                                                                      ServiceRequestInvoicingInterface__c, ServiceRequestNumber__c, 
@@ -650,7 +650,7 @@ global with sharing class clsGlobalInvoiceAPI {
             EDIDocTypeCode = REVALUE;
         }
         
-        //XML Body
+        //XML Body sai dest789
         String xmlBody = BLANKVALUE;
         xmlBody += XMLSTARTTAG;
         xmlBody += string.valueof(MapofInvoiceMetaDataOpenTag.get(InvoiceOpenTagId).ServiceRequestInvoicingInterface__c);
