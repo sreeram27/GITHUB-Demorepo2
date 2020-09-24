@@ -6,13 +6,13 @@
 
 *   Change History: 
 *   Author: Pragati Goel(FOS TEAM)
-*   Date:   29-oct-2021
+*   Date:   24-Sep-2020
 *   Reason: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality.
 *******************************************************************/
 global with sharing class clsGlobalInvoiceAPI {
     Private Static Final String CLASSNAME = 'clsGlobalInvoiceAPI';
     /**
-    asdfasdfa < < > > && & % $ # @ ! * () saidest change
+    asdfasdfa < < > > && & % $ # @ ! * () <>sai 1234
     */
     Private Static Final String SOBJECTNAME = 'Work Order Line Item';
     Private static Final string  APIMETHOD = 'POST';
@@ -260,7 +260,7 @@ global with sharing class clsGlobalInvoiceAPI {
         }else{
             PCDONOTSENTNONBILLABLEREQUEST = FALSE;
         }
-        ////ALL EXPENSE TRACKER ARE BILLABLE sai dest comment
+        ////ALL EXPENSE TRACKER ARE BILLABLE sai898u9u
         Boolean ETDONOTSENTNONBILLABLEREQUEST = FALSE;
         Boolean NOTALLBILLABLEET = FALSE;
         Map<Id,Boolean> ExpenseTrackerbillbaleMap = new Map<Id,Boolean>();
@@ -633,7 +633,8 @@ global with sharing class clsGlobalInvoiceAPI {
         String NonBillableReasonCode = BLANKVALUE;
         String EDIDocTypeCode = BLANKVALUE;
         OrderTypeCode = OrderTypeCodeSF;
-        /*if(workorderdata.Billable__c){
+        /*
+	if(workorderdata.Billable__c){
             OrderTypeCode = OrderTypeCodeSO;
             PriceOveridCode = BLANKVALUE;
         }else{
