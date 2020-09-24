@@ -2859,6 +2859,10 @@
         <name>IframeWhiteListUrlSettings</name>
     </types>
     <types>
+        <members>BigHack__b.BHIndex</members>
+        <name>Index</name>
+    </types>
+    <types>
         <members>sf_com_apps</members>
         <name>InstalledPackage</name>
     </types>
@@ -4014,6 +4018,14 @@
         <members>MergeObject1__c.MergeValRuleObjtest1</members>
         <members>TFSObject2__c.TFSVal2</members>
         <name>ValidationRule</name>
+    </types>
+    <types>
+        <members>Worldwide_Fundraising_Starter</members>
+        <name>WaveDashboard</name>
+    </types>
+    <types>
+        <members>Worldwide_Fundraising_Starter</members>
+        <name>WaveXmd</name>
     </types>
     <types>
         <members>Campaign.ViewCampaignInfluenceReport</members>
