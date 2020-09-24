@@ -5,21 +5,21 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AAtest456</shortDescription>
-        <value>1231</value>
+        <value>121131</value>
     </labels>
     <labels>
         <fullName>AC1</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ac111</shortDescription>
-        <value>121</value>
+        <value>1211</value>
     </labels>
     <labels>
         <fullName>AC100</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC100</shortDescription>
-        <value>111</value>
+        <value>1111</value>
     </labels>
     <labels>
         <fullName>AC11</fullName>
@@ -201,7 +201,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACLTest89</shortDescription>
-        <value>1</value>
+        <value>11</value>
     </labels>
     <labels>
         <fullName>ACLabel1</fullName>
@@ -257,7 +257,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACTNR-Label8</shortDescription>
-        <value>1</value>
+        <value>11</value>
     </labels>
     <labels>
         <fullName>ACTRLabel1</fullName>
@@ -299,7 +299,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AL2</shortDescription>
-        <value>2qqq</value>
+        <value>2qq1q</value>
     </labels>
     <labels>
         <fullName>APXL1</fullName>
