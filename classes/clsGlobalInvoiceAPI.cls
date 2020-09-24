@@ -2,12 +2,12 @@
 *   Name        : clsGlobalInvoiceAPI
 *   Date        : 29-July-2019
 *   Author      : Pragati Goel(FOS TEAM) 
-*   Description : This class is used for Invoice functionality.dest123
+*   Description : This class is used for Invoice functionality. dfsf
 
 *   Change History: 
 *   Author: Pragati Goel(FOS TEAM)
 *   Date:   24-Sep-2020
-*   Reason: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality. dest12
+*   Reason: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality. SaiSRC1223 dsf
 *******************************************************************/
 global with sharing class clsGlobalInvoiceAPI {
     Private Static Final String CLASSNAME = 'clsGlobalInvoiceAPI';
@@ -90,9 +90,10 @@ global with sharing class clsGlobalInvoiceAPI {
         }
     }
     /*
-    @purpose: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality for billable. dest567
-    @param: NA
-    @return: void dest007
+    sai890
+    @purpose: (R9.0.00/BS-6309/BS-6101) - This class is used for Invoice functionality for billable.
+    @param: NA12
+    @return: void
     */
     global static Map<Boolean,String> sendrequestforbillable(set<Id> setWorkorderIds,set<Id> setWOLIIds,String OrganizationRegion){
         Map<Boolean,String> ResponseUpdateMap = new Map<Boolean,String>();
@@ -585,8 +586,7 @@ global with sharing class clsGlobalInvoiceAPI {
     @param: PCwrapper : - Invoice wrapper.
     username : username.
     password : password.
-    @return: stringddest
-    Dest12
+    @return: stringxzcxzc
     */
     private static string convertintoXMLNonBillable(InvoiceWrapper InvoiceWrap){
         String InvoiceOpenTagId = BLANKVALUE;
