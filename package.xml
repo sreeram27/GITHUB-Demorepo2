@@ -1319,6 +1319,8 @@
         <members>PartyConsent.OwnerId</members>
         <members>PartyConsent.PartyId</members>
         <members>PartyConsent.PrivacyConsentStatus</members>
+        <members>PradeepObj1__c.F1__c</members>
+        <members>PradeepObj1__c.F2__c</members>
         <members>Pricebook2.Description</members>
         <members>Pricebook2.IsActive</members>
         <members>Pricebook2.IsStandard</members>
@@ -2013,6 +2015,7 @@
         <members>PartnerMarketingBudget</members>
         <members>PartnerRole</members>
         <members>PartyConsent</members>
+        <members>PradeepObj1__c</members>
         <members>Pricebook2</members>
         <members>PricebookEntry</members>
         <members>Product2</members>
@@ -2777,6 +2780,7 @@
     </types>
     <types>
         <members>PRS007</members>
+        <members>PRS009</members>
         <members>PRS1</members>
         <members>PRS2</members>
         <name>PermissionSet</name>
@@ -2918,6 +2922,8 @@
         <members>Lead.LeadRecType1</members>
         <members>Lead.RecType1</members>
         <members>Obj900__c.Obj900RC1</members>
+        <members>PradeepObj1__c.RT1</members>
+        <members>PradeepObj1__c.RT2</members>
         <members>Sep23rdObj1__c.RT1</members>
         <members>Sep23rdObj1__c.RT2</members>
         <name>RecordType</name>
