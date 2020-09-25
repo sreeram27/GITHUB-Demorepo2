@@ -13,6 +13,10 @@
         <name>AutorabitExtId__c</name>
     </fields>
     <fields>
+        <label><!-- F12 --></label>
+        <name>F12__c</name>
+    </fields>
+    <fields>
         <label><!-- LookUpField1 --></label>
         <name>LookUpField1__c</name>
         <relationshipLabel><!-- ACR2s --></relationshipLabel>
