@@ -2,7 +2,7 @@
 @Author : Accenture Offshore Dev team
 @name : ANA_AP01AccountContactList
 @CreateDate :05-05-2017
-@Description : This class will return the contacts related to a account which is used in omniscript.
+@Description : This class will return the contacts related to a account which is used in omniscripttest123456
 */
 global with sharing class ANA_AP01_AccountContactList implements vlocity_ins.VlocityOpenInterface{  
     public static final String POPULATEPICKLIST='PopulatePicklist';
@@ -16,7 +16,7 @@ global with sharing class ANA_AP01_AccountContactList implements vlocity_ins.Vlo
 *  This method is an implementation to  vlocity_ins.VlocityOpenInterface interface.
 *  @name :invokeMethod
 *  @param : String,Map<String,Object>,Map<String,Object>,Map<String,Object> .
-*  @return <parameter> - Boolean bgfghfh
+*  @return <parameter> - Boolean
 */
     global Boolean invokeMethod(String methodName, Map<String,Object> inputMap, Map<String,Object> outMap,
                                 Map<String,Object> optns) {                                    
@@ -29,7 +29,7 @@ global with sharing class ANA_AP01_AccountContactList implements vlocity_ins.Vlo
 *  This method will get the AccountId from the record that the omniscript gets invoked and prepares the contact list.
 *  @name :invokeMethod
 *  @param : String,Map<String,Object>,Map<String,Object>,Map<String,Object> .
-*  @return <parameter> - Boolean jfdgbjhfbghfgbfhgh
+*  @return <parameter> - Booleanfbvb
 */
     public void populatePicklist(Map<String,Object> input, Map<String, Object> outMap, Map<String, Object> optns)
     {
@@ -54,8 +54,7 @@ global with sharing class ANA_AP01_AccountContactList implements vlocity_ins.Vlo
         {
             UTIL_LoggingService.logHandledException(qExcp, ANA_UTIL03_Constants.ORGID, ANA_UTIL03_Constants.APPNAME, CLASSNAME, POPULATEPICKLIST,null,LoggingLevel.ERROR); 
         }
-        //saidfgfg
         
     }
-    //gbdhjfghfhgf
+    //tests45645477
 }

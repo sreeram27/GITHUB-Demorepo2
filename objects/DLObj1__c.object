@@ -91,6 +91,14 @@
         <type>Text</type>
         <unique>true</unique>
     </fields>
+    <fields>
+        <fullName>Field5__c</fullName>
+        <externalId>false</externalId>
+        <label>Field5</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
     <label>DLObj1</label>
     <listViews>
         <fullName>All</fullName>
@@ -99,7 +107,7 @@
         <columns>Field2__c</columns>
         <columns>Field3__c</columns>
         <columns>OBJECT_ID</columns>
-        <columns>Field4__c</columns>
+        <columns>AutorabitExtId__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
@@ -110,11 +118,5 @@
     <pluralLabel>DLObj1s</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
-    <validationRules>
-        <fullName>VRule2</fullName>
-        <active>true</active>
-        <errorConditionFormula>Name  = &apos;DLR1&apos;</errorConditionFormula>
-        <errorMessage>Please give valid input</errorMessage>
-    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

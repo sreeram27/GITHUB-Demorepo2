@@ -11,7 +11,7 @@
         <nodeType>NAMEFIELD</nodeType>
     </managedContentNodeTypes>
     <managedContentNodeTypes>
-        <helpText>Enter a brief description of the document.</helpText>
+        <helpText>Enter a brief description of the document123.</helpText>
         <isLocalizable>true</isLocalizable>
         <isRequired>false</isRequired>
         <nodeLabel>Alt Text</nodeLabel>
