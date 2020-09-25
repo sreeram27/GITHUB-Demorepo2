@@ -3,7 +3,7 @@
 @name : ANA_AP01_AccountContactList_Test
 @CreateDate :05-05-2017
 @Description : This class is test class for ANA_AP01_AccountContactList class. 
-checks for positive and negative casesjhgj.
+checks for positive and negative cases.
 */
 @isTest
 private class ANA_AP01_AccountContactList_Test
@@ -12,8 +12,8 @@ private class ANA_AP01_AccountContactList_Test
     private static final string NATIONALAMPROFILE='National Sales';
     /*This method will create an account with contacts and invokes the populatepiclist*/  
     static testMethod void popPickListWithNationalAM() {
-        // Setup test datahjhgjhjhkjhkjh
-        // This code runs as the system usergfhghgjg
+        // Setup test data
+        // This code runs as the system userbvnbn
         
         Profile profileNA = [select id from profile where name=:NATIONALAMPROFILE limit 1 ]; 
         
@@ -45,8 +45,8 @@ private class ANA_AP01_AccountContactList_Test
     }
     /*This method will throgh an exception as we are passing empty account id*/    
     static testMethod void popPickListWithError() {
-        // Setup test datafgfh
-        // This code runs as the system user   gfdg   
+        // Setup test datahgjghj
+        // This code runs as the system userhgfhghgj      hghhfghfh
         Profile profileAM = [select id from profile where name='National Sales' limit 1];  
         system.runAs(ANA_UTIL01_TestMethods.runAsUser(profileAM.id))
         {
@@ -60,10 +60,8 @@ private class ANA_AP01_AccountContactList_Test
             ANA_AP01_AccountContactList actct=new ANA_AP01_AccountContactList();
             Boolean actual= actct.invokeMethod(methodName,inputmap,outputmap,options);
             system.assertEquals(true, actual);
-            
+            //saitest123            
         }
-        //fsdhfbhdgbf
     }
-    //fdsbfhgdfg
     
 }

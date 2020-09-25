@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Anthem_BCBS_Georgia</letterhead>
+    <name>Newly Installed Group General Notice</name>
+    <style>freeForm</style>
+    <subject>Newly Installed Group</subject>
+    <textOnly>Below is a newly implemented group. Please add to the appropriate records and logs.
+
+ALC- Please send the reporting password email, and create general notice letters as necessary.
+
+Monika - Please send group invoices.
+
+System - WGS
+Group Number –
+Group Name –
+State –
+Region - East
+Group Size –
+Partial or Full – Full
+Funding Type -
+Effective Date –
+QE Reporting – WEB
+COBRA General Notice Requested –
+
+Thank you,
+
+Anthem COBRA Implementation Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
