@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CommunitiesSettings xmlns="http://soap.sforce.com/2006/04/metadata">
-    <canModerateAllFeedPosts>false</canModerateAllFeedPosts>
-    <embeddedVisualforcePages>false</embeddedVisualforcePages>
-    <enableCommunityWorkspaces>true</enableCommunityWorkspaces>
-    <enableCspContactVisibilityPref>false</enableCspContactVisibilityPref>
-    <enableCspNotesOnAccConPref>false</enableCspNotesOnAccConPref>
+    <enableCspContactVisibilityPref>true</enableCspContactVisibilityPref>
     <enableEnablePRM>false</enableEnablePRM>
-    <enableGuestRecordReassignOrgPref>false</enableGuestRecordReassignOrgPref>
+    <enableExternalAccHierPref>false</enableExternalAccHierPref>
+    <enableGuestSecurityOptOutCruc>false</enableGuestSecurityOptOutCruc>
     <enableInviteChatterGuestEnabled>true</enableInviteChatterGuestEnabled>
-    <enableNetPortalUserReportOpts>false</enableNetPortalUserReportOpts>
-    <enableNetworksEnabled>true</enableNetworksEnabled>
+    <enableNetworksEnabled>false</enableNetworksEnabled>
     <enableOotbProfExtUserOpsEnable>false</enableOotbProfExtUserOpsEnable>
     <enablePRMAccRelPref>false</enablePRMAccRelPref>
-    <enablePowerCustomerCaseStatus>false</enablePowerCustomerCaseStatus>
     <enableRelaxPartnerAccountFieldPref>false</enableRelaxPartnerAccountFieldPref>
+    <enableUsernameUniqForOrgPref>true</enableUsernameUniqForOrgPref>
 </CommunitiesSettings>
