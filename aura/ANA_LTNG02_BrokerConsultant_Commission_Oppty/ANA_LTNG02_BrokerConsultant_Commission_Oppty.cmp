@@ -1,0 +1,379 @@
+<aura:component controller="ANA_AP17_Create_BC_Commissions_oppty"><!--implements="force:appHostable"-->
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>   
+    
+  <aura:attribute name="newBandConsuComm" type="Broker_Consultant_Commissions1__c"
+     default="{ 'sobjectType': 'Broker_Consultant_Commissions1__c',
+                     'Commission_Start_Date__c': '',
+                     'Commission_End_Date__c':'',
+                     'Funding_Type__c':'',
+                     'Contact_Relationship__c':'',
+                     'Group_Numbers__c':'',
+                     'Applies_to_only_a_portion_of_group__c':'',
+                     'Sub_Groups_Contract_Codes_Package_Code__c':'',
+                     'Commission_Percentage__c':'',
+					 'Brokerage_Commission_Split__c':'',
+                     'Commission_Dollar_Amount__c':'',
+                     'Payment_Method__c':'',
+                     'Line_of_Business__c':''
+  }"/>
+    
+  <aura:attribute name="selAccItem" type="object" access="public" 
+                    description="API Name of field, to be used to show text"/>
+  <aura:attribute name="selOppItem" type="object" access="public"/>
+    
+  <aura:attribute name="selBConsultantItem" type="object" access="public" 
+                    description="API Name of field, to be used to show text"/>
+  <aura:attribute name="selConsultantItem" type="object" access="public" 
+                    description="API Name of field, to be used to show text"/>
+  <aura:attribute name="selectBR" type="boolean" access="public" description="It is Boolean"/>
+  <aura:attribute name="selectedBR" type="string" access="public" description="It is Boolean"/>
+  <aura:attribute name="fundingTypeValues" type="object" access="public" description="Array"/>
+  <aura:attribute name="selectOpportunity" type="boolean" access="public" description=""/>
+  <aura:attribute name="selectStatus" type="boolean" access="public" description=""/>  
+  <aura:attribute name="selectBroker" type="boolean" access="public" description=""/> 
+  <aura:attribute name="accId" type="Id" access="public" description=""/>
+  <aura:attribute name="oppId" type="Id" access="public" description=""/>
+  <aura:attribute name="consultantValues" type="object[]" access="public" description=""/>
+  <aura:handler event="c:ANA_LTNG04_BrokerConsultant_Event_oppty" action="{!c.setOpportunity}"/>
+  <aura:attribute name="selectGroupNumber" type="boolean" access="private" description=""/>
+  <aura:attribute name="showWarning" type="boolean" access="public" /> 
+  <aura:handler name="change" value="{!v.newBandConsuComm.Brokerage_Commission_Split__c}" action="{!c.handleValueChange}"/>
+    
+    
+   <!--************************* PRDCRM-33470: Warning Message (Ravideep Vikings)***********************-->  
+<header class="slds-global-header_container">
+	<aura:if isTrue="{!v.showWarning}">
+		<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert" style="width: 100%; padding: 12px;">
+			<span class="slds-assistive-text">warning</span>
+				<span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+				<lightning:icon iconName="utility:warning" alternativeText="Warning!" variant="warning"/>
+            	</span>
+			<h2><b>{!$Label.c.BrokerageCommissionWarning}</b></h2>
+			<!--<div class="slds-notify__close">
+				<button class="slds-button slds-button_icon slds-button_icon-small" title="Close">
+					<lightning:buttonIcon iconName="utility:close"  variant="border-inverse" title="close" alternativeText="Close"/>
+					<span class="slds-assistive-text">Close</span>
+				</button>
+			</div>-->
+		</div>
+    </aura:if>
+</header>
+        
+   <!--************************* Page Header***************************************************-->  
+   <!-- <aura:attribute name="newBandConsuComm" type="Broker_Consultant_Commissions1__c" default=""/>-->
+    <div id="headerArea" class="slds-page-header" role="banner" style="width: 100%; padding: 12px;">
+            <div class="slds-media">
+                <div
+                    class="slds-media__figure slds-icon slds-icon--large slds-icon-custom-84">
+                  <!--  <img src="/resource/SLDS_0103/assets/icons/custom/custom84_60.png')}" /> -->
+                    <img src="{!$Resource.slds_2_2_2 + '/assets/icons/standard/custom_60.png'}"/>
+        
+                </div>
+                <div class="slds-media__body">
+                    <p class="slds-page-header__title  slds-truncate" title="">Create
+                        Broker/Consultant Commissions</p>
+                    <p class="slds-text-heading--smaller"></p>
+                </div>
+            </div>
+    </div> <br></br>
+ 
+  <div  aura:id="ShowingspinON" class="slds-hide" >   
+                      <div class="demo-only" style="height: 10rem;color:blue">
+                  <div role="status" class="slds-spinner slds-spinner_medium">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                  </div>
+				  </div>
+  </div>   
+
+
+    
+    
+    
+    
+    
+     
+  <!--************************* Select BrokerConsultant Option***************************************************-->
+    <aura:if isTrue="{!v.selectBR}"> 
+        <div class="slds-grid">    	
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3"></div>        
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3" style="display:table-cell; vertical-align:middle; text-align:center">
+                <div class="slds-form-element" > 
+                    <div class="slds-form-element__control">                    
+                        <ui:inputSelect label="Related Consultant" value="{!v.selectedBR}" class="slds-combobox-picklist slds-input" aura:id="selectConsultant" required="true"/>			 
+                    </div>
+                </div>
+            </div>        
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3"></div>
+        </div>
+         <div class="slds-grid">
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3"></div>
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3" style="display:table-cell; vertical-align:middle; text-align:center">
+                <br></br> 
+                <button class="slds-button slds-button--brand" variant="brand" onclick="{!c.clickNext}" aura:id="ButtonNext" >Next</button>            
+                <button class="slds-button slds-button--neutral" variant="neutral" onclick="{!c.goToAccount}">Cancel</button>
+            </div>        
+           <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3"></div>
+        </div>
+     
+    
+    <aura:set attribute="else">
+       
+       <div aura:id="ShowingspinOff" >
+        <!--************************* First Row***************************************************-->
+        <div class="slds-grid slds-wrap slds-grid--pull-padded slds-grid--align-space">
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element left-bar">  
+                    <div class="slds-form-element__control" >                    
+                     <!--   <ui:inputText aura:id="AccountName"  label="Account"
+                                      class="slds-combobox-lookup  slds-input"
+                                      labelClass="slds-form-element__label"
+                                      value="{!v.newBandConsuComm.Name}"
+                                      required="true"/>-->
+                       
+                       <span style='color:red;' class="slds-size--1-of-1">*</span>Opportunity
+                        
+                        <c:ANA_LTNG01_CustomLookup_oppty objectName="Opportunity"
+                              field_API_text="Name"
+                              field_API_val="Id"
+                              limit="10"
+                              field_API_search="Name"
+                              lookupIcon="standard:Opportunity" 
+						      selItem="{!v.selAccItem}" 
+                              aura:id="Opportunity_lookup"                      
+                              placeholder="Search Opportunities"
+                              searchSpecific=""
+                              oppId="{!v.oppId}"
+                              searchByType="SearchByName"
+                              /> 
+                            
+                         <aura:if isTrue="{!v.selectAccount}"> 
+                             <span style="font-size: .75rem; margin-top:.5rem;color: rgb(194, 57, 52)"> Account Can't be empty</span>
+                        </aura:if>
+                    </div  >
+                 </div>        
+            </div>
+            <div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element left-bar" > 
+                    <div class="slds-form-element__control">
+ 			          <span style='color:red;' >*</span> Payment Method 
+                        <div >
+                        <ui:inputSelect label=""  value="{!v.newBandConsuComm.Payment_Method__c}" class="slds-combobox-picklist slds-input" aura:id="paymentMethod" required="true" /></div>	
+					  </div>
+                    
+                </div>
+            </div>
+        </div><br></br>
+        
+        <!--***************************** Second Row***************************************-->
+        <div class="slds-grid slds-wrap slds-grid--pull-padded slds-grid--align-space">
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element left-bar">  
+                    <div class="slds-form-element" > 
+                         <div class="slds-form-element__control">
+                        <span style='color:red;' >*</span>Line Of Business
+                        <ui:inputSelect label="" class="slds-combobox-picklist slds-input" aura:id="LineOfBusiness" required="true" value="{!v.newBandConsuComm.Line_of_Business__c}" />
+				   </div>
+                   </div>       
+                 </div>        
+            </div>
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element left-bar" > 
+                            <div class="slds-form-element__control"> 
+                                
+                                  Commission Dollar Amount($)
+                                <div >
+                                <ui:inputNumber aura:id="dollarUnit" label=""
+                                      class="slds-input"
+                                      labelClass="slds-form-element__label"
+                                      value="{!v.newBandConsuComm.Commission_Dollar_Amount__c}"  format="#,##0.00#"/>
+                                </div>  
+                                </div>
+                </div>
+            </div>
+        </div><br></br>
+        
+        <!--***************************** Third Row***************************************-->
+        <div class="slds-grid slds-wrap slds-grid--pull-padded slds-grid--align-space">
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element left-bar">  
+                    <div class="slds-form-element__control">                    
+                      <!--  <ui:inputText aura:id="broker" label="Brokerage/Consultant"
+                                      class="slds-input"
+                                      labelClass="slds-form-element__label"
+                                      value="{!v.newBandConsuComm.BrokerageAndConsultant__c}"
+                                      required="true"/> -->
+                        Brokerage/Consultant<span class="tooltipB">
+                        <span class="tooltiptextB   slds-popover slds-nubbin--bottom ">Dont make any consultant changes using this field.Please click cancel and select the appropriate consultant from the drop-down</span>
+                        <button class="slds-button slds-button slds-button--icon" aria-describedby="help" title="Help" />
+                        <lightning:icon iconName="utility:info" size="xx-small" alternativeText="Help"/></span>
+                        <c:ANA_LTNG01_CustomLookup objectName="Brokerage_and_Consultant__c"
+                              field_API_text="Name"
+                              field_API_val="Id"
+                              limit="10"
+                              field_API_search="Name"
+                              aura:id="broker_lookup"                       
+                              lookupIcon="standard:client" 
+                              selItem="{!v.selBConsultantItem}" 
+                              placeholder="Search Brokerage/Consultants"
+                              searchSpecific="BrokerConsult"
+                              accId="{!v.accId}"
+                              searchByType="SearchByName"
+							  last_SearchText=""                                                  
+                              />
+                        <aura:if isTrue="{!v.selectBroker}"> 
+                            <span style="font-size: .75rem; margin-top:.5rem;color: rgb(194, 57, 52)"> Broker/Consultant Can't be empty</span>
+                        </aura:if>
+                    </div>
+                 </div>        
+            </div>
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element left-bar"> 
+                            <div class="slds-form-element__control">
+                              
+                              Commission Percentage(%)
+                              <div > 
+                              <ui:inputNumber aura:id="percentId" label=""
+                                      class="slds-input"
+                                      labelClass="slds-form-element__label"
+									 value="{!v.newBandConsuComm.Commission_Percentage__c}" format="#,##0.00#"/>
+                            </div>
+                            </div>    
+                </div>
+            </div>
+        </div><br></br>
+        
+        <!--***************************** Fourth Row***************************************-->
+        <div class="slds-grid slds-wrap slds-grid--pull-padded slds-grid--align-space  .slds-grid_vertical-align-center">
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                 <div class="slds-form-element left-bar" style="white-space: nowrap;">  
+                    <div class="slds-form-element__control">                    
+                    <span style='color:red;' >*</span>Commission Start Date 
+                        <ui:inputDate aura:id="commstartDate" label="" 
+                                class="slds-datepicker slds-input" 
+                                labelClass="slds-form-element__label"
+                                value="{!v.newBandConsuComm.Commission_Start_Date__c}" 
+                                      displayDatePicker="true" required="true" format="MM/DD/YYYY"/>
+                    </div>
+                 </div>         
+            </div>
+          
+        
+		 <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element left-bar" style="border:none">  
+                    <div class="slds-form-element__control ">                    
+						<span style='color:red;' >*</span>
+                      	Group Numbers<span class="tooltipG">
+                        <span class="tooltiptextG   slds-popover slds-nubbin--bottom ">List Group Numbers Applicable To This Commission (Please separate numbers with a comma). Actual group information must be entered. Do not enter 'All' or only a portion of the information. If applicable to only group numbers, enter all group numbers.</span>
+                        <button class="slds-button slds-button slds-button--icon" aria-describedby="help" title="Help" />
+                        <lightning:icon iconName="utility:info" size="xx-small" alternativeText="Help"/></span>
+                        <lightning:textarea name="myText" label="" class="slds-textarea slds-input" value="{!v.newBandConsuComm.Group_Numbers__c}"  aura:id="GroupNumbers"/>
+						<aura:if isTrue="{!v.selectGroupNumber}"> 
+						<span style="font-size: .75rem; margin-top:.5rem;color: rgb(194, 57, 52)"> Group Numbers Can't be empty</span>
+						</aura:if>
+                    </div>
+                 </div>        
+            </div>
+        </div>
+        <!--***************************** Fifth Row***************************************-->
+        <div class="slds-grid slds-wrap slds-grid--pull-padded slds-grid--align-space">
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                 <div class="slds-form-element left-bar" style="white-space: nowrap;">  
+                    <div class="slds-form-element__control">                    
+                        Commission End Date
+                        <ui:inputDate aura:id="enddate" label="" 
+                                class="slds-datepicker slds-input" 
+                                labelClass="slds-form-element__label"
+                                value="{!v.newBandConsuComm.Commission_End_Date__c}" 
+                                displayDatePicker="true" format="MM/DD/YYYY"/>
+                    </div>
+                 </div>  
+            </div>
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element  left-bar " > 
+                            <div class="slds-form-element__control">                    
+                                 <div class="slds-form-element__control"> 
+                                 
+                                Applies to only a portion of group #? 
+								<span class="tooltipA">
+                        <span class="tooltiptextA   slds-popover slds-nubbin--bottom ">Does this apply only to a portion of the group number indicated above?</span>
+                        <button class="slds-button slds-button slds-button--icon" aria-describedby="help" title="Help" />
+                        <lightning:icon iconName="utility:info" size="xx-small" alternativeText="Help"/></span>
+							    <div>		
+                                <ui:inputSelect class="slds-combobox-picklist slds-input" aura:id="AppliestoOnly" value="{!v.newBandConsuComm.Applies_to_only_a_portion_of_group__c}"/>
+                                     </div></div>
+                            </div>
+                </div>
+            </div>
+        </div><br></br>
+        
+        <!--***************************** Six Row***************************************-->
+        <div class="slds-grid slds-wrap slds-grid--pull-padded slds-grid--align-space">
+              <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element left-bar"> 
+                            <div class="slds-form-element__control">
+                              
+                             Brokerage Commission Split %
+                              <div > 
+                              <ui:inputNumber aura:id="spercentId" label=""
+                                      class="slds-input"
+                                      labelClass="slds-form-element__label"
+									 value="{!v.newBandConsuComm.Brokerage_Commission_Split__c}" format="#,##0.00#"/>
+                            </div>
+                            </div>  
+                </div>
+            </div>
+			<div class="slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element left-bar" style="border:none"> 
+                    <div class="slds-form-element__control ">
+                        
+                        Sub-Groups/ Contract Codes/ Package Code
+						<span class="tooltipS">
+                        <span class="tooltiptextS   slds-popover slds-nubbin--bottom ">If yes above, list Sub-Groups, Contract Codes, or Package Code Applicable To This Commission (Please separate numbers with a comma). Actual group information must be entered. Do not enter 'All' or only a portion of the information.</span>
+                        <button class="slds-button slds-button slds-button--icon" aria-describedby="help" title="Help" />
+                        <lightning:icon iconName="utility:info" size="xx-small" alternativeText="Help" /></span>
+                        <div > 
+                        <lightning:textarea name="myText" label="" class="slds-textarea slds-input" value="{!v.newBandConsuComm.Sub_Groups_Contract_Codes_Package_Code__c}"/>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<!--***************************** Seventh Row***************************************-->
+        <div class="slds-grid slds-wrap slds-grid--pull-padded slds-grid--align-space">
+              <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+                <div class="slds-form-element left-bar"> 
+                            <div class="slds-form-element__control">
+						   <span style='color:red;' >*</span>Funding Type
+                                <div > 
+                                <ui:inputSelect label="" class="slds-combobox-picklist slds-input" aura:id="fundingType" required="true" value="{!v.newBandConsuComm.Funding_Type__c}"/>                                
+                                </div></div> 
+                </div>
+            </div>
+			 <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+            </div>
+        </div><br></br>
+        
+        
+        <div class="slds-grid">
+            
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+            </div>
+            
+            <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3" style="display:table-cell; vertical-align:middle; text-align:center">             
+                <button class="slds-button slds-button--brand" variant="brand" onclick="{!c.saveNewBR}">Save</button>            
+                <button class="slds-button slds-button--neutral" variant="neutral" onclick="{!c.goPreviousNext}">Cancel</button>
+            </div>
+            
+           <div class=" slds-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-3">
+             
+            </div>
+       		 </div>
+        	</div>
+        
+                  
+     </aura:set>
+    </aura:if>
+</aura:component>
