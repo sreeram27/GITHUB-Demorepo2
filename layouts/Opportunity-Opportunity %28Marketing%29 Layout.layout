@@ -82,18 +82,8 @@
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
         <label>Additional Information</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>MainCompetitors__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>CurrentGenerators__c</field>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
+        <layoutColumns/>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
@@ -132,11 +122,7 @@
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
-        <layoutColumns>
-            <layoutItems>
-                <customLink>DeliveryStatus</customLink>
-            </layoutItems>
-        </layoutColumns>
+        <layoutColumns/>
         <layoutColumns/>
         <layoutColumns/>
         <style>CustomLinks</style>
@@ -164,6 +150,9 @@
             <quickActionName>NewEvent</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
+            <quickActionName>FeedItem.RypplePost</quickActionName>
+        </quickActionListItems>
+        <quickActionListItems>
             <quickActionName>FeedItem.LinkPost</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
@@ -177,11 +166,6 @@
         </quickActionListItems>
     </quickActionList>
     <relatedContent>
-        <relatedContentItems>
-            <layoutItem>
-                <component>wits:newsPanel</component>
-            </layoutItem>
-        </relatedContentItems>
         <relatedContentItems>
             <layoutItem>
                 <behavior>Readonly</behavior>
