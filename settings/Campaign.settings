@@ -2,6 +2,7 @@
 <CampaignSettings xmlns="http://soap.sforce.com/2006/04/metadata">
     <enableAutoCampInfluenceDisabled>false</enableAutoCampInfluenceDisabled>
     <enableCampaignHistoryTrackEnabled>false</enableCampaignHistoryTrackEnabled>
-    <enableCampaignInfluence2>false</enableCampaignInfluence2>
+    <enableCampaignInfluence2>true</enableCampaignInfluence2>
     <enableCampaignMemberTWCF>true</enableCampaignMemberTWCF>
+    <enableSuppressNoValueCI2>false</enableSuppressNoValueCI2>
 </CampaignSettings>

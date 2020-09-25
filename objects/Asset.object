@@ -121,15 +121,11 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>AutorabitExtId__c</fullName>
-        <description>External Id created by AutoRABIT</description>
-        <externalId>true</externalId>
-        <label>AutorabitExtId__c</label>
-        <length>18</length>
-        <required>false</required>
+        <fullName>Availability</fullName>
+    </fields>
+    <fields>
+        <fullName>AverageUptimePerDay</fullName>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>ContactId</fullName>
@@ -146,6 +142,11 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>ExternalIdentifier</fullName>
+        <inlineHelpText>ID of matching record in an external system.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>InstallDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -155,6 +156,16 @@
     </fields>
     <fields>
         <fullName>IsInternal</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LocationId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ManufactureDate</fullName>
+        <inlineHelpText>Date when the asset was manufactured.</inlineHelpText>
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
@@ -199,6 +210,9 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>Reliability</fullName>
+    </fields>
+    <fields>
         <fullName>RootAssetId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
@@ -213,17 +227,39 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>StatusReason</fullName>
+        <inlineHelpText>Explanation of the device status.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>StockKeepingUnit</fullName>
+    </fields>
+    <fields>
+        <fullName>SumDowntime</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SumUnplannedDowntime</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>UptimeRecordEnd</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>UptimeRecordStart</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>UsageEndDate</fullName>
         <trackHistory>false</trackHistory>
     </fields>
-    <listViews>
-        <fullName>AllAssets</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All Assets</label>
-    </listViews>
+    <fields>
+        <fullName>Uuid</fullName>
+        <inlineHelpText>Unique string identifying the asset.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+    </fields>
     <searchLayouts>
         <customTabListAdditionalFields>ASSET.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ASSET.SERIAL_NUMBER</customTabListAdditionalFields>
