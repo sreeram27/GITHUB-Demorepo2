@@ -9,6 +9,10 @@
         <value>Dbj1s</value>
     </caseValues>
     <fields>
+        <label><!-- AutorabitExtId__c --></label>
+        <name>AutorabitExtId__c</name>
+    </fields>
+    <fields>
         <label><!-- F1 --></label>
         <name>F1__c</name>
     </fields>
