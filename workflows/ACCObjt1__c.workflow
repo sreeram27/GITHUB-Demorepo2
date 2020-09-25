@@ -8,7 +8,7 @@
             <operation>startsWith</operation>
             <value>s</value>
         </criteriaItems>
-        <description>test 1234</description>
+        <description>test 123fsdfsf4</description>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>

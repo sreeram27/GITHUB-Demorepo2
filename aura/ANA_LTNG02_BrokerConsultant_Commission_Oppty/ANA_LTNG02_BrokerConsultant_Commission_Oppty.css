@@ -1,0 +1,132 @@
+.THIS .uiDayInMonthCell--default{
+    font-size:13px;
+}
+.THIS .uiDatePicker--default .dateBar select{
+    font-size:13px;
+}
+.THIS .uiDatePicker--default .dateBar .monthYear{
+    font-size:13px;
+}
+.THIS .uiDatePicker--default .dateBar{
+    padding:0px;
+}
+
+/*Changes made by Accenture team to fix Code Scan Issue PRDCRM-46538 Date(MM:DD:YYYY): 11/7/2019*/
+.THIS .calGrid tr td{
+    width:32px;
+    height:32px;
+    padding:0px
+}
+
+.THIS .uiDatePickerGrid--default .calGrid .calRow td{
+    border:none;
+}
+
+.THIS .slds-datepicker td>.slds-day{
+    width:2.25rem;
+    height: 2rem;
+    display: block;	
+    position: relative;
+    min-width: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    margin: auto;
+}
+.THIS .uiDatePickerGrid--default .calGrid th{
+    padding:3px;
+    font-size:11px;
+    color:#185e88;
+}
+
+.THIS .calGrid tbody tr:last-child{
+    display:none;
+}
+
+.THIS .tooltipB .tooltiptextB {
+    visibility: hidden;
+    position:relative;
+    background-color:rgb(84, 105, 141);
+    color:white;
+    bottom:63px;
+    left:49px;
+    width:250px;
+    height:100px;
+    border-radius:6px;
+    
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.THIS .tooltipB:hover .tooltiptextB {
+    visibility: visible;
+}
+.THIS .left-bar
+{
+    padding-left:35px;
+    width:95%
+        
+}
+.THIS .tooltipG .tooltiptextG {
+    visibility: hidden;
+    position:relative;
+    background-color:rgb(84, 105, 141);
+    color:white;
+    bottom:140px;
+    left:20px;
+    width:250px;
+    height:200px;
+    border-radius:6px;
+    
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.THIS .tooltipG:hover .tooltiptextG {
+    visibility: visible;
+}
+
+.THIS .tooltipA .tooltiptextA {
+    visibility: hidden;
+    position:relative;
+    background-color:rgb(84, 105, 141);
+    color:white;
+    bottom:63px;
+    left:140px;
+    width:250px;
+    height:75px;
+    border-radius:6px;
+    
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.THIS .tooltipA:hover .tooltiptextA {
+    visibility: visible;
+}
+
+.THIS .tooltipS .tooltiptextS {
+    visibility: hidden;
+    position:relative;
+    background-color:rgb(84, 105, 141);
+    color:white;
+    bottom:135px;
+    left:190px;
+    width:250px;
+    height:150px;
+    border-radius:6px;
+    
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.THIS .tooltipS:hover .tooltiptextS {
+    visibility: visible;
+}
