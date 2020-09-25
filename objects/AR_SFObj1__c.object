@@ -165,16 +165,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>AR_SFField1__c</fullName>
-        <description>Add Desc AR-SFField1tyest</description>
-        <externalId>false</externalId>
-        <label>AR-SFField1</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Email</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>AR_SFField2__c</fullName>
         <description>Add  Desc</description>
         <externalId>false</externalId>
@@ -182,16 +172,6 @@
         <length>40</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>f3__c</fullName>
-        <externalId>false</externalId>
-        <label>f3</label>
-        <length>34</length>
-        <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -205,12 +185,5 @@
     <pluralLabel>ARSFObj1s</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
-    <validationRules>
-        <fullName>ARSFvalidationRule1</fullName>
-        <active>true</active>
-        <description>Add comment for this Validation.</description>
-        <errorConditionFormula>ISBLANK( AR_SFField1__c )</errorConditionFormula>
-        <errorMessage>Please enter a value</errorMessage>
-    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

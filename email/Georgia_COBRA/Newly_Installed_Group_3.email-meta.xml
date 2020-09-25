@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Anthem_BCBS_Georgia</letterhead>
+    <name>Newly Installed Group Anthem COBRA &amp; Billing system Welcome Email</name>
+    <style>freeForm</style>
+    <subject>Newly Installed Group</subject>
+    <textOnly>Dear ,
+
+
+has been set up on the Anthem COBRA &amp; Billing system and we would like to welcome you as a new COBRA client. We pride ourselves in providing quality service and in treating all customers as business partners.
+
+
+Enclosed please find the following documents:
+
+
+• Anthem COBRA Welcome Packet
+
+• Employer COBRA Online Access Webinar Schedule
+
+• Training Guide
+
+
+has chosen our Web-Based Reporting option under the Full COBRA administration. The Web-Based Reporting option allows you to update and report eligibility for both Anthem and non-Anthem products directly on the COBRA website (http://www.benefitadminsolutions.com/ ), and provides real-time qualifying event processing with a 24-hour turnaround. Please note that this web-based service is not a single sign-on entry of Anthem membership reporting. You will still need to submit terminations separately to the Anthem enrollment area in addition to reporting the COBRA qualifying event via this web-based platform.
+
+
+We would like to extend an invitation to you to attend a COBRA Website Training webcast. These are held every Wednesday at 2:00pm EST. Please feel free to attend; the schedule with log in and dial in information is attached. In this training we offer a live demonstration of our COBRA website (http://www.benefitadminsolutions.com/ ). On this site, you have instant access to all COBRA eligibility information including payment status, images of mailed notices, call documentation, and an activity record for every participant. If you have requested web access, you will be receiving your User ID and Password within 2-3 business days. Please be advised that some COBRA correspondence will be sent from email addresses ending in &quot;wellpoint.com” and &quot;benefitadminsolutions.com”; both addresses are valid. You may need to check your spam or junk mail folders, or adjust your security settings, so you receive these emails.
+
+
+If you have any questions or concerns once you have reviewed the enclosed materials please feel free to contact us. You may reach us by phone at 1-866-800-2272, or by email at BCBSGA-Cobra-Implementations@wellpoint.com, additional contact information is included in the enclosed Contact List. We are available Monday through Friday, 8:00am to 7:00pm EST and will be happy to assist.
+
+
+Thank you, and once again welcome!
+
+
+Sincerely,
+
+
+COBRA Implementation Team
+
+Anthem</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
