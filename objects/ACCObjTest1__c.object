@@ -139,23 +139,10 @@
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <content>ACOBJTpagecomponent</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>LightningComponent</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <content>ACCObjTest1Page</content>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Visualforce</type>
-    </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>test1111</description>
+    <description>Test123</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -188,10 +175,10 @@
     </fields>
     <fields>
         <fullName>AutorabitExtId__c</fullName>
-        <description>Ex11ternal Id 11111111111created by AutoRABIT</description>
+        <description>Ex11ternal Id created by AutoRABIT</description>
         <externalId>true</externalId>
         <label>AutorabitExtId__c</label>
-        <length>19</length>
+        <length>7</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -199,7 +186,7 @@
     </fields>
     <fields>
         <fullName>N1__c</fullName>
-        <description>124</description>
+        <description>007</description>
         <externalId>false</externalId>
         <label>N1</label>
         <required>false</required>
@@ -303,26 +290,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>TextField15__c</fullName>
-        <externalId>false</externalId>
-        <label>TextField15</label>
-        <precision>18</precision>
-        <required>true</required>
-        <scale>0</scale>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>f8__c</fullName>
-        <externalId>false</externalId>
-        <label>f8</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Email</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>pl1__c</fullName>
         <description>12356</description>
         <externalId>false</externalId>
@@ -342,20 +309,7 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <fields>
-        <fullName>test__c</fullName>
-        <externalId>false</externalId>
-        <label>test</label>
-        <required>true</required>
-        <trackTrending>false</trackTrending>
-        <type>Phone</type>
-    </fields>
     <label>ACCObjTest1</label>
-    <listViews>
-        <fullName>All</fullName>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
     <nameField>
         <label>ACCObjTest1 Name</label>
         <type>Text</type>
