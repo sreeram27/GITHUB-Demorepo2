@@ -104,6 +104,14 @@
         <flows/>
         <fullName>QuoteLineItem</fullName>
     </flowDefinitions>
+    <quickActions>
+        <label><!-- Guest Community Case --></label>
+        <name>GuestCommunityCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Community Case --></label>
+        <name>NewCommunityCase</name>
+    </quickActions>
     <reportTypes>
         <description><!-- Screen Flows --></description>
         <label><!-- Screen Flows --></label>
