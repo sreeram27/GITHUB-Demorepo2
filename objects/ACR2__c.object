@@ -142,6 +142,11 @@
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Test</fullName>
+        <fields>Name</fields>
+        <label>ContactPointPhone-Contact Point Phone Layout.layout b/src/layouts/ContactPointPh</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -159,6 +164,17 @@
         <externalId>true</externalId>
         <label>AutorabitExtId__c</label>
         <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F12__c</fullName>
+        <description>Zfvxcvbn</description>
+        <externalId>false</externalId>
+        <label>F12</label>
+        <length>8</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
