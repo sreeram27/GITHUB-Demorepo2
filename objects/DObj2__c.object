@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>Accept</actionName>
@@ -165,16 +164,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Field4__c</fullName>
-        <externalId>false</externalId>
-        <label>Field4</label>
-        <length>6</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>field1__c</fullName>
         <description>JUn25</description>
         <externalId>false</externalId>
@@ -200,12 +189,5 @@
     <pluralLabel>DObj2s</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
-    <validationRules>
-        <fullName>Vaidationrule11</fullName>
-        <active>true</active>
-        <description>1</description>
-        <errorConditionFormula>ISBLANK( Field3__c )</errorConditionFormula>
-        <errorMessage>please enter a value</errorMessage>
-    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>
