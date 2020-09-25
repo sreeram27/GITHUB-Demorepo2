@@ -1,5 +1,0 @@
-Request {!Request__c.Name}
-Request Title: {!Request__c.Request_Title__c}
-Request Description: {!Request__c.Request_Description__c}
-
-Link: {!Request__c.Link}

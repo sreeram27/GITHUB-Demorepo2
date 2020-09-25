@@ -49,6 +49,10 @@
                 <behavior>Edit</behavior>
                 <field>AccountLookUpField__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MyCoolCheckBox__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
