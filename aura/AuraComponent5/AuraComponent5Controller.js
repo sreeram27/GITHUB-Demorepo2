@@ -1,5 +1,5 @@
 ({
-	myAction : function(component, event, helper) { //test commit1111
+	myAction : function(component, event, helper) { //test commit
 		
 	}
 })
