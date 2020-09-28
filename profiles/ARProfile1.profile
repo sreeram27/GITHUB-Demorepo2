@@ -66,7 +66,7 @@
     </applicationVisibilities>
     <classAccesses>
         <apexClass>A0</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A000</apexClass>
