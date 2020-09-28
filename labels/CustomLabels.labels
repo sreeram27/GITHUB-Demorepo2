@@ -10,9 +10,9 @@
     <labels>
         <fullName>AC1</fullName>
         <language>en_US</language>
-        <protected>true</protected>
+        <protected>false</protected>
         <shortDescription>ac111</shortDescription>
-        <value>new1</value>
+        <value>12</value>
     </labels>
     <labels>
         <fullName>AC100</fullName>
