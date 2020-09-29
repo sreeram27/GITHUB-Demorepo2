@@ -5408,6 +5408,39 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
+    <loginIpRanges>
+        <endAddress>255.234.123.567</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.201</endAddress>
+        <startAddress>1.0.0.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.123</endAddress>
+        <startAddress>1.0.0.9</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.234</endAddress>
+        <startAddress>1.1.1.1</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.222</endAddress>
+        <startAddress>2.2.2.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>test</description>
+        <endAddress>255.234.123.222</endAddress>
+        <startAddress>3.3.3.3</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.227</endAddress>
+        <startAddress>6.6.6.6</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.228</endAddress>
+        <startAddress>7.7.7.7</startAddress>
+    </loginIpRanges>
     <userPermissions>
         <enabled>true</enabled>
         <name>ActivitiesAccess</name>
@@ -5587,5 +5620,5 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>
-    </userPermissions>
+    </userPermissions>  
 </Profile>
