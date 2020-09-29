@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Pradeepa</name>
         <label>Pradeepa</label>
-        <locationX>591</locationX>
+        <locationX>590</locationX>
         <locationY>312</locationY>
         <actionName>activateSessionPermSet</actionName>
         <actionType>activateSessionPermSet</actionType>
@@ -81,5 +81,5 @@
             <targetReference>pradeepab</targetReference>
         </connector>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
 </Flow>
