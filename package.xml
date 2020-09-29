@@ -2222,11 +2222,13 @@
     </types>
     <types>
         <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>Pradeep</members>
         <members>QuoteLineItem</members>
         <name>Flow</name>
     </types>
     <types>
         <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>Pradeep</members>
         <members>QuoteLineItem</members>
         <name>FlowDefinition</name>
     </types>
