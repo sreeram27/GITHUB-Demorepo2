@@ -3422,6 +3422,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>NCinols1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Ncn1</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -6143,6 +6147,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>n1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ncinocls2</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

@@ -3418,6 +3418,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>NCinols1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Ncn1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -6139,6 +6143,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>n1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ncinocls2</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>

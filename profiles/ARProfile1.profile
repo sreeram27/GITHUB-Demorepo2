@@ -902,6 +902,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>NCinols1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>NS25Class1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1239,6 +1243,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>nc1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ncinocls2</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
