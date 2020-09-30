@@ -88,4 +88,12 @@
         <name>standard__SalesforceCMS</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>TestCommunity</name>
+        <type>Network</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>AppTest1</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

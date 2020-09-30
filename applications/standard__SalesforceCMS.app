@@ -13,6 +13,7 @@
     <tabs>standard-CmsChannel</tabs>
     <tabs>standard-CmsWorkspaces</tabs>
     <tabs>standard-CmsExperiences</tabs>
+    <tabs>ContactPointPhone_Contact_Point_Phone_La__c</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
         <mappings>
@@ -20,6 +21,9 @@
         </mappings>
         <mappings>
             <tab>ACR3__c</tab>
+        </mappings>
+        <mappings>
+            <tab>ContactPointPhone_Contact_Point_Phone_La__c</tab>
         </mappings>
         <mappings>
             <tab>DLConfigTestObj__c</tab>

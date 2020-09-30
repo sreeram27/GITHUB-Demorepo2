@@ -201,6 +201,7 @@
     <tabs>ACR2__c</tabs>
     <tabs>ACR3__c</tabs>
     <tabs>Sai_Obj500__c</tabs>
+    <tabs>ContactPointPhone_Contact_Point_Phone_La__c</tabs>
     <workspaceConfig>
         <mappings>
             <tab>ACR2__c</tab>
@@ -210,6 +211,9 @@
         </mappings>
         <mappings>
             <tab>ConfigObj1__c</tab>
+        </mappings>
+        <mappings>
+            <tab>ContactPointPhone_Contact_Point_Phone_La__c</tab>
         </mappings>
         <mappings>
             <tab>DLConfigTestObj__c</tab>

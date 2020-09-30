@@ -13,6 +13,10 @@
         <name>AutorabitExtId__c</name>
     </fields>
     <fields>
+        <label><!-- F12 --></label>
+        <name>F12__c</name>
+    </fields>
+    <fields>
         <label><!-- LookUpField1 --></label>
         <name>LookUpField1__c</name>
         <relationshipLabel><!-- ACR2s --></relationshipLabel>
@@ -30,5 +34,12 @@
         <label><!-- field2 --></label>
         <name>field2__c</name>
     </fields>
+    <layouts>
+        <layout>ContactPointPhone-Contact Point Phone Layout.layout b/src/layouts/ContactPointPh</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>
