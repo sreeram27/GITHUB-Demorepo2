@@ -29,10 +29,6 @@
         <settingValue>true</settingValue>
     </preferences>
     <preferences>
-        <settingName>ContentSniffingProtection</settingName>
-        <settingValue>false</settingValue>
-    </preferences>
-    <preferences>
         <settingName>DeleteMonitoringDataEnabled</settingName>
         <settingValue>false</settingValue>
     </preferences>
@@ -46,10 +42,6 @@
     </preferences>
     <preferences>
         <settingName>EventLogWaveIntegEnabled</settingName>
-        <settingValue>false</settingValue>
-    </preferences>
-    <preferences>
-        <settingName>HstsSitesCommunities</settingName>
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
@@ -97,14 +89,6 @@
         <settingValue>true</settingValue>
     </preferences>
     <preferences>
-        <settingName>RedirectionWarning</settingName>
-        <settingValue>false</settingValue>
-    </preferences>
-    <preferences>
-        <settingName>ReferrerPolicy</settingName>
-        <settingValue>true</settingValue>
-    </preferences>
-    <preferences>
         <settingName>RemoveThemeBrandBanner</settingName>
         <settingValue>false</settingValue>
     </preferences>
@@ -125,10 +109,6 @@
         <settingValue>true</settingValue>
     </preferences>
     <preferences>
-        <settingName>SelfSetPasswordInApi</settingName>
-        <settingValue>true</settingValue>
-    </preferences>
-    <preferences>
         <settingName>SendThroughGmailPref</settingName>
         <settingValue>false</settingValue>
     </preferences>
@@ -141,10 +121,6 @@
         <settingValue>true</settingValue>
     </preferences>
     <preferences>
-        <settingName>UpgradeInsecureRequestsPref</settingName>
-        <settingValue>false</settingValue>
-    </preferences>
-    <preferences>
         <settingName>UseLanguageFallback</settingName>
         <settingValue>false</settingValue>
     </preferences>
@@ -154,14 +130,6 @@
     </preferences>
     <preferences>
         <settingName>UsersAreLightningOnly</settingName>
-        <settingValue>false</settingValue>
-    </preferences>
-    <preferences>
-        <settingName>VerifyOn2faRegistration</settingName>
-        <settingValue>true</settingValue>
-    </preferences>
-    <preferences>
-        <settingName>VerifyOnEmailChange</settingName>
         <settingValue>false</settingValue>
     </preferences>
     <preferences>
@@ -190,10 +158,6 @@
     </preferences>
     <preferences>
         <settingName>VoiceMailEnabled</settingName>
-        <settingValue>false</settingValue>
-    </preferences>
-    <preferences>
-        <settingName>XssProtection</settingName>
         <settingValue>false</settingValue>
     </preferences>
 </OrgPreferenceSettings>

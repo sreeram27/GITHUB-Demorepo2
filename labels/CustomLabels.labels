@@ -5,28 +5,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AAtest456</shortDescription>
-        <value>11111</value>
+        <value>111111</value>
     </labels>
     <labels>
         <fullName>AC1</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ac111</shortDescription>
-        <value>Editvalue</value>
-    </labels>
-    <labels>
-        <fullName>AC100</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>AC100</shortDescription>
-        <value>11</value>
-    </labels>
-    <labels>
-        <fullName>AC11</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>AC11</shortDescription>
-        <value>123e4</value>
+        <value>12</value>
     </labels>
     <labels>
         <fullName>AC133</fullName>
@@ -40,7 +26,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC211</shortDescription>
-        <value>11111111</value>
+        <value>231124e44444</value>
     </labels>
     <labels>
         <fullName>AC56</fullName>
@@ -57,13 +43,6 @@
         <value>111</value>
     </labels>
     <labels>
-        <fullName>AC8</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>AC8</shortDescription>
-        <value>11</value>
-    </labels>
-    <labels>
         <fullName>ACCL1</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -75,7 +54,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACCL3</shortDescription>
-        <value>3111</value>
+        <value>311111</value>
     </labels>
     <labels>
         <fullName>ACCTest</fullName>
@@ -90,13 +69,6 @@
         <protected>true</protected>
         <shortDescription>ACCt3</shortDescription>
         <value>3k</value>
-    </labels>
-    <labels>
-        <fullName>ACL1</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>ACL1</shortDescription>
-        <value>111111</value>
     </labels>
     <labels>
         <fullName>ACL101</fullName>
@@ -124,7 +96,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>S22CL2</shortDescription>
-        <value>11</value>
+        <value>1111111</value>
     </labels>
     <labels>
         <fullName>ACL24</fullName>
@@ -152,14 +124,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACL4</shortDescription>
-        <value>rl1</value>
-    </labels>
-    <labels>
-        <fullName>ACL5</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>ACL54</shortDescription>
-        <value>511</value>
+        <value>rl11</value>
     </labels>
     <labels>
         <fullName>ACL50</fullName>
@@ -632,6 +597,20 @@
         <value>1</value>
     </labels>
     <labels>
+        <fullName>Des123</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Des1234</shortDescription>
+        <value>123</value>
+    </labels>
+    <labels>
+        <fullName>Des12345</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Des12345</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
         <fullName>ESCCustomLabel1</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -892,6 +871,20 @@
         <protected>true</protected>
         <shortDescription>NCL1</shortDescription>
         <value>s345</value>
+    </labels>
+    <labels>
+        <fullName>NCN1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NCN1</shortDescription>
+        <value>123</value>
+    </labels>
+    <labels>
+        <fullName>NCinoCl1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NCinoCl1</shortDescription>
+        <value>123</value>
     </labels>
     <labels>
         <fullName>NCl2</fullName>
@@ -1202,11 +1195,11 @@
         <value>1</value>
     </labels>
     <labels>
-        <fullName>STCL1</fullName>
+        <fullName>STAB203_Label</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>STCL1</shortDescription>
-        <value>1</value>
+        <shortDescription>STAB203 Label</shortDescription>
+        <value>Test</value>
     </labels>
     <labels>
         <fullName>SV1</fullName>
@@ -1855,13 +1848,6 @@
     </labels>
     <labels>
         <fullName>zl123</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>zl123</shortDescription>
-        <value>1</value>
-    </labels>
-    <labels>
-        <fullName>zl1234567890</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>zl123</shortDescription>
