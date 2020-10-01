@@ -2093,8 +2093,6 @@
     </types>
     <types>
         <members>Folder1</members>
-        <members>Folder1/Folder2</members>
-        <members>Folder1/Folder2/Folder3</members>
         <name>Dashboard</name>
     </types>
     <types>
@@ -2143,10 +2141,6 @@
     <types>
         <members>Pradeep</members>
         <name>FlowDefinition</name>
-    </types>
-    <types>
-        <members>BigHack__b.BHIndex</members>
-        <name>Index</name>
     </types>
     <types>
         <members>addNewShares</members>
