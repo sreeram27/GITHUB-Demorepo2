@@ -1438,6 +1438,8 @@
         <members>SaiObj700__c.F3__c</members>
         <members>SaiObjNew1__c.EmailField1__c</members>
         <members>SaiObjNew1__c.PhoneField1__c</members>
+        <members>SaiObject007__c.EmailField__c</members>
+        <members>SaiObject007__c.TextField__c</members>
         <members>SaiOobj1__c.Field3__c</members>
         <members>SaiTFSObj1__c.field1__c</members>
         <members>SaiTFSObj1__c.field2__c</members>
@@ -2075,6 +2077,7 @@
         <members>SaiObj600__c</members>
         <members>SaiObj700__c</members>
         <members>SaiObjNew1__c</members>
+        <members>SaiObject007__c</members>
         <members>SaiOobj1__c</members>
         <members>SaiTFSObj1__c</members>
         <members>Sai_Obj500__c</members>
@@ -2621,6 +2624,7 @@
         <members>SaiObj600__c-SaiObj600 Layout</members>
         <members>SaiObj700__c-SaiObj700 Layout</members>
         <members>SaiObjNew1__c-SaiObjNew1 Layout</members>
+        <members>SaiObject007__c-SaiObject007 Layout</members>
         <members>SaiOobj1__c-SaiOobj1 Layout</members>
         <members>SaiTFSObj1__c-SaiTFSObj1 Layout</members>
         <members>Sai_Obj500__c-Sai-Obj500 Layout</members>

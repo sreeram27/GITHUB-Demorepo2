@@ -3916,6 +3916,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SaiObject007__c.EmailField__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SaiObject007__c.TextField__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SaiOobj1__c.Field3__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4748,6 +4758,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SaiObjNew1__c-SaiObjNew1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SaiObject007__c-SaiObject007 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SaiOobj1__c-SaiOobj1 Layout</layout>

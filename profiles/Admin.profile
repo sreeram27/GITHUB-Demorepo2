@@ -68047,6 +68047,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SaiObject007__c.EmailField__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SaiObject007__c.TextField__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SalesObservation__c.Active__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -97412,6 +97422,9 @@
         <layout>SaiDX124__c-SaiDX124 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>SaiObject007__c-SaiObject007 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SalesObservation__c-Observation Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -101784,6 +101797,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>SaiDX124__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>SaiObject007__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

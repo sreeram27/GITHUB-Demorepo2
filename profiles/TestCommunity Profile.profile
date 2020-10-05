@@ -755,6 +755,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>SaiObject007__c.EmailField__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>SaiObject007__c.TextField__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Sep23rdObj1__c.F8__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -811,6 +821,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SaiDX124__c-SaiDX124 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SaiObject007__c-SaiObject007 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Sep23rdObj1__c-Sep23rdObj1 Layout</layout>

@@ -68042,6 +68042,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>SaiObject007__c.EmailField__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>SaiObject007__c.TextField__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>SalesObservation__c.Active__c</field>
         <readable>false</readable>
@@ -97346,6 +97356,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>SaiDX124__c-SaiDX124 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SaiObject007__c-SaiObject007 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SalesObservation__c-Observation Layout</layout>
