@@ -56,8 +56,8 @@
         <description>Test</description>
         <name>UpdateRecords1</name>
         <label>UpdateRecords1</label>
-        <locationX>740</locationX>
-        <locationY>337</locationY>
+        <locationX>746</locationX>
+        <locationY>338</locationY>
         <inputReference>pradeepab</inputReference>
     </recordUpdates>
     <screens>
