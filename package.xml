@@ -2612,6 +2612,8 @@
         <members>Sai_ReportFolder1</members>
         <members>Sai_ReportFolder2</members>
         <members>Sai_ReportFolder2/Reporttest1</members>
+        <members>Sai_ReportFolder5</members>
+        <members>Sai_ReportFolder5/Rp2</members>
         <name>Report</name>
     </types>
     <types>
