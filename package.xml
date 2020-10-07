@@ -2616,6 +2616,7 @@
         <members>Sai_ReportFolder6</members>
         <members>Sai_ReportFolder6/rp</members>
         <members>Sai_ReportFolder6/rp3</members>
+        <members>saireport2</members>
         <name>Report</name>
     </types>
     <types>
