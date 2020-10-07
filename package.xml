@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>49.0</version>
+    <version>48.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -295,6 +295,7 @@
         <members>n09</members>
         <members>n1</members>
         <members>nc1</members>
+        <members>pack1</members>
         <members>pavancls2</members>
         <members>pr</members>
         <members>rtclass1</members>
