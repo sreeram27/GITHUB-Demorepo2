@@ -5,6 +5,21 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
+<applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+<applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+ <applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__AppLauncher</application>
         <default>false</default>
@@ -193,6 +208,18 @@
     <classAccesses>
         <apexClass>A13</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A14</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A14</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A14</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A14</apexClass>
