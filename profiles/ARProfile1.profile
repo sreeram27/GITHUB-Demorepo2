@@ -4,7 +4,7 @@
         <application>AppTest1</application>
         <default>false</default>
         <visible>true</visible>
-    </applicationVisibilities>
+    </applicationVisibilities
 <applicationVisibilities>
         <application>AppTest1</application>
         <default>false</default>
