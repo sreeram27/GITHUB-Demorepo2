@@ -5,6 +5,26 @@
         <default>false</default>
         <visible>true</visible>
     </applicationVisibilities>
+      <applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+      <applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+      <applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+      <applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__AppLauncher</application>
         <default>false</default>
@@ -127,6 +147,17 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>A036</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A036</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A036</apexClass>
+        <enabled>false</enabled>
+    </classAccesses><classAccesses>
         <apexClass>A036</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -4685,6 +4716,15 @@
     <layoutAssignments>
         <layout>zb1__c-zb1 Layout</layout>
     </layoutAssignments>
+     <layoutAssignments>
+        <layout>zb1__c-zb1 Layout</layout>
+    </layoutAssignments>
+     <layoutAssignments>
+        <layout>zb1__c-zb1 Layout</layout>
+    </layoutAssignments>
+     <layoutAssignments>
+        <layout>zb1__c-zb1 Layout</layout>
+    </layoutAssignments>
     <loginHours/>
     <loginIpRanges>
         <endAddress>255.234.123.223</endAddress>
@@ -5449,6 +5489,22 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ChatterEditOwnPost</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChatterFileLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChatterFileLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChatterFileLink</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChatterFileLink</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
