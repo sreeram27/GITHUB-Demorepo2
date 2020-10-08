@@ -1,5 +1,25 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+<applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+<applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+ <applicationVisibilities>
+        <application>AppTest1</application>
+        <default>false</default>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
         <application>standard__AppLauncher</application>
         <default>true</default>
         <visible>false</visible>
@@ -187,6 +207,18 @@
     <classAccesses>
         <apexClass>A13</apexClass>
         <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A14</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A14</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A14</apexClass>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A14</apexClass>
