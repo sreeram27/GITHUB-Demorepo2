@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Pradeepa</name>
         <label>Pradeepa</label>
-        <locationX>590</locationX>
+        <locationX>589</locationX>
         <locationY>312</locationY>
         <actionName>activateSessionPermSet</actionName>
         <actionType>activateSessionPermSet</actionType>
