@@ -2642,6 +2642,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Km4</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>LBClass1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -6135,6 +6139,18 @@
     </classAccesses>
     <classAccesses>
         <apexClass>kkkk</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>km1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>km2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>km3</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -15734,6 +15750,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ARF__c.ZipCodeServiceArea__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Accobj4__c.Field2__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

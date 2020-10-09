@@ -814,6 +814,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Km4</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>LBClass1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1231,6 +1235,18 @@
     </classAccesses>
     <classAccesses>
         <apexClass>kkkk</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>km1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>km2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>km3</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>

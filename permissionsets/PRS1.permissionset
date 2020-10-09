@@ -108,6 +108,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Accobj4__c.Field2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Account.MyCoolCheckBox__c</field>
         <readable>false</readable>
     </fieldPermissions>
