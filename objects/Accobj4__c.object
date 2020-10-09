@@ -168,10 +168,9 @@
         <description>gffghf</description>
         <externalId>false</externalId>
         <label>Field2</label>
-        <length>6</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
+        <type>Email</type>
         <unique>false</unique>
     </fields>
     <label>Accobj4</label>
