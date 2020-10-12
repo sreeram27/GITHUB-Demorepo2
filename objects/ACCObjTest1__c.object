@@ -159,7 +159,7 @@
         <description>swd</description>
         <externalId>false</externalId>
         <label>ACCField1</label>
-        <length>8</length>
+        <length>9</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -173,7 +173,7 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
-    </fields>
+    </fields
     <fields>
         <fullName>AutorabitExtId__c</fullName>
         <description>Ex11ternal Id created by AutoRABIT</description>
