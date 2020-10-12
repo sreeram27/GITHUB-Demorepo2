@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>49.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -1306,6 +1306,8 @@
         <members>OrgMetricScanSummary.ErrorMessage</members>
         <members>OrgMetricScanSummary.ImplementationEffort</members>
         <members>OrgMetricScanSummary.Status</members>
+        <members>PackObj1__c.F1__c</members>
+        <members>PackObj1__c.F2__c</members>
         <members>PartnerFundAllocation.Amount</members>
         <members>PartnerFundAllocation.BudgetId</members>
         <members>PartnerFundAllocation.ChannelPartnerId</members>
@@ -2052,6 +2054,7 @@
         <members>OrgMetricScanResult</members>
         <members>OrgMetricScanSummary</members>
         <members>PG_Metric__c</members>
+        <members>PackObj1__c</members>
         <members>PartnerFundAllocation</members>
         <members>PartnerFundClaim</members>
         <members>PartnerFundRequest</members>
