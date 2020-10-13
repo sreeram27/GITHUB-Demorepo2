@@ -3562,6 +3562,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Pclass1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Pclass3</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Pluck</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -6171,6 +6179,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ncinos1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>packClass1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>packClass3</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -52633,6 +52649,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>NA17Obj1__c.F1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>New_Business__c.API_Behavioral_Health_Comment__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -58534,6 +58555,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>PG_Tiering__c.Sequence__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>PackObj1__c.F1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>PackObj1__c.F2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -96594,6 +96625,9 @@
         <recordType>Milestone__c.Milestone_Release</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>NA17Obj1__c-NA17Obj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>New_Business__c-New Business Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -97104,6 +97138,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>PG_Tiering__c-PG Tiering Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PackObj1__c-PackObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Pending_Correction_Reason__c-Pending Correction Reason Layout</layout>
@@ -101286,6 +101323,15 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>NA17Obj1__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>New_Business__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -101413,6 +101459,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>PG_Tiering__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>PackObj1__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

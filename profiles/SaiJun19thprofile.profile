@@ -425,6 +425,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Pclass1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Pclass3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ReltrainTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -653,6 +661,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>packClass1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>packClass3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>pr</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -760,6 +776,21 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>NA17Obj1__c.F1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>PackObj1__c.F1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>PackObj1__c.F2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>PradeepObj1__c.F1__c</field>
         <readable>false</readable>
@@ -828,7 +859,13 @@
         <layout>Global-Global Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>NA17Obj1__c-NA17Obj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>PG_Metric__c-PG_Metric Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PackObj1__c-PackObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>PradeepObj1__c-PradeepObj1 Layout</layout>
