@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>49.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -1104,6 +1104,7 @@
         <members>ObjAc1__c.AutorabitExtId__c</members>
         <members>ObjAc1__c.Field1__c</members>
         <members>ObjAc1__c.Field2__c</members>
+        <members>Oct14Test1__c.F1__c</members>
         <members>Oct23obj1__c.field1__c</members>
         <members>Oobj1__c.f__c</members>
         <members>Opportunity.AccountId</members>
@@ -1908,6 +1909,7 @@
         <members>Obj89__c</members>
         <members>Obj900__c</members>
         <members>ObjAc1__c</members>
+        <members>Oct14Test1__c</members>
         <members>Oct23obj1__c</members>
         <members>Oobj1__c</members>
         <members>Opportunity</members>
@@ -2281,6 +2283,10 @@
         <name>HomePageLayout</name>
     </types>
     <types>
+        <members>BigHack__b.BHIndex</members>
+        <name>Index</name>
+    </types>
+    <types>
         <members>sf_com_apps</members>
         <name>InstalledPackage</name>
     </types>
@@ -2631,6 +2637,10 @@
     <types>
         <members>Catch up</members>
         <name>ManagedTopics</name>
+    </types>
+    <types>
+        <members>Default_Navigation</members>
+        <name>NavigationMenu</name>
     </types>
     <types>
         <members>Catch up</members>
