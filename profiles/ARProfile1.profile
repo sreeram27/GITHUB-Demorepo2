@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>standard__AppLauncher</application>
@@ -3139,6 +3140,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Oct14Test1__c.F1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Oct23obj1__c.field1__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4815,6 +4821,39 @@
         <layout>zb1__c-zb1 Layout</layout>
     </layoutAssignments>
     <loginHours/>
+    <loginIpRanges>
+        <endAddress>255.234.123.223</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.201</endAddress>
+        <startAddress>1.0.0.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.207</endAddress>
+        <startAddress>1.0.0.9</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.229</endAddress>
+        <startAddress>1.1.1.1</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.222</endAddress>
+        <startAddress>2.2.2.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>test</description>
+        <endAddress>255.234.123.222</endAddress>
+        <startAddress>3.3.3.3</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.227</endAddress>
+        <startAddress>6.6.6.6</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.228</endAddress>
+        <startAddress>7.7.7.7</startAddress>
+    </loginIpRanges>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -4967,6 +5006,15 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>NN1__c</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Oct14Test1__c</object>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
