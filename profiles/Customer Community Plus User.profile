@@ -3288,6 +3288,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Oct14Test1__c.F1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Oct23obj1__c.field1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -4678,6 +4683,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>ObjAc1__c-ObjAc1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Oct14Test1__c-Oct14Obj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Oct23obj1__c-Oct23obj1 Layout</layout>

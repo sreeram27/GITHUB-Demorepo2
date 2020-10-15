@@ -53539,6 +53539,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Oct14Test1__c.F1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Open_Enrollment_CSV_Column__mdt.API_Name__c</field>
         <readable>false</readable>
@@ -96574,6 +96579,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>OE_Order__c-Order Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Oct14Test1__c-Oct14Obj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Open_Enrollment_CSV_Column__mdt-Open Enrollment CSV Column Layout</layout>

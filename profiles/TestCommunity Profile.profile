@@ -782,6 +782,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Oct14Test1__c.F1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>PackObj1__c.F1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -860,6 +865,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>NA17Obj1__c-NA17Obj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Oct14Test1__c-Oct14Obj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>PG_Metric__c-PG_Metric Layout</layout>
