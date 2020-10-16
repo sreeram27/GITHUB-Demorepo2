@@ -53548,6 +53548,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Oct14Test1__c.F2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Open_Enrollment_CSV_Column__mdt.API_Name__c</field>
         <readable>false</readable>

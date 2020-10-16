@@ -3293,6 +3293,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Oct14Test1__c.F2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Oct23obj1__c.field1__c</field>
         <readable>false</readable>
     </fieldPermissions>

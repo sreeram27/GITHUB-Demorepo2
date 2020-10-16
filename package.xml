@@ -1199,6 +1199,7 @@
         <members>ObjAc1__c.Field1__c</members>
         <members>ObjAc1__c.Field2__c</members>
         <members>Oct14Test1__c.F1__c</members>
+        <members>Oct14Test1__c.F2__c</members>
         <members>Oct23obj1__c.field1__c</members>
         <members>Oobj1__c.f__c</members>
         <members>Opportunity.AccountId</members>

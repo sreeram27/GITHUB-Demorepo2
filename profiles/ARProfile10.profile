@@ -3294,6 +3294,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Oct14Test1__c.F2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Oct23obj1__c.field1__c</field>
         <readable>true</readable>
     </fieldPermissions>

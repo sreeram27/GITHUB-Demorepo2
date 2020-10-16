@@ -787,6 +787,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Oct14Test1__c.F2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>PackObj1__c.F1__c</field>
         <readable>true</readable>
     </fieldPermissions>
