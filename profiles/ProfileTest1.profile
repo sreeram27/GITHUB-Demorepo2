@@ -4555,6 +4555,9 @@
         <layout>Dbj1__c-Dbj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>DelegatedAccount-External Managed Account Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Demo4Obj7__c-Demo4Obj7 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>

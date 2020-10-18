@@ -95999,6 +95999,9 @@
         <layout>Defect__c-Defect Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>DelegatedAccount-External Managed Account Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Dental_Complete__c-Dental Complete Layout</layout>
     </layoutAssignments>
     <layoutAssignments>

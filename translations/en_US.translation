@@ -125,10 +125,6 @@
         <fullName>Automated_email_on_QLI_Onduo_product_Created_Updated</fullName>
     </flowDefinitions>
     <flowDefinitions>
-        <flows/>
-        <fullName>test</fullName>
-    </flowDefinitions>
-    <flowDefinitions>
         <flows>
             <screens>
                 <name>Pradeep</name>
@@ -139,6 +135,10 @@
     <flowDefinitions>
         <flows/>
         <fullName>QuoteLineItem</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>test</fullName>
     </flowDefinitions>
     <quickActions>
         <label><!-- Guest Community Case --></label>

@@ -2400,6 +2400,8 @@
         <members>PMO/Send_Email_To_Owner_Of_the_Request</members>
         <members>PMO/Send_Email_To_Submitter_of_the_Question</members>
         <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityChgEmailVerNewTemplate</members>
+        <members>unfiled$public/CommunityChgEmailVerOldTemplate</members>
         <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
         <members>unfiled$public/CommunityLockoutEmailTemplate</members>
         <members>unfiled$public/CommunityVerificationEmailTemplate</members>
@@ -2547,6 +2549,7 @@
         <members>DXObj2__c-DXObj2 Layout</members>
         <members>DandBCompany-D%26B Company Layout</members>
         <members>Dbj1__c-Dbj1 Layout</members>
+        <members>DelegatedAccount-External Managed Account Layout</members>
         <members>Demo4Obj7__c-Demo4Obj7 Layout</members>
         <members>DepTestObj1__c-DepTestObj1 Layout</members>
         <members>DlConfigObj151__c-DlConfigObj151 Layout</members>

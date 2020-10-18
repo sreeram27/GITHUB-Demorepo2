@@ -4589,6 +4589,9 @@
         <recordType>Dbj1__c.Dbj_RC2</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>DelegatedAccount-External Managed Account Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Demo4Obj7__c-Demo4Obj7 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
