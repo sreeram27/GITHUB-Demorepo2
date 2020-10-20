@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>50.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -2032,6 +2032,10 @@
         <name>EmailTemplate</name>
     </types>
     <types>
+        <members>BigHack__b.BHIndex</members>
+        <name>Index</name>
+    </types>
+    <types>
         <members>addNewShares</members>
         <members>existingShares</members>
         <members>lightningSharingWrapper</members>
@@ -2264,6 +2268,14 @@
         <members>ANA_Open_Enrollment_Reports/OE_Meetings_with_Orders_with_Order_Line</members>
         <members>ANA_Open_Enrollment_Reports/OE_Orders</members>
         <name>Report</name>
+    </types>
+    <types>
+        <members>AppAnalytics</members>
+        <name>Settings</name>
+    </types>
+    <types>
+        <members>ND_USER</members>
+        <name>UserAuthCertificate</name>
     </types>
     <types>
         <members>AR_Obj1__c.ARPValidationRule1</members>
