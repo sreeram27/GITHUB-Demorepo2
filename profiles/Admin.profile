@@ -213,10 +213,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A158</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>A159</apexClass>
         <enabled>true</enabled>
     </classAccesses>

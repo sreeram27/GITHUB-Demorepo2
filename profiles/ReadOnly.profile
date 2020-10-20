@@ -214,10 +214,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A158</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>A159</apexClass>
         <enabled>false</enabled>
     </classAccesses>
