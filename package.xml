@@ -2605,6 +2605,8 @@
         <members>ANA_Open_Enrollment_Reports/OE_Meetings_with_Orders_with_Fulfillment</members>
         <members>ANA_Open_Enrollment_Reports/OE_Meetings_with_Orders_with_Order_Line</members>
         <members>ANA_Open_Enrollment_Reports/OE_Orders</members>
+        <members>Sai_ReportFolder6</members>
+        <members>Sai_ReportFolder6/rp</members>
         <name>Report</name>
     </types>
     <types>
