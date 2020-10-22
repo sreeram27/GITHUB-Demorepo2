@@ -1,0 +1,101 @@
+<apex:page showHeader="true" sidebar="true" standardController="Open_Enrollment_Meetings__c" extensions="UploadForOpenEnrollmentController">
+	<apex:pageMessages />
+	<style type="text/css">
+		.center
+		{
+			text-align: center;
+		}
+	</style>
+	<apex:form >
+		<script type="text/javascript">
+			
+			var fileInspector;
+			var setControllerVar;
+			var openFile = function(event){
+				var input = event.target;
+				fileInspector = new FileReader();
+				fileInspector.onload = readFileContents;
+				fileInspector.readAsText(input.files[0]);
+			};
+
+			function readFileContents(){
+				setControllerVar = document.getElementById('{!$Component.PbId.fileBody}');
+				setControllerVar.value =  fileInspector.result;
+
+				var fullPath = document.getElementById('fileIn').value; 
+
+				if (fullPath) {
+					var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+
+					var filename = fullPath.substring(startIndex);
+
+					if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+						filename = filename.substring(1);
+					}
+
+					setControllerVar = document.getElementById('{!$Component.PbId.fileName}');
+					setControllerVar.value = filename;
+
+					setControllerVar = document.getElementById('{!$Component.PbId.fileNameField}');
+					setControllerVar.value = filename;
+
+					refreshPage(filename);
+				}			
+			}
+			
+		</script>
+		<apex:pageblock Id="PbId" title="CSV Open Enrollment Upload" mode="maindetail" >
+			<apex:inputHidden value="{!fileBodyContents}" id="fileBody"/>
+			<apex:inputHidden value="{!fileName}" id="fileName"/>
+			<apex:actionFunction name="refreshPage" action="{!fileRefreshPage}">
+				<apex:param name="nameFile" value=""  assignTo="{!fileName}"/>
+			</apex:actionFunction>
+			
+			<table>
+				<tr>
+					<td colspan="2">
+						<apex:outputText value="{!$Label.Open_Enrollment_CSV_Instructions}"  />
+					</td>
+				</tr>
+				<tr>
+					<td align="right" style="vertical-align: middle;" id="orbtxt-_help">
+						<label><b>Select a .CSV File :</b>&nbsp;</label>
+						<img src="/s.gif" alt="" class="helpOrb2" id="select-help"/>
+						<script>
+						</script>
+					</td>
+					<td>
+						<apex:inputText html-readonly="true" id="fileNameField" value="{!fileName}" disabled="{!fileName == null}" />
+						<input type="file" accept=".csv" onchange='openFile(event)' id='fileIn' />
+						
+						<label for="fileIn" id="fileInputButton"/>
+						<!-- <apex:commandLink id="clearFile" value="(Clear File)" action="{!clear}" rendered="{!fileName != null}" /> -->
+						<br/>
+						
+					</td>
+				</tr>
+			</table>
+
+			<apex:pageBlockTable title="Open Enrollment Insertation Errors" value="{!enrollmentWrappers}" var="w" rendered="{!showErrorTable}" headerClass="center">
+				<apex:facet name="header"> Open Enrollment Insertation Errors </apex:facet>
+				<apex:column headerValue="CSV Row" value="{!w.csvRow}" rendered="{!w.hasError}"/>
+				<apex:column value="{!w.openEnrollment.Name}" rendered="{!w.hasError}"/>
+				<apex:column value="{!w.openEnrollment.Meeting_Type__c }" rendered="{!w.hasError}"/>
+				<apex:column headerValue="Error Message" value="{!w.errorMessage}" rendered="{!w.hasError}"/>
+			</apex:pageBlockTable>
+			<br/>
+			<apex:pageBlockTable title="CSV Errors" value="{!columnNameWrappers}" var="columnInfo" headerClass="center" rendered="{!NOT(ISBLANK(fileBodyContents))}">
+				<apex:facet name="header"> CSV Errors </apex:facet>
+				<apex:column headerValue="CSV Row" value="{!columnInfo.csvRow}" rendered="{!NOT(columnInfo.isValid)}"/>
+				<apex:column headerValue="CSV Column" value="{!columnInfo.index+1}" rendered="{!NOT(columnInfo.isValid)}"/>
+				<apex:column headerValue="Name" value="{!columnInfo.columnName}" rendered="{!NOT(columnInfo.isValid)}"/>
+				<apex:column headerValue="Field" value="{!columnInfo.apiName }" rendered="{!NOT(columnInfo.isValid)}"/>
+				<apex:column headerValue="Error Message" value="{!columnInfo.errorMessage}" rendered="{!NOT(columnInfo.isValid)}"/>
+			</apex:pageBlockTable>
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton value="Back" action="{!view}" rendered="{!NOT(ISBLANK($CurrentPage.parameters.Id))}"/>
+				<apex:commandButton value="Insert Records" action="{!insertRecords}" rendered="{!fileName != null }" />
+			</apex:pageBlockButtons>
+		</apex:pageblock>
+	</apex:form>
+</apex:page>

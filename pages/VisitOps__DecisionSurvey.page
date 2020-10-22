@@ -1,0 +1,199 @@
+<apex:page standardController="VisitOps__Survey__c" extensions="VisitOps.DecisionSurveyExtension" showHeader="false" title="Decision Survey">
+  <style>
+  <!-- Style Added for Lightning Experience -->
+    			body {  
+            			font-size:75% !important;
+    				} 
+    .radioClass td{width:35px; text-align:center;}
+    .ratingCount input[type=radio]{padding:0px;margin:0;/*margin-right:24px;*/width:5px;   }
+    .radioClass label{display:block;}
+    .radioClass {width:100%;}
+    .ntlikelyDiv {float: right;padding-right:0;}
+    .ratings {width: 40%;}
+    .ratingTxt {
+        color: #000000;
+        font-size: 0.8em;
+        padding-top: 5px;
+        float: left;
+        }
+     .spacing { 
+        margin-left:0.3cm;
+       }      
+     .disablable {
+        width: 29%;
+        border-style:hidden;
+        background-color:#DDDDDD;
+        padding: 0.5%;
+        font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+        } 
+    .footer {
+    /* background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll; */
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+
+}                              
+    .radioClass label{display:block;}
+    .surveyQuestions input[type=text]{width:35%;padding:0.5%;height:20px; font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;}
+  </style>
+<apex:form id="formId">
+
+        <apex:styleSheet value="{!$Resource.VisitOps__survey_css}"/>
+        <apex:includeScript value="{!$Resource.VisitOps__jquery1_11_1_min}"/>
+        <apex:includeScript value="{!$Resource.VisitOps__function_js}"/>
+        <div class="rightContent">
+        <!-- <apex:image url="{!DocumentLogoUrl}" style="padding-left:12px;width:186px;height:60px"/> -->
+        <apex:image url="{!DocumentLogoUrl}" style="padding-left:12px;"/>
+        <div class="screenHeading" style="padding-left:12px;"><br/>Decision Survey</div>
+          <apex:PageMessages />
+
+        <apex:outputPanel rendered="{!visitRecord!=null && (attendeeRecord!=null || vblRecord!=null) && surveyRecord!=null}">
+            <div class="surveyDetails">
+            <div class="spacing">
+            
+            <apex:outputPanel id="VisitBundleDetails" rendered="{!vblRecord!=null}">
+             
+                <div class="row">
+                    <div class="labelText">Opportunity</div>
+                    <div class="fieldText">
+                    <apex:outputField value="{!vblRecord.Opportunity__r.Name}"/>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="labelText">Arrival Date (Location)</div>
+                    <div class="fieldText">
+                    <!-- <apex:outputField value="{!vblRecord.VisitArrivalDateTime__c}"/> -->
+                    <apex:outputField value="{!vblRecord.VisitOps__VisitArrivalDateandTimeLocationTZ__c}"/>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="labelText">Departure Date (Location)</div>
+                    <div class="fieldText">
+                    <!-- <apex:outputField value="{!vblRecord.VisitDepartureDateTime__c}"/> -->
+                    <apex:outputField value="{!vblRecord.VisitOps__VisitDepartureDateandTimeLocationTZ__c}"/>
+                    </div>
+                </div> 
+            </apex:outputPanel>
+            
+        </div>      
+        </div>
+            <div class="row">
+            <ol class="surveyQuestions">
+                <li>
+                    <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Impact_on_buying_decision__c.inlineHelpText}"/></div> 
+                    <div class="rowDiv"></div>
+                    <div>
+                        <apex:outputPanel rendered="{!!flag1}"> 
+                            <apex:inputField value="{!surveyRecord.VisitOps__Impact_on_buying_decision__c}"/>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!flag}"><div class="disablable"><apex:outputText value="{!IF(surveyRecord.VisitOps__Impact_on_buying_decision__c==NULL,$Label.visitops__none,surveyRecord.VisitOps__Impact_on_buying_decision__c)}"/></div></apex:outputPanel> 
+                     </div>
+                </li>
+                <li>
+                   <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Decision_Making_Time__c.inlineHelpText}"/></div> 
+                   <div class="rowDiv"></div>
+                   <div>
+                       <apex:outputPanel rendered="{!!flag1}"> 
+                           <apex:inputField value="{!surveyRecord.VisitOps__Decision_Making_Time__c}"/>
+                       </apex:outputPanel>
+                       <apex:outputPanel rendered="{!flag}"><div class="disablable"><apex:outputText value="{!IF(surveyRecord.VisitOps__Decision_Making_Time__c==NULL,$Label.visitops__none,surveyRecord.VisitOps__Decision_Making_Time__c)}"/></div></apex:outputPanel> 
+                   </div>
+                </li>
+                <li>
+                    <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Impact_on_buying_decision_by_Percentage__c.inlineHelpText}"/></div> 
+                    <div class="rowDiv"></div>
+                          
+                     <div class="ratings">
+                           <!-- 
+                           <div class="likelyDiv">
+                                <span class="ratingTxt">Not Likely at all</span>
+                           </div>
+                           <div class="ntlikelyDiv">
+                                <span class="ratingTxt">Extremely Likely</span>
+                           </div>
+                           <div class="cBoth"></div> 
+                            -->
+                           <div class="ratingCount">
+                              
+                               <div class="row" >
+                                 <apex:selectRadio value="{!surveyRecord.VisitOps__Impact_on_buying_decision_by_Percentage__c}"  layout="table" styleClass="radioClass" required="true" disabled="{!flag}">
+                                     <apex:selectOptions value="{!PercentRadioOpts}"/>
+                                  </apex:selectRadio> 
+                               </div>
+                            </div>
+                    </div>  
+                    <!-- 
+                    <div class="txtItalic">Comments</div>
+                        <div>
+                             <apex:inputTextArea value="{!surveyRecord.Impact_on_buying_decision_Comments__c}" style="width:400px;height:60px" disabled="{!flag}"/>
+                        </div>
+                     -->
+                        </li>
+                        <li> 
+                          <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Incremental_business__c.inlineHelpText}"/></div>
+                          <div>
+                            <apex:outputPanel rendered="{!!flag1}"> 
+                               <apex:inputField value="{!surveyRecord.VisitOps__Incremental_business__c}"/></apex:outputPanel>
+                             <apex:outputPanel rendered="{!flag}"><div class="disablable"><apex:outputText value="{!IF(surveyRecord.VisitOps__Incremental_business__c==NULL,$Label.visitops__none,surveyRecord.VisitOps__Incremental_business__c)}"/></div></apex:outputPanel> 
+                          </div>
+                        </li>           
+                        <li> 
+                        <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Incremental_business_by_Percentage__c.inlineHelpText}"/></div>
+                        <div class="rowDiv">
+                        </div>
+                        
+                        <div class="ratings">
+                            <!-- 
+                            <div class="likelyDiv">
+                                <span class="ratingTxt">Not Likely at all</span>
+                            </div>
+                            <div class="ntlikelyDiv">
+                                <span class="ratingTxt">Extremely Likely</span>
+                            </div>
+                            <div class="cBoth"></div> 
+                             -->
+                            <div class="ratingCount">
+                            
+                               <div class="row" >
+                                 <apex:selectRadio value="{!surveyRecord.VisitOps__Incremental_business_by_Percentage__c}"  layout="table" styleClass="radioClass" required="true" disabled="{!flag}">
+                                     <apex:selectOptions value="{!PercentRadioOpts}"/>
+                                  </apex:selectRadio> 
+                               </div>
+                         </div>
+                        </div> 
+                        <!-- 
+                        <br/><div class="txtItalic">Comments</div>
+                        <div>
+                             <apex:inputTextArea value="{!surveyRecord.Incremental_business_Comments__c}" disabled="{!flag}" style="width:400px;height:60px"/>
+                        </div>
+                         -->
+                        </li>
+                        <li> 
+                            <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Incremental_business_about_Visit__c.inlineHelpText}"/></div>
+                            <div>
+                               <apex:inputTextArea value="{!surveyRecord.VisitOps__Incremental_business_about_Visit__c}"  style="width:400px;height:60px" disabled="{!flag}" />
+                            </div>
+                        </li>                 
+                   </ol>
+            </div>
+            <center>
+                    <apex:commandButton value="Submit" action="{!SubmitSurvey}" oncomplete="alertUser({!showSubmitButton});" style="width:5%;height:75%;" rendered="{!showSubmitButton}" rerender="formId" /><br/><br/><br/><br/>
+            </center><br/><br/>   
+           </apex:outputPanel>   
+
+         </div> 
+          <div class="footer"><apex:image url="{!DocumentFooterUrl}" style="width:1440px;height:60px"/></div>     
+</apex:form>
+<script>
+function alertUser(errorOccured){
+    if(errorOccured=='false' || errorOccured==false) {
+        alert('Survey have been submitted successfully. You may now close the window.');
+    }
+}
+
+
+</script>
+</apex:page>

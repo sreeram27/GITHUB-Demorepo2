@@ -1,0 +1,310 @@
+<apex:page standardController="VisitOps__Visit_Logistics__c" extensions="VisitOps.VisitLogisticsScreenCtrl" action="{!processPageLoad}" sidebar="{!$Label.visitops__sidebar}">
+	<head>
+		<title>Visit Logistics Screen</title>
+		<apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/styles.css')}" />
+	</head>
+	<body>
+		<apex:form id="visitFormId">
+        	<apex:pageMessages id="pgMsgsId"/>
+        	<div class="rightContent">
+				<!--Visit View-->
+			    <div class="visitView bPageBlock">
+		    		<div class="pbHeader">
+	                	<table cellspacing="0" cellpadding="0" border="0">
+	                        <tbody>
+	                            <tr>
+	                                <td class="pbTitle">
+	                                    <img width="12" height="1" style="margin-right: 0.25em;" title="" class="minWidth" alt="" src="/s.gif"></img>
+	                                    <h2 class="mainTitle">Visit Logistics Edit</h2>
+	                                </td>
+	                                <td id="topButtonRow" class="pbButton">
+	                                    <apex:commandButton value="Save" action="{!save}" rerender="pgMsgsId" status="progressIndicator"/>
+	                                    <!-- <input type="button" value="Cancel" class="btn" onclick="actionCancel();" style="margin-left:-2px;"/> -->
+	                                    <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+	                                                                                 
+	                                </td>
+	                                <td>
+	                                    <div  class="fr">
+	                                        <span class="pbSubExtra">
+	                                            <span class="requiredLegend brandTertiaryFgr">
+	                                                <span class="requiredExampleOuter">
+	                                                    <span class="requiredExample">&nbsp;</span>
+	                                                </span>
+	                                                <!--<span class="requiredMark">*</span>-->
+	                                                <span class="requiredText"> = Required Information</span>
+	                                            </span>
+	                                        </span>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                        </tbody>
+	                   </table>
+	               	</div>								
+					<div class="pbBody">
+								<!-- VISIT LOGISTICS SECTION -->
+								
+								<!-- <apex:outputPanel layout="block" rendered="{!AND(isVisitSubmitted,isVisitTeamUser)}"> -->
+                                <div class="pbSubheader brandTertiaryBgr tertiaryPalette">                                    
+                                    <h3>Visit Logistics<span class="titleSeparatingColon">:</span></h3>
+                                </div>
+                                <!-- <div class="visitViewContent"> -->
+                            
+                                <!-- Visit Logistics Normal View -->
+                       		    <apex:outputPanel layout="block" rendered="{!Not(isVisitSubmitted)}" styleClass="visitViewContent">
+	                            	<div class="row">
+	                                	<div class="colmedium">
+                                        	<div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Breakfast__c.Label}"/></div>
+	                                        <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Breakfast__c}" size="1">
+												    <apex:selectOptions value="{!breakfastOptions}"/>
+												</apex:selectList>
+                                       		</div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                        <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Hotel__c.Label}"/></div>
+	                                        <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Hotel__c}" size="1">
+												    <apex:selectOptions value="{!hotelOptions}"/>
+												</apex:selectList>
+                                       		</div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Lunch__c.Label}"/></div>
+	                                         <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Lunch__c}" size="1">
+												    <apex:selectOptions value="{!lunchOptions}"/>
+												</apex:selectList>
+                                        		</div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Hotel_Billing_Instructions__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Hotel_Billing_Instructions__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Daytime_Dining_Details__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Daytime_Dining_Details__c}" styleClass="field"/></div>
+	                                    </div>
+	                                    <div class="colmedium">
+		                                    <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Restaurant__c.Label}"/></div>
+	                                        <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Restaurant__c}" size="1">
+												    <apex:selectOptions value="{!restaurantOptions}"/>
+												</apex:selectList>
+	                                   		</div>
+                                   		</div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                        <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__GiftItemName__c.Label}"/></div>
+	                                        <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__GiftItemName__c}" size="1">
+												    <apex:selectOptions value="{!giftItemOptions}"/>
+												</apex:selectList>
+                                       		</div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Restaurant_Billing_Instructions__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Restaurant_Billing_Instructions__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Special_Gift_Instructions__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Special_Gift_Instructions__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+	                                
+                                </apex:outputPanel> 
+                                <!-- End of Visit Logistics Normal View -->
+                                
+                                <!-- Visit Logistics Submitted View -->
+                                <apex:outputPanel layout="block" rendered="{!AND(isVisitSubmitted,isVisitTeamUser)}" styleClass="visitViewContent">
+	                            	<div class="row">
+	                                	<div class="colmedium">
+                                        	<div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Breakfast__c.Label}"/></div>
+	                                        <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Breakfast__c}" size="1">
+												    <apex:selectOptions value="{!breakfastOptions}"/>
+												</apex:selectList>
+                                        		</div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Hotel__c.Label}"/></div>
+	                                         <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Hotel__c}" size="1">
+												    <apex:selectOptions value="{!hotelOptions}"/>
+												</apex:selectList>
+                                        		</div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Lunch__c.Label}"/></div>
+	                                         <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Lunch__c}" size="1">
+												    <apex:selectOptions value="{!lunchOptions}"/>
+												</apex:selectList>
+                                        		</div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Hotel_Billing_Instructions__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Hotel_Billing_Instructions__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Daytime_Dining_Details__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Daytime_Dining_Details__c}" styleClass="field"/></div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Hotel_Notes__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Hotel_Notes__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Daytime_Dining_Notes__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Daytime_Dining_Notes__c}" styleClass="field"/></div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Restaurant__c.Label}"/></div>
+	                                         <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Restaurant__c}" size="1">
+												    <apex:selectOptions value="{!restaurantOptions}"/>
+												</apex:selectList>
+                                        		</div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Special_Dietary_Requirements__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Special_Dietary_Requirements__c}" styleClass="field"/></div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Restaurant_Billing_Instructions__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Restaurant_Billing_Instructions__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__GiftItemName__c.Label}"/></div>
+	                                         <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__GiftItemName__c}" size="1">
+												    <apex:selectOptions value="{!giftItemOptions}"/>
+												</apex:selectList>
+                                        		</div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Restaurant_Dining_Notes__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Restaurant_Dining_Notes__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Special_Gift_Instructions__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Special_Gift_Instructions__c}" styleClass="field"/></div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Photographer__c.Label}"/></div>
+	                                         <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Photographer__c}" size="1">
+												    <apex:selectOptions value="{!photographerOptions}"/>
+												</apex:selectList>
+                                        		</div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Signage_Supplier_Name__c.Label}"/></div>
+	                                         <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Signage_Supplier_Name__c}" size="1">
+												    <apex:selectOptions value="{!signageSupplierOptions}"/>
+												</apex:selectList>
+                                        		</div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Photographer_Notes__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Photographer_Notes__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Signage_Notes__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Signage_Notes__c}" styleClass="field"/></div>
+	                                    </div>
+	                                    <div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Videographer__c.Label}"/></div>
+	                                         <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__Videographer__c}" size="1">
+												    <apex:selectOptions value="{!videographerOptions}"/>
+												</apex:selectList>
+                                        		</div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__GroundTransportationProvider__c.Label}"/></div>
+	                                         <div class="field">
+	                                        	<apex:selectList value="{!visitLogisticsRecord.VisitOps__GroundTransportationProvider__c}" size="1">
+												    <apex:selectOptions value="{!grndTransportationOptions}"/>
+												</apex:selectList>
+                                        		</div>
+	                                    </div>
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Videographer_Notes__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Videographer_Notes__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__GroundTransportationNotes__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__GroundTransportationNotes__c}" styleClass="field"/></div>
+	                                    </div>
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Security_Notes__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Security_Notes__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                	<div class="colmedium">
+	                                         <div class="label"><apex:outputLabel value="{!$ObjectType.VisitOps__Visit_Logistics__c.fields.VisitOps__Facility_Notes__c.Label}"/></div>
+	                                         <div class="field"><apex:inputField value="{!visitLogisticsRecord.VisitOps__Facility_Notes__c}" styleClass="field"/></div>
+	                                    </div>
+	                                </div>
+		                                
+                                </apex:outputPanel> 
+								<!-- End of Visit Logistics Submitted View -->
+								                                
+								<!-- END OF VISIT LOGISTICS SECTION -->
+						
+						<!-- Buttons Section -->
+						<div class="pbBottomButtons">
+	                        <table cellspacing="0" cellpadding="0" border="0">
+	                            <tbody>
+	                                <tr>
+	                                    <td class="pbTitle">
+	                                        <img width="1" height="1" title="" class="minWidth" alt="" src="/s.gif"></img>
+	                                        &nbsp;
+	                                    </td>
+	                                    <td id="bottomButtonRow" class="pbButtonb">
+	                                        <apex:commandButton value="Save" action="{!save}" rerender="pgMsgsId" status="progressIndicator"/>
+	                                        <!-- <apex:commandButton value="Cancel" action="{!cancel}"/> -->       
+	                                        <!-- <input type="button" value="Cancel" class="btn" onclick="actionCancel();" style="margin-left:-2px;"/> -->
+	                                        <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+	                                    </td>
+	                                </tr>
+	                            </tbody>
+	                        </table>
+	                    </div>
+						
+						<!-- End of Buttons Section -->
+					</div>
+				</div>
+			</div>
+		</apex:form>
+	</body>					
+</apex:page>

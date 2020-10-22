@@ -1,0 +1,10 @@
+<apex:page standardController="HCR__c">
+<apex:form >
+<apex:pageBlock title="New HCR Record Creation Error Page">
+<h> Please create new record using 'Capture HCR Details' button </h>
+<apex:pageBlockbuttons >
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+</apex:pageBlockbuttons>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

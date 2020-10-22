@@ -1,0 +1,129 @@
+<!--/**
+    * @author: Ravideep(Vikings)
+	* @created date : 05/24/2019
+	* @description: component for cloning a Broker_Consultant_Commissions1__c record with warning messages
+	* @ history : 
+    */-->
+<aura:component controller="BrokerageCommissionCloneController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader,force:appHostable" >
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+	<aura:attribute name="bccomm" type="Broker_Consultant_Commissions1__c" default="{'sobjectType':'Broker_Consultant_Commissions1__c','Payment_Method__c':'Test'}" />
+	<aura:attribute name="errormsg" type="String" />
+    <aura:attribute name="showError" type="Boolean" default="false"/>
+	<aura:attribute name="showWarning" type="boolean" default="false"/> 
+	<aura:attribute name="postSaveFlag" type="boolean" default="false"/>
+    <aura:attribute name="saveandnew" type="boolean" default="false"/>
+    <aura:attribute name="newrecId" type="String" />
+	<aura:attribute name="prevrecId" type="String" />
+	<header class="slds-global-header_container">
+	<aura:if isTrue="{!v.showError}">
+		<div class="{!v.saveandnew ? 'slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error' : 'slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error attach-to-top' }" role="alert">
+			<span class="slds-assistive-text">error</span>
+			<span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Description of icon when needed">
+				<lightning:icon iconName="utility:error" alternativeText="Error!" variant="error"/>
+		   </span>
+		   <h2>{!v.errormsg}</h2>
+		</div>
+		</aura:if>
+		<aura:if isTrue="{!v.showWarning}">
+		<div class="{!v.saveandnew ? 'slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning' : 'slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning attach-to-top1'}" role="alert" style="width: 100%; padding: 12px;">
+			<span class="slds-assistive-text">warning</span>
+				<span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Description of icon when needed">
+				<lightning:icon iconName="utility:warning" alternativeText="Warning!" variant="warning"/>
+            	</span>
+			<h2><b>{!$Label.c.BrokerageCommissionWarning}</b></h2>
+		</div>
+		</aura:if>
+    </header>
+    <div id="headerArea" class="slds-page-header" role="banner" style="width: 100%; padding: 12px; background-color: white;">
+            <div class="slds-media">
+                <div
+                    class="slds-media__figure slds-icon slds-icon--large slds-icon-custom-84" style="background-color: gray;">
+                    <img src="{!$Resource.vlocity_ins__slds_2_2_2 + '/assets/icons/standard/custom_60.png'}"/>
+        	 </div>
+                <div class="slds-media__body">
+                    <p class="slds-page-header__title  slds-truncate" title="">New Broker/Consultant Commissions</p>
+                    <p class="slds-text-heading--smaller"></p>
+                </div>
+            </div>
+    </div> <br></br>
+    		<div>
+            <div class="slds-is-relative">
+            <aura:if isTrue="{!v.showSpinner}">
+                <lightning:spinner aura:id="spinner"/>
+            </aura:if>
+            </div>
+            </div>
+	<div class="slds-box slds-theme_default">
+        <aura:html tag="style">
+        .slds-modal__container {
+             width : 65% !important;
+             max-width : 65% !important;
+         }
+    </aura:html>
+        <lightning:recordEditForm objectApiName="Broker_Consultant_Commissions1__c"  recordId="{!v.recordId}">
+            <lightning:messages />
+            <div class="slds-grid slds-gutters">
+			<div class="slds-col slds-size_1-of-2">
+			<lightning:inputField fieldName="Opportunity__c"  aura:id="oppid"  />
+			</div>
+			<div class="slds-col slds-size_1-of-2">
+            <lightning:inputField fieldName="Payment_Method__c" aura:id="paym"/>
+			</div>
+			</div><br></br>
+			<div class="slds-grid slds-gutters">
+			<div class="slds-col slds-size_1-of-2">
+            <lightning:inputField fieldName="Line_of_Business__c" aura:id="lob"/>
+			</div>
+			<div class="slds-col slds-size_1-of-2">
+			<lightning:inputField fieldName="Commission_Dollar_Amount__c" aura:id="cda"/>
+			</div>
+			</div><br></br>
+			<div class="slds-grid slds-gutters">
+			<div class="slds-col slds-size_1-of-2">
+            <lightning:inputField fieldName="BrokerageAndConsultant__c" aura:id="bac"/>
+			</div>
+			<div class="slds-col slds-size_1-of-2">
+			<lightning:inputField fieldName="Commission_Percentage__c" aura:id="cmp"/>
+			</div>
+			</div><br></br>
+			<div class="slds-grid slds-gutters">
+			<div class="slds-col slds-size_1-of-2">
+            <lightning:inputField fieldName="Commission_Start_Date__c" aura:id="csd"/>
+			</div>
+			<div class="slds-col slds-size_1-of-2">
+			<lightning:inputField fieldName="Group_Numbers__c" aura:id="grpnum"/>
+			</div>
+			</div><br></br>
+			<div class="slds-grid slds-gutters">
+			<div class="slds-col slds-size_1-of-2">
+            <lightning:inputField fieldName="Commission_End_Date__c" aura:id="ced"/>
+			</div>
+			<div class="slds-col slds-size_1-of-2">
+			<lightning:inputField fieldName="Applies_to_only_a_portion_of_group__c" aura:id="apply"/>
+			</div>
+			</div><br></br>
+			<div class="slds-grid slds-gutters">
+			<div class="slds-col slds-size_1-of-2">
+            <lightning:inputField fieldName="Brokerage_Commission_Split__c" aura:id="bcs" onchange="{!c.handleValueChange}"/>
+			</div>
+			<div class="slds-col slds-size_1-of-2">
+			<lightning:inputField fieldName="Sub_Groups_Contract_Codes_Package_Code__c" aura:id="sgrpcode"/>
+			</div>
+			</div><br></br>
+			<div class="slds-grid slds-gutters">
+			<div class="slds-col slds-size_1-of-2">
+            <lightning:inputField fieldName="Funding_Type__c" aura:id="fundtype"/>
+			</div>
+			<div class="slds-col slds-size_1-of-2">
+			</div>
+			</div>
+        </lightning:recordEditForm>
+		</div>
+		<div>
+			<footer class="{!v.saveandnew ? 'slds-modal__footer' : 'slds-modal__footer attach-to-bottom' }" style="background-color: white;">
+                <button type="button" class="slds-button slds-button_neutral" onclick ="{!c.customCancel}">Cancel</button> 
+                <button type="button" class="slds-button slds-button_neutral" onclick ="{!c.saveAndNewRec}">Save &amp; New</button> 
+				<button class="slds-button slds-button--brand" variant="brand" onclick="{!c.saveRec}">Save</button> 
+			</footer>
+		</div>	
+</aura:component>

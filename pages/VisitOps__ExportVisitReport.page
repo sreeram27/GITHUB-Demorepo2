@@ -1,0 +1,23 @@
+<apex:page controller="VisitOps.ExportVisitReportCtrl" showheader="false" contentType="{!renderAsExcel}"  cache="true" standardStylesheets="false" readonly="true" >
+<apex:pageblock title="Visits" id="visitTable">
+              <apex:pageblocktable value="{!wrapList}" var="parent"  id="outerTable" >               
+                   <apex:column value="{!parent.compObj.VisitOps__Company_Name__c}"  />
+                   <apex:column value="{!parent.compObj.Visit__r.VisitOps__VisitName__c}"  /> 
+                   <apex:column headerValue="Visit Number" rendered="{!NOT(parent.opportunityList.empty)}">               
+                   <apex:outputlink value="/{!parent.compObj.VisitOps__Visit__c}" onclick="window.top.location.href='/{!parent.compObj.VisitOps__Visit__c}'; return false;">{!parent.compObj.Visit__r.Name}</apex:outputlink>
+                   </apex:column>
+                   <apex:column value="{!parent.compObj.Visit__r.VisitOps__Arrival_Date_Location__c}" /> 
+                   <apex:column value="{!parent.compObj.VisitOps__VisitOwnerFormula__c}"/>                
+                   <apex:column headerValue="Opportunity Detail" >
+                   <apex:pageBlockTable value="{!parent.opportunityList}" var="firstChild" id="oppTable" >                 
+                       <apex:column value="{!firstChild.opp.Name}" style="{!if(firstChild.renderOrNot=='renderNot','background-color:#D3D3D3', 'background-color:white')}"/>
+                       <apex:column headerValue="Created Date" style="{!if(firstChild.renderOrNot=='renderNot','background-color:#D3D3D3', 'background-color:white')};width:80px;">
+                           <apex:outputText value="{0,date,dd/MMM/yyyy}">
+                               <apex:param value="{!firstChild.opp.createdDate}" />
+                           </apex:outputText>
+                       </apex:column>               
+                   </apex:pageBlockTable>
+                   </apex:column>
+               </apex:pageblocktable>
+</apex:pageblock>
+</apex:page>

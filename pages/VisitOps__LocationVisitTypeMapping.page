@@ -1,0 +1,26 @@
+<apex:page docType="html-5.0" standardController="VisitOps__Location__c" extensions="VisitOps.LocationVisitMappingCtrl" id="LocationVisitMappingCtrlId">
+     <script type="text/javascript">
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");
+            for(var i=0; i<inputCheckBox.length; i++){
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+    </script>
+    <apex:form style="overflow:auto;">
+        <apex:outputPanel style="overflow:auto; height:50px;margin: 0 2px" >     
+            <apex:dataTable value="{!wrapVisitTypeList}" var="wrapVT" id="table" border="1">
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!wrapVT.selected}" id="inputId"/>
+                </apex:column>
+                <apex:column headerValue="Visit Type" value="{!wrapVT.vTypes.Name}" />
+            </apex:dataTable>
+            <apex:commandButton value="Apply" action="{!getSelected}" style="margin-left:50px" oncomplete="window.top.location='/{!locationRecordId}'; return false"/>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

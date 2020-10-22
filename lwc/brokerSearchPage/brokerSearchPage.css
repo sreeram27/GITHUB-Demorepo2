@@ -1,0 +1,107 @@
+.lgc-bg {
+    background-color: rgb(242, 242, 242);
+}
+
+.lgc-bg-inverse {
+    background-color: rgb(22, 50, 92);
+}
+.selectedOption {
+    width: 99.5%;
+    position: absolute;
+    z-index: 10;
+}
+
+.targetOption {
+    position: relative;
+}
+
+.search-result_left-pad {
+    padding-left: 35px !important;
+}
+
+.slds-input-has-border_padding {
+    border: 1px solid grey;
+    padding: 3px;
+    background: white;
+}
+.THIS .slds-icon{
+    width: 1.1rem !important;
+}
+
+.THIS .ms-help-popup-in-header {
+    display: inline-block;
+    position: absolute !important;
+    top: -10px !important;
+    left: 55px !important;
+    margin-left: -1rem !important;
+    max-width: 20rem !important;
+    overflow: visible !important;
+    text-transform: none !important;
+}
+
+.THIS .ms-help-popup-in-header:before, .THIS .ms-help-popup-in-header:after {
+    width: 0.8rem !important;
+    height: 0.8rem !important;
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+    background-color: inherit;
+    top: 50%;
+    left: -0.4rem !important;
+    margin-top: -.8rem !important;
+}
+
+.THIS .ms-help-popup-body {
+    white-space: unset !important;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    width: 200px;
+}
+
+.divHelp{
+    position: absolute;
+}
+.divHelpTax{
+    position: absolute;
+}
+.divHelpEmail{
+    position: absolute;
+}
+.divHelpPhone{
+    position: absolute;
+}
+.divHelpState{
+    position: absolute;
+}
+.divHelpSearch{
+    position: absolute;
+}
+.alignBSIcon{
+    display: inline-block;
+    padding: 10px;
+}
+.helpTextBrokerName{
+    display: inline-block;
+    padding: 3px;
+}
+.helpTextBrokerTax{
+    display: inline-block;
+    padding: 3px;
+}
+.helpTextBrokerEmail{
+    display: inline-block;
+    padding: 3px;
+}
+.helpTextBrokerPhone{
+    display: inline-block;
+    padding: 3px;
+}
+.helpTextBrokerState{
+    display: inline-block;
+    padding: 3px;
+}
+.infoIcon{
+    margin: 3px;
+}

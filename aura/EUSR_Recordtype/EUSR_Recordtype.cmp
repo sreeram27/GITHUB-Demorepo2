@@ -1,0 +1,31 @@
+<aura:component Controller="EUSR_Recordtype" implements="lightning:hasPageReference,lightning:isUrlAddressable,lightning:actionOverride,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes,force:hasSObjectName,lightning:availableForFlowActions,lightning:availableForFlowScreens" description="c:helloTarget component" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.EUSR_Recordtype}" />
+    <aura:attribute name="variable1" type="boolean" default="false"/>
+    <lightning:navigation aura:id="navService"/>
+    <aura:if isTrue="{!v.variable1}">
+       <div class="demo-only" style="height: 640px; ">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{!c.handleClick}"
+                                          alternativeText="close"
+                                          variant="border-inverse"
+                                          class="slds-modal__close"/>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <P style="font-size:20px;">
+                        <b>Hi User, for this type of request Please create a ticket in ServiceNow.</b><br><br></br>br></br><br></br>
+                        <a href="{!$Label.c.SNOW_LINK}" target="_blank">Click here to go to SNOW </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{!$Label.c.EUSR_DOCUMENT}" target="_blank">Instruction Guide</a><br/><br/>
+ 					</P>
+                </div>
+                
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="brand" label="Cancel" iconPosition="left" iconName="action:close" onclick="{!c.handleClick}"/>
+                </footer>
+            </div>
+           </section>
+        </div>
+    </aura:if>
+</aura:component>

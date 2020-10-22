@@ -1,0 +1,81 @@
+<apex:page controller="LGA_AP_Ratesheet" showHeader="false" sidebar="false" action="{!loadApplicationandDocuments}">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <apex:stylesheet value="{!URLFOR($Resource.SLDSResource, 'assets/styles/salesforce-lightning-design-system.css')}"/>
+        <apex:includeScript value="https://code.jquery.com/jquery-1.12.4.js"/>
+        <apex:includeScript value="https://code.jquery.com/ui/1.12.1/jquery-ui.js"/>
+        <apex:stylesheet value="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+
+        <apex:form id="docForm">
+            <apex:pageMessages id="showmsg"></apex:pageMessages>
+            <div class="slds-scope">
+                <div class="slds-spinner_container slds-hide">
+                    <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+                
+                <div id="tablebody" >
+                     <table class="slds-table slds-table--bordered slds-table--cell-buffer nobordertop slds-wrap" style="table-layout:fixed; width:100%">
+                   <!-- <table class="slds-table slds-table--bordered slds-wrap"  width="70%">-->
+                        <thead>
+                            <tr class="slds-text-heading--label">
+                                <th style="text-align: left;" scope="col" class="nobordertop" title="Document Name">
+                                    <div class="th-font"><b>Document Name</b></div>
+                                </th>
+                                <th style="text-align: left;" scope="col" class="nobordertop" title="Status">
+                                    <div class="th-font"><b>File Name</b></div>
+                                </th>
+                                <th style="text-align: left;" scope="col" class="nobordertop" title="Choose File">
+                                    <div class="th-font"><b>Choose File</b></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <apex:repeat var="wrapFileObj" value="{!wrapFileUploadHolderList}" >
+                                <apex:variable var="docName" value="{!wrapFileObj.documentCheckObj.Document_Name__c}"/>
+                                
+                                <tr>
+                                    
+                                    <td class="wrapword" style="text-align: left; width:50px;white-space:Normal" >
+                                        <apex:outputText id="DocumentName" value="{!wrapFileObj.documentCheckObj.Document_Name__c}"/>
+                                    </td>
+
+                                    <td class="wrapword" style="text-align: left; width:50px; white-space:Normal" >
+                                        <apex:outputText id="fileName" value="{!wrapFileObj.documentCheckObj.File_Name__c}"/>
+                                    </td>
+                                    
+                                    <td style="text-align: left; width:50px;white-space:normal;">
+                                        <apex:inputFile id="file1"  fileSize="{!wrapFileObj.documentCheckObj.File_Size__c}"  value="{!wrapFileObj.fileContent}"  fileName="{!wrapFileObj.fileName}" />
+                                    </td>
+                                    
+                                </tr>
+                            </apex:repeat>
+                            
+                        </tbody>
+                    </table>
+                    <div>
+                        <table class="table table-striped">
+                            <tr>&nbsp;</tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <apex:actionRegion >
+                                            <apex:commandLink id="btn1" action="{!saveFiles}" styleClass="slds-button slds-button--brand slds-not-selected" value="Upload Now">        
+                                                
+                                            </apex:commandLink>
+                                            
+                                        </apex:actionRegion>
+                                    </center>
+                                </td>
+                            </tr>
+                            <tr>&nbsp;</tr>
+                        </table>
+                    </div>
+                </div>
+               </div>
+        </apex:form>
+        
+    </html>
+</apex:page>

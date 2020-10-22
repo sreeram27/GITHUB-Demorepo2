@@ -1,0 +1,227 @@
+<apex:page action="{!searchFilters}" standardController="VisitOps__Visit__c" extensions="VisitOps.VisitTeamWorks,VisitOps.VisitImpactCtrl" sidebar="false" showHeader="false" docType="html-5.0" tabstyle="VisitOpsReports__tab">
+	<script type="text/javascript">
+		var vstId;
+		function gotoVisitReport(visitNumberParam)
+		{
+			vstId = visitNumberParam.trim();
+			reloadView(visitNumberParam.trim());
+			testAF(visitNumberParam.trim());
+		}
+		
+		function setFocusOnLoad() {}
+		
+	</script>
+	<style>
+		/* To statically display same color as VisitOps Reports Tab color */
+	.bPageBlock {
+		border-top: 3px solid #77b900;
+		}
+		.tertiaryPalette {
+		/*
+		background-color: #b4c374;
+		border-color: #b4c374;
+		*/
+		background-color: #77b900 !important;
+		border-color: #77b900 !important;
+		}
+	</style>
+<!-- <apex:includeScript value="{!URLFOR($Resource.fullcalendar211, 'fullcalendar-2.1.1/lib/jquery.min.js')}"/>
+<script>
+$(document).ready(function(){
+					if(document.getElementById('{!$Component.theForm.visitList}').value != 'All'){
+						testAF();
+					}
+				});
+</script> -->
+<div style="height: 30px;font-size: 20px;">Visit Impact Dashboard</div>
+    <apex:form id="theForm">
+    <apex:actionFunction name="searchFilters" action="{!searchFilters}"
+            rerender="pbTable,visitOP,visitpb" status="progressIndicator">
+            </apex:actionFunction>
+            <apex:actionFunction name="reloadView" action="{!view}"
+            rerender="pbTable,visitOP,visitpb" status="progressIndicator">
+            	<apex:param value="" name="VisitNumber" assignTo="{!visitRecordId}"/>
+            </apex:actionFunction>
+    <apex:actionfunction name="testAF" action="{!getnewFilter}" rerender="pbid,pbid1,pbid2,pbid3,pbid4,pbid5,pbid6,pbid7,pbid8,pbid9" status="progressIndicator">
+    	<apex:param value="" name="visitNumberParam"/>
+    </apex:actionfunction>
+        <!-- <apex:panelGrid columns="4" cellpadding="20%" cellspacing="20%" style="margin-top: 15px;">
+                <font> <b>Filter By : Visits</b></font>
+                    <apex:selectList id="visitList" value="{!visitName}" multiselect="false" size="1" onChange="testAF();">
+                    	<apex:selectOptions value="{!AvailableVisits}" />
+                    </apex:selectList>
+      	</apex:panelGrid> -->
+      	<!-- Visit Filtering Changes Start -->
+      	<apex:pageBlock title="Filter Visits">
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Location</apex:outputLabel>
+                    <apex:selectList label="Location" multiselect="false" size="1"
+                    value="{!selectedLocations}">
+                    <apex:selectOptions value="{!locations}" />
+                    </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Visit Manager</apex:outputLabel>
+                    <apex:selectList label="Visit Manager" multiselect="false" size="1"
+                    value="{!selectedVisitManagers}">
+                    <apex:selectOptions value="{!visitManagers}" />
+                    </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                    <apex:outputText value="By Date Range"/>
+	               <apex:outputPanel >
+	               <apex:selectList value="{!arrivalOrDepartureDate}" size="1">
+		             <apex:selectOption itemValue="ArrivalDateTime__c" itemLabel="Arrival Date"/>
+		             <apex:selectOption itemValue="DepartureDateTime__c" itemLabel="Departure Date"/>
+		           </apex:selectList>
+		           <br/>(Search is based on user time zone date/time fields)
+		           </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                    <apex:panelGrid columns="4">
+		                <apex:outputText value="From : " />
+		                <apex:inputField value="{!visit.VisitOps__SearchVisitFromDate__c}" required="false"/>
+		                <apex:outputText value="To : "/>
+		                <apex:inputField value="{!visit.VisitOps__SearchVisitToDate__c}" required="false"/>
+	               </apex:panelGrid>
+	               </apex:pageBlockSectionItem>
+                    
+                    <!-- <apex:pageBlockSectionItem >
+                    <apex:outputPanel >
+                    <apex:outputLabel >Visit Team Members</apex:outputLabel>
+                    <apex:selectList multiselect="true" size="5"
+                    value="{!selectedVisitTeamMembers}">
+                    <apex:selectOptions value="{!visitTeamMembers}" />
+                    </apex:selectList>
+                    </apex:outputPanel>
+                    </apex:pageBlockSectionItem>-->
+                </apex:pageBlockSection>
+                
+                    <apex:pageBlockButtons location="bottom">
+                    <input type="button" value="Go" onclick="searchFilters();" />
+                    <!--<apex:commandLink action="{!previous}" onclick="searchFilters();"  status="progressIndicator" value="Go" id="Go"/>
+                    --><apex:actionStatus startText="Please Wait..." id="actionStatus" />
+                    </apex:pageBlockButtons>
+            </apex:pageBlock>
+      	
+      	<apex:pageBlock id="pbTable"  >
+            <apex:outputPanel >
+            <apex:pageBlockSection title="Visit Results -  Page #{!pageNumber}" columns="1">
+            
+                <apex:pageBlockTable value="{!visitsByCriterea}" var="wrapvisit">
+                      <apex:column headerValue="Visit Number">
+                     <apex:commandLink onclick="gotoVisitReport('{!wrapvisit.id}');" status="progressIndicator" reRender="dummy">
+                     {!wrapvisit.Name}
+                     <!-- <apex:param value="{!wrapvisit.id}" name="Visit Number" assignTo="{!visitRecordId}"/> -->
+                     <!-- <apex:param value="{!wrapvisit.id}" name="VisitNumber"/> -->
+                     </apex:commandLink>
+                       </apex:column>
+                    <apex:column headerValue="Visit Name" value="{!wrapvisit.VisitOps__VisitName__c}" />
+                   <apex:column headerValue="Visit Type " value="{!wrapvisit.VisitType__r.Name}" />
+                    <apex:column headerValue="Visit Manager " value="{!wrapvisit.Owner.name}" />
+                    <apex:column headerValue="Arrival Date and Time" value="{!wrapvisit.VisitOps__ArrivalDateTime__c}" />
+                    <apex:column headerValue="Departure Date and Time" value="{!wrapvisit.VisitOps__DepartureDateTime__c}" />
+                     <apex:column headerValue="Visit Status" value="{!wrapvisit.VisitStatus__r.Name}" />
+                    <apex:column headerValue="Room Reserved" value="{!wrapvisit.Room__r.Name}" />
+                  
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            
+              </apex:outputPanel>
+              <apex:pageblockbuttons >
+              	
+              	<apex:commandButton action="{!first}" value="First" id="firstButton"/>
+	            <apex:commandButton action="{!previous}" rendered="{!hasPrevious}" value="Previous" id="theButton"/>
+    			<apex:commandButton action="{!next}" rendered="{!hasNext}" value="Next" id="theButton1"/>
+    			<apex:commandButton action="{!last}" value="Last" id="lastButton"/>
+			    
+	          </apex:pageblockbuttons>
+        </apex:pageBlock>
+      	
+      	
+      	<!-- Visit Filtering Changes End -->
+      	<apex:pageBlock id="visitpb">
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Visit Number</apex:outputLabel>
+                    <apex:outputText >{!visitNumber}</apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Visit Name</apex:outputLabel>
+                    <apex:outputText >{!visitName}</apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Arrival Date(User)</apex:outputLabel>
+                    <apex:outputText >{!visitArrivalDateString}</apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Departure Date(User)</apex:outputLabel>
+                    <apex:outputText >{!visitDepartureDateString}</apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Arrival Date(Location)</apex:outputLabel>
+                    <apex:outputText >{!visitArrivalDateLocation}</apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Departure Date(Location)</apex:outputLabel>
+                    <apex:outputText >{!visitDepartureDateLocation}</apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Location</apex:outputLabel>
+                    <apex:outputText >{!visitlocation}</apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Visit Owner</apex:outputLabel>
+                    <apex:outputText >{!VisitOwnerName}</apex:outputText>
+                </apex:pageBlockSectionItem>    
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:panelgrid columns="3">
+                <apex:pageBlock id="pbid">
+                    <apex:actionfunction name="testAF1" action="{!redirectRpt}"/>
+                    <analytics:reportChart reportId="{!reportId}" filter="{!newFilter}" size="small" cacheResults="false"/>
+                </apex:pageBlock>
+                
+                <apex:pageBlock id="pbid7">
+                    <apex:actionfunction name="testAF1" action="{!redirectRpt5}"/>
+                    <analytics:reportChart reportId="{!reportId5}" filter="{!newFilter}" size="small" cacheResults="false"/>
+                </apex:pageBlock>
+           
+	            <apex:pageBlock id="pbid1">
+	                <apex:actionfunction name="testAF1" action="{!redirectRpt1}"/>
+	                <analytics:reportChart reportId="{!reportId1}" filter="{!newFilter}" size="small" cacheResults="false"/>
+	            </apex:pageBlock>
+	            
+	            <apex:pageBlock id="pbid2">
+	                <apex:actionfunction name="testAF1" action="{!redirectRpt2}"/>
+	                <analytics:reportChart reportId="{!reportId2}" filter="{!newFilter}" size="small" cacheResults="false"/>
+	            </apex:pageBlock>
+	            
+	            <apex:pageBlock id="pbid3">
+	                <apex:actionfunction name="testAF1" action="{!redirectRpt3}"/>
+	                <analytics:reportChart reportId="{!reportId3}" filter="{!newFilter}" size="small" cacheResults="false"/>
+	            </apex:pageBlock>
+	            
+	            <apex:pageBlock id="pbid4">
+	                <apex:actionfunction name="testAF1" action="{!redirectRpt4}"/>
+	                <analytics:reportChart reportId="{!reportId4}" filter="{!newfilter}" size="small" cacheResults="false"/>
+	            </apex:pageBlock>
+	            
+	            <!-- <apex:pageBlock id="pbid8">
+	                <apex:actionfunction name="testAF1" action="{!redirectRpt6}"/>
+	                <analytics:reportChart reportId="{!reportId6}" filter="{!newfilter}" size="small" cacheResults="false"/>
+	            </apex:pageBlock>
+	            
+	            <apex:pageBlock id="pbid9">
+	                <apex:actionfunction name="testAF1" action="{!redirectRpt7}"/>
+	                <analytics:reportChart reportId="{!reportId7}" filter="{!newfilter}" size="small" cacheResults="false"/>
+	            </apex:pageBlock> -->
+	            
+	     </apex:panelgrid>
+	     
+	     
+    </apex:form>
+</apex:page>

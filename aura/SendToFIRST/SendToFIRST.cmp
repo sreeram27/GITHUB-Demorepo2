@@ -1,0 +1,165 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId" controller="SendToFirstController">
+    <aura:attribute name="msg" type="String"/>
+    <aura:attribute name="severity" type="String"/>
+    <aura:attribute name="title" type="String"/>
+    <aura:attribute name="accountId" type="String"/>
+    <aura:attribute name="SICCode" type="String"/>
+    <aura:attribute name="OpptyType" type="String"/>
+    <aura:attribute name="quoteLines" type="QuoteLineItem[]"/>
+    <aura:attribute name="oppty" type="Opportunity" default="{ 'sobjectType': 'Opportunity' }"/>
+    <aura:attribute name="UWLoginId" type="String"/>
+    <aura:attribute name="UWName" type="String"/>
+    <aura:attribute name="salesRepId" type="String"/>
+    <aura:attribute name="salesRepName" type="String"/>
+    <aura:attribute name="lob" type="String"/>
+    <aura:attribute name="effectiveDate" type="Date"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <ui:message title="{!v.title}" severity="{!v.severity}" closable="">
+    	{!v.msg}
+    </ui:message>
+    <div class="slds-form--stacked slds-p-around--medium slds-m-bottom--x-small">
+      	<h3 class="slds-section-title--divider leftPenetrate">Account Details</h3>
+        <div class="slds-form-element">
+        	<div class="slds-form-element__control">
+          		<lightning:recordViewForm recordId="{!v.accountId}" objectApiName="Account">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="Name" />
+                            <lightning:outputField fieldName="BillingStreet"/>
+                            <lightning:outputField fieldName="BillingState"/>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <!-- div class="slds-form-element" data-aura-rendered-by="47:1469;a">
+                                <span class="slds-form-element__label">SIC Code</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static">{!v.oppty.Account.SIC__r.SIC_Code__c}</div>
+                                </div>
+                            </div -->
+                            <lightning:outputField fieldName="SICName__c"/>
+                            <lightning:outputField fieldName="BillingCity"/>
+                            <lightning:outputField fieldName="BillingPostalCode"/>
+                        </div>
+                    </div>
+                </lightning:recordViewForm>
+        	</div>
+      	</div>
+        
+        <h3 class="slds-section-title--divider leftPenetrate">Opportunity Details</h3>
+        <div class="slds-form-element">
+        	<div class="slds-form-element__control">
+          		<lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Opportunity">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="Id" />
+                            <div class="slds-form-element" data-aura-rendered-by="47:1469;a">
+                                <span class="slds-form-element__label">UW Login Id</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static">{!v.UWLoginId}</div>
+                                </div>
+                            </div>
+                            <div class="slds-form-element" data-aura-rendered-by="47:1469;a">
+                                <span class="slds-form-element__label">Sales Rep Id</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static">{!v.salesRepId}</div>
+                                </div>
+                            </div>
+                            <div class="slds-form-element" data-aura-rendered-by="47:1469;a">
+                                <span class="slds-form-element__label">Effective Date</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static">{!v.effectiveDate}</div>
+                                </div>
+                            </div>
+                            <div class="slds-form-element" data-aura-rendered-by="47:1469;a">
+                                <span class="slds-form-element__label">Region Code</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static">NY</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="RecordTypeId"/>
+                            <div class="slds-form-element" data-aura-rendered-by="47:1469;a">
+                                <span class="slds-form-element__label">UW Name</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static">{!v.UWName}</div>
+                                </div>
+                            </div>
+                            <div class="slds-form-element" data-aura-rendered-by="47:1469;a">
+                                <span class="slds-form-element__label">Sales Rep Name</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static">{!v.salesRepName}</div>
+                                </div>
+                            </div>
+                            <div class="slds-form-element" data-aura-rendered-by="47:1469;a">
+                                <span class="slds-form-element__label">Line Of Business</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static">{!v.lob}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </lightning:recordViewForm>
+        	</div>
+      	</div>
+        
+        <h3 class="slds-section-title--divider leftPenetrate">Quote Details</h3>
+		<!--aura:iteration items="{!quoteLines}" var="lineItem">
+        	<div class="slds-form-element">
+                <div class="slds-form-element__control">
+                    <lightning:recordViewForm recordId="{!lineItem.Id}" objectApiName="QuoteLineItem">
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-3">
+                                <lightning:outputField fieldName="Funding__c" />
+                            </div>
+                            <div class="slds-col slds-size_1-of-3">
+                                <lightning:outputField fieldName="Funding__c"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-3">
+                                <lightning:outputField fieldName="Product2Id"/>
+                            </div>
+                        </div>
+                    </lightning:recordViewForm>
+                </div>
+            </div>
+        </aura:iteration-->
+        <div class="slds-form-element">
+            <div class="slds-form-element__control">
+                <!--aura:iteration items="{!v.quoteLines}" var="lineItem">
+                    <ui:outputText value="{!lineItem.Product2.Name}"/>
+                </aura:iteration-->
+                <table class="slds-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Product Name">Product Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Funding Type">Funding Type</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="FIRST Product Code">FIRST Product Code</div>
+                            </th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.quoteLines}" var="lineItem">
+                            <tr>
+                                <th scope="row" data-label="Product Name" style="font-weight: bold;">
+                                    <div class="slds-truncate" title="Product Name">{!lineItem.Product2.Name}</div>
+                                </th>
+                                <th scope="row" data-label="Funding Type" style="font-weight: bold;">
+                                    <div class="slds-truncate" title="Funding Type">{!lineItem.Funding__c}</div>
+                                </th>
+                                <th scope="row" data-label="Product Name" style="font-weight: bold;">
+                                    <div class="slds-truncate" title="FIRST Product Code">{!lineItem.Product2.Underwriting_Product_Code__c}</div>
+                                </th>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</aura:component>

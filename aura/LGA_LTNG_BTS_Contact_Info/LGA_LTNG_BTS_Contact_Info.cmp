@@ -1,0 +1,7 @@
+<aura:component implements="forceCommunity:searchInterface" access="global">	
+    <!--<ui:outputText class="slds-color__text_gray-1" value="Sales Support Phone: Please contact your local Sales support with any business inquiries"/><br></br>-->
+    <u><b><a href="" class="slds-color__text_gray-1 " onclick="{!c.openContactWindow}">Contact Us</a></b></u><br></br>
+    <ui:outputText class="slds-color__text_gray-1" value="Software Support Phone: 888-268-4361"/><br></br>       
+	<ui:outputText class="slds-color__text_gray-1" value="software.support@anthem.com"/>  
+	<input type="hidden" name="language" value="en" />
+</aura:component>

@@ -1,0 +1,14 @@
+<apex:page standardController="Group_Outsourcing_Approval__c">
+<script>
+window.document.onload = new function(e){
+     
+    if("{!$Profile.Name}" == "National Sales" || "National Sales Dual" || "System Administrator"){
+        var redirect = confirm('Please use the Group outsourcing restriction Update Button to the right to update an existing Group outsourcing restriction record');
+        //alert(redirect); 
+        var txtRedirect = "{!$Label.GOA_Create_Update_Restrict}";
+        window.open(txtRedirect,"_self");
+        window.close();
+    }
+}
+</script>
+</apex:page>

@@ -1,0 +1,68 @@
+<apex:page controller="VisitOps.VisitSummaryCtrl" showHeader="false" sidebar="false">
+ 
+<apex:form >
+<div >
+     <div class= "header">Survey Response Rate
+     </div>
+      
+      <table width= "100%" border="1" style="text-align: center; border-color:white;">
+      
+            <thead>
+                <tr>
+                    <th style="width: 65px;"> </th>
+                    <th>Surveys sent</th>
+                    <th>Survey received</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+            
+           <tbody> 
+          
+              <tr >
+                  <td style="background:#A9D0F5;"><i><b>Customer Pre-Visit</b></i></td>
+                  <td><apex:outputLabel value="{!customerPreSurveysSent}"/></td>
+                  <td><apex:outputLabel value="{!customerPreSurveysReceived}"/></td> 
+                   <td><apex:outputLabel value="{!customerPreSurveysResponse}"/></td>
+              </tr>
+             <tr >
+                  <td style="background:#A9D0F5;"><i><b>Customer Post-Visit</b></i></td>
+                  <td><apex:outputLabel value="{!customerPostSurveysSent}"/></td>
+                  <td><apex:outputLabel value="{!customerPostSurveysReceived}"/></td> 
+                   <td><apex:outputLabel value="{!customerPostSurveysResponse}"/></td>
+              </tr>
+             <tr >
+                  <td style="background:#A9D0F5;"><i><b>Internal Pre-Visit</b></i></td>
+                  <td><apex:outputLabel value="{!internalusersPreSurveysSent}"/></td>
+                  <td><apex:outputLabel value="{!internalusersPreSurveysReceived}"/></td>
+                  <td><apex:outputLabel value="{!internalusersPreSurveysResponse}"/></td>
+             </tr>
+             <tr >
+                  <td style="background:#A9D0F5;"><i><b>Internal Post-Visit</b></i></td>
+                  <td><apex:outputLabel value="{!internalusersPostSurveysSent}"/></td>
+                  <td><apex:outputLabel value="{!internalusersPostSurveysReceived}"/></td>
+                  <td><apex:outputLabel value="{!internalusersPostSurveysResponse}"/></td>
+             </tr>
+           </tbody> 
+      
+      </table>
+        
+</div> 
+ </apex:form> 
+ 
+ <style>
+ .header {
+        font-style: oblique;
+        display: block;
+        font-size: 1.5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        background: #A9D0F5;
+     }
+ .page{ background: #E0ECF8}    
+ th{background:#A9D0F5; text-align: center}
+ </style>
+
+</apex:page>

@@ -1,0 +1,65 @@
+<apex:page controller="VisitOps.ReportsTabCtrl" sidebar="false" tabStyle="VisitOpsReports__tab">
+	<apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jquery-1.11.1.min.js')}" />
+	<c:AjaxStatusIndicator statusText="Processing..." />
+	<apex:form id="listForm">
+		<apex:outputPanel id="leftPane"
+			style=" float:left; border-radius:1em; width:20%; padding:0.1%;">
+			<apex:repeat value="{!pageNames}" var="each">
+				<apex:commandButton reRender="rightPane" action="{!renderReport}"
+					style=" margin-left:10%; width:100%; height:30px; font-size:15px"
+					value="{!each}" title="Report"
+					status="progressIndicator">
+					<apex:param name="q" value="{!pageNames[each]}" assignTo="{!pageName}" />
+				</apex:commandButton>
+			</apex:repeat>
+		</apex:outputPanel>
+	</apex:form>
+	<apex:outputPanel id="rightPane"
+		style="float:right; width:76%; padding:1%;">
+		<apex:pageBlock id="AgendaSessionwithoutPresenters"
+			rendered="{!renderAgendaSessionwithoutPresenters}">
+			<apex:include pageName="VisitOps__AgendaSessionwithoutPresenters" />
+		</apex:pageBlock>
+		<apex:pageBlock id="CateringReportwithSessionsReport"
+			rendered="{!renderCateringReportwithSessionsReport}">
+			<apex:include pageName="VisitOps__CateringReportwithSessionsReport" />
+		</apex:pageBlock>
+		<apex:pageBlock id="CateringReport" rendered="{!renderCateringReport}">
+			<apex:include pageName="VisitOps__CateringReport" />
+		</apex:pageBlock>
+		<apex:pageBlock id="InnovationPage" rendered="{!renderInnovationPage}">
+			<!-- <apex:include pageName="InnovationPage" /> -->
+			<apex:iframe src="/apex/InnovationPage" scrolling="true" />
+		</apex:pageBlock>
+		<apex:pageBlock id="OpportunityPipeline"
+			rendered="{!renderOpportunityPipeline}">
+			<apex:include pageName="VisitOps__OpportunityPipeline" />
+		</apex:pageBlock>
+		<apex:pageBlock id="ROI" rendered="{!renderROI}">
+			<apex:include pageName="VisitOps__ROIPage" />
+		</apex:pageBlock>
+		<apex:pageBlock id="VisitActivityReport"
+			rendered="{!renderVisitActivityReport}">
+			<apex:include pageName="VisitOps__Visit_Activity_Report" />
+		</apex:pageBlock>
+		<apex:pageBlock id="VisitExpenseReport"
+			rendered="{!renderVisitExpenseReport}">
+			<apex:include pageName="VisitOps__VisitExpenseReport" />
+		</apex:pageBlock>
+		<apex:pageBlock id="VisitImpactDashboard"
+			rendered="{!renderVisitImpactDashboard}">
+			<apex:include pageName="VisitOps__VisitImpactDashboard" />
+		</apex:pageBlock>
+		<apex:pageBlock id="visit_summary_dashboard"
+			rendered="{!rendervisitsummarydashboard}">
+			<apex:include pageName="VisitOps__visit_summary_dashboard" />
+		</apex:pageBlock>
+		<apex:pageBlock id="WinLoss_Dashboard" rendered="{!renderWinLossDashboard}">
+			<apex:include pageName="VisitOps__WinLoss_Dashboard" />
+		</apex:pageBlock>
+		<apex:pageBlock id="VisitTeamDashboard"
+			rendered="{!renderVisitTeamDashboard}">
+			<apex:iframe src="/apex/VisitTeamDashboard" scrolling="true" />
+		</apex:pageBlock>
+	</apex:outputPanel>
+</apex:page>

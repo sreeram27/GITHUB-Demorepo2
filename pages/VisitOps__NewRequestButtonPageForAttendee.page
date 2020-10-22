@@ -1,0 +1,39 @@
+<apex:page >
+<!--====================================================-->
+<!--Name: NewRequestButtonPageForAttendee                                       
+<!--Copyright :VisitOps                                                  
+<!--====================================================-->
+<!--====================================================-->
+<!-- Purpose: It opens Create Visit Screen Page(Create Visit) on click of New Request on Contact                                                                                                   
+<!---------                                                                                                               
+<!--====================================================-->
+<!--====================================================-->
+<!-- History                                                                                                             
+<!-- -------                                                                                                        
+<!-- VERSION  AUTHOR           DATE              DETAIL                     RELEASE/CSR   
+<!--   1.0 -  Tanuj            02/01/2019      INITIAL DEVELOPMENT                              
+<!--   2.0 -  Tanuj            13/02/2019      Change to Open Page in Same Tab to avoid Pop Up issue                      
+<!--====================================================-->
+    
+    <apex:includeScript value="../../soap/ajax/20.0/connection.js"/>
+    <script>
+    sforce.connection.sessionId = "{!$Api.Session_ID}";
+    var namespacePrefix = 
+        '{!IF( OR(ISBLANK($Label.visitops__namespaceprefixforschema), LOWER($Label.visitops__namespaceprefixforschema) == 'null') , '', $Label.visitops__namespaceprefixforschema)}'; 
+    
+    
+    var parsedUrl = new URL(window.location.href);
+    var id = parsedUrl.searchParams.get("id");
+    console.log(parsedUrl.searchParams.get("id")); 
+    if('{!$User.UITheme}'=='Theme4d') 
+    { 
+        sforce.one.navigateToURL('/apex/'+ namespacePrefix + 'VisitScreen_SLDS?ContactId='+id);
+    } 
+    else{ 
+      //  window.top.location = '/'+id;
+     //   window.open('/apex/'+ namespacePrefix +'VisitScreen?ContactId='+id);
+       window.open('/apex/'+ namespacePrefix +'VisitScreen?ContactId='+id+'&redirectURL=/'+id,'_self');   // Code Change to Open New VF Page in Same Tab 
+    }
+    </script>    
+    
+</apex:page>

@@ -1,0 +1,767 @@
+<!--====================================================-->
+    <!--Name:VOPresenterSurveyExtension                                                                           -->
+    <!--Copyright notice:  © 2020  VisitOps                                                                                                 -->
+    <!--====================================================-->
+    <!--====================================================-->
+    <!-- Purpose:  OTOP Survey Page                                                                                                         -->
+    <!---------                                                                                                                -->
+    <!--====================================================-->
+    <!-- History    -->
+    <!-- -------     -->
+    <!-- VERSION  AUTHOR           DATE              Change#                Comments        -->
+    <!--   1.0 -  Tanuj            01/21/2020       Ticket-I-0966          OTOP Survey Page to Add SLDS Change                   -->
+
+    <!-- Line -  -->
+    
+
+<apex:page standardController="VisitOps__Survey__c" extensions="VOPresenterSurveyExtension" title="Presenter Survey" showHeader="false">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<apex:form id="formId">
+<apex:styleSheet value="{!$Resource.VisitOps__survey_css}"/>
+<apex:includeScript value="{!$Resource.VisitOps__jquery1_11_1_min}"/>
+<apex:includeScript value="{!$Resource.VisitOps__function_js}"/>
+
+<div class="rightContent">
+        <!-- <apex:image url="{!DocumentLogoUrl}" style="padding-left:12px;width:186px;height:60px"/> -->
+        <!--<apex:image url="{!DocumentLogoUrl}" style="padding-left:12px;width:128px;height:128px"/>-->
+        <apex:image url="{!DocumentLogoUrl}" style="padding-left:12px;"/>
+        <div class="screenHeading" style="padding-left:12px"><br/>Presenter Post-Survey</div>
+        <apex:pageMessages />
+          
+        <apex:outputPanel rendered="{!visitRecord!=null && presenterLinkRecord!=null && surveyRecord!=null}">
+        <div class="surveyDetails">
+             <div class="spacing"> 
+                <apex:outputPanel id="VisitDetails" rendered="{!visitRecord!=null}">
+                    <div class="row">
+                        <div class="labelText">Agenda Session Name</div>
+                        <div class="fieldText">
+                            <apex:outputText value="{!agendaSessionName}"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="labelText">Visit Number</div>
+                        <div class="fieldText">
+                            <apex:outputField value="{!visitRecord.Name}"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="labelText">Visit Name</div>
+                        <div class="fieldText">
+                            <apex:outputField value="{!visitRecord.VisitOps__VisitName__c}"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="labelText">Arrival Time (Location)</div>
+                        <div class="fieldText">
+                            <!-- 
+                            <apex:outputText value="{0,date,M/d/yyyy h:mm a z}">
+                                <apex:param value="{!visitRecord.ArrivalDateTime__c}" />
+                            </apex:outputText>
+                            -->
+                          <!--  <apex:outputField value="{!visitRecord.VisitOps__ArrivalDateTimeLocationTZ__c}"/> -->
+                            <apex:outputLabel value="{!visitRecord.VisitOps__Arrival_Date_and_Time_LocationFormula__c}" id="arrDateLocTZID"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="labelText">Departure Time (Location)</div>
+                        <div class="fieldText">
+                            <!-- 
+                            <apex:outputText value="{0,date,M/d/yyyy h:mm a z}">
+                                <apex:param value="{!visitRecord.DepartureDateTime__c}" /> 
+                            </apex:outputText>
+                            -->
+                         <!--   <apex:outputField value="{!visitRecord.VisitOps__DepartureDateTimeLocationTZ__c}"/> -->
+                            <apex:outputLabel value="{!visitRecord.VisitOps__Departure_Date_and_Time_LocationFormula__c}" id="depDateLocTZID"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="labelText">Visit Manager</div>
+                        <div class="fieldText">
+                        <apex:outputField value="{!visitRecord.Owner.Name}"/>
+                        </div>
+                    </div>
+
+                </apex:outputPanel>
+           </div> 
+        </div>
+
+            <div class="row"> 
+             <ol class="surveyQuestions"> 
+               
+               <li>
+                    <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Pre_Visit_Communication__c.inlineHelpText}"/></div>
+                    <div class="rowDiv"></div>
+                    <div class="ratings">
+                                     
+                        
+                        <div class="be-rating">
+                             <span class="be-left-legend">Not a great experience at all</span>
+                             <span class="be-right-legend">Great Experience</span>
+                         </div>
+                        <div class="cBoth"></div>
+                         
+                        <div class="ratingCount">
+                            <div class="row"> 
+                                <div>
+                                    <apex:selectRadio value="{!surveyRecord.VisitOps__Pre_Visit_Communication__c}"  layout="table" styleClass="be-rating-table-itself" dir="LTR" disabled="{!flag}">
+                                        <apex:selectOptions value="{!RadioOpts}"/>
+                                    </apex:selectRadio> 
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </li>
+               <li>
+                    <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Communication_of_Session_Objectives__c.inlineHelpText}"/></div>
+                    <div class="rowDiv"></div>
+                    <div class="ratings">
+                                     
+                        <div class="be-rating">
+                             <span class="be-left-legend">Not a great experience at all</span>
+                             <span class="be-right-legend">Great Experience</span>
+                         </div>
+                        <div class="cBoth"></div>
+                         
+                        <div class="ratingCount">
+                            <div class="row"> 
+                                <div>
+                                    <apex:selectRadio value="{!surveyRecord.VisitOps__Communication_of_Session_Objectives__c}"  layout="table" styleClass="be-rating-table-itself" dir="LTR" disabled="{!flag}">
+                                        <apex:selectOptions value="{!RadioOpts}"/>
+                                    </apex:selectRadio> 
+                                </div>
+                            </div> 
+                        </div>
+                    </div>                                            
+               </li>
+                 
+                 
+                 
+                <li>
+                    <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VO_Overall_Visit_Experience_Presenter__c.inlineHelpText}"/></div>
+                    <div class="rowDiv"></div>
+                    <div class="ratings">
+                                     
+                        <div class="be-rating">
+                             <span class="be-left-legend">Not a great experience at all</span>
+                             <span class="be-right-legend">Great Experience</span>
+                         </div>
+                        <div class="cBoth"></div>
+                         
+                        <div class="ratingCount">
+                            <div class="row"> 
+                                <div>
+                                    <apex:selectRadio value="{!surveyRecord.VO_Overall_Visit_Experience_Presenter__c}"  layout="table" styleClass="be-rating-table-itself" dir="LTR" disabled="{!flag}">
+                                        <apex:selectOptions value="{!RadioOpts}"/>
+                                    </apex:selectRadio> 
+                                </div>
+                            </div> 
+                        </div>
+                    </div>                      
+               </li>
+
+               <li> 
+                    <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Preparation_by_Visit_Owner__c.inlineHelpText}"/></div>
+                    <div class="rowDiv"></div> 
+                    <apex:inputTextArea value="{!surveyRecord.VisitOps__Preparation_by_Visit_Owner__c}" style="width:100%; max-width: 400px; height:60px" disabled="{!flag}"/>   
+               </li>
+               <li>
+                    <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Participation_Ease__c.inlineHelpText}"/></div>
+                    <div class="rowDiv"></div>
+                    <apex:inputTextArea value="{!surveyRecord.VisitOps__Participation_Ease__c}" style="width:100%; max-width: 400px;height:60px" disabled="{!flag}"/>           
+               </li>
+             </ol> 
+           </div>
+            
+            <center>
+                <apex:commandButton value="Submit" action="{!submitSurvey}" oncomplete="alertUser({!showSubmitButton});" style="padding: 5px 10px;" reRender="formId" rendered="{!showSubmitButton}"/><br/><br/><br/><br/>
+            </center><br/><br/>   
+        </apex:outputPanel>
+    </div>
+    <!-- <div class="footer"><apex:image url="{!DocumentFooterUrl}" style="width:1440px;height:60px"/></div> -->
+<style>
+
+<!-- Style Added for Lightning Experience -->
+                body {  
+                        font-size:75% !important;
+    					font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif !important;
+                    }
+				td {
+    				font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif !important;	
+    			}
+
+
+ .errorMessage{
+    text-align: center;
+    color : grey;
+    font-size:15px;
+    font-family:sans-serif;
+}
+    
+    .radioClass td{width:35px; text-align:center;}
+    .ratingCount input[type=radio]{padding:0px;margin:0;/*margin-right:24px;*/width:5px;   }
+    .radioClass label{display:block;}
+    .radioClass {width:100%;}
+    .ntlikelyDiv {float: right;padding-right:0;}
+    .ratings {width: 100%; max-width: 430px;}
+    .ratingTxt {
+        color: #000000;
+        font-size: 0.8em;
+        padding-top: 5px;
+        padding-left: 1.5cm; 
+        
+        float: left;
+        width:50%;
+        }
+    .largeColratingtext{width:24%;float: right;font-size: 0.8em;}
+    .largeColrating{width:77%;} 
+    .spacing {
+        margin-left:0.3cm;
+       }
+   .footer {
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+
+  }    
+  *,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 970px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+}
+
+.col-md-12 {
+    width: 100%;
+}
+
+.col-md-11 {
+    width: 91.66666667%;
+}
+
+.col-md-10 {
+    width: 83.33333333%;
+}
+
+.col-md-9 {
+    width: 75%;
+}
+
+.col-md-8 {
+    width: 66.66666667%;
+}
+
+.col-md-7 {
+    width: 58.33333333%;
+}
+
+.col-md-6 {
+    width: 50%;
+}
+
+.col-md-5 {
+    width: 41.66666667%;
+}
+
+.col-md-4 {
+    width: 33.33333333%;
+}
+
+.col-md-3 {
+    width: 25%;
+}
+
+.col-md-2 {
+    width: 16.66666667%;
+}
+
+.col-md-1 {
+    width: 8.33333333%;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+
+.panel-footer {
+    padding: 10px 15px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+textarea.form-control {
+    height: auto;
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: #333;
+  text-decoration: none;
+}
+.btn:active,
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: .65;
+}
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-default:focus,
+.btn-default.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.btn-default:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default:active.focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  background-image: none;
+}
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-default .badge {
+  color: #fff;
+  background-color: #333;
+}
+
+.surveyQGroup {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.surveyGroupInfo {
+    font-style: italic;
+}
+div.panel-footer {
+    padding-bottom: 20px;
+}
+h4{
+    font-size:22px;
+}
+#mainPanel {
+    margin-top: 15px;
+}
+
+#mainPanelBody {
+    padding-top: 0;
+}
+
+.container:before,
+.container:after,
+.row:before,
+.row:after,
+.panel-body:before,
+.panel-body:after {
+    display: table;
+    content: " ";
+}
+
+.container:after,
+.row:after,
+.pager:after {
+    clear: both;
+}
+
+table.be-rating-table-itself > tbody > tr > td {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #dddbda;
+    border-right: 0;
+    padding: 0px;
+    width: 14%;
+    text-align: center;
+    color: {!$Label.Visit_Survey_Color};
+}
+
+.be-rating-comment-button {
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    border-bottom-color: rgb(204, 204, 204);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(204, 204, 204);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(204, 204, 204);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(204, 204, 204);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    height: 33.84px;
+    letter-spacing: normal;
+    line-height: 20px;
+}
+
+table.be-rating-table-itself {
+    border-collapse: separate;
+    width: 100%;
+    border-spacing: 0;
+}
+
+table.be-rating-table-itself > tbody > tr > td:first-child {
+    border-radius: 10px 0 0 10px;
+    background-clip: padding-box;
+}
+
+table.be-rating-table-itself > tbody > tr > td:last-child {
+    border-radius: 0 10px 10px 0;
+    background-clip: padding-box;
+    border-right: 1px solid #dddbda;
+}
+
+table.be-rating-table-itself > tbody > tr > td > label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding-top: 9px;
+    margin-bottom: 0px;
+    font-size: 13px;
+   
+}
+
+    table.be-rating-table-itself > tbody > tr > td > label:hover {
+        background: #fff;
+    }
+
+table.be-rating-table-itself > tbody > tr > td > input {
+    position: absolute;
+    top: -50px;
+}
+
+    table.be-rating-table-itself > tbody > tr > td > input:checked + label,
+    table.be-rating-table-itself > tbody > tr > td > input:checked ~ label {
+        background: {!$Label.Visit_Survey_Color};
+        color: white;
+    }
+
+.btn-primary {
+    background-color: rgb(51,122,183);
+    border-bottom-color: rgb(46,109,164);
+    border-style: solid;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(46, 109, 164);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(46, 109, 164);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(46, 109, 164);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-block;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    height: 33.84px;
+    letter-spacing: normal;
+    line-height: 20px;
+}
+.btn-group {
+    padding-right: 10px;
+}
+
+@media print {
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+
+.surveySection {
+    font-size: 15px;
+    border-bottom: 1px solid #448ac8;
+}
+
+.surveySectionLabel {
+    font-size: 18.2px;
+    line-height: 1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.surveyGroupLabel {
+    margin-bottom: 10px;
+}
+
+.surveyGroupLabelTxt {
+    color: #448ac8;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.surveyQTxt {
+    font-size: 18.2px;
+    color: #555;
+    padding: 0;
+    margin: 0;
+}
+
+.be-rating legend {
+    margin-bottom: 0;
+    font-size: 12px;
+    border: none;
+}
+
+.be-rating .be-left-legend {
+    float: left;
+    font-size: 11px;
+}
+
+.be-rating .be-right-legend {
+    float: right;
+    margin-right: 5px;
+    font-size: 11px;
+}
+
+.surveyNavButton {
+    background-color: #337ab7;
+    color: #fff;
+    text-decoration: none !important;
+}
+
+.surveyCompleteTxt {
+    color: #337ab7;
+    width: 100%;
+    text-align: center !important;
+    font-size: 28px;
+}
+#IntroBlock{
+    text-align: left;
+}
+fieldset {
+    padding-top: 0;
+    padding-bottom: 0;
+}  
+.questions {
+    padding: 20px 0px 5px;
+} 
+.be-rating {
+    padding-right: 25px;
+}
+.ratingCount {
+    margin-top: 5px;
+}
+.surveyDetails {
+    margin-left: 15px;
+    width: 95%;
+    max-width: 450px;
+}
+.surveyQuestions {
+    margin-left: 10px;
+}
+    
+.fieldText  {
+                width: 52%;
+            }    
+  </style>
+  <script>
+   function alertUser(errorOccured){
+    if(errorOccured=='false' || errorOccured==false) {
+        alert('Survey have been submitted successfully. You may now close the window.');
+    } 
+}
+  </script>
+</apex:form>
+</apex:page>
