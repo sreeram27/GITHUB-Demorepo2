@@ -1,0 +1,124 @@
+<!--
+/**********************************************************************
+Name:  Administrator5
+Copyright © 2019  VisitOps  
+======================================================
+Purpose: AO Grid settings Screen                                                                                                                      
+======================================================
+======================================================
+History                                                            
+-------                                                            
+VERSION AUTHOR       DATE           DETAIL                 		  FEATURES/CSR/TTP
+1.0 -   Tanuj        01/07/2019		Added Search Text Config     Ticket :- I-0457,0458
+									functionality (Acc/Oppty)	
+***********************************************************************/
+-->
+<apex:page controller="VisitOps.AdministratorController" name="AOGridConfig" id="AOGridConfigPage"  showHeader="false" sidebar="false" >
+    <style>
+        .apexp .bPageBlock .detailList {
+        width: auto;
+        }
+        .bPageBlock .detailList .dataCol {
+        width: auto;
+        }
+    </style>
+    <c:AjaxStatusIndicator statusText="Processing..." />
+    <apex:form style="overflow:auto;" id="AOGridConfigForm">
+        
+        <apex:pageBlock id="AOGridConfigPageBlock">
+            <apex:pageMessages id="showmsg"></apex:pageMessages>
+            
+        <!--    <apex:pageBlockSection >
+                
+                <apex:outputLabel >OBJECT </apex:outputLabel>
+                <apex:outputPanel styleClass="requiredInput" layout="block"> 
+                    <apex:outputPanel id="panelId" styleClass="requiredBlock" layout="block"/>
+                    <apex:selectList id="configList" value="{!ObjectName}" size="1" title="Object" required="true" >
+                        <apex:selectOptions value="{!ObjItems}"></apex:selectOptions>
+                        <apex:actionSupport action="{!getGridConfigDetails}" event="onchange" reRender="configTable,AOGridConfigPageBlock"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+            </apex:pageBlockSection> 
+            
+            <div style="text-align: right; width: 453px; font-size: 11px; margin-top: -20px; padding-bottom: 5px;">
+                    *Please select a maximum of 5 fields
+                </div>
+-->
+            <apex:pageBlockSection >
+                <apex:outputPanel style="margin-top:10px; " id="configTable">
+                  <!--
+                    <apex:dataTable value="{!aoGridConfigList}" var="wrapVT" id="table" border="1" cellpadding="3" style="overflow:auto; border-collapse: collapse; border:1px solid #ccc; width: 443px; ">
+                        <apex:column >
+                            <apex:facet name="header"> 
+                                Searchable
+                            </apex:facet>
+                            <apex:inputCheckbox value="{!wrapVT.Display_on_Search__c}" id="inputId" disabled="{!wrapVT.Default_Checked__c}"/>
+                        </apex:column>
+                        <apex:column headerValue="Fields" value="{!wrapVT.Name}" />
+                    </apex:dataTable>
+				-->
+                    <div style="text-align: right; width: 483px; font-size: 11px;  padding-bottom: 5px;">
+                    *Please enter maximum of 50 characters 
+                </div>
+                    <table cellpadding="3" cellspacing="0">
+                        <tr>
+                            <td><apex:outputLabel >Enter Account search help text for modal window</apex:outputLabel></td>
+                            <td><apex:inputText value="{!searchBarAccLabel}" id="theAccTextInput" maxlength="50" style="width: 400px;" /></td>            
+                        </tr>
+                        <tr>
+                            <td><apex:outputLabel >Enter Opportunity search help text for modal window</apex:outputLabel></td>
+                            <td><apex:inputText value="{!searchBarOpptyLabel}" maxlength="50" id="theOpptyTextInput" style="width: 400px;" /></td>            
+                        </tr>
+                        <tr>
+                            <td><apex:outputLabel >Enter Presenter search help text for modal window</apex:outputLabel></td>
+                            <td><apex:inputText value="{!searchBarPresenterLabel}" maxlength="50" id="thePresenterTextInput" style="width: 400px;" /></td>            
+                        </tr>
+                    </table>
+                    
+                    <apex:commandButton status="progressIndicator"   value="Save" action="{!updateSearchableFields}" style="margin-left:50px" reRender="AOGridConfigPageBlock"/>  
+                </apex:outputPanel>
+            </apex:pageBlockSection>  
+            
+            <!--
+<apex:pageBlockSection >
+
+<apex:panelGrid columns="3" id="abcd">
+<apex:selectList id="sel1" value="{!leftSelected}" multiselect="true" style="width:200px" size="5">
+<apex:selectOptions value="{!DeselectedValues}" />
+</apex:selectList>
+
+<apex:panelGroup >
+<br/>
+<apex:image styleClass="picklistArrowRight" value="/s.gif">
+<apex:actionSupport event="onclick" action="{!getSelect}" reRender="abcd"/>
+</apex:image>
+<br/><br/>
+<apex:image styleClass="picklistArrowLeft" value="/s.gif">
+<apex:actionSupport event="onclick" action="{!getDeselect}" reRender="abcd"/>
+</apex:image>
+</apex:panelGroup>
+<apex:selectList id="sel2" value="{!rightSelected}" multiselect="true" style="width:200px" size="5">
+<apex:selectOptions value="{!SelectedValues}" />
+</apex:selectList>
+<apex:commandButton status="progressIndicator"   value="Apply" action="{!getSelected}" reRender="AOGridConfigPageBlock"/>  
+
+</apex:panelGrid>
+</apex:pageBlockSection>
+
+-->
+        </apex:pageBlock>
+       
+    </apex:form>
+    <script type="text/javascript">         
+    
+    function selectAllCheckboxes(obj,receivedInputID){
+        var inputCheckBox = document.getElementsByTagName("input");
+        for(var i=0; i<inputCheckBox.length; i++){
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+    
+    </script>
+</apex:page>

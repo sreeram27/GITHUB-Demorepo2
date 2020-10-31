@@ -1,0 +1,103 @@
+<apex:page standardController="VisitOps__Visit__c" extensions="VisitOps.AdditionalRoomsCntrl">
+    <head>
+        <style type="text/CSS">
+            /*body{
+            font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;         
+            }*/
+            
+            .center{
+            text-align:center;
+            }
+            
+            .table-bordered {
+            border: 1px solid #000999;
+            border-collapse : collapse;
+            font-size : 1.2em;
+            }
+            
+            
+            thead>tr>th {
+            vertical-align: bottom;
+            border: 1px solid #000;
+            border-spacing: 0;
+            text-align:center;
+            border-collapse: collapse;
+            background : #D3D3D3;
+            }
+            
+            td {
+            vertical-align: bottom;
+            border: 1px solid #000;
+            border-spacing: 0;
+            border-collapse: collapse;
+            text-align:center;
+            }
+            
+            .header>td{
+            font-weight:normal !important;
+            background : #c4c4c4;               
+            }
+            
+            .echoArea>td{
+            padding:10px;
+            }
+            
+            @page {
+            size: letter;
+            margin: 25mm;
+            margin-top: 0.8cm;
+            
+            @bottom-center {
+            content: "Page " counter(page) " of " counter(pages);
+            }
+            
+            
+            }
+            
+            .page-break {
+            display:block;
+            page-break-after:always;
+            }
+            
+            body {
+            font-family: Arial Unicode MS;
+            }
+            
+            th{
+              font-weight:normal !important;  
+            }
+        </style>
+    </head>
+    
+    <body>
+        <apex:outputLabel value="No additional rooms booked"  rendered="{!BookedRoomsWrapperList.size<1}" styleclass="center;" style="font-size : 1.2em;"/>
+        
+        <apex:outputPanel rendered="{!BookedRoomsWrapperList.size>0}">
+            <table width="100%" class="table-bordered">
+                <thead >
+                    <th>Location</th>
+                    <th>Room</th>
+                    <th>Start Date (User)</th>
+                    <th>End Date (User)</th>
+                    <th>Start Date (Room Location)</th>
+                    <th>End Date (Room Location)</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!BookedRoomsWrapperList}" var="bookedRoom">
+                        <tr  >
+                            <td><apex:outputText value="{!bookedRoom.LocationName}"/></td>
+                            <td><apex:outputText value="{!bookedRoom.RoomName}"/></td>
+                            <td><apex:outputText value="{!bookedRoom.starttimeString}"/> </td>
+                            <td><apex:outputText value="{!bookedRoom.EndtimeString}"/> </td>
+                            <td><apex:outputText value="{!bookedRoom.StartRoomTimeString}"/></td>
+                            <td><apex:outputText value="{!bookedRoom.EndRoomTimestring}"/></td>
+                            <td><apex:outputText value="{!bookedRoom.Status}"/></td>
+                            
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+        </apex:outputPanel>
+    </body>
+</apex:page>

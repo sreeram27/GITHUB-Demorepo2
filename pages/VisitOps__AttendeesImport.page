@@ -1,0 +1,108 @@
+<apex:page controller="VisitOps.AttendeesImportCls" sidebar="false" standardStylesheets="false" lightningStylesheets="true" >
+    
+    <script>
+        function generateCSVHeaders(){
+            window.open('{!orgBaseURL}'+'/apex/GenerateCSVHeadersForAttendees');
+        }
+        
+        function CancelImport(){
+            // Imp Note For : Checkmarx Scanner Review
+            // Added window.location for Scanner Review (8/8)
+            // Only User with the Permission of Record can view or Edit the record event if he try to manipulate Id from URL.
+            
+        	window.location.href = '{!orgBaseURL}'+'/apex/AttendeesImport?Id='+'{!VisitId}';
+        }
+    </script>
+    
+    <style>
+    <!-- Style Added for Lightning Experience -->
+  			body {  
+          			font-size:75% !important;
+  				}
+        .message .messageText h4 {
+            display: inline;
+        }
+        
+        .homeTab .tertiaryPalette{
+		    background-color: #dfeaeb;
+		    border-color: #dfeaeb;
+		}
+		
+		.apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+		    border-top: 0;
+		    color: black;
+		}
+		
+        
+    </style>
+    
+    <apex:form >
+        <apex:pagemessages id="theMSG" escape="false" />
+        
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="4">
+                <apex:outputLink value="{!VisitUrl}" ><b>Back to Visit Record</b></apex:outputLink>             
+            </apex:pageBlockSection>
+        </apex:pageBlock> 
+                
+        <apex:pageBlock >
+            
+            <apex:pageBlockSection title="Instructions for Importing Attendees" columns="1"  collapsible="false" >
+                 
+                 <ul> 
+                    <apex:repeat value="{!InstructionsList}" var="item" >
+                        <li>{!item}</li>
+                    </apex:repeat>
+                 </ul>
+                  
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock >
+            
+            <apex:pageBlockSection collapsible="false" columns="4" title="1. Click the Download Attendee Template button" > 
+            	<input type="button" class="btn" value="Download Attendee Template" onclick="generateCSVHeaders()" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock >
+            <apex:pageBlockSection collapsible="false" columns="1" title="2. Select the file - all files must be in CSV (comma-separated value) format" > 
+                 <apex:inputFile value="{!csvFileBody}"  filename="{!csvAsString}"/>  
+                 <input type="button" class="btn" value="Remove File" onclick="CancelImport()" />               
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock > 
+        	<apex:pageBlockSection collapsible="false" columns="4" title="3. Click Import Attendees button" > 
+        		<apex:outputPanel >
+	        		<apex:commandButton value="Import Attendees" action="{!importCSVFile}" />
+	        	<!-- 	<input type="button" class="btn" value="Cancel" onclick="CancelImport()" /> -->
+        		</apex:outputPanel>
+        	</apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock rendered="{!showErrorButton}" > 
+        	<apex:pageBlockSection collapsible="false" columns="4" title="4. Click Error File button" >
+        		<!-- 
+        		<a href="https://visitopsdemo-dev-ed.my.salesforce.com/apex/AttendeeImportErrorFile" >Generate Error Report</a>
+        		 -->
+        		<apex:commandButton value="Error File" action="{!prepareErrorFile}" />
+        	</apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock >
+                  
+	        <apex:pageblocktable id="theTable" value="{!attendeeListToBeShow}" var="att">
+	              
+	              <apex:column value="{!att.VisitOps__FirstName__c}" />
+	              <apex:column value="{!att.VisitOps__LastName__c}" />
+	              <apex:column value="{!att.VisitOps__Company__c}" />
+	              <apex:column value="{!att.VisitOps__Title__c}" />
+	              <apex:column value="{!att.VisitOps__Email__c}" />
+	              <apex:column value="{!att.VisitOps__Attendee_Types__c}" />
+	              <apex:column value="{!att.VisitOps__Attendee_Role__c}" />
+	              
+	        </apex:pageblocktable> 
+       </apex:pageBlock>
+   </apex:form>
+</apex:page>

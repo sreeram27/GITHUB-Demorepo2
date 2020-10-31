@@ -1,0 +1,217 @@
+<!--*
+ * ______________________________________________________________________________________________________________________________________
+ * Name              LGQliMassUpdate
+ * Author            Deloitte offshore (Gladiators)
+ * Version		 	 v1.0
+ * CreatedDate       21st August 2019
+ * Controller		 LGQliMassUpdateCtrl
+ * User Story        PRDCRM-41009-Plan Mass update 
+ * ______________________________________________________________________________________________________________________________________
+ * Description	     
+ * Lightning component to update multiple Quote Line Items of the specified Quote from Vlocity Action "Plan Update on Quote"
+ * 
+ * ________________________________________________________________________________________________________________________________________
+ *
+ * Additional information
+ *______________________________________________________________________________________________________________________________________
+ * Changes
+ * vX.X(Version)			Name
+ * Date						Explanation
+ *_______________________________________________________________________________________________________________________________________
+*/-->
+<aura:component controller="LGQliMassUpdateCtrl" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+    <aura:attribute name="quoteId" type="String" description="Quote Id from Vlocity Action" />
+    <aura:attribute name="showSaveCancelBtn" type="Boolean" description="show hide save and cancel" default="true"/>
+    <aura:attribute name="isError" type="Boolean" default="false" description="Boolean to hold whether to show error or not"/>
+    <aura:attribute name="result" type="Object" description="The final server data"/>
+    <aura:attribute name="resultOriginalCopy" type="Object" description="Server data for session storage"/>
+    <aura:attribute name="dataWrapList" type="List" description="wrapper list to store data to display"/>
+    <aura:attribute name="hideSpinner" type="Boolean" default="true" description="boolean to hold  spinner"/>
+    <aura:attribute name="changedRows" type="List" description="Captures the edited rows without duplicates"/>
+    <aura:attribute name="domainUrl" type="String" description="Domain URL for navigation"/>
+    <aura:attribute name="clickedParent" type="String" description="The parent that has been clicked to expand"/>
+    <aura:attribute name="requiredStageReason" type="Integer" default="0" description="Count of fields that requires reason"/>
+    <aura:attribute name="requiredStageReasonList" type="List" description="List of Qli Ids that require reason" />
+    <aura:attribute name="isAdminError" type="Boolean" default="false" description="Whether to show the Errors from the back end"/>
+    <aura:attribute name="adminErrorMsg" type="String" description="Error Message from the back end"/>
+    
+   <aura:handler name="init" value="{!this }" action="{!c.init }" description="Init handler to fetch data on load of the page"/>
+    
+    <div class="slds-card__header">
+        <aura:renderIf isTrue="{!v.hideSpinner}">
+            <lightning:spinner alternativeText="Loading" size="large" />
+        </aura:renderIf>
+        
+        <lightning:card title="{!$Label.c.LGPlanUpdateHeading}" class="slds-text-title_bold" >
+            <aura:set attribute ="actions"> 
+                <div class="slds-float_right slds-m-horizontal_large slds-m-vertical_large">
+                     <lightning:button label="{!$Label.c.LGPlanUpdateSave}" variant="brand" disabled="{!v.showSaveCancelBtn}" onclick="{!c.handleSave}" />
+                      <lightning:button label="{!$Label.c.LGPlanUpdateCancel}" variant="brand" onclick="{!c.backToQuote}" />
+                     <lightning:button label="{!$Label.c.LGPlanUpdateReset}" disabled="{!v.showSaveCancelBtn}" onclick="{!c.resetQli}" />
+                 </div> 
+            </aura:set>
+            <aura:if isTrue="{! v.requiredStageReason > 0 }">
+          			<div class="slds-align_absolute-center slds-text-heading_small slds-text-color_error slds-m-bottom_medium">
+            				<strong>{!$Label.c.LGPlanMassUpdateError}</strong>
+                    </div>
+        	</aura:if>
+         <aura:if isTrue="{!v.isAdminError}">
+                         <div class="slds-align_absolute-center slds-text-heading_small slds-text-color_error slds-m-bottom_medium">
+                            <strong>{!v.adminErrorMsg}</strong>
+                         </div>
+         </aura:if>
+            <div class="scrollable">   
+                <aura:if isTrue="{!!v.isError}">
+                    <div class="slds-m-horizontal_x-small ">
+                        <table class="slds-table slds-table_bordered" aura:id="myTable">
+                            <thead>
+                                <tr class="slds-text-title--caps headingStyles">
+                                    <th >
+                                    </th>
+                                    <th  scope="col" >
+                                        <div class="slds-truncate " title="Product2.Name">{!$Label.c.LGPlanName}
+                                        </div>
+                                    </th>
+                                    <th   scope="col"  >
+                                        <div class="slds-truncate" title="ProductStage__c">{!$Label.c.LGStageName}
+                                        </div>
+                                    </th>
+                                    <th  scope="col" >
+                                        <div class="slds-truncate" title="Reason__c">{!$Label.c.LGStageReasonName}
+                                        </div>
+                                    </th>
+                                    <th scope="col" >
+                                        <div class="slds-truncate" title="Plan_Type__c">{!$Label.c.LGPlanTypeName}
+                                        </div>
+                                    </th>
+                                    <th  scope="col" >
+                                        <div class="slds-truncate" title="HPCC_Code__c">{!$Label.c.LGHpccCodeName}
+                                        </div>
+                                    </th>
+                                    <th  scope="col" >
+                                        <div class="slds-truncate" title="vlocity_ins__ContractCode__c">{!$Label.c.LGCustomContractCodeName}
+                                        </div>
+                                    </th>
+                                    <th  scope="col" >
+                                        <div class="slds-truncate" title="Contract_Code__c">{!$Label.c.LGContractCodeName}
+                                        </div>
+                                    </th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <aura:iteration items="{!v.dataWrapList}" var="Parent" indexVar="index1"> 
+                                    <tr>
+                                        <td>
+                                            <aura:if isTrue="{! Parent.parentdata.isOpen}">
+                                                <div class="slds-truncate " onclick="{!c.showChild}" data-index = "{!index1}" data-value="{!Parent.data[0].qli.ParentQuoteLineItem__c}"> 
+                                                    <lightning:icon iconName="utility:chevrondown" alternativeText="chevrondown" size="xx-small"/>
+                                                </div>
+                                                <aura:set attribute="else">
+                                                    <div class="slds-truncate " onclick="{!c.showChild}" data-index = "{!index1}" data-value="{!Parent.data[0].qli.ParentQuoteLineItem__c}"> 
+                                                        <lightning:icon iconName="utility:chevronright" alternativeText="chevronright" size="xx-small"/>
+                                                    </div> 
+                                                </aura:set>
+                                            </aura:if>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate parentName " onclick="{!c.showChild}" data-index = "{!index1}" data-value="{!Parent.data[0].qli.ParentQuoteLineItem__c}">  {#Parent.parentdata.parentName}</div>
+                                        </td>
+                                        <td ></td> <td ></td><td ></td> <td ></td><td ></td><td ></td>
+                                    </tr>
+                                    <aura:if isTrue="{! Parent.parentdata.isOpen }">    
+                                        <aura:iteration items="{!Parent.data}" var="data" indexVar="index">
+                                            <tr>
+                                                <td>
+                                                    <div class="slds-truncate ">{#index+1}.</div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate" title="{#data.qli.Product2.Name}">
+                                                    <lightning:formattedText value="{#data.qli.Product2.Name}" />
+                                                        </div>
+                                                </td>
+                                                <td><div class="slds-truncate" title="Stage" data-value="{!index}" data-parentVal ="{!index1}">
+                                                    <lightning:select name="Stage"  class="{! data.colorStage == true  ? 'changeGreen' : ''}"  value="{!data.qli.ProductStage__c}" onchange="{!c.saveChange}"> 
+                                                        <aura:iteration items="{!v.result.oppStagePickvalWapList}" var="itm">
+                                                            <aura:if isTrue="{! equals(data.qli.OppType__c,itm.label)}">
+                                                                <option value="">{!$Label.c.LGPlanUpdateNoneOption}</option>
+                                                                <aura:iteration items="{!itm.value}" var="val">
+                                                                    <option value="{!val}" class="{! and(data.colorStage == true,val == data.qli.ProductStage__c ) ? 'changeGreen' : 'changeAsBlank'}" selected="{! val == data.qli.ProductStage__c}" >{!val}</option>
+                                                                </aura:iteration> 
+                                                            </aura:if>
+                                                        </aura:iteration>
+                                                    </lightning:select>
+                                                    </div>
+                                                </td>
+                                                <td >
+                                                    <div title="Stage Reason" data-value="{!index}" data-parentVal ="{!index1}" class="slds-truncate">
+                                                        <lightning:select aura:id="select" name="Stage Reason"  class="{! data.colorReason == true  ? 'changeGreen' : ''}"  value="{!data.qli.Reason__c}" onchange="{!c.saveChange}" > 
+                                                            <aura:iteration items="{!v.result.recReasonPickvalWapList}" var="itm">
+                                                                <aura:if isTrue="{! equals(data.qli.RecordType__c,itm.label)}">
+                                                                    <option value="">{!$Label.c.LGPlanUpdateNoneOption}</option>
+                                                                    <aura:iteration items="{!itm.value}" var="val">
+                                                                        <option value="{!val}" class="{! and(data.colorReason == true,val == data.qli.Reason__c ) ? 'changeGreen' : 'changeAsBlank'}" selected="{! val == data.qli.Reason__c}" >{!val}</option>
+                                                                    </aura:iteration> 
+                                                                </aura:if>
+                                                            </aura:iteration>
+                                                        </lightning:select>  
+                                                     </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate" title="Plan Type" data-value="{!index}" data-parentVal ="{!index1}">
+                                                        <aura:if isTrue="{! equals(data.qli.Product_Type__c,'Vision')}">
+                                                            	<lightning:select name="Plan Type"  class="{! data.colorPlanType == true  ? 'changeGreen' : ''}" disabled="true" value="{!data.qli.Plan_Type__c}" onchange="{!c.saveChange}"> 
+                                                            	</lightning:select>
+                                                            <aura:set attribute="else">
+                                                                <lightning:select name="Plan Type"  class="{! data.colorPlanType == true  ? 'changeGreen' : ''}"  value="{!data.qli.Plan_Type__c}" onchange="{!c.saveChange}"> 
+                                                                    <option value="">{!$Label.c.LGPlanUpdateNoneOption}</option>
+                                                                    <aura:iteration items="{!v.result.planTypePickListVal}" var="val">
+                                                                        <option value="{!val.value}" class="{! and(data.colorPlanType == true,val == data.qli.Plan_Type__c ) ? 'changeGreen' : 'changeAsBlank'}" selected="{! val == data.qli.Plan_Type__c}" >{!val.label}</option>
+                                                                    </aura:iteration> 
+                                                                </lightning:select>
+                                                            </aura:set>
+                                                        </aura:if>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate" title="HPCC Code" data-value="{!index}" data-parentVal ="{!index1}">	
+                                                        <aura:if isTrue="{! equals(data.qli.Product_Type__c,'Vision')}">
+                                                                <lightning:input name="HPCC Code" class="{! data.colorHpcc == true ? 'changeGreen' : ''}" type="text"  value="{!data.qli.HPCC_Code__c}" disabled="true" onchange="{!c.saveChange}">{!data.qli.HPCC_Code__c}</lightning:input>   
+                                                             <aura:set attribute="else">
+                                                                <lightning:input name="HPCC Code" class="{! data.colorHpcc == true ? 'changeGreen' : ''}" type="text"  value="{!data.qli.HPCC_Code__c}" disabled="false" onchange="{!c.saveChange}">{!data.qli.HPCC_Code__c}</lightning:input>   
+                                                             </aura:set>
+                                                        </aura:if>
+                                                        </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate" title="Custom Contract Code" data-value="{!index}" data-parentVal ="{!index1}">
+                                                        <aura:if isTrue="{! or(and(equals(data.qli.Product2.Plan_Type__c,'Standard'),equals(data.qli.Product_Type__c,'Vision')),equals(data.qli.Plan_Type__c,'Standard')) }">
+                                                            <lightning:input name="Custom Contract Code" class="{! data.colorCustomCont == true ? 'changeGreen' : ''}" type="text" disabled="true" value="{!data.qli.vlocity_ins__ContractCode__c}" onchange="{!c.saveChange}">{!data.qli.vlocity_ins__ContractCode__c}</lightning:input>   
+                                                            <aura:set attribute="else">
+                                                                <lightning:input name="Custom Contract Code" class="{! data.colorCustomCont == true ? 'changeGreen' : ''}" type="text" disabled="false" value="{!data.qli.vlocity_ins__ContractCode__c}" onchange="{!c.saveChange}">{!data.qli.vlocity_ins__ContractCode__c}</lightning:input>   
+                                                            </aura:set>
+                                                        </aura:if>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate" title="Contract Code">
+                                                        <lightning:formattedText class="slds-text-align_center" value="{#data.qli.Contract_Codes__c}" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </aura:iteration>
+                                    </aura:if>
+                                </aura:iteration>
+                            </tbody>
+                        </table>
+                    </div>
+                    <aura:set attribute="else">
+                        <div class="slds-align_absolute-center slds-text-heading_medium slds-text-color_error slds-box slds-m-horizontal_x-large">
+                            <strong>{!$Label.c.LGNoPlanError}</strong>
+                        </div>
+                    </aura:set>
+                </aura:if>
+            </div>
+        </lightning:card>
+    </div>
+</aura:component>

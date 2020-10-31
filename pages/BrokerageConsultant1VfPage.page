@@ -1,0 +1,15 @@
+<apex:page >
+ <apex:includeLightning />
+
+ <div id="BrokerageConsultant" />
+
+ <script>
+ $Lightning.use("c:BrokerageConsultant1App", function() {
+ $Lightning.createComponent("c:BrokerageConsultant1ParentComp",
+ {opptyId : '{!$CurrentPage.parameters.id}',opptyName : '{!$CurrentPage.parameters.name}'},
+ "BrokerageConsultant",
+ function(cmp) {
+ });
+ });
+ </script>
+</apex:page>

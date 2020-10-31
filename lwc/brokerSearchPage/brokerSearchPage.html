@@ -1,0 +1,304 @@
+<template>
+
+    <div class="slds-p-around_medium lgc-bg slds-m-top_xxx-small" >
+        <lightning-tile label="">
+            <dl class="slds-dl_horizontal">
+                    <dt class="slds-dl_horizontal__label">
+                        <p class="slds-truncate" title="Broker">Broker</p>
+                    </dt>
+                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                        <p class="slds-truncate slds-text-align_right" title="Opportunity">{label.opportunity}
+                            <a class="slds-text-link" href={sourceURL} target="source">{OppName}</a
+                        >
+                        </p>
+                    </dd>
+                </dl>     
+        </lightning-tile>   
+    </div>
+    <div class="slds-grid slds-gutters slds-p-around_xx-small" onmouseover={hideTypeAheadName}>
+        <!-- Search Page -->
+        <!--<c-search-Input onsearch={showSearchTable} get-id-from-parent={OppId}>
+    
+        </c-search-Input>-->
+        <!-- Search Page -->
+        
+    <div class="slds-col slds-size_1-of-4">
+        <lightning-card>
+            <div class="alignBrokerSearch">
+                <div class="alignBSIcon"><lightning-icon icon-name="standard:search" onmouseover={showHelpTextBrokerSearch} onmouseout={hideHelpTextBrokerSearch}></lightning-icon>
+                </div>
+                <div class="alignBSIcon"><p></p>Broker Search</p>
+                </div>
+            </div>
+            <div class="slds-popover slds-popover_tooltip slds-nubbin_top-top ms-help-popup-in-header divHelpSearch slds-hide"
+                role="tooltip" aria-live="polite">
+                <div class="slds-popover__body ms-help-popup-body">
+                        Search is limited by the information entered.  Broker List returned will adjust based on the information provided. One search criteria per field is permitted.  For example, you cannot search for multiple Tax Ids at the same time.  State is required.
+                </div>
+            </div>
+            <div class="content">
+                    <!--Broker Name -->  
+                    
+                <div class="helpTextBrokerName">Broker Name<lightning-icon class="infoIcon" size="x-small" onmouseover={showHelpTextBrokerName} onmouseout={hideHelpTextBrokerName}></lightning-icon>
+                    <!--<i class="fa fa-info-circle helpTextBrokerName" aria-hidden="false"
+                    onmouseover={showHelpTextBrokerName}
+                    onmouseout={hideHelpTextBrokerName}></i>--></div>
+                    <div class="slds-popover slds-popover_tooltip slds-nubbin_top-top ms-help-popup-in-header divHelp slds-hide"
+                    role="tooltip" aria-live="polite">
+                    <div class="slds-popover__body ms-help-popup-body">
+                            Enter all or part of the Broker’s name if known.  Search is not case sensitive – the result for a search on john smith or JOHN SMITH will return the same result.  Use of comma is not permitted.
+                    </div>
+                    </div>
+                    <div class="outerDiv"><div>
+                    <lightning-input
+                        id="BrokerName"
+                        class="validValue inputBrokerName" 
+                        autocomplete="off"
+                        type="text"
+                        placeholder="Broker Name"
+                        value={brokerName}
+                        onchange={changeHandlerName}>
+                    </lightning-input>
+                    
+                    <!-- Added by Suresh -->
+                
+                    <div id="listbox-id-3" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid accounts_listBroker slds-hide" role="listbox">
+                        <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                            
+                            <template for:each={accounts} for:item="account">
+                                <li role="presentation" class="slds-listbox__item dontHideName" key={account.Id} onclick={handleOptionSelect} data-id={account.Id} data-name={account.Name}>
+                                    <div aria-selected="true" id={account.Id} class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta dontHideName1" role="option" tabindex="0">
+                                        <span class="slds-media__body">
+                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity dontHideName2">{account.Name}</span>
+                                        </span>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+                    </div>
+                <!-- end hide this by default-->
+                <!--Broker Tax Id -->
+                <!--<lightning-icon icon-name="utility:favorite" size="xxxx-small"></lightning-icon> --> 
+                <div class="helpTextBrokerTax">Broker Tax Id<lightning-icon class="infoIcon" size="x-small" onmouseover={showHelpTextBrokerTax} onmouseout={hideHelpTextBrokerTax}></lightning-icon><!--<i class="fa fa-info-circle helpTextBrokerTax" aria-hidden="false"
+                    onmouseover={showHelpTextBrokerTax}
+                    onmouseout={hideHelpTextBrokerTax}></i>-->
+                    </div>
+                    <div class="slds-popover slds-popover_tooltip slds-nubbin_top-top ms-help-popup-in-header divHelpTax slds-hide"
+                    role="tooltip" aria-live="polite">
+                    <div class="slds-popover__body ms-help-popup-body">
+                            Enter all or part of the Tax Id of the Broker if known.  There is a character limit of 9 characters (max for a Tax Id). Not a required field.  Use of comma is not permitted.
+                    </div>
+                </div>  
+                <lightning-input
+                    id="BrokerTaxId"
+                    autocomplete="off"
+                    type="text"
+                    class="validValue inputTaxId"
+                    value={brokerTaxId}
+                    placeholder="Broker Tax Id"
+                    onchange={changeHandlerTaxId}
+                    message-when-value-missing="Please enter the Tax Id"
+                    minlength="9"
+                    maxlength="9">                                    
+                </lightning-input>
+                
+                <!-- Added by Suresh -->
+                
+                <div id="listboxTax-id-3" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid accounts_listBrokerTax slds-hide" role="listbox">
+                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                        
+                        <template for:each={accounts} for:item="account">
+                            <li role="presentation" class="slds-listbox__item dontHideTax" key={account.Id} onclick={handleOptionSelect} data-id={account.Id} data-tax={account.Tax_ID__c}>
+                                <div aria-selected="true" id={account.Id} class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta dontHideTax1" role="option" tabindex="0">
+                                    <span class="slds-media__body">
+                                        <span class="slds-listbox__option-text slds-listbox__option-text_entity dontHideTax2">{account.Tax_ID__c}</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                
+                <!-- end hide this by default-->
+                <!--Broker Email -->  
+                <div class="helpTextBrokerEmail">Broker Email<lightning-icon class="infoIcon" size="x-small" onmouseover={showHelpTextBrokerEmail} onmouseout={hideHelpTextBrokerEmail}></lightning-icon><!--<i class="fa fa-info-circle helpTextBrokerEmail" aria-hidden="false"
+                    onmouseover={showHelpTextBrokerEmail}
+                    onmouseout={hideHelpTextBrokerEmail}></i>-->
+                    </div>
+                    <div class="slds-popover slds-popover_tooltip slds-nubbin_top-top ms-help-popup-in-header divHelpEmail slds-hide"
+                    role="tooltip" aria-live="polite">
+                    <div class="slds-popover__body ms-help-popup-body">
+                            Enter all or part of the Broker’s email address if known.  Not a required field. Use of comma is not permitted.
+                    </div>
+                    </div>
+
+                <lightning-input
+                    autocomplete="off"
+                    id="BrokerEmail"
+                    class="validValue inputEmail"
+                    type="email"
+                    value={brokerEmail}
+                    placeholder="Broker Email"
+                    onchange={changeHandlerEmail}>
+                </lightning-input>
+                                <!-- Added by Suresh -->
+                
+                <div id="listboxEmail-id-3" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid accounts_listBrokerEmail slds-hide" role="listbox">
+                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                        
+                        <template for:each={accounts} for:item="account">
+                            <li role="presentation" class="slds-listbox__item dontHideEmail" key={account.Id} onclick={handleOptionSelect} data-id={account.Id} data-email={account.Email}>
+                                <div aria-selected="true" id={account.Id} class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta dontHideEmail1" role="option" tabindex="0">
+                                    <span class="slds-media__body">
+                                        <span class="slds-listbox__option-text slds-listbox__option-text_entity dontHideEmail2">{account.Email}</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                
+                <!-- end hide this by default-->
+                <!--Broker Phone -->  
+                <div class="helpTextBrokerPhone">Broker Phone<lightning-icon class="infoIcon" size="x-small" onmouseover={showHelpTextBrokerPhone} onmouseout={hideHelpTextBrokerPhone}></lightning-icon><!--<i class="fa fa-info-circle helpTextBrokerPhone" aria-hidden="false"
+                    onmouseover={showHelpTextBrokerPhone}
+                    onmouseout={hideHelpTextBrokerPhone}></i>-->
+                    </div>
+                    <div class="slds-popover slds-popover_tooltip slds-nubbin_top-top ms-help-popup-in-header divHelpPhone slds-hide"
+                    role="tooltip" aria-live="polite">
+                    <div class="slds-popover__body ms-help-popup-body">
+                            Enter all or part of the Broker’s mobile phone number, if known.  Not a required field. Use of comma is not permitted.
+                    </div>
+                    </div>
+                <lightning-input
+                    autocomplete="off"
+                    id="BrokerPhone"
+                    class="validValue inputPhone"
+                    type="text"
+                    maxlength="10"
+                    message-when-bad-input=""
+                    value={brokerPhone}
+                    placeholder="Broker Phone"
+                    onchange={changeHandlerPhone}>
+                </lightning-input>
+                
+                <!-- Added by Suresh -->
+                
+                <div id="listboxPhone-id-3" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid accounts_listBrokerPhone slds-hide" role="listbox">
+                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                        
+                        <template for:each={accounts} for:item="account">
+                            <li role="presentation" class="slds-listbox__item dontHidePhone" key={account.Id} onclick={handleOptionSelect} data-id={account.Id} data-phone={account.MobilePhone}>
+                                <div aria-selected="true" id={account.Id} class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta dontHidePhone1" role="option" tabindex="0">
+                                    <span class="slds-media__body">
+                                        <span class="slds-listbox__option-text slds-listbox__option-text_entity dontHidePhone2">{account.MobilePhone}</span>
+                                    </span>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                
+                <!-- end hide this by default-->
+                <!--Broker State -->  
+                
+                <div class="helpTextBrokerState">Broker State<lightning-icon class="infoIcon" size="x-small" onmouseover={showHelpTextBrokerState} onmouseout={hideHelpTextBrokerState}></lightning-icon><!--<i class="fa fa-info-circle helpTextBrokerState" aria-hidden="false"
+                    onmouseover={showHelpTextBrokerState}
+                    onmouseout={hideHelpTextBrokerState}></i>-->
+                    </div>
+                    <div class="slds-popover slds-popover_tooltip slds-nubbin_top-top ms-help-popup-in-header divHelpState slds-hide"
+                    role="tooltip" aria-live="polite">
+                    <div class="slds-popover__body ms-help-popup-body">
+                            Required field.  Will default to the full name of the billing state of the account on the opportunity.  If a different state is needed, user can change to another state. Only one state per search; use of comma is not permitted.
+                    </div>
+                </div>
+                <lightning-input
+                    autocomplete="off"
+                    id="BrokerState"
+                    required
+                    class="validValue inputState"
+                    type="text"
+                    maxlength="2"
+                    message-when-bad-input=""
+                    value={brokerState}
+                    placeholder="Broker State"
+                    onchange={changeHandlerState}>
+                </lightning-input>
+                
+                    
+                    <!-- Added by Suresh -->
+
+                    <div id="listboxState-id-3" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid accounts_listBrokerState slds-hide" role="listbox">
+                            <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                
+                                <template for:each={brokerSearch} for:item="broker">
+                                    <li role="presentation" class="slds-listbox__item dontHideState" key={broker.Id} onclick={handleOptionSelect} data-id={broker.Id} data-state={broker.State__c}>
+                                        <div aria-selected="true" id={broker.Id} class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta dontHideState1" role="option" tabindex="0">
+                                            <span class="slds-media__body">
+                                                <span class="slds-listbox__option-text slds-listbox__option-text_entity dontHideState2">{broker.State__c}</span>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+            </div>        
+            
+        
+            
+            
+            <!-- end hide this by default-->
+        </lightning-card>
+        
+    
+        <div class="slds-align_absolute-center slds-m-top_x-small" >
+            <div class="slds-m-right_xx-small">
+                <lightning-button variant="brand" icon-name="utility:clear" label="Clear" alternative-text="Clear Search Input" onclick={handleClearSearchCriteria} ></lightning-button>
+            </div>
+            <div class="slds-m-left_xx-small">
+                <lightning-button variant="brand" icon-name="utility:search" label="Search" alternative-text="Seach Broker" onclick={handleClickSearch} ></lightning-button>
+            </div>
+        </div>
+    </div>
+        <!--Search Page End -->
+        <!--  Broker Selection -->
+        
+        <div class="slds-col slds-size_3-of-4 slds-border_left">
+            <span class="slds-page-header slds-box slds-theme-/-shade slds-align_absolute-center">Broker Selection</span>
+            <br/>
+            <!--lightning-button class="slds-m-top_x-small slds-m-bottom_x-large" variant="brand" label="Search Broker" title="Primary action" onclick={handleClickSearch} ></lightning-button-->
+            <!-- Broker Search Result-->
+            <template if:true={showBrokerSearchTable}>
+                <div class="slds-m-top_x-small">
+                    <lightning-datatable
+                            key-field="id"
+                            data={data}
+                            columns={columns}
+                            onrowselection={getSelectedRecord}
+                            max-row-selection = '1'>
+                    </lightning-datatable>
+                </div> 
+            </template> 
+            <template if:true={noResultFetched}>
+                <div>{label.brokerNoResult}</div>
+            </template>
+        </div>
+        <!-- Modals -->
+        <c-accept-cancel-broker onunselectbroker={handleunselectbroker}></c-accept-cancel-broker>
+        <c-broker-brokerage-modal></c-broker-brokerage-modal>
+    
+        <div class="slds-docked-form-footer">        
+            <template if:true={showNewBroker}>
+                <lightning-button class="slds-p-around_x-small" variant="brand" label="Create New Broker" title="Primary action" onclick={createBroker} ></lightning-button>
+            </template>
+            <template if:true={showContactRelationshipButton}>
+                    <lightning-button class="slds-p-around_x-small" variant="brand" label="Create New Contact Relationship" title="Primary action" onclick={createContactRelationship} ></lightning-button>
+            </template>
+            <lightning-button class="slds-p-around_x-small" variant="brand" label="Save and New" title="Primary action" onclick={saveAndNew} ></lightning-button>
+            <lightning-button class="slds-p-around_x-small" variant="brand" label="Save and Go back to Opportunity" title="Primary action" onclick={saveAndGoToOpp} ></lightning-button>
+        </div>
+    </div>
+    
+    </template>

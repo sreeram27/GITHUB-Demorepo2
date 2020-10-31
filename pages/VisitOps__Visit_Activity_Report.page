@@ -1,0 +1,20 @@
+<apex:page controller="VisitOps.VisitActivityReportCtrl">
+<div style="height: 30px;font-size: 20px;">Visit Activity Report</div>
+    <apex:form >
+        <c:AjaxStatusIndicator statusText="Processing..." />
+        <apex:actionfunction name="testAF" action="{!getnewFilter}" rerender="pbid"/>
+        <apex:panelGrid columns="4" cellpadding="20%" cellspacing="20%" style="margin-top: 15px;">
+            <font> <b>Filter By : Location</b></font>
+            <apex:selectList value="{!locName}" multiselect="false" size="1" onChange="testAF();">
+                <apex:selectOptions value="{!AvailableLocations}" />
+            </apex:selectList>
+        </apex:panelGrid>
+        
+        <apex:pageBlock id="pbid">
+                <apex:actionFunction name="redirecttoReport" action="{!redirectRpt}" />
+                <analytics:reportChart reportId="{!reportId}"
+                    filter="{!newFilter}" size="medium" cacheResults="false"/>
+            </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

@@ -1,0 +1,178 @@
+<!--
+*******************************************************************************
+* Purpose:  Allow a Facilitator to provide Feedback for OE Event
+* Created:  
+* Author:   Tony Angle
+******************************************************************************* 
+* Mod:      2/11/2015 - Added this comment box and changed "Did you have an AM 
+*                       strategy call prior to meeting?" to "Were you offered a
+*                       strategy call prior to meeting?"  LG
+*            5/4/2015    Changed logo to new anthem logo LG
+*            5/23/2016 - changes for 2016
+*******************************************************************************
+-->
+<apex:page controller="OEAmbFeedbackController" standardStylesheets="false" showHeader="false" sidebar="false">
+    <apex:form >
+    <apex:stylesheet value="{!$Resource.main}"/>
+    <table width="900px">
+        <tr width="33%">
+            <td><apex:image value="{!$Resource.AnthemNewLogo}" height="59px" width="220px"/></td>
+            <td align="center" width="33%">
+                <apex:outputText value="Open Enrollment Program" styleClass="header"/>
+                <br/>
+                <apex:outputText value="Open Enrollment Sales Feedback" styleClass="subheader" rendered="{!!showPreparedTrained}"/>
+                <apex:outputText value="Open Enrollment Meeting Feedback" styleClass="subheader" rendered="{!showPreparedTrained}"/>
+               
+            </td>
+            <td align="right" width="33%"></td>
+        </tr>
+    </table>
+    <br/>
+    <apex:pageBlock rendered="{!showSurvey}">
+        <apex:outputPanel rendered="{!showPreparedTrained}">
+            <div class="box900">
+                <div class="innerbox">
+                    We truly appreciate you facilitating the meeting listed below.  Your feedback is extremely valuable to us.  Please complete the feedback survey by answering all questions below and then click submit.  Thank you!        
+                </div>
+            </div>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!!showPreparedTrained}">
+            <div class="box900">
+                <div class="innerbox">
+                    Please complete the feedback survey by answering all the questions below and click submit. 
+                    Your feedback is extremely valuable to us and we appreciate it.                    
+                    Thank you.    
+                </div>
+            </div>
+        </apex:outputPanel>
+        <br/>
+        <div class="box900" >
+            <div class="boxcaption">Event Feedback Survey</div>
+                <div class="innerbox">
+                <table width="100%">
+                    <apex:outputPanel rendered="{!showPreparedTrained}"><tr><td width="50%"><b>Facilitator Name</b></td><td width="50%">{!facName}</td></tr></apex:outputPanel>
+                    <apex:outputPanel rendered="{!!showPreparedTrained}"><tr><td width="50%"><b>Account Managment Facilitator Name</b></td><td width="50%">{!facName}</td></tr></apex:outputPanel>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Meeting Name</b></td><td width="50%">{!meetingName}</td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td><b>Approx Number Attendees</b></td><td><apex:inputField value="{!feedback.Approximate_Number_Attendees__c}" style="width:40px"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td><b>Clarify the Flow during the Event</b></td><td><apex:inputField value="{!feedback.Attendance_Flow__c}"/></td></tr>
+                    <tr><td><b>When did employees attend the event?  During:</b></td><td><apex:inputField value="{!feedback.When_did_employees_attend_the_event__c}"/></td></tr>
+                     
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr><td width="50%" valign="top"><b>What Medical competitors were at the meetings?</b></td><td><apex:inputField value="{!feedback.Competitors_at_Meeting__c}"/></td></tr>
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr><td width="50%" valign="top"><b>What Specialty competitors were at the meetings?</b></td><td><apex:inputField value="{!feedback.Specialty_Competitors_at_Meeting__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Anthem Material - Giveaways?</b></td><td><apex:inputField value="{!feedback.Anthem_Promo__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Anthem Giveaways - If too much, approx # of leftover:</b></td><td><apex:inputField value="{!feedback.Giveaways_If_too_much_approx_number__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Anthem Giveaways - If too many, what did you do with the leftovers?</b></td><td><apex:inputField value="{!feedback.If_too_much_what_was_done_with_leftover__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Anthem Giveaways - If not enough, approx # needed:</b></td><td><apex:inputField value="{!feedback.Giveaways_Not_enough_approx_needed__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Anthem Giveaways – Please indicate what other promotional items were provided by other vendors:</b></td><td><apex:inputField value="{!feedback.List_Other_Vendor_Promos__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Anthem Material - Collateral?</b></td><td><apex:inputField value="{!feedback.Anthem_Collateral__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Anthem Collateral - If too much, approx # of leftover:</b></td><td><apex:inputField value="{!feedback.Collateral_If_too_much_approx_number__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Anthem Collateral - If too many, what did you do with the leftovers?</b></td><td><apex:inputField value="{!feedback.Collateral_what_was_done_with_leftover__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Anthem Collateral - If not enough, approx # needed:</b></td><td><apex:inputField value="{!feedback.Collateral_Not_enough_approx_needed__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Was the meeting site contact/representative able to provide applicable information/logistics for this event?</b></td><td><apex:inputField value="{!feedback.Did_Site_Contact_Provide_Event_Info__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>If No, please explain your answer:</b></td><td><apex:inputField value="{!feedback.If_No_please_explain_your_answer__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Was meeting site prepared for this event?</b></td><td><apex:inputField value="{!feedback.Was_meeting_site_prepared__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>If no, please explain your answer:</b></td><td><apex:inputField value="{!feedback.Meeting_site_prep_no_please_explain__c}"/></td></tr>
+                    <apex:outputPanel rendered="{!showAMStrategyCall}">
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Prior to the meeting, I received client information via:   </b></td><td><apex:inputField value="{!feedback.Did_you_participate_in_AM_Strategy_call__c}"/></td></tr>
+                     </apex:outputPanel>
+                    <apex:outputPanel rendered="{!showPreparedTrained}">
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Did you feel prepared and adequately trained for this event?</b></td><td><apex:inputField value="{!feedback.Did_you_feel_prepared_and_trained__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>If no, please explain your answer.</b></td><td><apex:inputField value="{!feedback.Comments_on_being_prep__c}"/></td></tr></apex:outputPanel>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Please list out Member Issues (No PHI) - (Any member issues that need follow up – see Account Team contact).</b></td><td><apex:inputField value="{!feedback.Member_Issues__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Additional Comments regarding Member Issues:</b></td><td><apex:inputField value="{!feedback.Member_Questions_Additional_Comments__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Please note any Frequently asked Questions regarding Member Issues or Additional Comments</b></td><td><apex:inputField value="{!feedback.FAQ_Member_Questions__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Rate success of the overall event?  </b></td><td><apex:inputField value="{!feedback.Rate_Success_of_the_overall_event__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <!--<tr><td width="50%"><b>Do you think it will be worthwhile to attend this meeting next year?</b></td><td><apex:inputField value="{!feedback.Worthwhile_Next_year__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td><b>If no, please explain your answer</b></td><td><apex:inputField value="{!feedback.Worthwhile_Comments__c}" style="width:250px;height:100px"/></td></tr>-->
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Comments (For example, your table and material compared to the competitor’s table and material.)</b></td><td><apex:inputField value="{!feedback.Comments__c}" style="width:250px;height:100px"/></td></tr>
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                     <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+
+
+                    <apex:pageBlock rendered="{!isCalpher}">
+                    <tr><td><b><span><u>Please complete the following additional questions for CalPERS meetings:</u></span></b></td><td>&nbsp;</td></tr>
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Agency Name</b></td><td><apex:inputField value="{!feedback.Agency_Name__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Outdoor Event</b></td><td><apex:inputField value="{!feedback.Outdoor_Event__c}" /></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Inquiries for Anthem PPO/HMO plans:</b></td><td><apex:inputField value="{!feedback.Inquiries_for_Anthem_PPO_HMO_plans__c}" /></td></tr>                
+                     <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                     <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                     <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+
+                    </apex:pageBlock>
+
+                    <!--<tr><td><b><span style="color:red"><u>Wellness Kit MEETINGS ONLY</u></span></b></td><td>&nbsp;</td></tr>
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                    <tr><td width="200%"><b><span style="color:red">In addition to the above, please answer the following questions for Wellness Kit MEETINGS ONLY:</span></b></td><td>&nbsp;</td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Did the Wellness Kit display give Anthem a competitive advantage or help drive engagement at table (vs. standard display)?</b></td><td><apex:inputField value="{!feedback.Red_Carpet_Display_Advantage__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Additional Comments:</b></td><td><apex:inputField value="{!feedback.Red_Carpet_Only_Advantage__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Rate ease of setting up display:</b></td><td><apex:inputField value="{!feedback.Rate_ease_of_setting_up_display__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Additional Comments:</b></td><td><apex:inputField value="{!feedback.Comments_on_display_setup__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Rate ease of dismantling/packing up/shipping display:</b></td><td><apex:inputField value="{!feedback.Rate_ease_of_dismantle_packing_shipping__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Additional Comments:</b></td><td><apex:inputField value="{!feedback.Comments_on_display_dismantle__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Was the Wellness Kit display worth the extra effort in set-up and take down?</b></td><td><apex:inputField value="{!feedback.Was_Red_Carpet_display_worth_effort__c}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td width="50%"><b>Other Wellness Kit suggestions and feedback</b></td><td><apex:inputField value="{!feedback.Other_suggestions_feedback_on_Red_Carpet__c}"/></td></tr>
+                    <tr><td>&nbsp;</td><td>&nbsp;</td></tr>-->
+
+                    
+
+                    <!-- add section -->
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    <tr><td><apex:commandButton value="Submit" action="{!submitfeedback}"/></td></tr>
+                </table>
+                </div>
+        </div>
+    </apex:pageBlock>
+    <apex:pageBlock rendered="{!showNotCleared}">
+        Oops! Something went wrong. You do not have rights to view this page. Please contact the system administrator for more information.
+    </apex:pageBlock>
+    <apex:pageBlock rendered="{!showThankYou}">
+        <div class="boxbase" style="width:900px;border-color:gray;Height:100px">
+        <div class="boxcaption" style="background-color:gray;border-color:gray">Thank You</div>
+        <div class="innerbox" style="border-color:gray;Height:50px">
+            Thank You for Volunteering and For Your Feedback. A confirmation email will be sent to you soon. You Can Now Close Your Browser or Browse Elsewhere.<br/><br/>
+        </div>
+        </div> 
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

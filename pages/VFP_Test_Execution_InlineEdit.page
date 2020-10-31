@@ -1,0 +1,76 @@
+<apex:page standardController="Test_Execution__c" standardcontroller="Test_Execution__c"   extensions="VFC_Test_Execution_InlineEdit">
+  <apex:sectionHeader title="Test Script Execution Edit" subtitle="{!Test_Execution__c.Name}"/>
+  <apex:form >
+      <apex:pageBlock mode="Edit">
+          <apex:pageBlockButtons location="top">
+               
+               <apex:commandButton action="{!saveAndCongrat}" id="saveButton" value="Save"/>
+               <apex:commandButton action="{!cancelB}" onclick="resetInlineEdit()" id="cancelButton" value="Cancel"/>
+          
+          </apex:pageBlockButtons>
+       
+          <apex:pageBlockSection columns="2" title="Test Script Execution detail">
+          
+              <apex:outputField value="{!Test_Execution__c.Name}" />
+                  
+              <apex:inputField value="{!Test_Execution__c.Test_Script_Description__c}" />
+                                         
+              <apex:outputField value="{!Test_Execution__c.Execution_Cycle_Name__c}"/>
+                  
+              <apex:inputtext value="{!Test_Execution__c.Comments__c}"/>
+              
+              <apex:inputField value="{!Test_Execution__c.Status__c}"/>
+              <apex:outputField value="{!Test_Execution__c.Description_of_Script__c}"/>
+              
+            <apex:pageBlockSectionItem >
+
+                    <apex:outputLabel value="Test Executor" for="usr"/>
+
+                    <apex:inputField value="{!Test_Execution__c.Test_Executor__c}" id="usr" />
+
+            </apex:pageBlockSectionItem>
+
+              
+          </apex:pageBlockSection>
+               
+      </apex:pageBlock>
+       
+
+      <apex:pageBlock mode="edit" title="Test Execution Steps">
+      
+      <apex:pageBlockButtons location="bottom">
+               
+               <apex:commandButton action="{!saveAndCongrat}" id="saveButton" value="Save"/>
+               <apex:commandButton onclick="resetInlineEdit()" action="{!cancelB}" id="cancelButton" value="Cancel"/>
+          
+          </apex:pageBlockButtons>
+              <apex:pageblockTable value="{!testExstps}" var="te">
+                  <apex:column headerValue="Step Number">
+                      <apex:outputField value="{!te.Step_Order__c}"/>
+                  </apex:column>
+                  <apex:column headerValue="Execution Step Name">
+                      <apex:outputField value="{!te.Name}"/>
+                  </apex:column>
+                   <apex:column headerValue="Expected Result">
+                      <apex:outputField value="{!te.Expected_Result__c  }"/>
+                  </apex:column>
+                   <apex:column headerValue="Input Data">
+                      <apex:outputField value="{!te.Input_Data__c}"/>
+                  </apex:column>
+                   <apex:column headerValue="User Login Details">
+                      <apex:outputField value="{!te.User_Login_Details__c}"/>
+                  </apex:column>
+                  <apex:column headerValue="Status" >
+                      <apex:inputField value="{!te.Status__c}"/>
+                  </apex:column>
+                  <apex:column headerValue="Actual Result">
+                      <apex:inputText value="{!te.Actual_Result__c}" style="Widhth:100%;"/>
+                  </apex:column>
+              </apex:pageblockTable>
+          
+      
+      </apex:pageBlock>
+  
+  </apex:form>
+  
+</apex:page>

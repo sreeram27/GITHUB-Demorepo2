@@ -1,0 +1,211 @@
+<apex:page controller="VisitOps.VisitReportCtrl" tabstyle="VisitOps_Analytics__tab" sidebar="{!$Label.visitops__sidebar}" docType="html-5.0" >
+    
+    <!-- Moved to HPE on 3/18  --> 
+    <!-- /******************************************************************************************
+* Name         :    VisitReport
+* Description  :    Page for VisitReport
+* Author       :    KB, VisitOps
+*
+* Modification Log
+* ----------------
+* Date        Developer       Chg #         Comments
+* ----------- -------------   ------------- ------------------------------------------------
+* 3/18/2019   KB                            Initial development
+* 3/25/2019   US                            Changes are per ticket I-0274
+* 3/26/2019   US                            Changes are per ticket I-0274
+* 4/05/2019   US                            Changes are per ticket I-0274-TC-0033
+* 4/24/2019   US                            Changes are per ticket I-0274-TC-0155                            
+* 4/25/2019   US                            Changes are per ticket I-0274-TC-0155
+* 6/14/2019   US                            Changes are per ticket I-0274-TC-0155
+* 9/10/2019	  BS/AG							Changes are per ticket I-0713 I-0777
+*******************************************************************************************/ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>   
+        .outer td {vertical-align: middle;}    
+    .errorConsole .x-grid3-row-over, body .pbBody table.list tr.dataRow.highlight td, body .pbBody table.list tr.dataRow.highlight th {background-color: white; }
+    
+    </style>
+    <script>         
+        
+        
+        function applyFilterJS1(){           
+        applyFilter();
+    }           
+    /*function setDateJs(dateVal,textBoxId){
+               var dd = dateVal.getDate();
+               var mm = dateVal.getMonth() + 1; //January is 0!
+               var yyyy = dateVal.getFullYear();
+            
+               if (dd < 10) {
+                   dd = '0' + dd;
+                   } 
+               if (mm < 10) {
+                   mm = '0' + mm;
+                  } 
+               var today1 = mm + '/' + dd + '/' + yyyy;           
+               document.getElementById(textBoxId).value=today1 ;        
+               applyFilterJS1();
+         }*/
+    
+    function openNewTab(url){        
+        window.open(url,'_blank');
+    }
+    
+    </script>
+    <apex:sectionheader title="Generated Opportunity Report" subtitle="Visit" />
+    <apex:form id="main" >  
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position:absolute; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 45%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <table width="100%">
+            <tr><td>
+                <table cellpadding="5" cellspacing="0" style="font-size:12px; margin:10px 0px;" id="outerTb"> 
+                    <tr>
+                        <td><hr/></td>  
+                        <td><hr/></td>
+                    </tr>
+                    <tr>
+                        <td><strong><apex:outputText value="Location"/></strong></td>  
+                        <td>
+                            <apex:selectList size="1" onchange="applyFilterJS1()" value="{!selectedLoc}" style="min-width:164px;">
+                                <apex:selectOptions value="{!locationList}"></apex:selectOptions>
+                            </apex:selectList>&nbsp; <apex:outputText style="whitespace:nowrap;" value="Select Location and Visit Arrival Date or Enter Visit Number"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong><apex:outputText value="Visit Arrival Date"/></strong></td>  
+                        <td>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td><apex:outputText id="startDtTxt" value="From:"  />&nbsp;&nbsp;</td>
+                                    <td>
+                                        <apex:inputField value="{!visitStartDate.VisitOps__Start_Time__c}"/>
+                                        
+                                        <!--
+                                        <apex:inputText value="{!startDate}" size="10" id="startDt" onfocus="DatePicker.pickDate(false, this , false);"  onchange="applyFilterJS1()"/>&nbsp;<a onclick="setDateJs(new Date('{!currentDate}'),'{!$Component.startDt}');"><apex:outputText value="{0,date,MM/dd/yyyy}" > 
+                                        <apex:param name="date" value="{!currentDate}"  />
+                                        </apex:outputText></a> -->
+                                    </td>
+                                    <td width="10"></td>
+                                    <td><apex:outputText id="endDtTxt" value="To:"  />&nbsp;&nbsp;</td>
+                                    <td>
+                                        <apex:inputField value="{!visitEndDate.VisitOps__End_Time__c}" />
+                                        <!--
+                                        <apex:inputText value="{!endDate}" size="10" id="endDt" onfocus="DatePicker.pickDate(false, this , false);" onchange="applyFilterJS1()"   />&nbsp;<a onclick="setDateJs(new Date('{!currentDate}'),'{!$Component.endDt}');"><apex:outputText value="{0,date,MM/dd/yyyy}" > 
+                                        <apex:param name="date" value="{!currentDate}"  />
+                                        </apex:outputText></a>-->
+                                    </td> 
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <td><strong><apex:outputText value="Opportunities Created Within "  /></strong>&nbsp;&nbsp;</td>
+                    <td><apex:selectList size="1" onchange="applyFilterJS1()" value="{!selectedRange}" style="min-width:5px;">
+                        <apex:selectOptions value="{!rangeList}"></apex:selectOptions>
+                        </apex:selectList><strong><apex:outputText value=" Days of Visit"  /></strong>
+                    </td>       
+                    <tr>
+                        <td><hr/></td>  
+                        <td><hr/></td>
+                    </tr>
+                    <tr>
+                        <td><strong><apex:outputText value="Visit Number"/></strong></td>  
+                        <td><apex:inputText value="{!inputVisitNum}" size="5" onchange="applyFilterJS1()" style="min-width:160px;" />  
+                            <input type="Button" value="Generate Report"  onClick="applyFilterJS1();"/></td>
+                    </tr>
+                    <tr>
+                        <td><hr/></td>  
+                        <td><hr/></td>
+                    </tr>
+                </table>
+                </td>
+                
+                <td valign="top" style="padding-top:20px;">
+                    <div style="border:1px solid black;padding:10px;">Each row displays a maximum of 50 Opportunities.<Br/> 
+                        Opportunities displayed in the results meet the following criteria:<Br/> 
+                        1. Opportunity created date is on or after the Visit arrival date.<Br/>
+                        2. Opportunity relates to the Account listed in the row.<Br/> 
+                        3. Opportunity amount is greater than zero.<Br/> 
+                        Opportunities in gray have already been added to the visit.
+                    </div>
+                </td>
+            </tr>
+        </table>   
+        <div align="left">
+            <table>   
+                <tr><td>
+                    <apex:commandLink value="Export As Excel"  action="{!exportAsExcel}" rerender="visitTable" oncomplete="javascript:openNewTab('{!url}');" target="_blank" />&nbsp;&nbsp;&nbsp;
+                    </td>         
+                </tr>
+                <tr>
+                    <td></td><td></td>       
+                </tr>
+            </table>
+        </div>            
+        <apex:pageblock title="Visits" id="visitTable"  >
+            <apex:outputPanel rendered="{!newWrapList!=0}" id="resultData" >            
+                <div style="text-align:center;"> <apex:commandButton value="Add All selected Opportunities to Visits" action="{!saveAll}"  rerender="visitTable" rendered="{!Not(noRecords)}"/></div>
+                <apex:pageMessages id="showmsg"></apex:pageMessages>    
+                <apex:variable var="i" value="{!0}"/>
+                <apex:pageblocktable value="{!newWrapList}" var="parent"  rendered="{!(!noRecords)}" id="outerTable" >  
+                    
+                    <apex:column value="{!parent.compObj.VisitOps__Arrival_Date_Location__c}" />
+                    <apex:column headerValue="Visit Number" >               
+                        <apex:outputlink value="/{!parent.compObj.VisitOps__Visit__c}" onclick="window.top.location.href='/{!parent.compObj.VisitOps__Visit__c}'; return false;" target="_blank">{!parent.compObj.Visit__r.Name}</apex:outputlink>
+                    </apex:column>
+                    <apex:column headerValue="Account Name" value="{!parent.compObj.VisitOps__Company_Name__c}"  />
+                    <apex:column value="{!parent.compObj.Visit__r.VisitOps__VisitName__c}"  />
+                    <apex:column value="{!parent.compObj.VisitOps__VisitOwnerFormula__c}"/> 
+                    
+                    <apex:column headerValue="Opportunity Detail" >                   
+                        <apex:pageBlockTable value="{!parent.opportunityList}" var="firstChild" id="oppTable" >
+                            <apex:column headerValue="Include in Email/Visit" style="{!if(firstChild.renderOrNot=='renderNot','background-color:#D3D3D3', 'background-color:white')};width:100px;"><apex:inputcheckbox value="{!firstChild.oppCheck}"  disabled="{!If(firstChild.renderOrNot=='renderNot',true,false)}" /> </apex:column>
+                            <apex:column style="{!if(firstChild.renderOrNot=='renderNot','background-color:#D3D3D3', 'background-color:white')};">
+                                <apex:outputlink value="/{!firstChild.opp.Id}" onclick="window.top.location.href='/{!firstChild.opp.Id}'; return false;" target="_blank"><apex:outputtext value="{!firstChild.opp.Name}" style="{!if(firstChild.renderOrNot=='renderNot','background-color:#D3D3D3;text-align:left;width:80px;', 'background-color:white;text-align:left;')}"/></apex:outputlink>
+                            </apex:column>                           
+                            <apex:column headerValue="Sales Stage" style="{!if(firstChild.renderOrNot=='renderNot','background-color:#D3D3D3', 'background-color:white')};width:80px;">{!firstChild.opp.StageName}</apex:column>
+                            <apex:column headerValue="Created Date" style="{!if(firstChild.renderOrNot=='renderNot','background-color:#D3D3D3', 'background-color:white')};width:80px;">
+                                <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                    <apex:param value="{!firstChild.opp.createdDate}" />
+                                </apex:outputText>
+                            </apex:column>
+                        </apex:pageBlockTable>                   
+                    </apex:column>    
+                    <apex:column style="align:right;">
+                        <apex:commandButton value="Add To Visit" action="{!save}" rerender="visitTable" rendered="{!If(parent.btnDisplay,false,true)}" status="status" >
+                            <apex:param name="compId" value="{!parent.compObj.Id}" assignTo="{!compIdFrmVF}" /> 
+                        </apex:commandButton>
+                        <br/>                
+                        
+                        <apex:commandButton value="Send Email"  action="{!sendMail}" rendered="{!If(parent.btnDisplay,false,true)}" rerender="visitTable" status="status">                   
+                            <apex:param name="compId" value="{!parent.compObj.Id}" assignTo="{!compIdFrmVF}" />
+                            <apex:param name="VisitRank" value="{!i}" assignTo="{!VisitRank}" /> 
+                        </apex:commandButton>
+                        <apex:variable var="i" value="{!i+1}"/>
+                    </apex:column>
+                    
+                </apex:pageblocktable>            
+                <!-- next, previous and page info -->
+                <apex:outputText rendered="{!(!noRecords)}">
+                    <apex:commandLink action="{!doPrevious}"  rendered="{!hasPrevious}" value="Previous" rerender="visitTable" />
+                    <apex:outputLabel rendered="{!NOT(hasPrevious)}" value="Previous" />            
+                    <apex:outputLabel value=" (page {!page} of {!totalPages}) | showing {!startIdx} to {!endIdx} of {!totalRecords} " />            
+                    <apex:commandLink action="{!doNext}" rendered="{!hasNext}" value="Next" rerender="visitTable"  />
+                    <apex:outputLabel rendered="{!NOT(hasNext)}" value="Next" />
+                </apex:outputText>
+            </apex:outputPanel>
+        </apex:pageblock>         
+        <apex:actionFunction name="applyFilter" action="{!filter}" rerender="visitTable" status="status"/>
+    </apex:form>
+
+</apex:page>

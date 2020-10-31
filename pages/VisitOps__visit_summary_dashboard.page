@@ -1,0 +1,166 @@
+<apex:page controller="VisitOps.VisitSummaryCtrl">
+<div style="height: 30px;font-size: 20px;">Visit Summary Dashboard</div>	
+	<script>
+		function renderChartTip(klass, item) {
+		    var m = item.storeItem;
+		    this.setTitle(m.get('name'));
+		    this.update(''
+		            + '<table>'
+		            + '<tr><td><b>No of Innovations</b>&nbsp;</td><td>' + m.get('data') + '</td></tr>'
+		            + '<tr><td><b>Money Saved</b>&nbsp;</td><td>' + m.get('savedMoney') + '</td></tr>'
+		            + '<tr><td><b>Hours Saved</b>&nbsp;</td><td>' + m.get('hoursSaved') + '</td></tr>'
+		            + '</table>'
+		            );
+		}
+		</script>
+
+    <head>
+        <style>
+            td.pbTitle{
+                width: 100% !important;
+                text-align: center;
+                /*background-color: rgb(205, 201, 201);*/
+                background-color: rgb(221, 221, 221);
+                padding: 5px 0px !important;
+                display: table-cell !important;
+            }
+            h2.mainTitle{
+                /*font-size: 90% !important;*/
+                font-family : sans-serif !important;
+                font-size: medium;
+                font-stretch: extra-condensed;
+            }
+            div.apexp{
+                /*margin-top: 15px !important;*/
+            }
+            div.pbHeader td{
+                display:none;
+            }
+            
+        </style>
+    </head>
+   
+    
+    <apex:form id="theForm">
+        <apex:actionfunction name="testAF" action="{!getnewFilter}" rerender="pbid,pbid1,pbid2,pbid3,pbid4,pbid5,pbid6,pbid7,pbid8,pbid9,pbid10,pbid11,pbid111,pbidLOB,pbidClassification"/>
+        <apex:panelGrid columns="4" cellpadding="20%" cellspacing="20%" style="margin-top: 15px;">
+            <font> <b>Filter By : Location</b></font>
+            <apex:selectList value="{!locName}" multiselect="false" size="1" onChange="testAF();">
+            <apex:selectOptions value="{!AvailableLocations}" />
+            </apex:selectList>
+            </apex:panelGrid>
+       <apex:panelGrid columns="3">
+       
+		     <apex:pageBlock id="pbid111">
+		            <apex:actionfunction name="testAF1" action="{!redirectRpt11}"/>
+		            <analytics:reportChart reportId="{!reportId11}" filter="{!newFilter}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            <apex:pageBlock id="pbid">
+            <apex:actionfunction name="testAF1" action="{!redirectRpt}"/>
+            <analytics:reportChart reportId="{!reportId}" filter="{!newFilter}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid3">
+            <apex:actionFunction name="testAF3" action="{!redirectRpt2}"/>
+            <analytics:reportChart reportId="{!reportId2}" filter="{!newFilter1}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid7">
+             <iframe src="/apex/opportunitiesTouched?opportunitiestouched=opportunitiestouched&locName={!locName}" id="iFrame6" style="width:100%;height:250px;"/>
+            </apex:pageBlock>
+            
+            <!-- Opportunity Sales Stage -->
+            <apex:pageBlock id="pbid8">
+            <apex:actionFunction name="testAF3" action="{!redirectRpt6}"/>
+            <analytics:reportChart reportId="{!reportId5}" filter="{!newFilter2}" size="small" cacheResults="false"/>
+			</apex:pageBlock>
+			
+			<!-- Visits By Line of Business -->
+            <apex:pageBlock id="pbidLOB">
+            <apex:actionFunction name="testAF3" action="{!redirectRpt8}"/>
+            <analytics:reportChart reportId="{!reportId8}" filter="{!newfilter3}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+			
+            <apex:pageBlock id="pbid1">
+             <iframe src="/apex/UniqueAccounts?uniqueAccspage=uniqueAccs&locName={!locName}" id="iFrame5" style="width:100%;height:250px;"/>
+            </apex:pageBlock>
+            
+            <!-- <apex:pageBlock id="pbid1">
+            <apex:actionfunction name="testAF2" action="{!redirectRpt1}"/>
+            <analytics:reportChart reportId="{!reportId1}" filter="{!newFilter1}" size="small" />
+            </apex:pageBlock> -->
+            
+            
+            
+            <!-- <apex:pageBlock id="pbid4" title="Cancellations">
+                <apex:chart height="300" width="400" data="{!cancellationData}">
+                    <apex:axis type="Numeric" position="left" fields="name"
+                        title="visits" grid="true" minimum="0"/>                             
+                    <apex:axis type="Category"  position="bottom" fields="data"       
+                        title="Months">        
+                    </apex:axis>       
+                    <apex:barSeries orientation="horizontal" title="Cancellations"        
+                        axis="left" xField="data" yField="name"/>                              
+                </apex:chart>            
+            </apex:pageBlock> -->	
+
+            
+            <!-- Attendees By type -->
+            <apex:pageBlock id="pbid6">
+            <apex:actionFunction name="testAF3" action="{!redirectRpt12}"/>
+            <analytics:reportChart reportId="{!reportId12}" filter="{!newfilter4}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+            <!--<apex:pageBlock id="pbid6">
+             <iframe src="/apex/No_of_attendee_report?noofattendeespage=noofattendees&locName={!locName}" id="iFrame1" style="width:100%;height:250px;"/>
+            </apex:pageBlock>-->
+            
+            <!-- <apex:pageBlock id="pbid7">
+            <apex:actionFunction name="testAF3" action="{!redirectRpt5}"/>
+            <analytics:reportChart reportId="{!reportId4}" filter="{!newFilter2}" size="small"/>
+            </apex:pageBlock> -->
+            
+            
+			<!-- Visits By Classification -->
+            <apex:pageBlock id="pbidClassification">
+            <apex:actionFunction name="testAF3" action="{!redirectRpt9}"/>
+            <analytics:reportChart reportId="{!reportId9}" filter="{!newfilter3}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+			
+        	<apex:pageBlock id="pbid9">	
+            <iframe src="/apex/Survey_Response_Rate_report?surveyresponsepage=surveyresponserate&locName={!locName}" id="iFrame7" style="width:100%;height:250px;"/>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid4">
+             <iframe src="/apex/Cancelation?cancellationPage=Cancellation&locName={!locName}" id="iFrame2" style="width:100%;height:250px;"/>
+            </apex:pageBlock>
+            
+            <!-- Cancellation - Reasons for Cancellation -->
+            <apex:pageBlock id="pbid5">
+            <apex:actionFunction name="testAF3" action="{!redirectRpt4}"/>
+            <analytics:reportChart reportId="{!reportId3}" filter="{!newFilter}" size="small" cacheResults="false"/>
+            </apex:pageBlock>
+
+            
+            <!-- <apex:pageBlock id="pbid10" title="Opportunities Sales Stage when Visit submitted">
+                <apex:chart height="300" width="400" data="{!pieData}">
+                     <apex:pieSeries labelField="name" dataField="data" tips="true" >
+                     	<apex:chartLabel display="none" />
+                     </apex:pieSeries>
+                     <apex:legend position="right"/>
+                </apex:chart>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="pbid11" title="Visit Team Innovation Snapshot">
+            <apex:chart height="300" width="400" data="{!innovationDashBoardData}">
+		        <apex:pieSeries donut="50" dataField="data" labelField="name">
+		            <apex:chartTips height="75" width="200" rendererFn="renderChartTip"/>
+		            <apex:chartLabel display="none" />
+		        </apex:pieSeries>
+		        <apex:legend position="right"/>
+		    </apex:chart>
+            </apex:pageBlock> -->
+            
+            </apex:panelGrid>
+    </apex:form>
+  
+</apex:page>

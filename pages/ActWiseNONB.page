@@ -1,0 +1,228 @@
+<apex:page standardController="Quote" extensions="ActWiseNONBController" renderAs="pdf" showHeader="false" sidebar="false" applyHtmlTag="false" >
+<apex:pageMessages ></apex:pageMessages>                 
+    <head> 
+        <title>Act Wise Notice of New Business Form</title>
+    	<style>  
+             <!-- If using an external stylesheet, upload NONBStyle.css as static resource -->
+    		 <apex:stylesheet value="{!$Resource.ActWiseNONBStyle}"/> 					            
+    	</style>
+    </head>    
+          
+    <!-- Add logo from the static resource -->
+    <apex:image value="{! $Resource.ActWiseNONBFormLogo }"/>                          
+            <p>
+                <span class="section">                
+                    Section A: Employer Information, Contacts, and Products                   
+            	</span>
+            </p>                         
+            
+    		<table class="contacts">
+                <tr>
+                    <th>
+                    	<apex:outputLabel >
+            				Employer Name
+            			</apex:outputLabel>                    
+                    </th>
+                    <th>
+                    	<apex:outputLabel >
+                            Group Number 
+            			</apex:outputLabel>
+                    </th>                    
+                </tr>
+                <tr>
+                    <td>
+                    	<apex:outputField value="{!Quote.Account.Name}"/>
+                    </td>
+                    <td>
+                    	<apex:outputText value="{!Quote.GroupNumber__r.Name}"/>
+                    </td>                    
+                </tr>
+    		</table>
+    		<br/>
+    		<table class="contacts">  
+   				<tr>
+                	<th>
+                    	<apex:outputLabel >Employer Address
+            			</apex:outputLabel>	
+                    </th>
+                    <th>
+                        <apex:outputLabel >City
+            			</apex:outputLabel>
+                    </th>
+                    <th>
+                        <apex:outputLabel >State
+            			</apex:outputLabel>
+                    </th>
+                    <th>
+                        <apex:outputLabel >ZIP
+            			</apex:outputLabel>
+                    </th>
+                </tr>
+                <tr>
+                	<td>
+                    	<apex:outputText value="{!Quote.Account.BillingStreet}"/>
+                    </td>
+                    <td>
+                    	<apex:outputText value="{!Quote.Account.BillingCity}"/>
+                    </td>
+                    <td>
+                        <apex:outputText value="{!Quote.Account.BillingState}"/>            
+                    </td>
+                    <td>
+                    	<apex:outputText value="{!Quote.Account.BillingPostalCode}"/>
+                    </td>
+                </tr>
+    		</table>
+    		
+            <br/>
+         <apex:panelGrid columns="1" width="100%">
+            <apex:outputLabel >
+            	<span class="font10" style="color: black;">
+                     Number of Benefit Eligible Employees
+                </span> 
+            </apex:outputLabel>       
+       </apex:panelGrid>      
+       <apex:panelGrid columns="1" width="100%">
+           
+        	<apex:outputText value="{!Quote.Account.Eligible_Employees__c}"/>
+               
+        </apex:panelGrid>            
+		<p>
+            <span class="section">    
+        		Section B: Group Segment and Plan
+            </span>
+        </p>
+            
+    	<table class="contacts">
+            <tr>
+            	<th>
+                    Segment
+                </th>
+                <th>
+                    Plan
+                </th>
+                <th>
+                    Group
+                </th>
+            </tr>
+            <tr>
+            	<td>
+                    <apex:outputText value="{!Quote.Account.Anthem_Entity__c}"/> 
+                </td>
+                <td>
+                    <apex:outputText value="{!Quote.Account.Situs_State_Abbrev__c}"/> 
+                </td>
+                <td>
+                    <apex:outputText value="{!Quote.Account.Pooled_Non_Pooled__c}"/>
+                </td>
+            </tr>            
+    	</table>	      
+        <p>
+            <span class="section">    
+        		Section C: Brand
+            </span>
+        </p>   	
+            <apex:outputLabel >
+            	<span class="font10" style="font-weight: bold; color: black;">
+                    Brand
+                </span>
+            </apex:outputLabel>
+    		<br/>
+            <span class="font10" style="color: black;">
+                <apex:outputField value="{!Quote.Account.Branding__c}"/>
+    		</span>
+        <p>
+            <span class="section">    
+        		Section D: Anthem Contact Information
+            </span>
+        </p>   
+    
+    		<table class="contacts">
+    		<apex:repeat value="{!Members}" var="m">                
+                    <tr>
+                        <td>
+                        	<apex:outputText value="{!left(m.TeamMemberRole,18)}"/>    
+                        </td> 
+                        <td>
+                        	<apex:outputText value="{!m.User.Name}"/>    
+                        </td>                                              
+                        <td>
+                        	<apex:outputText value="{!m.User.Email}"/>
+                        </td>                        
+                    </tr>                       
+    		</apex:repeat>
+            </table>   
+    
+          <p>
+        	<span class="section">
+            	Section E: Products 
+            </span>
+    	  </p>
+           <!--  <table class="products">
+    			<apex:repeat value="{!Products}" var="p">   
+                    <tr>
+                        <td>
+                            <apex:outputText value="{!p.RecordType__c}"/>
+                        </td>
+                        <td>
+                            <apex:outputText value="{!IF(p.Is_New_Business__c, 'New Business', ' ')}"/>
+                        </td>
+                    </tr>
+                </apex:repeat>
+    		</table>     -->
+            <apex:pageBlock >
+            	<apex:pageBlockTable value="{!Products}" var="a"/>	                        
+            </apex:pageBlock>
+                
+                <table class="products">
+                    <tr>
+                        <td>Health Savings Account (HSA)</td>
+                        <td align="center">{!IF(isHSA, 'YES', 'NO')}</td>
+                        <td align="center">{!tobHSA}</td>
+                    </tr>
+                    <tr>
+						<td>Health Reimbursement Arrangement (HRA)</td>
+                        <td align="center">{!IF(isHRA, 'YES', 'NO')}</td> 
+                        <td align="center">{!tobHRA}</td>
+                    </tr>
+                    <tr>
+						<td>Flexible Spending Account (FSA)</td>
+                        <td align="center">{!IF(isFSA, 'YES', 'NO')}</td>   
+                        <td align="center">{!tobFSA}</td>
+                    </tr>
+                    <tr>
+						<td>Limited Purpose FSA (LPFSA)</td>
+                        <td align="center">{!IF(isLPFSA, 'YES', 'NO')}</td>  
+                        <td align="center">{!tobLPFSA}</td>
+                    </tr>
+                    <tr>
+						<td>Dependent Care Account (DCA)</td>
+                        <td align="center">{!IF(isDCFSA, 'YES', 'NO')}</td> 
+                        <td align="center">{!tobDCFSA}</td>
+                    </tr>
+                    <tr>
+						<td>Transit and Parking</td>
+                        <td align="center">{!IF(isCommuter, 'YES', 'NO')}</td>	
+                        <td align="center">{!tobCommuter}</td>
+                    </tr>                    
+                </table>              
+    		<br/>                
+        	<br/>
+            <apex:panelGrid columns="2" width="50%">
+            	<apex:outputLabel >
+                    <span class="font10" style="color: black;">
+                        Effective Date:
+                    </span>
+                </apex:outputLabel>        
+                <apex:outputText value="{0,date,MM/dd/yyyy}" >
+    				<apex:param value="{!Quote.Opportunity_Effective_Date__c }" />
+				</apex:outputText>                
+            </apex:panelGrid>       	        
+    <br/>
+    <br/>
+	<br/>
+    <br/>
+    <br/>
+	<!-- Add footer image from the static resource -->
+    <apex:image value="{! $Resource.ActWiseNONBFormFooter }"/>    
+</apex:page>

@@ -1,0 +1,91 @@
+<apex:page standardController="VisitOps__Presenter_Agenda_Link__c"  extensions="VisitOps.SelectingPresenters" showHeader="false">
+<!--div style="over-flow:auto; width:1500px; height:10px"-->
+<div style="height:10px">
+</div>
+<apex:form id="table1" style="width:100%">
+<apex:styleSheet value="{!$Resource.VisitOps__survey_css}"/>
+<apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jquery-1.11.1.min.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/styles.css')}" />
+<apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/functions.js')}"/>          
+                                    <div class="bPageBlock">
+                                        <div class="pbHeader">
+                                            <table cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="pbTitle">
+                                                          <h3 align="center">Select Presenters</h3>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                             </table>
+                                        </div>     
+ <div align="center">
+        <apex:commandButton value="Send Survey" action="{!sendSurvey}" status="progressIndicator" reRender="table1" disabled="{!flag1}" oncomplete="showAlert({!NOT(errorOccured)},{!recepientsAvailable});" />
+        <apex:commandButton value="Save" action="{!save}" status="progressIndicator"  reRender="table1"/>
+        <apex:commandButton value="Cancel"  onClick="window.close();"/> 
+</div>               
+<br/>
+ <apex:pageMessages id="pageMsgId"/>
+<div class="pbBody">        
+<table cellpadding="0" cellspacing="0" class="list">
+    <tr class="headerRow">
+           <th>Name</th>
+           <th>Email</th>
+           <th>Survey <br/><apex:inputCheckbox onclick="checkAll1(this,'checkedone1')"/></th>
+           <th>Action</th>
+         <!--   <th style="width: 96px;">Post Survey</th> -->    
+    </tr>
+  <apex:repeat value="{!rwe}" var="p" > 
+    <tr class="dataRow">
+       <td><apex:outputText value="{!p.pal.VisitOps__Presenter_Name__c}"/></td>  
+        <td><apex:outputText value="{!p.pal.VisitOps__Email__c}"/></td>  
+       <td><apex:inputCheckBox value="{!p.pal.VisitOps__Survey_Needed__c}" id="checkedone1" disabled="{!p.pal.VisitOps__Survey_Sent__c}" /></td>  <!-- -->
+       <td><apex:commandButton value="Send Survey" action="{!sendSurveyIndex}" status="progressIndicator" reRender="table1" oncomplete="showAlert({!NOT(errorOccured)});">
+           <apex:param name="presenterIndex" value="{!p.rowNo}" assignTo="{!rowIndex}"/></apex:commandButton></td>
+   </tr>
+  </apex:repeat>  
+</table>
+</div> 
+</div> 
+<center><br/><br/>
+        <apex:commandButton value="Send Survey" action="{!sendSurvey}" status="progressIndicator" reRender="table1" oncomplete="showAlert({!NOT(errorOccured)},{!recepientsAvailable});" disabled="{!flag1}"/>
+        <apex:commandButton value="Save" action="{!save}"  status="progressIndicator"  reRender="table1"/> 
+        <apex:commandButton value="Cancel" action="{!cancel}"  onClick="window.close();"/> 
+</center>
+<script type="text/javascript">
+
+function showAlert(isSuccessful) {
+    if(isSuccessful==true || isSuccessful=='true') {
+        alert('Survey sent successfully');
+    }
+}
+
+function showAlert(isSuccessful, recepientsAvailable) {
+    if((recepientsAvailable==false || recepientsAvailable=='false') && (isSuccessful==true || isSuccessful=='true')) {
+        alert('No recepients selected for sending Survey');
+    }
+    else if(isSuccessful==true || isSuccessful=='true') {
+        alert('Survey sent successfully');
+    }
+}
+
+ function checkAll1(cb,cbid)
+        {
+            AllcheckPostDis = false;
+            fewDis = false;
+            var inputElem = document.getElementsByTagName("input");                    
+            for(var i=0; i<inputElem.length; i++)
+            {            
+                 if(inputElem[i].id.indexOf(cbid)!=-1){ 
+                   if(!inputElem[i].disabled){
+                     fewDis = true;                                      
+                    inputElem[i].checked = cb.checked;
+                    }
+                }
+            }
+        }
+ </script>
+</apex:form>
+<!--/div-->
+ <c:AjaxStatusIndicator statusText="Please Wait..."/>
+</apex:page>

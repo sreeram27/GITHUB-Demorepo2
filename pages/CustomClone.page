@@ -1,0 +1,228 @@
+<apex:page controller="CustomCloneController" showHeader="false" title="{!objectTypeName + ' Cloner'}" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+             <meta charset="utf-8" />
+             <meta http-equiv="x-ua-compatible" content="ie=edge" />
+             <title>{!objectTypeName + ' Cloner'}</title>
+             <meta name="viewport" content="width=device-width, initial-scale=1" />
+             <!-- Import the Design System style sheet -->
+             <apex:slds />
+             <apex:includeScript value="{!URLFOR($Resource.UILibraries ,'/js/jquery-3.4.1.min.js')}"/>
+        </head>
+        <body>
+            <style>
+            .msgIcon {
+                display: none!important
+              }
+              .customMessage * {
+                color: #fff!important
+              }
+              .customMessage {
+                margin: 5px 0!important;
+                max-width: 1280px;
+                opacity: 1!important;
+                width: 100%;
+                font-size: 12px;
+                border: 0px;
+                padding-left: 10px;
+              }
+              .message {
+                opacity: .1
+              }  
+          </style> 
+             <div class="slds-scope">
+                 <article class="slds-card">
+                  <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                      <div class="slds-media__figure">
+                        <span title="description of icon when needed" class="slds-icon_container slds-icon-standard-account">
+                          <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/standard-sprite/svg/symbols.svg#avatar" />
+                          </svg>
+                        </span>
+                      </div>
+                      <div class="slds-media__body">
+                        <h2>
+                          <a title="{!objectTypeName} Details" class="slds-card__header-link slds-truncate" href="javascript:void(0);">
+                            <span class="slds-text-heading--medium slds-text-title_caps slds-text-color_success">{!objectTypeName} Details</span>
+                          </a>
+                        </h2>
+                      </div>
+                    </header>
+                    <div class="slds-no-flex">
+                    </div>
+                  </div>
+                  <div class="slds-card__body slds-card__body_inner">
+                      <apex:actionStatus id="status">
+                        <apex:facet name="start">
+                            <c:spinner spinner_name="wave"  spinner_color="red" ObjectTypeName="{!objectTypeName}"/>
+                        </apex:facet>
+                      </apex:actionStatus>
+                      <apex:form id="formId">
+                              <script>
+                                  var j$=jQuery.noConflict();   
+                                  j$(document).ready(function(){
+                                    overridePageMessages();
+                                  });
+                                  function overridePageMessages(){
+                                    var textureEffect = '';
+                                    textureEffect = 'slds-theme--alert-texture';
+                                    j$('.warningM3').addClass('slds-notify slds-notify--toast slds-theme--warning customMessage '+textureEffect);
+                                    j$('.confirmM3').addClass('slds-notify slds-notify--alert slds-theme--success customMessage '+textureEffect);
+                                    j$('.errorM3').addClass('slds-notify slds-notify--alert slds-theme--error customMessage '+textureEffect);
+                                    j$('.infoM3').addClass('slds-notify slds-notify--toast customMessage '+textureEffect);
+                                
+                                    j$('.errorM3').removeClass('errorM3');
+                                    j$('.confirmM3').removeClass('confirmM3');
+                                    j$('.infoM3').removeClass('infoM3');
+                                    j$('.warningM3').removeClass('warningM3');
+                                  }
+                                   function selectAllCheckboxes(obj,receivedInputID){
+                                        var divWarning = document.getElementById("divWarning");
+                                        divWarning.style.display = obj.checked ? "block" : "none";
+                                        var inputCheckBox = document.getElementsByTagName("input");                  
+                                        for(var i=0; i<inputCheckBox.length; i++){          
+                                            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){                                     
+                                                inputCheckBox[i].checked = obj.checked;
+                                            }
+                                        }
+                                    }
+                              </script>
+                            <!-- Modal -->
+                            <apex:outputPanel id="successModalPanel" rendered="{!clonedRecordID!=NULL}">
+                                <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open slds-modal--medium">
+                                    <div class="modal-container slds-modal__container">
+                                        <!-- Modal Header -->
+                                        <div class="slds-modal__header">
+                                            <apex:commandLink styleClass="slds-button slds-modal__close slds-button--icon-inverse" action="{!GoToClonedRecord}" title="Close">
+                                                <svg class="slds-button__icon slds-button__icon--large" aria-hidden="true">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                                                </svg>
+                                                <span class="slds-assistive-text">Close</span>
+                                            </apex:commandLink>
+                                            <h2 id="header43" class="slds-text-heading--medium">{!objectTypeName} Created</h2>
+                                        </div>
+                                        <!-- / Modal Header -->
+                                        <!-- Modal Content -->
+                                        <div class="slds-modal__content slds-p-around--medium">
+                                        	{!IF(NOT(ISNULL(configSetting.Redirect_to_Clone_Record_Confirm_Dialog__c)),configSetting.Redirect_to_Clone_Record_Confirm_Dialog__c,'Click OK to navigate to the cloned record')}
+                                        </div>
+                                        <!-- / Modal Content -->
+                                        <!-- Modal Footer -->
+                                        <div class="slds-modal__footer">
+                                            <apex:commandLink target="_top" styleClass="btn slds-button slds-button--brand" action="{!GoToClonedRecord}" value="OK"/>
+                                        </div>
+                                        <!-- / Modal Footer -->
+                                    </div>
+                                 </div>
+                                 <!-- / Modal -->
+                                 <div class="slds-backdrop slds-backdrop--open"></div>
+                            </apex:outputPanel> 
+                          <apex:actionFunction name="runOnLoad" action="{!processConfigOptions}" rerender="formId,successModalPanel" status="status" oncomplete="km_spin(false)"/>
+                              <div class="slds-form slds-form_compound">
+                                    <apex:outputPanel id="MsgPanel" rendered="{!AND(messages!=NULL, messages.size>0)}">
+                                        <fieldset class="slds-box slds-theme--default slds-container--fluid">
+                                            <apex:pageMessages escape="false"/>
+                                        </fieldset>
+                                    </apex:outputPanel>
+                                    <fieldset class="slds-box slds-theme_alert-texture slds-container--fluid">
+                                        <legend id="Parent" class="slds-text-heading--small slds-p-vertical--medium">{!objectTypeName} View Only Fields</legend>
+                                        <div class="slds-form-element"> 
+                                            <div class="slds-form-element__group">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size_1-of-2">    
+                                                        <apex:outputLabel styleClass="slds-form-element__label">Record Id</apex:outputLabel>
+                                                    </div>
+                                                    <div class="slds-form-element slds-size_1-of-2">    
+                                                        <apex:outputText value="{!objectID}" styleClass="slds-input"/>  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slds-form-element"> 
+                                            <div class="slds-form-element__group">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size_2-of-2">
+                                                        <div style="padding:0.5rem;background:#16325c">
+                                                            <div class="slds-text-color_inverse">All the accessible {!objectTypeName} fields will be cloned (A new {!objectTypeName} record will be generated)</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="slds-box slds-theme_alert-texture slds-container--fluid">
+                                        <legend id="childElements" class="slds-text-heading--small slds-p-vertical--medium">Additional {!objectTypeName} elements to clone</legend>
+                                        <div id="divWarning" style="display: none" class="slds-form-element"> 
+                                            <div class="slds-form-element__group">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size_2-of-2"> 
+                                                        <div class="slds-text-body_regular slds-text-color_error">Selecting too many child elements can cause the process to fail. Please choose only the necessary ones</div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slds-form-element"> 
+                                            <div class="slds-form-element__group">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size_2-of-2"> 
+                                                         <apex:dataTable value="{!choicesChildsObjects}" var="choice" styleClass="slds-table slds-table--bordered slds-table--striped">
+                                                               <apex:column >
+                                                                    <apex:facet name="header">
+                                                                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                                                                    </apex:facet>
+                                                                    <apex:inputCheckbox value="{!choice.isSelected}" id="inputId"/>
+                                                                </apex:column>
+                                                                <apex:column headervalue="Child Object" value="{!choice.childObjectLabel}"/>
+                                                                <apex:column headervalue="Child Object" value="{!choice.childObjectName}"/>
+                                                         </apex:dataTable>
+                                                    </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="slds-form-element"> 
+                                            <div class="slds-form-element__group">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size_2-of-2"> 
+                                                        <div class="slds-text-body_regular slds-text-color_success">Select the Additional {!objectTypeName} elements you wish to clone and click the Clone Button</div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset> 
+                                      <fieldset class="slds-box slds-theme--default slds-container--fluid">
+                                            <legend id="btnPanelTop" class="slds-text-heading--small slds-p-vertical--medium"></legend> 
+                                            <div class="slds-p-horizontal--small slds-m-top--medium slds-size--1-of-1 slds-align--absolute-center">
+                                                <div class="slds-button-group" role="group">
+                                                <apex:commandLink target="_top" 
+                                                    styleClass="btn slds-m-top_xx-small slds-button slds-button_brand" 
+                                                    style="margin:0 auto;" 
+                                                    action="{!processClone}" 
+                                                    value="{! 'Clone ' + objectTypeName}"
+                                                    rerender="formId,editablePanel,errorMsgPanel"
+                                                    status="status" oncomplete="overridePageMessages();"/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                <apex:commandLink target="_top"
+                                                    immediate="true"              
+                                                    styleClass="btn slds-m-top_xx-small slds-button slds-button_neutral" 
+                                                    style="margin:0 auto;" 
+                                                    action="{!Cancel}"  
+                                                    value="Back"/>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                </div>
+                        </apex:form> 
+                     </div>
+                </article>
+             </div>
+        </body>
+    </html>
+    <script>
+	    window.onload=run();
+    	function run(){
+                km_spin(true);
+                runOnLoad();
+            }
+    </script>
+</apex:page>

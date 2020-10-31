@@ -1,0 +1,49 @@
+<apex:page controller="VisitOps.VisitSummaryCtrl" showHeader="false" sidebar="false">
+ 
+<apex:form >
+<div>
+     <div class= "header"> # of Attendees
+   
+     </div>
+      
+      <table width="100%" border="1">
+          <tr >
+              <td style="background:#A9D0F5;"><i><b>Total # of Attendees :</b></i></td>
+
+              <td><apex:outputLabel value="{!noOfAttendee }"/></td>
+          </tr>
+          <tr >
+              <td style="background:#A9D0F5;"><i><b># of Customers  :</b></i></td>
+
+              <td><apex:outputLabel value="{!noOfcustomer}"/></td>
+          </tr>
+          
+          <tr >
+              <td style="background:#A9D0F5;"><i><b> # of Internal Attendees  :</b></i></td>
+
+              <td><apex:outputLabel value="{!noOfUser}"/></td>
+          </tr>
+          
+      </table>
+        
+</div> 
+ </apex:form> 
+ 
+ <style>
+ .header {
+        font-style: oblique;
+        display: block;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        background-color: rgb(221, 221, 221);
+        padding: 5px 0px !important;
+        width: 100% !important;
+        text-align: center;
+     }
+   
+ </style>
+
+</apex:page>

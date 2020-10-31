@@ -1,0 +1,33 @@
+<apex:page showHeader="false" sidebar="false">
+<apex:stylesheet value="{!URLFOR($Resource.SLDSResource, 'assets/styles/salesforce-lightning-design-system.css')}"/>
+ <style>
+      .disabled {
+           pointer-events: none;
+           cursor: default;
+           background-color: #cccccc;
+            border-color:#cccccc;
+        }
+ </style>
+ <script> 
+     function openURL(){
+         window.open("https://www22.anthem.com/ProducerToolbox/census/sg/simplecensus.xlsb");
+     }
+ </script>
+    <apex:form >
+        
+
+        
+       <!--<apex:pageBlock id="pb">-->
+            
+            
+            <apex:commandLink styleClass="slds-button slds-button--brand slds-not-selected"  value="Download WGS Enrollment Census Template" onclick="openURL()"/>
+              
+            
+            
+            
+            
+       <!--</apex:pageBlock>-->
+        
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,74 @@
+<apex:page showHeader="false" contentType="{!contentType}" controller="VisitOps.PrintAttendeeNameBadgesController" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" cache="true">
+    <html>
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <meta charset="utf-8"/>
+        <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jquery-1.11.1.min.js')}"/>
+        <head>
+            <style>
+                * {
+                font-family: Arial, sans-serif;
+                }
+                body {
+                background: #fafaf9;
+                }
+                 @page WordSection1{
+                    size:8.5in 11in;
+                    margin: 1.06in .75in 1.06in .75in;
+                    mso-page-orientation: portrait;
+                    mso-header-margin: 0in;
+                    mso-footer-margin: 0in;
+                    mso-paper-source:0;
+                    mso-vertical-page-align: top;
+                    background-color: #ccc;
+                }
+                div.WordSection1{
+                    page:WordSection1;
+                }
+
+            </style>
+
+
+        </head>
+        <div class="WordSection1">
+
+        <table cellpadding="2" cellspacing="0" width="100%">
+
+
+        <apex:repeat value="{!finalMapOfAttendee}" var="key">
+            <tr>
+                 <apex:repeat value="{!finalMapOfAttendee[key]}" var="attendeeList">
+               <td>
+
+                <table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; background: #fff; width: 332px; height: 2.25in; text-align: left; float: left; vertical-align: top;">
+                    <tr>
+                        <td style="font-size: 14pt; height: 95px; padding: 20px 20px 39px 20px; box-sizing: border-box; vertical-align:top;">
+                            <div style="font-size: 24pt; font-family: Arial, sans-serif; padding-bottom: 10px; font-weight: bold;">{!attendeeList.FirstName}</div>
+                            <div style="font-size: 18pt; font-family: Arial, sans-serif; padding-bottom: 10px; font-weight: normal;">{!attendeeList.LastName}</div>
+                            <div >{!attendeeList.Company}</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0px 20px 20px 20px;height: .35in;">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td><img  src="{!RightCompanyLogoUrl}" height=".4in" width="auto" /></td>
+                                    <td style="font-family: Arial, sans-serif; font-size: 19pt; text-align: right; color:#fff;"></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+                </apex:repeat>
+
+            </tr>
+        </apex:repeat>
+
+        </table>
+
+        </div>
+
+    </html>
+</apex:page>

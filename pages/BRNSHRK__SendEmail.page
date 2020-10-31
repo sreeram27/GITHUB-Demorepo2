@@ -1,0 +1,311 @@
+<apex:page controller="BRNSHRK.SendEmailController" action="{!initPage}" standardStylesheets="true" showHeader="true">
+
+<apex:sectionHeader title="Brainshark for Salesforce" subtitle="Send an Email" rendered="{!IF(uiTheme='Theme4d',false,true)}"/>
+
+<apex:stylesheet value="{!staticHost}/s2/Styles/search.css" />
+<apex:stylesheet value="{!staticHost}/s2/Styles/search-mobile.css" />
+<apex:stylesheet value="{!staticHost}/s2/Styles/bskux.css" />
+<apex:stylesheet value="{!staticHost}/s2/Styles/sendEmail.css" />
+
+<div id="send-email-page" class="js-send-email-page">
+<apex:form id="form" onsubmit="return false;" >
+<div class="bsk-ux bsk-page">
+<div class="js-templates"></div>
+<div class="modal fade js-sending-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Sending your email! Please wait.</p>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+<apex:pageMessages />
+
+
+<div id="js-alert-messages-container" class="bsk-ux bsk-page bsksfdc">
+</div>
+
+<script type="text/javascript">
+
+</script>
+
+<apex:pageBlock rendered="{!IF(uiTheme='Theme4d',false,true)}">
+    <div class="bsksfdc">
+    <apex:pageBlockSection columns="1">
+        <apex:pageBlockSectionItem >
+        
+            <apex:outputLabel value="To" styleClass="js-field-required"/>
+            <apex:outputPanel >
+                <div class="bsk-page js-email-to-section">
+                    <span class="text-to js-text-to"></span>
+                    <span class="bsk-ux bsk-page bsk-icon-wrapper"><i class="glyph glyph-search glyph-primary cursor js-email-to-search" title="Lookup Contacts & Leads"></i></span>
+                </div>
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Folder"/>
+            <apex:outputPanel >
+                <div class="js-dropdown-template-section dropdown-template-section"></div>
+                <span class="bsk-ux bsk-page bsk-icon-wrapper"><i class="js-template-info-circle"></i></span>
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="CC"/>
+            <apex:outputPanel >
+                <apex:inputText id="txtCC" value="{!cc}" styleClass="email-field js-txt-cc"/>
+                <span class="bsk-ux bsk-page bsk-icon-wrapper"><i class="js-cc-info-circle"></i></span>
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Additional To"/>
+            <apex:outputPanel >
+            <div class="bsk-page email-field email-additional-to-section">
+                <div class="h5 pull-left margin-top-zero js-email-additional-to-section">
+                    <span class="bsk-ux bsk-page bsk-icon-wrapper"><i class="glyph glyph-search glyph-primary pull-left cursor js-email-additional-to-search" title="Lookup Contacts & Leads"></i></span>
+                </div>
+            </div>
+            <span class="bsk-ux bsk-page bsk-icon-wrapper"><i class="js-additional-to-info-circle"></i></span>
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Subject" styleClass="js-field-required"/>
+            <apex:outputPanel >
+                <apex:inputText id="txtSubject" value="{!subject}" required="true" styleClass="email-field js-txt-subject"/>
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Attached"/>
+            <div class="bsk-page email-field email-additional-to-section">
+                <div class="h5 pull-left margin-top-zero attached-files js-attached-files"></div>
+            </div>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Message" styleClass="js-field-required"/>
+            <apex:outputPanel >
+                <div class="txt-message-area add-footer js-txt-message-area">
+                    <textarea id="messageTextarea" name="messageTextarea" class="text-message-area js-txt-message">{!message}</textarea>
+                    <div class="bsk-page bsk-ux">
+                        <div class="panel panel-default panel-footer container-fluid">
+                            <div class="row button-container">
+                                <div class="col-xs-9">
+                                    <p class="text-muted">Text in gray boxes are for template purposes. "Preview Email" to see how this will actually look.</p>
+                                </div>
+                                <div class="clearfix hidden-md hidden-lg"></div>
+                                <div class="col-xs-3 text-right">
+                                    <button class="btn btn-primary js-launch-email-preview">Preview Email</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bsksfdc"><div class="locked-template-area js-locked-template-area hide"></div></div>
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel />
+            <apex:outputPanel >
+                <apex:inputCheckbox id="bccMeChx" value="{!bccMe}" styleClass="js-chk-cc-me" />
+                <apex:outputLabel for="bccMeChx" value="Send me a copy" />
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel />
+            <apex:outputPanel >
+                <apex:inputCheckbox id="viewReceipt" value="{!viewReceipt}" styleClass="js-chk-view-receipt" />
+                <apex:outputLabel for="viewReceipt" value="Send me a view receipt when recipient views a presentation" />
+            </apex:outputPanel>
+        </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+    </div>
+    <apex:pageBlockButtons >
+        <apex:commandButton value="Send" styleClass="js-btn-send js-action-button" />
+        <apex:commandButton value="Cancel" immediate="true" styleClass="js-btn-cancel js-action-button"/>
+        <apex:commandButton id="btnRestoreDefault" value="Restore Default" styleClass="js-btn-restore-default js-action-button"/>
+        <apex:commandButton id="btnAttachModal" value="Attach Files" styleClass="js-btn-attach-files js-action-button"/>
+        <apex:commandButton id="btnSendClient" value="Send Using Email Client" styleClass="js-btn-send-client js-action-button"/>
+    </apex:pageBlockButtons>
+</apex:pageBlock>
+
+<apex:outputText rendered="{!IF(uiTheme=='Theme4d',true,false)}">
+    <apex:stylesheet value="{!staticHost}/s2/Styles/salesforce-lightning-design-system-vf.css" />
+    <div class="slds">   
+        <div class="slds-page-header" role="banner">
+            <div class="slds-grid">
+                <div class="slds-col slds-has-flexi-truncate">
+                    <div class="slds-media slds-no-space slds-grow">
+                        <!--div class="slds-media__figure"> 
+                        </div-->
+                        <div class="slds-media__body">
+                          <p class="slds-text-title--caps slds-line-height--reset">Brainshark for Salesforce</p>
+                          <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="">Send an Email</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-no-flex slds-grid slds-align-top">
+                    <div class="slds-button-group" role="group">
+                        <apex:commandButton value="Send" styleClass="js-btn-send js-action-button slds-button slds-button--neutral" />
+                        <apex:commandButton value="Cancel" immediate="true" styleClass="js-btn-cancel js-action-button slds-button slds-button--neutral"/>
+                        <apex:commandButton id="btnRestoreDefault" value="Restore Default" styleClass="js-btn-restore-default js-action-button slds-button slds-button--neutral"/>
+                        <apex:commandButton id="btnAttachModal" value="Attach Files" styleClass="js-btn-attach-files js-action-button slds-button slds-button--neutral"/>
+                        <apex:commandButton id="btnSendClient" value="Send Using Email Client" styleClass="js-btn-send-client js-action-button slds-button slds-button--neutral"/>
+                    </div>
+                </div>
+            </div>
+        </div>   
+            <div class="slds-grid slds-wrap slds-grid--align-center"> 
+                <div class="slds-p-horizontal--small slds-size--1-of-8">
+                    <div class="slds-form--stacked" style="margin-top:10px;">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="to"><span class="slds-is-required" title="required">* </span>To</label>
+                        <div class="slds-form-element__control">
+                            <div class="bsk-page js-email-to-section">
+                                <span class="text-to js-text-to"></span>
+                                <span class="bsk-ux bsk-page bsk-icon-wrapper"><i class="glyph glyph-search glyph-primary cursor js-email-to-search" title="Lookup Contacts & Leads"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="folder">Folder</label>
+                        <div class="slds-form-element__control">
+                            <div class="js-dropdown-template-section dropdown-template-section"></div>
+                            <span class="bsk-ux bsk-page bsk-icon-wrapper"><i class="js-template-info-circle"></i></span>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="cc">CC</label>
+                        <div class="slds-form-element__control">
+                            <apex:inputText id="txtCC" value="{!cc}" styleClass="email-field js-txt-cc"/>
+                            <span class="bsk-ux bsk-page bsk-icon-wrapper"><i class="js-cc-info-circle"></i></span>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="addlto">Additional To</label>
+                        <div class="slds-form-element__control">
+                            <div class="bsk-page email-field email-additional-to-section">
+                                <div class="h5 pull-left margin-top-zero js-email-additional-to-section">
+                                    <span class="bsk-ux bsk-page bsk-icon-wrapper"><i class="glyph glyph-search glyph-primary pull-left cursor js-email-additional-to-search" title="Lookup Contacts & Leads"></i></span>
+                                </div>
+                            </div>
+                            <span class="bsk-ux bsk-page bsk-icon-wrapper"><i class="js-additional-to-info-circle"></i></span>     
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="subject"><span class="slds-is-required" title="required">* </span>Subject</label>
+                        <div class="slds-form-element__control">
+                            <apex:inputText id="txtSubject" value="{!subject}" required="true" styleClass="email-field js-txt-subject"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="attached">Attached</label>
+                        <div class="slds-form-element__control">
+                            <div class="bsk-page email-field email-additional-to-section">
+                                <div class="h5 pull-left margin-top-zero attached-files js-attached-files"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="message"><span class="slds-is-required" title="required">* </span>Message</label>
+                        <div class="slds-form-element__control">
+                            <div class="txt-message-area add-footer js-txt-message-area">
+                                <textarea id="messageTextarea" name="messageTextarea" class="text-message-area js-txt-message">{!message}</textarea>
+                                <div class="bsk-page bsk-ux">
+                                    <div class="panel panel-default panel-footer container-fluid">
+                                        <div class="row button-container">
+                                            <div class="col-xs-9">
+                                                <p class="text-muted">Text in gray boxes are for template purposes. "Preview Email" to see how this will actually look.</p>
+                                            </div>
+                                            <div class="clearfix hidden-md hidden-lg"></div>
+                                            <div class="col-xs-3 text-right">
+                                                <button class="btn btn-primary js-launch-email-preview">Preview Email</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bsksfdc"><div class="locked-template-area js-locked-template-area hide"></div></div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <apex:inputCheckbox id="bccMeChx" value="{!bccMe}" styleClass="js-chk-cc-me" />
+                            <apex:outputLabel for="bccMeChx" value="Send me a copy" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <apex:inputCheckbox id="viewReceipt" value="{!viewReceipt}" styleClass="js-chk-view-receipt" />
+                            <apex:outputLabel for="viewReceipt" value="Send me a view receipt when recipient views a presentation" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer role="contentinfo" class="slds-p-around--large">
+          <div class="slds-grid slds-grid--align-spread">
+            <p class="slds-col">Send an Email</p>
+            <p class="slds-col">Brainshark</p>
+          </div>
+        </footer>
+    </div> 
+
+</apex:outputText>
+    
+</apex:form>
+
+
+<div id="templates-email-base" class="hidden"></div>
+<div id="templates-email-temp" class="hidden"></div>
+
+
+</div>
+
+<script>
+//var shareHtml = '{!shareHtml}',
+//  shareText = '{!shareText}',
+var BSKpage = {
+    session: {!sessionJson},
+    apiHost: '{!apiHost}',
+    objId: '{!recordId}',
+    hasAccount: {!hasAccount},
+    returnUrl: '{!JSENCODE(returnUrl)}',
+    alertBox: '{!$Component.f}',
+    brainsharkList: JSON.parse('{!JSENCODE(brainsharkJson)}'),
+    emailSignature: '{!JSENCODE(emailSignature)}',
+    controllerMethods: {
+        createRelatedObjects: '{!$RemoteAction.SendEmailController.createRelatedObjects}',
+        getContactsLeads: '{!$RemoteAction.SendEmailController.getContactsLeads}',
+        getDocumentFolders: '{!$RemoteAction.SendEmailController.getDocumentFolders}',
+        getDocuments: '{!$RemoteAction.SendEmailController.getDocuments}',
+        getEmailTemplate: '{!$RemoteAction.SendEmailController.getEmailTemplate}',
+        getFolderList: '{!$RemoteAction.SendEmailController.getFolderList}',
+        getIntegrationKeys: '{!$RemoteAction.SendEmailController.getIntegrationKeys}',
+        getObjectEmail: '{!$RemoteAction.SendEmailController.getObjectEmail}',
+        getToEmailList: '{!$RemoteAction.SendEmailController.getToEmailList}',
+        refreshSession: '{!$RemoteAction.SendEmailController.refreshSession}',
+        sendEmail: '{!$RemoteAction.SendEmailController.sendEmail}',
+        previewEmail: '{!$RemoteAction.SendEmailController.getPreviewEmail}'
+    },
+    myPersonalDocumentsFolderId: '{!myPersonalDocumentsFolderId}',
+    sessionDependent: [
+        '{!$RemoteAction.SendEmailController.createRelatedObjects}',
+        '{!$RemoteAction.SendEmailController.getIntegrationKeys}',
+        '{!$RemoteAction.SendEmailController.sendEmail}'
+    ],
+    staticHost: '{!JSENCODE(staticHost)}',
+    recordType: '{!recordType}',
+    enums: {
+        objectTypes: {
+            ACCOUNT: '{!$ObjectType.Account.name}',
+            CONTACT: '{!$ObjectType.Contact.name}',
+            LEAD: '{!$ObjectType.Lead.name}',
+            OPPORTUNITY: '{!$ObjectType.Opportunity.name}'
+        }
+    }
+};
+</script>
+
+<script data-main="{!staticHost}/s2/Scripts/mail.js" type="text/javascript" src="{!staticHost}/s2/Scripts/libraries/require/require.js"/>
+
+</apex:page>

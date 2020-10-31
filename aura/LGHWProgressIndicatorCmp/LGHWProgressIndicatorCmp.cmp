@@ -1,0 +1,42 @@
+<!--*
+ * ______________________________________________________________________________________________________________________________________
+ * Name              LGHWProgressIndicatorCmp
+ * Author            Deloitte offshore (Gladiators)
+ * Version		 	 v1.0
+ * CreatedDate       26th Nov 2019
+ * Controller		 LGHWProgressIndicatorController
+ * User Story        PRDCRM-48531 
+ * ______________________________________________________________________________________________________________________________________
+ * Description	     
+ * Lightning component to show future job status on QuoteLineItem Card page
+ * 
+ * ________________________________________________________________________________________________________________________________________
+ *
+ * Additional information
+ *______________________________________________________________________________________________________________________________________
+ * Changes
+ * vX.X(Version)			Name
+ * Date						Explanation
+ *_______________________________________________________________________________________________________________________________________
+*/-->
+<aura:component controller="LGHWProgressIndicatorController" 
+                implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+                access="global" >
+
+    <aura:attribute name="stepStatus" type="List" description ="This shows the status in Progress Bar"/>
+    <aura:attribute name="currentStatus" type= "String"  description ="Current status on Progress bar"/>
+    <aura:attribute name="showProgress" type="Boolean" default="true" description="Holds boolean to decide whether to show or hide the component"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	 
+	<div class="slds-text-heading_medium" >
+        <aura:if isTrue="{!v.showProgress}">
+                <lightning:card title="{#$Label.c.FutureJobStatusMessage}" class="slds-p-bottom_large">
+                    <lightning:progressIndicator currentStep="{!v.currentStatus}" type="base" variant="base" >
+                        <aura:iteration items="{!v.stepStatus}" var="step">
+                            <lightning:progressStep label="{!step.label}" value="{!step.value }"/>
+                        </aura:iteration>
+                    </lightning:progressIndicator>
+                 </lightning:card>
+       </aura:if> 
+    </div>
+</aura:component>

@@ -1,0 +1,3 @@
+<apex:page standardController="COO_Escalation__c">
+    <apex:image url="{!$Resource.CEPPriorityLevel}"/>
+</apex:page>

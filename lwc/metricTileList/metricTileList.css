@@ -1,0 +1,10 @@
+:host {
+    position: relative;
+}
+.title {
+    font-weight: bold;
+}
+.slds-p-horizontal_small{
+    padding-top: var(--lwc-spacingSmall,0.375rem);
+    padding-bottom: var(--lwc-spacingSmall,0.375rem);
+}

@@ -1,0 +1,70 @@
+<apex:page showChat="false" controller="WM4SF3.ctrl_WalkMeSfVars" showHeader="false" standardStylesheets="false" sidebar="false">
+    <script type="text/javascript">
+        var domains = [/\.salesforce\.com$/,/\.force\.com$/];
+
+
+//PostMessage about page is ready
+        var done = false;
+        var origin = document.referrer.match(/^.+:\/\/[^\/]+/)[0];
+        for (var i = 0; i < domains.length && !done; i++) {
+            d = domains[i];
+            if(origin.match(d)) {
+                window.parent.postMessage({"ready": true},'*');
+                done = true;
+            }
+        }
+        if (!done && origin === window.location.origin) {
+            window.parent.postMessage({"ready": true},'*');
+        }
+
+//Connection
+        if (window.addEventListener){
+          window.addEventListener("message", receiveMessage, false);
+        } else if (window.attachEvent){
+          window.attachEvent("onmessage", receiveMessage, false);
+        }
+
+        function receiveMessage(event) {
+            var data = event.data;
+            for (var i = 0; i < domains.length; i++) {
+                d = domains[i];
+                if(event.origin.match(d)) {
+                    getQueryData(data.requestId, data.query);
+                    return;
+                }
+            }
+            if (event.origin === window.location.origin) {
+                getQueryData(data.requestId, data.query);
+            }
+        }
+        
+        function getQueryData(requestId, queryString) {
+            
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ctrl_WalkMeSfVars.getQueryData}',
+                queryString, 
+                function(result, event){
+                    if (event.status) {
+                        //console.log('result ', result);
+                        
+                        window.parent.postMessage({"data": unescapeText(result), "requestId": requestId},'*');
+                        return;
+                    } else if (event.type === 'exception') {
+                        document.getElementById("responseErrors").innerHTML = 
+                            event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    } else {
+                        document.getElementById("responseErrors").innerHTML = event.message;
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+        
+        function unescapeText(text) { 
+            return text.replace(/&#39;/g,"'") 
+            .replace(/&apos;/g, "'") 
+            .replace(/&quot;/g,'\"') 
+            .replace(/&amp;/g,"&"); 
+        }
+    </script>
+</apex:page>

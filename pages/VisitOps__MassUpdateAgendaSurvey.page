@@ -1,0 +1,47 @@
+<apex:page controller="VisitOps.agendaSessionCTRL" showheader="false" sidebar="false" title="Mass Edit Agenda Survey">
+    <apex:outputpanel id="closeScript">
+    <script type="text/javascript">
+        function closeWindow()
+                {
+                    
+                    if({!executeScript})
+                    {
+                            
+                        {
+                            
+                        }
+                        
+                        window.close();
+                    }
+                }
+                
+    </script>
+    </apex:outputpanel>
+
+    <apex:form >
+        <apex:pageblock title="Edit Agenda Survey" tabStyle="Agenda_Survey__c">
+            <apex:pagemessages escape="false" id="messages"></apex:pagemessages>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save" id="saveButton" oncomplete="closeWindow();" rerender="closeScript,messages"/>
+                <apex:commandButton action="{!cancel}" value="Cancel" id="cancelButton" oncomplete="closeWindow();" rerender="closeScript,messages"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageblocktable value="{!agendaSurveyList}" var="ag">
+            
+                <apex:column headerValue="Agenda"><apex:outputField value="{!ag.VisitOps__Agenda__c}"/></apex:column>
+                <apex:column headerValue="Agenda Title"><apex:outputField value="{!ag.VisitOps__Agenda_Title__c}"/></apex:column>
+                <apex:column headerValue="Survey"><apex:outputField value="{!ag.VisitOps__Survey__c}"/></apex:column>
+                <apex:column headerValue="Session Rating"><apex:inputField value="{!ag.VisitOps__Session_Rating__c}"/></apex:column>
+            	<apex:column headerValue="Presenter Rating">
+            		<apex:repeat value="{!ag.Presenter_Survey__r}" var="ps">
+            			<div>
+	            			<div>{!ps.VisitOps__Presenter_Name__c}:</div>
+	            			<div><apex:inputField value="{!ps.VisitOps__Presenter_Rating__c}"/></div>
+	            		</div>
+           			</apex:repeat>
+            	</apex:column>
+            </apex:pageblocktable>
+            
+        </apex:pageblock>
+    </apex:form>  
+</apex:page>
