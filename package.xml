@@ -112,6 +112,7 @@
         <members>ANA_AP04_Process_QuoteLineItems_Test</members>
         <members>ANew1</members>
         <members>ANew2</members>
+        <members>ANewCls1</members>
         <members>AP123</members>
         <members>AP4</members>
         <members>AS101</members>
