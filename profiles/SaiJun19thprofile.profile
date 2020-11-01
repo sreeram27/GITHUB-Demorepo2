@@ -177,6 +177,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ANewCls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AS101</apexClass>
         <enabled>false</enabled>
     </classAccesses>

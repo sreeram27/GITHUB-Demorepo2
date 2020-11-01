@@ -494,6 +494,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ANewCls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AP123</apexClass>
         <enabled>false</enabled>
     </classAccesses>

@@ -638,6 +638,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ANewCls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>AP18_SMEApproval</apexClass>
         <enabled>false</enabled>
     </classAccesses>
