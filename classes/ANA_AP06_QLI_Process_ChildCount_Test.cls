@@ -4,6 +4,7 @@
 @CreateDate :01-06-2017
 @Description : ANA_AP06_QLI_Process_ChildCount class. 
 checks for positive and negative cases.
+sadsadsadsads
 */
 @isTest(SeeAllData=false)
 private without sharing class ANA_AP06_QLI_Process_ChildCount_Test {
@@ -63,7 +64,7 @@ private without sharing class ANA_AP06_QLI_Process_ChildCount_Test {
             //Add Begin - PRDCRM-40725:ActWise Companion Product
             actWiseQLI.ParentQuoteLineItem__c = newQliList[0].Id; //Add PRDCRM-40725:ActWise Companion Product
             update actWiseQLI;
-            //Add End - PRDCRM-40725:ActWise Companion Product
+            //Add End - PRDCRM-40725:ActWise Companion Productsdadsadsadsadsadsa
             
             update newQliList;
             childQliList.addAll(ANA_UTIL01_TestMethods.createChildQuoteLineItems(parentQliList,false,qte.id,pbe.id));
