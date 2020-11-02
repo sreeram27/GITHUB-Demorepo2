@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SecuritySettings xmlns="http://soap.sforce.com/2006/04/metadata">
+<SecuritySettings xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <canUsersGrantLoginAccess>true</canUsersGrantLoginAccess>
     <enableAdminLoginAsAnyUser>false</enableAdminLoginAsAnyUser>
     <enableAuditFieldsInactiveOwner>false</enableAuditFieldsInactiveOwner>
     <enableAuraSecureEvalPref>false</enableAuraSecureEvalPref>
     <enableRequireHttpsConnection>true</enableRequireHttpsConnection>
-    <isTLSv12Required>false</isTLSv12Required>
-    <isTLSv12RequiredCommunities>false</isTLSv12RequiredCommunities>
+    <isTLSv12Required xsi:nil="true"/>
+    <isTLSv12RequiredCommunities xsi:nil="true"/>
     <networkAccess>
         <ipRanges>
             <end>255.255.255.255</end>
@@ -536,6 +536,7 @@
     <sessionSettings>
         <allowUserAuthenticationByCertificate>false</allowUserAuthenticationByCertificate>
         <canConfirmEmailChangeInLightningCommunities>false</canConfirmEmailChangeInLightningCommunities>
+        <canConfirmIdentityBySmsOnly>true</canConfirmIdentityBySmsOnly>
         <disableTimeoutWarning>false</disableTimeoutWarning>
         <enableCSPOnEmail>true</enableCSPOnEmail>
         <enableCSRFOnGet>true</enableCSRFOnGet>
@@ -568,7 +569,6 @@
         <referrerPolicy>true</referrerPolicy>
         <requireHttpOnly>false</requireHttpOnly>
         <requireHttps>true</requireHttps>
-        <securityCentralKillSession>true</securityCentralKillSession>
         <sessionTimeout>TwoHours</sessionTimeout>
     </sessionSettings>
     <singleSignOnSettings>

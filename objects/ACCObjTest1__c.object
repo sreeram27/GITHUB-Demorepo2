@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>Accept</actionName>
@@ -257,8 +258,14 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>1</label>
                 </value>
             </valueSetDefinition>
@@ -336,6 +343,13 @@
             </values>
         </picklistValues>
         <picklistValues>
+            <picklist>PLt1__c</picklist>
+            <values>
+                <fullName>2</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
             <picklist>Plt3__c</picklist>
             <values>
                 <fullName>latest</fullName>
@@ -373,6 +387,13 @@
             <picklist>PLnew3__c</picklist>
             <values>
                 <fullName>sd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLt1__c</picklist>
+            <values>
+                <fullName>2</fullName>
                 <default>false</default>
             </values>
         </picklistValues>

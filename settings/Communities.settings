@@ -6,7 +6,10 @@
     <enableCspContactVisibilityPref>false</enableCspContactVisibilityPref>
     <enableCspNotesOnAccConPref>false</enableCspNotesOnAccConPref>
     <enableEnablePRM>false</enableEnablePRM>
-    <enableGuestRecordReassignOrgPref>false</enableGuestRecordReassignOrgPref>
+    <enableExternalAccHierPref>false</enableExternalAccHierPref>
+    <enableGuestRecordReassignOrgPref>true</enableGuestRecordReassignOrgPref>
+    <enableGuestSecurityOptOutCruc>false</enableGuestSecurityOptOutCruc>
+    <enableGuvSecurityOptOutPref>false</enableGuvSecurityOptOutPref>
     <enableInviteChatterGuestEnabled>true</enableInviteChatterGuestEnabled>
     <enableNetPortalUserReportOpts>false</enableNetPortalUserReportOpts>
     <enableNetworksEnabled>true</enableNetworksEnabled>
@@ -14,4 +17,5 @@
     <enablePRMAccRelPref>false</enablePRMAccRelPref>
     <enablePowerCustomerCaseStatus>false</enablePowerCustomerCaseStatus>
     <enableRelaxPartnerAccountFieldPref>false</enableRelaxPartnerAccountFieldPref>
+    <enableUnsupportedBrowserModalPref>true</enableUnsupportedBrowserModalPref>
 </CommunitiesSettings>

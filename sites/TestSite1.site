@@ -22,7 +22,6 @@
     <masterLabel>TestSite1</masterLabel>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
-    <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
     <siteAdmin>saikumar-sb.three@autorabit.com</siteAdmin>
     <siteGuestRecordDefaultOwner>saikumar-sb.three@autorabit.com</siteGuestRecordDefaultOwner>
     <siteTemplate>SiteTemplate</siteTemplate>

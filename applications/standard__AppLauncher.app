@@ -27,4 +27,5 @@
     <tabs>ACR2__c</tabs>
     <tabs>ACR3__c</tabs>
     <tabs>Sai_Obj500__c</tabs>
+    <tabs>ContactPointPhone_Contact_Point_Phone_La__c</tabs>
 </CustomApplication>

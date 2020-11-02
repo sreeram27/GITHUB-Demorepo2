@@ -154,19 +154,9 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>F1__c</fullName>
+        <fullName>F8__c</fullName>
         <externalId>false</externalId>
-        <label>F1</label>
-        <length>6</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>F2__c</fullName>
-        <externalId>false</externalId>
-        <label>F2</label>
+        <label>F8</label>
         <length>7</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -186,9 +176,9 @@
         <label>RT1</label>
     </recordTypes>
     <recordTypes>
-        <fullName>RT2</fullName>
+        <fullName>RT8</fullName>
         <active>true</active>
-        <label>RT2</label>
+        <label>RT8</label>
     </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>

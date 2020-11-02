@@ -228,7 +228,7 @@
     <enableEnhancedLookup>true</enableEnhancedLookup>
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
-    <externalSharingModel>Private</externalSharingModel>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>AccountLookUpField__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -364,6 +364,16 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>MyCoolCheckBox__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Some Description</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hello World!</inlineHelpText>
+        <label>MyCoolCheckBox</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>NaicsCode</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -389,11 +399,6 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>Number</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>OperatingHoursId</fullName>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
@@ -880,17 +885,6 @@
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
-    <validationRules>
-        <fullName>ACC_EGR_Require_Contribution_Percent</fullName>
-        <active>true</active>
-        <errorConditionFormula>AND(
-!$User.BypassValidation__c,
-ISPICKVAL(Does_the_client_provide_retiree_contribu__c,&quot;Yes&quot;),
-ISBLANK(Percentage_of_Client_Contribution__c)
-)</errorConditionFormula>
-        <errorDisplayField>Percentage_of_Client_Contribution__c</errorDisplayField>
-        <errorMessage>If answering yes that the client offers Group Retiree contributions please enter the percentage of the contribution here.</errorMessage>
-    </validationRules>
     <webLinks>
         <fullName>Billing</fullName>
         <availability>online</availability>

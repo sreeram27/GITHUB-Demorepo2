@@ -9,6 +9,7 @@
     <enablePartnerSuperUserAccess>false</enablePartnerSuperUserAccess>
     <enablePortalUserVisibility>true</enablePortalUserVisibility>
     <enableRemoveTMGroupMembership>false</enableRemoveTMGroupMembership>
+    <enableRestrictAccessLookupRecords>false</enableRestrictAccessLookupRecords>
     <enableSecureGuestAccess>false</enableSecureGuestAccess>
     <enableStandardReportVisibility>true</enableStandardReportVisibility>
 </SharingSettings>
