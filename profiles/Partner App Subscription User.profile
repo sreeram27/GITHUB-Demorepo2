@@ -58,7 +58,7 @@
     <applicationVisibilities>
         <application>standard__ServiceConsole</application>
         <default>false</default>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Sites</application>
@@ -90,7 +90,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A01234567</apexClass>
+        <apexClass>asss</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -98,7 +98,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A012378</apexClass>
+        <apexClass>ass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
