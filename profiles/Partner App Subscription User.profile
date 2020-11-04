@@ -90,16 +90,16 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A012378</apexClass>
-        <enabled>false</enabled>
+        <apexClass>A01231238</apexClass>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A022233444</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A0233</apexClass>
-        <enabled>false</enabled>
+        <apexClass>A123</apexClass>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A025</apexClass>
