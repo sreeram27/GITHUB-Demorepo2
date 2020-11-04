@@ -1,6 +1,6 @@
 /* PRDCRM-38037 */
 .THIS .slds-truncate {
-    max-width: 100%;
+    max-width: 99%;
     overflow: hidden;
     text-overflow: unset;
     white-space: inherit;
