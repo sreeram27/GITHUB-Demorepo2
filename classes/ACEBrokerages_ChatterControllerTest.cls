@@ -12,7 +12,7 @@ public class ACEBrokerages_ChatterControllerTest {
         //Assert the name field and saved expense
         System.assertEquals('National Broker',
                            ACEBrokerages_ChatterController.getFeeds()[0].Name,
-                          'Name does not matching');
+                          'Name does not match');
         
     }
   

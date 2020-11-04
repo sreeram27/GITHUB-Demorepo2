@@ -1,0 +1,18 @@
+<apex:page controller="VisitOps.AdministratorController" name="GeneralSettingpage" id="generalSettingpage" sidebar="false"  showHeader="false" >    
+    <apex:form style="overflow:auto;" id="GeneralSettingFormId">
+        <apex:pageMessages id="myMsg1"></apex:pageMessages>
+            <apex:pageBlock title="General Setting" id="generalSettingBlock">
+                Allow Create New Account &nbsp;<apex:inputCheckbox value="{!createNewAccount}" id="inputId1"/>       
+                <br/>   
+                <br/>            
+                Allow Create New Contact &nbsp;<apex:inputCheckbox value="{!createNewContact}" id="inputId2"/>        
+                <br/> 
+                <br/> 
+                Program Needed &nbsp;<apex:inputCheckbox value="{!programNeeded}" id="inputId3"/>
+                <br/> 
+                <br/> 
+                Is Opportunity Available &nbsp;<apex:inputCheckbox value="{!isOpportunityAvailable}" id="inputId4"/>        
+                <apex:commandButton value="Apply" style="margin-left:15%" action="{!insertGeneralSettings}" id="generalPageApplyBtn" rerender="GeneralSettingFormId"/>
+            </apex:pageBlock>
+    </apex:form>  
+</apex:page>

@@ -1,0 +1,41 @@
+<apex:page standardController="VisitOps__Agenda_Survey__c" recordSetVar="agenda">
+    <apex:includeScript value="../../soap/ajax/20.0/connection.js"/>
+    <apex:includeScript value="../../soap/ajax/32.0/apex.js"/>
+    <apex:includeScript value="../../soap/ajax/30.0/integration.js"/>
+    <script>
+    var records = {!GETRECORDIDS( $ObjectType.VisitOps__Agenda_Survey__c)};
+    var childwindow;
+    var url = location.href;
+    if (records[0] == null) {
+        alert('Please select at least one record.')
+    }
+    else{
+        
+        var urlrec;
+        
+        urlrec= '/apex/VisitOps__MassUpdateAgendaSurvey?idlist='+records+'&retURL=/aA93C0000004KBr&saveURL=/aA93C0000004KBr';
+        
+        popitup(urlrec);
+        
+        
+    }
+    function popitup(url) {
+        newwindow = window.open(url,'Mass Edit Agenda Survey','height=450,width=600');
+        var polltimer = setInterval(function(){
+            if(newwindow != null){
+                if(newwindow.closed)
+                {
+                    clearInterval(polltimer);
+                    window.location.reload();
+                }}
+        }, 500);
+        
+        
+        return false;
+    }
+    
+    window.addEventListener('message',function(e) {
+        window.location.reload();
+    },false);
+    </script>
+</apex:page>

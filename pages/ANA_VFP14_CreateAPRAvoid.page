@@ -1,0 +1,21 @@
+<apex:page standardController="Alpha_Prefix_Request__c">
+<script>
+window.document.onload = new function(e){
+     
+    //alert('redirect======'+redirect);
+    if(
+        "{!$Profile.Name}" == "National Open Enrollment" || "{!$Profile.Name}" == "Stop Loss Team"
+    ){
+        //alert('redirect=====*****=');
+        window.location.href = '/';
+        window.open("/003/e?nooverride=1","_self");
+        //window.close();
+        }else{
+        var redirect =confirm('Please navigate to Omniscript Alphanumeric Prefix Request');
+        window.open("/003/o","_self");
+        window.close();
+        }
+        window.location('/');
+}
+</script>
+</apex:page>

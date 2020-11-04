@@ -1,0 +1,28 @@
+.THIS {background-color:RGB(27, 186, 98);
+	border-radius:10px;
+    width: 50%;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+    color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 76px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.THIS:hover {
+	
+	background-color:RGB(27, 186, 98);
+    cursor:pointer;
+    color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 76px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.THIS:active {
+	position:relative;
+	top:1px;
+}

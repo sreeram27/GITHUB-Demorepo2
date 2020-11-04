@@ -1,0 +1,3 @@
+<apex:page showHeader="{!isChatterApp == false}" sidebar="{!isChatterApp == false}" controller="BRNSHRK.BrainsharkGenericController" action="{!initPage}">
+ 	<iframe src="{!appHost}/brainshark/brainshark.net/sfdc/profile.aspx?{!sessionParams}&profile=private&sfdc.view=lc" width="100%" scrolling="true" height="900" frameBorder="0" allowfullscreen="true"></iframe>
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:page standardController="Contact" extensions="vlocity_ins.VFPageControllerBase" showHeader="false" sidebar="false" docType="html-5.0" id="pge">
+   <vlocity_ins:ActionComponent standardController="{!stdController}"                            
+      objType="Contact"                           
+      style="Horizontal" id="acncomp"/>      
+</apex:page>

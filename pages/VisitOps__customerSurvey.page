@@ -1,0 +1,175 @@
+<apex:page id="page1" standardController="VisitOps__Visit__c"  extensions="VisitOps.customerSurveyController" showHeader="false" tabstyle="VisitOps__Visit__c">
+    <style>
+        <!-- Style Added for Lightning Experience -->
+        body {  
+        font-size:75% !important;
+        }
+        .btnId1{
+        width:120px;
+        }
+        .errorMessage{
+        text-align: center;
+        color : grey;
+        font-size:15px;
+        font-family:sans-serif;
+        }   
+        .disable{
+        pointer-events: none;
+        cursor: default;
+        text-decoration: none;
+        }
+    </style>
+    <div style="height:10px">
+    </div> 
+    <div class="errorMessage">
+        <apex:messages />
+    </div>  
+    <head>
+        <apex:styleSheet value="{!$Resource.VisitOps__survey_css}"/>
+        <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jquery-1.11.1.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/styles.css')}" />
+        <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/functions.js')}"/>          
+    </head>
+    <!-- <div style="over-flow:auto; width:1500px; height:10px"> -->
+    <apex:form id="table1" style="width:100%"> 
+        
+        <div class="bPageBlock">
+            <div class="pbHeader">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="pbTitle">
+                                <h3 align="center">Select Users</h3>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>                    
+            <div align="center">
+                <apex:commandButton value="Save" action="{!save}" status="progressIndicator" reRender="table1"/>&nbsp;
+                <apex:commandButton value="Close"  onClick="window.close();"/> 
+                <apex:commandButton value="Send Pre Survey" action="{!sendPreSurvey}" status="progressIndicator" id="pre" reRender="table1" oncomplete="showAlert({!NOT(errorOccured)},{!recepientsAvailable});"/>&nbsp; 
+                <apex:commandButton value="Send Post Survey" action="{!sendPostSurvey}" status="progressIndicator" disabled="{!flag1}" reRender="table1" oncomplete="showAlert({!NOT(errorOccured)},{!recepientsAvailable});"/>&nbsp;
+                
+                <apex:commandButton value="Print Pre Survey" onClick="openPrePrintForm();" action="{!printPreSurvey}" status="progressIndicator"  reRender="table1"/>&nbsp;
+                <apex:commandLink action="{!printPostSurvey}" target="_blank" style="text-decoration: none;">
+                    <apex:commandButton value="Print Post Survey"  status="progressIndicator"   reRender="table1"/>&nbsp;
+                </apex:commandLink>
+            </div>
+            <br/>
+            <apex:actionFunction name="onchangeLanguage" action="{!UpdateLanguage}" status="progressIndicator"   reRender="table1" >
+                <apex:param name="attendeeIndexpre" value="" assignTo="{!rowIndex}"/>
+            </apex:actionFunction>
+            <apex:pageMessages id="pageMsgId"/>
+            <div class="pbBody"> 
+                
+                <table cellpadding="0" cellspacing="0" class="list">
+                    <tr class="headerRow">
+                        <!--   <th>VisitOwner</th> -->
+                        <th>First Name</th> 
+                        <th>Last Name</th>
+                        <th>Company</th>
+                        <th>Email</th>
+                        <th>Survey Language</th>
+                        <th>Pre Survey <br/>Select All<br/><apex:inputCheckbox onclick="checkAll1(this,'checkedone1')"/></th>    
+                        <th>Post Survey<br/>Select All<br/><apex:inputCheckbox onclick="checkAll2(this,'checkedone2')"/> </th>
+                        <th>Pre Survey Status</th>
+                        <th>Post Survey Status</th>
+                        <th>Action</th>
+                    </tr>
+                    <apex:repeat value="{!rwe}" var="a" id="theBlock">
+                        <tr class="dataRow">                  
+                            
+                            <td><apex:outputText value="{!a.attIns.VisitOps__FirstName__c}"/></td> 
+                            <td><apex:outputText value="{!a.attIns.VisitOps__LastName__c}"/></td>  
+                            <td><apex:outputText value="{!a.company}"/></td>  
+                            <td><apex:outputField value="{!a.attIns.VisitOps__Email__c}" id="mailField" html-class="disable"/></td>
+                            <td><apex:inputField value="{!a.attIns.VisitOps__Survey_Language__c}" onchange="onchangeLanguage('{!a.rowNo}')"/></td>
+                            <td><apex:inputCheckBox value="{!a.attIns.VisitOps__Pre_Survey_Required__c}" id="checkedone1"  disabled="{!IF(a.attIns.VisitOps__PreSurveySent__c == true, true, false)}"/></td>
+                            <td><apex:inputCheckBox value="{!a.attIns.VisitOps__Post_Survey_Required__c}" id="checkedone2" disabled="{!IF(a.attIns.VisitOps__Post_Survey_Sent__c == true, true, false)}"/></td>
+                            <td><apex:outputField value="{!a.attIns.VisitOps__Pre_Survey_Status__c}"/></td>
+                            <td><apex:outputField value="{!a.attIns.VisitOps__Post_Survey_Status__c}"/></td> 
+                            <td><apex:commandButton styleclass="btnId1" value="{!IF(a.attIns.VisitOps__Pre_Survey_Status__c=='Sent','Resend Pre Survey','Send Pre Survey')}" action="{!sendPreSurveyIndex}" status="progressIndicator" oncomplete="showAlert({!NOT(errorOccured)});" reRender="table1">&nbsp;&nbsp;
+                                <apex:param name="attendeeIndexpre" value="{!a.rowNo}" assignTo="{!rowIndex}"/></apex:commandButton>
+                                <apex:commandButton styleclass="btnId1" value="{!IF(a.attIns.VisitOps__Post_Survey_Status__c=='Sent','Resend Post Survey','Send Post Survey')}" action="{!sendPostSurveyIndex}" status="progressIndicator" disabled="{!flag1}" oncomplete="showAlert({!NOT(errorOccured)});" reRender="table1">
+                                    <apex:param name="attendeeIndexpost" value="{!a.rowNo}" assignTo="{!rowIndex}"/></apex:commandButton>  </td>
+                        </tr>
+                    </apex:repeat>  
+                </table> 
+            </div>
+        </div>
+        <b><center>Printing Pre or Post surveys will automatically create survey records for the selected attendees and prohibit electronic survey responses. If electronic surveys are needed for any attendees, uncheck the box before printing surveys.</center></b>
+        <center><br/>
+            <apex:commandButton value="Save" action="{!save}" status="progressIndicator"  reRender="table1"/>&nbsp;
+            <apex:commandButton value="Close"  onClick="window.close();"/> 
+            <apex:commandButton value="Send Pre Survey" action="{!sendPreSurvey}" status="progressIndicator" oncomplete="showAlert({!NOT(errorOccured)},{!recepientsAvailable});" reRender="table1"/>&nbsp;
+            <apex:commandButton value="Send Post Survey" action="{!sendPostSurvey}" status="progressIndicator" disabled="{!flag1}" oncomplete="showAlert({!NOT(errorOccured)},{!recepientsAvailable});" reRender="table1"/>&nbsp;
+            
+            <apex:commandButton value="Print Pre Survey" onClick="openPrePrintForm();" action="{!printPreSurvey}" status="progressIndicator"  reRender="table1"/>&nbsp;
+            <apex:commandLink action="{!printPostSurvey}" target="_blank" style="text-decoration: none;">
+                <apex:commandButton value="Print Post Survey"  status="progressIndicator"   reRender="table1"/>&nbsp;
+            </apex:commandLink>
+            <input type="hidden" value="{!visitId}" id="recId"/>
+        </center>
+        <script type="text/javascript"> 
+        function openPrePrintForm(){
+            var recId = document.getElementById('recId').value;
+            window.open('{!$Label.PrintCustomerPreSurvey}?visitId='+recId);
+        }
+        function openPostPrintForm(){
+            var recId = document.getElementById('recId').value;
+            window.open('{!$Label.PrintCustomerPostSurvey}?visitId='+recId+'&lang={!defaultLanguage}');
+        }
+        function showAlert(isSuccessful) {
+            if(isSuccessful==true || isSuccessful=='true') {
+                alert('Survey sent successfully');
+            }
+        }
+        
+        function showAlert(isSuccessful, recepientsAvailable) {
+            if((recepientsAvailable==false || recepientsAvailable=='false') && (isSuccessful==true || isSuccessful=='true')) {
+                alert('No recipients selected or invalid emails exist for sending survey.');
+            }
+            else if(isSuccessful==true || isSuccessful=='true') {
+                alert('Survey sent successfully');
+            }
+        }
+        
+        function alert1(){
+            alert('Surveys have been Sent');
+        }
+        function checkAll1(cb,cbid)
+        {
+            AllcheckPostDis = false;
+            fewDis = false;
+            var inputElem = document.getElementsByTagName("input");                    
+            for(var i=0; i<inputElem.length; i++)
+            {            
+                if(inputElem[i].id.indexOf(cbid)!=-1){   
+                    if(!inputElem[i].disabled){  
+                        fewDis = true;                                  
+                        inputElem[i].checked = cb.checked;
+                    }
+                }
+            }
+        }
+        function checkAll2(cb,cbid)
+        {
+            AllcheckPostDis = false;
+            fewDis = false;
+            var inputElem = document.getElementsByTagName("input");                    
+            for(var i=0; i<inputElem.length; i++)
+            {            
+                if(inputElem[i].id.indexOf(cbid)!=-1){ 
+                    if(!inputElem[i].disabled){
+                        fewDis = true;
+                        inputElem[i].checked = cb.checked; 
+                    }  
+                }
+            }
+        } 
+        
+        </script>
+    </apex:form>
+    <c:AjaxStatusIndicator statusText="Please Wait..."/>
+</apex:page>

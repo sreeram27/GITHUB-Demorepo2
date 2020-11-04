@@ -1,0 +1,114 @@
+<!--
+Author : Smita
+Created Date : 03/12/2020
+User Story: PRDCRM-51723  -->
+
+
+
+<template>
+<lightning-card>
+    <template if:true={pgcatalogitem.data}>
+            
+            
+            <div class="slds-m-horizontal_medium">
+            <div class="slds-scrollable_y" style="height:30rem;">
+            
+            <div class="row">PG Title</div>
+                
+            <div class="rows">{pgcatalogitem.data.fields.PG_Title__c.value}</div><br/>
+            <div class="row">PG Type</div>
+            
+            <div class="rows">{pgcatalogitem.data.fields.PG_Type__c.value}</div><br/>
+
+            <div class="row">SME</div>
+            
+            <div class="rows">{pgcatalogitem.data.fields.SME__c.value}</div><br/>
+            
+            <div class="row">Broad Contract Category</div>
+            
+            <div class="rows">{pgcatalogitem.data.fields.Broad_Contract_Category__c.value}</div><br/>
+            
+            <div class="row">Specific Contract Category </div>
+
+            <div class="rows">{pgcatalogitem.data.fields.Specific_Contract_Category__c.value}</div><br/>
+            
+            <div class="row">Performance Category</div>
+            
+            <div class="rows">{pgcatalogitem.data.fields.Performance_Category__c.value}</div><br/>
+
+            <div class="row">ANA Minimum Members</div>
+            
+            <div class="rows">{pgcatalogitem.data.fields.ANA_Minimum_Members__c.value}</div><br/>
+            
+            <div class="row">LG Minimum Members </div>
+
+            <div class="rows">{pgcatalogitem.data.fields.LG_Minimum_Members__c.value}</div><br/>
+
+            <div class="row">Description of PG</div>
+            
+            <div class="rows">{pgcatalogitem.data.fields.Description_of_PG__c.value}</div><br/>
+
+            <div class="row">Recommended PG Tiering</div>
+
+            <div class="rows">{pgcatalogitem.data.fields.Recommended_PG_Penalty_Tiering__c.value}</div><br/>
+            
+            <div class="row">Conflicting PGs</div>
+            
+            <div class="rows">{pgcatalogitem.data.fields.Conflicting_PGs__c.value}</div><br/>
+            
+            <div class="row">Additional Notes or Special Approvals</div>
+            
+            <div class="rows">{pgcatalogitem.data.fields.Additional_Notes_or_Special_Approvals__c.value}</div><br/>
+
+            
+            <div class="row">Tiering Result and Penalty Option</div>
+            <lightning-record-edit-form object-api-name="PG_Metric__c">
+                <lightning-input-field class="slds-m-top_medium"
+                                field-name="Tiering_Result_and_Penalty_Option__c"
+                                onchange={handleTieringChange}
+                                variant="label-hidden"
+                                value={tiering}>
+                </lightning-input-field>
+            </lightning-record-edit-form>
+            <br/>
+            <div class="row">Measurement Period</div>
+            <lightning-record-edit-form object-api-name="PG_Metric__c" class="rows">
+                                <lightning-input-field 
+                                                field-name="Measurement_Period__c" 
+                                                onchange={handleMeasurementPeriodChange}
+                                                variant="label-hidden"
+                                                value={measurementPeriod}>
+                                </lightning-input-field>
+            </lightning-record-edit-form> 
+            
+            <br/>
+            <div class="row">Reporting Period</div>
+            <lightning-record-edit-form object-api-name="PG_Metric__c">
+                <lightning-input-field class="slds-m-top_medium"
+                                field-name="Reporting_Period__c"
+                                onchange={handleReportingPeriodChange}
+                                variant="label-hidden"
+                                value={reportingPeriod}>
+                </lightning-input-field>
+            </lightning-record-edit-form>
+            <br/>
+            </div>
+            <center>
+            <lightning-button  variant="success" label="Add Metric" onclick={handleClick}></lightning-button>
+        </center>  
+
+        </div>
+        </template>
+    
+
+    <template if:true={noData}>
+        <c-placeholder
+            message="Select a PG Metric to see details"
+        ></c-placeholder>
+    </template>
+
+    <template if:true={pgcatalogitem.error}>
+        <c-inline-message errors={pgcatalogitem.error}></c-inline-message>
+    </template>
+</lightning-card>
+</template>

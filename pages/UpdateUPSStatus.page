@@ -1,0 +1,40 @@
+<apex:page standardController="Order_Fulfillment__c">
+ 
+ <script src="/soap/ajax/39.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/39.0/apex.js" type="text/javascript"></script>
+ <script>
+sforce.connection.sessionId = "{!$Api.Session_ID}";
+window.document.onload = new function(e){
+
+var carrier = "{!Order_Fulfillment__c.Carrier__c}";
+if(carrier.includes("UPS")) {
+var orderIds = new Array("{!Order_Fulfillment__c.Id}");
+console.log('Order Ids'+orderIds );
+
+
+  var result = sforce.apex.execute("UPS","updateStatus",{orderIds:orderIds});
+  var red1 = "{!$Label.UPS_Order_Fulfillment}";
+  var red2 = orderIds;
+  var red3 = "/view";
+  var txtRedirect = red1.concat(red2, red3);
+       
+        window.open(txtRedirect,"_self");
+        window.close();
+
+
+}
+else {
+alert("Carrier for this order is not UPS");
+       var orderIds = new Array("{!Order_Fulfillment__c.Id}");
+       var red1 = "{!$Label.UPS_Order_Fulfillment}";
+       var red2 = orderIds;
+       var red3 = "/view";
+       var txtRedirect = red1.concat(red2, red3);
+       window.open(txtRedirect,"_self");
+        
+        window.close();
+}
+
+}
+</script>
+</apex:page>

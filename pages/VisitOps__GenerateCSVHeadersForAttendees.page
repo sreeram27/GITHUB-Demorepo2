@@ -1,0 +1,3 @@
+<apex:page controller="VisitOps.AttendeesImportCls" sidebar="false" action="{!GenerateHeader}" standardStylesheets="false" contenttype="text/plain/#Attendee Template.csv" cache="false">
+	<apex:outputText value="{!CSVFileHeader}" escape="false"/>
+</apex:page>

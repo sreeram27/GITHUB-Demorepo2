@@ -1,0 +1,4 @@
+<apex:page controller="BRNSHRK.BrainsharkGenericController" action="{!initPage}">
+<iframe src="{!appHost}/brainshark/brainshark.net/learning/home.aspx?{!sessionParams}&ui=212992&ct=0" width="100%" height="750" frameBorder="0" allowfullscreen="true" allow="microphone;camera"></iframe>
+<div id="errorMessage">{!errorMessage}</div>
+</apex:page>

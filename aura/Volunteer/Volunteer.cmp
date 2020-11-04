@@ -1,0 +1,7 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="CurrentUserInfoCtrl"> 
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <ui:button label="Volunteer" press="{!c.openActionWindow}"/>
+     <aura:attribute name="userInfo" type="contact"/> 
+    <aura:attribute name="name" type="String" />
+ 
+</aura:component>

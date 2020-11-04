@@ -1,0 +1,27 @@
+<!--
+Description: Page is used to override New Button of Open Enrollment Meeting for users except National Open Enrollment and System Administrator
+Created Date: 08/27/2019
+Story : PRDCRM-41997  -->
+<apex:page standardController="Open_Enrollment_Meetings__c">
+<script>
+window.document.onload = new function(e){
+     
+    
+    if(
+        "{!$Profile.Name}" == "{!$Label.National_Open_Enrollment}"  || "{!$Profile.Name}" == "System Administrator"
+    ){
+        var txtRedirectNOE = "{!$Label.OEM_Redirect_NOE}";  
+        window.location.href = '/';
+        window.open(txtRedirectNOE,"_self");
+        
+        }else{
+        
+        var redirect =confirm("{!$Label.OEM_Alert}");
+        var txtRedirectSales="{!$Label.OEM_Redirect_Sales}";
+        window.open(txtRedirectSales,"_self");
+        window.close();
+        }
+        window.location('/');
+}
+</script>
+</apex:page>

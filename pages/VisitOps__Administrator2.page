@@ -1,0 +1,49 @@
+<apex:page controller="VisitOps.AdministratorController" name="LocVTMapping" id="LocVTMappingPage"  showHeader="false" sidebar="false" >
+                 <c:AjaxStatusIndicator statusText="Processing..." />
+                  <apex:form style="overflow:auto;" id="LocVTMappingForm">
+                   
+                        <apex:pageBlock id="LocVTMappingPageBlock">
+                        <apex:pageMessages id="showmsg"></apex:pageMessages>
+                        <apex:pageBlockSection >
+                        <apex:outputLabel >Location </apex:outputLabel>
+                         <apex:outputPanel styleClass="requiredInput" layout="block" style="margin-left:-450px"> 
+                            <apex:outputPanel id="panelId" styleClass="requiredBlock" layout="block"/>
+                                <apex:selectList id="locationsList" value="{!location}" size="1" title="Location" required="true" >
+                                    <apex:selectOptions value="{!locations}"></apex:selectOptions>
+                                    <apex:actionSupport action="{!getLocVTypeDetails}" event="onchange" reRender="visitTypeTable,LocVTMappingPageBlock"/>
+                                </apex:selectList>
+                         </apex:outputPanel>
+                          </apex:pageBlockSection>
+                          
+                           <apex:pageBlockSection >
+                       <apex:outputPanel style="margin-top:10px; " id="visitTypeTable">
+                            <apex:dataTable value="{!wrapVisitTypeList}" var="wrapVT" id="table" border="1" style="overflow:auto; height:50px;margin: 0 2px ">
+                                <apex:column >
+                                    <apex:facet name="header">
+                                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                                    </apex:facet>
+                                    <apex:inputCheckbox value="{!wrapVT.selected}" id="inputId"/>
+                                </apex:column>
+                                <apex:column headerValue="Visit Type" value="{!wrapVT.vTypes.Name}" />
+                            </apex:dataTable>
+                            <apex:commandButton status="progressIndicator"   value="Apply" action="{!getSelected}" style="margin-left:50px" reRender="LocVTMappingPageBlock"/>  
+                         </apex:outputPanel>
+                         </apex:pageBlockSection>
+                         </apex:pageBlock>
+                    
+                </apex:form>
+                
+                <script type="text/javascript">         
+        
+			        function selectAllCheckboxes(obj,receivedInputID){
+			            var inputCheckBox = document.getElementsByTagName("input");
+			            for(var i=0; i<inputCheckBox.length; i++){
+			                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+			                    inputCheckBox[i].checked = obj.checked;
+			                }
+			            }
+			        }
+			              
+			    </script>
+                
+                 </apex:page>

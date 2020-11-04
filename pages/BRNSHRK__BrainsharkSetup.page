@@ -1,0 +1,57 @@
+<apex:page controller="BRNSHRK.BrainsharkSetupController" action="{!initPage}" standardStylesheets="true" >
+
+<apex:stylesheet value="{!staticHost}/s2/Styles/search.css" />
+<apex:stylesheet value="{!staticHost}/s2/Styles/search-mobile.css" />
+<apex:stylesheet value="{!staticHost}/s2/Styles/bskux.css" />
+<style type="text/css">
+    .setup-panel {
+        min-height: 250px;
+    }
+    p.setup-marketing-message {
+        margin-top: 10px;
+    }
+</style>
+
+<apex:sectionHeader title="Brainshark CRM Connector for Salesforce" subtitle="Brainshark Setup"/>
+<div class="bsk-ux bsk-page">
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="setup-panel panel panel-primary">
+                <h3></h3>
+                <div class="panel-heading">Global Settings</div>
+                <div class="panel-body">
+                    <apex:outputLink styleClass="btn {!IF(globalMissingCompanyDirectory || globalMissingAPIToken,'btn-danger','btn-success')} btn-lg btn-block" value="/apex/GlobalSettings">App Settings</apex:outputLink>
+                    <apex:outputLink styleClass="btn {!IF(globalMissingCompanyDirectory,'disabled','')} {!IF(globalMissingCompanyDirectory || globalMissingAPIToken,'btn-danger','btn-success')} btn-lg btn-block" value="/apex/Authenticate_CADMIN">Add/Reset Access Token</apex:outputLink>
+                    <p class="setup-marketing-message"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="setup-panel panel panel-primary">
+                <div class="panel-heading">Brainshark Connector</div>
+                <div class="panel-body">
+                <apex:outputLink styleClass="btn {!IF(synchMissingCompanyDirectory,'btn-danger','btn-success')} {!IF(globalMissingAPIToken,'disabled','')} btn-lg btn-block"  value="/apex/BrainsharkActivityMigration">Migration Tool</apex:outputLink>
+                <apex:outputLink styleClass="btn btn-success btn-lg btn-block"  value="{!IF(!isBlank(appHost),appHost + '/1/integrations/','https://www.brainshark.com/1/integrations/')}">Manage Brainshark/Salesforce Integration</apex:outputLink>
+                <p class="setup-marketing-message"></p>
+                <div style="background-color: #cce5ff;padding: .75rem 1.25rem;">
+                    Click here to configure Brainshark integration with Salesforce on the Brainshark Manage Integrations page at https://www.brainshark.com/1/integrations/
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="setup-panel panel panel-primary">
+                <div class="panel-heading">CRM Connector for Salesforce</div>
+                <div class="panel-body">
+                <apex:outputLink styleClass="btn {!IF(globalMissingCompanyDirectory || globalMissingAPIToken,'btn-danger','btn-success')} {!IF(globalMissingCompanyDirectory || globalMissingAPIToken,'disabled','')} btn-lg btn-block"  value="/apex/BrainsharkConfig">Search Settings</apex:outputLink>
+                <p class="setup-marketing-message"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6"></div>
+    </div>
+</div>
+</apex:page>

@@ -1,0 +1,333 @@
+<apex:page showHeader="false" standardController="User" extensions="BRNSHRK.BrainsharkAchievementsController" action="{!initPage}">
+    <apex:slds />
+    <link rel="stylesheet" href="{!URLFOR($Resource.BrainsharkLightningResources, 'BrainsharkLightningResources/datatables.min.css')}" />
+    <script type="text/javascript" src="{!URLFOR($Resource.BrainsharkLightningResources, 'BrainsharkLightningResources/jQuery-1.12.3/Query-1.12.3.min.css')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.BrainsharkLightningResources, 'BrainsharkLightningResources/datatables.min.js')}" />
+    <style>
+        .legend{
+          font-size: 1.25rem;
+          color: rgb(22, 50, 92);
+          text-align:left !important;
+        }
+
+        .clearFloats:before,  .clearFloats:after 
+        {
+          content: " "; 
+          display: table !important;
+        }
+
+        .clearFloats:after {clear: both;}
+        .clearFloats {*zoom: 1; }
+
+        .container .slice ,  .container.p50plus .slice
+        {
+          clip: rect(auto, auto, auto, auto);
+        }
+
+        .pie,  .container .bar ,  .fill,  .container.p50plus .fill{
+           position: absolute;
+            border: 0.08em solid #307bbb;
+            width: 0.84em;
+            height: 0.84em;
+            clip: rect(0em, 0.5em, 1em, 0em);
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        .pie-fill,  .container.p50plus .bar:after,  .container.p50plus .fill{
+           -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+        .container {
+            position: relative;
+            font-size: 120px;
+            width: 1em;
+            height: 1em;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            float: left;
+            margin: 0 0.1em 0.1em 0;
+            background-color: #cccccc;
+          }
+
+        .container *,  .container *:before,  .container *:after {
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+
+        .container.center {
+            float: none;
+            margin: 0 auto;
+        }
+        .container.big {
+            font-size: 240px;
+        }
+        .container.small {
+            font-size: 80px;
+        }
+        .container.medium {
+            font-size: 160px;
+        }
+
+        .container > span {
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 5em;
+            line-height: 5em;
+            font-size: 0.2em;
+            color: #cccccc;
+            display: block;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-transition-property: all;
+            -moz-transition-property: all;
+            -o-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: 0.2s;
+            -moz-transition-duration: 0.2s;
+            -o-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+            -webkit-transition-timing-function: ease-out;
+            -moz-transition-timing-function: ease-out;
+            -o-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+
+        .container:after {
+            position: absolute;
+            top: 0.08em;
+            left: 0.08em;
+            display: block;
+            content: " ";
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            background-color: whitesmoke;
+            width: 0.84em;
+            height: 0.84em;
+            -webkit-transition-property: all;
+            -moz-transition-property: all;
+            -o-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: 0.2s;
+            -moz-transition-duration: 0.2s;
+            -o-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+            -webkit-transition-timing-function: ease-in;
+            -moz-transition-timing-function: ease-in;
+            -o-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+        }
+
+        .container .slice {
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            clip: rect(0em, 1em, 1em, 0.5em);
+        }
+
+        .current-level {
+            border-width:1px;
+            border-color:rgb(221, 219, 218);
+            border-radius:7px;
+            border-style: solid;
+            padding:10px 10px 10px 10px;
+        }
+        .container.green .bar,  .container.green .fill {
+            border-color: #4db53c !important;
+        }
+    </style>
+
+    <div class="slds-scope">
+        <apex:outputText rendered="{!NOT(cannotGetSession)}">
+            <div class="slds-tabs_default">
+                <ul class="slds-tabs_default__nav" role="tablist">
+                <li id="tab-certificates-tab" class="slds-tabs_default__item slds-is-active" title="Certificates" role="presentation">
+                  <a class="slds-tabs_default__link" href="#" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-certificates" id="tab-certificates__item" onclick="chooseTab('certificates');">Certificates</a>
+                </li>
+                <apex:outputText rendered="{!badgeSettings.IsGamificationEnabled}">
+                  <li id="tab-badges-tab" class="slds-tabs_default__item" title="Badges" role="presentation">
+                    <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-badges" id="tab-badges__item" onclick="chooseTab('badges');">Badges</a>
+                  </li>
+                </apex:outputText>
+                </ul>
+                <div id="tab-certificates-content" class="slds-tabs_default__content slds-show" role="tabpanel" aria-labelledby="tab-certificates__item">
+                <!--Certificate content -->
+                <div class="slds-grid slds-gutters">   
+                    <div class="slds-col slds-size_1-of-1" style="padding-left:20px;padding-right:20px;">
+                        <table id="data-table" class="slds-table slds-table_bordered slds-table_fixed-layout slds-table_striped" style="margin-top:10px;">
+                            <thead>
+                                <tr class="slds-text-title_caps" style="margin-top:10px;">
+                                    <th scope="col" >
+                                        <div class="slds-truncate" title="Title">Title</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="Completion Date">Completion Date</div>
+                                    </th>                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <apex:repeat value="{!certificates}" var="cert" >
+                                    <tr>
+                                        <td scope="row">
+                                            <div class="slds-truncate detail-data" title="Title">{!cert.Title}</div>
+                                        </td>
+                                        <td scope="row">
+                                            <div class="slds-truncate detail-data" title="Completion Date">
+                                                <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                                                    <apex:param value="{!cert.SfCompletionDate}" /> 
+                                                </apex:outputText>
+                                            </div>
+                                        </td>                         
+                                    </tr>
+                                </apex:repeat>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <apex:outputText rendered="{!badgeSettings.IsGamificationEnabled}">
+                <div id="tab-badges-content" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-badges__item">
+
+                    <div class="clearFloats slds-align--absolute-center">
+                        <apex:outputText rendered="{!badgeSettings.CompletedCourses > 0}">
+                            <div class="container {!IF(badgeDegrees > 179,'p50plus','')} green 200">
+                                <span style="padding-top:35px;">
+                                    <svg aria-hidden="true" class="slds-icon slds-icon_large">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#bookmark')}" style="fill:#{!currentBadge.HexColor};"></use>
+                                    </svg>
+                                </span> 
+                                <div class="slice">
+                                    <div class="bar" style="-webkit-transform: rotate({!JSENCODE(TEXT(badgeDegrees))}deg); -moz-transform: rotate({!JSENCODE(TEXT(badgeDegrees))}deg); -ms-transform: rotate({!JSENCODE(TEXT(badgeDegrees))}deg); -o-transform: rotate({!JSENCODE(TEXT(badgeDegrees))}deg); transform: rotate({!JSENCODE(TEXT(badgeDegrees))}deg); -ms-transform: rotate({!JSENCODE(TEXT(badgeDegrees))}deg);"></div>
+
+                                    <div class="fill"></div>
+                                </div>
+                            </div>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!badgeSettings.CompletedCourses == 0}">
+                            <div class="container green 200">
+                                <span style="padding-top:35px;">
+                                    <svg aria-hidden="true" class="slds-icon slds-icon_large">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#bookmark')}" style="fill:#425563;"></use>
+                                    </svg>
+                                </span> 
+                                <div class="slice">
+                                    <div class="bar" style="-webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -ms-transform: rotate(0deg); -o-transform: rotate(0deg); transform: rotate(0deg); -ms-transform: rotate(0deg);"></div>
+
+                                    <div class="fill"></div>
+                                </div>
+                            </div>
+                        </apex:outputText>
+                        <div class=" legend"> 
+                            <apex:outputText rendered="{!badgeSettings.CompletedCourses > 0}">
+                                Level {!currentBadge.Level}<br/>
+                                {!currentBadge.Description}<br/>
+                                {!badgeSettings.CompletedCourses} / {!currentBadge.MaxCourses} courses 
+                            </apex:outputText>
+                            <apex:outputText rendered="{!badgeSettings.CompletedCourses == 0}">
+                                To start earning badges,<br/>
+                                complete your first course!<br/>
+                            </apex:outputText>
+                        </div>
+                    </div>
+                    <ul class="slds-list_horizontal slds-align--absolute-center">
+                        <apex:repeat value="{!badgeSettings.LearningBadgeItems}" var="item">
+                            <li>
+                              <article class="slds-tile slds-media slds-tile_board {!IF(AND(item.Level = currentBadge.Level,badgeSettings.CompletedCourses > 0),'current-level','')}">
+                                <div class="slds-media__figure">
+                                  <span class="slds-icon_container" title="description of icon when needed">
+                                    <svg aria-hidden="true" class="slds-icon slds-icon_large">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#bookmark')}" style="fill:#{!item.HexColor};"></use>
+                                </svg>
+                                  </span>
+                                </div>
+                                <div class="slds-media__body">
+                                  <!--h3 class="slds-tile__title slds-truncate" title="Level"><a href="">{!item.Description}</a></h3-->
+                                  <div class="slds-tile__detail">
+                                    <dl class="slds-list_horizontal slds-wrap">
+                                      <dt class="slds-item_label slds-text-color_weak" style="min-width:70px;" title="Description">{!item.Description}</dt>
+                                      <dt class="slds-item_label slds-text-color_weak" style="min-width:70px;" title="Number of Courses">{!item.MinCourses} - {!item.MaxCourses}</dt>
+                                      <dt class="slds-item_label slds-text-color_weak" title="Status">
+                                        {!IF(item.Level < currentBadge.Level,'completed','')}&nbsp;
+                                      </dt>
+                                    </dl>
+                                  </div>
+                                </div>
+                              </article>
+                            </li>
+                        </apex:repeat>
+                    </ul>
+                </div>
+            </apex:outputText>
+        </div>
+        </apex:outputText>
+        <apex:outputText rendered="{!cannotGetSession}">
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+            
+            <h2>Unable to retrieve achievement data for this user.
+            </h2>
+            </div>
+        </apex:outputText>
+    </div>
+    <script>
+        $(document).ready( function () {
+            $('#data-table').DataTable({
+                "lengthMenu": [[10, 25, 50, -1], ["Show 10 Entries", "Show 25 Entries", "Show 50 Entries", "Show All Entries"]],
+                "language": {
+                    "lengthMenu": "_MENU_",
+                    "search":""
+                },
+                "columnDefs": [
+                    { "width": "70%", "targets": [0] },
+                    { "width": "30%", "targets": [1] }
+                  ],
+            });
+            $('div.dataTables_filter input').addClass('slds-input');
+            $('div.dataTables_filter input').attr('placeholder','Search...');
+            $('div.dataTables_filter input').css("marginBottom", "10px");
+            $('div.dataTables_filter').css("marginRight", "8px");
+            $('div.dataTables_length select').addClass('slds-select');
+        });
+      
+        function chooseTab(tabName) {
+            if (tabName == 'certificates') {
+                $('#tab-certificates-tab').addClass('slds-is-active');
+                $('#tab-certificates-content').addClass('slds-show');
+                $('#tab-certificates-content').removeClass('slds-hide');
+                $('#tab-badges-tab').removeClass('slds-is-active');
+                $('#tab-badges-content').removeClass('slds-show');
+                $('#tab-badges-content').addClass('slds-hide');
+            }
+            if (tabName == 'badges') {
+                $('#tab-badges-tab').addClass('slds-is-active');
+                $('#tab-badges-content').addClass('slds-show');
+                $('#tab-badges-content').removeClass('slds-hide');
+                $('#tab-certificates-tab').removeClass('slds-is-active');
+                $('#tab-certificates-content').removeClass('slds-show');
+                $('#tab-certificates-content').addClass('slds-hide');
+            }
+        }
+     </script>
+</apex:page>

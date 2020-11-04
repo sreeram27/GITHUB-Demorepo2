@@ -1,0 +1,21 @@
+<apex:page standardController="Order">
+<script>
+window.document.onload = new function(e){
+     
+    //alert('redirect======'+redirect);
+    //if(
+    //    "{!$Profile.Name}" == "Stop Loss Team"
+    //){
+    //   //alert('redirect=====*****=');
+    //    //window.location.href = '/';
+    //    window.open("/006/e?nooverride=1","_self");
+    //    //window.close();
+    //}else{
+        var redirect =confirm('Please navigate to a Quote to create an Implementation Case');
+        window.open("/lightning/o/Order/list?filterName=Recent","_self");
+        window.close();
+    //}
+    //window.location('/');
+}
+</script>
+</apex:page>

@@ -1,0 +1,3 @@
+<apex:page standardStylesheets="false" showHeader="false" standardController="Order" extensions="vlocity_ins.VFPageControllerBase" sidebar="true" docType="html-5.0" >
+    <vlocity_ins:OmniScriptInstanceComponent standardController="{!stdController}"/>
+</apex:page>

@@ -1,0 +1,425 @@
+<!--
+*******************************************************************************
+* Purpose:  Allow an associate to signup for meeting
+* Created:  6/1/2014
+* Author:   Tony Angle
+******************************************************************************* 
+* Mod:      7/16/2014 - Added Bilingual to form as per Colleen and team 
+*                       and made other look and feel changes desired TA
+*           7/17/2014 - Correct comma issue in the intro paragraph TA
+*           2/10/2015 - Move the volunteer Button.  
+*                       Users complain that they can't see it. LG
+*
+*           2/13/2015 - If Bilingual yes make RED. LG
+*           2/16/2015 - Move Bilingual to before Account Name. LG 
+*           2/24/2015 - TextArea Box edits. LG
+*           6/1/2015  - Manager Approval Block LG
+*           9/1/2015  - Popup to remind users to add their estimated travel expense.LG
+*           12/23/2015- Buddy Program rendering 
+*			// SPRINT 192.4 - XMen - Shifted from COM1
+*			8/28/2019 - Xmen - Added Rendered condition (isConsultant) to display message "Please make sure you receive Manager Approval before volunteering for any meetings."
+and Commented 'edit profile' button.
+*******************************************************************************
+-->
+<apex:page controller="OEAmbSignupController" standardStylesheets="false" showHeader="false" sidebar="false"> 
+    
+    <style>
+        .messageText {
+        background-color : yellow;
+        }
+    </style>
+    <script>
+    function isNumberKey(evt){
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode != 46 &&(charCode < 48 || charCode > 57)))
+            return false;
+        return true;
+    }
+    </script>
+    
+    <apex:form >     
+        <apex:stylesheet value="{!$Resource.main}"/>
+        <!-- "{!$Resource.main}" -->
+        
+        <apex:pageMessages />
+        <table width="900px">
+            <tr width="33%">
+                <td><apex:image value="{!$Resource.AnthemNewLogo}" height="59px" width="220px"/></td>
+                <td align="center" width="33%"><apex:outputText value="Open Enrollment {!IF(isConsultant,"Consultant", "Ambassador")}s" styleClass="header"/>
+                    <br/><apex:outputText value="{!IF(isConsultant,"Consultant", "Ambassador")} Signup" styleClass="subheader"/>
+                </td>
+                <td></td>
+                <td>
+                    <!--PG-Xmen: Commented below line based on PRDCRM-41842-->
+                    <!--
+<apex:commandButton action="{!editProfile}"  value="Edit profile"  rendered="{!isConsultant}" />
+-->
+                </td>
+                <td align="right" width="33%"></td>
+            </tr>
+        </table>
+        <br/>
+        <apex:pageBlock rendered="{!showMgrApproval}">       
+            <div class="box900">        
+                <div class="innerbox" style="border-color:gray;Height:500px">
+                    <h1 style="font-size:125%"><b><em>{!$Label.OESignup_Manager_Approval}</em></b></h1>
+                    <br/>
+                    <table width="100%">
+                        <tr>
+                            <td style="text-align: center;" width="30%" align="Center"><apex:commandButton value="Continue" action="{!returnToList}" styleClass="largebody"/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+                            <td width="70%" align="Center"><apex:image value="{!$Resource.OE_ManagerApproval2}" height="440px" width="550px"/></td></tr>    
+                    </table>
+                    
+                    
+                </div>
+            </div>
+            
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!showSearch}">
+            <div class="box900">
+                <div class="innerbox">
+                    <apex:outputText value="{!$Label.OESignup_Thanks_for_Visiting}">
+                        <apex:param value="{!IF(isConsultant,"Consultant", "Ambassador")}"/>
+                        <apex:param value="{!IF(isConsultant,"Consultant", "Ambassador")}"/>
+                    </apex:outputText>
+                </div>		
+            </div>
+            <br/>
+            
+            
+            <div class="box900">
+                <div class="boxcaption">Select Region</div>
+                <div class="innerbox">
+                    <apex:pageBlock rendered="{!!isConsultant}"> <!--PG-Xmen: Added as part of PRDCRM-41842-->
+                        <h3 style="color:#ff0000"><b><em>{!$Label.OESignup_Manager_Approval}</em></b></h3>
+                    </apex:pageBlock>
+                    <table width="100%">
+                        <tr><td width="30%" align="center"><apex:outputText value="Select the Region" styleClass="largebody"/><br/>&nbsp;
+                            <apex:selectList size="1" styleClass="largebody" value="{!StateorRegion}"><apex:selectOptions value="{!Regions}"/></apex:selectList><br/>
+                            <apex:commandButton value="Search" styleClass="largebody"/></td>
+                            <td width="70%" align="Center"><apex:image value="{!$Resource.OE_RegionsMapNoWellPoint}" height="500px" width="660px"/></td></tr>    
+                    </table>
+                </div>
+            </div>
+            
+            <br/>
+            
+            <div class="box900">
+                <div class="boxcaption">{!$Label.OESignup_AvailableMeeting}</div>        
+                <div class="innerbox">
+                    <apex:outputText value="Sort by" styleClass="body"/>&nbsp;
+                    <apex:selectList size="1" styleClass="body" value="{!SortBy}"><apex:selectOptions value="{!SortOptions}"/></apex:selectList>&nbsp;&nbsp;
+                    <apex:outputText value="Sort Ascending" styleClass="body"/>&nbsp;
+                    <apex:inputCheckbox value="{!SortAsc}"/>&nbsp;&nbsp;
+                    <apex:outputText value="Account Name" styleClass="body"/>&nbsp;
+                    <apex:inputText value="{!SearchMeetingName}" styleClass="body"/>&nbsp;&nbsp;
+                    <apex:commandButton value="Refresh List" styleClass="body"/>
+                    <apex:pageBlockTable value="{!Meetings}" var="meeting" title="Search Results" headerClass="tableheader" border="1" rowClasses="tablerow" styleClass="contactstable" columnClasses="tablecolumn" cellpadding="2px">
+                        <apex:column >
+                            <apex:commandLink value="View " action="{!selectMeeting}">
+                                <apex:param name="meetingId" value="{!meeting.ID}"/>
+                            </apex:commandLink>
+                        </apex:column>
+                        <!--<apex:column headerValue="Local Ambassador Only" value="{!meeting.Local_Ambassador_Only__c}" style="text-align:center;color:{!IF(meeting.Local_Ambassador_Only__c = 'No', 'black', 'blue')};font-weight:{!IF(meeting.Local_Ambassador_Only__c = 'No','', 'bold')};"/>-->
+                        <apex:column headerValue="Bilingual" value="{!meeting.Bilingual__c}" style="color:{!IF(meeting.Bilingual__c = 'No', 'black', 'red')};font-weight:{!IF(meeting.Bilingual__c = 'No','', 'bold')};" />
+                        <apex:column headerValue="Account Name" value="{!meeting.Account_Name_Text__c}"/>                    
+                        <apex:column headerValue="Meeting Type" value="{!meeting.Meeting_Type__c}"/>
+                        <apex:column headerValue="Date" value="{!meeting.Date__c}"/>
+                        <apex:column headerValue="Date is Flexible" value="{!meeting.Dates_Flexible__c}" style="text-align: center"/>
+                        <apex:column headerValue="City" value="{!meeting.Meeting_City__c}"/>
+                        <apex:column headerValue="State" value="{!meeting.Meeting_State__c}"/>
+                        <apex:column headerValue="# Emp Expected" value="{!meeting.Expected_of_Employees__c}"/>
+                    </apex:pageBlockTable>
+                </div>
+            </div>
+            
+        </apex:pageBlock>
+        
+        <apex:pageBlock rendered="{!Not personCleared}">
+            {!$Label.OESignup_Oops}
+        </apex:pageBlock>
+        
+        <apex:outputPanel >
+            
+            <apex:pageBlock rendered="{!showMeeting}">
+                <div class="menubox">
+                    <apex:commandButton value="Back" action="{!backToSearch}" styleClass="button"/>
+                </div>
+                <br/>
+                <div class="box900">
+                    <div class="innerbox">
+                        {!$Label.OESignup_Review_Details} 
+                        {!IF(isConsultant,$Label.OESignup_Review_Details2, $Label.OESignup_Review_DetailsAmbassador)}
+                    </div>
+                </div>
+                <br/>
+                
+                <div class="box900" style="height:640px; border-color:white">
+                    <div class="boxcaption">Meeting Details</div>
+                    <div class="innerbox"  style="600px; margin-bottom: 5px;">           
+                        <table width="800px">               
+                            <tr> 
+                                <td width="20%"><b>Account Name</b></td><td width="35%">{!selectedMeeting.Account_Name_Text__c}</td>
+                                <td width="20%">
+                                    <apex:outputPanel >
+                                        <apex:commandButton action="{!getTravelDistance}" value="Calculate Travel Distance" disabled="{!disabledTravel}"/>
+                                    </apex:outputPanel>                    
+                                </td>                    
+                            </tr>
+                            <tr>
+                                <td width="20%"><b>Meeting Address</b></td><td width="35%">{!selectedMeeting.Meeting_Street__c}&nbsp;<apex:commandLink value="Map" action="{!mapit}" target="_blank"/><br/>{!selectedMeeting.Meeting_City__c},&nbsp;{!selectedMeeting.Meeting_State__c}&nbsp;&nbsp;{!selectedMeeting.Meeting_Zip_Code__c}<br/>&nbsp;</td>                                        
+                                <apex:outputPanel rendered="{!validResponse}">
+                                    <td width="20%"><b><span style="color:black">Distance</span></b></td><td width="35%">
+                                    <span style="color:black">
+                                        <apex:outputText value="{!disDurEvent[selectedMeeting.Id].meetingDistance}" rendered="{!isInMap}" />
+                                    </span>
+                                    </td>  
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!isConsultant && NOT validResponse}" >
+                                    <td width="20%"><b><span style="color:black">Distance</span></b></td><td width="35%"><span style="color:black">Error</span></td>
+                                </apex:outputPanel>
+                            </tr>
+                            <tr>
+                                <td width="20%"><b>Meeting Type</b></td><td width="35%">{!selectedMeeting.Meeting_Type__c}</td>
+                                <apex:outputPanel rendered="{!validResponse}">
+                                    <td width="20%"><b><span style="color:black">Duration</span></b></td><td width="35%">
+                                    <span style="color:black">
+                                        <apex:outputText value="{!disDurEvent[selectedMeeting.Id].meetingDuration}" rendered="{!isInMap}" />
+                                    </span>
+                                    </td>
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!NOT validResponse}">
+                                    <td width="20%"><b><span style="color:black">Duration</span></b></td><td width="35%"><span style="color:black">Error</span></td>
+                                </apex:outputPanel>
+                            </tr>
+                            <tr>
+                                <td width="20%"><b>Meeting Date</b></td><td width="35%"><apex:outputText value="{0,date,MM'/'dd'/'yyyy}"><apex:param value="{!selectedMeeting.Date__c}"></apex:param></apex:outputText></td>
+                                <apex:outputPanel rendered="{!NOT isConsultant}">
+                                    <td width="20%"><b>OE Coordinator</b></td><td width="35%">{!selectedMeeting.OE_Coordinator_Name_Text__c}</td>
+                                </apex:outputPanel>
+                            </tr>
+                            <tr>
+                                <td width="20%"><b>Date is Flexible</b></td><td width="35%"><apex:image value="{!IF((selectedMeeting.Dates_Flexible__c == true),URlFOR($Resource.AthemResources, '/AnthemResources/Images/status_success.png'),URlFOR($Resource.AthemResources, '/AnthemResources/Images/status_warning.png'))}" style="text-align: center"></apex:image></td>
+                            </tr>                 
+                            <tr>
+                                <td width="20%"><b>Plan Type</b></td><td width="35%">{!selectedMeeting.OE_Grouping__r.Plan_Type__c}</td>
+                                <!--<apex:outputPanel rendered="{!NOT isConsultant}">
+                                    <td width="25%"><b><span style="color:blue">Local Ambassador Only</span></b></td><td><span style="color:blue">{!selectedMeeting.Local_Ambassador_Only__c}</span></td>
+                                    </apex:outputPanel>-->   
+                            </tr>
+                            <tr>
+                                <td width="20%"><b>Bilingual</b></td><td width="35%">{!selectedMeeting.Bilingual__c}</td>
+                                <td width="20%"><b>Flight cost</b></td>
+                                <td width="35%">
+                                    <apex:inputHidden value="{!FlightCost}"  id="FlightCostId"/>
+                                    <input type="text" value="{!FlightCost}" onblur="document.getElementById('{!$Component.FlightCostId}').value = this.value;" 
+                                           onkeypress="return isNumberKey(event)" placeholder="Cost of the round trip flight"/>
+                                </td>       
+                            </tr>
+                            <tr>
+                                <td width="20%"><b>Special Comments</b></td><td width="35%">{!selectedMeeting.Special_Comments__c}</td> 
+                                <td width="20%"><b>Hotel cost</b></td>
+                                <td width="35%">
+                                    <apex:inputHidden value="{!HotelCost}"  id="HotelCostId"/>
+                                    <input type="text" value="{!HotelCost}" onblur="document.getElementById('{!$Component.HotelCostId}').value = this.value;" 
+                                           onkeypress="return isNumberKey(event)" placeholder="Cost of the hotel per day" />
+                                </td>                                          
+                            </tr>
+                            <tr>                                
+                                <td width="20%"><b>Expected # Employees</b></td><td width="35%">{!selectedMeeting.Expected_of_Employees__c}</td>    
+                                <td width="20%"><b>Car Rental per day</b></td>
+                                <td width="35%">
+                                    <apex:inputHidden value="{!CarRentalPerDay}"  id="CarRentalPerDayid" />
+                                    <input type="text" value="{!CarRentalPerDay}" onblur="document.getElementById('{!$Component.CarRentalPerDayid}').value = this.value;" 
+                                           onkeypress="return isNumberKey(event)" placeholder="Cost of the car rental per day"/>
+                                </td>   
+                            </tr>
+                            <tr><br/></tr>
+                        </table>                       
+                        <table width ="900px">
+                            <tr><td width="10%" align="center"><input type="checkbox" name="checkbox" value="check"  /></td><td>
+                                <b><span style="color:#ff0000">{!IF(isConsultant,$Label.OESignup_Confirmation1, $Label.OESignup_Confirmation2)} </span></b>
+                                </td> </tr>
+                        </table>
+                        <table width ="900px">
+                            <tr><td width="10%" align="center"></td><td><b><span style="color: black;display: block; width: 90%;"> {!$Label.Volunteering_Warning }</span></b></td> </tr>
+                        </table>                
+                        <br/>
+                        <table><tr>
+                            <td>
+                                <apex:outputPanel rendered="{!isConsultant}" >
+                                    <div class="boxbase" style="width:125px;border-color:white;Height:300px">
+                                    </div>
+                                </apex:outputPanel>
+                            </td>
+                            
+                            
+                            <td>
+                                <div class="boxbase" style="width:275px;border-color:gray;height:300px">
+                                    <div class="boxcaption" style="background-color:gray;border-color:gray">Meeting Sessions</div>
+                                    <div class="innerbox" style="border-color:gray;height:250px">
+                                        <table width="250px">
+                                            <tr><td width="50%">Start</td><td width="50%">End</td></tr>
+                                            <tr><td>{!selectedMeeting.Session_1_Start_Time__c}</td><td>{!selectedMeeting.Session_1_End_Time__c}</td></tr>
+                                            <tr><td>{!selectedMeeting.Session_2_Start_Time__c}</td><td>{!selectedMeeting.Session_2_End_Time__c}</td></tr>
+                                            <tr><td>{!selectedMeeting.Session_3_Start_Time__c}</td><td>{!selectedMeeting.Session_3_End_Time__c}</td></tr>
+                                            <tr><td>{!selectedMeeting.Session_4_Start_Time__c}</td><td>{!selectedMeeting.Session_4_End_Time__c}</td></tr>
+                                            <tr><td>{!selectedMeeting.Session_5_Start_Time__c}</td><td>{!selectedMeeting.Session_5_End_Time__c}</td></tr>
+                                            <tr><td>{!selectedMeeting.Session_6_Start_Time__c}</td><td>{!selectedMeeting.Session_6_End_Time__c}</td></tr>
+                                            <tr><td>{!selectedMeeting.Session_7_Start_Time__c}</td><td>{!selectedMeeting.Session_7_End_Time__c}</td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>&nbsp;&nbsp;</td>
+                            <td>
+                                <apex:outputPanel rendered="{!NOT isConsultant}" >
+                                    <div class="boxbase" style="width:275px;border-color:gray;Height:300px">
+                                        
+                                        <div class="boxcaption" style="background-color:gray;border-color:gray">Buddy Program</div>
+                                        <div class="innerbox" style="border-color:gray;Height:250px">
+                                            
+                                            <table width="250px">
+                                                <tr>
+                                                    <td width="50%"><b><span style="color:#005eff"> Buddy Program Eligible</span></b></td>
+                                                    <td>
+                                                        <apex:outputPanel rendered="{! (selectedMeeting.Buddy_Program_Eligible__c) && (NOT isConsultant)}" layout="block">
+                                                            <input type="checkbox" checked="checked" disabled="true"/>
+                                                        </apex:outputPanel>
+                                                        <apex:outputPanel rendered="{!NOT(selectedMeeting.Buddy_Program_Eligible__c)}" layout="block">
+                                                            <input type="checkbox" disabled="true"/>
+                                                        </apex:outputPanel>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="100%" style="text-align:center">
+                                                        <font size="1" color="#005eff"> {!$Label.OESignup_Buddy_Available} </font>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;&nbsp;</td>
+                                                </tr>
+                                                <apex:outputPanel rendered="{!selectedMeeting.Buddy_Program_Eligible__c }">
+                                                    <tr>
+                                                        <td>&nbsp;&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="50%">
+                                                            <b><span style="color:#005eff">{!$Label.OESignup_Buddy_Program}</span></b></td>
+                                                        <td>
+                                                            <apex:selectList size="1" value="{!BuddyProgramResponse}">
+                                                                <apex:selectOptions value="{!buddyOptions}"/>
+                                                            </apex:selectList>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="100%"><span style="color:#005eff">{!$Label.OESignup_Amb_Participate}</span>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </apex:outputPanel>
+                                            </table>
+                                            
+                                        </div>
+                                    </div>
+                                </apex:outputPanel>                
+                                
+                            </td>
+                            <td>&nbsp;&nbsp;</td>
+                            <td>
+                                <div class="boxbase" style="width:280px;border-color:gray;Height:300px">
+                                    <div class="boxcaption" style="background-color:gray;border-color:gray">{!$Label.OESignup_Comments}</div>
+                                    <div class="innerbox" style="border-color:gray;Height:250px">
+                                        <table width="200px">
+                                            <tr><td><b><span style="color:#ff0000">{!$Label.OESignup_Additional_Comments}</span></b></td></tr>
+                                            <tr><td>{!$Label.OESignup_Comment_Limit}</td></tr>
+                                            <tr><td>
+                                                	<apex:inputTextArea label="Comments and Considerations" value="{!volComments}" style="width:240px;height:100px"/>
+                                                </td>
+                                            </tr>
+                                            
+                                          <tr><td width="30%" align="center"><b><apex:commandButton value="{!$Label.OESignup_Want_to_Volunteer}"  onclick="if(!this.form.checkbox.checked)
+                                                {alert('{!IF(isConsultant,"Please check the box confirming you will hold your availability for this date for a minimum of 24-48 hours", 
+                                                "Please check the box indicating that your manager has approved you to facilitate this meeting.")}');return false} else {return confirm('Have you added your mileage/estimated travel expenses for meetings outside your local area?')}" action="{!volunteer}"/></b></td></tr> 
+                                            <!--   <tr><td width="30%" align="center"><b><apex:commandButton value="I Want to Volunteer"  onclick="if(!this.form.checkbox.checked){alert('{!IF(isConsultant,"Please check the box confirming you will hold your availability for this date for a minimum of 24-48 hours", "Please check the box indicating that your manager has approved you to facilitate this meeting.")}');return false} else { return true;}" action="{!volunteer}"/></b></td></tr> -->
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                            
+                            </tr>
+                        </table>
+                    </div>
+                    <apex:pageBlock rendered="{!AND(meetingWrappers != NULL, meetingWrappers.size > 0)}">             
+                        <div class="box900">
+                            <div class="boxcaption">{!selectedMeeting.Account_Name_Text__c} Related Meetings</div>
+                            <div class="innerbox">
+                                <div>{!$Label.OESignup_5_days}</div>
+                                <apex:pageBlockTable value="{!meetingWrappers}" var="meetingWrapper" title="Search Results" headerClass="tableheader" border="1" rowClasses="tablerow" styleClass="contactstable" columnClasses="tablecolumn" cellpadding="2px">
+                                    <apex:column >
+                                        <apex:commandLink value="View " action="{!selectMeeting}">
+                                            <apex:param name="meetingId" value="{!meetingWrapper.meeting.ID}"/>
+                                        </apex:commandLink>
+                                    </apex:column>
+                                    
+                                    <apex:column rendered="{!NOT isConsultant}" headerValue="Local Ambassador Only" value="{!meetingWrapper.meeting.Local_Ambassador_Only__c}" style="text-align:center;color:{!IF(meetingWrapper.meeting.Local_Ambassador_Only__c = 'No', 'black', 'blue')};font-weight:{!IF(meetingWrapper.meeting.Local_Ambassador_Only__c = 'No','', 'bold')};"/>
+                                    <apex:column headerValue="Bilingual" value="{!meetingWrapper.meeting.Bilingual__c}" style="color:{!IF(meetingWrapper.meeting.Bilingual__c = 'No', 'black', 'red')};font-weight:{!IF(meetingWrapper.meeting.Bilingual__c = 'No','', 'bold')};" />
+                                    <apex:column headerValue="Account Name" value="{!meetingWrapper.meeting.Account_Name__c}"/>
+                                    <apex:column headerValue="Meeting Type" value="{!meetingWrapper.meeting.Meeting_Type__c}"/>
+                                    <apex:column headerValue="Date" value="{!meetingWrapper.meeting.Date__c}"/>
+                                    <apex:column headerValue="Date is Flexible" value="{!meetingWrapper.meeting.Dates_Flexible__c}" style="text-align: center"/>
+                                    <apex:column headerValue="City" value="{!meetingWrapper.meeting.Meeting_City__c}"/>
+                                    <apex:column headerValue="State" value="{!meetingWrapper.meeting.Meeting_State__c}"/>
+                                    <apex:column headerValue="# Emp Expected" value="{!meetingWrapper.meeting.Expected_of_Employees__c}" style="text-align: center"/>
+                                    <apex:column headerValue="Distance" value="{!meetingWrapper.distance}"/>
+                                </apex:pageBlockTable>
+                            </div>
+                        </div>
+                    </apex:pageBlock>
+                </div>          
+            </apex:pageBlock>
+        </apex:outputPanel>
+        
+        <apex:pageBlock rendered="{!showThankYou}">
+            <div class="boxbase" style="width:935px;border-color:gray;Height:auto">
+                <div class="boxcaption" style="background-color:gray;border-color:gray">Thank You</div>
+                <div class="innerbox" style="border-color:gray;Height:auto">
+                    {!$Label.OESignup_ThankYou}<br/><br/>                    
+                    <apex:outputPanel rendered="{!AND(meetingWrappers != NULL, meetingWrappers.size > 0)}">
+                        <div class="box900">
+                            <div class="boxcaption">{!selectedMeeting.Account_Name__c} Related Meetings</div>
+                            <div class="innerbox">
+                                <div>{!$Label.OESignup_5_days}</div>
+                                <apex:pageBlockTable value="{!UpdatedRelatedMeetings}" var="meetingWrapper" title="Search Results" headerClass="tableheader" border="1" rowClasses="tablerow" styleClass="contactstable" columnClasses="tablecolumn" cellpadding="2px">
+                                    <apex:column >
+                                        <apex:commandLink value="View " action="{!selectMeeting}">
+                                            <apex:param name="meetingId" value="{!meetingWrapper.meeting.ID}"/>
+                                        </apex:commandLink>
+                                    </apex:column>
+                                    
+                                    <apex:column rendered="{!NOT isConsultant}" headerValue="Local Ambassador Only" value="{!meetingWrapper.meeting.Local_Ambassador_Only__c}" style="text-align:center;color:{!IF(meetingWrapper.meeting.Local_Ambassador_Only__c = 'No', 'black', 'blue')};font-weight:{!IF(meetingWrapper.meeting.Local_Ambassador_Only__c = 'No','', 'bold')};"/>
+                                    <apex:column headerValue="Bilingual" value="{!meetingWrapper.meeting.Bilingual__c}" style="color:{!IF(meetingWrapper.meeting.Bilingual__c = 'No', 'black', 'red')};font-weight:{!IF(meetingWrapper.meeting.Bilingual__c = 'No','', 'bold')};" />
+                                    <apex:column headerValue="Account Name" value="{!meetingWrapper.meeting.Account_Name__c}"/>
+                                    <apex:column headerValue="Meeting Type" value="{!meetingWrapper.meeting.Meeting_Type__c}"/>
+                                    <apex:column headerValue="Date" value="{!meetingWrapper.meeting.Date__c}"/>
+                                    <apex:column headerValue="Date is Flexible" value="{!meetingWrapper.meeting.Dates_Flexible__c}" style="text-align: center"/>
+                                    <apex:column headerValue="City" value="{!meetingWrapper.meeting.Meeting_City__c}"/>
+                                    <apex:column headerValue="State" value="{!meetingWrapper.meeting.Meeting_State__c}"/>
+                                    <apex:column headerValue="# Emp Expected" value="{!meetingWrapper.meeting.Expected_of_Employees__c}" style="text-align: center"/>
+                                    <apex:column headerValue="Distance" value="{!meetingWrapper.distance}"/>
+                                </apex:pageBlockTable>
+                            </div>
+                        </div>
+                    </apex:outputPanel>
+                    
+                    <apex:commandButton value="{!$Label.OESignup_Return}" action="{!returnToList}"/> 
+                    
+                </div>
+            </div>
+        </apex:pageBlock>        
+    </apex:form>
+    
+</apex:page>
