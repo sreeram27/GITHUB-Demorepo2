@@ -4,6 +4,7 @@
 @CreateDate :01-06-2017
 @Description : ANA_AP06_QLI_Process_ChildCount class. 
 checks for positive and negative cases.
+//xzcxcxv
 */
 @isTest(SeeAllData=false)
 private without sharing class ANA_AP06_QLI_Process_ChildCount_Test {
@@ -23,7 +24,7 @@ private without sharing class ANA_AP06_QLI_Process_ChildCount_Test {
     
     private static final string NATIONALAMPROFILE='National Sales';
     private static final Profile profileNA = [select id from profile where name=:NATIONALAMPROFILE limit 1];
-    /*This method will create Account,Opportunity,Quote and QuoteLineItem records and assigns parent QLI with child QLI to test the trigger for positive scenario.*/
+    /*This method will create Account,Opportunity,Quote and QuoteLineItem records and assigns parent QLI with child QLI to test the trigger cxvcxvcxfor positive scenario.*/
      static testMethod void processQLIPositive(){
         User user=ANA_UTIL01_TestMethods.runAsUser(profileNA.id);
         user.AllowQLIDelete__c =true;
