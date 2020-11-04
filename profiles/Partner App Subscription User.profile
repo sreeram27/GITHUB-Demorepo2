@@ -52,7 +52,7 @@
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__Service</application>
-        <default>false</default>
+        <default>true</default>
         <visible>false</visible>
     </applicationVisibilities>
     <applicationVisibilities>
@@ -90,7 +90,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A012378</apexClass>
+        <apexClass>sass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -98,7 +98,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A0233</apexClass>
+        <apexClass>sasas</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
