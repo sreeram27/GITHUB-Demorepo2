@@ -1890,6 +1890,10 @@
         <name>CustomLabel</name>
     </types>
     <types>
+        <members>A1__c</members>
+        <members>A2__c</members>
+        <members>A3__c</members>
+        <members>A4s__c</members>
         <members>ACCObjTest1__c</members>
         <members>ACCObjt1__c</members>
         <members>ACDemoOBj1__c</members>
@@ -2479,6 +2483,10 @@
         <name>KeywordList</name>
     </types>
     <types>
+        <members>A1__c-A1 Layout</members>
+        <members>A2__c-A2 Layout</members>
+        <members>A3__c-A3 Layout</members>
+        <members>A4s__c-A4 Layout</members>
         <members>ACCObjTest1__c-ACCObjTest1 Layout</members>
         <members>ACCObjTest1__c-Custom-Layout1</members>
         <members>ACCObjTest1__c-sai</members>
