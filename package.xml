@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>49.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -1799,6 +1799,10 @@
         <members>Anthem_API_Settings__c</members>
         <members>Aobj2__c</members>
         <members>Ar1__c</members>
+        <members>ArObj1__c</members>
+        <members>ArObj2__c</members>
+        <members>ArObj3__c</members>
+        <members>ArObj4__c</members>
         <members>Asset</members>
         <members>AssetRelationship</members>
         <members>AssistantProgress</members>
@@ -2300,6 +2304,10 @@
         <name>HomePageLayout</name>
     </types>
     <types>
+        <members>BigHack__b.BHIndex</members>
+        <name>Index</name>
+    </types>
+    <types>
         <members>sf_com_apps</members>
         <name>InstalledPackage</name>
     </types>
@@ -2643,6 +2651,10 @@
         <name>ManagedTopics</name>
     </types>
     <types>
+        <members>Default_Navigation</members>
+        <name>NavigationMenu</name>
+    </types>
+    <types>
         <members>Catch up</members>
         <name>Network</name>
     </types>
@@ -2721,6 +2733,7 @@
         <members>Test1</members>
         <members>Test1Profile</members>
         <members>TestCreateProfile</members>
+        <members>TestProfile1</members>
         <members>TestSite1 Profile</members>
         <members>Teste Profile</members>
         <members>Work%2Ecom Only User</members>
