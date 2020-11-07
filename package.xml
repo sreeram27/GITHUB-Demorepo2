@@ -146,6 +146,7 @@
         <members>C1</members>
         <members>ChangePasswordController</members>
         <members>ChangePasswordControllerTest</members>
+        <members>Class1744</members>
         <members>Class1754</members>
         <members>CommunitiesLandingController</members>
         <members>CommunitiesLandingControllerTest</members>
