@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>49.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -145,6 +145,7 @@
         <members>C1</members>
         <members>ChangePasswordController</members>
         <members>ChangePasswordControllerTest</members>
+        <members>Class1754</members>
         <members>CommunitiesLandingController</members>
         <members>CommunitiesLandingControllerTest</members>
         <members>CommunitiesLoginController</members>
@@ -2017,6 +2018,10 @@
         <members>unfiled$public/SupportSelfServiceNewLoginandPassword</members>
         <members>unfiled$public/SupportSelfServiceResetPassword</members>
         <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>BigHack__b.BHIndex</members>
+        <name>Index</name>
     </types>
     <types>
         <members>addNewShares</members>
