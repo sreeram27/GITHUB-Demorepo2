@@ -2,8 +2,7 @@
 public class a1testclass{
  static testmethod void a1test()
  {
-  A1 Octa1= new A1();
-  Octa1.createAccount('name');
+  TestName Octa14= new TestName();
+  Octa14.createAccount('name');
  }
- //Test25678test455768679879870Testkumar2323435
 }

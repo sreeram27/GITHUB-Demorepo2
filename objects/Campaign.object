@@ -157,7 +157,7 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
-    <externalSharingModel>FullAccess</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>ActualCost</fullName>
     </fields>
@@ -168,11 +168,18 @@
         <fullName>AmountWonOpportunities</fullName>
     </fields>
     <fields>
-        <fullName>BudgetedCost</fullName>
+        <fullName>AutorabitExtId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id created by AutoRABIT</description>
+        <externalId>true</externalId>
+        <label>AutorabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
     </fields>
     <fields>
-        <fullName>CampaignImageId</fullName>
-        <type>Lookup</type>
+        <fullName>BudgetedCost</fullName>
     </fields>
     <fields>
         <fullName>CampaignMemberRecordTypeId</fullName>
