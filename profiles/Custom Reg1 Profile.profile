@@ -5279,6 +5279,10 @@
     <layoutAssignments>
         <layout>customObject__c-customObject Layout</layout>
     </layoutAssignments>
+    <loginIpRanges>
+        <endAddress>49.204.190.255</endAddress>
+        <startAddress>49.204.190.1</startAddress>
+    </loginIpRanges>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
