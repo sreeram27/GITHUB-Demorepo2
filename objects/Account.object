@@ -800,6 +800,18 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>field_509_1__c</fullName>
+        <externalId>false</externalId>
+        <label>field_509_1</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>field_509_2__c</fullName>
+        <externalId>false</externalId>
+        <label>field_509_2</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>field_Mod1__c</fullName>
         <externalId>false</externalId>
         <label>field Mod1</label>
