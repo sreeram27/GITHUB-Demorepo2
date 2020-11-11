@@ -145,7 +145,8 @@
         <members>C1</members>
         <members>ChangePasswordController</members>
         <members>ChangePasswordControllerTest</members>
-        <members>Class1754</members>
+        <members>Class12esHx</members>
+        <members>Class1744</members>
         <members>CommunitiesLandingController</members>
         <members>CommunitiesLandingControllerTest</members>
         <members>CommunitiesLoginController</members>
@@ -303,6 +304,15 @@
         <name>ApexTrigger</name>
     </types>
     <types>
+        <members>ACCObjTest1__c.July24thStandardprocess1</members>
+        <members>ACCObjTest1__c.PG_Metric_SME_Approval_Process_withemail</members>
+        <members>PG_Metric__c.PG_Metric_SME_Approval_Process1_withemai</members>
+        <members>PG_Metric__c.PG_Metric_SME_Approval_Process_withemai</members>
+        <members>PG_Metric__c.PG_Metric_SME_Approval_Process_withemail</members>
+        <name>ApprovalProcess</name>
+    </types>
+    <types>
+        <members>Case.CaseAssnRuleBenqBgztiCBd</members>
         <members>Case.Standard</members>
         <name>AssignmentRule</name>
     </types>
@@ -347,8 +357,30 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
+        <members>Case.AutoResponserulePLAK</members>
+        <name>AutoResponseRule</name>
+    </types>
+    <types>
+        <members>Case</members>
+        <name>AutoResponseRules</name>
+    </types>
+    <types>
         <members>Lead.LeadProcess1</members>
         <name>BusinessProcess</name>
+    </types>
+    <types>
+        <members>DataCloudGeoLocation</members>
+        <name>CleanDataService</name>
+    </types>
+    <types>
+        <members>ACR2__c.Test</members>
+        <members>ACR3__c.Layout_layout</members>
+        <members>ACR4__c.Layout_layout</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
+        <members>standard__AppLauncher</members>
+        <name>CustomApplication</name>
     </types>
     <types>
         <members>ACCObjTest1__c.ACCField1__c</members>
@@ -419,6 +451,7 @@
         <members>Account.Description</members>
         <members>Account.DunsNumber</members>
         <members>Account.Fax</members>
+        <members>Account.Field10063__c</members>
         <members>Account.Industry</members>
         <members>Account.IsCustomerPortal</members>
         <members>Account.IsPartner</members>
@@ -1994,6 +2027,11 @@
         <name>Document</name>
     </types>
     <types>
+        <members>Test</members>
+        <members>Test EmailService1</members>
+        <name>EmailServicesFunction</name>
+    </types>
+    <types>
         <members>Georgia_COBRA</members>
         <members>Georgia_COBRA/BCBSGa_COBRA_Setup_Paperwork</members>
         <members>Georgia_COBRA/Newly_Installed_Group_1</members>
@@ -2018,6 +2056,23 @@
         <members>unfiled$public/SupportSelfServiceNewLoginandPassword</members>
         <members>unfiled$public/SupportSelfServiceResetPassword</members>
         <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>Case.Escalation Rule Eighth</members>
+        <name>EscalationRule</name>
+    </types>
+    <types>
+        <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>Pradeep</members>
+        <members>ProcessBuilder10914</members>
+        <members>QuoteLineItem</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Automated_email_on_QLI_Onduo_product_Created_Updated</members>
+        <members>Pradeep</members>
+        <members>QuoteLineItem</members>
+        <name>FlowDefinition</name>
     </types>
     <types>
         <members>BigHack__b.BHIndex</members>
