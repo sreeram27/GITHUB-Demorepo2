@@ -556,9 +556,6 @@
         <members>AR_SFObj1__c.AR_SFField2__c</members>
         <members>AYObj1__c.AYFeidl2__c</members>
         <members>AYObj1__c.AYField1__c</members>
-        <members>AYObj2__c.Ayf1__c</members>
-        <members>AYObj3__c.AYfd1__c</members>
-        <members>AYObj3__c.Ayfd2__c</members>
         <members>Accobj4__c.Field1__c</members>
         <members>Accobj4__c.Field2__c</members>
         <members>Account.AccountNumber</members>
@@ -1935,8 +1932,6 @@
         <members>AR_Obj200__c</members>
         <members>AR_SFObj1__c</members>
         <members>AYObj1__c</members>
-        <members>AYObj2__c</members>
-        <members>AYObj3__c</members>
         <members>Accobj4__c</members>
         <members>Account</members>
         <members>AccountBrand</members>
