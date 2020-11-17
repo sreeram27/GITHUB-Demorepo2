@@ -154,10 +154,9 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>F2__c</fullName>
-        <description>test</description>
+        <fullName>F4__c</fullName>
         <externalId>false</externalId>
-        <label>F2</label>
+        <label>F4</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Email</type>
