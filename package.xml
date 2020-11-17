@@ -1200,8 +1200,8 @@
         <members>NamespaceRegistry.NamespacePrefix</members>
         <members>NewObj600__c.Field1__c</members>
         <members>NewObje800__c.Field1__c</members>
-        <members>Nov17Obj1__c.F1__c</members>
         <members>Nov17Obj1__c.F2__c</members>
+        <members>Nov17Obj1__c.f3__c</members>
         <members>O2Obj1__c.AccF1Test1O2__c</members>
         <members>OBJ600__c.Field1__c</members>
         <members>Ob800__c.F1__c</members>
