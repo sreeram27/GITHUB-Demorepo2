@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>47.0</version>
+    <version>50.0</version>
     <types>
         <members>A0</members>
         <members>A0001</members>
@@ -258,6 +258,7 @@
         <members>a7testclass</members>
         <members>abc</members>
         <members>b0testclass</members>
+        <members>clsGlobalInvoiceAPI</members>
         <members>kkkk</members>
         <members>n1</members>
         <members>nc1</members>
@@ -2334,6 +2335,7 @@
         <members>ProfileTest1</members>
         <members>ProfileTest123</members>
         <members>Profileest</members>
+        <members>QAProfile1</members>
         <members>ReadOnly</members>
         <members>SaiJun19thprofile</members>
         <members>Silver Partner User</members>
