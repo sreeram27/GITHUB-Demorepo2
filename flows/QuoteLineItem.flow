@@ -15,6 +15,7 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <apiVersion>49.0</apiVersion>
     <description>test</description>
     <interviewLabel>QuoteLineItem {!$Flow.CurrentDateTime}</interviewLabel>
     <label>QuoteLineItem</label>

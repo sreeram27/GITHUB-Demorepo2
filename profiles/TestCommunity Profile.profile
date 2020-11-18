@@ -437,6 +437,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>QC1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QC2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ReltrainTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -849,6 +857,11 @@
         <field>Sep8thObj1__c.F2__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>qb1__c.f1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <layoutAssignments>
         <layout>A1__c-A1 Layout</layout>
     </layoutAssignments>
@@ -937,6 +950,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Sep8thObj1__c-Sep8thObj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>qb1__c-qb1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>qb2__c-qb2 Layout</layout>
     </layoutAssignments>
     <loginHours/>
     <pageAccesses>

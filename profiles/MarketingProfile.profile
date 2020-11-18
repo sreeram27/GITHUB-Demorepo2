@@ -946,6 +946,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>QC1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QC2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RClass1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -4361,6 +4369,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>qb1__c.f1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>rcobj1__c.field1__c</field>
         <readable>true</readable>
@@ -5019,6 +5032,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>qaobj91__c-qaobj91 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>qb1__c-qb1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>qb2__c-qb2 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>rcobj1__c-rcobj1 Layout</layout>

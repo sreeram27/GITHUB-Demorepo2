@@ -17,6 +17,7 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <apiVersion>49.0</apiVersion>
     <interviewLabel>Pradeep {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Pradeep</label>
     <processMetadataValues>
@@ -41,6 +42,7 @@
         <connector>
             <targetReference>Pradeep</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>IsDeleted</field>
             <operator>IsNull</operator>

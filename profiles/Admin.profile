@@ -3614,6 +3614,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>QC1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QC2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>QLISoleraTemplateController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -79332,6 +79340,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>qb1__c.f1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>rrd__CustomPointConfig__c.rrd__sso_account__c</field>
         <readable>true</readable>
@@ -98049,6 +98062,12 @@
         <layout>dsfs__Recipient__c-dsfs__DocuSign Recipient Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>qb1__c-qb1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>qb2__c-qb2 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>rrd__CustomPointConfig__c-rrd__CustomPoint Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -102940,6 +102959,24 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>dsfs__Recipient__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>qb1__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>qb2__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

@@ -139,6 +139,11 @@
         <field>Sep8thObj1__c.F2__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>qb1__c.f1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <flowAccesses>
         <enabled>true</enabled>
         <flow>Pradeep</flow>
