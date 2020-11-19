@@ -5333,6 +5333,8 @@
         <members>NamespaceRegistry.NamespacePrefix</members>
         <members>NewObj600__c.Field1__c</members>
         <members>NewObje800__c.Field1__c</members>
+        <members>Nov19thObj1__c.F1__c</members>
+        <members>Nov19thObj1__c.F2__c</members>
         <members>O2Obj1__c.AccF1Test1O2__c</members>
         <members>OBJ600__c.Field1__c</members>
         <members>Ob800__c.F1__c</members>
@@ -6137,6 +6139,7 @@
         <members>NetworkMember</members>
         <members>NewObj600__c</members>
         <members>NewObje800__c</members>
+        <members>Nov19thObj1__c</members>
         <members>Nov22Obj1__c</members>
         <members>Nov22Obj2__c</members>
         <members>O2Obj1__c</members>
@@ -6303,6 +6306,8 @@
     </types>
     <types>
         <members>Global-Uni Global Layout</members>
+        <members>Nov19thObj1__c-Layout2</members>
+        <members>Nov19thObj1__c-Nov19thObj1 Layout</members>
         <name>Layout</name>
     </types>
     <types>
