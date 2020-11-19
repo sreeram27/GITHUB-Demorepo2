@@ -2483,6 +2483,7 @@
         <name>NetworkBranding</name>
     </types>
     <types>
+        <members>NewPermissionSet1</members>
         <members>PRS1</members>
         <members>PRS2</members>
         <name>PermissionSet</name>
