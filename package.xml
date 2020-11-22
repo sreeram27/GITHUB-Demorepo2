@@ -410,15 +410,6 @@
         <name>CustomApplication</name>
     </types>
     <types>
-        <members>ACCObjTest1__c.ACCField1__c</members>
-        <members>ACCObjTest1__c.ACCField2__c</members>
-        <members>ACCObjTest1__c.AutorabitExtId__c</members>
-        <members>ACCObjTest1__c.N1__c</members>
-        <members>ACCObjTest1__c.PLNew1__c</members>
-        <members>ACCObjTest1__c.PLnew3__c</members>
-        <members>ACCObjTest1__c.PLt1__c</members>
-        <members>ACCObjTest1__c.Plt3__c</members>
-        <members>ACCObjTest1__c.pl1__c</members>
         <members>ACCObjt1__c.FT1__c</members>
         <members>ACCObjt1__c.FT2__c</members>
         <members>ACCObjt1__c.FT5__c</members>
@@ -1873,6 +1864,7 @@
         <members>SaoObj900__c.F2__c</members>
         <members>SaoObj900__c.f1__c</members>
         <members>SaoObj900__c.f4__c</members>
+        <members>Sb1__c.F2__c</members>
         <members>Scorecard.Description</members>
         <members>Scorecard.Name</members>
         <members>Scorecard.OwnerId</members>
@@ -2262,7 +2254,6 @@
         <name>CustomLabel</name>
     </types>
     <types>
-        <members>ACCObjTest1__c</members>
         <members>ACCObjt1__c</members>
         <members>ACDemoOBj1__c</members>
         <members>ACObj12__c</members>
@@ -2520,6 +2511,7 @@
         <members>SampathObj1__c</members>
         <members>SampathObj2__c</members>
         <members>SaoObj900__c</members>
+        <members>Sb1__c</members>
         <members>Scorecard</members>
         <members>ScorecardAssociation</members>
         <members>ScorecardMetric</members>
@@ -3463,8 +3455,6 @@
         <name>RecordActionDeployment</name>
     </types>
     <types>
-        <members>ACCObjTest1__c.SairecordType1</members>
-        <members>ACCObjTest1__c.SairecordType2</members>
         <members>DLCObj18__c.DLCObj18_RcType1</members>
         <members>DLCObj18__c.DLCObj18_RcType2</members>
         <members>Dbj1__c.Dbj_RC1</members>

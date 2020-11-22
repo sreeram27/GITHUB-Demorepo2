@@ -3,9 +3,9 @@
     <labels>
         <fullName>AC1</fullName>
         <language>en_US</language>
-        <protected>true</protected>
+        <protected>false</protected>
         <shortDescription>ac111</shortDescription>
-        <value>21111</value>
+        <value>12</value>
     </labels>
     <labels>
         <fullName>AC2</fullName>
