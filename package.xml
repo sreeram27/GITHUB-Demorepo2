@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>49.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -137,7 +137,6 @@
         <members>Account8</members>
         <members>ActnrClass2</members>
         <members>AddClass2</members>
-        <members>ApexclassnCino</members>
         <members>Apicls2</members>
         <members>Asca1</members>
         <members>Asca2</members>
