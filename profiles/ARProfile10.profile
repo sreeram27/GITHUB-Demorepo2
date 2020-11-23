@@ -2470,6 +2470,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Dbj1__c.f2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Demo4Obj7__c.Demo4Field1__c</field>
         <readable>false</readable>
     </fieldPermissions>

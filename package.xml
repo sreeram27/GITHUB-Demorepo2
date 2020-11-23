@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>49.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
         <members>A1</members>
         <members>A10</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Dbj1__c.f2__c</members>
+        <name>CustomField</name>
     </types>
     <types>
         <members>AAtest456</members>
@@ -266,8 +270,17 @@
         <name>CustomLabel</name>
     </types>
     <types>
+        <members>Dbj1__c-en_US</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <types>
+        <members>PRS1</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
         <members>ARProfile1</members>
         <members>ARProfile10</members>
+        <members>Admin</members>
         <name>Profile</name>
     </types>
 </Package>
