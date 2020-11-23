@@ -345,6 +345,12 @@
         <type>AutoNumber</type>
     </fields>
     <fields>
+        <fullName>Field1017__c</fullName>
+        <externalId>false</externalId>
+        <label>Field1017</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
         <fullName>Industry</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>

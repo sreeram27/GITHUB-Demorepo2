@@ -5,6 +5,10 @@
         <active>false</active>
     </assignmentRule>
     <assignmentRule>
+        <fullName>CaseAssnRuleRFyXfPcs</fullName>
+        <active>false</active>
+    </assignmentRule>
+    <assignmentRule>
         <fullName>Standard</fullName>
         <active>true</active>
         <ruleEntry>
