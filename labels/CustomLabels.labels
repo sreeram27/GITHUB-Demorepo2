@@ -5,13 +5,13 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ac111</shortDescription>
-        <value>21111</value>
+        <value>2111111</value>
     </labels>
     <labels>
         <fullName>AC2</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC211</shortDescription>
-        <value>11111</value>
+        <value>1111111</value>
     </labels>
 </CustomLabels>
