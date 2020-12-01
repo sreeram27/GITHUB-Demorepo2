@@ -1,0 +1,5 @@
+<apex:page showHeader="false" sidebar="false" lightningStylesheets="true">
+    <div>
+        <apex:outputLink value="/apex/APXTConga4__Conga_Composer?serverUrl={!$Api.Partner_Server_URL_370}&id={!$User.Id}&TemplateId=a4z41000000k9xT&DS7=3&QueryID=[NB]a4r41000001aBgh,[NBQLI]a4r41000001aBgr,[FLEXHOUR]a4r41000001aBgm">ANA Weekly Opportunity Report</apex:outputLink>
+    </div>
+</apex:page>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Anthem_BCBS_Georgia</letterhead>
+    <name>BCBSGa: COBRA Setup Paperwork</name>
+    <style>freeForm</style>
+    <subject>BCBSGa: COBRA Setup Paperwork</subject>
+    <textOnly>Dear ,
+
+
+You have elected to have BCBSGa administer the COBRA benefits for .
+
+
+The COBRA implementation documents will be sent to you for electronic signature through AdobeSign.
+
+
+The following forms require completion:
+
+· COBRA Implementation Package
+
+· COBRA Full Service Agreement
+
+· Takeover Form (Only Applicable if there are any pending or continuant COBRA members)
+
+· Notice of Qualifying Event Form (Only Applicable if there are recently termed members that need to be offered COBRA)
+
+· COBRA General Notice Questionnaire (Only Applicable if the group wants to OPT into the General Notice Service)
+
+
+After all signatures have been obtained, the executed documents will be provided from EchoSign to everyone copied on this email. Once the COBRA Implementation Coordinator, Carrie Poehls, receives the completed signed documents, she will submit for the group set-up to begin.
+
+
+Please feel free to contact Carrie with any questions at BCBSGA-COBRA-IMPLEMENTATIONS@Anthem.com .
+
+
+Thank you,
+
+
+
+Implementation Manager</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
