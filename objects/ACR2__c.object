@@ -142,6 +142,11 @@
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Test</fullName>
+        <fields>Name</fields>
+        <label>ContactPointPhone-Contact Point Phone Layout.layout b/src/layouts/ContactPointPh</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>

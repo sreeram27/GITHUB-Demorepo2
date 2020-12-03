@@ -143,7 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>test1111</description>
+    <description>Test123</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -156,10 +156,10 @@
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>ACCField1__c</fullName>
-        <description>Test12312454656511111</description>
+        <description>swd</description>
         <externalId>false</externalId>
         <label>ACCField1</label>
-        <length>8</length>
+        <length>9</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
@@ -168,9 +168,10 @@
     <fields>
         <fullName>ACCField2__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>qwsdcfvc</inlineHelpText>
         <label>ACCField2</label>
         <required>false</required>
-        <trackTrending>false</trackTrending>
+        <trackTrending>true</trackTrending>
         <type>Phone</type>
     </fields>
     <fields>
@@ -178,11 +179,71 @@
         <description>Ex11ternal Id created by AutoRABIT</description>
         <externalId>true</externalId>
         <label>AutorabitExtId__c</label>
-        <length>18</length>
+        <length>7</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>N1__c</fullName>
+        <description>124</description>
+        <externalId>false</externalId>
+        <label>N1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>12345</fullName>
+                    <default>false</default>
+                    <label>12345</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PLNew1__c</fullName>
+        <description>Twt`2</description>
+        <externalId>false</externalId>
+        <label>PLNew1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>007</fullName>
+                    <default>true</default>
+                    <label>007</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PLnew3__c</fullName>
+        <description>sd</description>
+        <externalId>false</externalId>
+        <label>PLnew3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>sd</fullName>
+                    <default>false</default>
+                    <label>sd</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>PLt1__c</fullName>
@@ -197,8 +258,14 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
                     <fullName>1</fullName>
                     <default>false</default>
+                    <isActive>false</isActive>
                     <label>1</label>
                 </value>
             </valueSetDefinition>
@@ -209,11 +276,39 @@
         <description>Add Comment</description>
         <externalId>false</externalId>
         <label>Plt3</label>
-        <length>7</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>latest</fullName>
+                    <default>true</default>
+                    <label>latest</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>pl1__c</fullName>
+        <description>12356</description>
+        <externalId>false</externalId>
+        <label>pl13</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>fg</fullName>
+                    <default>false</default>
+                    <label>fg</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <label>ACCObjTest1</label>
     <nameField>
@@ -221,6 +316,102 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>ACCObjTest1s</pluralLabel>
+    <recordTypes>
+        <fullName>SairecordType1</fullName>
+        <active>true</active>
+        <description>test</description>
+        <label>SairecordType1</label>
+        <picklistValues>
+            <picklist>N1__c</picklist>
+            <values>
+                <fullName>12345</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLNew1__c</picklist>
+            <values>
+                <fullName>007</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLnew3__c</picklist>
+            <values>
+                <fullName>sd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLt1__c</picklist>
+            <values>
+                <fullName>2</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Plt3__c</picklist>
+            <values>
+                <fullName>latest</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>pl1__c</picklist>
+            <values>
+                <fullName>fg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SairecordType2</fullName>
+        <active>false</active>
+        <description>zxc</description>
+        <label>SairecordType2</label>
+        <picklistValues>
+            <picklist>N1__c</picklist>
+            <values>
+                <fullName>12345</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLNew1__c</picklist>
+            <values>
+                <fullName>007</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLnew3__c</picklist>
+            <values>
+                <fullName>sd</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PLt1__c</picklist>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Plt3__c</picklist>
+            <values>
+                <fullName>latest</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>pl1__c</picklist>
+            <values>
+                <fullName>fg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

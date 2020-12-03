@@ -111657,6 +111657,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>SkipIdentityConfirmation</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>SocialInsightsLogoAdmin</name>
     </userPermissions>
     <userPermissions>
@@ -111778,6 +111782,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewMyTeamsDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewPlatformEvents</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
