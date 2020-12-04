@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>standard__AppLauncher</application>
@@ -70,7 +71,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A000</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0001</apexClass>
@@ -79,10 +80,6 @@
     <classAccesses>
         <apexClass>A0123</apexClass>
         <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>A01234</apexClass>
-        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A01234567</apexClass>
@@ -214,10 +211,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A156</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>A158</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1460,21 +1453,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>AYObj1__c.AYField1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>AYObj2__c.Ayf1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>AYObj3__c.AYfd1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>AYObj3__c.Ayfd2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4815,6 +4793,39 @@
         <layout>zb1__c-zb1 Layout</layout>
     </layoutAssignments>
     <loginHours/>
+    <loginIpRanges>
+        <endAddress>255.234.123.223</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.201</endAddress>
+        <startAddress>1.0.0.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.207</endAddress>
+        <startAddress>1.0.0.9</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.229</endAddress>
+        <startAddress>1.1.1.1</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.222</endAddress>
+        <startAddress>2.2.2.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>test</description>
+        <endAddress>255.234.123.222</endAddress>
+        <startAddress>3.3.3.3</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.227</endAddress>
+        <startAddress>6.6.6.6</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.228</endAddress>
+        <startAddress>7.7.7.7</startAddress>
+    </loginIpRanges>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>

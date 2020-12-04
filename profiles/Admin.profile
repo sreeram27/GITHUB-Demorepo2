@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>standard__AllTabSet</application>
@@ -124,10 +125,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A01234</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>A0233</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -213,10 +210,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A156</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>A158</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

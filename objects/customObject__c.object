@@ -152,23 +152,20 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>Ayf1__c</fullName>
+        <fullName>field3__c</fullName>
         <externalId>false</externalId>
-        <label>Ayf1</label>
-        <length>7</length>
-        <required>false</required>
+        <label>field3</label>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>AutoNumber</type>
     </fields>
-    <label>AYObj2</label>
+    <label>customObject</label>
     <nameField>
-        <label>AYObj2 Name</label>
+        <label>customObj1 Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>AYObj2s</pluralLabel>
+    <pluralLabel>customObjects</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
