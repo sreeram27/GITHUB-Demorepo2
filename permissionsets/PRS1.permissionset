@@ -5,7 +5,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A012378</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0233</apexClass>
@@ -32,7 +32,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A17</apexClass>
+        <apexClass>A117</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -127,8 +127,8 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>ACR5__c.field1__c</field>
+        <editable>true</editable>
+        <field>ACR5__c.field11__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -179,7 +179,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>DLConfigTestObj__c.Field1__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -189,7 +189,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>DObj2__c.field1__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -309,7 +309,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Obj89__c.Field2__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -347,7 +347,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>SKVObject1__c.SKVField1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -399,7 +399,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>SaiObj10__c.PhoneField__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -514,7 +514,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>SaoObj900__c.F2__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -542,7 +542,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>ZLObj100__c.F1__c</field>
         <readable>false</readable>
     </fieldPermissions>
