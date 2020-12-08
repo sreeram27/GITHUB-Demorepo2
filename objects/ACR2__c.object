@@ -142,6 +142,11 @@
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Test</fullName>
+        <fields>Name</fields>
+        <label>ContactPointPhone-Contact Point Phone Layout.layout b/src/layouts/ContactPointPh</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -152,9 +157,9 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>AutorabitExtId__c</fullName>
-        <caseSensitive>false</caseSensitive>
         <description>External Id created by AutoRABIT</description>
         <externalId>true</externalId>
         <label>AutorabitExtId__c</label>
@@ -162,12 +167,45 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
-        <unique>true</unique>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LookUpField1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>LookUpField1</label>
+        <referenceTo>ACR3__c</referenceTo>
+        <relationshipLabel>ACR2s</relationshipLabel>
+        <relationshipName>ACR2s</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LookUpField2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>LookUpField2</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>ACR2s</relationshipLabel>
+        <relationshipName>ACR2s</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>field1__c</fullName>
+        <externalId>false</externalId>
+        <label>field1</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>field2__c</fullName>
-        <description>1222</description>
-        <externalId>false</externalId>
+        <externalId>true</externalId>
         <label>field2</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -176,9 +214,6 @@
     <label>ACR2</label>
     <listViews>
         <fullName>All</fullName>
-        <columns>NAME</columns>
-        <columns>OBJECT_ID</columns>
-        <columns>field2__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

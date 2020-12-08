@@ -152,6 +152,25 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>F2__c</fullName>
+        <externalId>false</externalId>
+        <label>F2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F3__c</fullName>
+        <description>axzcv v</description>
+        <externalId>false</externalId>
+        <label>F3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
     <fields>
         <fullName>f1__c</fullName>
         <externalId>false</externalId>

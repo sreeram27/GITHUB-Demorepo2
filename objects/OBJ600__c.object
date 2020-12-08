@@ -153,6 +153,16 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Field1__c</fullName>
+        <externalId>false</externalId>
+        <label>Field1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
     <label>OBJ600</label>
     <nameField>
         <label>OBJ600 Name</label>

@@ -3,12 +3,11 @@ public Class A0071
 public Account createAccount(String name)  //method to create account
 {
 //Modify
-Account as1s21111211111= new Account();
-
-as1s21111211111.Name = name;
+Account a23111= new Account();
+a23111.Name = name;
 //Modify111111145123
 //maven4 Modify
-return as1s21111211111;
-//sai
+return a23111;
+//1212311111
 }
 }

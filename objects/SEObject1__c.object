@@ -153,6 +153,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>field1__c</fullName>
         <description>Test567</description>
@@ -176,6 +177,15 @@
         <unique>false</unique>
     </fields>
     <label>SEObject1</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>field1__c</columns>
+        <columns>field2__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>SEObject1 Name</label>
         <type>Text</type>

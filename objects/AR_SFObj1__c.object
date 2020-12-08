@@ -143,70 +143,47 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Test Commentttttt</description>
+    <description>Add Comment for this Object ARSFObj1111112344</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
+    <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>ARSFField4__c</fullName>
-        <description>test123412ttt</description>
         <externalId>false</externalId>
         <label>ARSFField4</label>
-        <required>false</required>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Email</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>AR_SFField1__c</fullName>
-        <description>Add Desc AR-SFField1tyest5</description>
-        <externalId>false</externalId>
-        <label>AR-SFField1</label>
-        <length>6</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>AR_SFField2__c</fullName>
-        <description>Add  Desc221rrrr</description>
+        <description>Add  Desc</description>
         <externalId>false</externalId>
         <label>AR-SFField2</label>
+        <length>40</length>
         <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
-        <type>Email</type>
+        <type>Text</type>
         <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>f3__c</fullName>
-        <description>test1111111111rr</description>
-        <externalId>false</externalId>
-        <label>f3</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Date</type>
     </fields>
     <label>AR-SFObj1</label>
     <nameField>
         <label>AR-SFObj1 Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>ARSFObj1s</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
-    <validationRules>
-        <fullName>ARSFvalidationRule1</fullName>
-        <active>true</active>
-        <description>Add comment for this Validation.</description>
-        <errorConditionFormula>ISBLANK( AR_SFField1__c )</errorConditionFormula>
-        <errorMessage>Please enter a value</errorMessage>
-    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

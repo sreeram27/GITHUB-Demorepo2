@@ -143,7 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>New4444</description>
+    <description>Test111123456</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -153,206 +153,43 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
-        <fullName>ECOBjField1__c</fullName>
-        <description>test674</description>
+        <fullName>Afield__c</fullName>
         <externalId>false</externalId>
-        <label>ECOBjField1</label>
+        <label>Afield</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
     </fields>
     <fields>
-        <fullName>Field2__c</fullName>
-        <description>New89765414</description>
+        <fullName>ECOBjField1__c</fullName>
+        <description>test6789</description>
         <externalId>false</externalId>
-        <label>Field2</label>
-        <length>80</length>
+        <label>ECOBjField1</label>
+        <length>40</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>PickLIstField__c</fullName>
-        <description>test</description>
+        <fullName>EaField__c</fullName>
         <externalId>false</externalId>
-        <label>PickLIstField</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>test</fullName>
-                    <default>false</default>
-                    <label>test</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Picklist2__c</fullName>
-        <externalId>false</externalId>
-        <label>Picklist2</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>test</fullName>
-                    <default>false</default>
-                    <label>test</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>PicklistFeidl1__c</fullName>
-        <externalId>false</externalId>
-        <label>PicklistFeidl1</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>test</fullName>
-                    <default>false</default>
-                    <label>test</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Picklists7__c</fullName>
-        <externalId>false</externalId>
-        <label>Picklists7</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>sds</fullName>
-                    <default>false</default>
-                    <label>sds</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Piclist10__c</fullName>
-        <externalId>false</externalId>
-        <label>Piclist10</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>dfd</fullName>
-                    <default>false</default>
-                    <label>dfd</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Piclist8__c</fullName>
-        <externalId>false</externalId>
-        <label>Piclist8</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>lk;</fullName>
-                    <default>false</default>
-                    <label>lk;</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Pikclist4__c</fullName>
-        <externalId>false</externalId>
-        <label>Pikclist4</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>test</fullName>
-                    <default>false</default>
-                    <label>test</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>Pl3__c</fullName>
-        <description>1143</description>
-        <externalId>false</externalId>
-        <label>Pl3</label>
+        <label>EaField</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Phone</type>
     </fields>
     <fields>
-        <fullName>picklist567__c</fullName>
+        <fullName>Pl3__c</fullName>
+        <description>Test new678111</description>
         <externalId>false</externalId>
-        <label>picklist567</label>
+        <label>Pl3</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>ds</fullName>
-                    <default>false</default>
-                    <label>ds</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
-    </fields>
-    <fields>
-        <fullName>piclisit9__c</fullName>
-        <externalId>false</externalId>
-        <label>piclisit9</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>sd</fullName>
-                    <default>false</default>
-                    <label>sd</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Email</type>
+        <unique>false</unique>
     </fields>
     <label>EC-AccObj1</label>
     <nameField>
@@ -364,143 +201,18 @@
         <fullName>ECrecordTypeTest3</fullName>
         <active>true</active>
         <label>ECrecordTypeTest3</label>
-        <picklistValues>
-            <picklist>PickLIstField__c</picklist>
-            <values>
-                <fullName>test</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Picklist2__c</picklist>
-            <values>
-                <fullName>test</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>PicklistFeidl1__c</picklist>
-            <values>
-                <fullName>test</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Picklists7__c</picklist>
-            <values>
-                <fullName>sds</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Piclist10__c</picklist>
-            <values>
-                <fullName>dfd</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Piclist8__c</picklist>
-            <values>
-                <fullName>lk%3B</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Pikclist4__c</picklist>
-            <values>
-                <fullName>test</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>picklist567__c</picklist>
-            <values>
-                <fullName>ds</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>piclisit9__c</picklist>
-            <values>
-                <fullName>sd</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
     </recordTypes>
     <recordTypes>
         <fullName>Test1</fullName>
         <active>true</active>
         <label>Test1</label>
-        <picklistValues>
-            <picklist>PickLIstField__c</picklist>
-            <values>
-                <fullName>test</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Picklist2__c</picklist>
-            <values>
-                <fullName>test</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>PicklistFeidl1__c</picklist>
-            <values>
-                <fullName>test</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Picklists7__c</picklist>
-            <values>
-                <fullName>sds</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Piclist10__c</picklist>
-            <values>
-                <fullName>dfd</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Piclist8__c</picklist>
-            <values>
-                <fullName>lk%3B</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>Pikclist4__c</picklist>
-            <values>
-                <fullName>test</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>picklist567__c</picklist>
-            <values>
-                <fullName>ds</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>piclisit9__c</picklist>
-            <values>
-                <fullName>sd</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
     </recordTypes>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>ECVRule1</fullName>
         <active>true</active>
+        <description>Test122345611111111111</description>
         <errorConditionFormula>ISBLANK(  ECOBjField1__c )</errorConditionFormula>
         <errorMessage>Please enter a value</errorMessage>
     </validationRules>

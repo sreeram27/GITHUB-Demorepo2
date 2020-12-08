@@ -124,9 +124,6 @@
         <fullName>ListPrice</fullName>
     </fields>
     <fields>
-        <fullName>Name</fullName>
-    </fields>
-    <fields>
         <fullName>OpportunityId</fullName>
         <type>Lookup</type>
     </fields>

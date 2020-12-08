@@ -153,33 +153,44 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>F2__c</fullName>
         <description>1111111111</description>
         <externalId>false</externalId>
         <label>F2</label>
-        <length>10</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Phone</type>
     </fields>
     <fields>
         <fullName>f1__c</fullName>
         <description>1111</description>
         <externalId>false</externalId>
         <label>f1</label>
-        <required>true</required>
+        <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Phone</type>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                    <label>12</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>f4__c</fullName>
+        <description>111</description>
         <externalId>false</externalId>
         <label>f4</label>
+        <length>80</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Email</type>
+        <type>Text</type>
         <unique>false</unique>
     </fields>
     <label>SaiObj900</label>

@@ -152,6 +152,7 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>AutorabitExtId__c</fullName>
         <caseSensitive>false</caseSensitive>
@@ -168,7 +169,7 @@
         <fullName>F1__c</fullName>
         <externalId>false</externalId>
         <label>F1</label>
-        <length>119</length>
+        <length>9</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>

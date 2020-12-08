@@ -143,7 +143,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>test add comment</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -153,24 +152,24 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>Demo4Field1__c</fullName>
-        <description>test11111111</description>
         <externalId>false</externalId>
         <label>Demo4Field1</label>
+        <length>40</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Phone</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Demo4Field2__c</fullName>
-        <description>test1111111</description>
         <externalId>false</externalId>
         <label>Demo4Field2</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Email</type>
-        <unique>false</unique>
+        <type>Phone</type>
     </fields>
     <label>Demo4Obj7</label>
     <nameField>
