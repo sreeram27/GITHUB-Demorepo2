@@ -1,12 +1,10 @@
 public Class A0001
 {
 public Account createAccount(String name)  //method to create account
-{
-//sai Add comment for Account A1
-//saikumar test
-Account a1114= new Account();
-a1114.Name = name;
-return a1114;
-//newjob
+{//line1 source
+Account a111412= new Account(); //line7 source
+a111412.Name = name;
+return a111412;
+//007
 }
 }
