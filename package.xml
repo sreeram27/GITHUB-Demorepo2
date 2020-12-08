@@ -3,6 +3,7 @@
     <version>48.0</version>
     <types>
         <members>A0</members>
+        <members>A000</members>
         <members>A0001</members>
         <members>A0009</members>
         <members>A0071</members>
