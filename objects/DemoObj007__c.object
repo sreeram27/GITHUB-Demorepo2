@@ -164,16 +164,6 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <fields>
-        <fullName>F2__c</fullName>
-        <externalId>false</externalId>
-        <label>F2</label>
-        <length>7</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
     <label>DemoObj007</label>
     <nameField>
         <label>DemoObj007 Name</label>
