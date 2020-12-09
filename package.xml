@@ -1064,6 +1064,8 @@
         <members>Dbj1__c.F2__c</members>
         <members>Demo4Obj7__c.Demo4Field1__c</members>
         <members>Demo4Obj7__c.Demo4Field2__c</members>
+        <members>DemoObj007__c.F1__c</members>
+        <members>DemoObj007__c.F2__c</members>
         <members>DepTestObj1__c.F1__c</members>
         <members>DlConfigObj151__c.AutorabitExtId__c</members>
         <members>DlConfigObj151__c.Feild1__c</members>
@@ -2004,6 +2006,7 @@
         <members>DataUsePurpose</members>
         <members>Dbj1__c</members>
         <members>Demo4Obj7__c</members>
+        <members>DemoObj007__c</members>
         <members>DepTestObj1__c</members>
         <members>Desobj2__c</members>
         <members>DlConfigObj151__c</members>
@@ -2310,6 +2313,7 @@
         <members>ContactPointPhone_Contact_Point_Phone_La__c-ContactPointPhone-Contact Point Phone La Layout</members>
         <members>DLConfigTestObj__c-DLConfigTestObj Layout</members>
         <members>DXObj2__c-DXObj2 Layout</members>
+        <members>DemoObj007__c-DemoObj007 Layout</members>
         <members>DepTestObj1__c-DepTestObj1 Layout</members>
         <members>Desobj2__c-Desobj2 Layout</members>
         <members>Feb26Obj123__c-Feb26Obj123 Layout</members>
