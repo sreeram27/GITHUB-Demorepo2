@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Pradeepa</name>
         <label>Pradeepa</label>
-        <locationX>590</locationX>
+        <locationX>589</locationX>
         <locationY>312</locationY>
         <actionName>activateSessionPermSet</actionName>
         <actionType>activateSessionPermSet</actionType>
@@ -17,6 +17,7 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <apiVersion>49.0</apiVersion>
     <interviewLabel>Pradeep {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Pradeep</label>
     <processMetadataValues>
@@ -41,6 +42,7 @@
         <connector>
             <targetReference>Pradeep</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>IsDeleted</field>
             <operator>IsNull</operator>
@@ -56,8 +58,8 @@
         <description>Test</description>
         <name>UpdateRecords1</name>
         <label>UpdateRecords1</label>
-        <locationX>740</locationX>
-        <locationY>337</locationY>
+        <locationX>746</locationX>
+        <locationY>338</locationY>
         <inputReference>pradeepab</inputReference>
     </recordUpdates>
     <screens>
@@ -81,5 +83,5 @@
             <targetReference>pradeepab</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>
