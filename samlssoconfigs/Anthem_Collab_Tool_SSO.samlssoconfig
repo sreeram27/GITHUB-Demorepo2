@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SamlSsoConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identityLocation>SubjectNameId</identityLocation>
+    <identityMapping>FederationId</identityMapping>
+    <issuer>https://anthementerpriseservices.my.salesforce.com</issuer>
+    <loginUrl>https://anthementerpriseservices.my.salesforce.com/idp/endpoint/HttpPost</loginUrl>
+    <name>Anthem Collab Tool SSO</name>
+    <oauthTokenEndpoint>https://commercial--c2chandra.my.salesforce.com/services/oauth2/token?so=00D8A0000005frc</oauthTokenEndpoint>
+    <redirectBinding>false</redirectBinding>
+    <requestSignatureMethod>1</requestSignatureMethod>
+    <requestSigningCertId>0P11K000004bLMk</requestSigningCertId>
+    <salesforceLoginUrl>https://commercial--c2chandra.my.salesforce.com?so=00D8A0000005frc</salesforceLoginUrl>
+    <samlEntityId>https://commercial.my.salesforce.com</samlEntityId>
+    <samlVersion>SAML2_0</samlVersion>
+    <useConfigRequestMethod>false</useConfigRequestMethod>
+    <userProvisioning>false</userProvisioning>
+    <validationCert>MIIErDCCA5SgAwIBAgIOAWpbyJi7AAAAAARaDfYwDQYJKoZIhvcNAQELBQAwgZAxKDAmBgNVBAMMH1NlbGZTaWduZWRDZXJ0XzI2QXByMjAxOV8yMjMzNTMxGDAWBgNVBAsMDzAwRDFJMDAwMDAySkZDMTEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0EwHhcNMTkwNDI2MjIzMzU0WhcNMjAwNDI2MTIwMDAwWjCBkDEoMCYGA1UEAwwfU2VsZlNpZ25lZENlcnRfMjZBcHIyMDE5XzIyMzM1MzEYMBYGA1UECwwPMDBEMUkwMDAwMDJKRkMxMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALKyIc14edjQXfOW063pmQmoLZnPf6VoPz69SWSWn0bjlkfYKsguZGTLu/ijp2eoxIs01xZFjdmSIZjzpvl+knzjnESYMTegncy9KLobtbDq8lOP/WwchhOSfJ3D0puEeJHKfs5Kr77DoEwB5+wreQSHnqVRfbOxRRcNcLtlRsNXbIwBKd1uwopj4aaMvt3rJikD7XX6HxmSM7JZsQIIzhGHD9gx2vrPdRqG1N8SVam98ORyDtQorVdApeQgXU474aYO5anTjYGARebZEkLJq6oVkvWT6u8D7NQ+DkOpBx3rqyVjpm4jxtF6C0+bLatzIjmSqedzBsxmCQbbddWBvxcCAwEAAaOCAQAwgf0wHQYDVR0OBBYEFMnEEH/yNbdNcUWQBRRLyUKS5HOjMA8GA1UdEwEB/wQFMAMBAf8wgcoGA1UdIwSBwjCBv4AUycQQf/I1t01xRZAFFEvJQpLkc6OhgZakgZMwgZAxKDAmBgNVBAMMH1NlbGZTaWduZWRDZXJ0XzI2QXByMjAxOV8yMjMzNTMxGDAWBgNVBAsMDzAwRDFJMDAwMDAySkZDMTEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0GCDgFqW8iYuwAAAAAEWg32MA0GCSqGSIb3DQEBCwUAA4IBAQANhHOY07twXbaVoIlkROsczcnl8TKSBE9olZ1ZE/qYgqAGxyxS8e8f2VYBJVbTqEpCUjkPMEQWFIuyBM4ius4BZ4IFHVWjIN0IjcJxARyaMteE5KlWrbSkxBdq1jB692B9BRiVfRp1iQIPCl69NsEodkNGFnlHgEmOIUi1KrURNNASXKhjUZ/v/ErpsxWffesd66XU4+wMwoz0uGHc6fbf4qM2+w5fT5D2dU4SnuWDuNzr3sS3acBtUQ9SzRTvQr0mxaCokI0Rl9YRTcuOhhzcRj0fEFmOgSC/l/ysCdiTTQy3T9QDH8YsEgU4/sv5Iui7tjsf9+w8zLVzQ7QphUu/</validationCert>
+</SamlSsoConfig>

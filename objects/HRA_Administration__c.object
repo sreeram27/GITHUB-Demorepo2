@@ -1,0 +1,1490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Child to QuoteLineItem for ANA / LG CDHP Admin</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Effective_Date_Plus_X__c</fullName>
+        <externalId>false</externalId>
+        <formula>QLI__r.Quote.Opportunity.CloseDate + 15</formula>
+        <label>Account Effective Date Plus X</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Accum_Reset_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Accum Reset Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Rollover_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Actual Rollover Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AllocationEA__c</fullName>
+        <externalId>false</externalId>
+        <label>AllocationEA</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AllocationEChildren__c</fullName>
+        <externalId>false</externalId>
+        <label>AllocationEChildren</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AllocationEE__c</fullName>
+        <externalId>false</externalId>
+        <label>AllocationEE</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AllocationFamily__c</fullName>
+        <externalId>false</externalId>
+        <label>AllocationFamily</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Allocation_EChild__c</fullName>
+        <externalId>false</externalId>
+        <label>Allocation EChild</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Annual_Allocation_Tiers__c</fullName>
+        <externalId>false</externalId>
+        <label>Annual Allocation Tiers</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2 Tier</fullName>
+                    <default>false</default>
+                    <label>2 Tier</label>
+                </value>
+                <value>
+                    <fullName>3 Tier</fullName>
+                    <default>false</default>
+                    <label>3 Tier</label>
+                </value>
+                <value>
+                    <fullName>4 Tier</fullName>
+                    <default>false</default>
+                    <label>4 Tier</label>
+                </value>
+                <value>
+                    <fullName>5 Tier</fullName>
+                    <default>false</default>
+                    <label>5 Tier</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Benefit_Accumulations__c</fullName>
+        <externalId>false</externalId>
+        <label>Benefit Accumulations</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Calendar Year</fullName>
+                    <default>false</default>
+                    <label>Calendar Year</label>
+                </value>
+                <value>
+                    <fullName>Benefit Year</fullName>
+                    <default>false</default>
+                    <label>Benefit Year</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CapEA__c</fullName>
+        <externalId>false</externalId>
+        <label>CapEA</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CapEChild__c</fullName>
+        <externalId>false</externalId>
+        <label>CapEChild</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CapEChildren__c</fullName>
+        <externalId>false</externalId>
+        <label>CapEChildren</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CapEE__c</fullName>
+        <externalId>false</externalId>
+        <label>CapEE</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CapEFamily__c</fullName>
+        <externalId>false</externalId>
+        <label>CapEFamily</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Claim_Run_Out_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Claim Run-Out Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Covered_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Covered Services</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Auto Pay Medical</fullName>
+                    <default>false</default>
+                    <label>Auto Pay Medical</label>
+                </value>
+                <value>
+                    <fullName>In Network Medical Deductible</fullName>
+                    <default>false</default>
+                    <label>In Network Medical Deductible</label>
+                </value>
+                <value>
+                    <fullName>Out of Network Medical Deductible</fullName>
+                    <default>false</default>
+                    <label>Out of Network Medical Deductible</label>
+                </value>
+                <value>
+                    <fullName>In Network Coinsurance</fullName>
+                    <default>false</default>
+                    <label>In Network Coinsurance</label>
+                </value>
+                <value>
+                    <fullName>Out of Network Coinsurance</fullName>
+                    <default>false</default>
+                    <label>Out of Network Coinsurance</label>
+                </value>
+                <value>
+                    <fullName>In Network Copays</fullName>
+                    <default>false</default>
+                    <label>In Network Copays</label>
+                </value>
+                <value>
+                    <fullName>Out of Network Copays</fullName>
+                    <default>false</default>
+                    <label>Out of Network Copays</label>
+                </value>
+                <value>
+                    <fullName>Rx</fullName>
+                    <default>false</default>
+                    <label>Rx</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Custom_Member_Responbsibility__c</fullName>
+        <externalId>false</externalId>
+        <label>Custom Member Responbsibility</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Debit_Card_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Debit Card Services</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>false</default>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>Dental</fullName>
+                    <default>false</default>
+                    <label>Dental</label>
+                </value>
+                <value>
+                    <fullName>Vision</fullName>
+                    <default>false</default>
+                    <label>Vision</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy</fullName>
+                    <default>false</default>
+                    <label>Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>OTC</fullName>
+                    <default>false</default>
+                    <label>OTC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Desired_Rollover_Date_Fund__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Desired Rollover Date Fund</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>During_claims_run_out__c</fullName>
+        <externalId>false</externalId>
+        <label>During claims run out</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Employee_Funds_Rollover_Next_Plan_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee Funds Rollover Next Plan Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All (100%)</fullName>
+                    <default>false</default>
+                    <label>All (100%)</label>
+                </value>
+                <value>
+                    <fullName>Percent</fullName>
+                    <default>false</default>
+                    <label>Percent</label>
+                </value>
+                <value>
+                    <fullName>Cap Amount</fullName>
+                    <default>false</default>
+                    <label>Cap Amount</label>
+                </value>
+                <value>
+                    <fullName>Percent Up to Cap</fullName>
+                    <default>false</default>
+                    <label>Percent Up to Cap</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Exception_required_if_LG_under_250__c</fullName>
+        <description>Exception required if LG under 250. Has exception been granted?</description>
+        <externalId>false</externalId>
+        <label>Exception required if LG under 250.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Group_Accumulators_And_HRA_Allocation__c</fullName>
+        <externalId>false</externalId>
+        <label>Group Accumulators And HRA Allocation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Calendar Year benefits renewing 1/1</fullName>
+                    <default>false</default>
+                    <label>Calendar Year benefits renewing 1/1</label>
+                </value>
+                <value>
+                    <fullName>Plan Year benefits</fullName>
+                    <default>false</default>
+                    <label>Plan Year benefits</label>
+                </value>
+                <value>
+                    <fullName>Calendar year benefits renewing mid year (any date except 1/1)</fullName>
+                    <default>false</default>
+                    <label>Calendar year benefits renewing mid year (any date except 1/1)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HRA1_Group_Suffix__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>HRA1: Group Suffix</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HRA_Funds_Pro_Rate_on_Entry_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>HRA Funds Pro Rate on Entry Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                    <label>Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Semi-Annually</fullName>
+                    <default>false</default>
+                    <label>Semi-Annually</label>
+                </value>
+                <value>
+                    <fullName>Not Pro-Rated/Incentive Only HRA</fullName>
+                    <default>false</default>
+                    <label>Not Pro-Rated/Incentive Only HRA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HRA_Funds_to_Employees_and_on_what_basis__c</fullName>
+        <externalId>false</externalId>
+        <label>HRA Funds to Employees and on what basis</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No, Annually</fullName>
+                    <default>false</default>
+                    <label>No, Annually</label>
+                </value>
+                <value>
+                    <fullName>No, Incentive Only HRA</fullName>
+                    <default>false</default>
+                    <label>No, Incentive Only HRA</label>
+                </value>
+                <value>
+                    <fullName>Yes, Monthly</fullName>
+                    <default>false</default>
+                    <label>Yes, Monthly</label>
+                </value>
+                <value>
+                    <fullName>Yes, Quarterly</fullName>
+                    <default>false</default>
+                    <label>Yes, Quarterly</label>
+                </value>
+                <value>
+                    <fullName>Yes, Semi-Annually</fullName>
+                    <default>false</default>
+                    <label>Yes, Semi-Annually</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HRA_LITES_Rollover__c</fullName>
+        <externalId>false</externalId>
+        <label>HRA LITES Rollover</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HRA_Rollover_Time_Period__c</fullName>
+        <externalId>false</externalId>
+        <label>HRA Rollover Time Period</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>30 days</fullName>
+                    <default>false</default>
+                    <label>30 days</label>
+                </value>
+                <value>
+                    <fullName>60 days</fullName>
+                    <default>false</default>
+                    <label>60 days</label>
+                </value>
+                <value>
+                    <fullName>90 days (default)</fullName>
+                    <default>true</default>
+                    <label>90 days (default)</label>
+                </value>
+                <value>
+                    <fullName>120 days</fullName>
+                    <default>false</default>
+                    <label>120 days</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HRA_Rollover__c</fullName>
+        <externalId>false</externalId>
+        <label>HRA Rollover</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HRA_Split_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <label>HRA Split Percentage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HRA_Upfront_Deductible__c</fullName>
+        <externalId>false</externalId>
+        <label>HRA Upfront Deductible</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Has_Individual_Deductible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Has Individual Deductible</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Health_Activities_Incentives__c</fullName>
+        <externalId>false</externalId>
+        <label>Health Activities Incentives</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Health_Incentive_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Health Incentive Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Incentives Earned In Addition to the Employer HRA Allocation</fullName>
+                    <default>false</default>
+                    <label>Incentives Earned In Addition to the Employer HRA Allocation</label>
+                </value>
+                <value>
+                    <fullName>Fully Insured Health Incentive Account Plus</fullName>
+                    <default>false</default>
+                    <label>Fully Insured Health Incentive Account Plus</label>
+                </value>
+                <value>
+                    <fullName>Incentive HRA Only</fullName>
+                    <default>false</default>
+                    <label>Incentive HRA Only</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>If_Other_Please_Specify__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>If Other Please Specify</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Individual_Deductible_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Individual Deductible Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Is_RX_Covered_Under_HRA__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF
+(
+	OR
+	(
+		AND
+		(
+			ISPICKVAL(Type_of_HRA__c,&apos;Member Pay (debit card) Only&apos;),
+			INCLUDES(Debit_Card_Services__c,&apos;Pharmacy&apos;)
+		),
+		AND
+		(
+			ISPICKVAL(Type_of_HRA__c,&apos;Auto-Pay Provider Only&apos;),
+			INCLUDES(Covered_Services__c,&apos;Rx&apos;)
+                ),
+                AND
+		(
+			ISPICKVAL(Type_of_HRA__c,&apos;Provider Pay Medical with Optional Rx/Dental/Vision Debit Card&apos;),
+			INCLUDES(Covered_Services__c,&apos;Rx&apos;)
+
+		),
+		ISPICKVAL(Type_of_HRA__c,&apos;Combination (not recommended)&apos;)	
+	)
+	,
+	&apos;YES&apos;,&apos;NO&apos;	
+)</formula>
+        <label>Is RX Covered Under HRA?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Provider Pay</fullName>
+                    <default>false</default>
+                    <label>Provider Pay</label>
+                </value>
+                <value>
+                    <fullName>Member Pay (Debit Card)</fullName>
+                    <default>false</default>
+                    <label>Member Pay (Debit Card)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Member_Responsibility_by_Claim__c</fullName>
+        <externalId>false</externalId>
+        <label>Member Responsibility by Claim</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>25%</fullName>
+                    <default>false</default>
+                    <label>25%</label>
+                </value>
+                <value>
+                    <fullName>50%</fullName>
+                    <default>false</default>
+                    <label>50%</label>
+                </value>
+                <value>
+                    <fullName>75%</fullName>
+                    <default>false</default>
+                    <label>75%</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Minimum_Rollover_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Minimum Rollover Amount</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>NonSplit_Covered_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>NonSplit Covered Services</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Auto Pay Medical</fullName>
+                    <default>false</default>
+                    <label>Auto Pay Medical</label>
+                </value>
+                <value>
+                    <fullName>In Network Medical Deductible</fullName>
+                    <default>false</default>
+                    <label>In Network Medical Deductible</label>
+                </value>
+                <value>
+                    <fullName>In Network Coinsurance</fullName>
+                    <default>false</default>
+                    <label>In Network Coinsurance</label>
+                </value>
+                <value>
+                    <fullName>Out of Network Medical Deductible</fullName>
+                    <default>false</default>
+                    <label>Out of Network Medical Deductible</label>
+                </value>
+                <value>
+                    <fullName>Out of Network Coinsurance</fullName>
+                    <default>false</default>
+                    <label>Out of Network Coinsurance</label>
+                </value>
+                <value>
+                    <fullName>Rx</fullName>
+                    <default>false</default>
+                    <label>Rx</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Pharmacy__c</fullName>
+        <externalId>false</externalId>
+        <label>Pharmacy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Provider Pay</fullName>
+                    <default>false</default>
+                    <label>Provider Pay</label>
+                </value>
+                <value>
+                    <fullName>Member Pay (Debit Card)</fullName>
+                    <default>false</default>
+                    <label>Member Pay (Debit Card)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Plan_End_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Plan End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Plan_Start_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Plan Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Trustee__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Prior Trustee</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QLI__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>QLI</label>
+        <referenceTo>QuoteLineItem</referenceTo>
+        <relationshipLabel>HRA Administrations</relationshipLabel>
+        <relationshipName>HRA_Administrations</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Rollover_Cap_Tiers__c</fullName>
+        <externalId>false</externalId>
+        <label>Rollover Cap Tiers</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2 Tier</fullName>
+                    <default>false</default>
+                    <label>2 Tier</label>
+                </value>
+                <value>
+                    <fullName>3 Tier</fullName>
+                    <default>false</default>
+                    <label>3 Tier</label>
+                </value>
+                <value>
+                    <fullName>4 Tier</fullName>
+                    <default>false</default>
+                    <label>4 Tier</label>
+                </value>
+                <value>
+                    <fullName>5 Tier</fullName>
+                    <default>false</default>
+                    <label>5 Tier</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rollover_Different_Admin__c</fullName>
+        <externalId>false</externalId>
+        <label>Rollover Different Admin</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rollover_Percent_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Rollover Percent Value</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Rx_Debit_card__c</fullName>
+        <externalId>false</externalId>
+        <label>Rx Debit Card</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Specialty__c</fullName>
+        <externalId>false</externalId>
+        <label>Specialty</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dental (Debit Card)</fullName>
+                    <default>false</default>
+                    <label>Dental (Debit Card)</label>
+                </value>
+                <value>
+                    <fullName>Vision (Debit Card)</fullName>
+                    <default>false</default>
+                    <label>Vision (Debit Card)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Split_Percentage_Covered_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Split Percentage Covered Services</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Auto Pay Medical</fullName>
+                    <default>false</default>
+                    <label>Auto Pay Medical</label>
+                </value>
+                <value>
+                    <fullName>In Network Medical Deductible</fullName>
+                    <default>false</default>
+                    <label>In Network Medical Deductible</label>
+                </value>
+                <value>
+                    <fullName>Out of Network Medical Deductible</fullName>
+                    <default>false</default>
+                    <label>Out of Network Medical Deductible</label>
+                </value>
+                <value>
+                    <fullName>In Network Coinsurance</fullName>
+                    <default>false</default>
+                    <label>In Network Coinsurance</label>
+                </value>
+                <value>
+                    <fullName>Out of Network Coinsurance</fullName>
+                    <default>false</default>
+                    <label>Out of Network Coinsurance</label>
+                </value>
+                <value>
+                    <fullName>In Network Copays</fullName>
+                    <default>false</default>
+                    <label>In Network Copays</label>
+                </value>
+                <value>
+                    <fullName>Out of Network Copays</fullName>
+                    <default>false</default>
+                    <label>Out of Network Copays</label>
+                </value>
+                <value>
+                    <fullName>Rx</fullName>
+                    <default>false</default>
+                    <label>Rx</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Terminated_can_submit_claims_for__c</fullName>
+        <externalId>false</externalId>
+        <label>Terminated can submit claims for</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>90 Days (Standard)</fullName>
+                    <default>false</default>
+                    <label>90 Days (Standard)</label>
+                </value>
+                <value>
+                    <fullName>30 Days</fullName>
+                    <default>false</default>
+                    <label>30 Days</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type_of_HRA__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of HRA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Member Pay (debit card) Only</fullName>
+                    <default>false</default>
+                    <label>Member Pay (debit card) Only</label>
+                </value>
+                <value>
+                    <fullName>Auto-Pay Provider Only</fullName>
+                    <default>false</default>
+                    <label>Auto-Pay Provider Only</label>
+                </value>
+                <value>
+                    <fullName>Provider Pay Medical with Optional Rx/Dental/Vision Debit Card</fullName>
+                    <default>false</default>
+                    <label>Provider Pay Medical with Optional Rx/Dental/Vision Debit Card</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UpFrontDedEA__c</fullName>
+        <externalId>false</externalId>
+        <label>UpFrontDedEA</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UpFrontDedEEChildren__c</fullName>
+        <externalId>false</externalId>
+        <label>UpFrontDedEEChildren</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UpFrontDedFamily__c</fullName>
+        <externalId>false</externalId>
+        <label>UpFrontDedFamily</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Up_Front_Deductible_Tiers__c</fullName>
+        <externalId>false</externalId>
+        <label>Up Front Deductible Tiers</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2 Tier</fullName>
+                    <default>false</default>
+                    <label>2 Tier</label>
+                </value>
+                <value>
+                    <fullName>3 Tier</fullName>
+                    <default>false</default>
+                    <label>3 Tier</label>
+                </value>
+                <value>
+                    <fullName>4 Tier</fullName>
+                    <default>false</default>
+                    <label>4 Tier</label>
+                </value>
+                <value>
+                    <fullName>5 Tier</fullName>
+                    <default>false</default>
+                    <label>5 Tier</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UpfrontDedEChild__c</fullName>
+        <externalId>false</externalId>
+        <label>UpfrontDedEChild</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UpfrontDedEE__c</fullName>
+        <externalId>false</externalId>
+        <label>UpfrontDedEE</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Will_HRA_rollover_funds_ever_expire__c</fullName>
+        <description>Will HRA rollover funds ever expire</description>
+        <externalId>false</externalId>
+        <label>Will HRA rollover funds ever expire?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>true</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>HRA Administration</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>HRA1_Group_Suffix__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>HRAD-{0000}</displayFormat>
+        <label>HRA Administration Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>HRA Administrations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

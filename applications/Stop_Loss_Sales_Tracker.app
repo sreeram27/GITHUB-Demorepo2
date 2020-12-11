@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Stop Loss Sales Tracker</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Product_Contact_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.vlocity_ins__Producer</recordType>
+        <type>Flexipage</type>
+        <profile>Stop Loss Team Dual</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Open_Enrollment_Record_Page11</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>SFDC_Volunteer_Event__c</pageOrSobjectType>
+        <recordType>SFDC_Volunteer_Event__c.OE_Kit</recordType>
+        <type>Flexipage</type>
+        <profile>API User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Open_Enrollment_Record_Page11</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>SFDC_Volunteer_Event__c</pageOrSobjectType>
+        <recordType>SFDC_Volunteer_Event__c.OE_Kit</recordType>
+        <type>Flexipage</type>
+        <profile>Local Sales</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Open_Enrollment_Record_Page11</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>SFDC_Volunteer_Event__c</pageOrSobjectType>
+        <recordType>SFDC_Volunteer_Event__c.OE_Kit</recordType>
+        <type>Flexipage</type>
+        <profile>Local Sales Dual</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Open_Enrollment_Record_Page11</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>SFDC_Volunteer_Event__c</pageOrSobjectType>
+        <recordType>SFDC_Volunteer_Event__c.OE_Kit</recordType>
+        <type>Flexipage</type>
+        <profile>National Open Enrollment</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Open_Enrollment_Record_Page11</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>SFDC_Volunteer_Event__c</pageOrSobjectType>
+        <recordType>SFDC_Volunteer_Event__c.OE_Kit</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Open_Enrollment_Meetings_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Open_Enrollment_Meetings__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>National Open Enrollment</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Open_Enrollment_Meetings_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Open_Enrollment_Meetings__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Default1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Local Implementations</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Default1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Local Implementations Dual</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Default1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Local Sales</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Default1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Local Sales Dual</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Home_Page_Default1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>SME</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Open_Enrollment_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>SFDC_Volunteer_Event__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>National Open Enrollment</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Open_Enrollment_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>SFDC_Volunteer_Event__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.StopLoss</recordType>
+        <type>Flexipage</type>
+        <profile>Stop Loss Team</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Product_Contact_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.vlocity_ins__Producer</recordType>
+        <type>Flexipage</type>
+        <profile>Stop Loss Team</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Opportunity_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+        <recordType>Opportunity.StopLoss</recordType>
+        <type>Flexipage</type>
+        <profile>Stop Loss Team Dual</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.Facilitator_Contact</recordType>
+        <type>Flexipage</type>
+        <profile>National Open Enrollment</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Contact_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+        <recordType>Contact.Facilitator_Contact</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <tabs>standard-home</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Feed</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-CollaborationGroup</tabs>
+    <tabs>Underwriting_Record__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Stop_Loss_Sales_Tracker_UtilityBar</utilityBar>
+</CustomApplication>

@@ -1,0 +1,2397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Billing_Entity_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Legal_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Legal Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Billing</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AutorabitExtId__c</fullName>
+        <description>External Id created by AutoRABIT</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <label>AutorabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bill_Copies__c</fullName>
+        <externalId>false</externalId>
+        <label>Bill Copies</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0 - No Bill</fullName>
+                    <default>false</default>
+                    <label>0 - No Bill</label>
+                </value>
+                <value>
+                    <fullName>1 - Copy</fullName>
+                    <default>false</default>
+                    <label>1 - Copy</label>
+                </value>
+                <value>
+                    <fullName>2 - Copies</fullName>
+                    <default>false</default>
+                    <label>2 - Copies</label>
+                </value>
+                <value>
+                    <fullName>3 - Copies</fullName>
+                    <default>false</default>
+                    <label>3 - Copies</label>
+                </value>
+                <value>
+                    <fullName>4 - Copies</fullName>
+                    <default>false</default>
+                    <label>4 - Copies</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Bill_Entity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please Provide The Billing Entity Number.</inlineHelpText>
+        <label>Bill Entity #</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bill_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This Is The Frequency In Which Your Invoice Is Generated. Monthly (1) Is Most Commonly Used.</inlineHelpText>
+        <label>Bill Frequency</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>D DAILY</fullName>
+                    <default>false</default>
+                    <label>D DAILY</label>
+                </value>
+                <value>
+                    <fullName>W WEEKLY</fullName>
+                    <default>false</default>
+                    <label>W WEEKLY</label>
+                </value>
+                <value>
+                    <fullName>0 NON COMP HOUSED</fullName>
+                    <default>false</default>
+                    <label>0 NON COMP HOUSED</label>
+                </value>
+                <value>
+                    <fullName>1 MONTHLY</fullName>
+                    <default>true</default>
+                    <label>1 MONTHLY</label>
+                </value>
+                <value>
+                    <fullName>2 ANNUAL</fullName>
+                    <default>false</default>
+                    <label>2 ANNUAL</label>
+                </value>
+                <value>
+                    <fullName>3 SEMI-ANNUAL</fullName>
+                    <default>false</default>
+                    <label>3 SEMI-ANNUAL</label>
+                </value>
+                <value>
+                    <fullName>4 QUARTERLY</fullName>
+                    <default>false</default>
+                    <label>4 QUARTERLY</label>
+                </value>
+                <value>
+                    <fullName>5 BI-WEEKLY</fullName>
+                    <default>false</default>
+                    <label>5 BI-WEEKLY</label>
+                </value>
+                <value>
+                    <fullName>6 10 MONTH/SCHOOL</fullName>
+                    <default>false</default>
+                    <label>6 10 MONTH/SCHOOL</label>
+                </value>
+                <value>
+                    <fullName>1 = most common</fullName>
+                    <default>false</default>
+                    <label>1 = most common</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Bill_Sequence__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This Is The Order In Which Your Invoice Is Sorted. Last Name (1) Is Most Commonly Used.</inlineHelpText>
+        <label>Bill Sequence</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A ALPHA/W/EMP NUM</fullName>
+                    <default>false</default>
+                    <label>A ALPHA/W/EMP NUM</label>
+                </value>
+                <value>
+                    <fullName>B ALPHA/W/DEPT ST</fullName>
+                    <default>false</default>
+                    <label>B ALPHA/W/DEPT ST</label>
+                </value>
+                <value>
+                    <fullName>C CERT/W/DEPT ST</fullName>
+                    <default>false</default>
+                    <label>C CERT/W/DEPT ST</label>
+                </value>
+                <value>
+                    <fullName>D CERT/W/EMP NUM</fullName>
+                    <default>false</default>
+                    <label>D CERT/W/EMP NUM</label>
+                </value>
+                <value>
+                    <fullName>E EMP/W/DEPT ST</fullName>
+                    <default>false</default>
+                    <label>E EMP/W/DEPT ST</label>
+                </value>
+                <value>
+                    <fullName>F NAME/W/GROUP</fullName>
+                    <default>false</default>
+                    <label>F NAME/W/GROUP</label>
+                </value>
+                <value>
+                    <fullName>0 NOT APPLICABLE</fullName>
+                    <default>false</default>
+                    <label>0 NOT APPLICABLE</label>
+                </value>
+                <value>
+                    <fullName>1 LAST NAME</fullName>
+                    <default>true</default>
+                    <label>1 LAST NAME</label>
+                </value>
+                <value>
+                    <fullName>2 ALPHA/W/EMP NUM</fullName>
+                    <default>false</default>
+                    <label>2 ALPHA/W/EMP NUM</label>
+                </value>
+                <value>
+                    <fullName>3 ALPHA/W/DEPT NO</fullName>
+                    <default>false</default>
+                    <label>3 ALPHA/W/DEPT NO</label>
+                </value>
+                <value>
+                    <fullName>4 CERTIFICATE NUM</fullName>
+                    <default>false</default>
+                    <label>4 CERTIFICATE NUM</label>
+                </value>
+                <value>
+                    <fullName>5 CERT/W/DEPT NO</fullName>
+                    <default>false</default>
+                    <label>5 CERT/W/DEPT NO</label>
+                </value>
+                <value>
+                    <fullName>6 EMPLOYEE NUMBER</fullName>
+                    <default>false</default>
+                    <label>6 EMPLOYEE NUMBER</label>
+                </value>
+                <value>
+                    <fullName>7 EMP/NO/W/DEPT</fullName>
+                    <default>false</default>
+                    <label>7 EMP/NO/W/DEPT</label>
+                </value>
+                <value>
+                    <fullName>8 HOME ADDRESS</fullName>
+                    <default>false</default>
+                    <label>8 HOME ADDRESS</label>
+                </value>
+                <value>
+                    <fullName>9 ALIAS NO SEQ</fullName>
+                    <default>false</default>
+                    <label>9 ALIAS NO SEQ</label>
+                </value>
+                <value>
+                    <fullName>1 = most common</fullName>
+                    <default>false</default>
+                    <label>1 = most common</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Bill_Source__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This Represents The Type Of Billing.</inlineHelpText>
+        <label>Bill Source</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Premium/List</fullName>
+                    <default>false</default>
+                    <label>Premium/List</label>
+                </value>
+                <value>
+                    <fullName>Self</fullName>
+                    <default>false</default>
+                    <label>Self</label>
+                </value>
+                <value>
+                    <fullName>Individual</fullName>
+                    <default>false</default>
+                    <label>Individual</label>
+                </value>
+                <value>
+                    <fullName>Premium</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Premium</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billing_Contact_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>There Must Be A Contact Record In The System For This Search. If You Cannot Find The Name You May Need To First Create A New Contact By Clicking &apos;Contact&apos; Tab Across Top And Creating A Record.</inlineHelpText>
+        <label>Billing Contact Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Billing Entity (WGS Only)</relationshipLabel>
+        <relationshipName>Billing</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Specifics__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;If variations exist between multiple entities, please make your selections below for each one, otherwise just complete Entity 1&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Billing Specifics</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact_Name__r.MailingCity</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cycle_Code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This Code Represents The Day Of The Month That Your Invoice Will Generate.</inlineHelpText>
+        <label>Cycle Code</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>00 NO REGULAR CYCLE BILL - OAD WILL RUN ON THE TENTH</fullName>
+                    <default>false</default>
+                    <label>00 NO REGULAR CYCLE BILL - OAD WILL RUN ON THE TENTH</label>
+                </value>
+                <value>
+                    <fullName>01 MONTHLY CYCLE ON THE FIRST OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>01 MONTHLY CYCLE ON THE FIRST OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>02 MONTHLY CYCLE ON THE SECOND OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>02 MONTHLY CYCLE ON THE SECOND OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>03 MONTHLY CYCLE ON THE THIRD OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>03 MONTHLY CYCLE ON THE THIRD OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>04 MONTHLY CYCLE ON THE FOURTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>04 MONTHLY CYCLE ON THE FOURTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>05 MONTHLY CYCLE ON THE FIFTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>05 MONTHLY CYCLE ON THE FIFTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>06 MONTHLY CYCLE ON THE SIXTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>06 MONTHLY CYCLE ON THE SIXTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>07 MONTHLY CYCLE ON THE SEVENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>07 MONTHLY CYCLE ON THE SEVENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>08 MONTHLY CYCLE ON THE EIGHTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>08 MONTHLY CYCLE ON THE EIGHTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>09 MONTHLY CYCLE ON THE NINTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>09 MONTHLY CYCLE ON THE NINTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>10 MONTHLY CYCLE ON THE TENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>10 MONTHLY CYCLE ON THE TENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>11 MONTHLY CYCLE ON THE ELEVENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>11 MONTHLY CYCLE ON THE ELEVENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>12 MONTHLY CYCLE ON THE TWELVETH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>12 MONTHLY CYCLE ON THE TWELVETH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>13 MONTHLY CYCLE ON THE THIRTEENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>13 MONTHLY CYCLE ON THE THIRTEENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>14 MONTHLY CYCLE ON THE FOURTEENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>14 MONTHLY CYCLE ON THE FOURTEENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>15 MONTHLY CYCLE ON THE FIFTEENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>15 MONTHLY CYCLE ON THE FIFTEENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>16 MONTHLY CYCLE ON THE SIXTEENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>16 MONTHLY CYCLE ON THE SIXTEENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>17 MONTHLY CYCLE ON THE SEVENTEENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>17 MONTHLY CYCLE ON THE SEVENTEENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>18 MONTHLY CYCLE ON THE EIGHTEENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>18 MONTHLY CYCLE ON THE EIGHTEENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>19 MONTHLY CYCLE ON THE NINETEENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>19 MONTHLY CYCLE ON THE NINETEENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>20 MONTHLY CYCLE ON THE TWENTIETH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>20 MONTHLY CYCLE ON THE TWENTIETH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>21 MONTHLY CYCLE ON THE TWENTY FIRST OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>21 MONTHLY CYCLE ON THE TWENTY FIRST OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>22 MONTHLY CYCLE ON THE TWENTY SECOND OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>22 MONTHLY CYCLE ON THE TWENTY SECOND OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>23 MONTHLY CYCLE ON THE TWENTY THIRD OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>23 MONTHLY CYCLE ON THE TWENTY THIRD OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>24 MONTHLY CYCLE ON THE TWENTY FOURTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>24 MONTHLY CYCLE ON THE TWENTY FOURTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>25 MONTHLY CYCLE ON THE TWENTY FIFTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>25 MONTHLY CYCLE ON THE TWENTY FIFTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>26 MONTHLY CYCLE ON THE TWENTY SIXTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>26 MONTHLY CYCLE ON THE TWENTY SIXTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>27 MONTHLY CYCLE ON THE TWENTY SEVENTH OF THE MONTH</fullName>
+                    <default>false</default>
+                    <label>27 MONTHLY CYCLE ON THE TWENTY SEVENTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>28 MONTHLY CYCLE ON THE TWENTY EIGHTH OF THE MONTH</fullName>
+                    <default>true</default>
+                    <label>28 MONTHLY CYCLE ON THE TWENTY EIGHTH OF THE MONTH</label>
+                </value>
+                <value>
+                    <fullName>51 BI WEEKLY CYCLE ON SUNDAY AND MONDAY</fullName>
+                    <default>false</default>
+                    <label>51 BI WEEKLY CYCLE ON SUNDAY AND MONDAY</label>
+                </value>
+                <value>
+                    <fullName>52 BI WEEKLY CYCLE ON TUESDAY</fullName>
+                    <default>false</default>
+                    <label>52 BI WEEKLY CYCLE ON TUESDAY</label>
+                </value>
+                <value>
+                    <fullName>53 BI WEEKLY CYCLE ON WEDNESDAY</fullName>
+                    <default>false</default>
+                    <label>53 BI WEEKLY CYCLE ON WEDNESDAY</label>
+                </value>
+                <value>
+                    <fullName>54 BI WEEKLY CYCLE ON THURSDAY</fullName>
+                    <default>false</default>
+                    <label>54 BI WEEKLY CYCLE ON THURSDAY</label>
+                </value>
+                <value>
+                    <fullName>55 BI WEEKLY CYCLE ON FRIDAY</fullName>
+                    <default>false</default>
+                    <label>55 BI WEEKLY CYCLE ON FRIDAY</label>
+                </value>
+                <value>
+                    <fullName>56 BI WEEKLY CYCLE ON SATURDAY</fullName>
+                    <default>false</default>
+                    <label>56 BI WEEKLY CYCLE ON SATURDAY</label>
+                </value>
+                <value>
+                    <fullName>80 NO REGULAR CYCLE BILL - OAD WILL RUN ON THE TENTH</fullName>
+                    <default>false</default>
+                    <label>80 NO REGULAR CYCLE BILL - OAD WILL RUN ON THE TENTH</label>
+                </value>
+                <value>
+                    <fullName>99 DAILY BILLING CYCLE</fullName>
+                    <default>false</default>
+                    <label>99 DAILY BILLING CYCLE</label>
+                </value>
+                <value>
+                    <fullName>EAST TYPICALLY USES CODE 28</fullName>
+                    <default>false</default>
+                    <label>EAST TYPICALLY USES CODE 28</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact_Name__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entity_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Entity Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Consolidated</fullName>
+                    <default>true</default>
+                    <label>Consolidated</label>
+                </value>
+                <value>
+                    <fullName>Suffix</fullName>
+                    <default>false</default>
+                    <label>Suffix</label>
+                </value>
+                <value>
+                    <fullName>Individual</fullName>
+                    <default>false</default>
+                    <label>Individual</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>For_the_following_suffixes__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>For The Following Suffixes</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Funding_Master__c</fullName>
+        <externalId>false</externalId>
+        <label>Funding</label>
+        <referenceTo>Funding__c</referenceTo>
+        <relationshipName>Billing_Entities1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Funding_Type_Code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This Code Represents The Type Of Funding Arrangement.</inlineHelpText>
+        <label>Funding Type Code</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A -- FI: non-refunding, regulated by DOI</fullName>
+                    <default>false</default>
+                    <label>A -- FI: non-refunding, regulated by DOI</label>
+                </value>
+                <value>
+                    <fullName>B -- FI: refunding, regulated by DOI</fullName>
+                    <default>false</default>
+                    <label>B -- FI: refunding, regulated by DOI</label>
+                </value>
+                <value>
+                    <fullName>H -- ASO/ASC: New/Existing clients with Admin Svc Contract (most common)</fullName>
+                    <default>false</default>
+                    <label>H -- ASO/ASC: New/Existing clients with Admin Svc Contract (most common)</label>
+                </value>
+                <value>
+                    <fullName>K -- JAA: New/existing clients</fullName>
+                    <default>false</default>
+                    <label>K -- JAA: New/existing clients</label>
+                </value>
+                <value>
+                    <fullName>W – Anthem Balanced Funding</fullName>
+                    <default>false</default>
+                    <label>W – Anthem Balanced Funding</label>
+                </value>
+                <value>
+                    <fullName>1 -- FI: non-refunding, regulated by DMHC</fullName>
+                    <default>false</default>
+                    <label>1 -- FI: non-refunding, regulated by DMHC</label>
+                </value>
+                <value>
+                    <fullName>2 -- FI: refunding, regulated by DMHC</fullName>
+                    <default>false</default>
+                    <label>2 -- FI: refunding, regulated by DMHC</label>
+                </value>
+                <value>
+                    <fullName>3 -- N/A, unless existing client w/this fund type in use, previously used for FI.</fullName>
+                    <default>false</default>
+                    <label>3 -- N/A, unless existing client w/this fund type in use, previously used for FI.</label>
+                </value>
+                <value>
+                    <fullName>4 -- N/A, unless existing client w/this fund type in use, previously used for Minimum Premium.</fullName>
+                    <default>false</default>
+                    <label>4 -- N/A, unless existing client w/this fund type in use, previously used for Minimum Premium.</label>
+                </value>
+                <value>
+                    <fullName>5 -- N/A for National Accts</fullName>
+                    <default>false</default>
+                    <label>5 -- N/A for National Accts</label>
+                </value>
+                <value>
+                    <fullName>7 -- Minimum Premium: New/Existing clients</fullName>
+                    <default>false</default>
+                    <label>7 -- Minimum Premium: New/Existing clients</label>
+                </value>
+                <value>
+                    <fullName>9 -- ASO: MCS clients or existing ASO clients already set up w/ this funding</fullName>
+                    <default>false</default>
+                    <label>9 -- ASO: MCS clients or existing ASO clients already set up w/ this funding</label>
+                </value>
+                <value>
+                    <fullName>*Use H for all new groups all states except for Fedex. H means that checks will be written on Anthem account.</fullName>
+                    <default>false</default>
+                    <label>*Use H for all new groups all states except for Fedex. H means that checks will be written on Anthem account.</label>
+                </value>
+                <value>
+                    <fullName>*Use 9 if Fedex.This is the only new group where approval has been given to write checks on group&apos;s account</fullName>
+                    <default>false</default>
+                    <label>*Use 9 if Fedex.This is the only new group where approval has been given to write checks on group&apos;s account</label>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Grace_Days__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText># Of Days Before A Bill Entity Becomes Delinquent. Claims Will Not Pay If The Service Date Is After The Group&apos;s Paid To Date Plus Grace Days. Typically Ranges From 30 – 90 Days.</inlineHelpText>
+        <label>Grace Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Group</label>
+        <referenceTo>Group__c</referenceTo>
+        <relationshipName>Billing_Entities</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Name__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Implementation Case Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Record_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Implementation Record ID</label>
+        <referenceTo>Order</referenceTo>
+        <relationshipName>Billing</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pay_Type_Code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This Represents How The Premium Is Received At Anthem.</inlineHelpText>
+        <label>Pay Type Code</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Wire Transfer</fullName>
+                    <default>true</default>
+                    <label>Wire Transfer</label>
+                </value>
+                <value>
+                    <fullName>Lock Box</fullName>
+                    <default>false</default>
+                    <label>Lock Box</label>
+                </value>
+                <value>
+                    <fullName>Cash/Checks</fullName>
+                    <default>false</default>
+                    <label>Cash/Checks</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact_Name__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plan_Name__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>If All Plans Have The Same Billing Values, Indicate &quot;ALL&quot; And Just Complete Entity 1.</inlineHelpText>
+        <label>Plan Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rate_Method_Code_RMC__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If ASO, Use 1 For All States.
+
+If CA, CO &amp; NV And Financial Arrangement Is Other Than ASO, Assign Applicable Code Based On Financial Arrangement.</inlineHelpText>
+        <label>Rate Method Code (RMC)</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A -- NON-GROUP</fullName>
+                    <default>false</default>
+                    <label>A -- NON-GROUP</label>
+                </value>
+                <value>
+                    <fullName>B -- POOL RTD EXCEPT</fullName>
+                    <default>false</default>
+                    <label>B -- POOL RTD EXCEPT</label>
+                </value>
+                <value>
+                    <fullName>C -- POOL RTD 5-9</fullName>
+                    <default>false</default>
+                    <label>C -- POOL RTD 5-9</label>
+                </value>
+                <value>
+                    <fullName>D -- POOL RTD 10-49</fullName>
+                    <default>false</default>
+                    <label>D -- POOL RTD 10-49</label>
+                </value>
+                <value>
+                    <fullName>E -- POOLED PLUS EXP</fullName>
+                    <default>false</default>
+                    <label>E -- POOLED PLUS EXP</label>
+                </value>
+                <value>
+                    <fullName>F -- EXP RTD NONREF</fullName>
+                    <default>false</default>
+                    <label>F -- EXP RTD NONREF</label>
+                </value>
+                <value>
+                    <fullName>G -- EXP RTD NONREF</fullName>
+                    <default>false</default>
+                    <label>G -- EXP RTD NONREF</label>
+                </value>
+                <value>
+                    <fullName>H -- EXP RTD FROZEN</fullName>
+                    <default>false</default>
+                    <label>H -- EXP RTD FROZEN</label>
+                </value>
+                <value>
+                    <fullName>I -- STIP. RATE COST</fullName>
+                    <default>false</default>
+                    <label>I -- STIP. RATE COST</label>
+                </value>
+                <value>
+                    <fullName>J -- EXP RTD NONREF</fullName>
+                    <default>false</default>
+                    <label>J -- EXP RTD NONREF</label>
+                </value>
+                <value>
+                    <fullName>K -- EXP RTD NONREF</fullName>
+                    <default>false</default>
+                    <label>K -- EXP RTD NONREF</label>
+                </value>
+                <value>
+                    <fullName>L -- EXP RTD REFUND</fullName>
+                    <default>false</default>
+                    <label>L -- EXP RTD REFUND</label>
+                </value>
+                <value>
+                    <fullName>M -- DIST XI MUTUAL</fullName>
+                    <default>false</default>
+                    <label>M -- DIST XI MUTUAL</label>
+                </value>
+                <value>
+                    <fullName>N -- NATIONAL EQUAL</fullName>
+                    <default>false</default>
+                    <label>N -- NATIONAL EQUAL</label>
+                </value>
+                <value>
+                    <fullName>P -- COST PLUS</fullName>
+                    <default>false</default>
+                    <label>P -- COST PLUS</label>
+                </value>
+                <value>
+                    <fullName>R -- OTHR. SPEC RTD</fullName>
+                    <default>false</default>
+                    <label>R -- OTHR. SPEC RTD</label>
+                </value>
+                <value>
+                    <fullName>S -- SCHOOL POOL</fullName>
+                    <default>false</default>
+                    <label>S -- SCHOOL POOL</label>
+                </value>
+                <value>
+                    <fullName>T -- MINIMUM PREMIUM</fullName>
+                    <default>false</default>
+                    <label>T -- MINIMUM PREMIUM</label>
+                </value>
+                <value>
+                    <fullName>U -- ALT HEALTH PLAN</fullName>
+                    <default>false</default>
+                    <label>U -- ALT HEALTH PLAN</label>
+                </value>
+                <value>
+                    <fullName>V -- MASTERLINE FROZ</fullName>
+                    <default>false</default>
+                    <label>V -- MASTERLINE FROZ</label>
+                </value>
+                <value>
+                    <fullName>W -- ALT HEALTH PLAN</fullName>
+                    <default>false</default>
+                    <label>W -- ALT HEALTH PLAN</label>
+                </value>
+                <value>
+                    <fullName>Y -- UNITECH</fullName>
+                    <default>false</default>
+                    <label>Y -- UNITECH</label>
+                </value>
+                <value>
+                    <fullName>Z -- FREE STD. DENT</fullName>
+                    <default>false</default>
+                    <label>Z -- FREE STD. DENT</label>
+                </value>
+                <value>
+                    <fullName>1 -- ASO BUSINESS</fullName>
+                    <default>false</default>
+                    <label>1 -- ASO BUSINESS</label>
+                </value>
+                <value>
+                    <fullName>2 -- STOP-LOSS BUSN</fullName>
+                    <default>false</default>
+                    <label>2 -- STOP-LOSS BUSN</label>
+                </value>
+                <value>
+                    <fullName>3 -- MINIMUM PREMIUM</fullName>
+                    <default>false</default>
+                    <label>3 -- MINIMUM PREMIUM</label>
+                </value>
+                <value>
+                    <fullName>4 -- MASTERLINE</fullName>
+                    <default>false</default>
+                    <label>4 -- MASTERLINE</label>
+                </value>
+                <value>
+                    <fullName>5 -- RESERVED</fullName>
+                    <default>false</default>
+                    <label>5 -- RESERVED</label>
+                </value>
+                <value>
+                    <fullName>7 -- HMO</fullName>
+                    <default>false</default>
+                    <label>7 -- HMO</label>
+                </value>
+                <value>
+                    <fullName>8 -- HMO</fullName>
+                    <default>false</default>
+                    <label>8 -- HMO</label>
+                </value>
+                <value>
+                    <fullName>9 -- HMO</fullName>
+                    <default>false</default>
+                    <label>9 -- HMO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Retro_Days__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This Represents How Far Back Retro activity Can Be Processed. Varies By Region. West And SE Region, Typically 60-90 Days Central Region Typically Uses 365.</inlineHelpText>
+        <label>Retro Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact_Name__r.MailingState</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact_Name__r.MailingStreet</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Street Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title_Billing_Contact__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact_Name__r.Title</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tolerance_Level__c</fullName>
+        <defaultValue>0.008</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This Is The Minimum Percent Payment Of An Invoice Required Before The Paid To Date Is Advanced. Minimum Percent Is 80%.</inlineHelpText>
+        <label>Tolerance Level %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Washout_Code_16__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;WASHOUT CODE = 16 Enrollment: Enrollment 1st- 15th, Premium due on 1st of the same month. Enrollment 16th-31st, premium due from 1st of next month. Contract Change: Date of events 1st- 15th, Premium due from 1st of the same month. Date of events 16th-31st, premium due from 1st of next month. Terminations: Benefits terminated 1st- 15th, Premium due on 1st of the same month. Terminated 16th-31st, premium credited from 1st of next month.&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Washout Code = 16</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Washout_Code_1__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;WASHOUT CODE = 01 All Events: Dates of events occurring on the 1st - 31st, reflected in premium 1st of the following month.&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Washout Code = 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Washout_Code_2__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;WASHOUT CODE = 02 Enrollment: Enrollment on 1st, Premium due on 1st of the same month. Enrollment on 2nd-31st, premium due from 1st of next month. Contract Change: Dates of events occurring on the 1st, premium for new contract type due from the 1st of same month. 2nd-31st, due next month. Terminations: Benefits terminated on 1st, premium credited from the 1st of same month. 2nd-31st, credited next month.&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Washout Code = 2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Washout_Code_31__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;WASHOUT CODE = 31 Enrollment: Enrollment 1st- 31st, Premium due from 1st of the same month. Contract Change: Dates of event occurring 1st- 31st, Premium due on 1st of the current month. Terminations: Benefits terminated 1st- 31st, Premium credited from the 1st of the same month.&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Washout Code = 31</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Washout_Code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This Code Determines When The First Charge For A Member Is Billed Or If A Full Credit Is Generated When The Member Cancels. The System Automatically Creates Adjustments For Additions, Terminations And Contract Type Changes.</inlineHelpText>
+        <label>Washout Code</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Code 01</fullName>
+                    <default>false</default>
+                    <label>Code 01</label>
+                </value>
+                <value>
+                    <fullName>Code 02</fullName>
+                    <default>false</default>
+                    <label>Code 02</label>
+                </value>
+                <value>
+                    <fullName>Code 16</fullName>
+                    <default>true</default>
+                    <label>Code 16</label>
+                </value>
+                <value>
+                    <fullName>Code 31</fullName>
+                    <default>false</default>
+                    <label>Code 31</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Contact_Name__r.MailingPostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Zip Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Billing Entity (WGS Only)</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>BILL-{000000}</displayFormat>
+        <label>Billing Entity Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Billing Entity (WGS Only)</pluralLabel>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Billing</fullName>
+        <active>true</active>
+        <label>Billing FI</label>
+        <picklistValues>
+            <picklist>Bill_Copies__c</picklist>
+            <values>
+                <fullName>0 - No Bill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 - Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Copies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Copies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Copies</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bill_Frequency__c</picklist>
+            <values>
+                <fullName>0 NON COMP HOUSED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 %3D most common</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 MONTHLY</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2 ANNUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 SEMI-ANNUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 QUARTERLY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 BI-WEEKLY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 10 MONTH%2FSCHOOL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D DAILY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W WEEKLY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bill_Sequence__c</picklist>
+            <values>
+                <fullName>0 NOT APPLICABLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 %3D most common</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 LAST NAME</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2 ALPHA%2FW%2FEMP NUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 ALPHA%2FW%2FDEPT NO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 CERTIFICATE NUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 CERT%2FW%2FDEPT NO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 EMPLOYEE NUMBER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 EMP%2FNO%2FW%2FDEPT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8 HOME ADDRESS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9 ALIAS NO SEQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A ALPHA%2FW%2FEMP NUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B ALPHA%2FW%2FDEPT ST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C CERT%2FW%2FDEPT ST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D CERT%2FW%2FEMP NUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E EMP%2FW%2FDEPT ST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F NAME%2FW%2FGROUP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bill_Source__c</picklist>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium%2FList</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cycle_Code__c</picklist>
+            <values>
+                <fullName>00 NO REGULAR CYCLE BILL - OAD WILL RUN ON THE TENTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>01 MONTHLY CYCLE ON THE FIRST OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 MONTHLY CYCLE ON THE SECOND OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 MONTHLY CYCLE ON THE THIRD OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 MONTHLY CYCLE ON THE FOURTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 MONTHLY CYCLE ON THE FIFTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 MONTHLY CYCLE ON THE SIXTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07 MONTHLY CYCLE ON THE SEVENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08 MONTHLY CYCLE ON THE EIGHTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09 MONTHLY CYCLE ON THE NINTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10 MONTHLY CYCLE ON THE TENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11 MONTHLY CYCLE ON THE ELEVENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12 MONTHLY CYCLE ON THE TWELVETH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13 MONTHLY CYCLE ON THE THIRTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14 MONTHLY CYCLE ON THE FOURTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 MONTHLY CYCLE ON THE FIFTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16 MONTHLY CYCLE ON THE SIXTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17 MONTHLY CYCLE ON THE SEVENTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18 MONTHLY CYCLE ON THE EIGHTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19 MONTHLY CYCLE ON THE NINETEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20 MONTHLY CYCLE ON THE TWENTIETH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21 MONTHLY CYCLE ON THE TWENTY FIRST OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22 MONTHLY CYCLE ON THE TWENTY SECOND OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23 MONTHLY CYCLE ON THE TWENTY THIRD OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24 MONTHLY CYCLE ON THE TWENTY FOURTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25 MONTHLY CYCLE ON THE TWENTY FIFTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26 MONTHLY CYCLE ON THE TWENTY SIXTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27 MONTHLY CYCLE ON THE TWENTY SEVENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28 MONTHLY CYCLE ON THE TWENTY EIGHTH OF THE MONTH</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>51 BI WEEKLY CYCLE ON SUNDAY AND MONDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>52 BI WEEKLY CYCLE ON TUESDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>53 BI WEEKLY CYCLE ON WEDNESDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>54 BI WEEKLY CYCLE ON THURSDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55 BI WEEKLY CYCLE ON FRIDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>56 BI WEEKLY CYCLE ON SATURDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>80 NO REGULAR CYCLE BILL - OAD WILL RUN ON THE TENTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>99 DAILY BILLING CYCLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EAST TYPICALLY USES CODE 28</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Entity_Type__c</picklist>
+            <values>
+                <fullName>Consolidated</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suffix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Funding_Type_Code__c</picklist>
+            <values>
+                <fullName>*Use 9 if Fedex%2EThis is the only new group where approval has been given to write checks on group%27s account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>*Use H for all new groups all states except for Fedex%2E H means that checks will be written on Anthem account%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 -- FI%3A non-refunding%2C regulated by DMHC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 -- FI%3A refunding%2C regulated by DMHC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 -- N%2FA%2C unless existing client w%2Fthis fund type in use%2C previously used for FI%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 -- N%2FA%2C unless existing client w%2Fthis fund type in use%2C previously used for Minimum Premium%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 -- N%2FA for National Accts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 -- Minimum Premium%3A New%2FExisting clients</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9 -- ASO%3A MCS clients or existing ASO clients already set up w%2F this funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A -- FI%3A non-refunding%2C regulated by DOI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B -- FI%3A refunding%2C regulated by DOI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H -- ASO%2FASC%3A New%2FExisting clients with Admin Svc Contract %28most common%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>K -- JAA%3A New%2Fexisting clients</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W %E2%80%93 Anthem Balanced Funding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Pay_Type_Code__c</picklist>
+            <values>
+                <fullName>Cash%2FChecks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lock Box</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wire Transfer</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rate_Method_Code_RMC__c</picklist>
+            <values>
+                <fullName>1 -- ASO BUSINESS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 -- STOP-LOSS BUSN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 -- MINIMUM PREMIUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 -- MASTERLINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 -- RESERVED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 -- HMO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8 -- HMO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9 -- HMO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A -- NON-GROUP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B -- POOL RTD EXCEPT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C -- POOL RTD 5-9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D -- POOL RTD 10-49</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E -- POOLED PLUS EXP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F -- EXP RTD NONREF</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>G -- EXP RTD NONREF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H -- EXP RTD FROZEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I -- STIP%2E RATE COST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>J -- EXP RTD NONREF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>K -- EXP RTD NONREF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L -- EXP RTD REFUND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M -- DIST XI MUTUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N -- NATIONAL EQUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P -- COST PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R -- OTHR%2E SPEC RTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S -- SCHOOL POOL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T -- MINIMUM PREMIUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U -- ALT HEALTH PLAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>V -- MASTERLINE FROZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W -- ALT HEALTH PLAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Y -- UNITECH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Z -- FREE STD%2E DENT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Washout_Code__c</picklist>
+            <values>
+                <fullName>Code 01</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Code 02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Code 16</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Code 31</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>BillingASO</fullName>
+        <active>true</active>
+        <label>BillingASO</label>
+        <picklistValues>
+            <picklist>Bill_Copies__c</picklist>
+            <values>
+                <fullName>0 - No Bill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 - Copy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Copies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Copies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Copies</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bill_Frequency__c</picklist>
+            <values>
+                <fullName>0 NON COMP HOUSED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 %3D most common</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 MONTHLY</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2 ANNUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 SEMI-ANNUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 QUARTERLY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 BI-WEEKLY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 10 MONTH%2FSCHOOL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D DAILY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W WEEKLY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bill_Sequence__c</picklist>
+            <values>
+                <fullName>0 NOT APPLICABLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 %3D most common</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 LAST NAME</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2 ALPHA%2FW%2FEMP NUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 ALPHA%2FW%2FDEPT NO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 CERTIFICATE NUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 CERT%2FW%2FDEPT NO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 EMPLOYEE NUMBER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 EMP%2FNO%2FW%2FDEPT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8 HOME ADDRESS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9 ALIAS NO SEQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A ALPHA%2FW%2FEMP NUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B ALPHA%2FW%2FDEPT ST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C CERT%2FW%2FDEPT ST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D CERT%2FW%2FEMP NUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E EMP%2FW%2FDEPT ST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F NAME%2FW%2FGROUP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Bill_Source__c</picklist>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium%2FList</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cycle_Code__c</picklist>
+            <values>
+                <fullName>00 NO REGULAR CYCLE BILL - OAD WILL RUN ON THE TENTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>01 MONTHLY CYCLE ON THE FIRST OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>02 MONTHLY CYCLE ON THE SECOND OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>03 MONTHLY CYCLE ON THE THIRD OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>04 MONTHLY CYCLE ON THE FOURTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>05 MONTHLY CYCLE ON THE FIFTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>06 MONTHLY CYCLE ON THE SIXTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>07 MONTHLY CYCLE ON THE SEVENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>08 MONTHLY CYCLE ON THE EIGHTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>09 MONTHLY CYCLE ON THE NINTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10 MONTHLY CYCLE ON THE TENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11 MONTHLY CYCLE ON THE ELEVENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12 MONTHLY CYCLE ON THE TWELVETH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13 MONTHLY CYCLE ON THE THIRTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14 MONTHLY CYCLE ON THE FOURTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 MONTHLY CYCLE ON THE FIFTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16 MONTHLY CYCLE ON THE SIXTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17 MONTHLY CYCLE ON THE SEVENTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18 MONTHLY CYCLE ON THE EIGHTEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19 MONTHLY CYCLE ON THE NINETEENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20 MONTHLY CYCLE ON THE TWENTIETH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>21 MONTHLY CYCLE ON THE TWENTY FIRST OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>22 MONTHLY CYCLE ON THE TWENTY SECOND OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>23 MONTHLY CYCLE ON THE TWENTY THIRD OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24 MONTHLY CYCLE ON THE TWENTY FOURTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25 MONTHLY CYCLE ON THE TWENTY FIFTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>26 MONTHLY CYCLE ON THE TWENTY SIXTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>27 MONTHLY CYCLE ON THE TWENTY SEVENTH OF THE MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28 MONTHLY CYCLE ON THE TWENTY EIGHTH OF THE MONTH</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>51 BI WEEKLY CYCLE ON SUNDAY AND MONDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>52 BI WEEKLY CYCLE ON TUESDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>53 BI WEEKLY CYCLE ON WEDNESDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>54 BI WEEKLY CYCLE ON THURSDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>55 BI WEEKLY CYCLE ON FRIDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>56 BI WEEKLY CYCLE ON SATURDAY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>80 NO REGULAR CYCLE BILL - OAD WILL RUN ON THE TENTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>99 DAILY BILLING CYCLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EAST TYPICALLY USES CODE 28</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Entity_Type__c</picklist>
+            <values>
+                <fullName>Consolidated</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Individual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suffix</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Funding_Type_Code__c</picklist>
+            <values>
+                <fullName>*Use 9 if Fedex%2EThis is the only new group where approval has been given to write checks on group%27s account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>*Use H for all new groups all states except for Fedex%2E H means that checks will be written on Anthem account%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 -- FI%3A non-refunding%2C regulated by DMHC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 -- FI%3A refunding%2C regulated by DMHC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 -- N%2FA%2C unless existing client w%2Fthis fund type in use%2C previously used for FI%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 -- N%2FA%2C unless existing client w%2Fthis fund type in use%2C previously used for Minimum Premium%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 -- N%2FA for National Accts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 -- Minimum Premium%3A New%2FExisting clients</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9 -- ASO%3A MCS clients or existing ASO clients already set up w%2F this funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A -- FI%3A non-refunding%2C regulated by DOI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B -- FI%3A refunding%2C regulated by DOI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H -- ASO%2FASC%3A New%2FExisting clients with Admin Svc Contract %28most common%29</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>K -- JAA%3A New%2Fexisting clients</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W %E2%80%93 Anthem Balanced Funding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Pay_Type_Code__c</picklist>
+            <values>
+                <fullName>Cash%2FChecks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lock Box</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wire Transfer</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rate_Method_Code_RMC__c</picklist>
+            <values>
+                <fullName>1 -- ASO BUSINESS</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2 -- STOP-LOSS BUSN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 -- MINIMUM PREMIUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 -- MASTERLINE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 -- RESERVED</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 -- HMO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8 -- HMO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9 -- HMO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>A -- NON-GROUP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B -- POOL RTD EXCEPT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C -- POOL RTD 5-9</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>D -- POOL RTD 10-49</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E -- POOLED PLUS EXP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F -- EXP RTD NONREF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>G -- EXP RTD NONREF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H -- EXP RTD FROZEN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I -- STIP%2E RATE COST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>J -- EXP RTD NONREF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>K -- EXP RTD NONREF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L -- EXP RTD REFUND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>M -- DIST XI MUTUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N -- NATIONAL EQUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P -- COST PLUS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R -- OTHR%2E SPEC RTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S -- SCHOOL POOL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T -- MINIMUM PREMIUM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U -- ALT HEALTH PLAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>V -- MASTERLINE FROZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>W -- ALT HEALTH PLAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Y -- UNITECH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Z -- FREE STD%2E DENT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Washout_Code__c</picklist>
+            <values>
+                <fullName>Code 01</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Code 02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Code 16</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Code 31</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

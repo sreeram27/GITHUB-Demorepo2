@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email template is used to notify Benefit Analyst whenever Medical Benefit Stage changes to &apos;“03 Pending Correction Returned&apos;</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>LG_EmailAlert_Template_BenefitAnalyst</name>
+    <style>none</style>
+    <subject>Your Pending Correction Has Been Returned</subject>
+    <textOnly>Hello,  Please be advised that a Pending Correction you submitted has been returned by the Assigned Implementer on the Case- {!Medical_Benefit__c.Implementation_Case_Number__c}.  The relevant Medical Benefits record - {!Medical_Benefit__c.Name} is now in stage &quot;03 Pending Correction Returned&quot;.  Please log into Salesforce to review the corrections and take the appropriate steps.  Link to Medical Benefits record: {!Medical_Benefit__c.Link}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

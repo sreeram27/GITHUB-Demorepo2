@@ -1,0 +1,25 @@
+<apex:component >
+  <script>
+      (function() {
+          'use strict';
+          angular
+          .module('vsAnthemApp')
+          .controller('SMEApprovalcontroller', SMEApprovalcontroller);
+        }());
+        SMEApprovalcontroller.$inject = ['$scope', '$filter', '$window' ,'$rootScope' ];
+        function SMEApprovalcontroller($scope, $filter, $window , $rootScope) {
+            $scope.OtherDeptPH = 'Required:If Other, List Department';
+            $scope.showOTher;
+            $scope.somePlaceholder = 'abc';
+            console.info("Controller Loaded");
+            
+            
+            
+        }
+</script>
+ 
+
+               
+
+
+</apex:component>

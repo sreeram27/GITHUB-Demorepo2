@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email template is used in the THTY approval process</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>THTY Approval Process</name>
+    <style>none</style>
+    <subject>THTY Approval Requested for {!QuoteLineItemApproval__c.ClientName__c}</subject>
+    <textOnly>A new {!QuoteLineItemApproval__c.QLI_Product_Name__c} product has been submitted for approval on {!QuoteLineItemApproval__c.LastModifiedDate} by {!QuoteLineItemApproval__c.LastModifiedBy}.
+
+Client Name: {!QuoteLineItemApproval__c.ClientName__c}
+Effective Date: {!QuoteLineItemApproval__c.EffectiveDate__c}
+Region: {!QuoteLineItemApproval__c.Region__c}
+New or existing: {!QuoteLineItemApproval__c.Neworexisting__c}
+Market: National Accounts
+Likelihood of winning: {!QuoteLineItemApproval__c.Likelihoodofwinning__c}
+Financing: {!QuoteLineItemApproval__c.Financing__c}
+Claims Platform: {!QuoteLineItemApproval__c.ClaimsPlatform__c}
+Offering Standard PGs: {!QuoteLineItemApproval__c.OfferingPG__c}
+Med Management Platform: {!QuoteLineItemApproval__c.MedManagementPlatform__c}
+Customer Service Delivery Model: {!QuoteLineItemApproval__c.CustomerServiceDeliveryModel__c}
+Core &amp; Clinical Products: {!QuoteLineItemApproval__c.CoreClinicalProducts__c}
+Estimated Membership: {!QuoteLineItemApproval__c.EstimatedMembership__c}
+Additional Comments: {!QuoteLineItemApproval__c.BackgroundFurtherExplanation__c}
+Contracting/Situs State: {!QuoteLineItemApproval__c.SitusState__c}
+
+To review and approve / reject the product, please click this link. Click here</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

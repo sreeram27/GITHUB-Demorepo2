@@ -1,0 +1,1725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>InterPlan_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Legal_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( Implementation_Tracking_ID__r.Account_Legal_Name__r.Id ), &apos;&apos;, HYPERLINK(Implementation_Tracking_ID__r.Account_Legal_Name__r.Id, Implementation_Tracking_ID__r.Account_Legal_Name__r.Name))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Legal Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Account_Legal_Name__r.RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Implementation_Tracking_ID__r.Account_Legal_Name__r.Account_Status__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Team_Underwriter__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Account_Legal_Name__r.Underwriter__r.FirstName + &apos; &apos;+Implementation_Tracking_ID__r.Account_Legal_Name__r.Underwriter__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Team Underwriter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Alphanumeric_Prefix_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Alphanumeric Prefix Request</label>
+        <referenceTo>Alpha_Prefix_Request__c</referenceTo>
+        <relationshipLabel>InterPlans</relationshipLabel>
+        <relationshipName>InterPlans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Anthem_Entity__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Implementation_Record_ID__r.Account.Anthem_Entity__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Anthem Entity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_or_Declined_Time__c</fullName>
+        <description>Intermediate Field For Approval Or Declined Date</description>
+        <externalId>false</externalId>
+        <formula>CASE(MOD( Interplan_Check_Date__c - DATE(1985,6,24),7), 
+
+0 , CASE( MOD( Approved_or_Declined_Date__c - Interplan_Check_Date__c,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( Approved_or_Declined_Date__c - Interplan_Check_Date__c ,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( Approved_or_Declined_Date__c - Interplan_Check_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( Approved_or_Declined_Date__c - Interplan_Check_Date__c ,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( Approved_or_Declined_Date__c - Interplan_Check_Date__c ,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( Approved_or_Declined_Date__c - Interplan_Check_Date__c,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( Approved_or_Declined_Date__c - Interplan_Check_Date__c,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR(( Approved_or_Declined_Date__c - Interplan_Check_Date__c )/7)*5)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval or Declined Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approved_Date_Completed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Approved_Date_Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Approved_or_Declined_Date__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Approved or Declined.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Approved or Declined Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Branding__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Account_Legal_Name__r.Branding__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Branding</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cede_Information_Cede_End_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Cede Information Cede End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cede_Information_Cede_Start_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Cede Information Cede Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Claim_System__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Claim_System__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Claim System</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Control_Plan_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Account_Legal_Name__r.Control_Plan_Code__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Control Plan Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_SME_Queue_time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK(In_Progress_Date_Completed__c),Now() - Not_Started_Date_Completed__c, 
+(In_Progress_Date_Completed__c - Not_Started_Date_Completed__c) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current SME Queue time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_SME_time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK(Approved_Date_Completed__c),((Now() - In_Progress_Date_Completed__c) - Pending_Correction_Time__c) , 
+((Approved_Date_Completed__c - In_Progress_Date_Completed__c) - Pending_Correction_Time__c)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current SME time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Implementations_Notified_of_Sale__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Date_Implementations_Notified_Of_Sale__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date Implementations Notified of Sale</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Days_From_Assignment__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Days_From_Assignment__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days From Assignment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Director_Sales_Account_Management__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Account_Legal_Name__r.DirectorSalesAccountManagement__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Director Sales/ Account Management</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Eligible_Employees__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Account_Legal_Name__r.Eligible_Employees__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Eligible Employees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exchange_info__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Implementation_Record_ID__r.Opportunity.Stage_Reason__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Exchange info</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Funding_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Account_Legal_Name__r.CMDFundingType__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Funding Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( Implementation_Tracking_ID__r.Group_Number__r.Id ), &apos;&apos;, HYPERLINK(Implementation_Tracking_ID__r.Group_Number__r.Id, Implementation_Tracking_ID__r.Group_Number__r.Name))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Size__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Group_Size__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Size</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HQ_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Implementation_Tracking_ID__r.Account_Legal_Name__r.HQ_State__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HQ State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Case_Name1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Implementation Case Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Start_Date__c</fullName>
+        <description>This field refers to the Implementation Case Start Date field of the related Implementation Case.</description>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.EffectiveDate</formula>
+        <label>Implementation Case Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Implementation Case Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Effective_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Implementation Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Tracking_ID__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Implementation Tracking ID</label>
+        <referenceTo>Implementation_Tracking__c</referenceTo>
+        <relationshipLabel>InterPlan</relationshipLabel>
+        <relationshipName>InterPlan</relationshipName>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Implementation Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_Progress_Date_Completed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>In_Progress_Date_Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Interplan_Check_Date__c</fullName>
+        <description>Captures Date When The Interplan Check Field Is True</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Captures Date When The Interplan Check Field Is True</inlineHelpText>
+        <label>Interplan Check Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Interplan_Check__c</fullName>
+        <description>US16784</description>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.SBC_Approved__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Interplan_Check</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Owner_the_Logged_in_user__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Owner:User.Id == $User.Id,True,False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Owner the Logged in user</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Pending_Correction_Record_Present__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is True If Pending Correction Record Present, Else False.</description>
+        <externalId>false</externalId>
+        <label>Is Pending Correction Record Present</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>JAA_Group__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.JAA_Group__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>JAA Group</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LoggedinProfile__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.ProfileName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LoggedinProfile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MCS_Group__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.MCS_Group__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MCS Group</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Market_Segment_MBU__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Account_Legal_Name__r.vlocity_ins__MarketSegment__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Market Segment (MBU)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Not_Started_Date_Completed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Not_Started_Date_Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Not_Started_Date__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Not Started.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Not Started Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Original_Interplan_Date__c</fullName>
+        <description>Original Interplan Date Used In The Workflow Rule When A New Record Is Created.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Interplan Original Check Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <description>Owner:User.FirstName + &apos; &apos; + Owner:User.LastName</description>
+        <externalId>false</externalId>
+        <formula>IF(Owner:User.LastName!=null, Owner:User.FirstName + &apos; &apos; + Owner:User.LastName, Owner:Queue.QueueName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PendingCorrectionAction__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(OR(LoggedinProfile__c ==&apos;SME&apos;,LoggedinProfile__c ==&apos;SME Dual&apos;,LoggedinProfile__c ==&apos;Specialty Post Sales&apos;, LoggedinProfile__c ==&apos;Specialty Post Sales Dual&apos;), Tech_Support_Interplan__c== False),&apos;Y&apos;,&apos;N&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PendingCorrectionAction</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_Date__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Pending Correction from WF Rule.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Correction Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Pending Correction Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_to_Approved_Declined__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Approved or Declined from Pending Correction As Prior Value. Retrieving From WF Rule.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Correction to Approved/Declined</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_to_Not_Started__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Not Started from Pending Correction As Prior Value. Retrieving From WF Rule.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Correction to Not Started</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Corrections_Stage__c</fullName>
+        <description>This field fetches the associated Pending Correction&apos;s Stage.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Corrections Stage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Time__c</fullName>
+        <description>Intermediate Pending Correction Date field</description>
+        <externalId>false</externalId>
+        <formula>CASE(MOD( Interplan_Check_Date__c - DATE(1985,6,24),7), 
+
+0 , CASE( MOD( Pending_Correction_Date__c -  Interplan_Check_Date__c ,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( Pending_Correction_Date__c -  Interplan_Check_Date__c,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( Pending_Correction_Date__c -  Interplan_Check_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( Pending_Correction_Date__c -  Interplan_Check_Date__c,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( Pending_Correction_Date__c -  Interplan_Check_Date__c ,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( Pending_Correction_Date__c -  Interplan_Check_Date__c,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( Pending_Correction_Date__c -  Interplan_Check_Date__c,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR(( Pending_Correction_Date__c -  Interplan_Check_Date__c)/7)*5)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pending Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Production_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Production_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Production Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Products_on_Quote__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Products on Quote</label>
+        <referenceTo>Quote</referenceTo>
+        <relationshipLabel>InterPlans</relationshipLabel>
+        <relationshipName>InterPlans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Region__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Renewal_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Account_Legal_Name__r.Renewal_Month__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Renewal Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Provider_Relationships__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Service Provider Relationships</label>
+        <referenceTo>ServiceProviderRelationship__c</referenceTo>
+        <relationshipLabel>InterPlans</relationshipLabel>
+        <relationshipName>InterPlans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Situs_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Implementation_Tracking_ID__r.Account_Legal_Name__r.Situs_State__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Situs State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01A Assign to UW</fullName>
+                    <default>false</default>
+                    <label>01A Assign to UW</label>
+                </value>
+                <value>
+                    <fullName>01AA Submitted To CIC</fullName>
+                    <default>false</default>
+                    <label>01AA Submitted To CIC</label>
+                </value>
+                <value>
+                    <fullName>01 Not Started</fullName>
+                    <default>true</default>
+                    <label>01 Not Started</label>
+                </value>
+                <value>
+                    <fullName>02 Work In Progress</fullName>
+                    <default>false</default>
+                    <label>02 Work In Progress</label>
+                </value>
+                <value>
+                    <fullName>03 Pending Correction</fullName>
+                    <default>false</default>
+                    <label>03 Pending Correction</label>
+                </value>
+                <value>
+                    <fullName>03 Pending Correction Returned</fullName>
+                    <default>false</default>
+                    <label>03 Pending Correction Returned</label>
+                </value>
+                <value>
+                    <fullName>04 Approved</fullName>
+                    <default>false</default>
+                    <label>04 Approved</label>
+                </value>
+                <value>
+                    <fullName>05 Declined</fullName>
+                    <default>false</default>
+                    <label>05 Declined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sutter_Status__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sutter Status</label>
+        <referenceTo>Sutter_Status__c</referenceTo>
+        <relationshipLabel>InterPlans</relationshipLabel>
+        <relationshipName>InterPlans</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Tech_Support_Interplan__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Tech Support Interplan</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Time_To_Approve_Deny__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Updated from the Process Builder- Interplan Pending Correction Time</description>
+        <externalId>false</externalId>
+        <label>Time To Approve/Deny</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_To_Pend__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Updated from the Process Builder- Interplan Pending Correction Time</description>
+        <externalId>false</externalId>
+        <label>Time To Pend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_in_SME_Dept__c</fullName>
+        <description>Sum of &quot;Time To Pend&quot; and &quot;Time To Approve&quot;</description>
+        <externalId>false</externalId>
+        <formula>IF( Pending_Correction_Date__c &lt;&gt; Approved_or_Declined_Date__c, (Time_To_Approve_Deny__c + Time_To_Pend__c ), Time_To_Pend__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Sum of &quot;Time To Pend&quot; and &quot;Time To Approve&quot;</inlineHelpText>
+        <label>Time in SME Dept</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Time__c</fullName>
+        <description>Difference Between The Dates Of Previous Department&apos;s &quot;Approved?&quot; Checkbox Was checked And Date When The Current SME Record&apos;s Stage Is Changed To &quot;03 Pending Correction&quot; To &quot;04 Approved&quot; Or &quot;05 Declined&quot;.</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISNULL(Pending_Correction_to_Approved_Declined__c), 0 ,
+
+CASE(MOD( Original_Interplan_Date__c - DATE(1985,6,24),7), 
+
+0 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Interplan_Date__c,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Interplan_Date__c,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Interplan_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Interplan_Date__c,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Interplan_Date__c,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Interplan_Date__c,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Interplan_Date__c,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR((Pending_Correction_to_Approved_Declined__c -  Original_Interplan_Date__c)/7)*5)
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Difference Between The Dates Of Previous Department&apos;s &quot;Approved?&quot; Checkbox Was checked And Date When The Current SME Record&apos;s Stage Is Changed To &quot;03 Pending Correction&quot; To &quot;04 Approved&quot; Or &quot;05 Declined&quot;.</inlineHelpText>
+        <label>Total Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Underwriting_Work_Month__c</fullName>
+        <externalId>false</externalId>
+        <label>Underwriting Work Month</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Jan</fullName>
+                    <default>false</default>
+                    <label>Jan</label>
+                </value>
+                <value>
+                    <fullName>Feb</fullName>
+                    <default>false</default>
+                    <label>Feb</label>
+                </value>
+                <value>
+                    <fullName>Mar</fullName>
+                    <default>false</default>
+                    <label>Mar</label>
+                </value>
+                <value>
+                    <fullName>Apr</fullName>
+                    <default>false</default>
+                    <label>Apr</label>
+                </value>
+                <value>
+                    <fullName>May</fullName>
+                    <default>false</default>
+                    <label>May</label>
+                </value>
+                <value>
+                    <fullName>Jun</fullName>
+                    <default>false</default>
+                    <label>Jun</label>
+                </value>
+                <value>
+                    <fullName>Aug</fullName>
+                    <default>false</default>
+                    <label>Aug</label>
+                </value>
+                <value>
+                    <fullName>Sept</fullName>
+                    <default>false</default>
+                    <label>Sept</label>
+                </value>
+                <value>
+                    <fullName>Oct</fullName>
+                    <default>false</default>
+                    <label>Oct</label>
+                </value>
+                <value>
+                    <fullName>Nov</fullName>
+                    <default>false</default>
+                    <label>Nov</label>
+                </value>
+                <value>
+                    <fullName>Dec</fullName>
+                    <default>false</default>
+                    <label>Dec</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Warp_Medical_Members__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Account_Legal_Name__r.WARP_Medical_Members__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Warp Medical Members</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>InterPlan</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Interplan_Key_Account</fullName>
+        <columns>Owner__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Production_Date__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Region__c</columns>
+        <columns>Date_Implementations_Notified_of_Sale__c</columns>
+        <columns>Days_From_Assignment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group_Size__c</field>
+            <operation>equals</operation>
+            <value>51 - 99</value>
+        </filters>
+        <label>All Interplan - Key Account</label>
+    </listViews>
+    <listViews>
+        <fullName>Interplan_Local_InterPlan</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Interplan - Local</label>
+        <queue>Interplan_Local</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Local_Assigned_Interplan</fullName>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01A Assign to UW,01AA Submitted To CIC,02 Work In Progress</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>03 Pending Correction,03 Pending Correction Returned</value>
+        </filters>
+        <label>Local – Assigned Interplan</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_CA</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>California</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan CA</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_CO</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Colorado</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan CO</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_CT</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Connecticut</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan CT</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_GA</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Georgia</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan GA</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_IN</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Indiana</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan IN</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_KY</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Kentucky</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan KY</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_ME</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Maine</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan ME</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_MO</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Missouri</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan MO</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_NH</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>New Hampshire</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan NH</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_NV</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Nevada</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan NV</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_NY</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>New York</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan NY</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_OH</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Ohio</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan OH</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_VA</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Virginia</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan VA</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_Interplan_WI</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Wisconsin</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local Unassigned Interplan WI</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>My_Interplan</fullName>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Is_Owner_the_Logged_in_user__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01A Assign to UW,01AA Submitted To CIC,01 Not Started,02 Work In Progress</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>03 Pending Correction,03 Pending Correction Returned</value>
+        </filters>
+        <label>My Interplan</label>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Interplan_Check__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Unassigned</label>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned_Interplan_Key_Account</fullName>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Production_Date__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Region__c</columns>
+        <columns>Date_Implementations_Notified_of_Sale__c</columns>
+        <columns>Days_From_Assignment__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Group_Size__c</field>
+            <operation>equals</operation>
+            <value>51 - 99</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <filters>
+            <field>Interplan_Check__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Unassigned Interplan - Key Account</label>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned_Interplan_Local</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Case_Name__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Local – Unassigned Interplan</label>
+        <queue>Interplan_Local</queue>
+    </listViews>
+    <nameField>
+        <displayFormat>IPT-{000000}</displayFormat>
+        <label>InterPlan Tracking ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>InterPlans</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

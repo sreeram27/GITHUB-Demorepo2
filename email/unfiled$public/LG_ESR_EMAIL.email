@@ -1,0 +1,49 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-family:&quot;Arial&quot;,sans-serif">All:<o:p></o:p></span></p>
+
+<p style=""><span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">This communication is to make
+you aware that the Implementation Case Record for&nbsp;</span><span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 14.6667px;"><b>{!Group__c.Name}</b></span><span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;from&nbsp;</span><font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><b>{!Group__c.Situs_State__c}</b></font><font face="Arial, sans-serif" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size: 12pt;">&nbsp;has been approved with an effective date of&nbsp;</span></font><font style=""><font face="arial"><b>{!Group__c.Implementation_Effective_Date__c}</b><span style="font-size: 12pt;">.
+As an eligible account, an ESR assignment is being requested. Please enter the
+group’s designated ESR using the link to the Group record.</span></font></font></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></p><table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;mso-yfti-tbllook:1184;mso-padding-alt:0in 0in 0in 0in">
+ <tbody><tr>
+  <td width="623" valign="top" style="width:467.0pt;border:solid #4472C4 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal"><span style="font-family: Arial, sans-serif;">Group Number
+  :&nbsp;{!Group__c.Group_Name_Link__c}</span><span style="font-size: 12pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="623" valign="top" style="width:467.0pt;border:solid #8EAADB 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal"><span style="font-family: Arial, sans-serif;">Case
+  :&nbsp;{!Group__c.Implementation_Case_Link__c}</span><span style="font-size: 12pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="623" valign="top" style="width:467.0pt;border:solid #8EAADB 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal"><span style="font-family: Arial, sans-serif;">Total Eligible
+  Members:&nbsp;{!Group__c.TotalEligibles__c}</span><span style="font-size: 12pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="623" valign="top" style="width:467.0pt;border:solid #8EAADB 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal"><span style="font-family: Arial, sans-serif;">Implementation
+  Coordinator:&nbsp;{!Group__c.Assigned_Implementer__c}</span><span style="font-size: 12pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-family:&quot;Arial&quot;,sans-serif">Please let me know if you have
+any additional questions.<o:p></o:p></span></p>
+
+<p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-family:&quot;Arial&quot;,sans-serif"><br></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-family:&quot;Arial&quot;,sans-serif">Sincerely, <o:p></o:p></span></p>
+
+<p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><b><span style="font-family:&quot;Arial&quot;,sans-serif;color:#0070C0">Anthem, Inc. </span></b><span style="font-family:&quot;Arial&quot;,sans-serif;color:#0070C0"><o:p></o:p></span></p><br>]]></td>
+</tr>
+</table>

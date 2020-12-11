@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$Region__c</field>
+    </columns>
+    <columns>
+        <field>Account.vlocity_ins__Quotes__r$Delivery_Channel__c</field>
+    </columns>
+    <columns>
+        <field>Account$HQ_State__c</field>
+    </columns>
+    <columns>
+        <field>Account.vlocity_ins__Quotes__r$Members__c</field>
+    </columns>
+    <columns>
+        <field>Account$TotalMedicalMembers__c</field>
+    </columns>
+    <columns>
+        <field>Account.vlocity_ins__Quotes__r.QuoteLineItems$ProductName__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.vlocity_ins__Quotes__r$Delivery_Channel__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>AON Hewitt Corporate Exchange; Mercer Marketplace Exchange; Towers Watson One Exchange; Buck Consulting RightOpt; Anthem Health Marketplace</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>PEX Accounts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Account_Teams_with_Quoting__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account.vlocity_ins__Quotes__r$Delivery_Channel__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account$Active_Renewal_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

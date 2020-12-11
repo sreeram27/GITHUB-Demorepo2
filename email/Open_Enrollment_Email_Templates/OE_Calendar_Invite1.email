@@ -1,0 +1,113 @@
+<messaging:emailTemplate subject="OE Meeting Calendar Confirmation"
+    recipientType="Contact"
+    relatedToType="SFDC_Volunteer_Event__c">
+
+<messaging:htmlEmailBody >
+<html>
+<style type="text/css">
+    .xl69{
+        width: 482px;
+    }
+</style>
+<apex:image id="Logo" value="https://commercialgroup--c.na52.content.force.com/servlet/servlet.ImageServer?id=015d0000003E8Yu&oid=00Dd0000000i5kt"/>
+<br/>
+<body>
+Hello <br/>
+<br/>
+The OE team is confirming your attendance for the event below.<br/> 
+<br/>
+Please add this event to your calendar as a place holder. <br/>
+Shortly, you will be receiving a recruitment confirmation email with additional details. <br/>
+<br/>
+Thank you<br/>
+<br/>
+<br/>
+
+<table style="width: 627px;" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="xl66" style="width: 159px; background-color:#4F81BD;" height="25"><strong>&nbsp;Company Name</strong></td>
+<td class="xl67" style="width: 482px;">&nbsp;{!JSENCODE(relatedTo.OE_Grouping__r.Account__r.Name)}</td>
+</tr>
+<tr>
+<td class="xl68" style="width: 159px;background-color:#4F81BD;" height="24"><strong>&nbsp;Type of Meeting</strong></td>
+<td class="xl69" style="width: 482px;">&nbsp;{!JSENCODE(relatedTo.Meeting_Type__c)}</td>
+</tr>
+<tr>
+<td class="xl68" style="width: 159px;background-color:#4F81BD;" height="21"><strong>&nbsp;Meeting Date</strong></td>
+<td class="xl69" style="width: 482px;">&nbsp;{!JSENCODE(TEXT(relatedTo.Date__c))}</td>
+</tr>
+<tr>
+<td class="xl68" style="width: 159px;background-color:#4F81BD;" height="129"><strong>&nbsp;Session Times</strong></td>
+<td class="xl69" style="width: 482px;">
+<p>&nbsp;{!JSENCODE(' ' + relatedTo.Session_1_Start_Time__c + ' - ' + relatedTo.Session_1_End_Time__c)}</p>
+<p>&nbsp;{!JSENCODE(' ' + relatedTo.Session_2_Start_Time__c + ' - ' + relatedTo.Session_2_End_Time__c)}</p>
+<p>&nbsp;{!JSENCODE(' ' + relatedTo.Session_3_Start_Time__c + ' - ' + relatedTo.Session_3_End_Time__c)}</p>
+<p>&nbsp;{!JSENCODE(' ' + relatedTo.Session_4_Start_Time__c + ' - ' + relatedTo.Session_4_End_Time__c)}</p>
+<p>&nbsp;{!JSENCODE(' ' + relatedTo.Session_5_Start_Time__c + ' - ' + relatedTo.Session_5_End_Time__c)}</p>
+<p>&nbsp;{!JSENCODE(' ' + relatedTo.Session_6_Start_Time__c + ' - ' + relatedTo.Session_6_End_Time__c)}</p>
+<p>&nbsp;{!JSENCODE(' ' + relatedTo.Session_7_Start_Time__c + ' - ' + relatedTo.Session_7_End_Time__c)}</p>
+</td>
+</tr>
+<tr>
+<td class="xl68" style="width: 159px;background-color:#4F81BD;" height="58"><strong>&nbsp;Street Address</strong></td>
+<td class="xl69" style="width: 482px;">
+<p>&nbsp;{!relatedTO.Meeting_Street__c}</p>
+<p>&nbsp;{!relatedTO.Meeting_City__c}</p>
+<p>&nbsp;{!relatedTO.Meeting_State__c}</p>
+<p>&nbsp;{!relatedTO.Meeting_Zip_Code__c}</p>
+</td>
+</tr>
+<tr>
+<td class="xl66" style="width: 159px; background-color:#4F81BD;" height="48"><strong>&nbsp;OE Coordinator</strong></td>
+<td class="xl72" style="width: 482px;">&nbsp;{!relatedTO.OE_Coordinator_Name_Text__c}&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<!--
+ Visualforce dateformat trick, put a whitespace character before the date expression and it will format in org's locale, not GMT
+ https://douglascayers.com/2014/05/27/salesforce-displaying-datetime-field-in-visualforce-in-users-timezone/
+-->
+<br/>
+
+</body>
+</html>
+</messaging:htmlEmailBody>
+
+<messaging:attachment filename="OE Meeting reminder.ics">
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID::-//hacksw/handcal//NONSGML v1.0//EN
+BEGIN:VEVENT
+DTSTAMP;VALUE=DATE:<apex:outputText value="{!SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(TEXT(relatedTo.Date__c),':',''),'-',''),' ','T')}"/>
+UID:<apex:outputText value="{!relatedTo.id}"/>
+DTSTART;VALUE=DATE:<apex:outputText value="{!SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(TEXT(relatedTo.Date__c),':',''),'-',''),' ','T')}"/>
+DTEND;VALUE=DATE:<apex:outputText value="{!SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(TEXT(relatedTo.Date__c+1),':',''),'-',''),' ','T')}"/>
+SUMMARY:<apex:outputText value="{!relatedTo.name}"/>
+DESCRIPTION:<apex:outputText value="{!JSENCODE('Account Name:                   '+ relatedTo.Account_Name__c)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('Meeting Name:                   '+ relatedTo.Name)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('Meeting Type:                     '+ relatedTo.Meeting_Type__c)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('Meeting Date:                     '+ TEXT(relatedTo.Date__c))}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('Meeting Contact:                '+ relatedTo.Meeting_Contact__c)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('Meeting Contact Phone #:  ' + relatedTo.Contact_Phone_Number__c)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('Session Time(s):                 ' + relatedTo.Session_1_Start_Time__c + ' - ' + relatedTo.Session_1_End_Time__c)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('                                            ' + relatedTo.Session_2_Start_Time__c + ' - ' + relatedTo.Session_2_End_Time__c)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('                                            ' + relatedTo.Session_3_Start_Time__c + ' - ' + relatedTo.Session_3_End_Time__c)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('                                            ' + relatedTo.Session_4_Start_Time__c + ' - ' + relatedTo.Session_4_End_Time__c)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('                                            ' + relatedTo.Session_5_Start_Time__c + ' - ' + relatedTo.Session_5_End_Time__c)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('                                            ' + relatedTo.Session_6_Start_Time__c + ' - ' + relatedTo.Session_6_End_Time__c)}" escape="false"/>\n\n
+            <apex:outputText value="{!JSENCODE('                                            ' + relatedTo.Session_7_Start_Time__c + ' - ' + relatedTo.Session_7_End_Time__c)}" escape="false"/>
+LOCATION:{!relatedTO.Meeting_Street__c}\, {!relatedTO.Meeting_City__c}\,  {!relatedTO.Meeting_State__c} {!relatedTO.Meeting_Zip_Code__c}
+BEGIN:VALARM
+TRIGGER:-PT1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR 
+</messaging:attachment>
+
+</messaging:emailTemplate>

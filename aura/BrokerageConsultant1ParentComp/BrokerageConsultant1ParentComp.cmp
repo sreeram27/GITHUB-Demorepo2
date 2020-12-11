@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="opptyId" type="String"/>
+    <aura:attribute name="opptyName" type="String"/>
+    
+    <c:brokerSearchPage OppId="{!v.opptyId}" OppName="{!v.opptyName}"/>
+	<!-- <p> testing {!v.opptyId} {!v.opptyName}</p> -->
+</aura:component>

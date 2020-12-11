@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Thanks, but no thanks - Non-secured Consultant Email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Plain_Text</letterhead>
+    <name>Thanks, but no thanks - Non-secured Consultant Email</name>
+    <style>freeForm</style>
+    <subject>Thank you for your support!</subject>
+    <textOnly>Hello {!SFDC_Volunteer_Participant__c.OE_Ambassador_Volunteer__c}!
+
+Thank you for volunteering to attend this event, {!SFDC_Volunteer_Event__c.Name}.
+
+Currently, I am unable to secure you as the facilitator due to the reason below:
+
+{!SFDC_Volunteer_Participant__c.Reaon_for_not_being_selected__c}
+
+Additional Comments: 
+{!SFDC_Volunteer_Participant__c.Coordinator_Comment__c}
+
+If something should change, and I can use your assistance, I will reach out to check your availability.
+
+Please continue to review the remainder of the meetings in your area. We truly appreciate your support!
+
+Thanks for your support!</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

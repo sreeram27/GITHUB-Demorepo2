@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Title__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Description__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Planned_Release__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Vlocity_Reviewed__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Vlocity_Fit_Confirmed__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Technical_Description__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Client Intent,CIP Management,Account Management Handoff,Group Structure Setup,SME Management,NIDB,Project Plan &amp; Task Management,Vendor Management,Communications &amp; Task Management,Impl. Reporting,Impl. Document Management,AM Document Management</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Requirement_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Business</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Close: Deployed,Close: Rejected,Close: Duplicate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Planned_Release__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Release 1b</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Phase 1b Requests</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Request__c@Request__c.Capability__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Request__c.StartTime_Approved_Emergency_Release__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

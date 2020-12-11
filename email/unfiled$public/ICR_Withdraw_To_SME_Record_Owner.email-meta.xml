@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ICR Withdraw To SME Record Owner</name>
+    <style>none</style>
+    <subject>{!IMPL-XXXX} Status changed to Withdrawn for {!Account.Name}</subject>
+    <textOnly>Please note that {!record.number} you are assigned to has been automatically declined since the {!IMPL-XXXXXL} it is attached to is withdrawn.
+
+Please refer to the ICR comments and/or the email in the attachments for withdrawal reasons.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

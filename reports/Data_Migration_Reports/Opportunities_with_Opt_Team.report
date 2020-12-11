@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$SFDCLegacyID__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityTeamMembers$Id</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityTeamMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityTeamMembers$TeamMemberRole</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityTeamMembers$FederationIdentifier</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityTeamMembers*User$USID__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$AnthemEntity__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>local/large Group</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Opportunities with Opt Team</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>HN_Opportunities_and_Oppt_Team__c</reportType>
+    <roleHierarchyFilter>Enterprise_Role</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>VisitOps__AgendaApprovalStatusFormula__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(VisitOps__VisitControlVisit__r.VisitOps__Agenda_Approval_Status__c)</formula>
+        <label>Agenda Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Agenda_Approval_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is no longer used.</description>
+        <externalId>false</externalId>
+        <label>Agenda Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Select</fullName>
+                    <default>true</default>
+                    <label>Select</label>
+                </value>
+                <value>
+                    <fullName>Agenda Approval Requested</fullName>
+                    <default>false</default>
+                    <label>Agenda Approval Requested</label>
+                </value>
+                <value>
+                    <fullName>Agenda Approved</fullName>
+                    <default>false</default>
+                    <label>Agenda Approved</label>
+                </value>
+                <value>
+                    <fullName>Agenda Declined</fullName>
+                    <default>false</default>
+                    <label>Agenda Declined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Agenda__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Agenda</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Agenda draft complete</fullName>
+                    <default>false</default>
+                    <label>Agenda draft complete</label>
+                </value>
+                <value>
+                    <fullName>Agenda complete</fullName>
+                    <default>false</default>
+                    <label>Agenda complete</label>
+                </value>
+                <value>
+                    <fullName>Agenda issues exist</fullName>
+                    <default>false</default>
+                    <label>Agenda issues exist</label>
+                </value>
+                <value>
+                    <fullName>Presenters needed</fullName>
+                    <default>false</default>
+                    <label>Presenters needed</label>
+                </value>
+                <value>
+                    <fullName>Rooms needed</fullName>
+                    <default>false</default>
+                    <label>Rooms needed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Agenda_drafted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Agenda drafted</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Arrival_Date_Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>DATETIMEVALUE(  VisitOps__Visit__r.VisitOps__ArrivalDateTimeLocationTZ__c   )</formula>
+        <label>Arrival Date (Location)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Arrival_Date_Time_Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VisitOps__VisitControlVisit__r.VisitOps__Arrival_Date_and_Time_LocationFormula__c</formula>
+        <label>Arrival Date/Time (Location)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Attendees_confirmed_spelling_checked__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Attendees confirmed/spelling checked</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Catering_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Catering Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Special catering needed/not ordered</fullName>
+                    <default>false</default>
+                    <label>Special catering needed/not ordered</label>
+                </value>
+                <value>
+                    <fullName>Catering requested</fullName>
+                    <default>false</default>
+                    <label>Catering requested</label>
+                </value>
+                <value>
+                    <fullName>Catering Confirmed</fullName>
+                    <default>false</default>
+                    <label>Catering Confirmed</label>
+                </value>
+                <value>
+                    <fullName>No catering needed</fullName>
+                    <default>false</default>
+                    <label>No catering needed</label>
+                </value>
+                <value>
+                    <fullName>Catering issues exist</fullName>
+                    <default>false</default>
+                    <label>Catering issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Dates_and_times_confirmed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Dates and times confirmed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Decision_Survey_Needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Decision Survey Needed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Decision_Survey_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Decision Survey Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Decision survey needed / not sent</fullName>
+                    <default>false</default>
+                    <label>Decision survey needed / not sent</label>
+                </value>
+                <value>
+                    <fullName>Decision survey sent</fullName>
+                    <default>false</default>
+                    <label>Decision survey sent</label>
+                </value>
+                <value>
+                    <fullName>Decision survey not needed</fullName>
+                    <default>false</default>
+                    <label>Decision survey not needed</label>
+                </value>
+                <value>
+                    <fullName>Decision survey issues exist</fullName>
+                    <default>false</default>
+                    <label>Decision survey issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Departure_Date_Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>DATETIMEVALUE(  VisitOps__Visit__r.VisitOps__DepartureDateTimeLocationTZ__c   )</formula>
+        <label>Departure Date (Location)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Departure_Date_Time_Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VisitOps__VisitControlVisit__r.VisitOps__Departure_Date_and_Time_LocationFormula__c</formula>
+        <label>Departure Date/Time (Location)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Expenses__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Expenses</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Select</fullName>
+                    <default>true</default>
+                    <label>Select</label>
+                </value>
+                <value>
+                    <fullName>Invoices needed</fullName>
+                    <default>false</default>
+                    <label>Invoices needed</label>
+                </value>
+                <value>
+                    <fullName>Expenses entered</fullName>
+                    <default>false</default>
+                    <label>Expenses entered</label>
+                </value>
+                <value>
+                    <fullName>Expense issues exist</fullName>
+                    <default>false</default>
+                    <label>Expense issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Expenses_discussed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Expenses discussed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Facilities_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Facilities Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Facilities services needed / not arranged</fullName>
+                    <default>false</default>
+                    <label>Facilities services needed / not arranged</label>
+                </value>
+                <value>
+                    <fullName>Facilities services requested</fullName>
+                    <default>false</default>
+                    <label>Facilities services requested</label>
+                </value>
+                <value>
+                    <fullName>Facilities services arranged</fullName>
+                    <default>false</default>
+                    <label>Facilities services arranged</label>
+                </value>
+                <value>
+                    <fullName>Facilities services not needed</fullName>
+                    <default>false</default>
+                    <label>Facilities services not needed</label>
+                </value>
+                <value>
+                    <fullName>Facilities issues exist</fullName>
+                    <default>false</default>
+                    <label>Facilities issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Gifts_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Gifts Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Gifts needed / not ordered</fullName>
+                    <default>false</default>
+                    <label>Gifts needed / not ordered</label>
+                </value>
+                <value>
+                    <fullName>Gifts requested</fullName>
+                    <default>false</default>
+                    <label>Gifts requested</label>
+                </value>
+                <value>
+                    <fullName>Gifts confirmed</fullName>
+                    <default>false</default>
+                    <label>Gifts confirmed</label>
+                </value>
+                <value>
+                    <fullName>Gifts not needed</fullName>
+                    <default>false</default>
+                    <label>Gifts not needed</label>
+                </value>
+                <value>
+                    <fullName>Gift issues exist</fullName>
+                    <default>false</default>
+                    <label>Gift issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Gifts_confirmed_if_needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Gifts confirmed (if needed)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Ground_Transportation_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Ground Transportation Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Ground transportation partially arranged</fullName>
+                    <default>false</default>
+                    <label>Ground transportation partially arranged</label>
+                </value>
+                <value>
+                    <fullName>Ground transportation requested</fullName>
+                    <default>false</default>
+                    <label>Ground transportation requested</label>
+                </value>
+                <value>
+                    <fullName>Ground transportation arranged</fullName>
+                    <default>false</default>
+                    <label>Ground transportation arranged</label>
+                </value>
+                <value>
+                    <fullName>Ground transportation not needed</fullName>
+                    <default>false</default>
+                    <label>Ground transportation not needed</label>
+                </value>
+                <value>
+                    <fullName>Ground transportation issues exist</fullName>
+                    <default>false</default>
+                    <label>Ground transportation issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Introduce_Visit_Team_and_discuss_roles__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Introduce Visit Team and discuss roles</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Items_to_Remember__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Items to Remember</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__LeadershipApprovalStatusFormula__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(VisitOps__VisitControlVisit__r.VisitOps__Leadership_Approval_Status__c)</formula>
+        <label>Leadership Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Leadership_Approval_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is no longer used.</description>
+        <externalId>false</externalId>
+        <label>Leadership Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Select</fullName>
+                    <default>true</default>
+                    <label>Select</label>
+                </value>
+                <value>
+                    <fullName>Leadership Approval Requested</fullName>
+                    <default>false</default>
+                    <label>Leadership Approval Requested</label>
+                </value>
+                <value>
+                    <fullName>Leadership Approved</fullName>
+                    <default>false</default>
+                    <label>Leadership Approved</label>
+                </value>
+                <value>
+                    <fullName>Leadership Declined</fullName>
+                    <default>false</default>
+                    <label>Leadership Declined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VisitOps__VisitControlVisit__r.VisitOps__LocationNameFormula__c</formula>
+        <label>Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Lodging_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Lodging Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Lodging needed / not ordered</fullName>
+                    <default>false</default>
+                    <label>Lodging needed / not ordered</label>
+                </value>
+                <value>
+                    <fullName>Lodging requested</fullName>
+                    <default>false</default>
+                    <label>Lodging requested</label>
+                </value>
+                <value>
+                    <fullName>Lodging confirmed</fullName>
+                    <default>false</default>
+                    <label>Lodging confirmed</label>
+                </value>
+                <value>
+                    <fullName>Lodging not needed</fullName>
+                    <default>false</default>
+                    <label>Lodging not needed</label>
+                </value>
+                <value>
+                    <fullName>Lodging issues exist</fullName>
+                    <default>false</default>
+                    <label>Lodging issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Logistics_and_dietary_needs_reviewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Logistics and dietary needs reviewed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Photographer_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Photographer Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Photographer requestsed</fullName>
+                    <default>false</default>
+                    <label>Photographer requestsed</label>
+                </value>
+                <value>
+                    <fullName>Photographer confirmed</fullName>
+                    <default>false</default>
+                    <label>Photographer confirmed</label>
+                </value>
+                <value>
+                    <fullName>Photographer not needed</fullName>
+                    <default>false</default>
+                    <label>Photographer not needed</label>
+                </value>
+                <value>
+                    <fullName>Photographer issues exist</fullName>
+                    <default>false</default>
+                    <label>Photographer issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Post_Survey_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Post-Survey Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Post-surveys needed / not sent</fullName>
+                    <default>false</default>
+                    <label>Post-surveys needed / not sent</label>
+                </value>
+                <value>
+                    <fullName>Post-surveys sent to attendees</fullName>
+                    <default>false</default>
+                    <label>Post-surveys sent to attendees</label>
+                </value>
+                <value>
+                    <fullName>Post-surveys distributed</fullName>
+                    <default>false</default>
+                    <label>Post-surveys distributed</label>
+                </value>
+                <value>
+                    <fullName>Post-surveys not needed</fullName>
+                    <default>false</default>
+                    <label>Post-surveys not needed</label>
+                </value>
+                <value>
+                    <fullName>Post-survey issues exist</fullName>
+                    <default>false</default>
+                    <label>Post-survey issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Post_Visit_Survey_Needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Post-Visit Survey Needed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Pre_Survey_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pre-Survey Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pre-surveys needed / not sent</fullName>
+                    <default>false</default>
+                    <label>Pre-surveys needed / not sent</label>
+                </value>
+                <value>
+                    <fullName>Pre-surveys sent</fullName>
+                    <default>false</default>
+                    <label>Pre-surveys sent</label>
+                </value>
+                <value>
+                    <fullName>Pre-surveys distributed to presenters</fullName>
+                    <default>false</default>
+                    <label>Pre-surveys distributed to presenters</label>
+                </value>
+                <value>
+                    <fullName>Pre-surveys not needed</fullName>
+                    <default>false</default>
+                    <label>Pre-surveys not needed</label>
+                </value>
+                <value>
+                    <fullName>Pre-survey issues exist</fullName>
+                    <default>false</default>
+                    <label>Pre-survey issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Pre_Visit_Survey_Needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pre-Visit Survey Needed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Restaurant_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Restaurant Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Restaurant needed / not arranged</fullName>
+                    <default>false</default>
+                    <label>Restaurant needed / not arranged</label>
+                </value>
+                <value>
+                    <fullName>Restaurant arranged</fullName>
+                    <default>false</default>
+                    <label>Restaurant arranged</label>
+                </value>
+                <value>
+                    <fullName>Restaurant not needed</fullName>
+                    <default>false</default>
+                    <label>Restaurant not needed</label>
+                </value>
+                <value>
+                    <fullName>Restaurant issues exist</fullName>
+                    <default>false</default>
+                    <label>Restaurant issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Security_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Security Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Security needed / not arranged</fullName>
+                    <default>false</default>
+                    <label>Security needed / not arranged</label>
+                </value>
+                <value>
+                    <fullName>Security services requested</fullName>
+                    <default>false</default>
+                    <label>Security services requested</label>
+                </value>
+                <value>
+                    <fullName>Security arranged</fullName>
+                    <default>false</default>
+                    <label>Security arranged</label>
+                </value>
+                <value>
+                    <fullName>Security not needed</fullName>
+                    <default>false</default>
+                    <label>Security not needed</label>
+                </value>
+                <value>
+                    <fullName>Security issues exist</fullName>
+                    <default>false</default>
+                    <label>Security issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Send_Visit_Owner_Pre_Survey__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Send Visit Owner Pre Survey</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Signage_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Signage Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Signage needed / not arranged</fullName>
+                    <default>false</default>
+                    <label>Signage needed / not arranged</label>
+                </value>
+                <value>
+                    <fullName>Signage requested</fullName>
+                    <default>false</default>
+                    <label>Signage requested</label>
+                </value>
+                <value>
+                    <fullName>Signage confirmed</fullName>
+                    <default>false</default>
+                    <label>Signage confirmed</label>
+                </value>
+                <value>
+                    <fullName>Signage In Production</fullName>
+                    <default>false</default>
+                    <label>Signage In Production</label>
+                </value>
+                <value>
+                    <fullName>Signage not needed</fullName>
+                    <default>false</default>
+                    <label>Signage not needed</label>
+                </value>
+                <value>
+                    <fullName>Signage issues exist</fullName>
+                    <default>false</default>
+                    <label>Signage issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VisitOps__VisitControlVisit__r.VisitOps__VisitStatus__r.Name</formula>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Strategy_Call_Checklist__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Introduce Visit Team and clarify roles
+Review Visit Process
+Confirm dates and times of visit
+Review strategy for visit
+Confirm attendees (check names, title, spelling)
+Confirm attendee arrangements
+Review dietary requirements
+Review Agenda
+Discuss expenses for visit
+Confirm surveys needed (pre, post, decision) and review process
+Confirm gifts needed for guests
+confirm dress code</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Strategy Call Checklist</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Strategy_Call_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Strategy Call Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Strategy Call Scheduled</fullName>
+                    <default>false</default>
+                    <label>Strategy Call Scheduled</label>
+                </value>
+                <value>
+                    <fullName>Strategy Call Complete</fullName>
+                    <default>false</default>
+                    <label>Strategy Call Complete</label>
+                </value>
+                <value>
+                    <fullName>Strategy Call Not Needed</fullName>
+                    <default>false</default>
+                    <label>Strategy Call Not Needed</label>
+                </value>
+                <value>
+                    <fullName>Strategy Call Cancelled</fullName>
+                    <default>false</default>
+                    <label>Strategy Call Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Strategy_Call__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Strategy Call Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Surveys_confirmed_pre_post_decision__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Surveys confirmed (pre, post, decision)</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Test_VOC_Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Test VOC Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Videographer_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Videographer Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Videographer requested</fullName>
+                    <default>false</default>
+                    <label>Videographer requested</label>
+                </value>
+                <value>
+                    <fullName>Videographer confirmed</fullName>
+                    <default>false</default>
+                    <label>Videographer confirmed</label>
+                </value>
+                <value>
+                    <fullName>Videographer not needed</fullName>
+                    <default>false</default>
+                    <label>Videographer not needed</label>
+                </value>
+                <value>
+                    <fullName>Videographer issues exist</fullName>
+                    <default>false</default>
+                    <label>Videographer issues exist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__VisitControlVisit__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Visit</label>
+        <referenceTo>VisitOps__Visit__c</referenceTo>
+        <relationshipLabel>Visit Controls</relationshipLabel>
+        <relationshipName>VisitControls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__VisitNameFormula__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VisitOps__VisitControlVisit__r.VisitOps__VisitName__c</formula>
+        <label>Visit Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__VisitTeamNotes__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Visit Team Notes</label>
+        <length>999</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Visit_Checklist__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field is no longer used.</description>
+        <externalId>false</externalId>
+        <label>Visit Checklist</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Visit_Team_Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is no longer jused but not deleting it so that it doesnt create problems for Managed Package.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Visit Team Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Visit_Team_Post_Visit_Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Post Visit comments from visit team.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Visit Team Post Visit Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Visit_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VisitOps__VisitControlVisit__r.VisitOps__Visit_Type_Formula__c</formula>
+        <label>Visit Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Visit__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Visit</label>
+        <referenceTo>VisitOps__Visit__c</referenceTo>
+        <relationshipLabel>Visit Controls</relationshipLabel>
+        <relationshipName>Visit_Controls</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__test__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>test</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>test1</fullName>
+                    <default>false</default>
+                    <label>test1</label>
+                </value>
+                <value>
+                    <fullName>test2</fullName>
+                    <default>false</default>
+                    <label>test2</label>
+                </value>
+                <value>
+                    <fullName>test4</fullName>
+                    <default>false</default>
+                    <label>test4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <label>Visit Control</label>
+    <listViews>
+        <fullName>VisitOps__All</fullName>
+        <columns>NAME</columns>
+        <columns>VisitOps__Visit__c</columns>
+        <columns>VisitOps__VisitNameFormula__c</columns>
+        <columns>VisitOps__Strategy_Call_Status__c</columns>
+        <columns>VisitOps__Items_to_Remember__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>VC{0000}</displayFormat>
+        <label>Visit Control Id</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Visit Controls</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>VisitOps__Visit__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__VisitNameFormula__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__Strategy_Call_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__AgendaApprovalStatusFormula__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>VisitOps__VisitNameFormula__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>VisitOps__VisitNameFormula__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>VisitOps__VisitNameFormula__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

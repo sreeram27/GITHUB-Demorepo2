@@ -1,0 +1,205 @@
+<messaging:emailTemplate subject="Anthem & Omada Health - Client Account Confirmation Form" recipientType="User" relatedToType="QuoteLineItem">
+   <messaging:htmlEmailBody >
+   
+   <br/><br/>
+      <br/>
+      <html>
+        <style>
+        table, td {
+            width:650px;
+            border: 1px solid black;
+            border-collapse: collapse; 
+            border:1;
+        }
+        tr {
+            padding-left: 10px;
+        }
+        
+        table.bdrless ,table.bdrless td{
+            width:650px;
+            border: none !important;
+            
+        }
+        
+        </style>
+        
+        <table class="bdrless" id="para2">
+            <tbody>
+                <tr>
+                    <td>
+                       <center>
+                         <b><span style="color:gray;style=width:520px" >Anthem &amp; Omada Health</span></b><br/>
+                         <i><span style="color:gray;style=width:520px"> Client Account Confirmation Form</span></i>
+
+                       </center>
+
+                   </td>
+                </tr>
+            </tbody>
+         </table>
+        <br/>
+         <table>
+            <col >
+            <col >
+            <tr>
+               <td>Client Account Name</td>
+               <td><apex:outputField value="{!relatedTo.Quote.Account.Name}"/></td>
+            </tr>
+            <tr >
+               <td>Anthem Situs State<br/></td>
+               <td>
+                <!--  <apex:outputField value="{!relatedTo.Quote.Account.NASCO_Contracting_Situs_State__c}" /> -->
+                  <apex:outputText value="{! IF((relatedTo.Quote.Account.WGS_Contracting_Situs_State__c == null),relatedTo.Quote.Account.NASCO_Contracting_Situs_State__c,relatedTo.Quote.Account.WGS_Contracting_Situs_State__c) }"/> 
+                <!--  <apex:outputField value="{!relatedTo.Quote.Account.WGS_Contracting_Situs_State__c}"/> -->
+               </td>
+            </tr>
+
+
+            <tr >
+               <td>Client Size<br/></td>
+               <td><apex:outputField value="{!relatedTo.Members__c}"/><br/></td>
+            </tr>
+
+            <tr >
+               <td>Plan State<br/>(For branding of marketing materials)</td>
+               <td><apex:outputField value="{!relatedTo.Account_Branding__c}"/><br/></td>
+            </tr>
+
+            <tr >
+               <td>Segment<br/></td>
+               <td><apex:outputField value="{!relatedTo.AnthemEntity__c}"/><br/></td>
+            </tr>
+
+            
+            
+            
+            
+            <tr>
+               <td>Client Account <br/>Insured Type</td>
+               <td><apex:outputField value="{!relatedTo.Financing__c}"/><br/></td>
+            </tr>
+            <tr>
+               <td>Contact Information for <br/> 
+                  Primary Point of Contact at <br/>
+                  Client Account
+               </td>
+               <td><apex:outputField value="{!relatedTo.Primary_Point_of_Contact__r.Name}"/><br/>
+                   <apex:outputField value="{!relatedTo.Primary_Point_of_Contact__r.Email}"/><br/>
+                   <apex:outputField value="{!relatedTo.Primary_Point_of_Contact__r.Phone}"/><br/>
+                   <apex:outputField value="{!relatedTo.Primary_Point_of_Contact__r.Title}"/><br/>
+               
+               </td>
+            </tr>
+            <tr>
+               <td>Marketing / Outreach <br/> 
+                  File Source
+               </td>
+               <td> <apex:outputField value="{!relatedTo.Marketing_outreach__c}"/></td>
+            </tr>
+            <tr>
+               <td>Contact Information for <br/> 
+                  Anthem Account Manager <br/> 
+                  
+               </td>
+               <td> <apex:outputField value="{!relatedTo.Anthem_Account_Manager__r.Name}"/><br/>
+                    <apex:outputField value="{!relatedTo.Anthem_Account_Manager__r.Email}"/><br/>
+                    <apex:outputField value="{!relatedTo.Anthem_Account_Manager__r.Phone}"/><br/>
+                    Account Manager
+               </td>
+            </tr>
+            <tr>
+               <td>Contact Information for Anthem<br/>
+                  Implementation Coordinator <br/>   
+                 <font size="1"> (Omada Health will reach out directly to Coordinator to <br/>begin the
+                  client implementation process) </font> 
+               </td>
+               <td>
+                   <c:QLIOmadaComponent QLITemplateQLIid="{!relatedTo.Id}" />
+               </td>
+                
+               
+            </tr>
+            <tr>
+               <td>Target Go-Live Date<sup>1</sup></td>
+               <td>
+                  <apex:outputText value="{0,date,M/dd/yyyy}">
+                    <apex:param value="{!relatedTo.Quote.Opportunity.CloseDate}" />
+                  </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+               <td>Covered Population Size <br></br> 
+                  <font size="1">(18 years of age and older)<br/></font>
+               </td>
+               <td><apex:outputField value="{!relatedTo.Covered_Population_Size__c}"/></td>
+            </tr>
+            <tr>
+               <td >Case Number(s) <br/> 
+                  <font size="1">Please list group number and include any exclusions <br/> 
+                  (i.e., retirees, COBRA, union). This information will be <br/>
+                  used for the eligibility data sent to Omada Health.</font>
+               </td>
+               <td ><apex:outputField value="{!relatedTo.Case_Number_Information__c}"/></td>
+            </tr>
+            
+            
+            
+            
+            
+            
+            
+            <tr>
+               <td>Does the Client have Anthem Engage? <br/> </td>
+               <td><apex:outputField value="{!relatedTo.Does_the_Client_have_Anthem_Engage__c}"/></td>
+            </tr>
+
+            <tr>
+               <td>Does the Client have Engage Elite or Elite Plus? <br/> </td>
+               <td><apex:outputField value="{!relatedTo.Does_Client_have_Engage_Elite_Elite_Plus__c}"/></td>
+            </tr>
+
+            <tr>
+               <td>What Anthem Member Source System is Group Currently On? <br/> </td>
+               <td><apex:outputField value="{!relatedTo.ClaimsPlatform__c}"/></td>
+            </tr>
+
+            <tr>
+               <td>Planned Member Source System Migration Date to WGS? <br/>(Anthem Team Only)</td>
+               <td><apex:outputField value="{!relatedTo.PlannedMmbrSrcSystemMigrationToWGS__c}"/>  <apex:outputField value="{!relatedTo.PlannedMmbrSrcSystemMigrationDteToWGS__c}"/> </td>
+            </tr>
+            
+            <tr>
+               <td>Other/Notes Field<br/></td>
+               <td><apex:outputField value="{!relatedTo.Other_Notes__c}"/></td>
+            </tr>
+            </col>
+            </col>
+         </table>
+         <br/>
+         
+         <table class="bdrless" id="para1">
+            <tbody>
+                <tr border="none !important" style="text-align:justify;">
+                    <td>
+                       By submitting this form to Omada Health, the sender confirms on behalf of Anthem that the number of individuals listed 
+                       above and associated with the Client Account shall be eligible for the Program pursuant to the Agreement, and the 
+                       Client Account shall be considered a Client Account with Direct Provider Contact pursuant to the Agreement. The 
+                       sender also represents that he/she is authorized to send this form on Anthem’s behalf and to confirm the foregoing.
+                   </td>
+                </tr>
+            </tbody>
+         </table>
+         
+         <br/>
+         <table class="bdrless" id="para1">
+            <tbody>
+                <td>
+               <hr align="left" width="40%"/>
+               <font size="1"> <sup>1</sup>Target Go-Live Date represents the parties' best estimate and does not constitute a warranty, covenant, guarantee or promise that such date will be met. All
+               parties should work collaboratively toward meeting the target date or such later date as may be communicated due to changes in circumstances.</font>
+               </td>
+            </tbody>
+         </table>
+      </html>
+   </messaging:htmlEmailBody>
+</messaging:emailTemplate>

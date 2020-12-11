@@ -1,0 +1,11 @@
+Attention: {!SME_Approvals__c.Name} associated with {!SME_Approvals__c.Impl_Case_Name__c} is in Status 'Denied" and Requires Attention<br/><br/>
+
+
+
+{!SME_Approvals__c.Implementation_Record_ID__c}<br/><br/>
+
+
+
+
+To view the SME Approval Record, please see the below link:<br/>
+{!SME_Approvals__c.SMEHy__c}

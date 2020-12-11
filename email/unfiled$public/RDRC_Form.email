@@ -1,0 +1,107 @@
+<messaging:emailTemplate subject="Right Drug Right Channel email notification {!relatedTo.Quote.Opportunity.Account.Name}" recipientType="User" relatedToType="QuoteLineItem">
+<messaging:htmlEmailBody >
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+     border-collapse: collapse;
+     text-align: left;
+}
+
+}
+</style>
+</head>
+<body>
+
+<p>Details have been captured in Salesforce for the <b> Right Drug Right Channel program </b> on <b> {!MONTH(TODAY())}-{!DAY(TODAY())}-{!YEAR(TODAY())}</b> by <b>{!relatedTo.Quote.Opportunity.Account.Account_Manager__r.Name}</b>.This is an automated notification for your awareness.
+</p> 
+
+<table style='position:relative'>
+  <tr>
+  <th>Client Name:</th>
+     <td> {!relatedTo.Quote.Opportunity.Account.Name} </td>
+  </tr>
+  <tr>
+  <th>Number of Medical Lives:</th>
+      <td>{!relatedTo.Members_For_Email__c}</td>  
+  </tr>
+  <tr>
+  <th>Target Start Date:</th>
+      <td>{!Day(relatedTo.Quote.Opportunity.CloseDate)}-{!Month(relatedTo.Quote.Opportunity.CloseDate)}-{!Year(relatedTo.Quote.Opportunity.CloseDate)}</td>
+  </tr>
+  <tr>
+  <th>Anthem Group ID Number:</th>
+      <td>{!relatedTo.Quote.GroupNumber__r.Name} </td>
+  </tr>
+  <tr>
+  <th>Claims Platform:</th>
+      <td>{!relatedTo.Quote.Claim_System__c} </td>
+  </tr>
+  <tr>
+  <th>New or Existing Client:</th>
+      <td>{!relatedTo.Quote.Opportunity.RecordType.name} </td>
+  </tr>
+  <tr>
+  <th>Market:</th>
+      <td>{!relatedTo.Quote.Opportunity.AnthemEntity__c} </td>
+  </tr>
+  <tr>
+  <th>Region:</th>
+      <td>{!relatedTo.Quote.Opportunity.Account.Region__c} </td>
+  </tr>
+  <tr>
+  <th>Funding:</th>
+      <td>{!relatedTo.Funding__c}</td>
+  </tr>
+  <tr>
+  <th>Financing:</th>
+      <td>{!relatedTo.Financing__c}</td>
+  </tr>
+  <tr>
+  <th>RX Vendors</th>
+      <td>{!relatedTo.RXVendors__c}</td>
+  </tr>
+  <tr>
+  <th>Anthem Client Account Executive:</th>
+      <td>{!relatedTo.Quote.Opportunity.Account.AccountOwnerName__c}</td>
+  </tr>
+  <tr>
+  <th>Anthem Implementation Lead:</th>
+    <td>  <c:GetAccountImplementerComponent orderID="{!relatedTo.Quote.Opportunity.ID}"/> </td> 
+  </tr>
+ <tr>
+  <th>RDRC Med to Rx program on Quote:</th>
+      <td>{!relatedTo.Quote.Med_to_Rx__c}</td>
+ </tr>
+ <tr>
+  <th>RDRC Med to Rx program and Rx to Med Program on Quote:</th>
+      <td>{!relatedTo.Quote.Med_to_Rx_and_Rx_to_Med__c}</td>
+ </tr>
+   <tr>
+  <th>Brand New Group with No Claim History?:</th>
+      <td>{!relatedTo.Brand_New_Group_With_No_Claim_History__c}</td>
+ </tr>
+ <tr>
+  <th>Desired Implementation Date:</th>
+      <td>{!Day(relatedTo.Quote.Opportunity.CloseDate)}-{!Month(relatedTo.Quote.Opportunity.CloseDate)}-{!Year(relatedTo.Quote.Opportunity.CloseDate)}</td>
+ </tr>
+ <tr>
+  <th>Right Drug right Channel Comments:</th>
+      <td>{!relatedTo.RDRC_Special_Requirements__c}</td>
+ </tr>
+
+
+</table>
+<br>
+</br>
+<i>Account Management completed each of the following items on this form. If questions please reach out to Account Executive/Manager for clarification. Link:<a href="{!RelatedTo.Email_URL__c}" target="_blank"> {!RelatedTo.Email_URL__c} </a></i>
+
+
+
+
+
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

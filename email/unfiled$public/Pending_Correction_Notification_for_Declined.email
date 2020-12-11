@@ -1,0 +1,16 @@
+The status of {!Pending_Correction__c.Name} was updated to declined. Please review and take appropriate steps. 
+
+Account Name: {!Pending_Correction__c.Account_Name__c} 
+
+Implementation Case Name: {!Pending_Correction__c.Implementation_Case_Name__c} 
+
+Implementation Case Status: {!Pending_Correction__c.Implementation_Case_Status__c} 
+
+SME Department: {!Pending_Correction__c.Name} : {!Pending_Correction__c.Correction_Department__c} 
+
+Submitter: {!Pending_Correction__c.LastModifiedBy} 
+
+Pending Correction Record Stage: {!Pending_Correction__c.Stage__c} 
+
+To view the Pending Correction record, please see the below link: 
+{!Pending_Correction__c.Url__c}

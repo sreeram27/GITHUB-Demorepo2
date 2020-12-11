@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>VisitOps__Agenda_Subtopics__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Agenda Subtopics</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Agenda_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Agenda Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Arrival_Date_Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>DATETIMEVALUE( VisitOps__Visit__r.VisitOps__ArrivalDateTimeLocationTZ__c )</formula>
+        <label>Arrival Date (Location)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Catering_Menu_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Catering Menu Item</label>
+        <referenceTo>VisitOps__CateringProductsAndServices__c</referenceTo>
+        <relationshipName>Agendas</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Departure_Date_Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>DATETIMEVALUE( VisitOps__Visit__r.VisitOps__DepartureDateTimeLocationTZ__c )</formula>
+        <label>Departure Date (Location)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Details__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Details</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__EndTimeLocationTZ__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field stores the End Time of Agenda Session at the actual Location. Its based on Location Timezone</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>End Time (Location)</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__EndTimeString__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>EndTimeString</label>
+        <length>19</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__End_Time_LocationFormula__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(VALUE(LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,8),2)) == 00, 
+LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,14),2) 
++ &apos;/&apos; + LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,11),2) 
++ &apos;/&apos; + LEFT(VisitOps__EndTimeLocationTZ__c,4) 
++ &apos; &apos; + TEXT(VALUE(LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,8),2))+12) 
++ &apos;:&apos; + LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,5),2) 
++ &apos; &apos; + &apos;AM&apos;,IF(VALUE(LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,8),2)) == 12,
+LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,14),2) 
++ &apos;/&apos; + LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,11),2) 
++ &apos;/&apos; + LEFT(VisitOps__EndTimeLocationTZ__c,4) 
++ &apos; &apos; + TEXT(VALUE(LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,8),2))) 
++ &apos;:&apos; + LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,5),2) 
++ &apos; &apos; + &apos;PM&apos;,IF(VALUE(LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,8),2)) &lt; 12, 
+LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,14),2) 
++ &apos;/&apos; + LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,11),2) 
++ &apos;/&apos; + LEFT(VisitOps__EndTimeLocationTZ__c,4) 
++ &apos; &apos; + LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,8),2) 
++ &apos;:&apos; + LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,5),2) 
++ &apos; &apos; + &apos;AM&apos;, 
+LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,14),2) 
++ &apos;/&apos; + LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,11),2) 
++ &apos;/&apos; + LEFT(VisitOps__EndTimeLocationTZ__c,4) 
++ &apos; &apos; + TEXT(VALUE(LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,8),2))-12) 
++ &apos;:&apos; + LEFT(RIGHT(VisitOps__EndTimeLocationTZ__c,5),2) 
++ &apos; &apos; + &apos;PM&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>End Time (Location)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__End_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>End Time (User)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__IsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>IsActive</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__IsParked__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>IsParked</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__LocationFormula__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is used only for Reports</description>
+        <externalId>false</externalId>
+        <formula>VisitOps__Visit__r.VisitOps__Location__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Location__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Location the Agenda Session is planned in</description>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <referenceTo>VisitOps__Location__c</referenceTo>
+        <relationshipName>Agendas</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>20000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Objectives__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Objectives</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Place__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Place</label>
+        <referenceTo>VisitOps__Place__c</referenceTo>
+        <relationshipName>Agendas</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Presenters_Accepted__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Presenters Accepted</label>
+        <summaryFilterItems>
+            <field>VisitOps__Presenter_Agenda_Link__c.VisitOps__Status__c</field>
+            <operation>equals</operation>
+            <value>Accepted, New Time Proposed, Tentative</value>
+        </summaryFilterItems>
+        <summaryForeignKey>VisitOps__Presenter_Agenda_Link__c.VisitOps__Agenda__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Room_Calendar_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Room Calendar Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Booked</fullName>
+                    <default>false</default>
+                    <label>Booked</label>
+                </value>
+                <value>
+                    <fullName>Not Booked</fullName>
+                    <default>false</default>
+                    <label>Not Booked</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Room__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Room</label>
+        <referenceTo>VisitOps__Room__c</referenceTo>
+        <relationshipName>Agendas</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Rooms_Booked__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Rooms Booked</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Session_Duration__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Session Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Show_on_Customer_Agenda__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Show on Customer Agenda</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Show_on_Customer_Survey__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Show on Customer Survey</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Show_on_Presenter_Agenda__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Show on Presenter Agenda</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Special_Instructions__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Special Instructions</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__StartTimeLocationTZ__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field stores the Start Time of Agenda Session at the actual Location. Its based on Location Timezone</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Start Time (Location)</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__StartTimeString__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>StartTimeString</label>
+        <length>19</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Start_Time_LocationFormula__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(VALUE(LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,8),2)) == 00, 
+LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,14),2) 
++ &apos;/&apos; + LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,11),2) 
++ &apos;/&apos; + LEFT(VisitOps__StartTimeLocationTZ__c,4) 
++ &apos; &apos; + TEXT(VALUE(LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,8),2))+12) 
++ &apos;:&apos; + LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,5),2) 
++ &apos; &apos; + &apos;AM&apos;,IF(VALUE(LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,8),2)) == 12,
+LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,14),2) 
++ &apos;/&apos; + LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,11),2) 
++ &apos;/&apos; + LEFT(VisitOps__StartTimeLocationTZ__c,4) 
++ &apos; &apos; + TEXT(VALUE(LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,8),2))) 
++ &apos;:&apos; + LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,5),2) 
++ &apos; &apos; + &apos;PM&apos;,IF(VALUE(LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,8),2)) &lt; 12, 
+LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,14),2) 
++ &apos;/&apos; + LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,11),2) 
++ &apos;/&apos; + LEFT(VisitOps__StartTimeLocationTZ__c,4) 
++ &apos; &apos; + LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,8),2) 
++ &apos;:&apos; + LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,5),2) 
++ &apos; &apos; + &apos;AM&apos;, 
+LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,14),2) 
++ &apos;/&apos; + LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,11),2) 
++ &apos;/&apos; + LEFT(VisitOps__StartTimeLocationTZ__c,4) 
++ &apos; &apos; + TEXT(VALUE(LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,8),2))-12) 
++ &apos;:&apos; + LEFT(RIGHT(VisitOps__StartTimeLocationTZ__c,5),2) 
++ &apos; &apos; + &apos;PM&apos;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start Time (Location)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Start_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Start Time (User)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Topic_CategoryId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Topic category of the Session Topic</description>
+        <externalId>false</externalId>
+        <formula>VisitOps__Topic__r.VisitOps__Topic_Category__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Topic Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Topic_Category__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Topic Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Topic__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Topic</label>
+        <referenceTo>VisitOps__Topic__c</referenceTo>
+        <relationshipName>Agendas</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Total_Guests__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Total Guests</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Visit__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Visit</label>
+        <referenceTo>VisitOps__Visit__c</referenceTo>
+        <relationshipName>Agendas</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Agenda Session</label>
+    <listViews>
+        <fullName>VisitOps__All</fullName>
+        <columns>NAME</columns>
+        <columns>VisitOps__Agenda_Title__c</columns>
+        <columns>VisitOps__Visit__c</columns>
+        <columns>VisitOps__Start_Time__c</columns>
+        <columns>VisitOps__Total_Guests__c</columns>
+        <columns>VisitOps__Topic__c</columns>
+        <columns>VisitOps__Place__c</columns>
+        <columns>VisitOps__Room__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>VisitOps__Topic_CategoryId__c</columns>
+        <columns>VisitOps__Presenters_Accepted__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>A{0000}</displayFormat>
+        <label>Agenda ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Agenda Sessions</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>VisitOps__Agenda_Title__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__Start_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__End_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__Location__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__Room__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__Visit__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__IsParked__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>VisitOps__Agenda_Title__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>VisitOps__Start_Time__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>VisitOps__End_Time__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>VisitOps__Location__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>VisitOps__Room__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>VisitOps__Visit__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>VisitOps__Agenda_Title__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>VisitOps__Start_Time__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>VisitOps__End_Time__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>VisitOps__Location__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>VisitOps__Room__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>VisitOps__Visit__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>VisitOps__Agenda_Title__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VisitOps__Start_Time__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VisitOps__End_Time__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VisitOps__Location__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VisitOps__Room__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VisitOps__Visit__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>VisitOps__IsParked__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>VisitOps__EndTime_should_be_later_than_StartTime</fullName>
+        <active>true</active>
+        <errorConditionFormula>VisitOps__Start_Time__c &gt;= VisitOps__End_Time__c</errorConditionFormula>
+        <errorMessage>The End Time should be later than the Start Time</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VisitOps__Location_StartTime_and_EndTime_mandatory</fullName>
+        <active>true</active>
+        <description>Location based Start and End Times are mandatory</description>
+        <errorConditionFormula>ISBLANK(VisitOps__StartTimeLocationTZ__c) || ISBLANK(VisitOps__EndTimeLocationTZ__c)</errorConditionFormula>
+        <errorMessage>Start Time (Location) and End Time (Location) are mandatory</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VisitOps__Session_Title_is_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(VisitOps__Agenda_Title__c)</errorConditionFormula>
+        <errorMessage>Please fill in the Session Title</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VisitOps__StartTime_and_EndTime_are_mandatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(VisitOps__Start_Time__c) || ISBLANK(VisitOps__End_Time__c)</errorConditionFormula>
+        <errorDisplayField>VisitOps__Start_Time__c</errorDisplayField>
+        <errorMessage>Start Time and End Time are mandatory</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>VisitOps__Customer_View</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Customer View</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!requireScript(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+var namespacePrefix = 
+&apos;{!IF( OR(ISBLANK($Label.visitops__namespaceprefixforschema), LOWER($Label.visitops__namespaceprefixforschema) == &apos;null&apos;) , &apos;&apos;, $Label.visitops__namespaceprefixforschema)}&apos;;
+
+var url = &apos;/apex/&apos;+ &apos;{!$Label.visitops__agendaprint}&apos; +&apos;?visitId={!VisitOps__Visit__c.Id}&amp;viewType=&apos;+&apos;{!$Label.visitops__agendacustomerview}&apos;;
+
+if(&apos;{!$User.UITheme}&apos;==&apos;Theme4d&apos;) 
+{ 
+sforce.one.navigateToURL(url); 
+} 
+else{ 
+window.open(url,&apos;_blank&apos;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>VisitOps__Customer_View_Lightning</fullName>
+        <availability>online</availability>
+        <description>Lightning Button</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Customer View</masterLabel>
+        <openType>sidebar</openType>
+        <page>VisitOps__CustomerViewButtonPageForAgendaSession</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>VisitOps__Presenter_View</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Presenter View</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!requireScript(&quot;/soap/ajax/29.0/apex.js&quot;)}
+var namespacePrefix = 
+&apos;{!IF( OR(ISBLANK($Label.visitops__namespaceprefixforschema), LOWER($Label.visitops__namespaceprefixforschema) == &apos;null&apos;) , &apos;&apos;, $Label.visitops__namespaceprefixforschema)}&apos;;
+
+var url = &apos;/apex/&apos;+ &apos;{!$Label.visitops__agendaprint}&apos; +&apos;?visitId={!VisitOps__Visit__c.Id}&amp;viewType=&apos;+ &apos;{!$Label.visitops__agendapresenterview}&apos;;
+
+if(&apos;{!$User.UITheme}&apos;==&apos;Theme4d&apos;)
+{
+sforce.one.navigateToURL(url);
+}
+else{
+window.open(url,&apos;_blank&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>VisitOps__Presenter_View_Lightning</fullName>
+        <availability>online</availability>
+        <description>Lightning Button</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Presenter View</masterLabel>
+        <openType>sidebar</openType>
+        <page>VisitOps__PresenterViewButtonPageForAgendaSession</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>VisitOps__Visit_Team_View</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Visit Team View</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!requireScript(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+var namespacePrefix = 
+&apos;{!IF( OR(ISBLANK($Label.visitops__namespaceprefixforschema), LOWER($Label.visitops__namespaceprefixforschema) == &apos;null&apos;) , &apos;&apos;, $Label.visitops__namespaceprefixforschema)}&apos;;
+
+var url = &apos;/apex/&apos;+ &apos;{!$Label.visitops__agendaprint}&apos; +&apos;?visitId={!VisitOps__Visit__c.Id}&amp;viewType=&apos;+&apos;{!$Label.visitops__agendavisitteamview}&apos;;
+if(&apos;{!$User.UITheme}&apos;==&apos;Theme4d&apos;) 
+{ 
+sforce.one.navigateToURL(url); 
+} 
+else{
+window.open(url,&apos;_blank&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>VisitOps__Visit_Team_View_Lightning</fullName>
+        <availability>online</availability>
+        <description>Lightning Button</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Visit Team View</masterLabel>
+        <openType>sidebar</openType>
+        <page>VisitOps__VisitTeamViewButtonPageForAgendaSession</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Permission Set will be issued to users who needs ability  to create &amp; edit List Views as we removed that ability from all sets .</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Create &amp; Edit List Views</label>
+    <license>Salesforce</license>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>CreateCustomizeFilters</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditPublicFilters</name>
+    </userPermissions>
+</PermissionSet>

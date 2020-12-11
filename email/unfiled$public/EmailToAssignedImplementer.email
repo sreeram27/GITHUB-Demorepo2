@@ -1,0 +1,8 @@
+Dear {!ID_Cards__c.Assigned_Implementer_Name__c}
+ 
+The requested cards are available for review for {!ID_Cards__c.Implementation_Record_ID_Non_hyperlink__c} 
+ {!ID_Cards__c.Implementation_Case_Name_Non_Hyperlink__c} (https://commercial--iceviking.cs29.my.salesforce.com/{!ID_Cards__c.ImplementationRecordID__c})
+Please see the ID Card SME record {!ID_Cards__c.Name}(https://commercial--iceviking.cs29.my.salesforce.com/{!ID_Cards__c.Id})
+ 
+Thanks,
+ID Card Team

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>danielle.casanova-cruz@empireblue.com2</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>judith.kilmer@anthem.com2</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>tiffany.hawkins@anthem.com.com2</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>whitney.seither@anthem.com2</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <name>NE Migration Report</name>
+</ReportFolder>

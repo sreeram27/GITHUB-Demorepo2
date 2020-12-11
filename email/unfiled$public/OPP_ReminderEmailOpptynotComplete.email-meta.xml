@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sales - REL1 - Email sent to AE 120 &amp; 90 days before Opportunity Effective date if the opportunity is not Complete</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>AnthemLogo</letterhead>
+    <name>OPP - Reminder Email Oppty not Complete</name>
+    <style>freeForm</style>
+    <subject>ACTION REQUIRED: RENEWAL TO BE FINALIZED - {!Opportunity.Account}</subject>
+    <textOnly>Account Executive -
+The purpose of this email is to notify you that the following opportunity has not been finalized:
+
+Click here to access your opportunity- {!Opportunity.Name}
+It is very important that you finalize the renewal opportunity to a final stage: Renewal Finalized or Customer Termed.
+
+In addition, all products within your renewal opportunity must indicate a final product stage (i.e., Renewed, Termed, IGAP Sold, etc.). Please confirm all product line details to ensure existing information is accurate and all applicable fields have been completed.
+
+The renewal must be finalized prior to the CIP submission.  We realize that there may be exceptions to products being finalized, such as Stop Loss.
+Thank you for your prompt attention to this email.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

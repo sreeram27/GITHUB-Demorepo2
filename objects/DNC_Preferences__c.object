@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AccountDNC__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>DNC Preferences</relationshipLabel>
+        <relationshipName>DNC_Preferences</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Attachment_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Attachment Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DNC_Effective_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>DNC Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DNC_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>DNC Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Customer Preference</fullName>
+                    <default>false</default>
+                    <label>Customer Preference</label>
+                </value>
+                <value>
+                    <fullName>Employer Preference</fullName>
+                    <default>false</default>
+                    <label>Employer Preference</label>
+                </value>
+                <value>
+                    <fullName>Broker Preference</fullName>
+                    <default>false</default>
+                    <label>Broker Preference</label>
+                </value>
+                <value>
+                    <fullName>Sales Preference</fullName>
+                    <default>false</default>
+                    <label>Sales Preference</label>
+                </value>
+                <value>
+                    <fullName>Contractual</fullName>
+                    <default>false</default>
+                    <label>Contractual</label>
+                </value>
+                <value>
+                    <fullName>Review Communications</fullName>
+                    <default>false</default>
+                    <label>Review Communications</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DNC__c</fullName>
+        <externalId>false</externalId>
+        <label>DNC</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Group</fullName>
+                    <default>false</default>
+                    <label>Group</label>
+                </value>
+                <value>
+                    <fullName>Member Marketing</fullName>
+                    <default>false</default>
+                    <label>Member Marketing</label>
+                </value>
+                <value>
+                    <fullName>Member Clinical</fullName>
+                    <default>false</default>
+                    <label>Member Clinical</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy - Cost of Care</fullName>
+                    <default>false</default>
+                    <label>Pharmacy - Cost of Care</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy - Quality of Care</fullName>
+                    <default>false</default>
+                    <label>Pharmacy - Quality of Care</label>
+                </value>
+                <value>
+                    <fullName>Survey</fullName>
+                    <default>false</default>
+                    <label>Survey</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Group_Preference_Comment__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Group Preference Comment</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Requested_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Requested By</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account Manager</fullName>
+                    <default>true</default>
+                    <label>Account Manager</label>
+                </value>
+                <value>
+                    <fullName>Employer</fullName>
+                    <default>false</default>
+                    <label>Employer</label>
+                </value>
+                <value>
+                    <fullName>Account Executive</fullName>
+                    <default>false</default>
+                    <label>Account Executive</label>
+                </value>
+                <value>
+                    <fullName>Customer</fullName>
+                    <default>false</default>
+                    <label>Customer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Pending Approval</fullName>
+                    <default>false</default>
+                    <label>Pending Approval</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Recalled</fullName>
+                    <default>false</default>
+                    <label>Recalled</label>
+                </value>
+                <value>
+                    <fullName>Pending Submission - Need Attachment</fullName>
+                    <default>false</default>
+                    <label>Pending Submission - Need Attachment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>DNC Preferences</label>
+    <nameField>
+        <displayFormat>A{0000}</displayFormat>
+        <label>DNC Preferences Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>DNC Preferences</pluralLabel>
+    <recordTypes>
+        <fullName>DNC_Contractual</fullName>
+        <active>true</active>
+        <label>DNC Contractual</label>
+        <picklistValues>
+            <picklist>DNC_Reason__c</picklist>
+            <values>
+                <fullName>Broker Preference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Preference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer Preference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Preference</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DNC__c</picklist>
+            <values>
+                <fullName>Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Clinical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy - Cost of Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy - Quality of Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Requested_By__c</picklist>
+            <values>
+                <fullName>Account Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Submission - Need Attachment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>DNC_Standard</fullName>
+        <active>true</active>
+        <label>DNC Standard</label>
+        <picklistValues>
+            <picklist>DNC_Reason__c</picklist>
+            <values>
+                <fullName>Broker Preference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractual</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Preference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer Preference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Preference</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DNC__c</picklist>
+            <values>
+                <fullName>Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Clinical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy - Cost of Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy - Quality of Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Requested_By__c</picklist>
+            <values>
+                <fullName>Account Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Submission - Need Attachment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Submit_Contractual_DNC_Preferences_for_Approval</fullName>
+        <availability>online</availability>
+        <description>This button is shown if Reason is selected as Contractual.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Submit Contractual DNC Preferences for Approval</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/flow/Submit_Contractual_DNC_Preferences_for_Approval?DNCPreferencesID={!DNC_Preferences__c.Id}&amp;DNCAttachmentCount1={!DNC_Preferences__c.Attachment_Count__c}&amp;DNCStatus={!DNC_Preferences__c.Status__c} 
+&amp;Approval_ID_2=04a410000008tix&amp;&amp;retURL=/{!DNC_Preferences__c.Id}&amp;&apos;?Single&apos;</url>
+    </webLinks>
+</CustomObject>

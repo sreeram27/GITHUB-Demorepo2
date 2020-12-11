@@ -1,0 +1,16 @@
+<apex:component access="global" controller="QLISoleraTemplateController" >
+ 
+ <apex:attribute name="QLITemplateQLIid" type="Id" description="Id of the QLI" assignTo="{!QLIid}"/>
+ 
+ <apex:repeat value="{!QLIrec}" var="QLI">
+  <apex:repeat value="{!accTeamRole}" var="accTeam" >
+             
+                 <apex:outputField value="{!accTeam.user.Name}"/><br/>
+                 <apex:outputField value="{!accTeam.user.email}"/><br/>
+                 <apex:outputField value="{!accTeam.user.Phone}"/><br/>
+                 Implementation Coordinator
+            
+  </apex:repeat>
+ </apex:repeat> 
+  
+</apex:component>

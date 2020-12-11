@@ -1,0 +1,78 @@
+<!--
+  @File Name          : lgPharmacyBenefitIdentifier.html
+  @Description        : 
+  @Author             : IDC Offshore 
+  @Group              : 
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    1/24/2020        IDC Offshore            Initial Version
+-->
+<template>
+
+    <template for:each={usrprofilenames} for:item="usrProfile">
+        <ul key = {usrProfile.userProfileName}>
+            <template if:true={usrProfile.userProfileName}>
+            
+                <div>
+                    <div style="font-size: large;"> 
+                        <lightning-icon icon-name="standard:catalog" ></lightning-icon> Pharmacy Benefit Identifier
+                    </div >
+                    
+                </div>
+                </br>
+                <div style="font-size: medium;">
+                    Enter the Pharmacy Benefit Identifiers below.
+                </div>
+                </br>
+                <div class="slds-m-around_medium" >
+                <!-- Start of Table Part -->
+                    <lightning-card >
+                        <lightning-layout >
+                            <lightning-layout-item size="12" padding="around-medium">
+                                <div class="slds-scrollable" style="width: 100%; height: 100%" >
+                                <!-- Start of Table -->
+                                <lightning-datatable key-field={recordId}
+                                    data={paginationList} columns={columns}
+                                    hide-checkbox-column="true" onsort={handleSortdata} 
+                                    sorted-by={sortBy} sorted-direction={sortDirection}
+                                    onsave={handleSave} draft-values={draftValues}> 
+                                </lightning-datatable>
+                                <!-- End of Table -->
+                                </div>
+                            </lightning-layout-item>
+                            <br/>
+                        </lightning-layout>
+                        <div >
+
+                            <div class="slds-align_absolute-left">
+                                    
+                                <div class="slds-align_absolute-left slds-left slds-float--left">
+                                    <template if:false={isFirstPage}>
+                                        <lightning-button label="Previous" variant="brand" class="slds-m-left_x-small" onclick={previous}></lightning-button>
+                                    </template>
+                                </div>
+                            
+                            </div>
+                            <div class="slds-align_absolute-right">
+                                
+                                    <div class="slds-align_absolute-right slds-right slds-float--right">
+                                        <template if:false={isLastPage}>
+                                            <lightning-button label="Next" variant="brand" class="slds-m-left_x-small" onclick={next}></lightning-button>
+                                        </template>
+                                    </div>
+                            
+                            </div>
+                            <!-- <div class="slds-align_absolute-center">
+                                
+                                <div class="slds-align_absolute-center slds-center slds-float--center">
+                                    <lightning-button label="Save" variant="brand" class="slds-m-left_x-small" onclick={previous}></lightning-button>
+                                </div>
+                                
+                            </div> -->
+                        </div>
+                    </lightning-card>
+                </div>
+            </template>
+        </ul>
+    </template>
+ </template>

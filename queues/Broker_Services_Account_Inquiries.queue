@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Broker Services Account Inquiries</name>
+    <queueMembers>
+        <users>
+            <user>brittney.cox@anthem.com</user>
+            <user>courtney.crawl@anthem.com2</user>
+            <user>mary.lear@anthem.com2</user>
+            <user>shakaslan.williams@anthem.com2</user>
+            <user>yasmeen.edwards@anthem.com2</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>LG_SalesCompStart</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AE_Marker__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (Total_AE_Split__c &lt;&gt; 100, IMAGE(&quot; /resource/AE_Error&quot;, &quot;Invalid&quot;, 109, 209), IMAGE(&quot; /resource/Sales_Comp_Success&quot;, &quot;Invalid&quot;, 109, 209))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AE Marker</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AE_Split_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Total_AE_Split__c) &amp; &apos;%&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AE Split Percentage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AM_Marker__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (AM_Split__c &lt;&gt; 100, IMAGE(&quot; /resource/AM_Error&quot;, &quot;Invalid&quot;, 109, 209), IMAGE(&quot; /resource/Sales_Comp_Success&quot;, &quot;Invalid&quot;, 109, 209))</formula>
+        <label>AM Marker</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AM_Split_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(AM_Split__c) &amp; &apos;%&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AM Split Percentage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AM_Split__c</fullName>
+        <externalId>false</externalId>
+        <label>AM Split</label>
+        <summarizedField>Internal_Broker__c.Split_Percentage__c</summarizedField>
+        <summaryFilterItems>
+            <field>Internal_Broker__c.Type__c</field>
+            <operation>equals</operation>
+            <value>AM – Service Rep (Account Manager)</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Internal_Broker__c.Term_Date__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Internal_Broker__c.Sales_Comp_Master__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Sales Compensations</relationshipLabel>
+        <relationshipName>Sales_Compensations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Line Of Business</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SR_Marker__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (Total_SR_Split__c &lt;&gt; 100, IMAGE(&quot; /resource/SR_Error&quot;, &quot;Invalid&quot;, 109, 209), IMAGE(&quot; /resource/Sales_Comp_Success&quot;, &quot;Invalid&quot;, 109, 209))</formula>
+        <label>SR Marker</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SR_Split_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Total_SR_Split__c) + &apos;%&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SR Split Percentage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SSE_Marker__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <formula>IF (Total_SSE_Split__c &lt;&gt; 100, IMAGE(&quot; /resource/SSE_Error&quot;, &quot;Invalid&quot;, 109, 209), IMAGE(&quot; /resource/Sales_Comp_Success&quot;, &quot;Invalid&quot;, 109, 209))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SSE Marker</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SSE_Split_Percentage__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <formula>TEXT( Total_SSE_Split__c )+ &apos;%&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SSE Split Percentage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_AE_Split__c</fullName>
+        <externalId>false</externalId>
+        <label>Total AE Split</label>
+        <summarizedField>Internal_Broker__c.Split_Percentage__c</summarizedField>
+        <summaryFilterItems>
+            <field>Internal_Broker__c.Type__c</field>
+            <operation>equals</operation>
+            <value>AE – Sales Rep (SAE)</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Internal_Broker__c.Term_Date__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Internal_Broker__c.Sales_Comp_Master__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_SR_Split__c</fullName>
+        <externalId>false</externalId>
+        <label>Total SR Split</label>
+        <summarizedField>Internal_Broker__c.Split_Percentage__c</summarizedField>
+        <summaryFilterItems>
+            <field>Internal_Broker__c.Type__c</field>
+            <operation>equals</operation>
+            <value>SR - Account Coordinator (SAR)</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Internal_Broker__c.Term_Date__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Internal_Broker__c.Sales_Comp_Master__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_SSE_Split__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <label>Total SSE Split</label>
+        <summarizedField>Internal_Broker__c.Split_Percentage__c</summarizedField>
+        <summaryFilterItems>
+            <field>Internal_Broker__c.Type__c</field>
+            <operation>equals</operation>
+            <value>SSE - Specialty Sales Executive</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Internal_Broker__c.Term_Date__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Internal_Broker__c.Sales_Comp_Master__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>WF_Fired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>WF Fired</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Sales Compensation</label>
+    <nameField>
+        <displayFormat>COMP-{00000000}</displayFormat>
+        <label>Sales Compensation Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sales Compensations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Ensure_Only_One_Sales_Comp_Is_Entered</fullName>
+        <active>true</active>
+        <errorConditionFormula>Opportunity__r.Has_Sales_Comp_Attached__c = True &amp;&amp; ISNEW()</errorConditionFormula>
+        <errorDisplayField>Opportunity__c</errorDisplayField>
+        <errorMessage>There is an existing Sales Compensation master record, please edit existing for this Opportunity.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

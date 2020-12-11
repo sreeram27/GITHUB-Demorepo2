@@ -1,0 +1,5 @@
+Hello,
+
+The following  {!BPD__c.Name}  has been {!BPD__c.Design_Status__c} submitted  for {!BPD__c.Account__c} for your approval.
+
+{!BPD__c.Url__c}

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Account_Plan_3</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Account_Plan_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Account_Plan_Compact_Layout</fullName>
+        <fields>Account__c</fields>
+        <fields>Name</fields>
+        <fields>Total_Universal_Objectives__c</fields>
+        <fields>Total_Benefit_Objectives__c</fields>
+        <fields>Total_SWTs__c</fields>
+        <fields>Total_Action_Plans__c</fields>
+        <label>Account Plan Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Account Plan is a custom object used to record and manage Account Plans that are part of the client strategy process for selling large group customers.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AccountName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AccountName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Plans</relationshipLabel>
+        <relationshipName>Account_Plans1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Segment__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Segment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>The status of the Account Plan.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The status of the Account Plan.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Start</fullName>
+                    <default>false</default>
+                    <label>Start</label>
+                </value>
+                <value>
+                    <fullName>Relationships</fullName>
+                    <default>false</default>
+                    <label>Relationships</label>
+                </value>
+                <value>
+                    <fullName>Objectives</fullName>
+                    <default>false</default>
+                    <label>Objectives</label>
+                </value>
+                <value>
+                    <fullName>Observations</fullName>
+                    <default>false</default>
+                    <label>Observations</label>
+                </value>
+                <value>
+                    <fullName>Strategic Opportunities</fullName>
+                    <default>false</default>
+                    <label>Strategic Opportunities</label>
+                </value>
+                <value>
+                    <fullName>Plan of Action</fullName>
+                    <default>false</default>
+                    <label>Plan of Action</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>Resources</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Resources</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Action_Plans__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Action Plans</label>
+        <summaryForeignKey>Action_Plan__c.Account_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Benefit_Objectives__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Benefit Objectives</label>
+        <summaryFilterItems>
+            <field>AccountObjective__c.Type__c</field>
+            <operation>notEqual</operation>
+            <value>Corporate, Workforce, Total Rewards</value>
+        </summaryFilterItems>
+        <summaryForeignKey>AccountObjective__c.Account_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_SWTs__c</fullName>
+        <externalId>false</externalId>
+        <label>Total SWTs</label>
+        <summaryForeignKey>AccountObservation__c.Account_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Universal_Objectives__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Universal Objectives</label>
+        <summaryFilterItems>
+            <field>AccountObjective__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Corporate, Workforce, Total Rewards</value>
+        </summaryFilterItems>
+        <summaryForeignKey>AccountObjective__c.Account_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Account Plan</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Account Plans</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CSP-{0000000}</displayFormat>
+        <label>Account Plan Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account Plans</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Generate_Client_Strategy_PDF</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Generate Client Strategy PDF</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/APXTConga4__Conga_Composer
+?id={!Account_Plan__c.Id}
+&amp;DefaultPDF=1
+&amp;SC1=SalesforceFile
+&amp;SC0=1
+&amp;DS7={!IF(OR (User.Profile = &quot;System Administrator&quot;, User.Profile = &quot;SFDC Program Management&quot;), &quot;0&quot;, &quot;3&quot;)}
+&amp;QueryId=[CSP]a4r41000001aBqN?pv0={!Account_Plan__c.Id},
+[Observations]a4r41000001aBqS?pv0={!Account_Plan__c.Id},
+[Opportunities]a4r41000001aBqX?pv0={!Account_Plan__c.Id},
+[Objectives]a4r41000001aBqh?pv0={!Account_Plan__c.Id},
+[ClientObjectives]a4r41000001aBqh?pv0={!Account_Plan__c.Id},
+[Plans]a4r41000001aBqc?pv0={!Account_Plan__c.Id},
+[BenefitObjectives]a4r41000001aBqrAAE?pv0={!Account_Plan__c.Id}
+&amp;OFN={!Account_Plan__c.Name}+ClientStrategyPlan.pdf
+&amp;TemplateId=a4z41000000k9xY</url>
+    </webLinks>
+</CustomObject>

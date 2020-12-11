@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Goal_Attained_Max__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Goal Attained Max</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Goal_Attained_Min__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Goal Attained Min</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Target_Payout__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Target Payout</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <label>Commissions Estimator Persistency</label>
+    <pluralLabel>Commissions Estimator Persistency</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

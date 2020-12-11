@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="1" >
+<![CDATA[<span style="font-family: &quot;Times New Roman&quot;; font-size: medium;">Account: {!Account.Name} has been changed and you need to update MBU workflow&nbsp;</span><br style="font-family: &quot;Times New Roman&quot;; font-size: medium;"><br style="font-family: &quot;Times New Roman&quot;; font-size: medium;"><span style="font-family: &quot;Times New Roman&quot;; font-size: medium;">{!Account.Link}</span><br style="font-family: &quot;Times New Roman&quot;; font-size: medium;"><br style="font-family: &quot;Times New Roman&quot;; font-size: medium;"><span style="font-family: &quot;Times New Roman&quot;; font-size: medium;">Thank you,</span><br style="font-family: &quot;Times New Roman&quot;; font-size: medium;"><span style="font-family: &quot;Times New Roman&quot;; font-size: medium;">SF Admin</span>]]></td>
+</tr>
+</table>

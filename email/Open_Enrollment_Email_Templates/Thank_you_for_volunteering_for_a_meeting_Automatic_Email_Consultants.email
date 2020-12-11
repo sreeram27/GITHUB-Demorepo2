@@ -1,0 +1,10 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><font face="Verdana,Helvetica,Sans-Serif">Thank you for visiting the OE Consultant Volunteer site!</font></p><p><font face="Verdana,Helvetica,Sans-Serif">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif">You have volunteered for the following Meeting:</font></p><p><font face="Verdana,Helvetica,Sans-Serif">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif">{!SFDC_Volunteer_Event__c.Name}</font></p><p><font face="Verdana,Helvetica,Sans-Serif">&nbsp;</font></p><p><span style="white-space: pre-wrap; background-color: rgb(255, 255, 255);"><font face="Verdana, Helvetica, sans-serif">Please note that volunteering for an event does not confirm you will be attending this event. An Open Enrollment Coordinator will reach out shortly and advise you on whether you are confirmed to attend. 
+ 
+Please do not respond to this email.  If you have any questions or comments please contact the OE Program Manager.
+ 
+Thanks for your support!</font></span></p>]]></td>
+</tr>
+</table>

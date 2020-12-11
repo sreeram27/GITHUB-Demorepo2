@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email template is used in the C3 approval process</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>C3 Approval Process</name>
+    <style>none</style>
+    <subject>C3 Concierge Cancer Care Approval Requested for  {!QuoteLineItemApproval__c.ClientName__c}</subject>
+    <textOnly>A new C3 Concierge Cancer Care product has been submitted for approval on {!QuoteLineItemApproval__c.LastModifiedDate} by {!QuoteLineItemApproval__c.LastModifiedBy}.
+
+Client Name:  {!QuoteLineItemApproval__c.ClientName__c}
+Effective Date:  {!QuoteLineItemApproval__c.EffectiveDate__c}
+Region:  {!QuoteLineItemApproval__c.Region__c}
+New or existing:  {!QuoteLineItemApproval__c.Neworexisting__c}
+Market:  National Accounts
+Likelihood of winning:  {!QuoteLineItemApproval__c.Likelihoodofwinning__c}
+Financing:  {!QuoteLineItemApproval__c.Financing__c}
+Claims Platform:  {!QuoteLineItemApproval__c.ClaimsPlatform__c}
+Core &amp; Clinical Products:  {!QuoteLineItemApproval__c.CoreClinicalProducts__c}
+Estimated Membership:  {!QuoteLineItemApproval__c.EstimatedMembership__c}
+Additional Comments:  {!QuoteLineItemApproval__c.BackgroundFurtherExplanation__c}
+Contracting/Situs State:  {!QuoteLineItemApproval__c.SitusState__c}
+
+To review and approve / reject the product, please click this link. Click here</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

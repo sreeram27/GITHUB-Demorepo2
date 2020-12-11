@@ -1,0 +1,5 @@
+Hello, 
+
+The following {!Internal_Commission__c.Name}  has been submitted for {!Internal_Commission__c.Opportunity_Name__c} for your approval.
+
+{!Internal_Commission__c.Link}

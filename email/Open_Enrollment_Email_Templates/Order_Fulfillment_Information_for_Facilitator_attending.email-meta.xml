@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Order Details for event - triggers to facilitator attending</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Anthem_Logo</letterhead>
+    <name>Order Fulfillment Information - for Facilitator attending</name>
+    <style>freeForm</style>
+    <subject>OE Materials Order Detail Form : {!SFDC_Volunteer_Event__c.MeetingNameUpdate__c}</subject>
+    <textOnly>Hello
+
+Thank you for attending the upcoming OE event:
+
+Account Name:  {!Open_Enrollment_Meetings__c.Account__c}
+Meeting Date: {!SFDC_Volunteer_Event__c.Date__c}
+Meeting Type: {!SFDC_Volunteer_Event__c.Meeting_Type__c}
+Meeting Location:   {!SFDC_Volunteer_Event__c.Meeting_Street__c} {!SFDC_Volunteer_Event__c.Meeting_City__c}, {!SFDC_Volunteer_Event__c.Meeting_State__c}, {!SFDC_Volunteer_Event__c.Meeting_Zip_Code__c}
+
+Attached is the material order(s) associated with this event.
+Within this document you will provided the following information:
+
+Order Details - Company name, order title and order date
+Shipping Information - Shipping address and contact information
+Order Line items - Items ordered, item number, item description and quantities
+Order Fulfillment - Actual ship date, tracking number and estimated delivery date
+
+We are providing you with this information, so that you know what to expect upon arrival.  If there are subsequent orders placed for this event, you will receive an updated document detailing all orders associated for this meeting.
+
+Any questions - please reach out to the OE Coordinator; {!SFDC_Volunteer_Event__c.OE_Coordinator_Contact__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

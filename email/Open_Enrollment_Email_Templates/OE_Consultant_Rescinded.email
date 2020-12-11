@@ -1,0 +1,12 @@
+Hello!
+
+The following meeting:
+
+{!SFDC_Volunteer_Event__c.Name}, has had the Contractor Rescinded.
+
+The following Coordinator action was set to:  {!SFDC_Volunteer_Event__c.OE_Coordinator_Action__c}
+for {!SFDC_Volunteer_Event__c.OE_Consultant__c}.
+
+The link to the meeting is {!SFDC_Volunteer_Event__c.Link}.
+
+Thanks,

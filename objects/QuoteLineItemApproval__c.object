@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AHGProductLineReadyforApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.AHGProductLineReadyforApproval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AHG - Product Line Ready for Approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AHGProduct__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.AHGProduct__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AHG Product?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AHG_Companion_Products__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.AHG_Companion_Values__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AHG Companion Products</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AHG_Low_Risk_Impactable_Values__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.AHG_Low_Risk_Impactable_Values__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AHG Low Risk Impactable Values</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AHG_Outbound_Campaigns__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( QuoteLineItem__r.AHG_Outbound_Campaigns__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AHG Outbound Campaigns</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AHG_Outbound_Engagement__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.AHG_Outbound_Engagement__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AHG Outbound Engagement</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AHG_Prioritize_wo_PCP__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(QuoteLineItem__r.AHG_Prioritize_wo_PCP__c = TRUE,&quot;Yes&quot;,&quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AHG Prioritize wo PCP</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AHG_Service_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(QuoteLineItem__r.StandardorExtendedServiceHours__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AHG Service Hours</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AHG_Welcome_Calls__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(QuoteLineItem__r.AHG_Welcome_Calls__c = TRUE ,&quot;Yes&quot;,&quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AHG Welcome Calls</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ANACustomNetworksReadyForApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.ANACustomNetworksReadyForApproval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ANA Custom Networks Ready for Approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ApprovalComments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Approval Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BackgroundFurtherExplanation__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.BackgroundFurtherExplanation__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Background_Further_Explanation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>C3_Product_Line_Ready_for_Approval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.C3_Product_Line_Ready_for_Approval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>C3 Product Line Ready for Approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CCC_Product__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.CCC_Product__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CCC Product</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CCMUEligibleForAutoApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.CCMUapprovalconditions__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CCMU Eligible For Auto Approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CCMUProductLineReadyforApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.CCMUProductLineReadyforApproval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CCMU Product Line Ready for Approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CSDMText__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.CSDMText__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CSDMText</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClaimsPlatform__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.Quote.GroupNumber__r.ClaimSystem__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Claims Platform</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClientName__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.Quote.Opportunity.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClinicalModel__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;Carved out (exception)&quot;), &quot;Carved out (exception)&quot; , &apos;&apos;) +
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;Carved out (exception)&quot;),&apos; ; &apos;,&apos;&apos;)+
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;Mercer Health Advantage (MHA)&quot;), &quot;Mercer Health Advantage (MHA)&quot; , &apos;&apos;) +
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;Mercer Health Advantage (MHA)&quot;),&apos; ; &apos;,&apos;&apos;)+
+
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;IHM&quot;), &quot;IHM&quot;,&apos;&apos;) +
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;IHM&quot;),&apos; ; &apos;,&apos;&apos;)+
+
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;Local&quot;), &quot;Local&quot;,&apos;&apos;) +
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;Local&quot;),&apos; ; &apos;,&apos;&apos;)+
+
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;National CCM&quot;), &quot;National CCM&quot;, &apos;&apos;) +
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;Total Health Total You (THTY)&quot;), &quot;Total Health Total You (THTY)&quot;, &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Clinical Model</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CoreClinicalProducts__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.Core_and_Clinical_Products__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CoreClinicalProducts</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomerServiceDeliveryModel__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( INCLUDES(QuoteLineItem__r.CustomerServiceDeliveryModel__c, &quot;Carved out (exception)&quot;) , &quot;Carved out (exception)&quot;, &apos;&apos;)+
+IF(INCLUDES(QuoteLineItem__r.CustomerServiceDeliveryModel__c, &quot;Carved out (exception)&quot;),&apos; ; &apos;,&apos;&apos;)+
+
+IF(INCLUDES( QuoteLineItem__r.CustomerServiceDeliveryModel__c , &quot;Standard Customer Service&quot;), &quot;Standard Customer Service&quot; ,&apos;&apos;) +
+IF(INCLUDES(QuoteLineItem__r.CustomerServiceDeliveryModel__c, &quot;Standard Customer Service&quot;),&apos; ; &apos;,&apos;&apos;)+
+
+IF(INCLUDES( QuoteLineItem__r.CustomerServiceDeliveryModel__c , &quot;Anthem Health Guide&quot;), &quot;Anthem Health Guide&quot; ,&apos;&apos;) +
+IF(INCLUDES(QuoteLineItem__r.CustomerServiceDeliveryModel__c, &quot;Anthem Health Guide&quot;),&apos; ; &apos;,&apos;&apos;)+
+
+
+IF(INCLUDES( QuoteLineItem__r.CustomerServiceDeliveryModel__c , &quot;Mercer Health Advantage (MHA)&quot;), &quot;Mercer Health Advantage (MHA)&quot; ,&apos;&apos;) +
+IF(INCLUDES(QuoteLineItem__r.CustomerServiceDeliveryModel__c, &quot;Mercer Health Advantage (MHA)&quot;),&apos; ; &apos;,&apos;&apos;)+
+
+IF(INCLUDES( QuoteLineItem__r.CustomerServiceDeliveryModel__c , &quot;IHM&quot;), &quot;IHM&quot; ,&apos;&apos;) +
+IF(INCLUDES(QuoteLineItem__r.CustomerServiceDeliveryModel__c, &quot;IHM&quot;),&apos; ; &apos;,&apos;&apos;)+
+
+IF(INCLUDES( QuoteLineItem__r.CustomerServiceDeliveryModel__c , &quot;National CCM&quot;), &quot;National CCM&quot;,&apos;&apos;)+
+IF(INCLUDES(QuoteLineItem__r.CustomerServiceDeliveryModel__c, &quot;National CCM&quot;),&apos;&apos;,&apos;&apos;)</formula>
+        <label>Customer Service Delivery Model</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.Quote.Opportunity.CloseDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EngageProductsPurchased__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.Which_Engage_Products__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EngageProductsPurchased</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EstimatedMembership__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.Members__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Estimated Membership</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FOO_Comments__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.Full_Opt_Out_Comments__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FOO Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Financing__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.Financing__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Financing</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Full_Opt_Out__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(QuoteLineItem__r.FullOptOut__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Full Opt-Out</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IHMProductLineReadyforApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.IHMProductLineReadyforApproval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>IHM Product Line Ready for Approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_AHG_Product_Line_Ready_for_Approval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.LG_AHG_Product_Line_Ready_for_Approval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LG AHG - Product Line Ready for Approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LG_Clinical_Model__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;IHM&quot;), &quot;IHM&quot;,&apos;&apos;) +
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;IHM&quot;),&apos; ; &apos;,&apos;&apos;)+
+
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;Local&quot;), &quot;Local&quot;,&apos;&apos;) +
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;Local&quot;),&apos; ; &apos;,&apos;&apos;)+
+
+IF(INCLUDES( QuoteLineItem__r.ClinicalDeliveryModel__c , &quot;Total Health Total You (THTY)&quot;), &quot;THTY&quot;, &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LG Clinical Model</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LG_Product_Eligible_for_Auto_Approval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.LG_Product_Eligible_for_Auto_Approval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LG Product Eligible for Auto-Approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Likelihoodofwinning__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.Probability__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Likelihood of winning</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MHA_Product_Line_Ready_for_Approval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.MHA_Product_Line_Ready_for_Approval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MHA Product Line Ready for Approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Market_Situs_State__c</fullName>
+        <description>This field is used to retrieve the Situs State from Account.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.Quote.Opportunity.Account.Situs_State__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Market Situs State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MedManagementPlatform__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.MedicalManagementPlatform__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Med Management Platform</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Neworexisting__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.OppType__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New or existing</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OfferingPG__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.OfferingStandardIHMPGs__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OfferingPGs</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OnsiteClinicVendorName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( QuoteLineItem__r.OnsiteClinicVendorName__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Onsite Clinic Vendor Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OnsiteClinicsAutoApprove__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.OnsiteClinicsAutoApprove__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Onsite Clinics Auto Approve</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OnsiteClinicsReadyForApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.OnsiteClinicsProductLineReadyforAp__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Onsite Clinics Ready for Approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ProductLineEligibleforAutoApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.ProductLineEligibleforAutoApproval__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Line Eligible for Auto-approval</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Line_Eligible_ForAutoApprovalMHA__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.Product_Line_Eligible_ForAutoApprovalMHA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Line Eligible ForAutoApprovalMHA</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>QLI_Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.ProductName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>QLI Product Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QuoteLineItem__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Quote Line Item</label>
+        <referenceTo>QuoteLineItem</referenceTo>
+        <relationshipLabel>Quote Line Item Approval</relationshipLabel>
+        <relationshipName>Quote_Line_Item_Approval</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Line_Item_Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote Line Item Approval Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not started</fullName>
+                    <default>true</default>
+                    <label>Not started</label>
+                </value>
+                <value>
+                    <fullName>Submitted for Approval</fullName>
+                    <default>false</default>
+                    <label>Submitted for Approval</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RecordType__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.RecordType__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Record Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.Quote.Opportunity.Account.Region__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SitusState__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(QuoteLineItem__r.Quote.Opportunity.Account.WGS_Contracting_Situs_State__c) +&apos; / &apos;+ TEXT(QuoteLineItem__r.Quote.Opportunity.Account.NASCO_Contracting_Situs_State__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Situs_State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>THTYAutoApprove__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+AHGProduct__c = TRUE &amp;&amp;
+QuoteLineItem__r.Members__c &gt; 1000 &amp;&amp;
+Text(QuoteLineItem__r.Funding__c) = &quot;ASO&quot; &amp;&amp;
+Text(QuoteLineItem__r.StandardorExtendedServiceHours__c) = &quot;Standard&quot; &amp;&amp;
+Text(QuoteLineItem__r.MedicalManagementPlatform__c) = &quot;HRS/WMDS&quot; &amp;&amp;
+Text(QuoteLineItem__r.Dedicated800Number__c) = &quot;No&quot; &amp;&amp;
+Text(QuoteLineItem__r.MembershipSplitBetweenAHGandNonAHG__c) = &quot;No&quot; &amp;&amp;
+QuoteLineItem__r.OpportunityEffectiveDate__c - TODAY() &gt; 134 &amp;&amp;
+INCLUDES(QuoteLineItem__r.ClinicalDeliveryModel__c, &quot;Total Health Total You (THTY)&quot;) &amp;&amp;
+(INCLUDES(QuoteLineItem__r.CoreClinicalProducts__c, &quot;MyHealth Advantage (Silver or Gold)&quot;) &amp;&amp;
+INCLUDES(QuoteLineItem__r.CoreClinicalProducts__c, &quot;Future Moms&quot;) &amp;&amp;
+INCLUDES(QuoteLineItem__r.CoreClinicalProducts__c, &quot;24/7 Nurseline&quot;)) &amp;&amp;
+INCLUDES(QuoteLineItem__r.CoreClinicalProducts__c, &quot;ConditionCare Core 5 (UM/CM/DM/BH)&quot;) = FALSE, &quot;Yes&quot;,&quot;No&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>THTYAutoApprove</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>THTYProduct__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteLineItem__r.THTYProduct__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>THTYProduct</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Travel_Vendor_Utilized__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Text(QuoteLineItem__r.Travel_Vendor_Utilized__c) = &quot;No&quot;, &quot;No&quot;, IF(Text( QuoteLineItem__r.Travel_Vendor__c ) = &quot;Healthbase&quot;, &quot;Healthbase&quot;,QuoteLineItem__r.Other_Travel_Vendor__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Travel Vendor Utilized</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UrlFormulaField__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT($Api.Partner_Server_URL_360, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_360))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>UrlFormulaField</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Quote Line Item Approval</label>
+    <nameField>
+        <displayFormat>QLIA-{00000}</displayFormat>
+        <label>Quote Line Item Approval Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Quote Line Item Approval</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

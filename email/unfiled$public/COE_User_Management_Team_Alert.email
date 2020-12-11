@@ -1,0 +1,6 @@
+Hello Team, 
+
+The below listed user access request ticket is assigned to your group. 
+
+EUSR: {!Support_Request__c.Name} 
+Detail Link: {!Support_Request__c.Link}

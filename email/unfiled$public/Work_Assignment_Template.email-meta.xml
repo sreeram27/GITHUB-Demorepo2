@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template to send notification on work assignment</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Work Assignment Template</name>
+    <style>none</style>
+    <subject>{!Work_Assignment__c.Requirement_Number__c} Request Assigned</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

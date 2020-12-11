@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Tracks Slideshark presentation activity</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>BRNSHRK__BrainsharkPresentation__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Slideshark used in this present</description>
+        <externalId>false</externalId>
+        <label>Presentation Title</label>
+        <referenceTo>BRNSHRK__BrainsharkPresentation__c</referenceTo>
+        <relationshipLabel>Slideshark Presents</relationshipLabel>
+        <relationshipName>Slideshark_Presents</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__BrainsharkViewKey__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Brainshark View Key</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Slideshark Presents</relationshipLabel>
+        <relationshipName>Slideshark_Presents</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Slideshark Presents</relationshipLabel>
+        <relationshipName>Slideshark_Presents</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__NumberOfSlides__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Slides</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__OpportunityStage__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Stage Presented</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PercentSlidesPresented__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF (BRNSHRK__SlidesPresented__c &lt;= 0,0, IF (BRNSHRK__NumberOfSlides__c &lt;= 0,0, if(BRNSHRK__SlidesPresented__c / BRNSHRK__NumberOfSlides__c &gt; 1, 1, BRNSHRK__SlidesPresented__c / BRNSHRK__NumberOfSlides__c)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>% Slides Presented</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__Pid__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Presentation ID</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PresentByActiveUser__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(Owner:User.IsActive = TRUE, TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Present by Active User</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PresentByRunningUser__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(Owner:User.Id = $User.Id, TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Present by Running User</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PresentDateTime__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Date/Time Presented</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PresentIPAddressCity__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Present IP Address City</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PresentIPAddressCountry__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Present IP Address Country</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PresentIPAddressRegion__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Present IP Address Region</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PresentIsMobile__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Present Is Mobile</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PresentTime__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Present Time</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__Present_Minutes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>FLOOR( BRNSHRK__PresentTime__c / 60)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Present Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__Present_Seconds__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BRNSHRK__PresentTime__c  - BRNSHRK__Present_Minutes__c * 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Present Seconds</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__Present_Time_MM_SS__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>&quot;Minutes:&quot; &amp; Text(BRNSHRK__Present_Minutes__c) &amp; &quot; Seconds:&quot; &amp; Text(BRNSHRK__Present_Seconds__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Presenting Time MM:SS</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PresenterName__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Presenter Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__PresenterRole__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Owner:User.UserRole.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sender Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__RelatedAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Related Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Slideshark Presents</relationshipLabel>
+        <relationshipName>Slideshark_Presents</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__RelatedCase__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Related Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Slideshark Presents</relationshipLabel>
+        <relationshipName>Slideshark_Presents</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__RelatedOpportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Related Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Slideshark Presents</relationshipLabel>
+        <relationshipName>Slideshark_Presents</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__SfdcCompany__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(BRNSHRK__Contact__r.Account.Name), IF(ISBLANK(BRNSHRK__Lead__r.Company), &quot;&quot;, BRNSHRK__Lead__r.Company), BRNSHRK__Contact__r.Account.Name)</formula>
+        <inlineHelpText>Formula pulls data from Lead/Contact.</inlineHelpText>
+        <label>SFDC: Company</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__SfdcEmail__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(BRNSHRK__Contact__r.Email), BRNSHRK__Lead__r.Email, BRNSHRK__Contact__r.Email)</formula>
+        <inlineHelpText>Formula pulls data from Lead/Contact.</inlineHelpText>
+        <label>SFDC: Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__SfdcPhone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(BRNSHRK__Contact__c = &quot;&quot;, BRNSHRK__Lead__r.Phone, BRNSHRK__Contact__r.Phone)</formula>
+        <inlineHelpText>Formula pulls data from Lead/Contact.</inlineHelpText>
+        <label>SFDC: Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__SfdcTitle__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(BRNSHRK__Contact__c = &quot;&quot;, BRNSHRK__Lead__r.Title, BRNSHRK__Contact__r.Title)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Pulls the Job Title field from the Lead/Contact record.</inlineHelpText>
+        <label>SFDC: Title</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRNSHRK__SlidesPresented__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Slides Presented</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Slideshark Present</label>
+    <listViews>
+        <fullName>BRNSHRK__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Content Presented</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Slideshark Presents</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>BRNSHRK__PresentDateTime__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BRNSHRK__Lead__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>BRNSHRK__BrainsharkPresentation__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>BRNSHRK__Contact__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

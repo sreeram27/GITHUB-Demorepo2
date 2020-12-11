@@ -1,0 +1,291 @@
+<apex:component >
+
+    <script>
+
+        (function() {
+          'use strict';
+          angular
+          .module('vsAnthemApp')
+          .controller('anaMembershipController', anaMembershipController);
+        }());
+
+        anaMembershipController.$inject = ['$scope', '$filter', '$window' ,'$rootScope' ];
+
+        function anaMembershipController($scope, $filter, $window , $rootScope) {
+            console.info("Controller Loaded");
+            var vm = this;
+            vm.groupNumberCalc = '';
+            vm.selectAllInit = false;
+
+            vm.selectAllChange = function(val){
+                console.info(vm.selectAllInit);
+                vm.selectAllInit = val;
+                console.info(vm.selectAllInit);
+            }
+            /* =============================
+              Returns the range specified, used for Percetage range filter from 0 - 100 with step of 5%.
+            ============================= */
+            vm.range = function(min, max, step) {
+                step = step || 1;
+                var input = [];
+                for (var i = min; i <= max; i += step) {
+                    input.push(i + '%');
+                }
+                return input;
+            };
+
+            /* =============================
+              Return products based on groupNumberCalc formula
+            ============================= */
+            vm.retrieveProducts = function(control) {
+
+                vm.groupNumberCalc = $scope.bpTree.response['IG-GroupNumber']['IG-Controler'];
+                var result = [];
+
+                control.vlcSI[control.itemsKey].map(function(item){
+                    if(vm.groupNumberCalc == 'PartialNew' || vm.groupNumberCalc == 'PartialExisting' || vm.groupNumberCalc == 'FullNew' || vm.groupNumberCalc == 'FullExisting' ){
+                      if((item.ProductType__c == 'Medical')||(item.ProductType__c == 'Local')){
+                        result.push(item);
+                      }
+                    }
+                    else{
+                      if(vm.allProductsvlcSelected){
+                        item.vlcSelected = true;
+                      }
+
+                      result.push(item);
+                    }
+                });
+
+                return result;
+            };
+
+            /* =============================
+              Return products No based
+            ============================= */
+            vm.retrieveMassProducts = function(control) {
+
+                var massResult = [];
+                /*console.info(control);*/
+
+                if (typeof control != 'undefined' && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                    if(control.vlcSI[control.itemsKey].length > 0 && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                        control.vlcSI[control.itemsKey].map(function(item){
+                              if(vm.allProductsvlcSelected){
+                                item.vlcSelected = true;
+                              }
+
+                              massResult.push(item);
+                        });
+                    }
+                }
+                return massResult;
+            };
+            vm.updateProbability = function(addProbability){
+                $scope.addProbability = addProbability;
+                if(typeof $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != 'undefined' && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != null && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.length > 0){
+                    $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.map(function(item){
+                        item.probability = addProbability;
+                    });
+                }
+            }
+
+            vm.updateSubscriberLives = function(addSubcriberLives){
+                $scope.addSubcriberLives = addSubcriberLives;
+                if(typeof $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != 'undefined' && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != null && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.length > 0){
+                    $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.map(function(item){
+                        item.subsChange = addSubcriberLives;
+                    });
+                }
+                /* Update Total */
+                $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].memTotal = 0;
+                $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].subsTotal = 0;
+
+                if(typeof $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != 'undefined' && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != null && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.length > 0){
+                  $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.map(function(item){
+                      $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].memTotal += parseInt(item.memChange) || 0;
+                      $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].subsTotal += parseInt(item.subsChange) || 0;
+                  });
+                }
+            }
+
+            vm.updateMemberLives = function(addMemberLives){
+                $scope.addMemberLives = addMemberLives;
+                if(typeof $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != 'undefined' && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != null && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.length > 0){
+                    $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.map(function(item){
+                        item.memChange = addMemberLives;
+                    });
+                }
+                /* Update Total */
+                $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].memTotal = 0;
+                $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].subsTotal = 0;
+
+                if(typeof $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != 'undefined' && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != null && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.length > 0){
+                  $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.map(function(item){
+                      $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].memTotal += parseInt(item.memChange) || 0;
+                      $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].subsTotal += parseInt(item.subsChange) || 0;
+                  });
+                }
+            }
+
+            var memTotalObj = {}, subsTotalObj = {};
+            vm.updateMembersCount = function(product){
+
+              if(parseInt(product.memChange) < 0) { product.memChange = 0 }
+              if(parseInt(product.subsChange) < 0) { product.subsChange = 0 }
+
+              switch ($scope.bpTree.response['IG-GroupNumber']['IG-Controler']) {
+                case 'Grow':              product.cumMembers = (parseInt(product.Members__c) || 0) + (parseInt(product.memChange) || 0);
+                                          product.cumSubscribers = (parseInt(product.Subscribers__c) || 0) + (parseInt(product.subsChange) || 0);
+                                          break;
+
+                case 'Partial':           if(parseInt(product.memChange) > parseInt(product.Members__c)) { product.memChange = parseInt(product.Members__c); }
+                                          if(parseInt(product.subsChange) > parseInt(product.Subscribers__c)) { product.subsChange = parseInt(product.Subscribers__c); }
+                                          product.cumMembers = (parseInt(product.Members__c) || 0) - (parseInt(product.memChange) || 0);
+                                          product.cumSubscribers = (parseInt(product.Subscribers__c) || 0) - (parseInt(product.subsChange) || 0);
+                                          break;
+
+                case 'Acquisition':       product.cumMembers = (parseInt(product.Members__c) || 0) + (parseInt(product.memChange) || 0);
+                                          product.cumSubscribers = (parseInt(product.Subscribers__c) || 0) + (parseInt(product.subsChange) || 0);
+                                          break;
+
+                case 'Divesture':         if(parseInt(product.memChange) > parseInt(product.Members__c)) { product.memChange = parseInt(product.Members__c); }
+                                          if(parseInt(product.subsChange) > parseInt(product.Subscribers__c)) { product.subsChange = parseInt(product.Subscribers__c); }
+                                          product.cumMembers = (parseInt(product.Members__c) || 0) - (parseInt(product.memChange) || 0);
+                                          product.cumSubscribers = (parseInt(product.Subscribers__c) || 0) - (parseInt(product.subsChange) || 0);
+                                          break;
+
+                case 'PartialNew':        if(parseInt(product.memChange) > parseInt(product.Members__c)) { product.memChange = parseInt(product.Members__c); }
+                                          if(parseInt(product.subsChange) > parseInt(product.Subscribers__c)) { product.subsChange = parseInt(product.Subscribers__c); }
+                                          product.cumMembers = (parseInt(product.Members__c) || 0) - (parseInt(product.memChange) || 0);
+                                          product.cumSubscribers = (parseInt(product.Subscribers__c) || 0) - (parseInt(product.subsChange) || 0);
+                                          break;
+
+                case 'PartialExisting':   if(parseInt(product.memChange) > parseInt(product.Members__c)) { product.memChange = parseInt(product.Members__c); }
+                                          if(parseInt(product.subsChange) > parseInt(product.Subscribers__c)) { product.subsChange = parseInt(product.Subscribers__c); }
+                                          product.cumMembers = (parseInt(product.Members__c) || 0) - (parseInt(product.memChange) || 0);
+                                          product.cumSubscribers = (parseInt(product.Subscribers__c) || 0) - (parseInt(product.subsChange) || 0);
+                                          break;
+
+                case 'FullNew':           product.cumMembers = parseInt(product.Members__c) || 0;
+                                          product.cumSubscribers = (parseInt(product.Subscribers__c) || 0);
+                                          break;
+
+                case 'FullExisting':      product.cumMembers = parseInt(product.Members__c) || 0;
+                                          product.cumSubscribers = (parseInt(product.Subscribers__c) || 0);
+                                          break;
+
+                default:                  break;
+              }
+
+            }
+
+            vm.updateMembersTotal = function(val){
+              console.info(vm.selectAll);
+              $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].memTotal = 0;
+              $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].subsTotal = 0;
+
+              if(vm.selectAll && val){
+                if(typeof $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != 'undefined' && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != null && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.length > 0){
+                    $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.map(function(item){
+                        item.subsChange = $scope.addSubcriberLives;
+                        item.memChange = $scope.addMemberLives;
+                        item.probability = $scope.addProbability;
+
+                    });
+                }
+              }
+
+              if(typeof $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != 'undefined' && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList != null && $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.length > 0){
+                $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList.map(function(item){
+                    $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].memTotal += parseInt(item.memChange) || 0;
+                    $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].subsTotal += parseInt(item.subsChange) || 0;
+                });
+              }
+
+            }
+
+            vm.filterUnselectedRCVProducts = function(products){
+              console.info("products");
+              console.info(products);
+              var productsResult = [];
+              products.map(function(item){
+                  if((item.ProductType__c == 'Medical') || (item.ProductType__c == 'Local')){
+                    productsResult.push(item);
+                  }
+              });
+              console.info("productsResult");
+              console.info(productsResult);
+              var selectedProducts = $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList;
+              console.info("selectedProducts");
+              console.info(selectedProducts);
+              var filterProducts = _.reject(productsResult, function(productItem) {
+                  return _.find(selectedProducts, {Id: productItem.Id});
+              });
+                
+              console.info("filterProducts");
+              console.info(filterProducts);
+              return filterProducts;
+
+            }
+
+            vm.updateRCVMembersCount = function(product){
+                /* if(parseInt(product.memChange) > parseInt(product.Members__c)) { product.memChange = parseInt(product.Members__c); }
+                if(parseInt(product.subsChange) > parseInt(product.Subscribers__c)) { product.subsChange = parseInt(product.Subscribers__c); } */
+
+                if(parseInt(product.memChange) > parseInt($scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].memTotal)) { product.memChange = parseInt($scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].memTotal); }
+                if(parseInt(product.subsChange) > parseInt($scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].subsTotal)) { product.subsChange = parseInt($scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].subsTotal); }
+
+                product.cumMembers = (parseInt(product.Members__c) || 0) - (parseInt(product.memChange) || 0);
+                product.cumSubscribers = (parseInt(product.Subscribers__c) || 0) - (parseInt(product.subsChange) || 0);
+            }
+
+            vm.updateRCVMembersTotal = function(){
+              $scope.bpTree.response['IG-NewCurrent']['B96'].memRcvTotal = 0;
+              $scope.bpTree.response['IG-NewCurrent']['B96'].subsRcvTotal = 0;
+
+              $scope.bpTree.response['IG-NewCurrent']['B96'].QLIRcvProdList.map(function(item){
+                  $scope.bpTree.response['IG-NewCurrent']['B96'].memRcvTotal += parseInt(item.memChange) || 0;
+                  $scope.bpTree.response['IG-NewCurrent']['B96'].subsRcvTotal += parseInt(item.subsChange) || 0;
+              });
+            }
+
+            vm.filterUnselectedRCVAllProducts = function(products){
+              var productsResult = [];
+              products.map(function(item){
+                  if((item.Type == 'Medical') || (item.QLIRecordType == 'LocalType')){
+                    productsResult.push(item);
+                  }
+              });
+
+              var selectedProducts = $scope.bpTree.response['IG-CurrentRenewalProduct']['B95'].QLIProdList;
+
+              var filterProducts = _.reject(productsResult, function(productItem) {
+                  return _.find(selectedProducts, {Product2Id: productItem.Product2Id});
+              });
+              return filterProducts;
+            }
+
+            vm.updateRCVAllMembersCount = function(product){
+                if(parseInt(product.memChange) < 0 ) { product.memChange = 0; }
+                if(parseInt(product.subsChange) < 0 ) { product.subsChange = 0; }
+
+                product.cumMembers = product.memChange;
+                product.cumSubscribers = product.subsChange;
+            }
+
+            vm.updateRCVAllMembersTotal = function(){
+              $scope.bpTree.response['IG-NewProduct']['B100'].memRcvAllTotal = 0;
+              $scope.bpTree.response['IG-NewProduct']['B100'].subsRcvAllTotal = 0;
+
+              $scope.bpTree.response['IG-NewProduct']['B100'].QLIRcvAllProdList.map(function(item){
+                  $scope.bpTree.response['IG-NewProduct']['B100'].memRcvAllTotal += parseInt(item.memChange) || 0;
+                  $scope.bpTree.response['IG-NewProduct']['B100'].subsRcvAllTotal += parseInt(item.subsChange) || 0;
+              });
+            }
+
+        }
+
+    </script>
+
+</apex:component>

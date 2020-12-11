@@ -1,0 +1,5 @@
+Dear {!BPD__c.EBA_Lead__c},
+
+The {!BPD__c.Name}  you submitted for {!BPD__c.Account__c} has been rejected. 
+
+{!BPD__c.Url__c}

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>isChangedDecision2_myRule_1_ProductStage_c</name>
+        <label>isChangedDecision2_myRule_1_ProductStage_c</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>isChangedRule_2_myRule_1_ProductStage_c</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>myVariable_old.ProductStage__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.ProductStage__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision</targetReference>
+            </connector>
+            <label>isChangedRule_2_myRule_1_ProductStage_c</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.AnthemEntityTransform__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Local</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>Picklist</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>isChangedRule_2_myRule_1_ProductStage_c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>StageChanged</label>
+        </rules>
+    </decisions>
+    <description>Probability gets updated once the Stage of the QLI is changed.</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;IGAP Sold&apos;), &apos;100%&apos;, 
+	IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;Dead&apos;), &apos;0%&apos;, 
+		IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;Declined to Quote&apos;),&apos;0%&apos;,
+			IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;IGAP Dead&apos;), &apos;0%&apos;,
+				IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;IGAP Lost&apos;), &apos;0%&apos;, 				IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;Lost&apos;), &apos;0%&apos;,
+					IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;Termed&apos;), &apos;0%&apos;,
+						IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;IGAP In Progress&apos;), &apos;10%&apos;,
+							IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;In Progress&apos;), &apos;10%&apos;,
+								IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;Jeopardy&apos;), &apos;50%&apos;,
+									IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;Not renewing in Current Period&apos;), &apos;100%&apos;,
+										IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;Renewed&apos;), &apos;100%&apos;, 			IF(ISPICKVAL([QuoteLineItem].ProductStage__c,&apos;Sold&apos;), &apos;100%&apos;, &apos;&apos;)))))))))))))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A1_2454611893</name>
+        <dataType>String</dataType>
+        <expression>IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;IGAP Sold&apos;), &apos;100%&apos;, 
+	IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;Dead&apos;), &apos;0%&apos;, 
+		IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;Declined to Quote&apos;),&apos;0%&apos;,
+			IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;IGAP Dead&apos;), &apos;0%&apos;,
+				IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;IGAP Lost&apos;), &apos;0%&apos;, 				IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;Lost&apos;), &apos;0%&apos;,
+					IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;Termed&apos;), &apos;0%&apos;,
+						IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;IGAP In Progress&apos;), &apos;10%&apos;,
+							IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;In Progress&apos;), &apos;10%&apos;,
+								IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;Jeopardy&apos;), &apos;50%&apos;,
+									IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;Not renewing in Current Period&apos;), &apos;100%&apos;,
+										IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;Renewed&apos;), &apos;100%&apos;, 			IF(ISPICKVAL({!myVariable_current.ProductStage__c},&apos;Sold&apos;), &apos;100%&apos;, &apos;&apos;)))))))))))))</expression>
+    </formulas>
+    <interviewLabel>LG_ProbabilityUpdateOnStage-2_InterviewLabel</interviewLabel>
+    <label>LG_ProbabilityUpdateOnStage</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>QuoteLineItem</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[QuoteLineItem]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Update Probability</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Probability</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Probability__c</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A1_2454611893</elementReference>
+            </value>
+        </inputAssignments>
+        <object>QuoteLineItem</object>
+    </recordUpdates>
+    <startElementReference>isChangedDecision2_myRule_1_ProductStage_c</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>QuoteLineItem</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>QuoteLineItem</objectType>
+    </variables>
+</Flow>

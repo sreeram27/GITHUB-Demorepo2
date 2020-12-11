@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Behavioral_Health_WGS_Only_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AccountRecordTypeBehavHeath__c</fullName>
+        <description>This field is used in workflow to pull down the Account Record type- US172</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>AccountRecordTypeBehavHeath</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Demo__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account_Legal_Name__r.Demo__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Demo</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Account_Legal_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Legal Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Behavioral Health (WGS Only)</relationshipLabel>
+        <relationshipName>Behavioral_Health_WGS_Only</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BH_Management_Level_Service_Description1__c</fullName>
+        <externalId>false</externalId>
+        <label>BH Management Level Service Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No BH or Carve Out to Vendor</fullName>
+                    <default>false</default>
+                    <label>No BH or Carve Out to Vendor</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Inpatient Facilities Only or MCS Network Use Only</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Inpatient Facilities Only or MCS Network Use Only</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review-BH w/ corresponding FFS Medical benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review-BH w/ corresponding FFS Medical benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review-BH w/ corresponding HMO Medical benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review-BH w/ corresponding HMO Medical benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certificaiton Facility Review-BH w/ corresponding POS Medical benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certificaiton Facility Review-BH w/ corresponding POS Medical benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review-BH w/ corresponding Basic Hospital Medical benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review-BH w/ corresponding Basic Hospital Medical benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review-BH w/ corresponding PPO Medical benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review-BH w/ corresponding PPO Medical benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review-BH w/ corresponding Medical Blue Card benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review-BH w/ corresponding Medical Blue Card benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – PPO/FFS</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – PPO/FFS</label>
+                </value>
+                <value>
+                    <fullName>CCM-used when only BH services sold (no Medical)</fullName>
+                    <default>false</default>
+                    <label>CCM-used when only BH services sold (no Medical)</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – HMO/POS</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – HMO/POS</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – G8429-HMO/PPO</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – G8429-HMO/PPO</label>
+                </value>
+                <value>
+                    <fullName>BH Resource</fullName>
+                    <default>false</default>
+                    <label>BH Resource</label>
+                </value>
+                <value>
+                    <fullName>BH-Anthem BC Vivity-Integrated Health Systems</fullName>
+                    <default>false</default>
+                    <label>BH-Anthem BC Vivity-Integrated Health Systems</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BH_Management_Level_Service_Description__c</fullName>
+        <description>ONLY USE FOR SYSTEM DRIVEN PICKLIST</description>
+        <externalId>false</externalId>
+        <label>BH Management Level Service Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>BH_Scenario__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No BH or Carve Out to Vendor</fullName>
+                    <default>false</default>
+                    <label>No BH or Carve Out to Vendor</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Inpatient Facilities Only or MCS Network Use Only</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Inpatient Facilities Only or MCS Network Use Only</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review-BH w/ corresponding FFS Medical benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review-BH w/ corresponding FFS Medical benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review-BH w/ corresponding HMO Medical benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review-BH w/ corresponding HMO Medical benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certificaiton Facility Review-BH w/ corresponding POS Medical benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certificaiton Facility Review-BH w/ corresponding POS Medical benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review-BH w/ corresponding Basic Hospital Medical benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review-BH w/ corresponding Basic Hospital Medical benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review-BH w/ corresponding PPO Medical benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review-BH w/ corresponding PPO Medical benefit</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review-BH w/ corresponding Medical Blue Card benefit</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review-BH w/ corresponding Medical Blue Card benefit</label>
+                </value>
+                <value>
+                    <fullName>CCM-used when only BH services sold (no Medical)</fullName>
+                    <default>false</default>
+                    <label>CCM-used when only BH services sold (no Medical)</label>
+                </value>
+                <value>
+                    <fullName>BH Resource</fullName>
+                    <default>false</default>
+                    <label>BH Resource</label>
+                </value>
+                <value>
+                    <fullName>BH-Anthem BC Vivity-Integrated Health Systems</fullName>
+                    <default>false</default>
+                    <label>BH-Anthem BC Vivity-Integrated Health Systems</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – PPO/FFS</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – PPO/FFS</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – HMO/POS</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – HMO/POS</label>
+                </value>
+                <value>
+                    <fullName>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – G8429-HMO/PPO</fullName>
+                    <default>false</default>
+                    <label>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – G8429-HMO/PPO</label>
+                </value>
+                <value>
+                    <fullName>BH Resource &amp; EAP</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>BH Resource &amp; EAP</label>
+                </value>
+                <value>
+                    <fullName>Condition Care Depression or Standalone Depression (sold with Medical &amp; no BH)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Condition Care Depression or Standalone Depression (sold with Medical &amp; no BH)</label>
+                </value>
+                <value>
+                    <fullName>Pre-certifications Facility Review &amp; Condition Care, Case and Disease Management</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Pre-certifications Facility Review &amp; Condition Care, Case and Disease Management</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>S0</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>No BH or Carve Out to Vendor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S2</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>Pre-certification Inpatient Facilities Only or MCS Network Use Only</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S3</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>Pre-certification Facility Review-BH w/ corresponding FFS Medical benefit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S3</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>Pre-certification Facility Review-BH w/ corresponding HMO Medical benefit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S3</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>Pre-certificaiton Facility Review-BH w/ corresponding POS Medical benefit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S3</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>Pre-certification Facility Review-BH w/ corresponding Basic Hospital Medical benefit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S3</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>Pre-certification Facility Review-BH w/ corresponding PPO Medical benefit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S3</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>Pre-certification Facility Review-BH w/ corresponding Medical Blue Card benefit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S4</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>CCM-used when only BH services sold (no Medical)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S4</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – PPO/FFS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S4</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – HMO/POS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S4</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – G8429-HMO/PPO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S5</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>BH Resource</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>S6</controllingFieldValue>
+                <controllingFieldValue>SALL</controllingFieldValue>
+                <valueName>BH-Anthem BC Vivity-Integrated Health Systems</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BH_Scenario__c</fullName>
+        <description>ONLY USE FOR SYSTEM DRIVEN PICKLIST</description>
+        <externalId>false</externalId>
+        <label>BH Scenario</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>S0</fullName>
+                    <default>false</default>
+                    <label>S0</label>
+                </value>
+                <value>
+                    <fullName>S2</fullName>
+                    <default>false</default>
+                    <label>S2</label>
+                </value>
+                <value>
+                    <fullName>S3</fullName>
+                    <default>false</default>
+                    <label>S3</label>
+                </value>
+                <value>
+                    <fullName>S4</fullName>
+                    <default>false</default>
+                    <label>S4</label>
+                </value>
+                <value>
+                    <fullName>S5</fullName>
+                    <default>false</default>
+                    <label>S5</label>
+                </value>
+                <value>
+                    <fullName>S6</fullName>
+                    <default>false</default>
+                    <label>S6</label>
+                </value>
+                <value>
+                    <fullName>SALL</fullName>
+                    <default>false</default>
+                    <label>SALL</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Behavioral_Codes_SharePoint_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;https://share.antheminc.com/sites/EnterMbrRptng/Shared%20Documents/Forms/AllItems.aspx?RootFolder=%2Fsites%2FEnterMbrRptng%2FShared%20Documents%2FBusiness%20Specific%20Reporting%2FBehavior%20Health%20Reporting%2FBH%20MH%20SA%20Service%20Level%20Indicator%20Code&amp;FolderCTID=0x0120008098BF9FFEAAE74197EDAB159B3BDFCB&amp;View=%7BB125C27F%2D1615%2D4ACD%2DBB21%2D7519BE290EF3%7D&amp;InitialTabId=Ribbon%2ERead&amp;VisibilityContext=WSSTabPersistence&quot;, &quot;Behavioral Codes SharePoint Link&quot; ,&quot;_blank&quot;)</formula>
+        <inlineHelpText>Click this link to access the SharePoint file with the latest details/descriptions of available behavioral codes</inlineHelpText>
+        <label>Behavioral Codes SharePoint Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Behavioral_Health_Name__c</fullName>
+        <displayFormat>BH-{00000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Behavioral Health Name</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Corresponding_Package_Code_Contract_Code__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Corresponding Package Code/Contract Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Name__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Implementation Case Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Record_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Implementation Record ID</label>
+        <referenceTo>Order</referenceTo>
+        <relationshipLabel>Behavioral Health (WGS Only)</relationshipLabel>
+        <relationshipName>Behavioral_Health_WGS_Only</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>MH_SA_Indicator_Code_New__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(TEXT( BH_Management_Level_Service_Description1__c), &quot;No BH or Carve Out to Vendor&quot;, &quot;0000&quot;,
+&quot;Pre-certification Inpatient Facilities Only or MCS Network Use Only&quot;,&quot;2000&quot;,
+&quot;Pre-certification Facility Review-BH w/ corresponding FFS Medical benefit&quot;,&quot;3000&quot;,
+&quot;Pre-certification Facility Review-BH w/ corresponding HMO Medical benefit&quot;,&quot;3001&quot;,
+&quot;Pre-certificaiton Facility Review-BH w/ corresponding POS Medical benefit&quot;,&quot;3002&quot;,
+&quot;Pre-certification Facility Review-BH w/ corresponding Basic Hospital Medical benefit&quot;,&quot;3003&quot;,
+&quot;Pre-certification Facility Review-BH w/ corresponding PPO Medical benefit&quot;,&quot;3004&quot;,
+&quot;Pre-certification Facility Review-BH w/ corresponding Medical Blue Card benefit&quot;,&quot;3005&quot;,
+&quot;CCM-used when only BH services sold (no Medical)&quot; ,&quot;4001&quot;,
+&quot;BH Resource&quot; ,&quot;5000&quot;,
+&quot;BH-Anthem BC Vivity-Integrated Health Systems&quot; ,&quot;6001&quot;,
+&quot;Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – PPO/FFS&quot; ,&quot;4000&quot;,
+&quot;Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – HMO/POS&quot; ,&quot;4008&quot;,
+&quot;Pre-certification Facility Review &amp; Condition Care, Case and Disease Management – G8429-HMO/PPO&quot; ,&quot;4009&quot;,&quot;&quot;)</formula>
+        <label>MH/SA Indicator Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MH_SA_Indicator_Code__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>MH/SA Indicator Code Do Not Use</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Behavioral Health (WGS Only)</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>BH-{0000}</displayFormat>
+        <label>Behavioral Health (WGS Only) Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Behavioral Health (WGS Only)</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

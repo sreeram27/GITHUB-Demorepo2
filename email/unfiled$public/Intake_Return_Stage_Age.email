@@ -1,0 +1,6 @@
+Dear {!IntakeReturn__c.Implementation_Case_Owner__c}, 
+
+The Implementation Case Record for {!IntakeReturn__c.Account_Name__c} has been in Stage "Pending Response from Sales/Account Management' for 48 hours.
+
+Please click the following link to view details: 
+{!IntakeReturn__c.Link}

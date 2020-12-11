@@ -1,0 +1,26 @@
+A new Group Request has come in for the following Group: 
+
+Account Name:{!Group__c.Account__c}
+
+Claims System: {!Group__c.ClaimSystem__c} 
+
+Effective Date : {!Group__c.Effective_Date__c}
+
+Is it a migration: {!Group__c.IsPartOfAMigration__c} 
+
+Region: {!Group__c.AccountRegion__c}
+
+WGS Contracting/Situs State: {!Group__c.WGSContractingSitusState__c}
+
+NASCO Contracting/Situs State: {!Group__c.NASCOContractingSitusState__c}
+
+Group Funding Type: {!Group__c.GroupFundingType__c}
+
+Is Private Exchange (PEX): {!Group__c.IsPrivateExchangePEX__c} 
+
+Additional comments: {!Group__c.Comments__c} 
+
+
+When complete, please click on the following link (or copy and paste into browser) to capture within SFDC: 
+
+https://commercial--vlocity-ins.na35.visual.force.com/apex/vlocity_ins__OmniScriptUniversalPageWHeader?id={!Group__c.Id}&layout=lightning#/OmniScriptType/NewGN/OmniScriptSubType/OS-NewGN/OmniScriptLang/English/ContextId/{!Group__c.Id}/PrefillDataRaptorBundle//true

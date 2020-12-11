@@ -1,0 +1,7 @@
+Dear {!BPD__c.EBA_Lead__c}, <br></br>
+<br>
+The {!BPD__c.Name} you submitted for {!BPD__c.Account__c} has been approved by Implementations and is Pending Review from Account Management.
+</br>
+<br>
+{!BPD__c.Url__c}
+</br>

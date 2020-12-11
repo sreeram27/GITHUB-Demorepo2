@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Permission set is used to give permission to user to access Topic Category Object &amp; its records.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VisitOps__Topic_Category__c.VisitOps__Category_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VisitOps__Topic_Category__c.VisitOps__Show_on_Customer_Agenda__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VisitOps__Topic_Category__c.VisitOps__Show_on_Customer_Survey__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>VisitOps__Topic_Category__c.VisitOps__Show_on_Presenter_Agenda__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>VisitOps Topic Management (Managed)</label>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>VisitOps__Topic_Category__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <tabSettings>
+        <tab>VisitOps__Topic_Category__c</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+</PermissionSet>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes.QuoteLineItems$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes.QuoteLineItems$Clinical_Integration__c</field>
+    </columns>
+    <description>Includes Upsell Toolkit Tracking AND Clinical Integration</description>
+    <format>Tabular</format>
+    <name>Clinical Integration Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_w_without_Quotes_and_QLIs__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

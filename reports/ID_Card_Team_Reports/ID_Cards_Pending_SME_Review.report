@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SME_Approvals__c$Account_Legal_Name__c</field>
+    </columns>
+    <columns>
+        <field>SME_Approvals__c$Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>SME_Approvals__c$Status__c</field>
+    </columns>
+    <columns>
+        <field>SME_Approvals__c$Implementation_Record_ID__c</field>
+    </columns>
+    <columns>
+        <field>SME_Approvals__c$Name</field>
+    </columns>
+    <columns>
+        <field>SME_Approvals__c$Claims_System__c</field>
+    </columns>
+    <columns>
+        <field>SME_Approvals__c$Implementation_Status__c</field>
+    </columns>
+    <columns>
+        <field>SME_Approvals__c$Imp_Case_Created_Date__c</field>
+    </columns>
+    <description>ID Cards Pending SME Review</description>
+    <filter>
+        <criteriaItems>
+            <column>SME_Approvals__c$SME_Department__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>ID Cards</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SME_Approvals__c$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Initiated,Pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SME_Approvals__c$Implementation_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Pending SME Review</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>ID Cards Pending SME Review</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>SME_Approvals__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>SME_Approvals__c$Account_Legal_Name__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>SME_Approvals__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

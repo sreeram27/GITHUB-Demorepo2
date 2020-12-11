@@ -1,0 +1,8 @@
+Hi, 
+
+{!Opportunity.Name} for {!Account.Name} has been logged. Please review it in Salesforce. 
+
+Link to Opportunity: {!Opportunity.Link} 
+
+Thanks, 
+{!User.FirstName}

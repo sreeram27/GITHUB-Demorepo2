@@ -1,0 +1,335 @@
+<apex:component >
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcDCUploadSelection.html Template.  Created at 2017-12-05 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<style>
+
+.vlc-slds-right--panel {
+display: none;
+}}
+
+.glyphicon-trash:before {
+    content: "\e020";
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 62.5em){
+    .via-slds .vlc-slds-right--panel--custom{
+        width: 25%;
+        -webkit-flex: 0 0 30%;
+        flex: 0 0 25%;
+        min-width: 25%;
+    }
+}
+
+.vlocity.vlcCompareModal.hphc{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 20px;
+  bottom: 20px;
+  z-index: 10050;
+  background-color: #fff;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.vlocity.vlcCompareModal.hphc .modal-header, .vlocity.vlcCompareModal.hphc .modal-body{
+  padding: 10px 15px;
+}
+
+.vlocity.vlcCompareModal.hphc .modal-header .form-group{
+  display: inline-block;
+}
+
+.vlocity.vlcCompareModal.viewpremium{
+    position: fixed;
+    left: 100px;
+    right: 50px;
+    top: 200px;
+    bottom: 20px;
+    z-index: 10050;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 800px;
+    max-height: 500px;
+}
+
+.vlocity.vlcCompareModal.viewpremium .modal-header, .vlocity.vlcCompareModal.viewpremium .modal-body{
+  padding: 10px 15px;
+}
+
+.vlocity.vlcCompareModal.viewpremium .modal-header .form-group{
+  display: inline-block;
+}
+
+.vlocity.vlcCompareModal.viewSpinner{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: calc(9000 + 2);
+    background-color: rgba(255,255,255,.75);
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .2s ease,visibility 0s;
+    transition-delay: 0s,.3s;
+}
+
+.vlocity.vlcCompareModal.viewSpinner .modal-header, .vlocity.vlcCompareModal.viewSpinner .modal-body{
+  padding: 10px 15px;
+}
+
+.vlocity.vlcCompareModal.viewSpinner .modal-header .form-group{
+  display: inline-block;
+}
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.slds-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9051;
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.slds-spinner__dot-a, .slds-spinner__dot-b {
+    position: absolute;
+    top: 0;
+    transform: rotate(60deg) translateY(0);
+    transform-origin: 50% 50%;
+    left: 0;
+    width: 100%;
+}
+
+.slds-spinner__dot-b {
+    -webkit-transform: rotate(120deg) translateY(0);
+    /* transform: rotate(120deg) translateY(0); */
+}
+
+.slds-assistive-text {
+    position: absolute !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    text-transform: none !important;
+    white-space: nowrap !important;
+}
+
+.slds-spinner_medium.slds-spinner:before, .slds-spinner_medium .slds-spinner__dot-a:before, .slds-spinner_medium .slds-spinner__dot-b:before, .slds-spinner--medium.slds-spinner:before, .slds-spinner--medium .slds-spinner__dot-a:before, .slds-spinner--medium .slds-spinner__dot-b:before {
+    -webkit-animation-name: dotsBounceBefore-medium;
+    animation-name: dotsBounceBefore-medium;
+    top: -0.25rem;
+    left: -0.25rem;
+}
+
+.slds-spinner_medium.slds-spinner:before, .slds-spinner_medium.slds-spinner:after, .slds-spinner_medium .slds-spinner__dot-a:before, .slds-spinner_medium .slds-spinner__dot-b:before, .slds-spinner_medium .slds-spinner__dot-a:after, .slds-spinner_medium .slds-spinner__dot-b:after, .slds-spinner--medium.slds-spinner:before, .slds-spinner--medium.slds-spinner:after, .slds-spinner--medium .slds-spinner__dot-a:before, .slds-spinner--medium .slds-spinner__dot-b:before, .slds-spinner--medium .slds-spinner__dot-a:after, .slds-spinner--medium .slds-spinner__dot-b:after {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.slds-spinner_brand.slds-spinner:before, .slds-spinner_brand.slds-spinner:after, .slds-spinner_brand .slds-spinner__dot-a:before, .slds-spinner_brand .slds-spinner__dot-b:before, .slds-spinner_brand .slds-spinner__dot-a:after, .slds-spinner_brand .slds-spinner__dot-b:after, .slds-spinner--brand.slds-spinner:before, .slds-spinner--brand.slds-spinner:after, .slds-spinner--brand .slds-spinner__dot-a:before, .slds-spinner--brand .slds-spinner__dot-b:before, .slds-spinner--brand .slds-spinner__dot-a:after, .slds-spinner--brand .slds-spinner__dot-b:after {
+    background-color: #1589ee;
+}
+    
+</style>
+
+<!-- Hiding the StepChart for Upload Documents -->
+<script type="text/ng-template" id="vlcSldsRightPanel.html">
+<div class="vlc-slds-right--panel--custom" ng-if="!bpTree.RTTracking['DocumentUpload']['watchStarted']">
+    <div vlc-slds-step-chart map="StepChart" class="testClass"></div>
+    <!-- knowledge component will go here -->
+    <ng-include ng-repeat="vlcPC in ::bpTree.propSetMap.persistentComponent"
+                ng-if='bpTree.showPCNew[vlcPC.pcIndex] && ($index === 1 )'
+                id='{{::vlcPC.id}}'
+                knowledge="true"
+                src="::bpTree.dfHPSTmpl[vlcPC.pcIndex]"/>
+</div>
+</script>
+
+<script type="text/ng-template" id="vlcDCUploadSelection.html">
+
+ <div class="panel panel-default" ng-controller="DCUploadcontroller as ctrl" style="width: 100%">
+    <div ng-show = "ctrl.showSpinner">
+        <modal-spinner show="true" width="auto" height="auto" >
+        </modal-spinner>
+    </div>
+  <table class="slds-table slds-table--bordered slds-table--cell-buffer nobordertop slds-wrap" style="table-layout: auto;width:100%;height: 100%">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+        <th style="width: 7%;"><b>Delete</b></th>
+        <th class="slds-cell-shrink">
+            <label class="slds-checkbox" style="text-align: center;">
+            <input type="checkbox" ng-model='ctrl.selectAll' ng-change="ctrl.selectAllChange(true);"/>
+            <a ng-model='ctrl.selectAll' ng-click="ctrl.selectAllChange(ctrl.selectAll);" style="color: #514f4d;"><b><u>Select All</u></b></a>
+            <!--<u><b>Select All</b></u>-->
+            </label>
+
+            <label class="slds-checkbox">
+            <input type="checkbox" ng-model='ctrl.selectAllRequired' ng-change="ctrl.selectAllRequiredChange(true);"/>
+            <a ng-model='ctrl.selectAllRequired' ng-click="ctrl.selectAllRequiredChange(ctrl.selectAllRequired);" style="color: #514f4d"><b><u>Select All Required</u></b></a>
+            <!--<u><b>Select All Required</b></u>-->
+            </label>
+            <div ng-if="ctrl.selectFlag">
+            <div ng-if="!ctrl.selectAllRequired && ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in ctrl.retrieveMassProducts(control) track by $index" ng-hide="true">
+              <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+                <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+              </div>
+            </div>
+            <div ng-if="!ctrl.selectAllRequired && !ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in ctrl.retrieveMassProducts(control) track by $index" ng-hide="true">
+              <div ng-if="p.vlcSelected">
+                <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+              </div>
+            </div>
+
+            <div ng-if="!ctrl.selectAll && ctrl.selectAllRequired && ctrl.selectAllRequiredInit" ng-repeat="p in ctrl.retrieveRequiredProducts(control) track by $index" ng-hide="true">
+              <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+                <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+              </div>
+            </div>
+
+            <div ng-if="!ctrl.selectAll && !ctrl.selectAllRequired && ctrl.selectAllRequiredInit" ng-repeat="p in ctrl.retrieveRequiredProducts(control) track by $index" ng-hide="true">
+              <div ng-if="p.vlcSelected">
+                <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+              </div>
+            </div>
+            </div>
+             
+        </th>
+        <th style="width: 40%;"><b>Document Name</b></th>
+        <th style="width: 30%;"><b>File Name</b></th>
+        <th><b>Status</b></th>
+     
+      </tr>
+   </thead>
+      
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat="p in ctrl.retrieveMassProducts(control) | orderBy:['-Required__c','Document_Name__c'] " ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+        <td> 
+            <div>
+            <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large nds-button__icon nds-button__icon_large " xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" sprite="'utility'" icon="'delete'" size="'large'" ng-click="ctrl.deleteFile(control, p, $index, this);$event.preventDefault();" ng-show="p.Status.length" role="button" tabindex="0" viewBox="0 0 52 52" alt="delete">
+            <g fill="inherit" xmlns="http://www.w3.org/2000/svg"><path d="m45.5 10h-12.5v-4c0-2.2-1.8-4-4-4h-6c-2.2 0-4 1.8-4 4v4h-12.5c-0.8 0-1.5 0.7-1.5 1.5v3c0 0.8 0.7 1.5 1.5 1.5h39c0.8 0 1.5-0.7 1.5-1.5v-3c0-0.8-0.7-1.5-1.5-1.5z m-22.5-3c0-0.6 0.4-1 1-1h4c0.6 0 1 0.4 1 1v3h-6v-3z m18.5 13h-31c-0.8 0-1.5 0.7-1.5 1.5v23.5c0 2.8 2.2 5 5 5h24c2.8 0 5-2.2 5-5v-23.5c0-0.8-0.7-1.5-1.5-1.5z m-18.5 22c0 0.6-0.4 1-1 1h-2c-0.6 0-1-0.4-1-1v-14c0-0.6 0.4-1 1-1h2c0.6 0 1 0.4 1 1v14z m10 0c0 0.6-0.4 1-1 1h-2c-0.6 0-1-0.4-1-1v-14c0-0.6 0.4-1 1-1h2c0.6 0 1 0.4 1 1v14z"></path></g>
+            </svg>
+            </div>
+        </td>
+        <td class="slds-cell-shrink">
+            <label class="slds-checkbox" style="text-align: center;">
+               <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this);ctrl.onSelectDocCheckRec();'/>
+             <span class="slds-checkbox--faux"></span>
+
+            </label>
+        </td>
+
+        <td class="wrapword" style= "white-space:Normal" ng-if="p.Required__c">
+            <span class='red-color'style="color:Red;font-size:22px"><b>|</b></span>{{p.Document_Name__c}} 
+        </td> 
+        <td class="wrapword" style= "white-space:Normal" ng-if="!p.Required__c">{{p.Document_Name__c}}</td>
+        <td class="wrapword" style= "white-space:Normal"><div ng-show='!p.deleted'>{{p.File_Name__c}}</div></td>
+        <td class="wrapword" style= "white-space:Normal;width: 15%;"><div ng-show='!p.deleted'>{{p.Status}}</div></td>
+         
+     </tr>
+     </tbody>
+     </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+
+<script type="text/ng-template" id="DCRemainingRequiredDoc.html">
+
+ <div class="panel panel-default" ng-controller="DCUploadcontroller as ctrl" style="width: 100%">
+  <table class="slds-table slds-table--bordered slds-table--cell-buffer nobordertop slds-wrap" style="table-layout: auto;width:100%;height: 100%">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+        <th><b>Document Name</b></th>
+      </tr>
+   </thead>
+      
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat="p in control.vlcSI[control.itemsKey] | orderBy:['Document_Name__c'] " ng-show="!p.Status.length && p.Required__c" ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+        <td class="wrapword" style= "white-space:Normal" ng-if="p.Required__c">
+            <span class='red-color'style="color:Red;font-size:22px"><b>|</b></span>{{p.Document_Name__c}} 
+        </td> 
+        <td class="wrapword" style= "white-space:Normal" ng-if="!p.Required__c">{{p.Document_Name__c}}</td> 
+     </tr>
+     </tbody>
+     </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+
+    <script>
+        bpModule.directive('modalSpinner', function() {
+            return {
+                restrict: 'E',
+                scope: false,
+                link: function(scope, element, attrs) {
+                    scope.dialogStyle = {};
+                    if (attrs.width)
+                        scope.dialogStyle.width = attrs.width;
+                    if (attrs.height)
+                        scope.dialogStyle.height = attrs.height;
+                        scope.hideModal = function() {
+                        scope.show = false;
+                    };
+                },
+                templateUrl: 'showSpinner.html' 
+            };
+        });
+
+    
+    </script>
+    
+    <script type="text/ng-template" id="showSpinner.html">
+        <div class="vlocity vlcCompareModal viewSpinner" style="max-height: 100%;background: rgba(255,255,255,0.5);">
+            <div class="slds-spinner--brand slds-spinner slds-spinner--large" aria-hidden="false" role="alert">
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </script>
+</apex:component>

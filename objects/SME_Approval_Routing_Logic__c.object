@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Criteria__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Criteria</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Department</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SME Act Wise CDH</fullName>
+                    <default>false</default>
+                    <label>SME Act Wise CDH</label>
+                </value>
+                <value>
+                    <fullName>SME Act Wise FSA</fullName>
+                    <default>false</default>
+                    <label>SME Act Wise FSA</label>
+                </value>
+                <value>
+                    <fullName>SME Anthem Flex Hour</fullName>
+                    <default>false</default>
+                    <label>SME Anthem Flex Hour</label>
+                </value>
+                <value>
+                    <fullName>SME Anthem Health Guide</fullName>
+                    <default>false</default>
+                    <label>SME Anthem Health Guide</label>
+                </value>
+                <value>
+                    <fullName>SME Blue Exchange (BX)</fullName>
+                    <default>false</default>
+                    <label>SME Blue Exchange (BX)</label>
+                </value>
+                <value>
+                    <fullName>SME Bold</fullName>
+                    <default>false</default>
+                    <label>SME Bold</label>
+                </value>
+                <value>
+                    <fullName>SME CCMU</fullName>
+                    <default>false</default>
+                    <label>SME CCMU</label>
+                </value>
+                <value>
+                    <fullName>SME Claims</fullName>
+                    <default>false</default>
+                    <label>SME Claims</label>
+                </value>
+                <value>
+                    <fullName>SME Claims Retro</fullName>
+                    <default>false</default>
+                    <label>SME Claims Retro</label>
+                </value>
+                <value>
+                    <fullName>SME Benefit Booklets/Contracts</fullName>
+                    <default>false</default>
+                    <label>SME Benefit Booklets/Contracts</label>
+                </value>
+                <value>
+                    <fullName>SME Data Interface Team (DIT)</fullName>
+                    <default>false</default>
+                    <label>SME Data Interface Team (DIT)</label>
+                </value>
+                <value>
+                    <fullName>SME DeCare</fullName>
+                    <default>false</default>
+                    <label>SME DeCare</label>
+                </value>
+                <value>
+                    <fullName>SME Dental</fullName>
+                    <default>false</default>
+                    <label>SME Dental</label>
+                </value>
+                <value>
+                    <fullName>SME EAP</fullName>
+                    <default>false</default>
+                    <label>SME EAP</label>
+                </value>
+                <value>
+                    <fullName>SME Enrollment and Billing (E/B)</fullName>
+                    <default>false</default>
+                    <label>SME Enrollment and Billing (E/B)</label>
+                </value>
+                <value>
+                    <fullName>SME Group Services</fullName>
+                    <default>false</default>
+                    <label>SME Group Services</label>
+                </value>
+                <value>
+                    <fullName>SME Health and Wellness Solutions</fullName>
+                    <default>false</default>
+                    <label>SME Health and Wellness Solutions</label>
+                </value>
+                <value>
+                    <fullName>SME HealthEquity/WageWorks/FSA/COBRA</fullName>
+                    <default>false</default>
+                    <label>SME HealthEquity/WageWorks/FSA/COBRA</label>
+                </value>
+                <value>
+                    <fullName>SME ID Cards</fullName>
+                    <default>false</default>
+                    <label>SME ID Cards</label>
+                </value>
+                <value>
+                    <fullName>SME IHM</fullName>
+                    <default>false</default>
+                    <label>SME IHM</label>
+                </value>
+                <value>
+                    <fullName>SME Implementations</fullName>
+                    <default>false</default>
+                    <label>SME Implementations</label>
+                </value>
+                <value>
+                    <fullName>SME Interplan</fullName>
+                    <default>false</default>
+                    <label>SME Interplan</label>
+                </value>
+                <value>
+                    <fullName>SME IT</fullName>
+                    <default>false</default>
+                    <label>SME IT</label>
+                </value>
+                <value>
+                    <fullName>SME JAA/NTS</fullName>
+                    <default>false</default>
+                    <label>SME JAA/NTS</label>
+                </value>
+                <value>
+                    <fullName>SME Life and Disability</fullName>
+                    <default>false</default>
+                    <label>SME Life and Disability</label>
+                </value>
+                <value>
+                    <fullName>SME LITES CDH</fullName>
+                    <default>false</default>
+                    <label>SME LITES CDH</label>
+                </value>
+                <value>
+                    <fullName>SME Medical Benefits</fullName>
+                    <default>false</default>
+                    <label>SME Medical Benefits</label>
+                </value>
+                <value>
+                    <fullName>SME Medical Benefits - NASCO Retro</fullName>
+                    <default>false</default>
+                    <label>SME Medical Benefits - NASCO Retro</label>
+                </value>
+                <value>
+                    <fullName>SME Coordinated Care Model</fullName>
+                    <default>false</default>
+                    <label>SME Coordinated Care Model</label>
+                </value>
+                <value>
+                    <fullName>SME Mercer Health Advantage</fullName>
+                    <default>false</default>
+                    <label>SME Mercer Health Advantage</label>
+                </value>
+                <value>
+                    <fullName>SME NCN</fullName>
+                    <default>false</default>
+                    <label>SME NCN</label>
+                </value>
+                <value>
+                    <fullName>SME Network Management</fullName>
+                    <default>false</default>
+                    <label>SME Network Management</label>
+                </value>
+                <value>
+                    <fullName>SME Onsite Clinic</fullName>
+                    <default>false</default>
+                    <label>SME Onsite Clinic</label>
+                </value>
+                <value>
+                    <fullName>SME Other</fullName>
+                    <default>false</default>
+                    <label>SME Other</label>
+                </value>
+                <value>
+                    <fullName>SME Pharmacy</fullName>
+                    <default>false</default>
+                    <label>SME Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>SME Pricing Configuration Management (PCM)</fullName>
+                    <default>false</default>
+                    <label>SME Pricing Configuration Management (PCM)</label>
+                </value>
+                <value>
+                    <fullName>SME SBC</fullName>
+                    <default>false</default>
+                    <label>SME SBC</label>
+                </value>
+                <value>
+                    <fullName>SME Service Operations</fullName>
+                    <default>false</default>
+                    <label>SME Service Operations</label>
+                </value>
+                <value>
+                    <fullName>SME Service Operations Retro</fullName>
+                    <default>false</default>
+                    <label>SME Service Operations Retro</label>
+                </value>
+                <value>
+                    <fullName>SME Spider</fullName>
+                    <default>false</default>
+                    <label>SME Spider</label>
+                </value>
+                <value>
+                    <fullName>SME Subrogation</fullName>
+                    <default>false</default>
+                    <label>SME Subrogation</label>
+                </value>
+                <value>
+                    <fullName>SME TeleHealth</fullName>
+                    <default>false</default>
+                    <label>SME TeleHealth</label>
+                </value>
+                <value>
+                    <fullName>SME UM Intake</fullName>
+                    <default>false</default>
+                    <label>SME UM Intake</label>
+                </value>
+                <value>
+                    <fullName>SME Underwriting</fullName>
+                    <default>false</default>
+                    <label>SME Underwriting</label>
+                </value>
+                <value>
+                    <fullName>SME Virtual Second Opinion</fullName>
+                    <default>false</default>
+                    <label>SME Virtual Second Opinion</label>
+                </value>
+                <value>
+                    <fullName>SME Vision</fullName>
+                    <default>false</default>
+                    <label>SME Vision</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SME_Department__c</fullName>
+        <description>Test picklist created for cleanup. Usage will be decided later.</description>
+        <externalId>false</externalId>
+        <label>SME Department</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>SME Act Wise CDH</fullName>
+                    <default>false</default>
+                    <label>SME Act Wise CDH</label>
+                </value>
+                <value>
+                    <fullName>SME Act Wise FSA</fullName>
+                    <default>false</default>
+                    <label>SME Act Wise FSA</label>
+                </value>
+                <value>
+                    <fullName>SME Anthem Flex Hour</fullName>
+                    <default>false</default>
+                    <label>SME Anthem Flex Hour</label>
+                </value>
+                <value>
+                    <fullName>SME Anthem Health Guide</fullName>
+                    <default>false</default>
+                    <label>SME Anthem Health Guide</label>
+                </value>
+                <value>
+                    <fullName>SME Benefit Booklets/Contracts</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SME Benefit Booklets/Contracts</label>
+                </value>
+                <value>
+                    <fullName>SME Blue Exchange (BX)</fullName>
+                    <default>false</default>
+                    <label>SME Blue Exchange (BX)</label>
+                </value>
+                <value>
+                    <fullName>SME Bold</fullName>
+                    <default>false</default>
+                    <label>SME Bold</label>
+                </value>
+                <value>
+                    <fullName>SME CCMU</fullName>
+                    <default>false</default>
+                    <label>SME CCMU</label>
+                </value>
+                <value>
+                    <fullName>SME Claims</fullName>
+                    <default>false</default>
+                    <label>SME Claims</label>
+                </value>
+                <value>
+                    <fullName>SME Claims Retro</fullName>
+                    <default>false</default>
+                    <label>SME Claims Retro</label>
+                </value>
+                <value>
+                    <fullName>SME Contracts</fullName>
+                    <default>false</default>
+                    <label>SME Contracts</label>
+                </value>
+                <value>
+                    <fullName>SME Coordinated Care Model</fullName>
+                    <default>false</default>
+                    <label>SME Coordinated Care Model</label>
+                </value>
+                <value>
+                    <fullName>SME Data Interface Team (DIT)</fullName>
+                    <default>false</default>
+                    <label>SME Data Interface Team (DIT)</label>
+                </value>
+                <value>
+                    <fullName>SME DeCare</fullName>
+                    <default>false</default>
+                    <label>SME DeCare</label>
+                </value>
+                <value>
+                    <fullName>SME Dental</fullName>
+                    <default>false</default>
+                    <label>SME Dental</label>
+                </value>
+                <value>
+                    <fullName>SME EAP</fullName>
+                    <default>false</default>
+                    <label>SME EAP</label>
+                </value>
+                <value>
+                    <fullName>SME Enrollment and Billing (E/B)</fullName>
+                    <default>false</default>
+                    <label>SME Enrollment and Billing (E/B)</label>
+                </value>
+                <value>
+                    <fullName>SME Group Services</fullName>
+                    <default>false</default>
+                    <label>SME Group Services</label>
+                </value>
+                <value>
+                    <fullName>SME Health and Wellness Solutions</fullName>
+                    <default>false</default>
+                    <label>SME Health and Wellness Solutions</label>
+                </value>
+                <value>
+                    <fullName>SME HealthEquity/WageWorks/FSA/COBRA</fullName>
+                    <default>false</default>
+                    <label>SME HealthEquity/WageWorks/FSA/COBRA</label>
+                </value>
+                <value>
+                    <fullName>SME ID Cards</fullName>
+                    <default>false</default>
+                    <label>SME ID Cards</label>
+                </value>
+                <value>
+                    <fullName>SME IHM</fullName>
+                    <default>false</default>
+                    <label>SME IHM</label>
+                </value>
+                <value>
+                    <fullName>SME Implementations</fullName>
+                    <default>false</default>
+                    <label>SME Implementations</label>
+                </value>
+                <value>
+                    <fullName>SME Interplan</fullName>
+                    <default>false</default>
+                    <label>SME Interplan</label>
+                </value>
+                <value>
+                    <fullName>SME IT</fullName>
+                    <default>false</default>
+                    <label>SME IT</label>
+                </value>
+                <value>
+                    <fullName>SME JAA/NTS</fullName>
+                    <default>false</default>
+                    <label>SME JAA/NTS</label>
+                </value>
+                <value>
+                    <fullName>SME Life and Disability</fullName>
+                    <default>false</default>
+                    <label>SME Life and Disability</label>
+                </value>
+                <value>
+                    <fullName>SME LITES CDH</fullName>
+                    <default>false</default>
+                    <label>SME LITES CDH</label>
+                </value>
+                <value>
+                    <fullName>SME Live Health Online</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>SME Live Health Online</label>
+                </value>
+                <value>
+                    <fullName>SME Medical Benefits</fullName>
+                    <default>false</default>
+                    <label>SME Medical Benefits</label>
+                </value>
+                <value>
+                    <fullName>SME Medical Benefits - NASCO Retro</fullName>
+                    <default>false</default>
+                    <label>SME Medical Benefits - NASCO Retro</label>
+                </value>
+                <value>
+                    <fullName>SME Mercer Health Advantage</fullName>
+                    <default>false</default>
+                    <label>SME Mercer Health Advantage</label>
+                </value>
+                <value>
+                    <fullName>SME NCN</fullName>
+                    <default>false</default>
+                    <label>SME NCN</label>
+                </value>
+                <value>
+                    <fullName>SME Network Management</fullName>
+                    <default>false</default>
+                    <label>SME Network Management</label>
+                </value>
+                <value>
+                    <fullName>SME Onsite Clinic</fullName>
+                    <default>false</default>
+                    <label>SME Onsite Clinic</label>
+                </value>
+                <value>
+                    <fullName>SME Other</fullName>
+                    <default>false</default>
+                    <label>SME Other</label>
+                </value>
+                <value>
+                    <fullName>SME Pharmacy</fullName>
+                    <default>false</default>
+                    <label>SME Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>SME Pricing Configuration Management (PCM)</fullName>
+                    <default>false</default>
+                    <label>SME Pricing Configuration Management (PCM)</label>
+                </value>
+                <value>
+                    <fullName>SME SBC</fullName>
+                    <default>false</default>
+                    <label>SME SBC</label>
+                </value>
+                <value>
+                    <fullName>SME Service Operations</fullName>
+                    <default>false</default>
+                    <label>SME Service Operations</label>
+                </value>
+                <value>
+                    <fullName>SME Service Operations Retro</fullName>
+                    <default>false</default>
+                    <label>SME Service Operations Retro</label>
+                </value>
+                <value>
+                    <fullName>SME Spider</fullName>
+                    <default>false</default>
+                    <label>SME Spider</label>
+                </value>
+                <value>
+                    <fullName>SME Subrogation</fullName>
+                    <default>false</default>
+                    <label>SME Subrogation</label>
+                </value>
+                <value>
+                    <fullName>SME TeleHealth</fullName>
+                    <default>false</default>
+                    <label>SME TeleHealth</label>
+                </value>
+                <value>
+                    <fullName>SME Total Health Total You</fullName>
+                    <default>false</default>
+                    <label>SME Total Health Total You</label>
+                </value>
+                <value>
+                    <fullName>SME UM Intake</fullName>
+                    <default>false</default>
+                    <label>SME UM Intake</label>
+                </value>
+                <value>
+                    <fullName>SME Underwriting</fullName>
+                    <default>false</default>
+                    <label>SME Underwriting</label>
+                </value>
+                <value>
+                    <fullName>SME Virtual Second Opinion</fullName>
+                    <default>false</default>
+                    <label>SME Virtual Second Opinion</label>
+                </value>
+                <value>
+                    <fullName>SME Vision</fullName>
+                    <default>false</default>
+                    <label>SME Vision</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>SME Approval Routing Logic</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Department__c</columns>
+        <columns>SME_Department__c</columns>
+        <columns>Active__c</columns>
+        <columns>Criteria__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SMERL-{0000}</displayFormat>
+        <label>SME Approval Routing Logic Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>SME Approval Routing Logics</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Criteria__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Department__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

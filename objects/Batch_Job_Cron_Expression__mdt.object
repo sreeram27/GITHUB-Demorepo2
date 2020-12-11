@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Cron_Expression__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Please put the cron job expressions in semicolon separated string</inlineHelpText>
+        <label>Cron Expression</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <label>Batch Job Cron Expression</label>
+    <pluralLabel>Batch Job Cron Expression</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

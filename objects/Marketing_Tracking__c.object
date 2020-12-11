@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Marketing_Tracking_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>KF(20130716) Custom Object to bring in yearly Marketing Expense Tracking</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Marketing Trackings</relationshipLabel>
+        <relationshipName>Marketing_Trackings</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Active_Communication_Sum_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Active Communication Sum Amount</label>
+        <summarizedField>Marketing_Project__c.Cost_Total__c</summarizedField>
+        <summaryFilterItems>
+            <field>Marketing_Project__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Marketing_Project__c.MarketingExpense__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Allocated_Communication_Allowance_Start__c</fullName>
+        <description>Amount entered by Underwriter, this represents the communication portion of the starting balance.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount entered by Underwriter, this represents the communication portion of the starting balance, for the year.</inlineHelpText>
+        <label>Allocated Communication Allowance Start</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Branding__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Account__r.Branding__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Branding</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Completed_Communication_Sum_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Completed Communication Sum Amount</label>
+        <summarizedField>Marketing_Project__c.Cost_Total__c</summarizedField>
+        <summaryFilterItems>
+            <field>Marketing_Project__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Marketing_Project__c.MarketingExpense__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Other_Sum_Amt_Audit_Imp__c</fullName>
+        <description>Underwriting field to record non-marketing activity such as implementation and audit credits</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Underwriting field to record non-marketing activity such as implementation and audit credits</inlineHelpText>
+        <label>Completed &apos;Other&apos; Sum Amt -Audit, Imp</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Funded_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Funded By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>403371 Wellness Expense (included in the rates – FI only)</fullName>
+                    <default>false</default>
+                    <label>403371 Wellness Expense (included in the rates – FI only)</label>
+                </value>
+                <value>
+                    <fullName>450115 Wellness Expense (included in the rates – ASO only)</fullName>
+                    <default>false</default>
+                    <label>450115 Wellness Expense (included in the rates – ASO only)</label>
+                </value>
+                <value>
+                    <fullName>606020 Wellness Expense – not included in the rates FI and ASO</fullName>
+                    <default>false</default>
+                    <label>606020 Wellness Expense – not included in the rates FI and ASO</label>
+                </value>
+                <value>
+                    <fullName>620010 Communication Expense – Marketing/Collateral Printing</fullName>
+                    <default>false</default>
+                    <label>620010 Communication Expense – Marketing/Collateral Printing</label>
+                </value>
+                <value>
+                    <fullName>620010 Implementation</fullName>
+                    <default>false</default>
+                    <label>620010 Implementation</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Group_Size__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Group_Size__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Size</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Included_in_the_rates__c</fullName>
+        <externalId>false</externalId>
+        <label>Included In The Rates</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LG_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>LG Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Allowance</fullName>
+                    <default>false</default>
+                    <label>Allowance</label>
+                </value>
+                <value>
+                    <fullName>Commitment</fullName>
+                    <default>false</default>
+                    <label>Commitment</label>
+                </value>
+                <value>
+                    <fullName>Communication</fullName>
+                    <default>false</default>
+                    <label>Communication</label>
+                </value>
+                <value>
+                    <fullName>Implementation</fullName>
+                    <default>false</default>
+                    <label>Implementation</label>
+                </value>
+                <value>
+                    <fullName>Implementation Allowance (UC) First Yr Only</fullName>
+                    <default>false</default>
+                    <label>Implementation Allowance (UC) First Yr Only</label>
+                </value>
+                <value>
+                    <fullName>Marketing Communication Dollars</fullName>
+                    <default>false</default>
+                    <label>Marketing Communication Dollars</label>
+                </value>
+                <value>
+                    <fullName>OE Credit</fullName>
+                    <default>false</default>
+                    <label>OE Credit</label>
+                </value>
+                <value>
+                    <fullName>Offset - Dental</fullName>
+                    <default>false</default>
+                    <label>Offset - Dental</label>
+                </value>
+                <value>
+                    <fullName>Offset - Medical</fullName>
+                    <default>false</default>
+                    <label>Offset - Medical</label>
+                </value>
+                <value>
+                    <fullName>Offset- Vision</fullName>
+                    <default>false</default>
+                    <label>Offset- Vision</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Rate Bank</fullName>
+                    <default>false</default>
+                    <label>Rate Bank</label>
+                </value>
+                <value>
+                    <fullName>Survey Allowance (UC)</fullName>
+                    <default>false</default>
+                    <label>Survey Allowance (UC)</label>
+                </value>
+                <value>
+                    <fullName>Wellness</fullName>
+                    <default>false</default>
+                    <label>Wellness</label>
+                </value>
+                <value>
+                    <fullName>Wellness Allowance (UC)</fullName>
+                    <default>false</default>
+                    <label>Wellness Allowance (UC)</label>
+                </value>
+                <value>
+                    <fullName>Wellness Credit</fullName>
+                    <default>false</default>
+                    <label>Wellness Credit</label>
+                </value>
+                <value>
+                    <fullName>Wellness Dollars</fullName>
+                    <default>false</default>
+                    <label>Wellness Dollars</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Comments__c</fullName>
+        <encryptionScheme>ProbabilisticEncryption</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Required When Other Payment Type is Selected</inlineHelpText>
+        <label>Other Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Payment_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bill Credit to Group</fullName>
+                    <default>false</default>
+                    <label>Bill Credit to Group</label>
+                </value>
+                <value>
+                    <fullName>Check to Group</fullName>
+                    <default>false</default>
+                    <label>Check to Group</label>
+                </value>
+                <value>
+                    <fullName>Check to Consultant</fullName>
+                    <default>false</default>
+                    <label>Check to Consultant</label>
+                </value>
+                <value>
+                    <fullName>Check to 3rd party vendor</fullName>
+                    <default>false</default>
+                    <label>Check to 3rd party vendor</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Proposal_Renewal__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposal/Renewal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Proposal</fullName>
+                    <default>false</default>
+                    <label>Proposal</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Account__r.Region__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Regional_Marketing_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Regional Marketing Manager</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Amy Miller</fullName>
+                    <default>false</default>
+                    <label>Amy Miller</label>
+                </value>
+                <value>
+                    <fullName>Chelsea Avery</fullName>
+                    <default>false</default>
+                    <label>Chelsea Avery</label>
+                </value>
+                <value>
+                    <fullName>Dawn Wheeler</fullName>
+                    <default>false</default>
+                    <label>Dawn Wheeler</label>
+                </value>
+                <value>
+                    <fullName>Ginny Hollingsworth</fullName>
+                    <default>false</default>
+                    <label>Ginny Hollingsworth</label>
+                </value>
+                <value>
+                    <fullName>Jennifer Cielusniak</fullName>
+                    <default>false</default>
+                    <label>Jennifer Cielusniak</label>
+                </value>
+                <value>
+                    <fullName>Jenny Drapp</fullName>
+                    <default>false</default>
+                    <label>Jenny Drapp</label>
+                </value>
+                <value>
+                    <fullName>Jessica Shafer</fullName>
+                    <default>false</default>
+                    <label>Jessica Shafer</label>
+                </value>
+                <value>
+                    <fullName>Jill Missler</fullName>
+                    <default>false</default>
+                    <label>Jill Missler</label>
+                </value>
+                <value>
+                    <fullName>Kim Dickey</fullName>
+                    <default>false</default>
+                    <label>Kim Dickey</label>
+                </value>
+                <value>
+                    <fullName>Kristen Hellman</fullName>
+                    <default>false</default>
+                    <label>Kristen Hellman</label>
+                </value>
+                <value>
+                    <fullName>Meredith Voisin</fullName>
+                    <default>false</default>
+                    <label>Meredith Voisin</label>
+                </value>
+                <value>
+                    <fullName>Michael Fillhardt</fullName>
+                    <default>false</default>
+                    <label>Michael Fillhardt</label>
+                </value>
+                <value>
+                    <fullName>Rebecca Rupp</fullName>
+                    <default>false</default>
+                    <label>Rebecca Rupp</label>
+                </value>
+                <value>
+                    <fullName>Stacey Sam</fullName>
+                    <default>false</default>
+                    <label>Stacey Sam</label>
+                </value>
+                <value>
+                    <fullName>Anny Irons</fullName>
+                    <default>false</default>
+                    <label>Anny Irons</label>
+                </value>
+                <value>
+                    <fullName>Jan Clermont</fullName>
+                    <default>false</default>
+                    <label>Jan Clermont</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SFDCLegacyID__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <label>SFDCLegacyID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Sold</fullName>
+                    <default>false</default>
+                    <label>Sold</label>
+                </value>
+                <value>
+                    <fullName>Offered</fullName>
+                    <default>false</default>
+                    <label>Offered</label>
+                </value>
+                <value>
+                    <fullName>Not Sold</fullName>
+                    <default>false</default>
+                    <label>Not Sold</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Fund_Remaining_Balance__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+
+TEXT(Account__r.Situs_State__c) = &quot;California&quot;,
+(Total_Fund_Starting_Balance__c  - (  Completed_Other_Sum_Amt_Audit_Imp__c  +  Active_Communication_Sum_Amount__c  +  Completed_Communication_Sum_Amount__c + Total_Invoiced_Amount__c )),
+
+
+IF( 
+
+Total_Fund_Starting_Balance__c - ( Completed_Other_Sum_Amt_Audit_Imp__c + Active_Communication_Sum_Amount__c + Completed_Communication_Sum_Amount__c ) &gt; - 0.01, 
+( Total_Fund_Starting_Balance__c - ( Completed_Other_Sum_Amt_Audit_Imp__c + Active_Communication_Sum_Amount__c + Completed_Communication_Sum_Amount__c )),
+-0.01 )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Balance must be equal to or greater than 0.</inlineHelpText>
+        <label>Total Fund Remaining Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Fund_Starting_Balance__c</fullName>
+        <description>Entered by Underwriter, this is the entire marketing balance for the year.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Entered by Underwriter, this is the entire marketing balance for the year.</inlineHelpText>
+        <label>Total Fund Starting Balance</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Invoiced_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Invoiced Amount</label>
+        <summarizedField>Marketing_Project__c.Invoiced_Amount__c</summarizedField>
+        <summaryForeignKey>Marketing_Project__c.MarketingExpense__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Remaining_Communication_Allowance__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( (Allocated_Communication_Allowance_Start__c  -  Active_Communication_Sum_Amount__c  -  Completed_Communication_Sum_Amount__c ) &gt;  Total_Fund_Remaining_Balance__c , Total_Fund_Remaining_Balance__c,  Allocated_Communication_Allowance_Start__c  - Active_Communication_Sum_Amount__c -  Completed_Communication_Sum_Amount__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Remaining Communication Allowance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Allowance</fullName>
+                    <default>false</default>
+                    <label>Allowance</label>
+                </value>
+                <value>
+                    <fullName>Commitment</fullName>
+                    <default>false</default>
+                    <label>Commitment</label>
+                </value>
+                <value>
+                    <fullName>Invoiced</fullName>
+                    <default>false</default>
+                    <label>Invoiced</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Audit</fullName>
+                    <default>false</default>
+                    <label>Audit</label>
+                </value>
+                <value>
+                    <fullName>Universal</fullName>
+                    <default>false</default>
+                    <label>Universal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Underwriter__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Underwriter__r.FirstName &amp;&quot; &quot;&amp;  Account__r.Underwriter__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Underwriter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2008</fullName>
+                    <default>false</default>
+                    <label>2008</label>
+                </value>
+                <value>
+                    <fullName>2009</fullName>
+                    <default>false</default>
+                    <label>2009</label>
+                </value>
+                <value>
+                    <fullName>2010</fullName>
+                    <default>false</default>
+                    <label>2010</label>
+                </value>
+                <value>
+                    <fullName>2011</fullName>
+                    <default>false</default>
+                    <label>2011</label>
+                </value>
+                <value>
+                    <fullName>2012</fullName>
+                    <default>false</default>
+                    <label>2012</label>
+                </value>
+                <value>
+                    <fullName>2013</fullName>
+                    <default>false</default>
+                    <label>2013</label>
+                </value>
+                <value>
+                    <fullName>2014</fullName>
+                    <default>false</default>
+                    <label>2014</label>
+                </value>
+                <value>
+                    <fullName>2015</fullName>
+                    <default>false</default>
+                    <label>2015</label>
+                </value>
+                <value>
+                    <fullName>2016</fullName>
+                    <default>false</default>
+                    <label>2016</label>
+                </value>
+                <value>
+                    <fullName>2017</fullName>
+                    <default>false</default>
+                    <label>2017</label>
+                </value>
+                <value>
+                    <fullName>2018</fullName>
+                    <default>false</default>
+                    <label>2018</label>
+                </value>
+                <value>
+                    <fullName>2019</fullName>
+                    <default>false</default>
+                    <label>2019</label>
+                </value>
+                <value>
+                    <fullName>2020</fullName>
+                    <default>false</default>
+                    <label>2020</label>
+                </value>
+                <value>
+                    <fullName>2021</fullName>
+                    <default>false</default>
+                    <label>2021</label>
+                </value>
+                <value>
+                    <fullName>2022</fullName>
+                    <default>false</default>
+                    <label>2022</label>
+                </value>
+                <value>
+                    <fullName>2023</fullName>
+                    <default>false</default>
+                    <label>2023</label>
+                </value>
+                <value>
+                    <fullName>2024</fullName>
+                    <default>false</default>
+                    <label>2024</label>
+                </value>
+                <value>
+                    <fullName>2025</fullName>
+                    <default>false</default>
+                    <label>2025</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>of_First_Month_Premium__c</fullName>
+        <externalId>false</externalId>
+        <label>% of First Month Premium</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>Marketing Tracking</label>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Marketing Tracking Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Marketing Trackings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>ANA_VR_MT01_MarketingTracking</fullName>
+        <active>true</active>
+        <description>Require Other Comments when Pickval = Other</description>
+        <errorConditionFormula>AND( !$User.BypassValidation__c ,ISPICKVAL(Payment_Type__c,&quot;Other&quot;) &amp;&amp; ISBLANK( Other_Comments__c ))</errorConditionFormula>
+        <errorDisplayField>Other_Comments__c</errorDisplayField>
+        <errorMessage>Other Comments are required when Payment Type selected is Other.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

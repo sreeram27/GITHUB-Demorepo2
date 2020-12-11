@@ -1,0 +1,11 @@
+<messaging:emailTemplate subject="Group Offshoring Restriction - Recalled" recipientType="User" relatedToType="Group_Outsourcing_Approval__c">
+<messaging:htmlEmailBody >
+Hi,<br/><br/>
+
+The below Group Offshoring Restriction record is Recalled. <br/><br/>
+
+- Group Offshoring Restriction Record <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+relatedto.Group_Outsourcing_Restriction__r.Id} " target="_blank">Click here</a><br/><br/> 
+
+Thank You.
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

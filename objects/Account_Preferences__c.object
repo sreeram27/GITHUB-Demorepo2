@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object was formerly called Group Preference and will be updated to Account Preference</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>ASO_Newborn_Opt_Out_Indicator__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To allow ASO groups to Opt-Out of the Fully Insured mandate to cover newborns for the first 31 days following birth, regardless of whether or not the newborn is physically enrolled.</inlineHelpText>
+        <label>ASO Newborn Opt-Out Indicator</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Y</fullName>
+                    <default>false</default>
+                    <label>Yes, the group opts out</label>
+                </value>
+                <value>
+                    <fullName>N</fullName>
+                    <default>false</default>
+                    <label>No, the group does not opt out</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Account_Legal_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Legal Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Preferences</relationshipLabel>
+        <relationshipName>Account_Preferences</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Billing_System__c</fullName>
+        <description>Billing System applicable to the Case Install</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Billing System applicable to Case Install.</inlineHelpText>
+        <label>Billing System Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>QTC (Quote to Card)</fullName>
+                    <default>false</default>
+                    <label>QTC (Quote to Card)</label>
+                </value>
+                <value>
+                    <fullName>Legacy</fullName>
+                    <default>false</default>
+                    <label>Legacy</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Certificate_of_Creditable_Coverage_Suppr__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Proof of prior coverage with Anthem</inlineHelpText>
+        <label>Cert. of Creditable Coverage Suppression</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Y</fullName>
+                    <default>false</default>
+                    <label>Yes, we will not send proof of prior coverage</label>
+                </value>
+                <value>
+                    <fullName>N</fullName>
+                    <default>true</default>
+                    <label>No, we will send proof of prior coverage</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Conversion_Letter_Suppression__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Letter that offers additional coverage to someone who has exhausted their group plan</inlineHelpText>
+        <label>Conversion Letter Suppression</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Y</fullName>
+                    <default>false</default>
+                    <label>Yes, we will not send letter to the member</label>
+                </value>
+                <value>
+                    <fullName>N</fullName>
+                    <default>true</default>
+                    <label>No, we will send letter to the member</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Customer_Requested_Group_Number__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Customer Requested Group Number</label>
+        <length>6</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delinquency_Cancellation_Letter_Suppress__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Informs Group that they are in a delinquency status and may cancel for non-payment if premium is not received.</inlineHelpText>
+        <label>Delinquency Cancellation Ltr Suppression</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Y</fullName>
+                    <default>false</default>
+                    <label>Yes, we will not send delinquency letter to group</label>
+                </value>
+                <value>
+                    <fullName>N</fullName>
+                    <default>true</default>
+                    <label>No, we will send delinquency letter to group</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Does_Anthem_Generate_HCID__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies if the member’s HCID is assigned by Anthem or the client.</inlineHelpText>
+        <label>Does Anthem Generate HCID</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>G</fullName>
+                    <default>true</default>
+                    <label>Anthem Supplied</label>
+                </value>
+                <value>
+                    <fullName>C</fullName>
+                    <default>false</default>
+                    <label>Client Supplied</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opt_Out_of_LHO_URL_on_ID_Cards__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines if the employer wants to include the livehealthonline.com link on the member ID cards. (Medical Only.) This field was added for the WGS system and the Group Load functionality.</inlineHelpText>
+        <label>Opt-Out of LHO URL on ID Cards</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>N</fullName>
+                    <default>true</default>
+                    <label>No - Place Live Health Online URL on ID Card</label>
+                </value>
+                <value>
+                    <fullName>Y</fullName>
+                    <default>false</default>
+                    <label>Yes - Do Not Place Live Health Online URL on ID Card</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Termination_Letter_Suppression__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Informs member that Anthem is cancelling the group coverage for non-payment</inlineHelpText>
+        <label>Termination Letter Suppression</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Y</fullName>
+                    <default>false</default>
+                    <label>Yes, we will not send letter to the member</label>
+                </value>
+                <value>
+                    <fullName>N</fullName>
+                    <default>true</default>
+                    <label>No, we will send letter to the member</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Washout_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Washout Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>00</fullName>
+                    <default>false</default>
+                    <label>Daily</label>
+                </value>
+                <value>
+                    <fullName>16</fullName>
+                    <default>false</default>
+                    <label>15/16</label>
+                </value>
+                <value>
+                    <fullName>02</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>1st only of the same month; 2nd through 31st - 1st of following month</label>
+                </value>
+                <value>
+                    <fullName>31</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>1st through 31st - 1st of same month</label>
+                </value>
+                <value>
+                    <fullName>30</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>COVA/TLC/LODA/VA tech</label>
+                </value>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Georgia - HMO/POS medical products and no COBRA solutions</label>
+                </value>
+                <value>
+                    <fullName>(blank) Georgia - Multiple medical products, or includes Specialty Products and COBRA solutions</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Georgia - Multiple medical products, or includes Specialty Products and COBRA solutions**</label>
+                </value>
+                <value>
+                    <fullName>(blank) Standard - Premium prorated based on 30-day billing cycle**</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Standard - Premium prorated based on 30-day billing cycle</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Account Preferences</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>ACTPREF-{0000}</displayFormat>
+        <label>Account Preferences Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account Preferences</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>OneGroupPreferencesPerAccount</fullName>
+        <active>true</active>
+        <description>Allows one child (Group Preferences) per Account</description>
+        <errorConditionFormula>AND(ISNEW() ,  Account_Legal_Name__r.Check_For_One_GroupPreferences__c = true)</errorConditionFormula>
+        <errorMessage>Only one Account Preferences record should be created per account.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

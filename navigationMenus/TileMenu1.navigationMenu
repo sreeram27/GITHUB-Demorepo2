@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>Open Enrollment Community</container>
+    <containerType>Network</containerType>
+    <label>TileMenu</label>
+    <navigationMenuItem>
+        <label>TravelPoint</label>
+        <position>0</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>https://wx1.getthere.net/DispatcherServlet?requestType=logininq&amp;site=wellpoint</target>
+        <type>ExternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Fieldglass</label>
+        <position>1</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>https://www.fieldglass.net/</target>
+        <type>ExternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>NewHire</label>
+        <position>2</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>https://event.on24.com/wcc/r/1693432/2E97F62089FB67D189D53ECA147FA7C9</target>
+        <type>ExternalLink</type>
+    </navigationMenuItem>
+</NavigationMenu>

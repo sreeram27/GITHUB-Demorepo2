@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$Id</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Opportunity_ID__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes$Id</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes$GroupNumber__c</field>
+    </columns>
+    <columns>
+        <field>Account$Situs_State__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account$Anthem_Entity__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Local/Large Group</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$OpportunityRecordTypeName__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Renewal Local</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Situs_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Connecticut,Indiana,Kentucky,Maine,Missouri,New Hampshire,Ohio,Virginia,Wisconsin</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Groups w Opps-All</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Andrea_s_Test_Report_for_opps_with_or_without_QLI__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Opportunities.Quotes.QuoteLineItems$OpportunityEffectiveDate__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2019-11-01</startDate>
+    </timeFrameFilter>
+</Report>

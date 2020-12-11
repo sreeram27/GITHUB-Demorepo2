@@ -1,0 +1,7 @@
+/* PRDCRM-44997/PRDCRM-45408 (from PRDCRM-38037) */
+.THIS .slds-truncate {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: unset;
+    white-space: inherit;
+}

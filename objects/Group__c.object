@@ -1,0 +1,3377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Group_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>ABH_Service_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>ABH Service Location</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Albany, NY (IHM, MHA, and CCMU Business)</fullName>
+                    <default>false</default>
+                    <label>Albany, NY (IHM, MHA, and CCMU Business)</label>
+                </value>
+                <value>
+                    <fullName>Atlanta GA</fullName>
+                    <default>false</default>
+                    <label>Atlanta GA</label>
+                </value>
+                <value>
+                    <fullName>San Diego, CA</fullName>
+                    <default>false</default>
+                    <label>San Diego, CA</label>
+                </value>
+                <value>
+                    <fullName>Wallingford, CT</fullName>
+                    <default>false</default>
+                    <label>Wallingford, CT</label>
+                </value>
+                <value>
+                    <fullName>Indianapolis, IN (National business)</fullName>
+                    <default>false</default>
+                    <label>Indianapolis, IN (National business)</label>
+                </value>
+                <value>
+                    <fullName>Indianapolis, IN (FEP business)</fullName>
+                    <default>false</default>
+                    <label>Indianapolis, IN (FEP business)</label>
+                </value>
+                <value>
+                    <fullName>Mason, OH</fullName>
+                    <default>false</default>
+                    <label>Mason, OH</label>
+                </value>
+                <value>
+                    <fullName>St. Louis, MO</fullName>
+                    <default>false</default>
+                    <label>St. Louis, MO</label>
+                </value>
+                <value>
+                    <fullName>Richmond, VA</fullName>
+                    <default>false</default>
+                    <label>Richmond, VA</label>
+                </value>
+                <value>
+                    <fullName>Denver, CO</fullName>
+                    <default>false</default>
+                    <label>Denver, CO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ARMS_Subsequent_Enrollment__c</fullName>
+        <externalId>false</externalId>
+        <label>ARMS Subsequent Enrollment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>No Change</fullName>
+                    <default>false</default>
+                    <label>No Change</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AccountRegion__c</fullName>
+        <description>Fetches the Region of Account Associated with the Group</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Region__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Account Manager</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <description>It is the Account associated with the Group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>It defines the Account associated with the Group.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Groups</relationshipLabel>
+        <relationshipName>Groups</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Account_legal_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account legal Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actuarial_Funding_Code_WGS_Only__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Actuarial Funding Code (WGS Only)</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AnnualizedPremium__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For New Business Opportunities this is the &quot;Estimated Annualized Premium&quot; on the Renewal Opportunities this is the actual &quot;Annualized Premium&quot; that comes from the Group Contract</inlineHelpText>
+        <label>Annualized Premium</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Anthem_Entity__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Account__r.Anthem_Entity__c)</formula>
+        <label>Anthem Entity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assigned_Implementer__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Assigned Implementer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AutorabitExtId__c</fullName>
+        <description>External Id created by AutoRABIT</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <label>AutorabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing__c</fullName>
+        <description>This field is built as a part of story number PRDCRM-46556</description>
+        <externalId>false</externalId>
+        <label>Billing Arrangement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Single Invoices (containing all Suffixes)</fullName>
+                    <default>false</default>
+                    <label>Single Invoices (containing all Suffixes)</label>
+                </value>
+                <value>
+                    <fullName>One Invoice per LOB</fullName>
+                    <default>false</default>
+                    <label>One Invoice per LOB</label>
+                </value>
+                <value>
+                    <fullName>One Invoice per Employee Category</fullName>
+                    <default>false</default>
+                    <label>One Invoice per Employee Category</label>
+                </value>
+                <value>
+                    <fullName>One Invoice per Employee Class</fullName>
+                    <default>false</default>
+                    <label>One Invoice per Employee Class</label>
+                </value>
+                <value>
+                    <fullName>Customized Billing Arrangement</fullName>
+                    <default>false</default>
+                    <label>Customized Billing Arrangement</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>COB_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>COB Count</label>
+        <summaryForeignKey>COB__c.Group__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>CallServiceCenter__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the Call Service Center for this Group Number</inlineHelpText>
+        <label>Call Service Center</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Albany NY</fullName>
+                    <default>false</default>
+                    <label>Albany NY</label>
+                </value>
+                <value>
+                    <fullName>Atlanta GA</fullName>
+                    <default>false</default>
+                    <label>Atlanta GA</label>
+                </value>
+                <value>
+                    <fullName>Camarillo CA</fullName>
+                    <default>false</default>
+                    <label>Camarillo CA</label>
+                </value>
+                <value>
+                    <fullName>Colo Springs CO</fullName>
+                    <default>false</default>
+                    <label>Colo Springs CO</label>
+                </value>
+                <value>
+                    <fullName>Columbus OH</fullName>
+                    <default>false</default>
+                    <label>Columbus OH</label>
+                </value>
+                <value>
+                    <fullName>Dearborn MI</fullName>
+                    <default>false</default>
+                    <label>Dearborn MI</label>
+                </value>
+                <value>
+                    <fullName>Denver CO</fullName>
+                    <default>false</default>
+                    <label>Denver CO</label>
+                </value>
+                <value>
+                    <fullName>Egan MN</fullName>
+                    <default>false</default>
+                    <label>Egan MN</label>
+                </value>
+                <value>
+                    <fullName>Fond du Lac WI</fullName>
+                    <default>false</default>
+                    <label>Fond du Lac WI</label>
+                </value>
+                <value>
+                    <fullName>Indianapolis IN</fullName>
+                    <default>false</default>
+                    <label>Indianapolis IN</label>
+                </value>
+                <value>
+                    <fullName>Local Serv Cntr</fullName>
+                    <default>false</default>
+                    <label>Local Serv Cntr</label>
+                </value>
+                <value>
+                    <fullName>Mason OH</fullName>
+                    <default>false</default>
+                    <label>Mason OH</label>
+                </value>
+                <value>
+                    <fullName>Middletown NY</fullName>
+                    <default>false</default>
+                    <label>Middletown NY</label>
+                </value>
+                <value>
+                    <fullName>Midland, GA</fullName>
+                    <default>false</default>
+                    <label>Midland, GA</label>
+                </value>
+                <value>
+                    <fullName>Newbury Park CA</fullName>
+                    <default>false</default>
+                    <label>Newbury Park CA</label>
+                </value>
+                <value>
+                    <fullName>Orem UT</fullName>
+                    <default>false</default>
+                    <label>Orem UT</label>
+                </value>
+                <value>
+                    <fullName>Pomona CA</fullName>
+                    <default>false</default>
+                    <label>Pomona CA</label>
+                </value>
+                <value>
+                    <fullName>Portland ME</fullName>
+                    <default>false</default>
+                    <label>Portland ME</label>
+                </value>
+                <value>
+                    <fullName>Richmond VA</fullName>
+                    <default>false</default>
+                    <label>Richmond VA</label>
+                </value>
+                <value>
+                    <fullName>St Louis MO</fullName>
+                    <default>false</default>
+                    <label>St Louis MO</label>
+                </value>
+                <value>
+                    <fullName>TBD</fullName>
+                    <default>false</default>
+                    <label>TBD</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ClaimServiceCenter__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the Claim Service Center for this Group Number</inlineHelpText>
+        <label>Claim Service Center</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Albany NY</fullName>
+                    <default>false</default>
+                    <label>Albany NY</label>
+                </value>
+                <value>
+                    <fullName>Atlanta GA</fullName>
+                    <default>false</default>
+                    <label>Atlanta GA</label>
+                </value>
+                <value>
+                    <fullName>Camarillo CA</fullName>
+                    <default>false</default>
+                    <label>Camarillo CA</label>
+                </value>
+                <value>
+                    <fullName>Colo Springs CO</fullName>
+                    <default>false</default>
+                    <label>Colo Springs CO</label>
+                </value>
+                <value>
+                    <fullName>Columbus OH</fullName>
+                    <default>false</default>
+                    <label>Columbus OH</label>
+                </value>
+                <value>
+                    <fullName>Dearborn MI</fullName>
+                    <default>false</default>
+                    <label>Dearborn MI</label>
+                </value>
+                <value>
+                    <fullName>Denver CO</fullName>
+                    <default>false</default>
+                    <label>Denver CO</label>
+                </value>
+                <value>
+                    <fullName>Diamond Bar CA</fullName>
+                    <default>false</default>
+                    <label>Diamond Bar CA</label>
+                </value>
+                <value>
+                    <fullName>Egan MN</fullName>
+                    <default>false</default>
+                    <label>Egan MN</label>
+                </value>
+                <value>
+                    <fullName>Fond du Lac WI</fullName>
+                    <default>false</default>
+                    <label>Fond du Lac WI</label>
+                </value>
+                <value>
+                    <fullName>Indianapolis IN</fullName>
+                    <default>false</default>
+                    <label>Indianapolis IN</label>
+                </value>
+                <value>
+                    <fullName>Local Serv Cntr</fullName>
+                    <default>false</default>
+                    <label>Local Serv Cntr</label>
+                </value>
+                <value>
+                    <fullName>Manila</fullName>
+                    <default>false</default>
+                    <label>Manila</label>
+                </value>
+                <value>
+                    <fullName>Mason OH</fullName>
+                    <default>false</default>
+                    <label>Mason OH</label>
+                </value>
+                <value>
+                    <fullName>Middletown NY</fullName>
+                    <default>false</default>
+                    <label>Middletown NY</label>
+                </value>
+                <value>
+                    <fullName>Columbus GA</fullName>
+                    <default>false</default>
+                    <label>Midland GA</label>
+                </value>
+                <value>
+                    <fullName>Newbury Park CA</fullName>
+                    <default>false</default>
+                    <label>Newbury Park CA</label>
+                </value>
+                <value>
+                    <fullName>Offshore</fullName>
+                    <default>false</default>
+                    <label>Offshore</label>
+                </value>
+                <value>
+                    <fullName>Orem UT</fullName>
+                    <default>false</default>
+                    <label>Orem UT</label>
+                </value>
+                <value>
+                    <fullName>Pomona CA</fullName>
+                    <default>false</default>
+                    <label>Pomona CA</label>
+                </value>
+                <value>
+                    <fullName>Portland ME</fullName>
+                    <default>false</default>
+                    <label>Portland ME</label>
+                </value>
+                <value>
+                    <fullName>Richmond VA</fullName>
+                    <default>false</default>
+                    <label>Richmond VA</label>
+                </value>
+                <value>
+                    <fullName>TBD</fullName>
+                    <default>false</default>
+                    <label>TBD</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ClaimSystem__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim System</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>NASCO</fullName>
+                    <default>false</default>
+                    <label>NASCO</label>
+                </value>
+                <value>
+                    <fullName>WGS 2.0</fullName>
+                    <default>false</default>
+                    <label>WGS 2.0</label>
+                </value>
+                <value>
+                    <fullName>ACES</fullName>
+                    <default>false</default>
+                    <label>ACES</label>
+                </value>
+                <value>
+                    <fullName>ALICS</fullName>
+                    <default>false</default>
+                    <label>ALICS</label>
+                </value>
+                <value>
+                    <fullName>AniTa</fullName>
+                    <default>false</default>
+                    <label>AniTa</label>
+                </value>
+                <value>
+                    <fullName>CHIPS</fullName>
+                    <default>false</default>
+                    <label>CHIPS</label>
+                </value>
+                <value>
+                    <fullName>COMPASS</fullName>
+                    <default>false</default>
+                    <label>COMPASS</label>
+                </value>
+                <value>
+                    <fullName>CS90</fullName>
+                    <default>false</default>
+                    <label>CS90</label>
+                </value>
+                <value>
+                    <fullName>DeCare Dental</fullName>
+                    <default>false</default>
+                    <label>DeCare Dental</label>
+                </value>
+                <value>
+                    <fullName>FACETS</fullName>
+                    <default>false</default>
+                    <label>FACETS</label>
+                </value>
+                <value>
+                    <fullName>WDS</fullName>
+                    <default>false</default>
+                    <label>WDS</label>
+                </value>
+                <value>
+                    <fullName>GBD FACETS</fullName>
+                    <default>false</default>
+                    <label>GBD FACETS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Claims_Route_Code__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Claims Route Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cobra_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Cobra Indicator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Collab_Account_ID__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Collab Account ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>This field is used for National Accounts when requesting a group number. It is referenced in both a flow and email template, which should be adjusted prior to modifying this field.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Service_Toll_Free_Number__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Customer Service Toll Free Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Date_Migrated_to_WGS__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Date Migrated to WGS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DeliveryChannel__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Private Exchange or Brokerage/Direct</inlineHelpText>
+        <label>Delivery Channel</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Brokerage/Direct</fullName>
+                    <default>false</default>
+                    <label>Brokerage/Direct</label>
+                </value>
+                <value>
+                    <fullName>AON Hewitt Corporate Exchange</fullName>
+                    <default>false</default>
+                    <label>AON Hewitt Corporate Exchange</label>
+                </value>
+                <value>
+                    <fullName>Mercer Marketplace Exchange</fullName>
+                    <default>false</default>
+                    <label>Mercer Marketplace Exchange</label>
+                </value>
+                <value>
+                    <fullName>Towers Watson One Exchange</fullName>
+                    <default>false</default>
+                    <label>Towers Watson One Exchange</label>
+                </value>
+                <value>
+                    <fullName>Buck Consulting RightOpt</fullName>
+                    <default>false</default>
+                    <label>Buck Consulting RightOpt</label>
+                </value>
+                <value>
+                    <fullName>Anthem Health Marketplace</fullName>
+                    <default>false</default>
+                    <label>Anthem Health Marketplace</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ESR_Contact__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>ESR Contact</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Eligibility_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Eligibility Count</label>
+        <summaryForeignKey>Eligibility__c.Group__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Eligibility_File_PG_Ongoing__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Eligibility File PG Ongoing</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Category__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional (rarely requested). If the Customer is requesting a specific Group/Case Number please enter. Otherwise it will be system generated (most common)</inlineHelpText>
+        <label>Applicable Employee Categories</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>Employee_Category</valueSetName>
+        </valueSet>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Employer_Service_Rep_Notification_Sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Employer Service Rep Notification Sent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Employer_Service_Rep_Requirement__c</fullName>
+        <externalId>false</externalId>
+        <label>Employer Service Rep Requirement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>Yes with Exception</fullName>
+                    <default>false</default>
+                    <label>Yes with Exception</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Employer_Service_Representative_ESR2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Employer Service Representative (ESR)</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.Account.Name</field>
+                <operation>equals</operation>
+                <value>Anthem Associates</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Groups</relationshipLabel>
+        <relationshipName>ESR_Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Employer_Service_Representative_ESR__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Employer Service Representative (ESR)</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employer_Service_Representative__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Employer Service Representative (ESR)</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Exception_Details__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Exception Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exchange__c</fullName>
+        <externalId>false</externalId>
+        <label>Exchange</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Non-Exchange</fullName>
+                    <default>false</default>
+                    <label>Non-Exchange</label>
+                </value>
+                <value>
+                    <fullName>Bloom</fullName>
+                    <default>false</default>
+                    <label>Bloom</label>
+                </value>
+                <value>
+                    <fullName>AON/Hewitt</fullName>
+                    <default>false</default>
+                    <label>AON/Hewitt</label>
+                </value>
+                <value>
+                    <fullName>Xerox/Buck</fullName>
+                    <default>false</default>
+                    <label>Xerox/Buck</label>
+                </value>
+                <value>
+                    <fullName>Towers Watson</fullName>
+                    <default>false</default>
+                    <label>Towers Watson</label>
+                </value>
+                <value>
+                    <fullName>Anthem Health Marketplace</fullName>
+                    <default>false</default>
+                    <label>Anthem Health Marketplace</label>
+                </value>
+                <value>
+                    <fullName>Mercer</fullName>
+                    <default>false</default>
+                    <label>Mercer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Exclude_From_NA_Imps_Reporting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>When this box is checked, the group number is being excluded from National Implementations Reporting &amp; Dashboards.</inlineHelpText>
+        <label>Exclude From NA Imps Reporting</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FinancingRollup__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Financing Rollup</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Impression_Check__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>First Impression Check</inlineHelpText>
+        <label>First Impression Check</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Funding_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Funding Count</label>
+        <summaryForeignKey>Funding__c.Group__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>GroupFundingType__c</fullName>
+        <externalId>false</externalId>
+        <label>Group Funding Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ASO</fullName>
+                    <default>false</default>
+                    <label>ASO</label>
+                </value>
+                <value>
+                    <fullName>FI</fullName>
+                    <default>false</default>
+                    <label>FI</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GroupId__c</fullName>
+        <externalId>false</externalId>
+        <formula>Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GroupId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GroupLink__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT($Api.Partner_Server_URL_390, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_390)) &amp; GroupId__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GroupLink</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GroupNumberRequestStatus__c</fullName>
+        <description>Pick list to determine the status of a requested group number on an newly added group</description>
+        <externalId>false</externalId>
+        <label>Group Number Request Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Requested</fullName>
+                    <default>true</default>
+                    <label>Not Requested</label>
+                </value>
+                <value>
+                    <fullName>Requested</fullName>
+                    <default>false</default>
+                    <label>Requested</label>
+                </value>
+                <value>
+                    <fullName>Requested and Assigned</fullName>
+                    <default>false</default>
+                    <label>Requested and Assigned</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GroupServicesGroupNumberNotes__c</fullName>
+        <description>BW 2015
+This field was created to allow for Group Services to capture additional details in the event the group is not eligible for a Group Number</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Group Services fills out this field when a Group is not eligible for a Group Number</inlineHelpText>
+        <label>Group Services Group Number Notes</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Group_Name_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(LEFT($Api.Partner_Server_URL_260, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_260))&amp;Id,Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Name Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ID_Card_On_Going_Performance_Guarantee__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>ID Card On-Going Performance Guarantee</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ID_Card_Performance_Guarantee__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>ID Card Performance Guarantee</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Link__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Implementation Case Link</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Effective_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Implementation Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_PGs__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Implementation PGs</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Initial_ARMS_Enrollment__c</fullName>
+        <externalId>false</externalId>
+        <label>Initial ARMS Enrollment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>No Change</fullName>
+                    <default>false</default>
+                    <label>No Change</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Initial_Implementation_Satisfaction_PG__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Initial Implementation Satisfaction PG</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>This field is used, in order for system to indicate if a group record is inactive or inactive.</description>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsPartOfAMigration__c</fullName>
+        <externalId>false</externalId>
+        <label>Is part of a migration?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IsPrivateExchangePEX__c</fullName>
+        <description>BW 2015</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(DeliveryChannel__c,&quot;Brokerage/Direct&quot;),&quot;No&quot;,&quot;Yes&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Private Exchange (PEX)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level_of_Complexity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Level of Complexity as assigned by Implementations for Book of Business Reports</inlineHelpText>
+        <label>Level of Complexity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Level 1 High Complexity</fullName>
+                    <default>false</default>
+                    <label>Level 1 High Complexity</label>
+                </value>
+                <value>
+                    <fullName>Level 2 Medium Complexity</fullName>
+                    <default>false</default>
+                    <label>Level 2 Medium Complexity</label>
+                </value>
+                <value>
+                    <fullName>Level 3 Low Complexity</fullName>
+                    <default>false</default>
+                    <label>Level 3 Low Complexity</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LineofBusiness__c</fullName>
+        <externalId>false</externalId>
+        <label>Line of Business</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AD&amp;D</fullName>
+                    <default>false</default>
+                    <label>AD&amp;D</label>
+                </value>
+                <value>
+                    <fullName>AIM</fullName>
+                    <default>false</default>
+                    <label>AIM</label>
+                </value>
+                <value>
+                    <fullName>Anthem Personalized Well Being</fullName>
+                    <default>false</default>
+                    <label>Anthem Personalized Well Being</label>
+                </value>
+                <value>
+                    <fullName>Benefits Admin</fullName>
+                    <default>false</default>
+                    <label>Benefits Admin</label>
+                </value>
+                <value>
+                    <fullName>DeCare Dental</fullName>
+                    <default>false</default>
+                    <label>DeCare Dental</label>
+                </value>
+                <value>
+                    <fullName>Dental</fullName>
+                    <default>false</default>
+                    <label>Dental</label>
+                </value>
+                <value>
+                    <fullName>Disability</fullName>
+                    <default>false</default>
+                    <label>Disability</label>
+                </value>
+                <value>
+                    <fullName>EAP</fullName>
+                    <default>false</default>
+                    <label>EAP</label>
+                </value>
+                <value>
+                    <fullName>Employee Asst Program</fullName>
+                    <default>false</default>
+                    <label>Employee Asst Program</label>
+                </value>
+                <value>
+                    <fullName>Expatriate</fullName>
+                    <default>false</default>
+                    <label>Expatriate</label>
+                </value>
+                <value>
+                    <fullName>Flexible Spending Acct</fullName>
+                    <default>false</default>
+                    <label>Flexible Spending Acct</label>
+                </value>
+                <value>
+                    <fullName>FSA</fullName>
+                    <default>false</default>
+                    <label>FSA</label>
+                </value>
+                <value>
+                    <fullName>Health and Wellness</fullName>
+                    <default>false</default>
+                    <label>Health and Wellness</label>
+                </value>
+                <value>
+                    <fullName>Life</fullName>
+                    <default>false</default>
+                    <label>Life</label>
+                </value>
+                <value>
+                    <fullName>LTD</fullName>
+                    <default>false</default>
+                    <label>LTD</label>
+                </value>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>false</default>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>Medicare</fullName>
+                    <default>false</default>
+                    <label>Medicare</label>
+                </value>
+                <value>
+                    <fullName>Network Based</fullName>
+                    <default>false</default>
+                    <label>Network Based</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy</fullName>
+                    <default>false</default>
+                    <label>Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>Premium Only Plan-Section 125</fullName>
+                    <default>false</default>
+                    <label>Premium Only Plan-Section 125</label>
+                </value>
+                <value>
+                    <fullName>STD</fullName>
+                    <default>false</default>
+                    <label>STD</label>
+                </value>
+                <value>
+                    <fullName>Stop Loss</fullName>
+                    <default>false</default>
+                    <label>Stop Loss</label>
+                </value>
+                <value>
+                    <fullName>Vision</fullName>
+                    <default>false</default>
+                    <label>Vision</label>
+                </value>
+                <value>
+                    <fullName>Workers Compensation</fullName>
+                    <default>false</default>
+                    <label>Workers Compensation</label>
+                </value>
+                <value>
+                    <fullName>ABA</fullName>
+                    <default>false</default>
+                    <label>ABA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LoggedInUserProfile__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.ProfileName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LoggedInUserProfile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MBU_Codes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If Unknown, Contact Underwriting To Obtain.</inlineHelpText>
+        <label>MBU Codes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>65800000 CA</fullName>
+                    <default>false</default>
+                    <label>65800000 CA</label>
+                </value>
+                <value>
+                    <fullName>65800000 IN</fullName>
+                    <default>false</default>
+                    <label>65800000 IN</label>
+                </value>
+                <value>
+                    <fullName>CCN00000 CO</fullName>
+                    <default>false</default>
+                    <label>CCN00000 CO</label>
+                </value>
+                <value>
+                    <fullName>NAA00000 NH</fullName>
+                    <default>false</default>
+                    <label>NAA00000 NH</label>
+                </value>
+                <value>
+                    <fullName>NAC00000</fullName>
+                    <default>false</default>
+                    <label>NAC00000</label>
+                </value>
+                <value>
+                    <fullName>NAE00000 ME</fullName>
+                    <default>false</default>
+                    <label>NAE00000 ME</label>
+                </value>
+                <value>
+                    <fullName>NAH00000 GA</fullName>
+                    <default>false</default>
+                    <label>NAH00000 GA</label>
+                </value>
+                <value>
+                    <fullName>NAH00000 OH</fullName>
+                    <default>false</default>
+                    <label>NAH00000 OH</label>
+                </value>
+                <value>
+                    <fullName>NAI00000 IN</fullName>
+                    <default>false</default>
+                    <label>NAI00000 IN</label>
+                </value>
+                <value>
+                    <fullName>NAK00000 KY</fullName>
+                    <default>false</default>
+                    <label>NAK00000 KY</label>
+                </value>
+                <value>
+                    <fullName>NAM00000 MO</fullName>
+                    <default>false</default>
+                    <label>NAM00000 MO</label>
+                </value>
+                <value>
+                    <fullName>NAO00000 OH</fullName>
+                    <default>false</default>
+                    <label>NAO00000 OH</label>
+                </value>
+                <value>
+                    <fullName>NAT00000 CT</fullName>
+                    <default>false</default>
+                    <label>NAT00000 CT</label>
+                </value>
+                <value>
+                    <fullName>NAV00000 VA</fullName>
+                    <default>false</default>
+                    <label>NAV00000 VA</label>
+                </value>
+                <value>
+                    <fullName>NAW00000 WI</fullName>
+                    <default>false</default>
+                    <label>NAW00000 WI</label>
+                </value>
+                <value>
+                    <fullName>NAY00000 NY</fullName>
+                    <default>false</default>
+                    <label>NAY00000 NY</label>
+                </value>
+                <value>
+                    <fullName>NCM00000 CA</fullName>
+                    <default>false</default>
+                    <label>NCM00000 CA</label>
+                </value>
+                <value>
+                    <fullName>NNC00000 NV</fullName>
+                    <default>false</default>
+                    <label>NNC00000 NV</label>
+                </value>
+                <value>
+                    <fullName>NSO00000 OH</fullName>
+                    <default>false</default>
+                    <label>NSO00000 OH</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Med_Mgmt_Service_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Med Mgmt Service Location</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IHM- Albany NY</fullName>
+                    <default>false</default>
+                    <label>IHM- Albany NY</label>
+                </value>
+                <value>
+                    <fullName>IHM- Atlanta GA</fullName>
+                    <default>false</default>
+                    <label>IHM- Atlanta GA</label>
+                </value>
+                <value>
+                    <fullName>IHM- St Louis MO</fullName>
+                    <default>false</default>
+                    <label>IHM- St Louis MO</label>
+                </value>
+                <value>
+                    <fullName>MHA-  St Louis MO</fullName>
+                    <default>false</default>
+                    <label>MHA-  St Louis MO</label>
+                </value>
+                <value>
+                    <fullName>CCMU- Albany NY</fullName>
+                    <default>false</default>
+                    <label>CCMU- Albany NY</label>
+                </value>
+                <value>
+                    <fullName>CCM-West</fullName>
+                    <default>false</default>
+                    <label>CCM-West</label>
+                </value>
+                <value>
+                    <fullName>CCM-Georgia</fullName>
+                    <default>false</default>
+                    <label>CCM-Georgia</label>
+                </value>
+                <value>
+                    <fullName>CCM-Central</fullName>
+                    <default>false</default>
+                    <label>CCM-Central</label>
+                </value>
+                <value>
+                    <fullName>CCM-Virginia</fullName>
+                    <default>false</default>
+                    <label>CCM-Virginia</label>
+                </value>
+                <value>
+                    <fullName>CCM-New  York</fullName>
+                    <default>false</default>
+                    <label>CCM-New  York</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Medical_Management_Platform__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical Management Platform</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>WMDS</fullName>
+                    <default>false</default>
+                    <label>WMDS</label>
+                </value>
+                <value>
+                    <fullName>ECC</fullName>
+                    <default>false</default>
+                    <label>ECC</label>
+                </value>
+                <value>
+                    <fullName>TriMed</fullName>
+                    <default>false</default>
+                    <label>TriMed</label>
+                </value>
+                <value>
+                    <fullName>ACMS</fullName>
+                    <default>false</default>
+                    <label>ACMS</label>
+                </value>
+                <value>
+                    <fullName>UM WMDS/HRS CM ( UM - Utilization Management, CM - Case Management)</fullName>
+                    <default>false</default>
+                    <label>UM WMDS/HRS CM ( UM - Utilization Management, CM - Case Management)</label>
+                </value>
+                <value>
+                    <fullName>UM ECC/HRS CM ( UM - Utilization Management, CM - Case Management)</fullName>
+                    <default>false</default>
+                    <label>UM ECC/HRS CM ( UM - Utilization Management, CM - Case Management)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Medical_Management_Service_Location__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical Management Service Location</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IHM- Albany NY</fullName>
+                    <default>false</default>
+                    <label>IHM- Albany NY</label>
+                </value>
+                <value>
+                    <fullName>IHM- Atlanta GA</fullName>
+                    <default>false</default>
+                    <label>IHM- Atlanta GA</label>
+                </value>
+                <value>
+                    <fullName>IHM- St Louis MO</fullName>
+                    <default>false</default>
+                    <label>IHM- St Louis MO</label>
+                </value>
+                <value>
+                    <fullName>Indianapolis, IN</fullName>
+                    <default>false</default>
+                    <label>Indianapolis, IN</label>
+                </value>
+                <value>
+                    <fullName>MHA-  St Louis MO</fullName>
+                    <default>false</default>
+                    <label>MHA-  St Louis MO</label>
+                </value>
+                <value>
+                    <fullName>CCMU- Albany NY</fullName>
+                    <default>false</default>
+                    <label>CCMU- Albany NY</label>
+                </value>
+                <value>
+                    <fullName>CCM-West</fullName>
+                    <default>false</default>
+                    <label>CCM-West</label>
+                </value>
+                <value>
+                    <fullName>CCM-Georgia</fullName>
+                    <default>false</default>
+                    <label>CCM-Georgia</label>
+                </value>
+                <value>
+                    <fullName>CCM-Central</fullName>
+                    <default>false</default>
+                    <label>CCM-Central</label>
+                </value>
+                <value>
+                    <fullName>CCM-Virginia</fullName>
+                    <default>false</default>
+                    <label>CCM-Virginia</label>
+                </value>
+                <value>
+                    <fullName>CCM-New  York</fullName>
+                    <default>false</default>
+                    <label>CCM-New  York</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Medical_Management__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical Management</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CCM Model - Coordinated Care Model (Anthem Standard)</fullName>
+                    <default>false</default>
+                    <label>CCM Model - Coordinated Care Model (Anthem Standard)</label>
+                </value>
+                <value>
+                    <fullName>IHM Model -  Integrated Health Model (buy-up option)</fullName>
+                    <default>false</default>
+                    <label>IHM Model -  Integrated Health Model (buy-up option)</label>
+                </value>
+                <value>
+                    <fullName>MHA Model - Mercer Health Advantage (buy-up option)</fullName>
+                    <default>false</default>
+                    <label>MHA Model - Mercer Health Advantage (buy-up option)</label>
+                </value>
+                <value>
+                    <fullName>Third Party Vendor</fullName>
+                    <default>false</default>
+                    <label>Third Party Vendor</label>
+                </value>
+                <value>
+                    <fullName>TBD (used until model is known, if undecided)</fullName>
+                    <default>false</default>
+                    <label>TBD (used until model is known, if undecided)</label>
+                </value>
+                <value>
+                    <fullName>CCMU Model (buy-up option)</fullName>
+                    <default>false</default>
+                    <label>CCMU Model (buy-up option)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Members__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of Members for this particular Line of Business (not the total Opportunity)</inlineHelpText>
+        <label>Members</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NASCOContractingSitusState__c</fullName>
+        <description>Fetches the NASCO Contracting Situs Status of the Account associated with the Group.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.NASCO_Contracting_Situs_State__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NASCO Contracting Situs State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberofOpenProductsProgramsGROUP__c</fullName>
+        <description>Roll-up helper field to count the number open Products Lines (Programs and Products) on the Group.</description>
+        <externalId>false</externalId>
+        <label>Number of Open Products &amp; Programs GROUP</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Op_Owner_Adjustments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Op Owner Adjustments</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operational_OE_Adjustments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Operational OE Adjustments</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operational_Owner_Adjustments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Operational Owner Adjustments</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operational_Owner_Claims__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Operational Owner Claims</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operational_Owner_Serv_Mgrs__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Operational Owner Serv Mgrs</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operational_Owner_Service_Managers__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Operational Owner Service Manager(s)</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operations_Expert_OE_Adjustments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Operations Expert (OE) Adjustments</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operations_Expert_OE_Claims__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Operations Expert (OE) Claims</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operations_Expert_OE_Service__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Operations Expert (OE) Service</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operations_Owner_Adjustments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Operations Owner Adjustments</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Effective_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Opportunity Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Groups</relationshipLabel>
+        <relationshipName>Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ops_Expert_OE_Claims__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Ops Expert (OE) Claims</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ops_Expert_OE_Service__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Ops Expert (OE) Service</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Performance_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <label>Performance Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dental</fullName>
+                    <default>false</default>
+                    <label>Dental</label>
+                </value>
+                <value>
+                    <fullName>Disability</fullName>
+                    <default>false</default>
+                    <label>Disability</label>
+                </value>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>false</default>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>Vision</fullName>
+                    <default>false</default>
+                    <label>Vision</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Prior_Medical_Carrier__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Prior Medical Carrier</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductLineFundingType__c</fullName>
+        <description>Funding type of the Medical Product Line for GS Number Assignment</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Product Line Funding Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Retro_Enrollment_Maintenance_Electronic__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of days that retroactive maintenance can be performed (Group Tape – Enrollment via 834).</inlineHelpText>
+        <label>Retro Enrollment/Maintenance –Electronic</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>60</fullName>
+                    <default>false</default>
+                    <label>60 days</label>
+                </value>
+                <value>
+                    <fullName>90</fullName>
+                    <default>false</default>
+                    <label>90 days</label>
+                </value>
+                <value>
+                    <fullName>120</fullName>
+                    <default>false</default>
+                    <label>120 days</label>
+                </value>
+                <value>
+                    <fullName>180</fullName>
+                    <default>false</default>
+                    <label>180 days</label>
+                </value>
+                <value>
+                    <fullName>365</fullName>
+                    <default>false</default>
+                    <label>365 days</label>
+                </value>
+                <value>
+                    <fullName>1095</fullName>
+                    <default>false</default>
+                    <label>1095 days</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Retro_Enrollment_Maintenance_Online__c</fullName>
+        <description>This field is being added specifically for WGS to support the Group Load functionality through Customer Master.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of days that retroactive maintenance can be performed (Online – manually in ISG).</inlineHelpText>
+        <label>Retro Enrollment/Maintenance – Online</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>60</fullName>
+                    <default>false</default>
+                    <label>60 days</label>
+                </value>
+                <value>
+                    <fullName>90</fullName>
+                    <default>false</default>
+                    <label>90 days</label>
+                </value>
+                <value>
+                    <fullName>120</fullName>
+                    <default>false</default>
+                    <label>120 days</label>
+                </value>
+                <value>
+                    <fullName>180</fullName>
+                    <default>false</default>
+                    <label>180 days</label>
+                </value>
+                <value>
+                    <fullName>365</fullName>
+                    <default>false</default>
+                    <label>365 days</label>
+                </value>
+                <value>
+                    <fullName>1095</fullName>
+                    <default>false</default>
+                    <label>1095 days</label>
+                </value>
+                <value>
+                    <fullName>Test</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SFDCLegacyID2__c</fullName>
+        <description>Used for data load, the CIP, and Open Enrollment processes that need to be maintained in the old Commercial ORG.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <inlineHelpText>Used for data load, the CIP, and Open Enrollment processes that need to be maintained in the old Commercial ORG.</inlineHelpText>
+        <label>SFDCLegacyID2</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SFDCLegacyID3__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <label>SFDCLegacyID3</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SFDCLegacyID__c</fullName>
+        <description>Used for data load, the CIP, and Open Enrollment processes that need to be maintained in the old Commercial ORG.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <inlineHelpText>Used for data load, the CIP, and Open Enrollment processes that need to be maintained in the old Commercial ORG.</inlineHelpText>
+        <label>SFDCLegacyID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Situs_State__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Situs State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subscribers__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of Subscribers for this particular Line of Business (not the total Opportunity)</inlineHelpText>
+        <label>Subscribers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TECH_OppOwnerEmail__c</fullName>
+        <description>Sales - REL1 - This field is an email field. It gets the email address of the Opportunity owner  i.e tagged to the Quote from which Group Number is requested. This field is used in the email alert as a recipient.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>TECH_OppOwnerEmail</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TECH_OpportunityId__c</fullName>
+        <description>Sales - REL1 - This field is an Id field. It gets the record id of the Opportunity tagged to the Quote from which Group Number is requested. This field is re-used in the OpportunityLink(Formula field).</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>TECH_OpportunityId</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TECH_OpportunityLink__c</fullName>
+        <description>Sales - REL1 - This field is a formula field. It forms the URL of the Opportunity record i.e tagged to the Quote from which Group Number is requested. This field is re-used in an Email Template which will be sent this Opportunity Owner.</description>
+        <externalId>false</externalId>
+        <formula>LEFT($Api.Partner_Server_URL_390, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_390)) &amp;  TECH_OpportunityId__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TECH_OpportunityLink</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalEligibles__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Eligibles</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unit_Code__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Unit Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unit_Name__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Unit Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WGSContractingSitusState__c</fullName>
+        <description>Fetches the WGs Contracting situs Status from the Account associated with the Group</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.WGS_Contracting_Situs_State__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>WGS Contracting Situs State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Group</label>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Group Number</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Groups</pluralLabel>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Group</fullName>
+        <active>true</active>
+        <label>Group</label>
+        <picklistValues>
+            <picklist>ABH_Service_Location__c</picklist>
+            <values>
+                <fullName>Albany%2C NY %28IHM%2C MHA%2C and CCMU Business%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlanta GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denver%2C CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indianapolis%2C IN %28FEP business%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indianapolis%2C IN %28National business%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mason%2C OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Richmond%2C VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>San Diego%2C CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>St%2E Louis%2C MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wallingford%2C CT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ARMS_Subsequent_Enrollment__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billing__c</picklist>
+            <values>
+                <fullName>Customized Billing Arrangement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Invoice per Employee Category</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Invoice per Employee Class</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Invoice per LOB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Invoices %28containing all Suffixes%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CallServiceCenter__c</picklist>
+            <values>
+                <fullName>Albany NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlanta GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Camarillo CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colo Springs CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Columbus OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dearborn MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denver CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Egan MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fond du Lac WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indianapolis IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Serv Cntr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mason OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middletown NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Midland%2C GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Newbury Park CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orem UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pomona CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portland ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Richmond VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>St Louis MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TBD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ClaimServiceCenter__c</picklist>
+            <values>
+                <fullName>Albany NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Atlanta GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Camarillo CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colo Springs CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Columbus GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Columbus OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dearborn MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denver CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diamond Bar CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Egan MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fond du Lac WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indianapolis IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Serv Cntr</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manila</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mason OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middletown NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Newbury Park CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offshore</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orem UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pomona CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portland ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Richmond VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TBD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ClaimSystem__c</picklist>
+            <values>
+                <fullName>ACES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALICS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AniTa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHIPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COMPASS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS90</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DeCare Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FACETS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GBD FACETS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NASCO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WDS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WGS 2%2E0</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DeliveryChannel__c</picklist>
+            <values>
+                <fullName>AON Hewitt Corporate Exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anthem Health Marketplace</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brokerage%2FDirect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Buck Consulting RightOpt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mercer Marketplace Exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers Watson One Exchange</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Employee_Category__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COBRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cal COBRA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Over 65 Retiree</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retiree All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under 65 Retiree</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Employer_Service_Rep_Requirement__c</picklist>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes with Exception</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Exchange__c</picklist>
+            <values>
+                <fullName>AON%2FHewitt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anthem Health Marketplace</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bloom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mercer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Towers Watson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xerox%2FBuck</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GroupFundingType__c</picklist>
+            <values>
+                <fullName>ASO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>GroupNumberRequestStatus__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Requested</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested and Assigned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Initial_ARMS_Enrollment__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IsPartOfAMigration__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Level_of_Complexity__c</picklist>
+            <values>
+                <fullName>Level 1 High Complexity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 2 Medium Complexity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Level 3 Low Complexity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LineofBusiness__c</picklist>
+            <values>
+                <fullName>ABA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AD%26D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AIM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Anthem Personalized Well Being</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DeCare Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Asst Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expatriate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexible Spending Acct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Wellness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network Based</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium Only Plan-Section 125</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stop Loss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Workers Compensation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MBU_Codes__c</picklist>
+            <values>
+                <fullName>65800000 CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>65800000 IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCN00000 CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAA00000 NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAC00000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAE00000 ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAH00000 GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAH00000 OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAI00000 IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAK00000 KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAM00000 MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAO00000 OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAT00000 CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAV00000 VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAW00000 WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NAY00000 NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCM00000 CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NNC00000 NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NSO00000 OH</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Med_Mgmt_Service_Location__c</picklist>
+            <values>
+                <fullName>CCM-Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCM-Georgia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCM-New  York</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCM-Virginia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCM-West</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCMU- Albany NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IHM- Albany NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IHM- Atlanta GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IHM- St Louis MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MHA-  St Louis MO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Medical_Management_Platform__c</picklist>
+            <values>
+                <fullName>ACMS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ECC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TriMed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UM ECC%2FHRS CM %28 UM - Utilization Management%2C CM - Case Management%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UM WMDS%2FHRS CM %28 UM - Utilization Management%2C CM - Case Management%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WMDS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Medical_Management_Service_Location__c</picklist>
+            <values>
+                <fullName>CCM-Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCM-Georgia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCM-New  York</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCM-Virginia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCM-West</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCMU- Albany NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IHM- Albany NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IHM- Atlanta GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IHM- St Louis MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indianapolis%2C IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MHA-  St Louis MO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Medical_Management__c</picklist>
+            <values>
+                <fullName>CCM Model - Coordinated Care Model %28Anthem Standard%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCMU Model %28buy-up option%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IHM Model -  Integrated Health Model %28buy-up option%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MHA Model - Mercer Health Advantage %28buy-up option%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TBD %28used until model is known%2C if undecided%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Third Party Vendor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Performance_Indicator__c</picklist>
+            <values>
+                <fullName>Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disability</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vision</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Retro_Enrollment_Maintenance_Electronic__c</picklist>
+            <values>
+                <fullName>1095</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>120</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>180</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>365</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Retro_Enrollment_Maintenance_Online__c</picklist>
+            <values>
+                <fullName>1095</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>120</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>180</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>365</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Group_VR01_Do_Not_Create_Elig_COB_FUND</fullName>
+        <active>true</active>
+        <description>Users are not allowed to create more than one Eligibility, COB and Funding(WGS) record</description>
+        <errorConditionFormula>AND(!$User.BypassValidation__c, (OR( COB_Count__c &gt; 1, Eligibility_Count__c &gt; 1,  Funding_Count__c &gt; 1)))</errorConditionFormula>
+        <errorMessage>Please Do Not Create More Than One Eligibility, COB And Funding (WGS) Records.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Group_VR02_Employer_Service_Rep_Req_Elig</fullName>
+        <active>true</active>
+        <description>Field can be saved if Total Eligibles is equal or greater than 1000.</description>
+        <errorConditionFormula>AND(OR(Anthem_Entity__c ==&apos;Local/Large Group&apos;,Anthem_Entity__c==&apos;Labor and Trust&apos;),
+	AND( 
+	ISPICKVAL(Employer_Service_Rep_Requirement__c,&apos;Yes&apos;), 
+	OR( 
+	TotalEligibles__c &lt; 1000, 
+	OR( 
+	ISNULL(TotalEligibles__c), 
+	ISBLANK(TotalEligibles__c) 
+	) 
+	) 
+	)
+)</errorConditionFormula>
+        <errorDisplayField>Employer_Service_Rep_Requirement__c</errorDisplayField>
+        <errorMessage>Please validate that the Group has greater or equal to 1000 eligible lives.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Group_VR03_Exception_Details_YesWithExce</fullName>
+        <active>true</active>
+        <description>This field will be required if  &quot;Employer Service Rep Requirement&quot; is &apos;Yes with Exception&apos;.</description>
+        <errorConditionFormula>AND(OR(Anthem_Entity__c ==&apos;Local/Large Group&apos;,Anthem_Entity__c==&apos;Labor and Trust&apos;),
+	AND(ISPICKVAL(Employer_Service_Rep_Requirement__c,&apos;Yes with Exception&apos;),ISBLANK(Exception_Details__c))
+)</errorConditionFormula>
+        <errorDisplayField>Exception_Details__c</errorDisplayField>
+        <errorMessage>Exception Details cannot be left blank, if Employer Service Rep Requirement is &apos;Yes with Exception&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Group_VR04_Exception_Details_WithoutVal</fullName>
+        <active>true</active>
+        <description>This field can only be saved if &quot;Employer Service Rep Requirement&quot; is set as &apos;Yes with Exception&apos;.</description>
+        <errorConditionFormula>AND(OR(Anthem_Entity__c ==&apos;Local/Large Group&apos;,Anthem_Entity__c==&apos;Labor and Trust&apos;),
+	AND(NOT(ISPICKVAL(Employer_Service_Rep_Requirement__c,&apos;Yes with Exception&apos;)),NOT(ISBLANK(Exception_Details__c)))
+)</errorConditionFormula>
+        <errorDisplayField>Exception_Details__c</errorDisplayField>
+        <errorMessage>This field can only be saved if &quot;Employer Service Rep Requirement&quot; is set as &apos;Yes with Exception&apos;.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Generate_Report</fullName>
+        <availability>online</availability>
+        <description>Generate ID cards report based on the group number</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>ID Card Requirement History</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/lightning/r/Report/{!$Label.Id_Card_Report}/view?queryScope=userFolders&amp;0.source=alohaHeader&amp;fv0={!Group__c.Name}&amp;fv1={!Group__c.Account_legal_Name__c}</url>
+    </webLinks>
+</CustomObject>

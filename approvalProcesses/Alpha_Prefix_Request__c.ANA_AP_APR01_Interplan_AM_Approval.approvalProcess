@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Interplan_AM_Approving__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Assign to Interplan AM Approver</label>
+        <name>Assign_to_Interplan_AM_Approver</name>
+    </approvalStep>
+    <emailTemplate>unfiled$public/Alpha_Prefix_Request_Submission_Notification</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <booleanFilter>(1 AND 2 ) OR (3 AND 4 AND 5 )</booleanFilter>
+        <criteriaItems>
+            <field>Alpha_Prefix_Request__c.RecordType</field>
+            <operation>equals</operation>
+            <value>Full Account Termination,Phone Number or URL Change,Return Unused Prefix,Term Prefix/Partial Account Term</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Alpha_Prefix_Request__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Prefix Assigned,Request Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Alpha_Prefix_Request__c.RecordType</field>
+            <operation>equals</operation>
+            <value>Migration - New Prefix Request,New Business,New Product Existing Business</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Alpha_Prefix_Request__c.of_Products_Networks_Requested__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Alpha_Prefix_Request__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Request Complete,Prefix Assigned</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>APR_Approved_Email_Alert</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Set_APR_Status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>APR_Rejected_Email_Alert2</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Set_APR_Status_to_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Date_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Status_to_Submitted_To_InterPlan</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>ANA_AP_ APR01_Interplan_AM_Approval</label>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

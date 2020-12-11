@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Enhancement Automated Reminder for Virtual Second Opinion</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Plain_Letterhead</letterhead>
+    <name>Enhancement Automated Reminder for Virtual Second Opinion</name>
+    <style>freeForm</style>
+    <subject>{!Order.Implementation_Case_Name__c} Adding VSO - Congrats and Next Steps</subject>
+    <textOnly>Hello,
+
+We are excited to partner with you on the implementation of the Virtual Second Opinion(VSO) program for {!Order.Implementation_Case_Name__c}
+
+If you have not already done so, please complete the VSO Client Information Form and return to Mariam Brown, Devin Edwards, Peter Brady and CC me on it as well please.
+
+Peter will determine if client&apos;s set up allows for the additional identification of members to the nurses for review using web data (Find a Doctor, Know you Cost, etc...).
+
+If you have any questions, please don&apos;t hesitate to reach out to me.
+
+Thank you,
+
+Anthem, Inc.
+
+Jean Phillips, Business Change Manager, Enterprise Implementations
+Anthem National Accounts
+85 Crystal Run Rd, Middletown, NY 10940
+O: (845) 895-4007
+jean.phillips@anthem.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

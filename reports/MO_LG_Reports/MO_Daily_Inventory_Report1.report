@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_91634313</developerName>
+        <masterLabel>Opportunity Stage</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Opportunities$StageName</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Prospecting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Qualification</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Needs Analysis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Value Proposition</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Id. Decision Makers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Perception Analysis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Proposal/Price Quote</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Negotiation/Review</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Submitted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Initiated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Quoting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeopardy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Submitted to Customer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Finalist</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Verbal Commitment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chance of Occurring</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Change Confirmed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Suspect</sourceValue>
+            </sourceValues>
+            <value>Pending</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Closed Won</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Renewal Finalized</sourceValue>
+            </sourceValues>
+            <value>Sold/Renewed</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DTQ by Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DTQ by UW</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Closed Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Closed Dead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Customer Termed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Change Cancelled</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DTQ</sourceValue>
+            </sourceValues>
+            <value>Lost/Termed</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes$Name</field>
+    </columns>
+    <description>For Ashlie 11.8.19</description>
+    <filter>
+        <criteriaItems>
+            <column>Account$Branding__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Anthem BCBS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Situs_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Missouri</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <field>Account.Opportunities$CloseDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Opportunities$RecordType</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_91634313</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>MO Daily Inventory Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_Opportunities_and_Quotes__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Opportunities$CloseDate</dateColumn>
+        <endDate>2020-01-01</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2020-01-01</startDate>
+    </timeFrameFilter>
+</Report>

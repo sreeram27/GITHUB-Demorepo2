@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>List of email addresses, which should be notified if consultant volunteers for event</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Email__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>true</unique>
+    </fields>
+    <label>Enrollment user notification</label>
+    <visibility>Public</visibility>
+</CustomObject>

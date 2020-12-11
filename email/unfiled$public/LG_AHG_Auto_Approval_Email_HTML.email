@@ -1,0 +1,24 @@
+<p>
+Your client meets all standard criteria, you are approved to include AHG in your proposal. The client’s information will be added to the AHG pipeline tracker, where you can view servicing sites as needed. Please note the AHG solution does not standardly include >65 retiree or HMO populations; they would need to be discussed by exception. Please inform the AHG MHA Intake Mailbox of the group decision at least 4.5 months ahead of the effective date.
+</p>
+<table border="1">
+<tr><td>Client Name: </td><td>{!QuoteLineItemApproval__c.ClientName__c}</td></tr>
+<tr><td>Effective Date: </td><td>{!QuoteLineItemApproval__c.EffectiveDate__c}</td></tr>
+<tr><td>Region: </td><td>{!QuoteLineItemApproval__c.Region__c}</td></tr> 
+<tr><td>New or existing: </td><td>{!QuoteLineItemApproval__c.Neworexisting__c}</td></tr>
+<tr><td>Market: </td><td>Large Group Accounts</td></tr>
+<tr><td>Likelihood of winning: </td><td>{!QuoteLineItemApproval__c.Likelihoodofwinning__c}</td></tr>
+<tr><td>Claims Platform: </td><td>{!QuoteLineItemApproval__c.ClaimsPlatform__c}</td></tr>
+<tr><td>Financing: </td><td>{!QuoteLineItemApproval__c.Financing__c}</td></tr>
+<tr><td>Med Management Platform: </td><td>{!QuoteLineItemApproval__c.MedManagementPlatform__c}</td></tr>
+<tr><td>Clinical Model: </td><td>{!QuoteLineItemApproval__c.LG_Clinical_Model__c}</td></tr>
+<tr><td>Estimated Membership: </td><td>{!QuoteLineItemApproval__c.EstimatedMembership__c}</td></tr>
+<tr><td>Additional Comments: </td><td>{!QuoteLineItemApproval__c.BackgroundFurtherExplanation__c}</td></tr>
+<tr><td>Market/Situs State: </td><td>{!QuoteLineItemApproval__c.Market_Situs_State__c}</td></tr>
+<tr><td>Core Clinical and Specialty Products: </td><td>{!QuoteLineItemApproval__c.CoreClinicalProducts__c}</td></tr>
+<tr><td>Service Hours: </td><td>{!QuoteLineItemApproval__c.AHG_Service_Hours__c}</td></tr>
+</table>
+<p>
+To view all details around the request, please see the below link: </br> 
+<a href="{!QuoteLineItemApproval__c.Link}">Click here</a>
+</p>

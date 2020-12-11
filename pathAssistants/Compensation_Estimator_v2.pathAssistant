@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Compensation_Estimator__c</entityName>
+    <fieldName>Disclaimers__c</fieldName>
+    <masterLabel>Compensation Estimator v2</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;img src=&quot;/img/rte_broken_image.png&quot; alt=&quot;This image is not available because: You don’t have the privileges to see it, or it has been removed from the system&quot;&gt;&lt;/img&gt;&lt;/p&gt;</info>
+        <picklistValueName>New Business Renewal Notes</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;&lt;img src=&quot;/img/rte_broken_image.png&quot; alt=&quot;This image is not available because: You don’t have the privileges to see it, or it has been removed from the system&quot;&gt;&lt;/img&gt;&lt;/p&gt;</info>
+        <picklistValueName>Year-End Persistency Bonus Payout Table</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

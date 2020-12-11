@@ -1,0 +1,44 @@
+<apex:component >
+    <script>
+    console.log('@@@@@@insertlog');
+    (function() {
+        'use strict';
+        angular
+        .module('vsAnthemProductApp')
+        .controller('IDCGroupPlanDesignController', IDCGroupPlanDesignController);
+    }());
+    IDCGroupPlanDesignController.$inject = ['$scope', '$filter', '$window' ,'$rootScope' ];
+    function IDCGroupPlanDesignController($scope, $filter, $window , $rootScope) {
+        console.info("Controller Loaded");
+        var vm = this;
+        //Pre-select all the master checkbox
+        vm.selectAll = false;
+            //Pre-select all the dependent checkbox
+		vm.selectAllInit = false;
+		vm.selectFlag = false;
+		
+		
+		vm.onSelectGroupID = function(group){
+			vm.selectFlag = false;
+			console.info("-----------group.vlcSelected----" + group.vlcSelected);
+			
+		};
+		
+		vm.selectAllChange = function(val){
+			vm.selectFlag = true;
+			console.info("-----------val----" + val);
+			if(val) {
+                vm.selectAll = false;
+                vm.selectAllInit = true;
+                vm.selectAllRequiredInit = false;
+            } else {
+                vm.selectAll = true;
+                vm.selectAllInit = true;
+                vm.selectAllRequiredInit = false;
+            }
+		};
+        
+           
+        }
+    </script>             
+</apex:component>

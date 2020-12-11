@@ -3,10 +3,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>flavor</name>
-                    <value>list</value>
-                </componentInstanceProperties>
                 <componentName>home:newsPanel</componentName>
             </componentInstance>
         </itemInstances>

@@ -1,0 +1,2426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is a container for all individual OE Meetings.  An Account may be associated to 0 to many Open Enrollment Meeting (Groupings).</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Branding__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Branding__c)</formula>
+        <label>Account Branding</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Region__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>This is the account for which the OE meetings will be recorded.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select an account if this set of meetings is related to an account in Salesforce.com.</inlineHelpText>
+        <label>Account Legal Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Open Enrollment Meetings</relationshipLabel>
+        <relationshipName>Open_Enrollment_Meetings</relationshipName>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Additional Details / Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Additional_Plan_Types_Programs__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES(Plan_Type__c,&apos;CA - Vivity&apos;),&apos;CA - Vivity, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;CA - SIMNSA&apos;),&apos;CA - SIMNSA, &apos;, null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;CA - Healthy Support&apos;),&apos;CA - Healthy Support, &apos;,null)+
+IF(INCLUDES(Plan_Type__c,&apos;CA - Elements Choice&apos;),&apos;CA - Elements Choice, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;CA - Elements Choice EQ&apos;),&apos;CA - Elements Choice EQ, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;CA - First Impressions&apos;),&apos;CA - First Impressions, &apos;,null)+
+IF(INCLUDES(Plan_Type__c,&apos;CA - Transition Assistance&apos;),&apos;CA - Transition Assistance, &apos;,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Additional Plan Types/Programs</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Additional_Vendor_Name__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Other Carrier Details / Comments</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Vendors__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Vendors</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>Sole_Carrier_or_Multi_Carriers__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Medical - Aetna</fullName>
+                    <default>false</default>
+                    <label>Medical - Aetna</label>
+                </value>
+                <value>
+                    <fullName>Medical - Assurant Health</fullName>
+                    <default>false</default>
+                    <label>Medical - Assurant Health</label>
+                </value>
+                <value>
+                    <fullName>Medical - Cigna</fullName>
+                    <default>false</default>
+                    <label>Medical - Cigna</label>
+                </value>
+                <value>
+                    <fullName>Medical - Coventry</fullName>
+                    <default>false</default>
+                    <label>Medical - Coventry</label>
+                </value>
+                <value>
+                    <fullName>Medical - First Health</fullName>
+                    <default>false</default>
+                    <label>Medical - First Health</label>
+                </value>
+                <value>
+                    <fullName>Medical - Great West Healthcare</fullName>
+                    <default>false</default>
+                    <label>Medical - Great West Healthcare</label>
+                </value>
+                <value>
+                    <fullName>Medical - Kaiser</fullName>
+                    <default>false</default>
+                    <label>Medical - Kaiser</label>
+                </value>
+                <value>
+                    <fullName>Medical - United Healthcare</fullName>
+                    <default>false</default>
+                    <label>Medical - United Healthcare</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - Aflac</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - Aflac</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - Colonial</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - Colonial</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - CVS / Caremark</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - CVS / Caremark</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - Delta Dental</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - Delta Dental</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - Express Scripts</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - Express Scripts</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - Guardian</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - Guardian</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - Medical Eye Services (MES)</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - Medical Eye Services (MES)</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - MetLife</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - MetLife</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - PayFlex</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - PayFlex</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - VSP Vision Care</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - VSP Vision Care</label>
+                </value>
+                <value>
+                    <fullName>Rx/Specialty/FSA - Wageworks</fullName>
+                    <default>false</default>
+                    <label>Rx/Specialty/FSA - Wageworks</label>
+                </value>
+                <value>
+                    <fullName>Other - List Below</fullName>
+                    <default>false</default>
+                    <label>Other - List Below</label>
+                </value>
+                <value>
+                    <fullName>Dental</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Dental</label>
+                </value>
+                <value>
+                    <fullName>EAP</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>EAP</label>
+                </value>
+                <value>
+                    <fullName>FSA</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>FSA</label>
+                </value>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Rx</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Rx</label>
+                </value>
+                <value>
+                    <fullName>Vision</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Vision</label>
+                </value>
+                <value>
+                    <fullName>Wellness</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Wellness</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Medical - Aetna</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Medical - Assurant Health</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Medical - Cigna</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Medical - Coventry</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Medical - First Health</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Medical - Great West Healthcare</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Medical - Kaiser</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Medical - United Healthcare</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - Aflac</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - Colonial</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - CVS / Caremark</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - Delta Dental</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - Express Scripts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - Guardian</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - Medical Eye Services (MES)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - MetLife</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - PayFlex</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - VSP Vision Care</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Rx/Specialty/FSA - Wageworks</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Multi Carrier</controllingFieldValue>
+                <valueName>Other - List Below</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Alongside_Kaiser__c</fullName>
+        <externalId>false</externalId>
+        <label>Alongside Kaiser</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Ancillary_Programs__c</fullName>
+        <externalId>false</externalId>
+        <formula>iF(INCLUDES(Plan_Type__c,&apos;Anthem Health Marketplace/Bloom&apos;),&apos;Anthem Health Marketplace/Bloom, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - FSA&apos;),&apos;ANC - FSA, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - Dental&apos;),&apos;ANC - Dental, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - Basic Life&apos;),&apos;ANC - Basic Life, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - Voluntary Life&apos;),&apos;ANC - Voluntary Life, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - AD&amp;D&apos;),&apos;ANC - AD&amp;D, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - STD&apos;),&apos;ANC - STD, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - LTD&apos;),&apos;ANC - LTD, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - Rx&apos;),&apos;ANC - Rx, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - Vision&apos;),&apos;ANC - Vision, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - Anthem Health Guide&apos;),&apos;ANC - Anthem Health Guide, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - Integrated Health Model&apos;),&apos;ANC - Integrated Health Model, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - Voluntary STD&apos;),&apos;ANC - Voluntary STD, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - Voluntary LTD&apos;),&apos;ANC - Voluntary LTD, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;ANC - Voluntary AD&amp;D&apos;),&apos;ANC - Voluntary AD&amp;D, &apos;,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ancillary Programs</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anthem_Entity__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Anthem_Entity__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Anthem Entity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anthem_Website__c</fullName>
+        <description>Account Anthem Website</description>
+        <externalId>false</externalId>
+        <formula>Account__r.Website</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Anthem Website</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anthem_Websites__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Anthem Websites</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Are_specialty_lines_being_offered__c</fullName>
+        <description>for Specialty team</description>
+        <externalId>false</externalId>
+        <label>Are specialty lines being offered?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Case_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Size</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pooled - Major Accounts 100-125</fullName>
+                    <default>false</default>
+                    <label>Pooled - Major Accounts 100-125</label>
+                </value>
+                <value>
+                    <fullName>Pooled - Major Accounts 126-300</fullName>
+                    <default>false</default>
+                    <label>Pooled - Major Accounts 126-300</label>
+                </value>
+                <value>
+                    <fullName>Non-Pooled - Major Accounts 126-999</fullName>
+                    <default>false</default>
+                    <label>Non-Pooled - Major Accounts 126-999</label>
+                </value>
+                <value>
+                    <fullName>Non-Pooled - Special Accounts (Local Groups 1000+)</fullName>
+                    <default>false</default>
+                    <label>Non-Pooled - Special Accounts (Local Groups 1000+)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Arrangement__c</fullName>
+        <description>Multi-select, visible to National, Local Sales and National Open Enrollment.</description>
+        <externalId>false</externalId>
+        <label>Client Arrangement</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New Business</fullName>
+                    <default>false</default>
+                    <label>New Business</label>
+                </value>
+                <value>
+                    <fullName>Renewal - Growth Opportunity</fullName>
+                    <default>false</default>
+                    <label>Renewal - Growth Opportunity</label>
+                </value>
+                <value>
+                    <fullName>Renewal – Full Replacement</fullName>
+                    <default>false</default>
+                    <label>Renewal – Full Replacement</label>
+                </value>
+                <value>
+                    <fullName>Renewal – Partial Replacement</fullName>
+                    <default>false</default>
+                    <label>Renewal – Partial Replacement</label>
+                </value>
+                <value>
+                    <fullName>Renewal – Minimal Changes</fullName>
+                    <default>false</default>
+                    <label>Renewal – Minimal Changes</label>
+                </value>
+                <value>
+                    <fullName>Renewal – Additional Plan Offerings</fullName>
+                    <default>false</default>
+                    <label>Renewal – Additional Plan Offerings</label>
+                </value>
+                <value>
+                    <fullName>Renewal – No Changes</fullName>
+                    <default>false</default>
+                    <label>Renewal – No Changes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Client_Drivers_Issues_Risks__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this space to list out any notable Client Drivers, Issues / Risks, Talking Points, and Division Names.</inlineHelpText>
+        <label>Client Drivers, Issues / Risks</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>This field is for comments for the group of meetings</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a comment here for all meetings in the grouping (not for a single meeting).</inlineHelpText>
+        <label>Comments</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <description>This field is for the name of the client if the client is not in Salesforce.com</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the company name if the client is not in Salesforce.com</inlineHelpText>
+        <label>Company Name</label>
+        <length>90</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost_Center_Local__c</fullName>
+        <description>Local Users Access Only</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Cost Center - Local</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Center_National__c</fullName>
+        <description>National Users Access Only</description>
+        <externalId>false</externalId>
+        <label>Cost Center - National</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>National - Northeast - 5360500300</fullName>
+                    <default>false</default>
+                    <label>National - Northeast - 5360500300</label>
+                </value>
+                <value>
+                    <fullName>National - Central - 5100168000</fullName>
+                    <default>false</default>
+                    <label>National - Central - 5100168000</label>
+                </value>
+                <value>
+                    <fullName>National - Southeast - 5100167100</fullName>
+                    <default>false</default>
+                    <label>National - Southeast - 5100167100</label>
+                </value>
+                <value>
+                    <fullName>National - West - 5100167800</fullName>
+                    <default>false</default>
+                    <label>National - West - 5100167800</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Domestic_Partner_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Domestic Partner Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Same Sex</fullName>
+                    <default>false</default>
+                    <label>Same Sex</label>
+                </value>
+                <value>
+                    <fullName>Opposite Sex</fullName>
+                    <default>false</default>
+                    <label>Opposite Sex</label>
+                </value>
+                <value>
+                    <fullName>Both</fullName>
+                    <default>false</default>
+                    <label>Both</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Domestic_Partner__c</fullName>
+        <externalId>false</externalId>
+        <label>Domestic Partner?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Dress_Code_for_Event__c</fullName>
+        <externalId>false</externalId>
+        <label>Dress Code for Event</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Business Casual</fullName>
+                    <default>false</default>
+                    <label>Business Casual</label>
+                </value>
+                <value>
+                    <fullName>Business Formal</fullName>
+                    <default>false</default>
+                    <label>Business Formal</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Exchange__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Account__r.Exchange__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Exchange</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.GroupNumbers__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Size__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Group_Size__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Size</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>If_existing_how_many_years_with_Anthem__c</fullName>
+        <externalId>false</externalId>
+        <formula>(TODAY()- Account__r.Original_Effective_Date__c ) / 365</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>If existing, how many years with Anthem?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Facilitator_Recruitment_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Facilitator Needed for Any Meeting?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Is_this_a_voluntary_arrangement__c</fullName>
+        <description>for Specialty Reporting</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If voluntary arrangement is yes, then be sure to include the voluntary plan type(s).</inlineHelpText>
+        <label>Is this a voluntary arrangement?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Are_specialty_lines_being_offered__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Logged_In_User_Profile__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.ProfileName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Logged In User Profile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market_Sub_Segment__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Market_Sub_Segment__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Market Sub Segment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical_Programs__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES(Plan_Type__c,&apos;Med - Blue Priority&apos;),&apos;Med - Blue Priority, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - EPO&apos;),&apos;Med - EPO, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - HMO&apos;),&apos;Med - HMO, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - JAA&apos;),&apos;Med - JAA, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - POS&apos;),&apos;Med - POS, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - PPO&apos;),&apos;Med - PPO, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - CDHP – HSA&apos;),&apos;Med - CDHP – HSA, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - CDHP – HRA&apos;),&apos;Med - CDHP – HRA, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - CDHP-HIA&apos;),&apos;Med - CDHP-HIA, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - Select HMO&apos;),&apos;Med - Select HMO, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - Select Plus HMO&apos;),&apos;Med - Select Plus HMO, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - Priority Select HMO&apos;),&apos;Med - Priority Select HMO, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - Select PPO&apos;),&apos;Med - Select PPO, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;Med - Live Health Online&apos;),&apos;Med - Live Health Online, &apos;,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Medical Programs</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member_Customer_Service_Hrs_of_Operation__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Hours of Operation will auto-populate upon saving for California users</inlineHelpText>
+        <label>Member Customer Service Hrs of Operation</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member_Customer_Service_Telephone__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Member Customer Service Telephone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Member_Customer_Service_Timezone__c</fullName>
+        <externalId>false</externalId>
+        <label>Member Customer Service Timezone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Eastern Standard Time</fullName>
+                    <default>false</default>
+                    <label>Eastern Standard Time</label>
+                </value>
+                <value>
+                    <fullName>Central Standard Time</fullName>
+                    <default>false</default>
+                    <label>Central Standard Time</label>
+                </value>
+                <value>
+                    <fullName>Mountain Standard Time</fullName>
+                    <default>false</default>
+                    <label>Mountain Standard Time</label>
+                </value>
+                <value>
+                    <fullName>Pacific Standard Time</fullName>
+                    <default>false</default>
+                    <label>Pacific Standard Time</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OE_Coordinator_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is from the Facilitator account.  It will be populated by a workflow.  The OE Coordinator is now a Facilitator role on the facilitator account so they can manage who the facilitator will be should there be personnell changes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be populated when you save the record.  There is no need to enter the OE Coordinator..</inlineHelpText>
+        <label>OE Coordinator</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.Facilitator_Type__c</field>
+                <operation>equals</operation>
+                <value>OE Coordinator</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Open Enrollment Meetings</relationshipLabel>
+        <relationshipName>Open_Enrollment_Meetings</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OE_Meetings_Group_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OE Meetings Group ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Enrollment_Micro_Site__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Open Enrollment Micro-Site</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Original_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Original_Effective_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Original Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Other_Carrier_Takeover__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Other Carrier Takeover</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Dress_Code_Details__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Other Dress Code Details</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Performance_Guarantees_Comments__c</fullName>
+        <description>Dependency on Performance Guarantees field - Only display if YES is select above</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Performance Guarantees Comments</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Performance_Guarantees__c</fullName>
+        <externalId>false</externalId>
+        <label>Performance Guarantees</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Permission_set__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF($Permission.OE_Submit_Meetings ,&quot;OESubmitMeetings&quot;,&quot;&quot;)</formula>
+        <label>Permission set</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plan_Changes__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Plan Changes</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Plan_Type__c</fullName>
+        <description>The Plan Type for the meetings group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Product offering for this group of meetings.</inlineHelpText>
+        <label>Plan Type</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>MED     CDHP- HIA</fullName>
+                    <default>false</default>
+                    <label>MED     CDHP- HIA</label>
+                </value>
+                <value>
+                    <fullName>MED     CDHP - HRA</fullName>
+                    <default>false</default>
+                    <label>MED     CDHP - HRA</label>
+                </value>
+                <value>
+                    <fullName>MED     CDHP -HSA</fullName>
+                    <default>false</default>
+                    <label>MED     CDHP - HSA</label>
+                </value>
+                <value>
+                    <fullName>MED     POS</fullName>
+                    <default>false</default>
+                    <label>MED     POS</label>
+                </value>
+                <value>
+                    <fullName>MED     PPO</fullName>
+                    <default>false</default>
+                    <label>MED     PPO</label>
+                </value>
+                <value>
+                    <fullName>MED     EPO</fullName>
+                    <default>false</default>
+                    <label>MED     EPO</label>
+                </value>
+                <value>
+                    <fullName>MED     HMO</fullName>
+                    <default>false</default>
+                    <label>MED     HMO</label>
+                </value>
+                <value>
+                    <fullName>MED     JAA</fullName>
+                    <default>false</default>
+                    <label>MED     JAA</label>
+                </value>
+                <value>
+                    <fullName>MED     LiveHealth Online</fullName>
+                    <default>false</default>
+                    <label>MED     LiveHealth Online</label>
+                </value>
+                <value>
+                    <fullName>MED     Engage</fullName>
+                    <default>false</default>
+                    <label>MED     Engage</label>
+                </value>
+                <value>
+                    <fullName>CA      Elements Choice</fullName>
+                    <default>false</default>
+                    <label>CA      Elements Choice</label>
+                </value>
+                <value>
+                    <fullName>CA      Elements Choice EQ</fullName>
+                    <default>false</default>
+                    <label>CA      Elements Choice EQ</label>
+                </value>
+                <value>
+                    <fullName>CA      First Impressions</fullName>
+                    <default>false</default>
+                    <label>CA      First Impressions</label>
+                </value>
+                <value>
+                    <fullName>CA      SIMNSA</fullName>
+                    <default>false</default>
+                    <label>CA      SIMNSA</label>
+                </value>
+                <value>
+                    <fullName>CA      Transition Assistance</fullName>
+                    <default>false</default>
+                    <label>CA      Transition Assistance</label>
+                </value>
+                <value>
+                    <fullName>CA      Vivity</fullName>
+                    <default>false</default>
+                    <label>CA      Vivity</label>
+                </value>
+                <value>
+                    <fullName>Group Retiree   MA HMO</fullName>
+                    <default>false</default>
+                    <label>Group Retiree   MA HMO</label>
+                </value>
+                <value>
+                    <fullName>Group Retiree   MAPD-HMO</fullName>
+                    <default>false</default>
+                    <label>Group Retiree   MAPD-HMO</label>
+                </value>
+                <value>
+                    <fullName>Group Retiree   MAPD- PPO</fullName>
+                    <default>false</default>
+                    <label>Group Retiree   MAPD- PPO</label>
+                </value>
+                <value>
+                    <fullName>Group Retiree   MA PPO</fullName>
+                    <default>false</default>
+                    <label>Group Retiree   MA PPO</label>
+                </value>
+                <value>
+                    <fullName>Group Retiree   PDP</fullName>
+                    <default>false</default>
+                    <label>Group Retiree   PDP</label>
+                </value>
+                <value>
+                    <fullName>HW – Group Retiree - Silver Sneakers</fullName>
+                    <default>false</default>
+                    <label>HW – Group Retiree - Silver Sneakers</label>
+                </value>
+                <value>
+                    <fullName>HW      24/7 Nurseline</fullName>
+                    <default>false</default>
+                    <label>HW      24/7 Nurseline</label>
+                </value>
+                <value>
+                    <fullName>HW      AIM</fullName>
+                    <default>false</default>
+                    <label>HW      AIM</label>
+                </value>
+                <value>
+                    <fullName>HW      Anthem Health Guide</fullName>
+                    <default>false</default>
+                    <label>HW      Anthem Health Guide</label>
+                </value>
+                <value>
+                    <fullName>HW      Anthem Health Rewards</fullName>
+                    <default>false</default>
+                    <label>HW      Anthem Health Rewards</label>
+                </value>
+                <value>
+                    <fullName>HW      Anthem Mobile Health</fullName>
+                    <default>false</default>
+                    <label>HW      Anthem Mobile Health</label>
+                </value>
+                <value>
+                    <fullName>HW      Complex Care</fullName>
+                    <default>false</default>
+                    <label>HW      Complex Care</label>
+                </value>
+                <value>
+                    <fullName>HW      ConditionCare</fullName>
+                    <default>false</default>
+                    <label>HW      ConditionCare</label>
+                </value>
+                <value>
+                    <fullName>HW      EAP</fullName>
+                    <default>false</default>
+                    <label>HW      EAP</label>
+                </value>
+                <value>
+                    <fullName>HW      Future Moms</fullName>
+                    <default>false</default>
+                    <label>HW      Future Moms</label>
+                </value>
+                <value>
+                    <fullName>HW      Healthy Lifestyles</fullName>
+                    <default>false</default>
+                    <label>HW      Healthy Lifestyles</label>
+                </value>
+                <value>
+                    <fullName>HW      Integrated Health Model</fullName>
+                    <default>false</default>
+                    <label>HW      Integrated Health Model</label>
+                </value>
+                <value>
+                    <fullName>HW      MyHealth Advantage</fullName>
+                    <default>false</default>
+                    <label>HW      MyHealth Advantage</label>
+                </value>
+                <value>
+                    <fullName>HW      MyHealth Assessment</fullName>
+                    <default>false</default>
+                    <label>HW      MyHealth Assessment</label>
+                </value>
+                <value>
+                    <fullName>HW      MyHealth Coach</fullName>
+                    <default>false</default>
+                    <label>HW      MyHealth Coach</label>
+                </value>
+                <value>
+                    <fullName>HW      Total Health Total You</fullName>
+                    <default>false</default>
+                    <label>HW      Total Health Total You</label>
+                </value>
+                <value>
+                    <fullName>HW      Worksite Wellness</fullName>
+                    <default>false</default>
+                    <label>HW      Worksite Wellness</label>
+                </value>
+                <value>
+                    <fullName>ANC     Rx</fullName>
+                    <default>false</default>
+                    <label>ANC     Rx</label>
+                </value>
+                <value>
+                    <fullName>ANC     Dental</fullName>
+                    <default>false</default>
+                    <label>ANC     Dental</label>
+                </value>
+                <value>
+                    <fullName>ANC     Vision</fullName>
+                    <default>false</default>
+                    <label>ANC     Vision</label>
+                </value>
+                <value>
+                    <fullName>ANC     AD&amp;D</fullName>
+                    <default>false</default>
+                    <label>ANC     AD&amp;D</label>
+                </value>
+                <value>
+                    <fullName>ANC     FSA</fullName>
+                    <default>false</default>
+                    <label>ANC     FSA</label>
+                </value>
+                <value>
+                    <fullName>ANC     Basic Life</fullName>
+                    <default>false</default>
+                    <label>ANC     Basic Life</label>
+                </value>
+                <value>
+                    <fullName>ANC     LTD</fullName>
+                    <default>false</default>
+                    <label>ANC     LTD</label>
+                </value>
+                <value>
+                    <fullName>ANC     STD</fullName>
+                    <default>false</default>
+                    <label>ANC     STD</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Dental</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Dental</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Vision</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Vision</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary AD&amp;D</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary AD&amp;D</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Life</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Life</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary LTD</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary LTD</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary STD</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary STD</label>
+                </value>
+                <value>
+                    <fullName>ANC     Commuter Benefits</fullName>
+                    <default>false</default>
+                    <label>ANC     Commuter Benefits</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Accidental Low Plan</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Accidental Low Plan</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Accidental Med Plan</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Accidental Med Plan</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Accidental High Plan</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Accidental High Plan</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Hospital Low Plan</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Hospital Low Plan</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Hospital High Plan</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Hospital High Plan</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Critical Illness</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Critical Illness</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Optional Life</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Optional Life</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Optional Life w/ AD&amp;D</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Optional Life w/ AD&amp;D</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Buy Up STD</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Buy Up STD</label>
+                </value>
+                <value>
+                    <fullName>ANC     Voluntary Buy Up LTD</fullName>
+                    <default>false</default>
+                    <label>ANC     Voluntary Buy Up LTD</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(And(ISPICKVAL(Sole_Carrier_or_Multi_Carriers__c,&apos;Multi Carrier&apos;),
+or( INCLUDES(Client_Arrangement__c,&apos;New Business&apos;),INCLUDES(Client_Arrangement__c,&apos;Renewal - Growth Opportunity&apos;),INCLUDES(Client_Arrangement__c,&apos;Renewal – Full Replacement&apos;))),&apos;1A&apos;,
+IF(And(ISPICKVAL(Sole_Carrier_or_Multi_Carriers__c,&apos;Sole Carrier&apos;),
+or( INCLUDES(Client_Arrangement__c,&apos;New Business&apos;),INCLUDES(Client_Arrangement__c,&apos;Renewal - Growth Opportunity&apos;),INCLUDES(Client_Arrangement__c,&apos;Renewal – Full Replacement&apos;))),&apos;1B&apos;,
+IF(And(ISPICKVAL(Sole_Carrier_or_Multi_Carriers__c,&apos;Multi Carrier&apos;),
+or(INCLUDES(Client_Arrangement__c,&apos;Renewal – Partial Replacement&apos;),INCLUDES(Client_Arrangement__c,&apos;Renewal – Minimal Changes&apos;),INCLUDES(Client_Arrangement__c,&apos;Renewal – Additional Plan Offerings&apos;))),&apos;2A&apos;,
+IF(And(ISPICKVAL(Sole_Carrier_or_Multi_Carriers__c,&apos;Sole Carrier&apos;),
+or( INCLUDES(Client_Arrangement__c,&apos;Renewal – Partial Replacement&apos;),INCLUDES(Client_Arrangement__c,&apos;Renewal – Minimal Changes&apos;),INCLUDES(Client_Arrangement__c,&apos;Renewal – Additional Plan Offerings&apos;))),&apos;2B&apos;,
+IF(And(ISPICKVAL(Sole_Carrier_or_Multi_Carriers__c,&apos;Multi Carrier&apos;),OR(INCLUDES(Client_Arrangement__c,&apos;Renewal – No Changes&apos;),INCLUDES(Client_Arrangement__c,&apos;&apos;))),&apos;3A&apos;,IF(And(ISPICKVAL(Sole_Carrier_or_Multi_Carriers__c,&apos;Sole Carrier&apos;),Or(INCLUDES(Client_Arrangement__c,&apos;Renewal – No Changes&apos;),INCLUDES(Client_Arrangement__c,&apos;&apos;))),&apos;3B&apos;,&apos;&apos;))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Priority</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_was_Cloned__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Super Clone will check this box when the record is created by user cloning the set of meetings.</description>
+        <externalId>false</externalId>
+        <label>Record was Cloned</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( Account__r.Renewal_Month_Medical__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Renewal Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Request_is_from__c</fullName>
+        <externalId>false</externalId>
+        <label>Request is from</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Commercial Medical</fullName>
+                    <default>true</default>
+                    <label>Commercial Medical</label>
+                </value>
+                <value>
+                    <fullName>Group Retiree Solutions</fullName>
+                    <default>false</default>
+                    <label>Group Retiree Solutions</label>
+                </value>
+                <value>
+                    <fullName>Voluntary Specialty</fullName>
+                    <default>false</default>
+                    <label>Voluntary Specialty</label>
+                </value>
+                <value>
+                    <fullName>Specialty Only</fullName>
+                    <default>false</default>
+                    <label>Specialty Only</label>
+                </value>
+                <value>
+                    <fullName>Group Retiree Solution</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Group Retiree Solution</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SFDC_Legacy_OEM_ID__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <label>SFDC Legacy OEM ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Situs_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Account__r.Situs_State__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Situs State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sole_Carrier_or_Multi_Carriers__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If there are other Vendors please list here:</inlineHelpText>
+        <label>Carrier Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sole Carrier</fullName>
+                    <default>false</default>
+                    <label>Sole Carrier</label>
+                </value>
+                <value>
+                    <fullName>Multi Carrier</fullName>
+                    <default>false</default>
+                    <label>Multi Carrier</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>National Accounts</fullName>
+                    <default>false</default>
+                    <label>National Accounts</label>
+                </value>
+                <value>
+                    <fullName>California</fullName>
+                    <default>false</default>
+                    <label>California</label>
+                </value>
+                <value>
+                    <fullName>Strategic Accounts</fullName>
+                    <default>false</default>
+                    <label>Strategic Accounts</label>
+                </value>
+                <value>
+                    <fullName>Colorado</fullName>
+                    <default>false</default>
+                    <label>Colorado</label>
+                </value>
+                <value>
+                    <fullName>Connecticut</fullName>
+                    <default>false</default>
+                    <label>Connecticut</label>
+                </value>
+                <value>
+                    <fullName>Georgia</fullName>
+                    <default>false</default>
+                    <label>Georgia</label>
+                </value>
+                <value>
+                    <fullName>Indiana</fullName>
+                    <default>false</default>
+                    <label>Indiana</label>
+                </value>
+                <value>
+                    <fullName>Interplan</fullName>
+                    <default>false</default>
+                    <label>Interplan</label>
+                </value>
+                <value>
+                    <fullName>Kentucky</fullName>
+                    <default>false</default>
+                    <label>Kentucky</label>
+                </value>
+                <value>
+                    <fullName>Labor Accounts</fullName>
+                    <default>false</default>
+                    <label>Labor Accounts</label>
+                </value>
+                <value>
+                    <fullName>Missouri</fullName>
+                    <default>false</default>
+                    <label>Missouri</label>
+                </value>
+                <value>
+                    <fullName>Nevada</fullName>
+                    <default>false</default>
+                    <label>Nevada</label>
+                </value>
+                <value>
+                    <fullName>New York</fullName>
+                    <default>false</default>
+                    <label>New York</label>
+                </value>
+                <value>
+                    <fullName>Ohio</fullName>
+                    <default>false</default>
+                    <label>Ohio</label>
+                </value>
+                <value>
+                    <fullName>Virginia</fullName>
+                    <default>false</default>
+                    <label>Virginia</label>
+                </value>
+                <value>
+                    <fullName>Wisconsin</fullName>
+                    <default>false</default>
+                    <label>Wisconsin</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submarket__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( Account__r.Submarket__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Submarket</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wellness_Programs__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES(Plan_Type__c,&apos;HW - 24/7 NurseLine&apos;),&apos;HW - 24/7 NurseLine, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - Anthem Health Rewards&apos;),&apos;HW - Anthem Health Rewards, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - AIM&apos;),&apos;HW - AIM, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - Behavioral Health&apos;),&apos;HW - Behavioral Health, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - ComplexCare&apos;),&apos;HW - ComplexCare, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - ConditionCare&apos;),&apos;HW - ConditionCare, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - EAP&apos;),&apos;HW - EAP, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - Future Moms&apos;),&apos;HW - Future Moms, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - Healthy Lifestyles&apos;),&apos;HW - Healthy Lifestyles, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - MyHealth Advantage&apos;),&apos;HW - MyHealth Advantage, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - MyHealth Assessment&apos;),&apos;HW - MyHealth Assessment, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - MyHealth Coach&apos;),&apos;HW - MyHealth Coach, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - Worksite Wellness&apos;),&apos;HW - Worksite Wellness, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - Anthem Health Guide&apos;),&apos;HW - Anthem Health Guide, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - Integrated Health Model&apos;),&apos;HW - Integrated Health Model, &apos;,null)+ 
+IF(INCLUDES(Plan_Type__c,&apos;HW - Anthem Mobile Health&apos;),&apos;HW - Anthem Mobile Health, &apos;,null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Wellness Programs</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X10__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Account Managers will attach a file of the meetings for upload by OE coordinator when there are 10 or more</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fill out and attach an Alternate Submission Form when the meetings number is 10 or greater.</inlineHelpText>
+        <label>10+ Meetings - Alternate Submission</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Open Enrollment Meetings</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Source__c</columns>
+        <columns>OE_Coordinator_Contact__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Sales_Open_Enrollment_Meeting_Grid</fullName>
+        <columns>NAME</columns>
+        <columns>Request_is_from__c</columns>
+        <columns>Anthem_Entity__c</columns>
+        <columns>Account_Region__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Submarket__c</columns>
+        <columns>Group_Size__c</columns>
+        <columns>Account_Branding__c</columns>
+        <columns>Plan_Type__c</columns>
+        <columns>Client_Arrangement__c</columns>
+        <columns>Sole_Carrier_or_Multi_Carriers__c</columns>
+        <columns>Performance_Guarantees__c</columns>
+        <columns>Client_Drivers_Issues_Risks__c</columns>
+        <columns>Dress_Code_for_Event__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Sales - Open Enrollment Meeting Grid</label>
+    </listViews>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>OE Meeting Grouping Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Open Enrollment Meetings</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Comments__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>X10__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER.ALIAS</customTabListAdditionalFields>
+        <lookupFilterFields>NAME</lookupFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Comments__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>X10__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Additional_Vendor_Other</fullName>
+        <active>true</active>
+        <description>Require the field &apos;Additional Comments&apos; to be populated if &apos;Additional Vendor&apos; = Other</description>
+        <errorConditionFormula>AND(
+$Profile.Name  &lt;&gt; &quot;API User&quot;,
+INCLUDES( Additional_Vendors__c , &apos;Other - List Below&apos;)  &amp;&amp;   ISBLANK( Additional_Vendor_Name__c ))</errorConditionFormula>
+        <errorDisplayField>Additional_Vendor_Name__c</errorDisplayField>
+        <errorMessage>Please list additional Vendor Name(s)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CA_Strategy_Form_Details_section</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name &lt;&gt; &quot;API User&quot;,
+AND(Anthem_Entity__c =&quot;Local/Large Group&quot;,
+Situs_State__c =&quot;California&quot;,
+Submarket__c !=&quot;Strategic&quot;,
+NOT($Profile.Name = &apos;National Sales&apos;),
+NOT($Profile.Name = &apos;National Sales Dual&apos;),
+OR(ISPICKVAL(Case_Size__c,&quot;&quot; ),
+ISPICKVAL(Domestic_Partner__c,&quot;&quot; ),
+ISBLANK(Other_Carrier_Takeover__c))))</errorConditionFormula>
+        <errorMessage>Please ensure all the fields under ‘CA Strategy Form Details’ section are filled.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Carrier_Type</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name  &lt;&gt; &quot;API User&quot;,
+AND(ISPICKVAL(Sole_Carrier_or_Multi_Carriers__c,&apos;Multi Carrier&apos;),ISBLANK(Additional_Vendors__c)))</errorConditionFormula>
+        <errorDisplayField>Additional_Vendors__c</errorDisplayField>
+        <errorMessage>Please select Vendors</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cost_Center_Local_And_National_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(AND($Permission.OE_Submit_Meetings,ISBLANK( Cost_Center_Local__c ), Anthem_Entity__c  = &apos;Local/Large Group&apos;),AND($Permission.OE_Submit_Meetings,ISBLANK(TEXT(Cost_Center_National__c)),Anthem_Entity__c  = &apos;National Accounts&apos;))</errorConditionFormula>
+        <errorMessage>Please fill Cost Center fields</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Domestic_Partner</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name  &lt;&gt; &quot;API User&quot;,
+NOT($Profile.Name = &apos;National Sales&apos;),
+NOT($Profile.Name = &apos;National Sales Dual&apos;),
+ 
+ISPICKVAL(Domestic_Partner__c,&apos;Yes&apos;),
+ISBLANK(TEXT(Domestic_Partner_Type__c)
+))</errorConditionFormula>
+        <errorDisplayField>Domestic_Partner_Type__c</errorDisplayField>
+        <errorMessage>Please enter partner type</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Is_Facilitator_Recruitment_Required</fullName>
+        <active>false</active>
+        <description>If field &apos;Is Facilitator Recruitment Required?&apos; = Yes, the fields: Dress Code, Plan Changes, and Client Drivers must be populated | 18-Jun-De-activated due to RUAT defect # PRDCRM-36690</description>
+        <errorConditionFormula>AND(
+$Profile.Name  &lt;&gt; &quot;API User&quot;,
+ISPICKVAL(Is_Facilitator_Recruitment_Required__c ,&apos;Yes&apos;)&amp;&amp;(ISPICKVAL(Dress_Code_for_Event__c,&apos;&apos;) || 
+ISBLANK( Client_Drivers_Issues_Risks__c)
+))</errorConditionFormula>
+        <errorMessage>Please complete Strategy Form Details below;  Dress Code for event, Plan changes and Client Drivers are required fields.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Dress_Code_Details</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name  &lt;&gt; &quot;API User&quot;,
+And(ISPICKVAL( Dress_Code_for_Event__c , &apos;Other&apos;),
+ ISBLANK( Other_Dress_Code_Details__c) ))</errorConditionFormula>
+        <errorDisplayField>Other_Dress_Code_Details__c</errorDisplayField>
+        <errorMessage>Please enter additional dress code details</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Vendor_Comments</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(
+$Profile.Name  &lt;&gt; &quot;API User&quot;,
+AND(INCLUDES ( Additional_Vendors__c, &quot;Other - List Below&quot; ),ISBLANK(Additional_Vendor_Name__c)))</errorConditionFormula>
+        <errorDisplayField>Additional_Vendor_Name__c</errorDisplayField>
+        <errorMessage>Please enter vendor comments</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Performance_Guarantees</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+$Profile.Name  &lt;&gt; &quot;API User&quot;,
+AND(ISPICKVAL(Performance_Guarantees__c,&apos;Yes&apos;),ISBLANK(Performance_Guarantees_Comments__c)))</errorConditionFormula>
+        <errorDisplayField>Performance_Guarantees_Comments__c</errorDisplayField>
+        <errorMessage>Please enter comments.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Additional_Vendor</fullName>
+        <active>true</active>
+        <description>Executes if field &apos;Carrier Type&apos; = Multi Carrier and field &apos;Additional Vendors&apos; is null</description>
+        <errorConditionFormula>AND(
+$Profile.Name  &lt;&gt; &quot;API User&quot;,
+ISPICKVAL(Sole_Carrier_or_Multi_Carriers__c, &apos;Multi Carrier&apos;)  &amp;&amp;  ISBLANK(Additional_Vendors__c))</errorConditionFormula>
+        <errorDisplayField>Additional_Vendors__c</errorDisplayField>
+        <errorMessage>Please enter additional vendors</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Vendor_Names</fullName>
+        <active>false</active>
+        <description>Executes if field &apos;Carrier Type&apos; = Multi Carrier and field &apos;Additional Vendor = null</description>
+        <errorConditionFormula>AND(
+$Profile.Name  &lt;&gt; &quot;API User&quot;,
+ISPICKVAL(Sole_Carrier_or_Multi_Carriers__c, &apos;Multi Carrier&apos;)  &amp;&amp; ISBLANK(Additional_Vendor_Name__c))</errorConditionFormula>
+        <errorDisplayField>Additional_Vendor_Name__c</errorDisplayField>
+        <errorMessage>Please enter associated vendor names</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_is_voluntary_if_Yes_Specialty</fullName>
+        <active>false</active>
+        <description>If Are specialty lines being offered + Yes then “If yes, is this a voluntary arrangement?  is required</description>
+        <errorConditionFormula>AND(
+$Profile.Name  &lt;&gt; &quot;API User&quot;,
+AND(TEXT(Are_specialty_lines_being_offered__c) = &apos;Yes&apos; ,  ISBLANK( TEXT(Is_this_a_voluntary_arrangement__c) ) ))</errorConditionFormula>
+        <errorDisplayField>Is_this_a_voluntary_arrangement__c</errorDisplayField>
+        <errorMessage>When &apos;Are specialty lines being offered is Yes&apos; , then &apos;Is this a voluntary arrangement?&apos; is required.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Alternate_Intake_Meeting_Form</fullName>
+        <availability>online</availability>
+        <description>Form for alternate meetings</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Alternate Submission Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/sfc/p/S0000003Edxn/a/S0000000CmDL/k.cYqiE8DdbAq0m6JDNX5ebtKHwzhwDGnwKXXw7dzWQ</url>
+    </webLinks>
+    <webLinks>
+        <fullName>CA_Greater_South_LA_Materials_Order_Form</fullName>
+        <availability>online</availability>
+        <description>form stored in Chatter</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>CA Greater South and LA Materials Order Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://commercialgroup--c.na52.content.force.com/sfc/servlet.shepherd/version/download/0680W000004JzmZ?asPdf=false&amp;operationContext=CHATTER</url>
+    </webLinks>
+    <webLinks>
+        <fullName>CA_Northern_CA_Materials_Order_Form</fullName>
+        <availability>online</availability>
+        <description>form stored in Chatter</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>CA Northern CA Materials Order Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://commercialgroup--c.na52.content.force.com/sfc/servlet.shepherd/version/download/0680W000004JzmU?asPdf=false&amp;operationContext=CHATTER</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Clone_Group_and_Meetings</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Super Clone</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/dh_superclone__superclone?rid={!Open_Enrollment_Meetings__c.Id}&amp;cfg=CloneGroupMeetings</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Georgia_Materials_Order_Form</fullName>
+        <availability>online</availability>
+        <description>Materials order form specific for Georgia</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Georgia Materials Order Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://commercialgroup--c.na52.content.force.com/sfc/servlet.shepherd/version/download/0680W000004KI8j?asPdf=false&amp;operationContext=CHATTER</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Large_Group_Strategy_Form</fullName>
+        <availability>online</availability>
+        <description>Strategy form for Large Group</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Large Group Strategy Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://c.na14.content.force.com/sfc/servlet.shepherd/version/download/068d00000020wZY?asPdf=false&amp;operationContext=CHATTER</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Large_Group_Strategy_Form1</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Large Group Strategy Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://composer.congamerge.com
+?sessionId={!API.Session_ID} 
+&amp;serverUrl={!API.Partner_Server_URL_80} 
+&amp;id={!Open_Enrollment_Meetings__c.Id} 
+&amp;ReportId=00Od0000005Jdkd,00Od0000005JdlC
+&amp;DS7=3
+&amp;AC0=1
+&amp;DefaultPDF=1
+&amp;TemplateId=a0td000000AFpQ9
+&amp;SC0=1
+&amp;SC1=Documents
+&amp;DocFolderID=00ld0000002ms2D
+&amp;OFN=LGSF+-+{!Open_Enrollment_Meetings__c.Account__c}+-+{!Open_Enrollment_Meetings__c.Name}+{!Today}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Link_to_OE_Meeting_Groups_for_Account</fullName>
+        <availability>online</availability>
+        <description>This link will take the user back to the meeting group related list on the account</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Link to OE Meeting Groups for Account</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!Open_Enrollment_Meetings__c.AccountId__c}#{!Open_Enrollment_Meetings__c.AccountId__c}_00NZ0000001DaBK_target</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Local_Strategy_Form</fullName>
+        <availability>online</availability>
+        <description>Cloned from National Strategy form</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Local Strategy Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://composer.congamerge.com?sessionId={!API.Session_ID} 
+&amp;serverUrl={!API.Partner_Server_URL_80} 
+&amp;id={!Open_Enrollment_Meetings__c.Id} 
+&amp;ReportId=00Od0000005Jdkd,00Od0000005JdlC 
+&amp;DS7=13
+&amp;AC0=1 
+&amp;DefaultPDF=1 
+&amp;TemplateId=a0td000000AFpQJ 
+&amp;SC0=1 
+&amp;SC1=Documents 
+&amp;DocFolderID=00ld0000002ms23 
+&amp;OFN=NSF+-+{!Open_Enrollment_Meetings__c.Account__c}+-+{!Open_Enrollment_Meetings__c.Name}+{!Today}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Materials_Order_Form_Labor</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Labor Materials Order Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/sfc/servlet.shepherd/version/download/068d00000020xy5?asPdf=false&amp;operationContext=CHATTER</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Materials_Order_Form_Strategic</fullName>
+        <availability>online</availability>
+        <description>form stored in Chatter</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Strategic Materials Order Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://commercialgroup--c.na52.content.force.com/sfc/servlet.shepherd/version/download/0680W000004JxTu?asPdf=false&amp;operationContext=CHATTER</url>
+    </webLinks>
+    <webLinks>
+        <fullName>National_Strategy_Form</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>National Strategy Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://composer.congamerge.com
+?sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_80}
+&amp;id={!Open_Enrollment_Meetings__c.Id}
+&amp;ReportId=00Od0000005Jdkd,00Od0000005JdlC
+&amp;DS7={!IF(OR (User.Profile = &quot;System Administrator&quot;, User.Profile = &quot;SFDC Program Management&quot;), &quot;0&quot;, &quot;3&quot;)}
+&amp;AC0=1
+&amp;DefaultPDF=1
+&amp;TemplateId=a0td000000AFpQJ
+&amp;SC0=1
+&amp;SC1=Documents
+&amp;DocFolderID=00ld0000002ms23
+&amp;OFN=NSF+-+{!Open_Enrollment_Meetings__c.Account__c}+-+{!Open_Enrollment_Meetings__c.Name}+{!Today}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_OE_Meetings</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Open Enrollment Meetings</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a1D/e?CF00Nd0000007kJJL={!Account.Name}
+&amp;CF00Nd0000007kJJL_lkid={!Account.Id}
+&amp;00Nd0000009Afgi={!Account.Website}
+&amp;retURL={!Account.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>OE_Materials_Order_Form</fullName>
+        <availability>online</availability>
+        <description>Link to the order form for OE materials located in the Chatter Group</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>ANA OE Materials Order form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/sfc/servlet.shepherd/document/download/069S0000000aSmFIAU?operationContext=S1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>OE_Meetings_Order_Summary</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>OE Meetings Order Summary</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O17000000Wbwn?pv={!Open_Enrollment_Meetings__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Strategic_Strategy_Form</fullName>
+        <availability>online</availability>
+        <description>Strategy form for Strategic</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Strategic Strategy Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://c.na14.content.force.com/sfc/servlet.shepherd/version/download/068d00000020wZ9?asPdf=false&amp;operationContext=CHATTER</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Strategic_Strategy_Form1</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Strategic Strategy Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://composer.congamerge.com
+?sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_80}
+&amp;id={!Open_Enrollment_Meetings__c.Id}
+&amp;ReportId=00Od0000005Jdkd,00Od0000005JdlC
+&amp;DS7=3
+&amp;AC0=1
+&amp;DefaultPDF=1
+&amp;TemplateId=a0td000000AFpQT
+&amp;SC0=1
+&amp;SC1=Documents
+&amp;DocFolderID=00ld0000002ms28
+&amp;OFN=SSF+-+{!Open_Enrollment_Meetings__c.Account__c}+-+{!Open_Enrollment_Meetings__c.Name}+{!Today}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Strategy_Form</fullName>
+        <availability>online</availability>
+        <description>test</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>OE  Strategy Form</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://c.na14.content.force.com/sfc/servlet.shepherd/version/download/068d0000000xJt6?asPdf=false&amp;operationContext=CHATTER</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Upload_Alternate_Submission</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Upload Alternate Submission</masterLabel>
+        <openType>replace</openType>
+        <page>UploadForOpenEnrollment</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

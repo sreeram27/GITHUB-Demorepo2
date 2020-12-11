@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Account_Objective_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Account_Objective_Header</fullName>
+        <fields>Name</fields>
+        <fields>Account_Objective_Source__c</fields>
+        <fields>Account_Plan__c</fields>
+        <fields>Objective_Start_Date__c</fields>
+        <fields>Objective_End_Date__c</fields>
+        <label>Account Objective Header</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Account Objective is a custom object used to record and manage customer-instances of predefined strategic Objectives used in Account Planning. Account Objectives can be linked to an Observation and a Solution, but it is not required.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Objective_Source__c</fullName>
+        <description>The source of the Account Objective.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The source of the Account Objective. Users can enter in other choices besides what is in the standard list.</inlineHelpText>
+        <label>Account Objective Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Customer Meeting</fullName>
+                    <default>false</default>
+                    <label>Customer Meeting</label>
+                </value>
+                <value>
+                    <fullName>Annual Report</fullName>
+                    <default>false</default>
+                    <label>Annual Report</label>
+                </value>
+                <value>
+                    <fullName>Article</fullName>
+                    <default>false</default>
+                    <label>Article</label>
+                </value>
+                <value>
+                    <fullName>Executive</fullName>
+                    <default>false</default>
+                    <label>Executive</label>
+                </value>
+                <value>
+                    <fullName>Partner</fullName>
+                    <default>false</default>
+                    <label>Partner</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Account_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Plan</label>
+        <referenceTo>Account_Plan__c</referenceTo>
+        <relationshipLabel>Account Objectives</relationshipLabel>
+        <relationshipName>Account_Objectives</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Account_Solution__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The linked Account Solution for this Account Objective.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The linked Account Solution for this Account Objective.</inlineHelpText>
+        <label>Account Solution</label>
+        <referenceTo>AccountSolution__c</referenceTo>
+        <relationshipLabel>Account Objectives</relationshipLabel>
+        <relationshipName>Account_Objectives</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Objectives</relationshipLabel>
+        <relationshipName>Account_Objectives</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Active Checkbox</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Business_Objective__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Business Objective</label>
+        <referenceTo>AccountObjective__c</referenceTo>
+        <relationshipLabel>Account Objectives</relationshipLabel>
+        <relationshipName>Business_Objectives</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Relationship__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>ContactRelationship__c</referenceTo>
+        <relationshipLabel>Account Objectives</relationshipLabel>
+        <relationshipName>Account_Objectives</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Account Objectives</relationshipLabel>
+        <relationshipName>Account_Objectives</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>A detailed description of the Account Observation record from the point of view of your customer.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>A detailed description of the Account Observation record from the point of view of your customer.</inlineHelpText>
+        <label>Description</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Impact__c</fullName>
+        <description>A detailed description of the impact that the Account Observation has on your company and its relationship with your customer.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>A detailed description of the impact that the Account Observation has on your company and its relationship with your customer.</inlineHelpText>
+        <label>Impact</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Is_Client_Objective__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Type__c, &quot;Corporate&quot;) ||  ISPICKVAL(Type__c, &quot;Workforce&quot;)  || ISPICKVAL(Type__c, &quot;Total Rewards&quot;), &quot;Y&quot;, &quot;N&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Client Objective</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Objective_End_Date__c</fullName>
+        <description>The End Date of this Objective record.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>The End Date of this Objective record.</inlineHelpText>
+        <label>Objective End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Objective_Reached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Designates if this objective record has been reached.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates if this objective record has been reached.</inlineHelpText>
+        <label>Objective Reached</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Objective_Start_Date__c</fullName>
+        <description>The Start Date of this Objective record.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>The Start Date of this Objective record.</inlineHelpText>
+        <label>Objective Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Objective__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Objective Library</label>
+        <referenceTo>CustomerObjective__c</referenceTo>
+        <relationshipLabel>Account Objectives</relationshipLabel>
+        <relationshipName>Account_Objectives1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Other_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(Other_Objective__c), Name, Name + &quot; [&quot; + Other_Objective__c + &quot;]&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Other Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Objective__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Other Objective</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Objectives</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Rank__c</fullName>
+        <externalId>false</externalId>
+        <label>Rank</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Strategic_Opportunity__c</fullName>
+        <description>Strategic Opportunities</description>
+        <externalId>false</externalId>
+        <label>Strategic Opportunities</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Innovative Solution</fullName>
+                    <default>false</default>
+                    <label>Innovative Solution</label>
+                </value>
+                <value>
+                    <fullName>New Product/Program</fullName>
+                    <default>false</default>
+                    <label>New Product/Program</label>
+                </value>
+                <value>
+                    <fullName>Relationship Building</fullName>
+                    <default>false</default>
+                    <label>Relationship Building</label>
+                </value>
+                <value>
+                    <fullName>Core Service Execution</fullName>
+                    <default>false</default>
+                    <label>Core Service Execution</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Corporate</fullName>
+                    <default>false</default>
+                    <label>Corporate</label>
+                </value>
+                <value>
+                    <fullName>Workforce</fullName>
+                    <default>false</default>
+                    <label>Workforce</label>
+                </value>
+                <value>
+                    <fullName>Total Rewards</fullName>
+                    <default>false</default>
+                    <label>Total Rewards</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Account Objective</label>
+    <listViews>
+        <fullName>Active</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Active__c</columns>
+        <columns>Objective__c</columns>
+        <columns>Rank__c</columns>
+        <columns>Description__c</columns>
+        <columns>Business_Objective__c</columns>
+        <columns>Strategic_Opportunity__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Account__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Active</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Active__c</columns>
+        <columns>Objective__c</columns>
+        <columns>Rank__c</columns>
+        <columns>Description__c</columns>
+        <columns>Business_Objective__c</columns>
+        <columns>Strategic_Opportunity__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Account Objective</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Account Objectives</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

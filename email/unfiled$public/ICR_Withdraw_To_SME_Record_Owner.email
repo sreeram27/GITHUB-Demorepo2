@@ -1,0 +1,3 @@
+Please note that <a href="{cRecordLink}">{!record.number}</a> you are assigned to has been automatically declined since the <a href="{impRecordLink}">{!IMPL-XXXXXL}</a> it is attached to is withdrawn.  
+<br/><br/>
+<font color="red">Please refer to the ICR comments and/or the email in the attachments for withdrawal reasons.</font>

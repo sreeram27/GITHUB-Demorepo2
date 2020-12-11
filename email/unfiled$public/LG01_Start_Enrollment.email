@@ -1,0 +1,36 @@
+<messaging:emailTemplate subject="Secure: Please Continue Enrolling {!relatedTo.Account.Name} - {!MONTH(relatedTo.CloseDate)}/{!DAY(relatedTo.CloseDate)}/{!TEXT(YEAR(relatedTo.CloseDate))}" recipientType="Contact" relatedToType="Opportunity">
+<messaging:htmlEmailBody >
+Dear Valued Broker,
+<br/>
+<p>
+Your large group new business coverage enrollment can be completed for {!relatedTo.Account.Name} Tax id : <c:VFLG_01_AccountTaxIdComp accountId="{!relatedTo.Account.Id}"/>  
+with an {!MONTH(relatedTo.CloseDate)}/{!DAY(relatedTo.CloseDate)}/{!YEAR(relatedTo.CloseDate)} opportunity effective date {deep link} here. 
+</p>
+<p>
+If you don’t have an account on the Broker Portal you'll need to create one. Please register <a href="https://brokerportal.anthem.com/apps/ptb/auth/register">here</a>
+</p>
+<p>
+Have the appropriate required documents ready prior to starting the online enrollment process.  These would include but not limited to:
+<br/>
+Employer Application<br/>
+All signed quotes and rates<br/>
+Signed Benefit Summaries<br/>
+Binder Check<br/>
+</p>
+<p>
+Please see the listing of products this enrollment process applies to below:
+</p>
+<br/>
+
+<c:VFLG_01_OpportunityQuoteLineItemsComp oppId="{!relatedTo.Id}"/>
+
+<p>
+
+As always, you can contact your Anthem sales rep with any questions. <br/><br/>
+
+Sincerely,
+</p>
+
+<c:VFLG_01_DynamicEmailFooterComp accountSitusCode="{!relatedTo.Account.Situs_State__c}" accountBranding="{!relatedTo.Account.Branding__c}"/>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SME Notification of a SME Approval Record Status Update</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SME Notification of a SME Approval Record Status Update</name>
+    <style>none</style>
+    <subject>The status of {!SME_Approvals__c.Name} was updated.</subject>
+    <textOnly>The status of {!SME_Approvals__c.Name} was updated. Please review and take appropriate steps. 
+
+Account name: {!SME_Approvals__c.Account_Legal_Name__c} 
+
+Implementation Case name: {!SME_Approvals__c.Impl_Case_Name__c} 
+
+Implementation Case status: {!SME_Approvals__c.Implementation_Status__c} 
+
+SME Approval record status: {!SME_Approvals__c.Status__c} 
+
+The view the SME Approval record, please see the below link : 
+
+{!SME_Approvals__c.Link}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

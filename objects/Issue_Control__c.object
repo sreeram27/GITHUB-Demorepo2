@@ -1,0 +1,1910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Issue_Control_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Group_Size__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Implementation_Record_ID__r.Account.Group_Size__c)</formula>
+        <label>Account Group Size</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Legal_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(Implementation_Tracking_ID__r.Account_Legal_Name__r.Id), &apos;&apos;, HYPERLINK(Implementation_Tracking_ID__r.Account_Legal_Name__r.Id, Implementation_Tracking_ID__r.Account_Legal_Name__r.Name))</formula>
+        <label>Account Legal Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anthem_Entity__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Account_Legal_Name__r.Anthem_Entity__c)</formula>
+        <label>Anthem Entity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_or_Declined_Time__c</fullName>
+        <description>Intermediate Field For Approval Or Declined Date</description>
+        <externalId>false</externalId>
+        <formula>CASE(MOD( Issue_Control_Check_Date__c - DATE(1985,6,24),7), 
+0 , CASE( MOD( Approved_or_Declined_Date__c - Issue_Control_Check_Date__c,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( Approved_or_Declined_Date__c - Issue_Control_Check_Date__c ,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( Approved_or_Declined_Date__c - Issue_Control_Check_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( Approved_or_Declined_Date__c - Issue_Control_Check_Date__c ,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( Approved_or_Declined_Date__c - Issue_Control_Check_Date__c ,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( Approved_or_Declined_Date__c - Issue_Control_Check_Date__c,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( Approved_or_Declined_Date__c - Issue_Control_Check_Date__c,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR(( Approved_or_Declined_Date__c - Issue_Control_Check_Date__c )/7)*5)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval or Declined Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approved_Date_Completed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Approved_Date_Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Approved_or_Declined_Date__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Approved or Declined.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Approved or Declined Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bill_Requested__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Bill Requested</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bypass_ID_Cards__c</fullName>
+        <externalId>false</externalId>
+        <label>Bypass ID Cards</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CalCobra_Dept__c</fullName>
+        <externalId>false</externalId>
+        <label>CalCobra Dept</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Claim_System__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Claim_System__c</formula>
+        <label>Claim System</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Current_SME_Queue_time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK(In_Progress_Date_Completed__c),Now() - Not_Started_Date_Completed__c, 
+(In_Progress_Date_Completed__c - Not_Started_Date_Completed__c) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current SME Queue time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_SME_time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK(Approved_Date_Completed__c),((Now() - In_Progress_Date_Completed__c) - Pending_Correction_Time__c) , 
+((Approved_Date_Completed__c - In_Progress_Date_Completed__c) - Pending_Correction_Time__c)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current SME time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Implementations_Notified_Of_Sale__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Date_Implementations_Notified_Of_Sale__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date Implementations Notified Of Sale</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Days_From_Assignment__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Days_From_Assignment__c</formula>
+        <label>Days From Assignment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EA_Notified__c</fullName>
+        <externalId>false</externalId>
+        <label>Employer Access Notified</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>E_B_Audit_Complete__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>E&amp;B Audit Complete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>E_B_Submitted_to_P2P__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>E&amp;B Submitted to P2P</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Group_Activation_Complete__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Group Activation Complete</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Group_Loaded__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Group Loaded</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Group_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(Implementation_Tracking_ID__r.Group_Number__r.Id), &apos;&apos;, HYPERLINK(Implementation_Tracking_ID__r.Group_Number__r.Id, Implementation_Tracking_ID__r.Group_Number__r.Name))</formula>
+        <label>Group Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Size__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Group_Size__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Size</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HQ_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Account_Legal_Name__r.HQ_State__c)</formula>
+        <label>HQ State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ID_Card_Requested__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>ID Card Requested</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Impacted_Products__c</fullName>
+        <description>Copies value from &quot;Impacted Products&quot; field on Order.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Impacted Products</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Case_Name1__c</formula>
+        <label>Implementation Case Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Start_Date__c</fullName>
+        <description>This field refers to the Implementation Case Start Date field of the related Implementation Case.</description>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.EffectiveDate</formula>
+        <label>Implementation Case Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Implementation Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Effective_Date__c</formula>
+        <label>Implementation Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Tracking_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Implementation Tracking ID</label>
+        <referenceTo>Implementation_Tracking__c</referenceTo>
+        <relationshipName>Issue_Controls</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Type__c</formula>
+        <label>Implementation Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_Progress_Date_Completed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>In_Progress_Date_Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Is_Issue_Control_Applicable__c</fullName>
+        <externalId>false</externalId>
+        <label>Is Case Installation Applicable?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Is_Owner_the_Logged_in_user__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Owner:User.Id == $User.Id,True,False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Owner the Logged in user</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Control_Check_Date__c</fullName>
+        <description>Captures Date When The Issue_Control Check Field Is True</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Captures Date When The Issue_Control Check Field Is True</inlineHelpText>
+        <label>Issue_Control Check Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Control_Check__c</fullName>
+        <description>167841</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+AND( 
+Implementation_Tracking_ID__r.SBC_Approved__c, 
+
+Implementation_Tracking_ID__r.UW_Approved__c, 
+Implementation_Tracking_ID__r.UW_Life_Disability_Approved__c, 
+Implementation_Tracking_ID__r.UW_Medical_Approved__c, 
+Implementation_Tracking_ID__r.UW_Vision_Approved__c , 
+
+Implementation_Tracking_ID__r.InterPlan_Approved__c, 
+
+Implementation_Tracking_ID__r.Dental_Complete_Approved__c , 
+
+Implementation_Tracking_ID__r.Vision_Approved__c,
+ 
+Implementation_Tracking_ID__r.Medical_Benefits_Approved__c ,
+
+Implementation_Tracking_ID__r.RX_Approved__c), 
+
+True, False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Issue Control Check</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>JAA_Group__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.JAA_Group__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>JAA Group</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LoggedinProfile__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.ProfileName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LoggedinProfile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MCS_Group__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.MCS_Group__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MCS Group</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Benefit_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Medical_Benefits__r.Stage__c)</formula>
+        <label>Medical Benefit Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical_Benefits__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Medical Benefits</label>
+        <referenceTo>Medical_Benefit__c</referenceTo>
+        <relationshipLabel>Case Installation</relationshipLabel>
+        <relationshipName>Case_Installation</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Medical_UW_Approved__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical UW Approved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Membership_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Membership__r.Stage__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Membership Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Membership__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Membership</label>
+        <referenceTo>Enrollment_and_Billing__c</referenceTo>
+        <relationshipLabel>Case Installation</relationshipLabel>
+        <relationshipName>Case_Installation</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>New_Dept_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>New Dept. Code</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Not_Started_Date_Completed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Not_Started_Date_Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Not_Started_Date__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Not Started.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Not Started Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Original_Issue_Control_Date__c</fullName>
+        <description>Original Issue_Control Date Used In The Workflow Rule When A New Record Is Created.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Issue_Control Original Check Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Overall_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Overall_Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overall Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Owner:User.LastName!=null, Owner:User.FirstName + &apos; &apos; + Owner:User.LastName, Owner:Queue.QueueName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>P2P_Audit_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>P2P Audit Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Case_Installation</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Paperwork_Completed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Paperwork Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Partial_Rates_Loaded__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Send to IDC</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PendingCorrectionAction__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(OR(LoggedinProfile__c ==&apos;SME&apos;,LoggedinProfile__c ==&apos;SME Dual&apos;,LoggedinProfile__c ==&apos;Specialty Post Sales&apos;, LoggedinProfile__c ==&apos;Specialty Post Sales Dual&apos;), Tech_Support_Issue_Control__c == False),&apos;Y&apos;,&apos;N&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PendingCorrectionAction</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_Date__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Pending Correction from WF Rule.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Correction Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Pending Correction Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_to_Approved_Declined__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Approved or Declined from Pending Correction As Prior Value. Retrieving From WF Rule.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Correction to Approved/Declined</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_to_Not_Started__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Not Started from Pending Correction As Prior Value. Retrieving From WF Rule.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Correction to Not Started</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Corrections_Stage__c</fullName>
+        <description>This field fetches the associated Pending Correction&apos;s Stage.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Corrections Stage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Time__c</fullName>
+        <description>Intermediate Pending Correction Date field</description>
+        <externalId>false</externalId>
+        <formula>CASE(MOD( Issue_Control_Check_Date__c - DATE(1985,6,24),7), 
+0 , CASE( MOD( Pending_Correction_Date__c -  Issue_Control_Check_Date__c ,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( Pending_Correction_Date__c -  Issue_Control_Check_Date__c,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( Pending_Correction_Date__c -  Issue_Control_Check_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( Pending_Correction_Date__c -  Issue_Control_Check_Date__c,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( Pending_Correction_Date__c -  Issue_Control_Check_Date__c ,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( Pending_Correction_Date__c -  Issue_Control_Check_Date__c,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( Pending_Correction_Date__c -  Issue_Control_Check_Date__c,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR(( Pending_Correction_Date__c -  Issue_Control_Check_Date__c)/7)*5)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pending Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pooled_Non_Pooled__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Account_Legal_Name__r.Pooled_Non_Pooled__c)</formula>
+        <label>Pooled/Non-Pooled</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Production_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Production_Date__c</formula>
+        <label>Production Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>QA_Completed_for_Off_Shore_Associates__c</fullName>
+        <externalId>false</externalId>
+        <label>QA Completed for Off-Shore Associates</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>QA_Completed_for_OnShore_Associates__c</fullName>
+        <externalId>false</externalId>
+        <label>QA Completed for OnShore Associates</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RX_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(RX__r.Stage__c)</formula>
+        <label>RX Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RX__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>RX</label>
+        <referenceTo>Rx__c</referenceTo>
+        <relationshipLabel>Case Installation</relationshipLabel>
+        <relationshipName>Case_Installation</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Rates_Loaded__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Rates Loaded</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Received_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Region__c</formula>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_paperwork_receipt_date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.Date_Signed_Paperwork_Rec_Opty__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Corporate Receipt Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sent_Rates_to_Off_Shore__c</fullName>
+        <externalId>false</externalId>
+        <label>Sent Rates to Off-Shore</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Situs_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.Situs_State__c</formula>
+        <label>Situs State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01 Not Started</fullName>
+                    <default>true</default>
+                    <label>01 Not Started</label>
+                </value>
+                <value>
+                    <fullName>02 Work In Progress</fullName>
+                    <default>false</default>
+                    <label>02 Work In Progress</label>
+                </value>
+                <value>
+                    <fullName>03 Pending Correction</fullName>
+                    <default>false</default>
+                    <label>03 Pending Correction</label>
+                </value>
+                <value>
+                    <fullName>03 Pending Correction Returned</fullName>
+                    <default>false</default>
+                    <label>03 Pending Correction Returned</label>
+                </value>
+                <value>
+                    <fullName>03 Waiting for Bill Approval</fullName>
+                    <default>false</default>
+                    <label>03 Waiting for Bill Approval</label>
+                </value>
+                <value>
+                    <fullName>04 Approved</fullName>
+                    <default>false</default>
+                    <label>04 Approved</label>
+                </value>
+                <value>
+                    <fullName>04 Activation Ready </fullName>
+                    <default>false</default>
+                    <label>04 Activation Ready </label>
+                </value>
+                <value>
+                    <fullName>05 Declined</fullName>
+                    <default>false</default>
+                    <label>05 Declined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sub_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub-Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Stage__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending a technical fix</fullName>
+                    <default>false</default>
+                    <label>Pending a technical fix</label>
+                </value>
+                <value>
+                    <fullName>Pending audit</fullName>
+                    <default>false</default>
+                    <label>Pending audit</label>
+                </value>
+                <value>
+                    <fullName>Pending too early to process</fullName>
+                    <default>false</default>
+                    <label>Pending too early to process</label>
+                </value>
+                <value>
+                    <fullName>Pending EBA updates</fullName>
+                    <default>false</default>
+                    <label>Pending EBA updates</label>
+                </value>
+                <value>
+                    <fullName>Pending Enrollment</fullName>
+                    <default>false</default>
+                    <label>Pending Enrollment</label>
+                </value>
+                <value>
+                    <fullName>Pending Cancellation</fullName>
+                    <default>false</default>
+                    <label>Pending Cancellation</label>
+                </value>
+                <value>
+                    <fullName>Pending Bill Approval</fullName>
+                    <default>false</default>
+                    <label>Pending Bill Approval</label>
+                </value>
+                <value>
+                    <fullName>Pending Clarification</fullName>
+                    <default>false</default>
+                    <label>Pending Clarification</label>
+                </value>
+                <value>
+                    <fullName>Pending Migrations</fullName>
+                    <default>false</default>
+                    <label>Pending Migrations</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>02 Work In Progress</controllingFieldValue>
+                <valueName>Pending a technical fix</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Work In Progress</controllingFieldValue>
+                <valueName>Pending audit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Work In Progress</controllingFieldValue>
+                <valueName>Pending too early to process</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Work In Progress</controllingFieldValue>
+                <valueName>Pending EBA updates</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Work In Progress</controllingFieldValue>
+                <valueName>Pending Enrollment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Work In Progress</controllingFieldValue>
+                <valueName>Pending Cancellation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Work In Progress</controllingFieldValue>
+                <valueName>Pending Bill Approval</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Work In Progress</controllingFieldValue>
+                <valueName>Pending Clarification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>02 Work In Progress</controllingFieldValue>
+                <valueName>Pending Migrations</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Suffix_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Suffix Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tech_Support_Issue_Control__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Tech Support Issue Control</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Time_To_Approve_Deny__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>This Is How Long It Took The SME Department To Approve/Deny A SME Record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Is How Long It Took The SME Department To Approve/Deny A SME Record</inlineHelpText>
+        <label>Time To Approve/Deny</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_To_Pend__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>This Is How Long It Took A SME Department To Submit A Pending Correction</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Is How Long It Took A SME Department To Submit A Pending Correction</inlineHelpText>
+        <label>Time To Pend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_in_SME_Dept__c</fullName>
+        <description>Sum Of Time To Pend And Time To Approve/Deny</description>
+        <externalId>false</externalId>
+        <formula>IF( Pending_Correction_Date__c &lt;&gt; Approved_or_Declined_Date__c, (Time_To_Approve_Deny__c + Time_To_Pend__c ), Time_To_Pend__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Sum Of Time To Pend And Time To Approve/Deny</inlineHelpText>
+        <label>Time in SME Dept</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Time__c</fullName>
+        <description>Total Time SME Record Was In The SME Department And The Sales Support/Implementations 		Department</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISNULL(Pending_Correction_to_Approved_Declined__c), 0 ,
+
+CASE(MOD( Original_Issue_Control_Date__c - DATE(1985,6,24),7), 
+
+0 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Issue_Control_Date__c,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Issue_Control_Date__c,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Issue_Control_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Issue_Control_Date__c,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Issue_Control_Date__c,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Issue_Control_Date__c,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Issue_Control_Date__c,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR((Pending_Correction_to_Approved_Declined__c -  Original_Issue_Control_Date__c)/7)*5)
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total Time SME Record Was In The SME Department And The Sales Support/Implementations 		Department</inlineHelpText>
+        <label>Total Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Case Installation</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Production_Date__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Region__c</columns>
+        <columns>Date_Implementations_Notified_Of_Sale__c</columns>
+        <columns>Days_From_Assignment__c</columns>
+        <columns>HQ_State__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Sub_Stage__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Assigned_not_Completed_P2P_Audit</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Sub_Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <columns>P2P_Audit_Owner__c</columns>
+        <columns>E_B_Submitted_to_P2P__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>E_B_Submitted_to_P2P__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Assigned not Completed P2P Audit</label>
+    </listViews>
+    <listViews>
+        <fullName>Issue_Controls_Local_Issue_Control</fullName>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </filters>
+        <label>Local CI Unassigned New Business</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Assigned</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Sub_Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <columns>RX_Stage__c</columns>
+        <columns>Medical_Benefit_Stage__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>01 Not Started,04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Owner__c</field>
+            <operation>notEqual</operation>
+            <value>Case Installation - Local</value>
+        </filters>
+        <label>Local CI Assigned</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Unassigned</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Account_Group_Size__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <columns>Sales_paperwork_receipt_date__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <label>Local CI Unassigned</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Unassigned_ImplType_Chg_Req</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>Change Request Off Cycle</value>
+        </filters>
+        <label>Local CI Unassigned Change Request</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Unassigned_ImplType_New_Bus</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </filters>
+        <label>Local CI Unassigned New Business</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Unassigned_ImplType_Pre_Work</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>Pre Work</value>
+        </filters>
+        <label>Local CI Unassigned Pre Work</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Unassigned_ImplType_RenewaI</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>Renewal</value>
+        </filters>
+        <label>Local CI Unassigned Renewal</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Unassigned_Region_Central</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>Central</value>
+        </filters>
+        <label>Local CI Unassigned Region Central</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Unassigned_Region_East</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>East</value>
+        </filters>
+        <label>Local CI Unassigned Region East</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Unassigned_Region_North_East</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>North East</value>
+        </filters>
+        <label>Local CI Unassigned Region North East</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Unassigned_Region_South_East</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>South East</value>
+        </filters>
+        <label>Local CI Unassigned Region South East</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>Local_CI_Unassigned_Region_West</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>West</value>
+        </filters>
+        <label>Local CI Unassigned Region West</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <listViews>
+        <fullName>My_Issue_Control_Implementations</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Sub_Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <columns>RX_Stage__c</columns>
+        <columns>Medical_Benefit_Stage__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Is_Owner_the_Logged_in_user__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Case Installation</label>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned_Issue_Controls_Local</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Overall_Status__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Production_Date__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started</value>
+        </filters>
+        <label>Unassigned Case Installation - Local</label>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned_P2P_Audit</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Sub_Stage__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Region__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Membership_Stage__c</columns>
+        <columns>P2P_Audit_Owner__c</columns>
+        <columns>E_B_Submitted_to_P2P__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>E_B_Submitted_to_P2P__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Unassigned P2P Audit</label>
+        <queue>Issue_Controls_Local</queue>
+    </listViews>
+    <nameField>
+        <displayFormat>CASINS-{000000}</displayFormat>
+        <label>Case Installation Tracking ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Case Installation</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account_Legal_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Group_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Implementation_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Owner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Implementation_Effective_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Production_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Claim_System__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Region__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Account_Legal_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Group_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Implementation_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Owner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Implementation_Effective_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Production_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Claim_System__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Situs_State__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>validation_rule_for_E_B_Audit_Complete</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(NOT(ISNEW()),ISCHANGED(E_B_Audit_Complete__c),NOT($User.ProfileId  = &apos;00e41000001fYPT&apos;))</errorConditionFormula>
+        <errorDisplayField>E_B_Audit_Complete__c</errorDisplayField>
+        <errorMessage>Only System Admin can able to edit the field.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

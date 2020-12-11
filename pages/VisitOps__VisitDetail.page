@@ -1,0 +1,48 @@
+<apex:page standardController="VisitOps__Visit__c" sidebar="{!$Label.visitops__sidebar}">
+    <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jquery-1.11.1.min.js')}"/>
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+        //    console.log('{!VisitOps__Visit__c.Program__r.name}');
+        //    console.log('{!$Profile.Name}');
+        
+        if('{!text($User.VisitOps__UserType__c)}' != 'Visit Team'){
+            
+            System.debug($User.VisitOps__UserType__c);
+            $('input[value$="Submit for Approval"],input[value$="New Company"],input[value$="Delete"],input[value$="New Visit Bundle"],[name$="agenda_builder"],[name$="selecting_presenter"],[name$="owner_survey"],[name$="customer_survey"],[name$="decision_survey"],[name$="clone"],[name$="piSubmit"],[name$="print_tent_cards"],[name$="change_location_visittype"],[name$="visit_team_view"],[name$="print_name_badges"],[name$="import_attendee_list"],[name$="customer_view_lightning"],[name$="presenter_view_lightning"],[name$="visit_team_view_lightning"]').each(function(){
+                $(this).hide();
+            });
+
+      
+            /**
+               Added for Comm Program Functionality
+            if('{!VisitOps__Visit__c.Program__r.name}' == 'COMM Program' && '{!$Profile.Name}' == 'Sales COMM'){
+              $('[name$="agenda_builder"]').each(function(){
+                $(this).show();
+            });  
+            }
+            **/
+            
+            $("h3").each(function(){
+                if($(this).html() == 'Visit Controls (Visit)'){
+                    $(this).closest('div.bRelatedList').hide();
+                }
+                if($(this).html() == 'Room Schedule'){
+                    $(this).closest('div.bRelatedList').hide();
+                }
+                if($(this).html() == 'Expenses'){
+                    $(this).closest('div.bRelatedList').hide();
+                }
+                
+            });
+        }
+        
+          $('[name$="customer_view_lightning"],[name$="presenter_view_lightning"],[name$="visit_team_view_lightning"]').each(function(){
+                $(this).hide();
+            });
+    });
+      
+    
+    </script>
+    <apex:detail subject="{!VisitOps__Visit__c.Id}" relatedList="true" relatedListHover="true" title="true" showChatter="true"/> 
+</apex:page>

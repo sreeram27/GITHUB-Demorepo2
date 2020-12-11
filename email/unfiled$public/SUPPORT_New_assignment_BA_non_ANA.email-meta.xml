@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Internal notification to BAs when SR is created.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SUPPORT:  New assignment BA non ANA</name>
+    <style>none</style>
+    <subject>ICE End User Support Requests# {!Support_Request__c.Name}: {!Support_Request__c.Subject} has been assigned to you.</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

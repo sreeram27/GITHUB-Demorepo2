@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>OE KIT Process</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Updated_Anthem_Logo</letterhead>
+    <name>OE KIT</name>
+    <style>freeForm</style>
+    <subject>OE KIT Draft Approval Needed</subject>
+    <textOnly>Please review and approve the attached OE Kit draft for the above mentioned group.
+
+
+If any changes are needed, please use the below link to navigate to the request record and check the &quot;Draft Changes Needed&quot; field, identifying the needed changes in the field &quot;Draft Change Comments.&quot;
+
+
+If no changes are needed, please use the below link to navigate to the request record, enter today&apos;s date in the &quot;Draft Approved by Sales&quot; field and update the &quot;OE Kit Request Stage&quot; field to &quot;OE Kit Approved.&quot;
+
+
+Open Enrollment Request record link:
+
+https://commercialgroup.my.salesforce.com/a0n0W00000BBsjV
+
+
+Thank you.
+
+
+GA Local Sales Support</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

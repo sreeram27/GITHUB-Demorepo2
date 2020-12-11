@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>Commissions_Estimator_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>Commissions_Estimator_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Commissions_Estimator_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Sales_Type__c</fields>
+        <fields>Base_Payment__c</fields>
+        <fields>Total_Kickers__c</fields>
+        <fields>Total_ESTIMATED_Commissions__c</fields>
+        <label>Commissions Estimator Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores records for Sales Teams to estimate their commissions based on product attributes.  Initially developed by the Avengers team as part of PI 194</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Base_Payment__c</fullName>
+        <description>Rolls up all commissions line item estimated payments to a total estimated commission</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the base payment for each line item but does not account for kickers at the individual product level</inlineHelpText>
+        <label>Base Payment (Excl Kickers)</label>
+        <summarizedField>Commissions_Estimator_Line_Item__c.Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Commissions_Estimator_Line_Item__c.Commissions_Estimator_Parent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Dental_Goal__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a total goal for all dental products</inlineHelpText>
+        <label>Dental Goal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dental_Kicker__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Total_Dental_Base_Estimate__c = 0  ||  FI_ASO_GTA_Dental__c = 0, 0,
+
+Total_Dental_Base_Estimate__c /  FI_ASO_GTA_Dental__c *
+
+If(FI_ASO_GTA_Dental__c &lt;= 0.8, 0,
+
+If(FI_ASO_GTA_Dental__c &lt;= 1.15, (FI_ASO_GTA_Dental__c  - 0.8)*0.5,
+
+IF(FI_ASO_GTA_Dental__c &lt;= 1.5, 0.35*0.5 + (FI_ASO_GTA_Dental__c  - 1.15)*1,
+
+(0.35*0.5)+(0.35*1)+((FI_ASO_GTA_Dental__c -1.5)*1.5))
+)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Dental Kicker</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Dental__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Dental</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FI_ASO_GTA_Dental_Sales__c</fullName>
+        <externalId>false</externalId>
+        <label>FI+ASO GTA Dental Sales</label>
+        <summarizedField>Commissions_Estimator_Line_Item__c.Total_Members__c</summarizedField>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Commissions_Estimator_Line_Item__c.Commissions_Estimator_Parent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>FI_ASO_GTA_Dental__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(  Sum_of_Dental_Goals__c = 0, 0, FI_ASO_GTA_Dental_Sales__c /  Sum_of_Dental_Goals__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FI+ASO GTA Dental %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FI_ASO_GTA_Medical__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Medical_Goal_Sum__c = 0, 0, FI_ASO_GTA_Sales__c /  Medical_Goal_Sum__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FI+ASO GTA Medical %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>FI_ASO_GTA_Sales__c</fullName>
+        <description>Sales for Fully Insured plus ASO GTA</description>
+        <externalId>false</externalId>
+        <label>FI+ASO GTA Medical Sales</label>
+        <summarizedField>Commissions_Estimator_Line_Item__c.Total_Members__c</summarizedField>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Commissions_Estimator_Line_Item__c.Commissions_Estimator_Parent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>FI_ASO_GTA_Vision_Sales__c</fullName>
+        <externalId>false</externalId>
+        <label>FI+ASO GTA Vision Sales</label>
+        <summarizedField>Commissions_Estimator_Line_Item__c.Total_Members__c</summarizedField>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Commissions_Estimator_Line_Item__c.Commissions_Estimator_Parent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>FI_ASO_GTA_Vision__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Sum_of_Vision_Goals__c = 0, 0, FI_ASO_GTA_Vision_Sales__c /  Sum_of_Vision_Goals__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FI+ASO GTA Vision %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Goal_Sum__c</fullName>
+        <description>Sums all medical goals</description>
+        <externalId>false</externalId>
+        <label>Sum of Medical Goals</label>
+        <summarizedField>Commissions_Estimator_Line_Item__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Commissions_Estimator_Line_Item__c.Commissions_Estimator_Parent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Goal__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a total goal for all medical products</inlineHelpText>
+        <label>Medical Goal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical_Kicker__c</fullName>
+        <description>Medical Kicker</description>
+        <externalId>false</externalId>
+        <formula>If(Total_Medical_Base_Estimate__c = 0  ||  FI_ASO_GTA_Medical__c= 0, 0,
+
+Total_Medical_Base_Estimate__c / FI_ASO_GTA_Medical__c *
+
+If(FI_ASO_GTA_Medical__c &lt;= 0.8, 0,
+
+If(FI_ASO_GTA_Medical__c &lt;= 1.15, (FI_ASO_GTA_Medical__c - 0.8)*0.5,
+
+IF(FI_ASO_GTA_Medical__c &lt;= 1.5, 0.35*0.5 + (FI_ASO_GTA_Medical__c - 1.15)*1,
+
+(0.35*0.5)+(0.35*1)+((FI_ASO_GTA_Medical__c -1.5)*1.5))
+
+)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Medical Kicker</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Medical__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Medical</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Parent record for which commissions estimate is relevant</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Estimated Commissions</relationshipLabel>
+        <relationshipName>Commissions_Estimator</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New Business</fullName>
+                    <default>true</default>
+                    <label>New Business</label>
+                </value>
+                <value>
+                    <fullName>Renewals</fullName>
+                    <default>false</default>
+                    <label>Renewals</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sum_of_Dental_Goals__c</fullName>
+        <externalId>false</externalId>
+        <label>Sum of Dental Goals</label>
+        <summarizedField>Commissions_Estimator_Line_Item__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Commissions_Estimator_Line_Item__c.Commissions_Estimator_Parent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Sum_of_Vision_Goals__c</fullName>
+        <externalId>false</externalId>
+        <label>Sum of Vision Goals</label>
+        <summarizedField>Commissions_Estimator_Line_Item__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Commissions_Estimator_Line_Item__c.Commissions_Estimator_Parent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Dental_Base_Estimate__c</fullName>
+        <description>Total of dental base payments before goals and kickers</description>
+        <externalId>false</externalId>
+        <label>Dental Base Estimate</label>
+        <summarizedField>Commissions_Estimator_Line_Item__c.Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Commissions_Estimator_Line_Item__c.Commissions_Estimator_Parent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Dental_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Dental_Base_Estimate__c  +  Dental_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Dental Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_ESTIMATED_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Medical_Commissions__c + Total_Dental_Commissions__c +  Total_Vision_Commissions__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Estimated Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Kickers__c</fullName>
+        <externalId>false</externalId>
+        <formula>Medical_Kicker__c +  Dental_Kicker__c +  Vision_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Kickers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Medical_Base_Estimate__c</fullName>
+        <description>Total of medical base payments before goals and kickers</description>
+        <externalId>false</externalId>
+        <label>Medical Base Estimate</label>
+        <summarizedField>Commissions_Estimator_Line_Item__c.Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Commissions_Estimator_Line_Item__c.Commissions_Estimator_Parent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Medical_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Medical_Base_Estimate__c + Medical_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Medical Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Medical__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;Base ($&quot; + TEXT(Total_Medical_Base_Estimate__c ) + &quot;) + &quot; + 
+
+&quot;Kicker ($&quot; + TEXT( ROUND(Medical_Kicker__c,2) ) + &quot;)&quot; +
+
+&quot; = $&quot; + TEXT( ROUND(Total_Medical_Commissions__c,2) )</formula>
+        <label>Total Medical</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Vision_Base_Estimate__c</fullName>
+        <description>Total of vision base payments before goals and kickers</description>
+        <externalId>false</externalId>
+        <label>Vision Base Estimate</label>
+        <summarizedField>Commissions_Estimator_Line_Item__c.Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Category__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Commissions_Estimator_Line_Item__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Commissions_Estimator_Line_Item__c.Commissions_Estimator_Parent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Vision_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Vision_Base_Estimate__c +  Vision_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Vision Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Vision_Goal__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a total goal for all vision products</inlineHelpText>
+        <label>Vision Goal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vision_Kicker__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Total_Vision_Base_Estimate__c = 0  ||  FI_ASO_GTA_Vision__c = 0, 0,
+
+Total_Vision_Base_Estimate__c /  FI_ASO_GTA_Vision__c *
+
+If(FI_ASO_GTA_Vision__c &lt;= 0.8, 0,
+
+If(FI_ASO_GTA_Vision__c &lt;= 1.15, (FI_ASO_GTA_Vision__c  - 0.8)*0.5,
+
+IF(FI_ASO_GTA_Vision__c  &lt;= 1.5, 0.35*0.5 + (FI_ASO_GTA_Vision__c - 1.15)*1,
+
+(0.35*0.5)+(0.35*1)+((FI_ASO_GTA_Vision__c -1.5)*1.5))
+
+)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vision Kicker</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Vision__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Vision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Commissions Estimator</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Medical_Goal__c</columns>
+        <columns>Dental_Goal__c</columns>
+        <columns>Vision_Goal__c</columns>
+        <columns>Base_Payment__c</columns>
+        <columns>Total_Kickers__c</columns>
+        <columns>Total_ESTIMATED_Commissions__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>November</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Base_Payment__c</columns>
+        <columns>Total_Kickers__c</columns>
+        <columns>Total_ESTIMATED_Commissions__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>Nov</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>Oct</value>
+        </filters>
+        <label>October &amp; November</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Estimate Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Commissions Estimator</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Must_select_an_option</fullName>
+        <active>true</active>
+        <description>Users must select at least one option--Medical, Dental, or Vision</description>
+        <errorConditionFormula>AND(
+
+NOT( Medical__c ),
+NOT( Dental__c ),
+NOT( Vision__c )
+
+)</errorConditionFormula>
+        <errorMessage>You must select at least one option--Medical, Dental, or Vision</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

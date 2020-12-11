@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>New groups and Upsells Queue</name>
+    <queueMembers>
+        <users>
+            <user>ab94461@anthem.com2</user>
+            <user>ash-krystal.ash@anthem.com2.iceprod</user>
+            <user>af56470@anthem.com2</user>
+            <user>belcher-tiffany.belcher@anthem.com2.iceprod</user>
+            <user>bj.gugat@anthem.com2</user>
+            <user>ab94423@anthem.com2</user>
+            <user>aa02217@wellpoint.com2</user>
+            <user>ab57347@anthem.com2</user>
+            <user>ac15636@anthem.com2</user>
+            <user>mitchell-chrystal.mitchell@anthem.com2.iceprod</user>
+            <user>ab94404@anthem.com2</user>
+            <user>ab68166@wellpoint.com2</user>
+            <user>af30601@anthem.com2</user>
+            <user>ac56978@anthem.com2</user>
+            <user>mathews-brian.mathews@anthem.com2.iceprod</user>
+            <user>monica-ginny.monica@anthem.com2.iceprod</user>
+            <user>ab94463@anthem.com2</user>
+            <user>parrish-tuesdee.parrish@anthem.com2.iceprod</user>
+            <user>russell-erica.russell2@anthem.com2.iceprod</user>
+            <user>ruth.sykora@anthem.com2</user>
+            <user>af57966@anthem.com2</user>
+            <user>af38388@anthem.com2</user>
+            <user>ac69670@anthem.com2</user>
+            <user>ac30979@anthem.com2</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Dental_Complete__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Life_and_Disability__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Vision__c</sobjectType>
+    </queueSobject>
+</Queue>

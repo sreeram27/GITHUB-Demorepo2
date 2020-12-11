@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Request__c$Planned_Release__c</field>
+    </columns>
+    <columns>
+        <field>Request__c$Name</field>
+    </columns>
+    <columns>
+        <field>Request__c$Request_Title__c</field>
+    </columns>
+    <columns>
+        <field>Request__c$Status__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Test_Scenarios__r.Test_Scripts__r$Name</field>
+    </columns>
+    <columns>
+        <field>Request__c$Related_Request__c</field>
+    </columns>
+    <columns>
+        <field>Request__c$Capability__c</field>
+    </columns>
+    <description>Test Scripts dump as on 17th July</description>
+    <filter>
+        <criteriaItems>
+            <column>Request__c$Planned_Release__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Release 1 - Sprint 1,Release 1 - Sprint 2,Release 1 - Sprint 3</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Test Scripts dump as on 17th July</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Request_w_Test_Script_w_Test_Scenario__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Request__c$Status__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Request__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

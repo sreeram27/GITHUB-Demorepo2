@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ORDER_NUMBER</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Type__c</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Effective_Date__c</field>
+    </columns>
+    <columns>
+        <field>ORDER_EFFECTIVE_DATE</field>
+    </columns>
+    <columns>
+        <field>ORDER_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>Order.Situs_State__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_OWNER</field>
+    </columns>
+    <columns>
+        <field>ORDER_CREATEDBY</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 OR 2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <column>ORDER_CREATEDBY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Carolyn Howard</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ORDER_CREATEDBY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Jennifer Slanina</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ORDER_CREATEDBY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Leilani Lawrence</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Off Cycles</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OrderList</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ORDER_EFFECTIVE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

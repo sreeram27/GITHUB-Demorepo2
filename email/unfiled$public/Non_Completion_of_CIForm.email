@@ -1,0 +1,4 @@
+This e-mail is a reminder to advise that Engage CIF form must be completed for the following products: Engage Elite, Engage Elite Plus, Engage Essential, Engage Essential Plus when the product stage = Sold or IGAP Sold. 
+</br></br>
+To create the Castlight Client Information Form (CIF), please navigate to the "Castlight Engage CIF" button located on the Action Panel within the Opportunity:
+<a href = {!Castlight_Opportunity__c.Salesforce_URL__c}{!Castlight_Opportunity__c.OpportunityIdId__c}>{!Castlight_Opportunity__c.OpportunityId__c}</a>

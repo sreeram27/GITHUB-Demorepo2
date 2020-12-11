@@ -1,0 +1,9 @@
+Hello,</br>
+</br>
+Please be advised that a Pending Correction you submitted has been returned by the Assigned Implementer on the Case- {!Medical_Benefit__c.Implementation_Case_Number__c}.</br>
+</br>
+The relevant Medical Benefits record - {!Medical_Benefit__c.Name} is now in stage "03 Pending Correction Returned".</br>
+</br>
+Please log into Salesforce to review the corrections and take the appropriate steps.</br>
+</br>
+Link to Medical Benefits record: {!Medical_Benefit__c.Link}

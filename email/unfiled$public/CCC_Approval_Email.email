@@ -1,0 +1,4 @@
+The {!QuoteLineItemApproval__c.QLI_Product_Name__c} you submitted for approval was Approved. 
+
+To view all details around the request, please see the below link: 
+{!QuoteLineItemApproval__c.Link}

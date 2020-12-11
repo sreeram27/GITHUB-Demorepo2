@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Alph_Numeric_Sharing_Confidential</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Alph Numeric Sharing Confidential</label>
+        <sharedTo>
+            <group>House_Account</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>AccountRecordTypeAlphaNum__c</field>
+            <operation>equals</operation>
+            <value>Confidential</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Non_Confidential_Account_Sharing_APR</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Non-Confidential Account_Sharing_APR</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>AccountRecordTypeAlphaNum__c</field>
+            <operation>notEqual</operation>
+            <value>Confidential</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

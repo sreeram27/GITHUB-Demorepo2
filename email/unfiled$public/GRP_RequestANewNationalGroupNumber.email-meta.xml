@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sales-REL1-This email template is sent to group services upon</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>GRP-Request a New National Group Number</name>
+    <style>none</style>
+    <subject>Request a New National Group Number</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

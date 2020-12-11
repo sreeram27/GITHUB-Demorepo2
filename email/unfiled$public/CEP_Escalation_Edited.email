@@ -1,0 +1,12 @@
+Your escalation has been resolved/closed.
+ 
+COO Escalation Name: {!COO_Escalation__c.Name}
+Description/Background: {!COO_Escalation__c.Description_Background__c} 
+Description of Final Resolution:
+ {!COO_Escalation__c.Description_of_Final_Resolution__c}
+ 
+{!COO_Escalation__c.Link}: 
+ 
+Please contact the COO office if you have any questions.
+ 
+Thank You.

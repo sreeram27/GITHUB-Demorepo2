@@ -1,0 +1,167 @@
+<apex:component controller="LGA_RequiredDcList">
+    <script>
+    console.log('@@@@@@insertlog');
+    (function() {
+        'use strict';
+        angular
+        .module('vsAnthemProductApp')
+        .controller('DCUploadcontroller', DCUploadcontroller);
+    }());
+    DCUploadcontroller.$inject = ['$scope', '$filter', '$window' ,'$rootScope' ];
+    function DCUploadcontroller($scope, $filter, $window , $rootScope) {
+        console.info("Controller Loaded");
+        var vm = this;
+        //Pre-select all the master checkbox
+        vm.selectAll = false;
+        vm.showSpinner = false;                    
+        //vm.deletedDCStatus = true;
+        //Pre-select all the dependent checkbox
+        vm.selectAllInit = false;
+        vm.selectAllRequiredInit = false;
+        
+        vm.deleteDocIdList = [];
+        
+        //vlocity_ins.DRProcessResult result = vlocity_ins.DRGlobal.process((Map<String, Object>)ob1, 'postQuoteMotorPremium');
+        
+        vm.selectFlag = false;
+        vm.onSelectDocCheckRec = function(){
+            vm.selectFlag = false;
+        };
+        
+        vm.deleteFile = function(control,val,index,th){
+            val.deleted = true;
+            $scope.bpTree.response.DR_Output_DCList = '';
+            if(vm.deleteDocIdList.length > 0 ) {
+                if(vm.deleteDocIdList.indexOf(val.Id) == -1) {
+                    vm.deleteDocIdList.push(val.Id);
+                }
+            } else {
+                vm.deleteDocIdList.push(val.Id);
+            }
+            //vm.deletedDCStatus = false;
+            
+            $scope.bpTree.response.VF_DeleteDocIdList = vm.deleteDocIdList;
+            vm.showSpinner = true;
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.LGA_RequiredDcList.deleteDCFiles}',
+                val.Id,
+                function(result, event){
+                    vm.showSpinner = false;
+                    
+                $scope.$apply();
+                },
+                {escape: true}
+            );        
+            
+            console.info("-----------Control----" + control);
+            console.info("-----------vm.deleteDocIdList----" + vm.deleteDocIdList);
+        }
+        
+        vm.selectAllChange = function(val){
+            vm.selectFlag = true;
+            if(val) {
+                vm.selectAll = false;
+                vm.selectAllInit = true;
+                vm.selectAllRequiredInit = false;
+            } else {
+                vm.selectAll = true;
+                vm.selectAllInit = true;
+                vm.selectAllRequiredInit = false;
+            }
+            
+        }
+        
+        vm.selectAllRequiredChange = function(val){
+            vm.selectFlag = true;
+            if(val) {
+                vm.selectAllRequired = false;
+                vm.selectAllRequiredInit = true;
+                //vm.selectAllRequiredInit = false;
+            } else {
+                vm.selectAllRequired = true;
+                vm.selectAllRequiredInit = true;
+                //vm.selectAllRequiredInit = false;
+            }
+        }
+        
+        vm.retrieveRequiredProducts = function(control){
+            var massRequiredResult = [];
+            
+            if (typeof control != 'undefined' && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                if(control.vlcSI[control.itemsKey].length > 0 && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                    control.vlcSI[control.itemsKey].map(function(item){
+                        //item.vlcConfirmSelection = vm.vlcConfirmSelection1;
+                        if(item.Required__c) {
+                            massRequiredResult.push(item);
+                        }                        
+                    });
+                }
+                console.log('@@@@@@massRequiredResult'+massRequiredResult);
+            }
+     
+            return massRequiredResult;
+        }
+        
+        vm.retrieveMassProducts = function(control) {
+            var massResult = [];
+            console.log('@@@@@@retrieveMassProducts');
+            var checkRequiredFiles = true;
+            
+            if(!$scope.bpTree.RTTracking['DocumentUpload']['watchStarted']) {
+                $scope.bpTree.response.VF_DeleteDocIdList = [];
+            }
+            if (typeof control != 'undefined' && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                if(control.vlcSI[control.itemsKey].length > 0 && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                    control.vlcSI[control.itemsKey].map(function(item){
+                        //console.log("-------------Hiiii 120-------------"+ JSON.stringify(JSON.parse($scope.bpTree.response.DR_Output_DCList)));
+                        console.log("-------------DR_Output_DCList-------------"+ $scope.bpTree.response.DR_Output_DCList);
+                        //console.log("-------------Hiiii 122-------------"+ item.Id);
+                        if($scope.bpTree.response.DR_Output_DCList && $scope.bpTree.response.DR_Output_DCList !=''){
+                            console.log("-------------Hiiii 124-------------"+ item.Id);
+                            var DBValue = {};
+                            if (JSON.parse($scope.bpTree.response.DR_Output_DCList) instanceof Array) {
+                                DBValue = JSON.parse($scope.bpTree.response.DR_Output_DCList).find(function(sourceItem) { 
+                                //console.log("-------------Hiiii  126-------------"+ JSON.stringify(JSON.parse($scope.bpTree.response.DR_Output_DCList)));
+                                return sourceItem.Id == item.Id;
+                                });
+                            } else {
+                                DBValue = JSON.parse($scope.bpTree.response.DR_Output_DCList);
+                            }
+                            //console.log("-------------Hiiii 129-------------"+ DBValue.Id);
+                            item.File_Name__c = DBValue.File_Name__c;
+                            item.Status = DBValue.Status;
+                            item.deleted = false;                    
+                        }
+                        //item.vlcConfirmSelection = vm.vlcConfirmSelection1;
+                        massResult.push(item);
+                    });
+                }
+                console.log('@@@@@@massResult'+massResult);
+            }
+            
+            $scope.bpTree.response.VF_checkRequiredFiles = checkRequiredFiles;
+            
+            return massResult;
+        }; 
+            
+            $scope.InProgrressStyle = {
+                "width" : "400px",
+                "color" : "red",
+                "overflow-x": "hidden",
+                "overflow-y": "auto",
+                "text-overflow": "ellipsis",
+                "height" : "64px",
+                "white-space": "initial"
+            };
+            $scope.NoneProgrressStyle = {
+                "width" : "400px",
+                "color" : "##49739c",
+                "overflow-x": "hidden",
+                "overflow-y": "auto",
+                "text-overflow": "ellipsis",
+                "height" : "64px",
+                "white-space": "initial"
+            };
+        }
+    </script>             
+</apex:component>

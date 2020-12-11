@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email is initiated when the product has been approved by the CCMU Approver</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>QLIA - CCMU Approval Opportunity Owner Email Template</name>
+    <style>none</style>
+    <subject>CCMU Approved for {!QuoteLineItemApproval__c.ClientName__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

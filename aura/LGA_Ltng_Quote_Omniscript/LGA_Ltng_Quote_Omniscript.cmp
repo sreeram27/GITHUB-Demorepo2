@@ -1,0 +1,19 @@
+<!--*************************************************************************
+Component Name : LGA_Ltng_Quote_Omniscript
+Created Date   : 27-May-2019
+Created By     : IDC Offshore 
+Description    : This component is used to launch Quote Omniscript (LGA project)
+**************************************************************************-->
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <lightning:button variant="brand" class="uiButton1" label="Start a Quote" />
+    <br/>
+    <br/>
+    <lightning:button variant="brand" class="uiButton1" label="Enroll a Group" onclick="{! c.gotoACAEnrollURL }" />
+    <br/>
+    <br/>
+    <lightning:button variant="brand" class="uiButton1" label="Quote Anthem Balanced Fund" />
+    <br/>
+    <br/>
+    <lightning:button variant="brand" class="uiButton1" label="Enroll Anthem Balanced Fund" />
+    <br/>
+</aura:component>

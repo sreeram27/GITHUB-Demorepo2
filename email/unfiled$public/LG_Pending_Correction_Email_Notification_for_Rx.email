@@ -1,0 +1,10 @@
+Hello,
+
+A Pending Correction record {!Pending_Correction__c.Name} associated with Rx record - {!Pending_Correction__c.Rx_owner_record_name__c} is ready for review with implementation case name {!Pending_Correction__c.Implementation_Case_Name__c}
+
+Please review and take appropriate steps.  
+
+To view the Pending Correction record, please see the below link: {!Pending_Correction__c.Url__c}
+
+
+Thank you!

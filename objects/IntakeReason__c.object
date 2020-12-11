@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>IntakeReason_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Imp_Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Imp Comments</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IntReturnId__c</fullName>
+        <externalId>false</externalId>
+        <label>IntReturnId</label>
+        <referenceTo>IntakeReturn__c</referenceTo>
+        <relationshipName>IntakeReasons</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Non_Completion_Reason__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Non Completion Reason</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reason_ImpComment_Local__c</fullName>
+        <description>This is a back end field to store Reason and Implementation comments Field value for Local records.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Reason_ImpComment_Local</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Need finalized benefits</fullName>
+                    <default>false</default>
+                    <label>Need finalized benefits</label>
+                </value>
+                <value>
+                    <fullName>Benefit discrepancies</fullName>
+                    <default>false</default>
+                    <label>Benefit discrepancies</label>
+                </value>
+                <value>
+                    <fullName>Documents not attached</fullName>
+                    <default>false</default>
+                    <label>Documents not attached</label>
+                </value>
+                <value>
+                    <fullName>Need additional paperwork/Incomplete paperwork</fullName>
+                    <default>false</default>
+                    <label>Need additional paperwork/Incomplete paperwork</label>
+                </value>
+                <value>
+                    <fullName>Rate clarification - incomplete rates</fullName>
+                    <default>false</default>
+                    <label>Rate clarification - incomplete rates</label>
+                </value>
+                <value>
+                    <fullName>Opportunity updates required</fullName>
+                    <default>false</default>
+                    <label>Opportunity updates required</label>
+                </value>
+                <value>
+                    <fullName>Mismatch documents</fullName>
+                    <default>false</default>
+                    <label>Mismatch documents</label>
+                </value>
+                <value>
+                    <fullName>Mismatch effective date</fullName>
+                    <default>false</default>
+                    <label>Mismatch effective date</label>
+                </value>
+                <value>
+                    <fullName>Return Requested by Sales/Account Management</fullName>
+                    <default>false</default>
+                    <label>Return Requested by Sales/Account Management</label>
+                </value>
+                <value>
+                    <fullName>Incomplete Product/Plan Configuration</fullName>
+                    <default>false</default>
+                    <label>Incomplete Product/Plan Configuration</label>
+                </value>
+                <value>
+                    <fullName>Incomplete paperwork</fullName>
+                    <default>false</default>
+                    <label>Incomplete paperwork</label>
+                </value>
+                <value>
+                    <fullName>Missing paperwork</fullName>
+                    <default>false</default>
+                    <label>Missing paperwork</label>
+                </value>
+                <value>
+                    <fullName>Invalid Group Name/Group Number</fullName>
+                    <default>false</default>
+                    <label>Invalid Group Name/Group Number</label>
+                </value>
+                <value>
+                    <fullName>Incorrect Implementation Submission Type (New Bus, IGAP, Renewal, Changes, Full Group Term)</fullName>
+                    <default>false</default>
+                    <label>Incorrect Implementation Submission Type (New Bus, IGAP, Renewal, Changes, Full Group Term)</label>
+                </value>
+                <value>
+                    <fullName>Update Broker Comp/Sales Comp Information</fullName>
+                    <default>false</default>
+                    <label>Update Broker Comp/Sales Comp Information</label>
+                </value>
+                <value>
+                    <fullName>Group Contacts Require Review/Updates</fullName>
+                    <default>false</default>
+                    <label>Group Contacts Require Review/Updates</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Resolved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Resolved</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Sales Comments</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending AM Action</fullName>
+                    <default>true</default>
+                    <label>Pending AM Action</label>
+                </value>
+                <value>
+                    <fullName>Task Created for Tracking</fullName>
+                    <default>false</default>
+                    <label>Task Created for Tracking</label>
+                </value>
+                <value>
+                    <fullName>Corrected By AM</fullName>
+                    <default>false</default>
+                    <label>Corrected By AM</label>
+                </value>
+                <value>
+                    <fullName>Cannot Correct At This Time</fullName>
+                    <default>false</default>
+                    <label>Cannot Correct At This Time</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Invalid Intake Return</fullName>
+                    <default>false</default>
+                    <label>Invalid Intake Return</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Intake Reason</label>
+    <nameField>
+        <displayFormat>REASON-{000000}</displayFormat>
+        <label>Intake Reasons Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Intake Reasons</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>IntakeReasons_Lock</fullName>
+        <active>true</active>
+        <label>IntakeReasons Lock</label>
+        <picklistValues>
+            <picklist>Reason__c</picklist>
+            <values>
+                <fullName>Benefit discrepancies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documents not attached</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Contacts Require Review%2FUpdates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete Product%2FPlan Configuration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete paperwork</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Implementation Submission Type %28New Bus%2C IGAP%2C Renewal%2C Changes%2C Full Group Term%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invalid Group Name%2FGroup Number</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mismatch documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mismatch effective date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing paperwork</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need additional paperwork%2FIncomplete paperwork</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need finalized benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunity updates required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rate clarification - incomplete rates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return Requested by Sales%2FAccount Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Broker Comp%2FSales Comp Information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Cannot Correct At This Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corrected By AM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invalid Intake Return</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending AM Action</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Task Created for Tracking</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>IntakeReasons_Lock_Sales</fullName>
+        <active>true</active>
+        <label>IntakeReasons Lock Sales</label>
+        <picklistValues>
+            <picklist>Reason__c</picklist>
+            <values>
+                <fullName>Benefit discrepancies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Documents not attached</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Contacts Require Review%2FUpdates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete Product%2FPlan Configuration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete paperwork</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Implementation Submission Type %28New Bus%2C IGAP%2C Renewal%2C Changes%2C Full Group Term%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invalid Group Name%2FGroup Number</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mismatch documents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mismatch effective date</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing paperwork</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need additional paperwork%2FIncomplete paperwork</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need finalized benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunity updates required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rate clarification - incomplete rates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return Requested by Sales%2FAccount Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Broker Comp%2FSales Comp Information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Cannot Correct At This Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corrected By AM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invalid Intake Return</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending AM Action</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Task Created for Tracking</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

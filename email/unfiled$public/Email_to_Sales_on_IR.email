@@ -1,0 +1,33 @@
+<messaging:emailTemplate subject="An Implementation Case for {!relatedTo.Account_Name__c} Has Been Returned" recipientType="User" relatedToType="IntakeReturn__c">
+ <messaging:htmlEmailBody >
+<html>
+    <body>
+        <p>Dear {!relatedTo.Implementation_Case_Owner__c},</p>
+        <p>
+            The Implementation Case Record 
+            <a href="{!relatedTo.Intake_Return_URL__c}lightning/r/IntakeReturn__c/{!relatedTo.OrderId__c}/view" target="_blank">{!relatedTo.OrderId__r.OrderNumber}</a> from 
+            <a href="{!relatedTo.Intake_Return_URL__c}lightning/r/IntakeReturn__c/{!relatedTo.OrderId__r.Account}/view" target="_blank">{!relatedTo.Account_Name__c}</a> for
+            <a href="{!relatedTo.Intake_Return_URL__c}lightning/r/IntakeReturn__c/{!relatedTo.OrderId__r.Quote.Opportunity.Id}/view" target="_blank">{!relatedTo.OrderId__r.Quote.Opportunity.Name}</a>
+             has been returned for your review. Your immediate action is required.
+        </p>
+            <table>
+           <tr>
+               <td>
+                   <p>Please click the following link to view details : <a href="{!relatedTo.Intake_Return_URL__c}lightning/r/IntakeReturn__c/{!relatedTo.Id}/view" target="_blank">{!relatedTo.Name}</a> </p>
+               </td>
+           </tr>
+          <tr>
+            <td>
+                <br />
+            </td>
+          </tr>
+           <apex:repeat var="cx" value="{!relatedTo.IntakeReasons__r}">
+                <tr>     
+                    <td>Intake Return Reason <b>{!cx.Name} </b> : <b> {!cx.Reason__c}</b> </td>
+                </tr>
+                </apex:repeat> 
+                </table>
+    </body>
+</html>
+ </messaging:htmlEmailBody>
+</messaging:emailTemplate>

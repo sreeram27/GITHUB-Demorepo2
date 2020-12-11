@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>arun.siddappa@anthem.com</contactEmail>
+    <label>Account_Implementation_CIP</label>
+    <samlConfig>
+        <acsUrl>https://commercialgroup.my.salesforce.com?so=00Dd0000000i5kt</acsUrl>
+        <encryptionType>AES_128</encryptionType>
+        <entityUrl>https://commercialgroup.my.salesforce.com</entityUrl>
+        <issuer>https://commercial.my.salesforce.com</issuer>
+        <samlNameIdFormat>Unspecified</samlNameIdFormat>
+        <samlSigningAlgoType>SHA1</samlSigningAlgoType>
+        <samlSubjectType>FederationId</samlSubjectType>
+    </samlConfig>
+    <startUrl>https://commercialgroup.my.salesforce.com?so=00Dd0000000i5kt</startUrl>
+</ConnectedApp>

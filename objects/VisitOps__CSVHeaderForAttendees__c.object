@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>CSVHeaderForAttendees</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>VisitOps__API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API Name</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>API Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Additional_Details__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional Details</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Additional Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__IsEmail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>IsEmail</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__IsMandatory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>IsMandatory</description>
+        <externalId>false</externalId>
+        <label>IsMandatory</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Order_No__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Order No</description>
+        <externalId>false</externalId>
+        <label>Order No</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Restrict_Picklist_Value__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Restrict Picklist Value</description>
+        <externalId>false</externalId>
+        <label>Restrict Picklist Value</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>CSVHeaderForAttendees</label>
+    <visibility>Public</visibility>
+</CustomObject>

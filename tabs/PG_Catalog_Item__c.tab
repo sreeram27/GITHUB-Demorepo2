@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customObject>true</customObject>
+    <description>Represents the Catalog/Library of Anthem’s Performance Guarantees. Each has a unique configuration. This list of records and their configuration is maintained by the PG Support Team. These are associated to a Customer via creation of ‘PG Line Item’ record(s). Created per PRDCRM-51224.</description>
+    <motif>Custom13: Box</motif>
+</CustomTab>

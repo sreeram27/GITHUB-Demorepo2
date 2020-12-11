@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Account</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Owner</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$StageName</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes.QuoteLineItems$ProductLOB__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Quotes.QuoteLineItems$Product2</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Opportunity_Brokerage_of_Record__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Description</field>
+    </columns>
+    <description>Closed/Won Opportunities for Mark Dady&apos;s NB Team</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Account.Situs_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Connecticut</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Owner</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Catherine Zasciurinskas,Daniel Kikosicki,Roderic McGahren,Gale Bentley</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Dady Team Closed/Won Opps</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity_Quote_Quote_Line_Item_Prd_Details__c</reportType>
+    <roleHierarchyFilter>CT_Local_Sales</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <endDate>2018-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2018-01-01</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Audience xmlns="http://soap.sforce.com/2006/04/metadata">
+    <audienceName>Consultant</audienceName>
+    <container>Open Enrollment Community</container>
+    <criteria>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <profile>company community oe consultant</profile>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>Profile</type>
+        </criterion>
+    </criteria>
+    <formulaFilterType>AllCriteriaMatch</formulaFilterType>
+    <isDefaultAudience>false</isDefaultAudience>
+    <targets>
+        <target>
+            <groupName>138f6494-5561-413b-ac6a-0174860c4f90</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Contact_OE_Contact_OE_Page</targetValue>
+        </target>
+        <target>
+            <groupName>95864932-e254-46c6-b959-c5305d75a43d</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Training_Training_Page</targetValue>
+        </target>
+        <target>
+            <groupName>cde5aeb8-2b20-4920-8d93-9300083811a5</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Home_Consultant_Page</targetValue>
+        </target>
+    </targets>
+</Audience>

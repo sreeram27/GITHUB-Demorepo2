@@ -1,0 +1,5 @@
+Dear {!Internal_Commission__c.VP__c}, 
+
+The {!Internal_Commission__c.Name} for {!Internal_Commission__c.Opportunity_Name__c} has been approved by the Internal Compensation Team.
+
+{!Internal_Commission__c.Link}

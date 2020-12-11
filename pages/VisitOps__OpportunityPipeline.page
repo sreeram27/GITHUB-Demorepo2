@@ -1,0 +1,11 @@
+<apex:page controller="VisitOps.OpportunityPipelineCtrl">
+<div style="height: 30px;font-size: 20px;">Opportunity Pipeline with Visits</div>
+	<apex:form >
+    	<c:AjaxStatusIndicator statusText="Processing..." />
+        <apex:pageBlock id="pbid">
+				<apex:actionFunction name="redirecttoReport" action="{!redirectRpt}" />
+				<analytics:reportChart reportId="{!reportId}" size="large" cacheResults="false"/>
+			</apex:pageBlock>
+    </apex:form>
+
+</apex:page>

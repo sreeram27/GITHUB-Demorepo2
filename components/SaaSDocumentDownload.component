@@ -1,0 +1,6 @@
+<apex:component controller="SaaSDocumentDownload">
+      <apex:attribute name="developerName"  description="Document Name" type="String" assignTo="{!docDeveloperName}"/>
+      <apex:attribute name="linkName" type="String" description="Document Name"/>
+    <!-- Date(MM:DD:YYYY): 01/02/2020 Added HTMLENCODE for fixing Code scan issue PRDCRM-48323 by Accenture Offshore -->
+    <a href = "/servlet/servlet.FileDownload?file={!HTMLENCODE(DocumentID)}"><i class="fa fa-cloud-download fa-2x" title="{!linkName}"/>  </a> {!linkName}
+</apex:component>

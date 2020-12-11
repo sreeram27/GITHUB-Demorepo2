@@ -1,0 +1,2601 @@
+<apex:page id="eventPageId" standardController="VisitOps__Agenda__c" extensions="VisitOps.EventFormExtension" sidebar="{!$Label.visitops__sidebar}">
+
+    <!--====================================================-->
+    <!--Name:EventForm                                                                           -->
+    <!--Copyright notice:  © 2019  VisitOps                                                                                                 -->
+    <!--====================================================-->
+    <!--====================================================-->
+    <!-- Purpose:  Create/Update Agenda Session                                                                                                         -->
+    <!---------                                                                                                                -->
+    <!--====================================================-->
+    <!-- History    -->
+    <!-- -------     -->
+    <!-- VERSION  AUTHOR           DATE              Change#            RELEASE/CSR        -->
+    <!--   1.0 -  Tanuj            11/04/2013       Ticket-I-0411       Replace Topic Name with Agenda Topic Name                   -->
+    <!--   2.0 -  Tanuj            09/12/2019       Ticket-I-0709       Output panel Added to Fix TimePicker Alignment issue in Lightning -->
+    <!--   3.0 -  Tanuj            09/17/2019       Ticket-I-0668       Code Added to make user returns to presenter record and not back to Agenda session on click of "Add New Presenter"   -->
+    <!--   Refresh -->
+    <!--====================================================-->
+
+    <!-- ASSUMPTIONS / CONSTRAINTS -->
+    <!-- For the custom datepicker for StartTimeLocationTZ__c, EndTimeLocationTZ__c fields to work, set API Version of this page to 29.0 or less.
+    https://success.salesforce.com/issues_view?id=a1p300000008XU5AAM
+    Last Modified : 11/26/18
+ -->
+    <html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Agenda</title>
+        <!-- Jquery cdn path-->
+        <apex:includeScript value="{!URLFOR($Resource.VisitOps__AutoCompleteWithModal, '/JQueryUI/js/jquery-1.7.1.min.js')}" />
+        <apex:includeScript value="{!URLFOR($Resource.VisitOps__AutoCompleteWithModal, '/JQueryUI/js/jquery-ui-1.8.17.custom.min.js')}" />
+
+        <apex:stylesheet value="{!URLFOR($Resource.VisitOps__AutoCompleteWithModal, '/JQueryUI/css/ui-lightness/jquery-ui-1.8.17.custom.css')}"
+        />
+        <apex:stylesheet value="{!URLFOR($Resource.VisitOps__AutoCompleteWithModal, '/JQueryModal/css/basic.css')}" />
+
+        <!--Common styles-->
+        <apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/styles.css')}" />
+
+        <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/functions.js')}" />
+        <script type="text/javascript">
+
+            $(document).on("click", "#addPresenterBtn", function () {
+                $('#addPresenterPopup').show();
+                $('input:radio[name=PresenterRadio]')[0].checked = true;
+
+            });
+
+            // -- Code Added for Agenda Topic Search Functionality by LIRIK on Sept 2018
+
+            $(document).on("click", "#addTopicBtn", function () {
+                $('.warningM4').hide();
+                $('#addTopicPopup').show();
+            });
+
+
+
+
+
+            function setFocusOnLoad() { }
+
+            var initialSessionStartTime;
+            var initialSessionEndTime;
+            var initialSessionTitle;
+            var initialBookedRooms;
+
+            $(document).ready(function () {
+                //initialSessionStartTime = $("[id$='startTimeId']").val();
+                //initialSessionEndTime = $("[id$='endTimeId']").val();
+                initialSessionStartTime = $("[id$='initialStartTimeId']").text();
+                initialSessionEndTime = $("[id$='initialEndTimeId']").text();
+                console.log('initialSessionStartTime--' + initialSessionStartTime);
+                console.log('initialSessionEndTime--' + initialSessionEndTime);
+
+                initialSessionTitle = $("[id$='agendaTitleId']").val();
+                initialBookedRooms = '';
+                $("[id$='table1'] tbody tr").each(function () {
+                    initialBookedRooms += $($(this).find("td")[1]).text() + '-';
+                });
+                console.log('initialBookedRooms--' + initialBookedRooms);
+
+            });
+
+        </script>
+
+        <script type="text/javascript">
+
+            var starttimeNew = '';
+            var endtimeNew = '';
+            var agendaTitleNew = '';
+            var roomStatusNew = '';
+            var roomNameNew = '';
+            var prevlocStartTime = '';
+            var prevlocEndTime = '';
+            var prevagendaTitle = '';
+            var prevroomStatus = '';
+            var prevroomName = '';
+
+            function initprevandnewValues() {
+                if (document.getElementById('eventPageId:eventFormId:startTimeLocTZID') != null || document.getElementById('eventPageId:eventFormId:startTimeLocTZID') != 'undefined')
+                    starttimeNew = document.getElementById('eventPageId:eventFormId:startTimeLocTZID').value;
+                if (document.getElementById('eventPageId:eventFormId:endTimeLocTZID') != null || document.getElementById('eventPageId:eventFormId:endTimeLocTZID') != 'undefined')
+                    endtimeNew = document.getElementById('eventPageId:eventFormId:endTimeLocTZID').value;
+                if (document.getElementById('eventPageId:eventFormId:agendaTitleId') != null || document.getElementById('eventPageId:eventFormId:agendaTitleId') != 'undefined')
+                    agendaTitleNew = document.getElementById('eventPageId:eventFormId:agendaTitleId').value;
+                /* if(document.getElementById('eventPageId:eventFormId:roomNameId')!=null ){   
+                    roomNameNew=encodeURIComponent(document.getElementById('eventPageId:eventFormId:roomNameId').value);//roomNameNew=document.getElementById('eventPageId:eventFormId:roomNameId').value.replace(/'/g, "\\'");
+                    roomNameNew = decodeURIComponent(roomNameNew);
+                } */
+                prevlocStartTime = '{!JSENCODE(locationTZStartTimeString)}';
+                prevlocEndTime = '{!JSENCODE(locationTZEndTimeString)}';
+                prevagendaTitle = '{!JSENCODE(displayagendatitle)}';
+                /* prevroomName="{!JSENCODE(roomName)}"; */
+                //prevroomName = prevroomName.replace(/'/g, "\\'");
+                prevagendaTitle = prevagendaTitle.replace(/\\'/g, "\'");
+
+                /* prevroomStatus='{!JSENCODE(bookingStatus)}'; */
+            }
+
+            function checkBookedRooms() {
+                var newBookedRooms = '';
+                $("[id$='table1'] tbody tr").each(function () {
+                    if ($($(this).find("td")[2]).text().trim() == 'Booked') {
+                        newBookedRooms += $($(this).find("td")[1]).text() + '-';
+                    }
+                });
+                var initialBookedRoomsArray = new Array();
+                var newBookedRoomsArray = new Array();
+                if (initialBookedRooms != '' && initialBookedRooms != null) {
+                    initialBookedRoomsArray = initialBookedRooms.split("-");
+                    initialBookedRoomsArray.sort();
+                }
+                if (newBookedRooms != '' && newBookedRooms != null) {
+                    newBookedRoomsArray = newBookedRooms.split("-");
+                    newBookedRoomsArray.sort();
+                }
+                console.log('initialBookedRoomsArray----' + initialBookedRoomsArray + '\nnewBookedRoomsArray----' + newBookedRoomsArray);
+
+                var changeInRooms = false;
+                if (initialBookedRoomsArray.length != newBookedRoomsArray.length) {
+                    changeInRooms = true;
+                } else {
+                    var is_same = initialBookedRoomsArray.length == newBookedRoomsArray.length && initialBookedRoomsArray.every(function (element, index) {
+                        return element === newBookedRoomsArray[index];
+                    });
+                    changeInRooms = !(is_same);
+                }
+                return changeInRooms;
+            }
+
+            function sendInviteJS(agendaId, internalId, id) {
+                initprevandnewValues();
+                if (starttimeNew === prevlocStartTime && endtimeNew === prevlocEndTime && agendaTitleNew === prevagendaTitle && !checkBookedRooms()) {
+                    if (typeof agendaId === 'undefined' || agendaId == 'null' || agendaId == '') {
+                        sendInvite(internalId);
+                    }
+                    else {
+                        sendInvite(id);
+                    }
+                }
+                else {
+                    alert('Please save the agenda session before adding new Presenters');
+                }
+            }
+
+            function sendReInviteJS(agendaId, internalId, id) {
+                initprevandnewValues();
+                if (starttimeNew === prevlocStartTime && endtimeNew === prevlocEndTime && agendaTitleNew === prevagendaTitle && !checkBookedRooms()) {
+                    if (typeof agendaId === 'undefined' || agendaId == 'null' || agendaId == '') {
+                        sendReInvite(internalId);
+                    }
+                    else {
+                        sendReInvite(id);
+                    }
+                }
+                else {
+                    alert('Please save the agenda session before adding new Presenters');
+                }
+            }
+
+            function cancelInviteJS(agendaId, internalId, id) {
+                initprevandnewValues();
+                if (starttimeNew === prevlocStartTime && endtimeNew === prevlocEndTime && agendaTitleNew === prevagendaTitle && !checkBookedRooms()) {
+                    if (typeof agendaId === 'undefined' || agendaId == 'null' || agendaId == '') {
+                        cancelInvite(internalId);
+                    }
+                    else {
+                        cancelInvite(id);
+                    }
+                }
+                else {
+                    alert('Please save the agenda session before adding new Presenters');
+                }
+            }
+
+
+        </script>
+
+
+        <!-- Start: Css and Script for Date and Time Fields -->
+        <style>
+            .timePicker {
+                height: 12.7em;
+                width: 8em;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                /*white-space: pre;*/
+                border: 1px solid #b7c6b2;
+                display: none;
+                z-index: 51;
+                top: 0;
+                left: 0;
+                background: #fff;
+            }
+
+            .hover {
+                background-color: #cfeef8;
+            }
+
+            .specificTime {
+                text-align: left;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                padding-left: 4px;
+                padding-right: 12px;
+                margin-right: 4px;
+            }
+
+            .collapseArrow {
+                cursor: pointer !important;
+                width: 14px !important;
+                height: 14px !important;
+            }
+
+            /* .bookedRooms thead{
+        background-color: #f2f3f3;
+    }
+        
+    .bookedRooms td {
+        padding: 4px;
+        vertical-align: middle;
+        height: 23px;
+    }
+        
+    table.scroll.bookedRooms tbody {
+        max-height: 130px !important;
+    }
+    
+    table.scroll.bookedRooms tbody td:first-child, table.scroll.bookedRooms thead th:first-child {
+        width: 25% !important;
+    }
+    
+    table.scroll.bookedRooms tbody td:nth-child(2), table.scroll.bookedRooms thead th:nth-child(2) {
+        width: 30% !important;
+    }
+    
+    table.scroll.bookedRooms tbody td:nth-child(3), table.scroll.bookedRooms thead th:nth-child(3) {
+        width: 20% !important;
+    }
+    
+    table.scroll.bookedRooms tbody td:nth-child(4), table.scroll.bookedRooms thead th:nth-child(4) {
+        width: 17% !important;
+    } */
+
+            .ui-autocomplete-loading {
+                background: white url("{!$Resource.ajaxLoad}") right center no-repeat;
+            }
+
+            .autocomplete {
+                border-color: #929292 #D5D5D5 #D5D5D5 #929292 !important;
+                border-style: solid;
+                border-width: 1px !important;
+                height: 18px !important;
+                padding: 3px 10px;
+                width: 534px !important;
+            }
+
+            .searchBtn {
+                background: #FDCE3E !important;
+                border: 1px solid #E5A716 !important;
+                color: #434343 !important;
+                height: 26px !important;
+                margin-left: 7px !important;
+                padding: 0 23px !important;
+                font-size: 15px !important;
+                font-weight: bold !important;
+            }
+
+            .popupBox {
+                top: 105px !important;
+            }
+
+            .popupTable table th,
+            .popupTable table td {
+                padding: 8px 5px;
+            }
+
+            .ui-widget-content {
+                background: #fff;
+                border-radius: 0 !important;
+            }
+
+            .ui-state-hover,
+            .ui-widget-content .ui-state-hover,
+            .ui-widget-header .ui-state-hover,
+            .ui-state-focus,
+            .ui-widget-content .ui-state-focus,
+            .ui-widget-header .ui-state-focus {
+                border: 0;
+                background: #eee;
+                color: #155fbe;
+                border-radius: 0;
+                margin: 0px !important;
+            }
+
+            .ui-widget-content a,
+            .ui-widget-content a:hover {
+                color: #000 !important;
+            }
+
+            .warningM3 .msgIcon {
+                width: 16px;
+                height: 16px;
+                background-size: 100%;
+            }
+
+            .warningM3 h4 {
+                display: none !important;
+            }
+        </style>
+
+        <style>
+            .modal {
+                display: none;
+                /* Hidden by default */
+                position: fixed;
+                /* Stay in place */
+                z-index: 1;
+                /* Sit on top */
+                padding-top: 100px;
+                /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%;
+                /* Full width */
+                height: 100%;
+                /* Full height */
+                overflow: auto;
+                /* Enable scroll if needed */
+                background-color: rgb(0, 0, 0);
+                /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.4);
+                /* Black w/ opacity */
+            }
+
+            /* Modal Content */
+
+            .modal-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%; //margin-top: 200px;
+            }
+
+            /* The Close Button */
+
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        </style>
+
+        <script>
+            var SelectedTextBox = '';
+
+            $(document).ready(function () {
+
+
+                //To close the drop down when clicked on the body apart from the text box and the options
+                $(document).mouseup(function (e) {
+                    var container = $("[id$='simpleTimePicker']");
+                    var container2 = $("input.timePickerTextBox");
+                    if (!container.is(e.target) && container.has(e.target).length === 0 && !container2.is(e.target)) {
+                        $("[id$='simpleTimePicker']").css("display", "none");
+                    }
+                });
+
+                $("input.timePickerTextBox").on("focus", function (event) {
+                    $("[id$='simpleTimePicker']").css({
+                        'left': $(this).offset().left - 10,
+                        'top': $(this).offset().top - 75,
+                        'display': 'block'
+                    });
+                    SelectedTextBox = $(this).attr('data-id');
+                    //highlight the value in text box in the drop down
+                    removeHighLight();
+                    var currentTime = $(this).val().replace(' ', '_').replace(':', '_');
+                    var splitCurrentTime = currentTime.split('_');
+                    var timeToBeHighlighted = '';
+                    if (splitCurrentTime.length >= 2) {
+                        timeToBeHighlighted = splitCurrentTime[0];
+                        if (parseInt(splitCurrentTime[1]) >= 0 && parseInt(splitCurrentTime[1]) < 30) {
+                            timeToBeHighlighted += '_00';
+                        } else {
+                            timeToBeHighlighted += '_30';
+                        }
+                        if (splitCurrentTime.length == 3) {
+                            timeToBeHighlighted += '_' + splitCurrentTime[2];
+                        }
+                    }
+                    $("#timePickerItem_" + timeToBeHighlighted).addClass("hover");
+
+                    $("#simpleTimePicker").scrollTop($("#simpleTimePicker .hover").position().top);
+
+                });
+
+                // Highlight on hover
+                $(".specificTime").on("mouseover", function (event) {
+                    highLightTimeItem($(this).attr('id'));
+                });
+
+                // Update the text box with the selected time
+                $(".specificTime").on("click", function (event) {
+                    $("[data-id='" + SelectedTextBox + "']").val($(this).text());
+                    $("[id$='simpleTimePicker']").css("display", "none");
+                    if (SelectedTextBox.search("StartDateTime_time") >= 0) {
+                        updatelocationTZStartTimeStringJS();
+                    } else if (SelectedTextBox.search("EndDateTime_time") >= 0) {
+                        updatelocationTZEndTimeStringJS();
+                    }
+                });
+
+            });
+
+            function removeHighLight() {
+                $(".hover").removeClass("hover");
+            }
+
+            function highLightTimeItem(elemId) {
+                var id = "#" + elemId;
+                removeHighLight();
+                $(id).addClass("hover");
+            }
+
+        </script>
+        <!-- End: Css and Script for Date and Time Fields -->
+
+    </head>
+
+    <body>
+
+        <!--Right Content Starts-->
+        <apex:form id="eventFormTop">
+
+            <div class="bPageTitle">
+                <div class="ptBody">
+                    <div class="content">
+                        <img title="Visit" src="/s.gif" class="pageTitleIcon" alt="Agendas"></img>
+                        <h1 class="pageType">
+                            <!--<a href="/{!JSENCODE(visitId)}" target="_blank">{!JSENCODE(visitString)}</a>-->
+                            <apex:commandLink onclick="redirectToVisit('{!JSENCODE(visitId)}');" title="visit" value="{!JSENCODE(visitString)}" rerender="dummy"
+                            />
+                            <span class="titleSeparatingColon">:</span>
+                        </h1>
+                        <h2 class="pageDescription">Agenda Session</h2>
+                        <div class="blank">&nbsp;</div>
+                    </div>
+                    <div class="links">
+                        <a title="Help for this Page (New Window)" href="#">
+                            <span class="helpLink">Help for this Page</span>
+                            <img src="/s.gif" class="helpIcon"></img>
+                        </a>
+                    </div>
+                </div>
+                <div class="ptBreadcrumb"></div>
+            </div>
+
+            <chatter:feedWithFollowers entityId="{!agendaRecord.Id}" showHeader="true" />
+        </apex:form>
+        <apex:form id="eventFormId">
+
+            <div class="rightContent">
+                <!--Visit View-->
+                <div class="agenda bPageBlock">
+                    <!-- <apex:outputText value="DTSTAMP:{0,date,yyyyMMdd'T'HHmmss'Z'}"><apex:param value="{!NOW()}" /> </apex:outputText> 
+<apex:outputText value="DTSTART:{0,date,yyyyMMdd'T'HHmmss'Z'}"><apex:param value="{!agendaRecord.Start_Time__c}" /> </apex:outputText> 
+<apex:outputText value="DTEND:{0,date,yyyyMMdd'T'HHmmss'Z'}"><apex:param value="{!agendaRecord.End_Time__c}" />  </apex:outputText> 
+         -->
+                    <apex:actionFunction name="saveAgendaSession" action="{!saveAgendaSession}" status="progressIndicator" reRender="pageMsgId,bookedRoomsTable"
+                        onComplete="roomUnavailableErrorsJS('{!unAvailableRoomsString}');">
+                        <apex:param name="redirectToTimeline" value="" />
+                        <apex:param name="sendUpdatedInvites" value="" />
+                    </apex:actionFunction>
+
+                    <script>
+                        var invitedPresenterCount;
+                        invitedPresenterCount = {!numberOfInvitedPresenters};
+
+                        function updateInvitedPresenterCount(invitesCount) {
+                            invitedPresenterCount = invitesCount;
+                            console.log('invitedPresenterCount:: ' + invitedPresenterCount)
+                        }
+                        var sendInvites;
+                        var redirectToTimelineVar;
+                        function saveAgenda(redirectToTimeline) {
+                            sendInvites = false;
+                            redirectToTimelineVar = redirectToTimeline;
+                            console.log('redirectToTimeline:' + redirectToTimeline);
+                            console.log('sendInvites:' + sendInvites);
+
+                            if (invitedPresenterCount != null && invitedPresenterCount > 0) {
+                                var newSessionStartTime = $("[id$='startTimeId']").val();
+                                var newSessionEndTime = $("[id$='endTimeId']").val();
+                                var newAgendaSessionTitle = $("[id$='agendaTitleId']").val();
+                                var changeInRooms = checkBookedRooms();
+                                var statusListVal = $("[id$='statusList']").val();
+                                console.log('statusListVal:: ' + statusListVal);
+
+                                console.log('changeInRooms----' + changeInRooms);
+                                console.log('newSessionStartTime--' + newSessionStartTime + '--newSessionEndTime--' + newSessionEndTime + '--newAgendaSessionTitle--' + newAgendaSessionTitle);
+                                if (newSessionStartTime && newSessionEndTime && newAgendaSessionTitle) {//If all the 3 values are not (null and empty)
+                                    if (initialSessionStartTime != newSessionStartTime || initialSessionEndTime != newSessionEndTime || initialSessionTitle != newAgendaSessionTitle || changeInRooms) {
+                                        if (confirm("Do you want to send updated Presenter Invites?\nClick OK to send updated Presenter Invites.\nClick CANCEL to save changes without sending updated Presenter Invites.")) {
+                                            sendInvites = true;
+                                        }
+                                    }
+                                }
+                            }
+                            /*
+                            if(invitedPresenterCount!=null && invitedPresenterCount>0) {
+                                if(confirm("Do you want to send updated Presenter Invites to invited users?")) { 
+                                    sendInvites = true;
+                                }
+                            }
+                            */
+                            console.log('redirectToTimeline:' + redirectToTimeline);
+                            console.log('sendInvites:' + sendInvites);
+                            saveAgendaSession(redirectToTimeline, sendInvites);
+                        }
+
+                        function roomUnavailableErrorsJS(unAvailableRoomsStr) {
+                            if (unAvailableRoomsStr != '' && unAvailableRoomsStr != null) {
+                                if (confirm(unAvailableRoomsStr + ': is/are not available for the selected times.\nPress OK to cancel unavailable rooms.\nPress CANCEL to return to agenda record.')) {
+                                    cancelUnAvailableRooms();
+                                }
+                            }
+                        }
+
+                        function updatelocationTZStartTimeStringJS() {
+                            var date = $("[id$='startTimeLocTZID_date']").val();
+                            var time = $("[id$='startTimeLocTZID_time']").val();
+                            if (date != '' && time != '') {
+                                $("[id$='startTimeLocTZID']").val(date + ' ' + time);
+                                updateUserTZStartDateTimeValues('locationStartTime', date + ' ' + time);
+                            }
+                        }
+
+                        function updatelocationTZEndTimeStringJS() {
+                            var date = $("[id$='endTimeLocTZID_date']").val();
+                            var time = $("[id$='endTimeLocTZID_time']").val();
+
+                            if (date != '' && time != '') {
+                                $("[id$='endTimeLocTZID']").val(date + ' ' + time);
+                                updateUserTZEndDateTimeValues('locationEndTime', date + ' ' + time);
+                            }
+                        }
+                        var calendarTab;
+                        function validateCheckAvailabilityJS(arrDateValue, depDateValue, noOfAttendeesValue) {
+                            var arrivaldate = document.getElementById(arrDateValue).value;
+                            var depdate = document.getElementById(depDateValue).value;
+                            var NumberOfAttendee = '1';
+                            validateCheckAvailability(arrivaldate, depdate, NumberOfAttendee);
+                            //if('{!$User.UITheme}'!='Theme4d') {
+                            calendarTab = window.open('', 'gcalevent');
+                            if (calendarTab != null) {
+                                calendarTab.blur();
+                                self.focus();
+                            }
+                            //}
+                        }
+
+                        function openCalendar(arrDateValue, depDateValue, locationValue, noOfAttendeesValue, isCheckAvailabilityValidationError) {
+                            console.log('isCheckAvailabilityValidationError--' + isCheckAvailabilityValidationError);
+                            if (isCheckAvailabilityValidationError == false || isCheckAvailabilityValidationError == 'false') {
+                                var loc = $("[id$='" + locationValue + "'] option:selected").text();
+                                var arrivaldate = document.getElementById(arrDateValue).value;
+                                var depdate = document.getElementById(depDateValue).value;
+                                var NumberOfAttendee = noOfAttendeesValue;
+                                console.log('arrivaldate : ' + arrivaldate);
+                                console.log('depdate : ' + depdate);
+                                if (!(arrivaldate == '' || depdate == '' || NumberOfAttendee == '' || NumberOfAttendee == undefined || NumberOfAttendee == null)) {
+                                    /*if('{!$User.UITheme}'=='Theme4d') 
+                                    { 
+                                        sforce.one.navigateToURL('/apex/CalendarPage?LocationName='+loc+'&NumberOfAttendee='+NumberOfAttendee+'&arrivaldate='+arrivaldate+'&depDate='+depdate+'&source=EventForm'); 
+                                    }*/
+                                    if (calendarTab != null) {
+                                        calendarTab.location.href = '{!$Page.VisitOps__CalendarPage}?LocationName=' + loc + '&NumberOfAttendee=' + NumberOfAttendee + '&arrivaldate=' + arrivaldate + '&depDate=' + depdate + '&source=EventForm';
+                                        calendarTab.focus();
+                                    }
+                                } else {
+                                    if (calendarTab != null) {
+                                        calendarTab.close();
+                                    }
+                                }
+                                return false;
+                            } else {
+                                if (calendarTab != null) {
+                                    calendarTab.close();
+                                }
+                            }
+                        }
+
+
+                        function toggleCateringSection() {
+                            var ele = document.getElementsByClassName("cateringSection")[0];
+                            if ($(".cateringSection").is(":hidden")) {
+                                ele.style.display = 'block';
+                                $(".collapseArrow").attr("src", "{!URLFOR($Resource.VisitOps__VMSResources, 'images/downArrow.png')}");
+                            } else {
+                                ele.style.display = 'none';
+                                $(".collapseArrow").attr("src", "{!URLFOR($Resource.VisitOps__VMSResources, 'images/SideArrow.png')}");
+                            }
+                        }
+
+                    </script>
+
+                    <apex:outputPanel id="AgendaSessionHeaderId">
+                        <div class="pbHeader">
+                            <table cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="pbTitle">
+                                            <img width="12" height="1" style="margin-right: 0.25em;" src="/s.gif" class="minWidth"></img>
+                                            <!-- <h2 class="mainTitle">New Event</h2> -->
+                                            <h2>
+                                                <apex:outputText id="agendaTitle" value="{!AgendaTitle}"></apex:outputText>
+                                            </h2>
+                                        </td>
+                                        <td id="topButtonRow" class="pbButton">
+                                            <apex:commandButton value="Save" onclick="saveAgenda(false);" reRender="dummy" status="progressIndicator" />
+                                            <apex:commandButton value="Save & Close" onclick="saveAgenda(true);" reRender="dummy" status="progressIndicator" />
+                                            <apex:commandButton value="{!IF(agendaRecord.Id!=null,'Close','Cancel')}" action="{!cancelAgenda}" immediate="true" />
+                                        </td>
+                                        <td>
+                                            <div class="fr">
+                                                <span class="pbSubExtra">
+                                                    <span class="requiredLegend brandTertiaryFgr">
+                                                        <span class="requiredExampleOuter">
+                                                            <span class="requiredExample">&nbsp;</span>
+                                                        </span>
+                                                        <!--<span class="requiredMark">*</span>-->
+                                                        <span class="requiredText"> = Required Information</span>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </apex:outputPanel>
+
+                    <div class="pbBody">
+                        <apex:pageMessages id="pageMsgId"></apex:pageMessages>
+                        <!--<div class="pbSubheader brandTertiaryBgr first tertiaryPalette">
+                <span class="pbSubExtra">
+                     <span class="requiredLegend brandTertiaryFgr">
+                         <span class="requiredExampleOuter">
+                             <span class="requiredExample">&nbsp;</span>
+                         </span>                                            
+                         <span class="requiredText"> = Required Information</span>
+                     </span>
+                </span>
+                <h3><apex:outputText id="agendaTitle" value="{!displayAgendaTitle}"></apex:outputText><span class="titleSeparatingColon">:</span></h3>
+            </div>-->
+
+                        <!-- Output panel Added to Fix TimePicker Alignment issue in Lightning -->
+                        <apex:outputPanel rendered="{!isLightning}">
+                            <style>
+                                .timePicker {
+                                    margin-top: 101px;
+                                    margin-left: 10px;
+                                }
+                            </style>
+                        </apex:outputPanel>
+
+
+                        <!-- Agenda Session Details Section -->
+                        <apex:outputPanel id="agendaSessionDetailsId">
+
+                            <!--Left side-->
+                            <div class="midCol">
+                                <div class="pbSubheader brandTertiaryBgr first tertiaryPalette">
+                                    <h3>Time</h3>
+                                </div>
+                                <div class="contentDiv">
+                                    <div class="row">
+                                        <div class="label">Start Date (Location)</div>
+                                        <div class="field">
+                                            <div class="requiredInput">
+                                                <div class="requiredBlock"></div>
+                                                <apex:actionRegion >
+                                                    <apex:inputText style="width:19% !important;" value="{!locationTZStartTimeString_Only_Date}" id="startTimeLocTZID_date" html-placeholder="Enter Start Date"
+                                                        onChange="updatelocationTZStartTimeStringJS();" onfocus="DatePicker.pickDate(true, '{!$Component.startTimeLocTZID_date}', false);">
+                                                    </apex:inputText>
+                                                    <apex:inputText style="width:18.5% !important;" value="{!locationTZStartTimeString_Only_Time}" id="startTimeLocTZID_time"
+                                                        html-data-id="StartDateTime_time" html-placeholder="Enter Start Time"
+                                                        onChange="updatelocationTZStartTimeStringJS();" styleClass="timePickerTextBox">
+                                                    </apex:inputText>
+                                                    [
+                                                    <a href="javascript:void(0);" onClick="$('[id$=startTimeLocTZID_time]').val('{!JSENCODE(currentTime)}');updatelocationTZStartTimeStringJS();">{!currentTime}</a> ]
+
+
+                                                    <apex:actionFunction name="updateUserTZStartDateTimeValues" action="{!calculateUserTZDateTimeValues}" rerender="startTimeId,pageMsgId,locationPanel,placePanel,roomPanel"
+                                                        status="progressIndicator">
+                                                        <apex:param name="contextField" value="locationStartTime" />
+                                                        <apex:param name="locationTZStartTimeString" value="" assignTo="{!locationTZStartTimeString}" />
+                                                    </apex:actionFunction>
+
+                                                    <apex:inputHidden value="{!locationTZStartTimeString}" id="startTimeLocTZID" html-placeholder="Enter Start Date & Time">
+                                                        <apex:actionSupport event="onchange" action="{!calculateUserTZDateTimeValues}" rerender="startTimeId,pageMsgId" status="progressIndicator">
+                                                            <apex:param name="contextField" value="locationStartTime" />
+                                                        </apex:actionSupport>
+                                                    </apex:inputHidden>
+                                                </apex:actionRegion>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="label">End Date (Location)</div>
+                                        <div class="field">
+                                            <div class="requiredInput">
+                                                <div class="requiredBlock"></div>
+                                                <apex:actionRegion >
+
+                                                    <apex:inputText style="width:19% !important;" value="{!locationTZEndTimeString_Only_Date}" id="endTimeLocTZID_date" html-placeholder="Enter End Date"
+                                                        onChange="updatelocationTZEndTimeStringJS();" onfocus="DatePicker.pickDate(true, '{!$Component.endTimeLocTZID_date}', false);">
+
+                                                    </apex:inputText>
+                                                    <apex:inputText style="width:18.5% !important;" value="{!locationTZEndTimeString_Only_Time}" id="endTimeLocTZID_time" html-data-id="EndDateTime_time"
+                                                        html-placeholder="Enter End Time" onChange="updatelocationTZEndTimeStringJS();"
+                                                        styleClass="timePickerTextBox">
+
+                                                    </apex:inputText>
+                                                    [
+                                                    <a href="javascript:void(0);" onClick="$('[id$=endTimeLocTZID_time]').val('{!JSENCODE(currentTime)}');updatelocationTZEndTimeStringJS();">{!currentTime}</a> ]
+                                                    <apex:actionFunction name="updateUserTZEndDateTimeValues" action="{!calculateUserTZDateTimeValues}" rerender="endTimeId,pageMsgId,locationPanel,placePanel,roomPanel"
+                                                        status="progressIndicator">
+                                                        <apex:param name="contextField" value="locationEndTime" />
+                                                        <apex:param name="locationTZEndTimeString" value="" assignTo="{!locationTZEndTimeString}" />
+                                                    </apex:actionFunction>
+
+                                                    <apex:inputHidden value="{!locationTZEndTimeString}" id="endTimeLocTZID" html-placeholder="Enter End Date & Time">
+                                                        <apex:actionSupport event="onchange" action="{!calculateUserTZDateTimeValues}" rerender="endTimeId,pageMsgId" status="progressIndicator">
+                                                            <apex:param name="contextField" value="locationEndTime" />
+                                                        </apex:actionSupport>
+                                                    </apex:inputHidden>
+                                                </apex:actionRegion>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="display:none;">
+                                        <div class="label">Start Date (User)</div>
+                                        <div class="field">
+                                            <span style="display:none">
+                                                <apex:outputField id="initialStartTimeId" value="{!VisitOps__Agenda__c.VisitOps__Start_Time__c}" />
+                                            </span>
+                                            <!-- Timezone Changes -->
+                                            <!-- <apex:inputField id="startTimeId" value="{!agendaRecord.Start_Time__c}" html-placeholder="Enter Start Date & Time" styleClass="reqField" required="true" /> -->
+                                            <div class="requiredInput">
+                                                <div class="requiredBlock"></div>
+                                                <apex:inputText required="true" value="{!userTZStartTimeString}" id="startTimeId" disabled="true" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="display:none;">
+                                        <div class="label">End Date (User)</div>
+                                        <div class="field">
+                                            <span style="display:none">
+                                                <apex:outputField id="initialEndTimeId" value="{!VisitOps__Agenda__c.VisitOps__End_Time__c}" />
+                                            </span>
+                                            <!-- Timezone Changes -->
+                                            <!-- <apex:inputField id="endTimeId" value="{!agendaRecord.End_Time__c}" html-placeholder="Enter End Date & Time" styleClass="reqField" required="true"/> -->
+                                            <div class="requiredInput">
+                                                <div class="requiredBlock"></div>
+                                                <apex:inputText required="true" value="{!userTZEndTimeString}" id="endTimeId" disabled="true" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="timePicker" id="simpleTimePicker">
+                                            <apex:repeat value="{!timePickerTimingsList}" var="t">
+                                                <div class="specificTime" id="timePickerItem_{!SUBSTITUTE(SUBSTITUTE(t,':','_'),' ','_')}">{!t}</div>
+                                            </apex:repeat>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pbSubheader brandTertiaryBgr tertiaryPalette">
+                                    <h3>Location</h3>
+                                </div>
+                                <div class="contentDiv">
+                                    <apex:actionRegion >
+                                        <apex:actionFunction name="validateCheckAvailability" action="{!validateCheckAvailability}" rerender="pgMsgsId" status="progressIndicator"
+                                            oncomplete="openCalendar('{!$Component.startTimeId}','{!$Component.endTimeId}','{!$Component.locationId}','1',{!isCheckAvailabilityValidationError});">
+                                            <apex:param name="arrivalTime" value="" />
+                                            <apex:param name="departureTime" value="" />
+                                            <apex:param name="noOfAttendees" value="" />
+                                        </apex:actionFunction>
+                                    </apex:actionRegion>
+                                    <apex:actionRegion >
+                                        <apex:actionFunction name="bookSelectedRoomsFromCalendar" action="{!bookSelectedRoomsFromCalendar}" onComplete="renderRooms();"
+                                            reRender="bookedRoomsTable,roomPanel,placePanel,pageMsgId" status="progressIndicator">
+                                            <apex:param name="selectedRooms" value="" />
+                                        </apex:actionFunction>
+                                    </apex:actionRegion>
+                                    <apex:actionRegion >
+                                        <apex:actionFunction name="cancelUnAvailableRooms" action="{!cancelUnAvailableRooms}" reRender="dummy" status="progressIndicator"
+                                            onComplete="saveAgendaSession(redirectToTimelineVar,sendInvites);">
+                                        </apex:actionFunction>
+                                    </apex:actionRegion>
+                                    <apex:actionRegion >
+                                        <div class="row">
+                                            <apex:outputPanel id="locationPanelId">
+                                                <div class="label">Location</div>
+                                                <div class="field">
+                                                    <apex:outputPanel id="locationPanel">
+                                                        <apex:selectList id="locationId" value="{!locationIdForRoom}" size="1" onchange="renderPlaces('');">
+                                                            <apex:selectOptions value="{!locationOptions}"></apex:selectOptions>
+                                                        </apex:selectList>
+                                                    </apex:outputPanel>
+                                                    <apex:commandLink onclick="validateCheckAvailabilityJS('{!$Component.startTimeId}','{!$Component.endTimeId}','1');" title="Check Availability"
+                                                        value="Check Availability" rerender="dummy" />
+                                                </div>
+                                            </apex:outputPanel>
+                                        </div>
+                                        <div class="row">
+                                            <apex:outputPanel id="placePanelId">
+                                                <div class="label">Place</div>
+                                                <div class="field">
+                                                    <apex:outputPanel id="placePanel">
+                                                        <apex:selectList id="placeId" value="{!placeIdForRoom}" size="1" onchange="renderRooms();">
+                                                            <apex:selectOptions value="{!placeOptions}"></apex:selectOptions>
+                                                        </apex:selectList>
+                                                    </apex:outputPanel>
+                                                </div>
+                                            </apex:outputPanel>
+                                        </div>
+                                        <div class="row">
+                                            <div class="label">Room</div>
+                                            <div class="field">
+                                                <apex:outputPanel id="roomPanel">
+                                                    <apex:selectList id="roomId" value="{!roomId}" size="1">
+                                                        <apex:selectOptions value="{!roomOptions}"></apex:selectOptions>
+                                                    </apex:selectList>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel id="bookRoomPanel">
+                                                    <apex:commandButton id="bookRoomId2" value="Book Room" action="{!bookRoom}" onComplete="renderRooms();" reRender="bookedRoomsTable,roomPanel,placePanel,pageMsgId"
+                                                        status="progressIndicator" />
+                                                </apex:outputPanel>
+                                            </div>
+                                        </div>
+                                        <apex:actionFunction name="renderRooms" action="{!getRoomDetails}" reRender="roomPanel" status="progressIndicator">
+                                            <apex:param name="roomId" value="" assignTo="{!roomId}" />
+                                        </apex:actionFunction>
+                                        <apex:actionFunction name="renderPlaces" action="{!getPlacesDetails}" reRender="placePanel,roomPanel" status="progressIndicator">
+                                            <apex:param name="LocationPlaceId" value="" assignTo="{!placeIdForRoom}" />
+                                            <apex:param name="roomId" value="" assignTo="{!roomId}" />
+                                        </apex:actionFunction>
+
+                                    </apex:actionRegion>
+                                    <apex:actionFunction name="removeFromBookedList" action="{!removeBookingFromRoomBookingsWrapperList}" reRender="bookedRoomsTable"
+                                        status="progressIndicator" onComplete="renderRooms();" />
+                                    <div class="row" style="margin-top:5px;">
+                                        <apex:outputPanel id="bookedRoomsTable">
+
+                                            <h3>Booked Rooms</h3>
+                                            <table id="table1" class="list bookedRooms" cellpadding="0" cellspacing="0">
+                                                <thead>
+                                                    <tr class="headerRow">
+                                                        <td>Location</td>
+                                                        <td>Room</td>
+                                                        <td>Status</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <apex:repeat value="{!bookedRoomsWrapperList}" var="bookedRoom">
+                                                        <tr class="dataRow" style="background-color: {!IF(bookedRoom.isNotAvailable,'red','')}">
+                                                            <td>
+                                                                <apex:outputText value="{!bookedRoom.LocationName}" />
+                                                            </td>
+                                                            <td>
+                                                                <apex:outputText value="{!bookedRoom.RoomName}" />
+                                                            </td>
+                                                            <td>
+                                                                <apex:outputText value="{!bookedRoom.Status}" />
+                                                            </td>
+                                                            <td>
+                                                                <apex:commandButton id="cancelButton" value="Cancel Room" rendered="{!(bookedRoom.RoomSaved && bookedRoom.Status == 'Booked' && !bookedRoom.ReBookRoom)}"
+                                                                    action="{!bookedRoom.cancelRoomBooking}" reRender="bookedRoomsTable,pageMsgId"
+                                                                    status="progressIndicator" />
+                                                                <!-- <apex:commandButton id="ReBookButton" value="Re-Book Room" rendered="{!(bookedRoom.Status == 'Cancelled')}" action="{!bookedRoom.reBooking}" reRender="bookedRoomsTable,pageMsgId" status="progressIndicator"/>
+                                            <apex:commandButton id="overrideButton" value="Override" rendered="{!bookedRoom.isNotAvailable}" action="{!bookedRoom.removeBooking}" reRender="bookedRoomsTable,pageMsgId" status="progressIndicator"/> -->
+                                                                <apex:commandButton id="removeButton" value="Remove" rendered="{!(!bookedRoom.RoomSaved || bookedRoom.ReBookRoom)}" action="{!bookedRoom.removeBooking}"
+                                                                    reRender="bookedRoomsTable,pageMsgId" status="progressIndicator"
+                                                                    onComplete="removeFromBookedList();" />
+                                                            </td>
+                                                        </tr>
+                                                    </apex:repeat>
+                                                </tbody>
+                                            </table>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--right side-->
+                            <div class="largeCol">
+
+                                <div class="pbSubheader brandTertiaryBgr first tertiaryPalette">
+                                    <h3>Type of Activity</h3>
+                                </div>
+                                <div class="contentDiv">
+                                    <apex:actionRegion >
+                                        <div class="colmedium">
+                                            <div class="row">
+
+                                                <div class="label">Category
+                                                </div>
+                                                <div class="field">
+                                                    <apex:selectList id="topicCategory" value="{!topicCategory}" size="1">
+                                                        <apex:selectOptions value="{!topicCategoriesInfo}"></apex:selectOptions>
+                                                        <apex:actionSupport action="{!fetchSessionTopics}" event="onchange" rerender="sessionTopic,pageMsgId,agendaTitleId,agendaTitle,showOnCustomerAgendaID,showOnCustomerSurveyID,showOnPresenterAgendaID"
+                                                            status="progressIndicator" />
+                                                    </apex:selectList>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="label">Session Topic</div>
+                                                <div class="field">
+                                                    <apex:selectList id="sessionTopic" value="{!sessionTopic}" size="1">
+                                                        <apex:selectOptions value="{!SessionTopics}"></apex:selectOptions>
+                                                        <apex:actionSupport event="onchange" action="{!renderTitle}" rerender="agendaTitleId,agendaTitle,pageMsgId" status="progressIndicator"
+                                                        />
+                                                    </apex:selectList>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="label">
+                                                    <apex:outputLabel value="Session Title" />
+                                                </div>
+                                                <div class="field">
+                                                    <div class="requiredInput">
+                                                        <div class="requiredBlock"></div>
+                                                        <apex:inputText style="width:99%;" id="agendaTitleId" value="{!agendatitle}" styleClass="reqField" required="true">
+                                                        </apex:inputText>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="label">
+                                                    {!$ObjectType.VisitOps__Agenda__c.fields.VisitOps__Show_on_Customer_Agenda__c.label}
+                                                    <apex:inputCheckbox value="{!showOnCustomerAgenda}" id="showOnCustomerAgendaID" style="vertical-align: middle;float:right;"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="label">
+                                                    {!$ObjectType.VisitOps__Agenda__c.fields.VisitOps__Show_on_Presenter_Agenda__c.label}
+                                                    <apex:inputCheckbox value="{!showOnPresenterAgenda}" id="showOnPresenterAgendaID" style="vertical-align: middle;float:right;"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="label">
+                                                    {!$ObjectType.VisitOps__Agenda__c.fields.VisitOps__Show_on_Customer_Survey__c.label}
+                                                    <apex:inputCheckbox value="{!showOnCustomerSurvey}" id="showOnCustomerSurveyID" style="vertical-align: middle;float:right;"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="colmedium">
+                                            <input id="addTopicBtn" style="margin-left: 30px;" type="button" class="btn" value="Add a Topic" onclick="fetchTopicListInPopup('topic','{!JSENCODE(locationId)}');"></input>
+                                        </div>
+                                        <div class="row">
+                                            <div class="">
+                                                <h3>{!$ObjectType.Agenda__c.fields.Agenda_Subtopics__c.label}</h3>
+                                            </div>
+                                            <div class="field">
+                                                <apex:inputField value="{!agendaRecord.VisitOps__Agenda_Subtopics__c}" />
+                                            </div>
+                                        </div>
+                                    </apex:actionRegion>
+                                    <!-- <div class="colmedium">
+                            </div> -->
+
+                                </div>
+
+                                <!-- <apex:actionFunction name="renderSessionTopic" action="{!getSessionTopic}" reRender="sessionTopic,pageMsgId,agendaTitle" status="progressIndicator" />
+                        <apex:actionFunction name="rerenderTitle" action="{!reRenderTitle}" reRender="agendaTitle,pageMsgId" status="progressIndicator"/>
+                         -->
+
+                            </div>
+                            <!--End of right side-->
+                            <!-- Catering Details-->
+
+                            <apex:actionRegion >
+                                <div class="cBoth"></div>
+                                <div class="pbSubheader brandTertiaryBgr tertiaryPalette">
+                                    <h3>
+                                        <a href="javascript:void(0);" onClick="toggleCateringSection();" style="text-decoration:none !important;color:#27282e !important;">
+                                            <apex:image styleClass="collapseArrow" url="{!URLFOR($Resource.VisitOps__VMSResources, 'images/SideArrow.png')}"></apex:image>Catering</a>
+                                    </h3>
+                                </div>
+                                <div class="cateringSection" style="display:none;">
+                                    <div class="midCol">
+                                        <div class="contentDiv">
+                                            <div class="row">
+                                                <div class="label">Total Number of Attendees: {!numberOfAttendees}</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="label">Meal</div>
+                                                <div class="field">
+                                                    <apex:selectList value="{!mealType}" size="1">
+                                                        <apex:selectOptions value="{!mealTypeInfo}" />
+                                                        <apex:actionSupport event="onchange" rerender="cateringProdId,pageMsgId" status="progressIndicator" />
+                                                    </apex:selectList>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="field">
+                                                    <apex:selectList id="cateringProdId" value="{!cateringProductId}" size="1">
+                                                        <apex:selectOptions value="{!CateringProducts}" />
+                                                    </apex:selectList>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="label">Catering Instructions</div>
+                                                <div class="field">
+                                                    <apex:inputTextArea value="{!agendaRecord.VisitOps__Special_Instructions__c}" />
+                                                </div>
+                                            </div>
+                                            <div class="cBoth"></div>
+                                            <div class="row">
+                                                <div class="label">&nbsp;</div>
+                                                <div class="label">Number of Attendees for Catering</div>
+                                                <div class="field">
+                                                    <apex:inputField value="{!agendaRecord.VisitOps__Total_Guests__c}" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contentDiv">
+                                        <table cellpadding="0" cellspacing="0" class="list">
+                                            <tr class="headerRow">
+                                                <th>Attendee Name</th>
+                                                <th>Diet Type</th>
+                                                <th>Dietary Requirements</th>
+                                            </tr>
+                                            <apex:repeat value="{!attendeesInThisVisit}" var="att">
+                                                <tr class="dataRow">
+                                                    <td>
+                                                        <apex:outputText value="{!att.VisitOps__Attendee_Name__c}" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputText value="{!att.VisitOps__DietType__c}" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputText value="{!att.VisitOps__DietaryRequirements__c}" />
+                                                    </td>
+                                                </tr>
+                                            </apex:repeat>
+                                        </table>
+                                    </div>
+                                </div>
+                            </apex:actionRegion>
+                        </apex:outputPanel>
+                        <!-- End of Agenda Session Details Section -->
+
+                        <div class="cBoth"></div>
+
+                        <!--Activity Objectives-->
+                        <div class="pbSubheader brandTertiaryBgr tertiaryPalette">
+                            <h3>Activity Objectives</h3>
+                        </div>
+
+                        <div class="midCol">
+                            <div class="contentDiv">
+                                <div class="row">
+                                    <div class="label">Objectives</div>
+                                    <div class="field">
+                                        <apex:inputField value="{!agendaRecord.VisitOps__Objectives__c}" /> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="largeCol">
+                            <div class="contentDiv">
+                                <div class="row">
+                                    <div class="label">Details</div>
+                                    <div class="field">
+                                        <apex:inputField value="{!agendaRecord.VisitOps__Details__c}" />
+                                    </div>
+                                </div>
+                                <!-- 
+                    <div class="row">
+                        <div class="label">Notes</div>
+                        <div class="field">
+                            <div class="notestextarea"><apex:inputField value="{!agendaRecord.Notes__c}" /></div>
+                        </div>
+                    </div>
+                     -->
+                            </div>
+                        </div>
+                        <div class="cBoth"></div>
+
+                        <div class="pbBottomButtons">
+                            <table cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="pbTitle">
+                                            <img width="1" height="1" src="/s.gif" class="minWidth"></img>
+                                        </td>
+                                        <td class="pbButtonb">
+                                            <apex:commandButton value="Save" onclick="saveAgenda(false);" reRender="dummy" status="progressIndicator" />
+                                            <!-- <input type="button" value="Save" onclick="saveAgenda(false);"/> -->
+                                            <apex:commandButton value="Save & Close" onclick="saveAgenda(true);" reRender="dummy" status="progressIndicator" />
+                                            <apex:commandButton value="{!IF(agendaRecord.Id!=null,'Close','Cancel')}" action="{!cancelAgenda}" immediate="true" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Presenters Section Begins -->
+                        <apex:actionRegion >
+
+                            <apex:outputPanel id="presentersSectionId">
+                                <!-- <apex:outputPanel rendered="{!agendaRecord.Id!=null}"> -->
+                                <apex:outputPanel >
+                                    <div class="pbSubheader brandTertiaryBgr tertiaryPalette">
+                                        <h3>Presenters</h3>
+                                    </div>
+                                    <apex:pageMessages id="presenterGridPageMessagesId" />
+                                    <div class="contentDiv">
+                                        <!-- table presenter -->
+                                        <div class="bPageBlock">
+                                            <div class="pbHeader">
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="pbButton">
+                                                                <input id="addPresenterBtn" type="button" class="btn" value="Add a Presenter" onclick="fetchPresenterListInPopup('presenters','{!JSENCODE(locationId)}');"></input>
+                                                                <input id="refreshPresenterBtn" type="button" class="btn" value="Refresh" onclick="refreshPresenterList();"></input>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
+                                            <!-- Presenter popup -->
+
+                                            <div id="addPresenterPopup" class="popupBox" style="height:480px !important;">
+                                                <div class="row">
+                                                    <apex:outputPanel id="searchPanel">
+                                <div class="colsearch" style="width:380px">
+                                    <apex:inputText id="inputSearchText" value="{!searchText}" html-placeholder="{!searchBarLabel}" style="width:370px" onkeypress="return noenter(event, '{!JSENCODE(presenterOption)}');"/> 
+                                                        </div>
+                                                        <div class="colsmall btnfld">
+                                                            <apex:commandButton value="Go" style="width:50px" rerender="dummy" onclick="fetchPresenterList('{!JSENCODE(presenterOption)}');"/>
+                                                        </div>
+                                                        <div class="colsmall btnfld" id="divCreatePresenter">
+                                                            <apex:commandLink onclick="goToCreateNewPresenterPage();" value="Add a New Presenter" rerender="dummy" />
+                                                        </div>
+                                                        <div class="colsmall btnfld" id="divRefreshAddPresenter">
+                                                            <input id="refreshAddPresenterBtn" type="button" class="btn" value="Refresh" onclick="refreshAddPresenterList('presenters');"/>
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="fl">
+                                                        <div class="radioBoxContainer">
+                                                            <span class="txtBold">Select from : </span>
+                                                            <input type="radio" name="PresenterRadio" value="presenters" onclick="saveAndFetchPresentersList(presenterTypeOption, this.value)"
+                                                                checked="checked" /> Presenters
+                                                            <input type="radio" name="PresenterRadio" value="attendees" onclick="saveAndFetchPresentersList(presenterTypeOption, this.value)"
+                                                            /> Attendees
+                                                            <input type="radio" name="PresenterRadio" value="users" onclick="saveAndFetchPresentersList(presenterTypeOption, this.value)"
+                                                            /> Users
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <!--<div class="fr">-->
+                                                    <div class="topmargin" style="width:700px">
+                                                        <apex:outputPanel id="presenterExpertiseAreaFilter">
+                                                            <apex:outputPanel rendered="{!presenterOption='presenters'}">
+                                                                <span class="txtBold">
+                                                                    <apex:outputLabel value="Expertise Area : " />
+                                                                </span>
+                                                                <apex:selectList value="{!selectedExpertise}" onchange="fetchLocationPresenterList();" size="1">
+                                                                    <apex:selectOptions value="{!ExpertiseAreas}" />
+                                                                </apex:selectList>
+                                                            </apex:outputPanel>
+                                                        </apex:outputPanel>
+                                                    </div>
+                                                    <div class="topmargin" style="width:605px">
+                                                        <apex:outputPanel id="presenterExpertiseFilter">
+                                                            <apex:outputPanel rendered="{!presenterOption='presenters'}">
+                                                                <span class="txtBold">
+                                                                    <apex:outputLabel value="Presenter Base Location : " />
+                                                                </span>
+                                                                <apex:selectList value="{!selectedLocation}" onchange="fetchLocationPresenterList();" size="1">
+                                                                    <apex:selectOptions value="{!Locations}" />
+                                                                </apex:selectList>
+                                                            </apex:outputPanel>
+                                                        </apex:outputPanel>
+                                                    </div>
+                                                    <!--</div>-->
+                                                </div>
+                                                <apex:pageMessages id="presenterPopupPageMsg" />
+                                                <apex:inputHidden id="presenterOptionId" value="{!presenterOption}" />
+
+                                                <apex:outputPanel id="presenterPopupList">
+                                                    <apex:outputPanel rendered="{!presentersPopupGrid.sObjectsList.size != 0 && presenterOption='presenters'}">
+                                                        <div class="popupTable">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <th>&nbsp;</th>
+                                                                    <th>Presenter</th>
+                                                                    <th>Email</th>
+                                                       	<!-- <th>Title</th>
+																	  
+                                                        <th>Base Location</th>-->
+                                                        <apex:repeat value="{!additionalFieldList}" var="fieldSet">
+                                                            <th>{!fieldSetHeaderMap[fieldSet]}</th>
+                                                        </apex:repeat>
+                                                    </tr>
+                                                    <apex:repeat value="{!presentersPopupGrid.sObjectsList}" var="each">
+                                                        <tr>
+																			
+                                                            <td><apex:inputCheckbox value="{!each.isSelected}" onchange="handlePresenterCheckboxChange(this.checked,'{!JSENCODE(each.sObj.Id)}','presenters');" /></td>
+																			  
+																			 
+                                                            <!--<td><apex:outputText value="{!each.sObj['Presenter_Name__c']}" /></td>-->
+																			
+                                                            <td><apex:outputLink value="/{!each.sobj['id']}" target="_blank">{!each.sobj['Presenter_Name__c']}</apex:outputLink></td>
+                                                            <td><apex:outputText value="{!each.sObj['Email__c']}" /></td>
+                                                            <!-- <td><apex:outputText value="{!each.sObj['Title__c']}" /></td>
+																														 
+                                                            <td><apex:outputText value="{!each.sObj['Base_Location__r.Name']}" /></td> -->
+                                                            <apex:repeat value="{!additionalFieldList}" var="fieldSet">
+                                                                <td>{!if(contains(fieldSet,'Base_Location__c'), each.sObj['Base_Location__r.Name'], each.sObj[fieldSet])}</td>
+																									 
+																				 
+                                                            </apex:repeat>
+                                                        </tr>
+                                                    </apex:repeat>
+                                                </table>                                        
+                                            </div>
+                                                        <!-- next, previous and page info -->
+                                                        <apex:outputLabel value="Page {!presentersPopupGrid.PageNumber} of {!presentersPopupGrid.totalPages}" style="float:right;"
+                                                        />
+                                                        <apex:outputPanel rendered="{!presentersPopupGrid.hasPrevious}">
+                                                            <a onclick="presentersdoPrevious('{!JSENCODE(presenterOption)}');" style="cursor:pointer;">Previous</a>
+                                                            <!--<apex:commandLink action="{!presentersPopupGrid.doPrevious}" value="Previous"  rerender="presenterPopupList" rendered="{!presentersPopupGrid.hasPrevious}"/>-->
+                                                        </apex:outputPanel>
+                                                        <apex:outputLabel value="Previous" rendered="{!NOT(presentersPopupGrid.hasPrevious)}" /> &nbsp; &nbsp;
+
+                                                        <apex:outputPanel rendered="{!presentersPopupGrid.hasNext}">
+                                                            <a onclick="presentersdoNext('{!JSENCODE(presenterOption)}');" style="cursor:pointer;">Next</a>
+                                                            <!-- <apex:commandLink action="{!presentersPopupGrid.doNext}" value="Next"  rerender="presenterPopupList" rendered="{!presentersPopupGrid.hasNext}"/> -->
+                                                        </apex:outputPanel>
+                                                        <apex:outputLabel value="Next" rendered="{!NOT(presentersPopupGrid.hasNext)}" /> &nbsp; &nbsp;
+                                                        <br/>
+                                                        <br/>
+                                                        <div class="cBoth"></div>
+                                                        <!--    
+                                <div class="paginationDiv">
+                                    <div class="fr">
+                                        <ul class="pagination">
+                                          <li><a href="#" class="disabled">First</a></li>
+                                          <li><a href="#" class="disabled">Previous</a></li>
+                                          <li><a href="#">1</a></li>
+                                          <li><a href="#">2</a></li>
+                                          <li><a href="#" class="current">3</a></li>
+                                          <li><a href="#">4</a></li>
+                                          <li><a href="#">5</a></li>
+                                          <li><a href="#" class="next">Next</a></li>
+                                          <li><a href="#" class="last">Last</a></li>
+                                        </ul>
+                                   </div>
+                                </div>
+                                 -->
+                                                    </apex:outputPanel>
+                                                </apex:outputPanel>
+
+                                                <apex:outputPanel id="attendeesPopupList">
+                                                    <apex:outputPanel rendered="{!attendeesPopupGrid.sObjectsList.size != 0 && presenterOption='attendees'}">
+                                    <div class="popupTable">
+                                                <table cellpadding="0" cellspacing="0" >
+                                                    <tr>
+                                                        <th>&nbsp;</th>
+                                                        <th>Name</th>					  
+                                                        <th>Email</th>
+                                                        <!--<th>Company</th>
+                                                        <th>Title</th> -->
+                                                        <apex:repeat value="{!additionalFieldList}" var="fieldSet">
+                                                            <th>{!fieldSetHeaderMap[fieldSet]}</th>
+                                                        </apex:repeat>
+                                                       <!--<th>Phone</th> -->                                                
+                                                    </tr>
+                                                    <apex:repeat value="{!attendeesPopupGrid.sObjectsList}" var="each">
+                                                        <tr>
+																			
+                                                            <td><apex:inputCheckbox value="{!each.isSelected}" onchange="handlePresenterCheckboxChange(this.checked,'{!JSENCODE(each.sObj.Id)}','attendees');" /></td>
+																			  
+																			 
+																			
+                                                            <td><apex:outputText value="{!each.sObj['Attendee_Name__c']}" /></td>
+																			 
+																			
+                                                            <td><apex:outputText value="{!each.sObj['Email__c']}" /></td>
+																			 
+																			
+                                                            <!-- <td><apex:outputText value="{!each.sObj['Company__c']}" /></td>
+																			 
+																			
+                                                            <td><apex:outputText value="{!each.sObj['Title__c']}" /></td> -->
+																			 
+                                                            <apex:repeat value="{!additionalFieldList}" var="fieldSet">
+                                                                <td>{!each.sObj[fieldSet]}</td>
+                                                            </apex:repeat>
+                                                                        <!-- <td><apex:outputText value="{!each.sObj['Phone__c']}" /></td> -->
+                                                                    </tr>
+                                                                </apex:repeat>
+                                                            </table>
+                                                        </div>
+
+                                                        <!-- next, previous and page info -->
+                                                        <apex:outputLabel value="Page {!attendeesPopupGrid.PageNumber} of {!attendeesPopupGrid.totalPages}" style="float:right;"
+                                                        />
+
+                                                        <apex:outputPanel rendered="{!attendeesPopupGrid.hasPrevious}">
+                                                            <a onclick="presentersdoPrevious('{!JSENCODE(presenterOption)}');" style="cursor:pointer;">Previous</a>
+                                                            <!--<apex:commandLink action="{!attendeesPopupGrid.doPrevious}" value="Previous"  rerender="attendeesPopupList" rendered="{!attendeesPopupGrid.hasPrevious}"/>-->
+                                                        </apex:outputPanel>
+                                                        <apex:outputLabel value="Previous" rendered="{!NOT(attendeesPopupGrid.hasPrevious)}" /> &nbsp; &nbsp;
+
+                                                        <apex:outputPanel rendered="{!attendeesPopupGrid.hasNext}">
+                                                            <a onclick="presentersdoNext('{!JSENCODE(presenterOption)}');" style="cursor:pointer;">Next</a>
+                                                            <!-- <apex:commandLink action="{!attendeesPopupGrid.doNext}" value="Next"  rerender="attendeesPopupList" rendered="{!attendeesPopupGrid.hasNext}"/> -->
+                                                        </apex:outputPanel>
+                                                        <apex:outputLabel value="Next" rendered="{!NOT(attendeesPopupGrid.hasNext)}" /> &nbsp; &nbsp;
+                                                        <br/>
+                                                        <br/>
+                                                        <div class="cBoth"></div>
+                                                        <!--    
+                                <div class="paginationDiv">
+                                    <div class="fr">
+                                        <ul class="pagination">
+                                          <li><a href="#" class="disabled">First</a></li>
+                                          <li><a href="#" class="disabled">Previous</a></li>
+                                          <li><a href="#">1</a></li>
+                                          <li><a href="#">2</a></li>
+                                          <li><a href="#" class="current">3</a></li>
+                                          <li><a href="#">4</a></li>
+                                          <li><a href="#">5</a></li>
+                                          <li><a href="#" class="next">Next</a></li>
+                                          <li><a href="#" class="last">Last</a></li>
+                                        </ul>
+                                   </div>
+                                </div>
+                                 -->
+                                                    </apex:outputPanel>
+                                                </apex:outputPanel>
+
+                                                <apex:outputPanel id="usersPopupList">
+                                <apex:outputPanel rendered="{!usersPopupGrid.sObjectsList.size != 0 && presenterOption='users'}">
+                                    <div class="popupTable">
+                                                <table cellpadding="0" cellspacing="0" >
+                                                    <tr>
+                                                        <th>&nbsp;</th>
+                                                        <th>Name</th>				  
+                                                        <th>Email</th>
+                                                        <!--<th>Title</th>-->
+                                                        <apex:repeat value="{!additionalFieldList}" var="fieldSet">
+                                                            <th>{!fieldSetHeaderMap[fieldSet]}</th>
+                                                        </apex:repeat>
+                                                       <!--<th>Phone</th>-->                                                
+                                                    </tr>
+                                                    <apex:repeat value="{!usersPopupGrid.sObjectsList}" var="each">
+                                                        <tr>
+																			
+                                                            <td><apex:inputCheckbox value="{!each.isSelected}" onchange="handlePresenterCheckboxChange(this.checked,'{!JSENCODE(each.sObj.Id)}','users');" /></td>
+																			  
+																			 
+																			
+                                                            <td><apex:outputText value="{!each.sObj['Name']}" /></td>
+																			 
+																			
+                                                            <td><apex:outputText value="{!each.sObj['Email']}" /></td>
+																			 
+																			
+                                                            <!--<td><apex:outputText value="{!each.sObj['Title']}" /></td> -->
+																			 
+                                                            <apex:repeat value="{!additionalFieldList}" var="fieldSet">
+                                                                <td>{!each.sObj[fieldSet]}</td>
+                                                            </apex:repeat>
+                                                                        <!--<td><apex:outputText value="{!each.sObj['Phone']}" /></td>-->
+                                                                    </tr>
+                                                                </apex:repeat>
+                                                            </table>
+                                                        </div>
+
+                                                        <!-- next, previous and page info -->
+                                                        <apex:outputLabel value="Page {!usersPopupGrid.PageNumber} of {!usersPopupGrid.totalPages}" style="float:right;" />
+
+                                                        <apex:outputPanel rendered="{!usersPopupGrid.hasPrevious}">
+                                                            <a onclick="presentersdoPrevious('{!JSENCODE(presenterOption)}');" style="cursor:pointer;">Previous</a>
+                                                            <!--<apex:commandLink action="{!usersPopupGrid.doPrevious}" value="Previous"  rerender="usersPopupList" rendered="{!usersPopupGrid.hasPrevious}"/>-->
+                                                        </apex:outputPanel>
+                                                        <apex:outputLabel value="Previous" rendered="{!NOT(usersPopupGrid.hasPrevious)}" /> &nbsp; &nbsp;
+
+                                                        <apex:outputPanel rendered="{!usersPopupGrid.hasNext}">
+                                                            <a onclick="presentersdoNext('{!JSENCODE(presenterOption)}');" style="cursor:pointer;">Next</a>
+                                                            <!-- <apex:commandLink action="{!usersPopupGrid.doNext}" value="Next"  rerender="usersPopupList" rendered="{!usersPopupGrid.hasNext}"/> -->
+                                                        </apex:outputPanel>
+                                                        <apex:outputLabel value="Next" rendered="{!NOT(usersPopupGrid.hasNext)}" /> &nbsp; &nbsp;
+                                                        <br/>
+                                                        <br/>
+                                                        <div class="cBoth"></div>
+                                                        <!--    
+                                <div class="paginationDiv">
+                                    <div class="fr">
+                                        <ul class="pagination">
+                                          <li><a href="#" class="disabled">First</a></li>
+                                          <li><a href="#" class="disabled">Previous</a></li>
+                                          <li><a href="#">1</a></li>
+                                          <li><a href="#">2</a></li>
+                                          <li><a href="#" class="current">3</a></li>
+                                          <li><a href="#">4</a></li>
+                                          <li><a href="#">5</a></li>
+                                          <li><a href="#" class="next">Next</a></li>
+                                          <li><a href="#" class="last">Last</a></li>
+                                        </ul>
+                                   </div>
+                                </div>
+                                 -->
+                                                    </apex:outputPanel>
+                                                </apex:outputPanel>
+
+
+                                                <br/>
+                                                <div class="btnsDiv">
+                                                    <apex:outputPanel id="presentersSaveBtnId">
+                                                        <!-- 
+                                        <apex:outputPanel >
+                                            <apex:commandButton value="Save" onclick="saveSelectedPresentersList('{!JSENCODE(presenterOption)}');" reRender="dummy" status="progressIndicator" rendered="{!(presentersPopupGrid.sObjectsList.size != 0 && presenterOption='presenters') || (attendeesPopupGrid.sObjectsList.size!=0 && presenterOption='attendees') || (usersPopupGrid.sObjectsList.size!=0 && presenterOption='users')}"/>&nbsp;
+                                        </apex:outputPanel>
+                                         -->
+                                                        <apex:outputPanel rendered="{!(presentersPopupGrid.sObjectsList.size != 0 && presenterOption='presenters') || (attendeesPopupGrid.sObjectsList.size!=0 && presenterOption='attendees') || (usersPopupGrid.sObjectsList.size!=0 && presenterOption='users')}">
+                                                            <input type="button" value="Save" class="btn" onclick="saveSelectedPresentersList('{!JSENCODE(presenterOption)}');" />&nbsp;
+                                                        </apex:outputPanel>
+                                                    </apex:outputPanel>
+                                                    <!-- <apex:commandButton value="Close" styleClass="closePopup" onclick="handlePopupClose(this,true,'addPresenterPopup');" reRender="dummy" immediate="true"/> -->
+                                                    <input type="button" value="Close" class="btn" onclick="handlePopupClose(this,true,'addPresenterPopup');" />
+                                                    <!-- <input type="button" value="Cancel" class="btn,closePopup" onclick="handlePopupClose(this,true,'addPresenterPopup');"/> -->
+                                                </div>
+                                            </div>
+                                            <!--End of popup -->
+
+
+
+
+                                            <!-- Topics popup -->
+
+                                            <div id="addTopicPopup" class="popupBox" style="height:480px !important;">
+
+                                                <div class="row">
+                                                    <strong>
+                                                        <apex:outputLabel value="Search All Topics" />
+                                                    </strong>
+                                                    <br/>
+                                                    <apex:inputText id="autocomplete_textbox" styleClass="autocomplete" value="{!searchTopic}" html-placeholder="Search Topic Name"
+                                                        onkeyup="return onKeypressTopic(event, '{!JSENCODE(topicOption)}');"
+                                                    />
+                                                    <apex:inputhidden value="{!searchedRecordId}" id="searchId" />
+                                                    <apex:inputhidden value="{!searchedTopic}" id="topicName" />
+                                                    <apex:inputhidden value="{!searchedCategory}" id="categoryName" />
+
+
+                                                    <div class="message warningM4" id="searchResultsWarningMessageBox">
+                                                        <table class="messageTable" border="0" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <img src="/img/s.gif" alt="Warning" class="msgIcon" title="Warning" />
+                                                                    </td>
+                                                                    <td class="messageCell">
+                                                                        <div class="messageText">No Topics found</div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                    <apex:outputPanel id="topicSearchPanel">
+                                                        <div class="colsearch">
+                                                            <!--      <apex:inputText id="inputSearchTextTopic" value="{!searchTopic}" html-placeholder="Search Topic Name" onkeypress="return onKeypressTopic(event, '{!JSENCODE(topicOption)}');"/> -->
+                                                        </div>
+
+                                                    </apex:outputPanel>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="topmargin" style="width:700px">
+                                                        <apex:outputPanel id="topicExpertiseAreaFilter">
+                                                            <apex:outputPanel rendered="{!topicOption='topic'}">
+                                                                <span class="txtBold">
+                                                                    <apex:outputLabel value="Expertise Area : " />
+                                                                </span>
+                                                                <apex:selectList value="{!selectedExpertiseForTopic}" onchange="fetchCategoryList();" size="1">
+                                                                    <apex:selectOptions value="{!ExpertiseAreas}" />
+                                                                </apex:selectList>
+                                                            </apex:outputPanel>
+                                                        </apex:outputPanel>
+                                                    </div>
+                                                    <div class="topmargin" style="width:700px">
+                                                        <apex:outputPanel id="topicCategoryFilter">
+                                                            <apex:outputPanel rendered="{!topicOption='topic'}">
+                                                                <span class="txtBold">
+                                                                    <apex:outputLabel value="Category : " />
+                                                                </span>
+                                                                <apex:selectList value="{!selectedCategory}" onchange="fetchCategoryList();" size="1">
+                                                                    <apex:selectOptions value="{!PopupCategoriesInfo}" />
+                                                                </apex:selectList>
+                                                            </apex:outputPanel>
+                                                        </apex:outputPanel>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <apex:pageMessages id="topicPopupPageMsg" />
+                                                <apex:inputHidden id="topicOptionId" value="{!topicOption}" />
+
+                                                <apex:outputPanel id="topicPopupList">
+                                                    <apex:outputPanel rendered="{!presentersPopupGrid.sObjectsList.size != 0 && topicOption='topic'}">
+                                                        <div class="popupTable">
+                                                            <table cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <th width="1%">&nbsp;</th>
+                                                                    <th width="50%">Topic Name</th>
+                                                                    <th width="24%">Topic Category</th>
+                                                                    <th width="25%">Expertise Area</th>
+                                                                </tr>
+                                                                <apex:repeat value="{!presentersPopupGrid.sObjectsList}" var="each">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <input type="radio" name="topicRadio" onclick="handleTopicChange(this.checked,'{!JSENCODE(each.sObj.Id)}','{!JSENCODE(each.sObj['VisitOps__Topic_Category__r.Name'])}','{!each.sobj['VisitOps__TopicNameOnAgenda__c']}');"
+                                                                            />
+                                                                        </td>
+                                                                        <td>
+                                                                            <apex:outputLink value="/{!each.sobj['id']}" target="_blank">{!each.sobj['VisitOps__TopicName__c']}</apex:outputLink>
+                                                                        </td>
+                                                                        <td>
+                                                                            <apex:outputText value="{!each.sObj['VisitOps__Topic_Category__r.Name']}" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <apex:outputText value="{!each.sobj['VisitOps__Expertise_Area__r.Name']}"></apex:outputText>
+                                                                        </td>
+                                                                    </tr>
+                                                                </apex:repeat>
+                                                            </table>
+                                                        </div>
+
+                                                        <!-- next, previous and page info -->
+                                                        <apex:outputLabel value="Page {!presentersPopupGrid.PageNumber} of {!presentersPopupGrid.totalPages}" style="float:right;"
+                                                        />
+                                                        <apex:outputPanel rendered="{!presentersPopupGrid.hasPrevious}">
+                                                            <a onclick="topicsdoPrevious('{!JSENCODE(topicOption)}');" style="cursor:pointer;">Previous</a>
+                                                            <!--<apex:commandLink action="{!presentersPopupGrid.doPrevious}" value="Previous"  rerender="presenterPopupList" rendered="{!presentersPopupGrid.hasPrevious}"/>-->
+                                                        </apex:outputPanel>
+                                                        <apex:outputLabel value="Previous" rendered="{!NOT(presentersPopupGrid.hasPrevious)}" /> &nbsp; &nbsp;
+
+                                                        <apex:outputPanel rendered="{!presentersPopupGrid.hasNext}">
+                                                            <a onclick="topicsdoNext('{!JSENCODE(topicOption)}');" style="cursor:pointer;">Next</a>
+                                                            <!-- <apex:commandLink action="{!presentersPopupGrid.doNext}" value="Next"  rerender="presenterPopupList" rendered="{!presentersPopupGrid.hasNext}"/> -->
+                                                        </apex:outputPanel>
+                                                        <apex:outputLabel value="Next" rendered="{!NOT(presentersPopupGrid.hasNext)}" /> &nbsp; &nbsp;
+                                                        <br/>
+                                                        <br/>
+                                                        <div class="cBoth"></div>
+                                                    </apex:outputPanel>
+                                                </apex:outputPanel>
+
+                                                <br/>
+                                                <div class="btnsDiv">
+                                                    <apex:outputPanel id="topicSaveBtnId">
+                                                        <apex:outputPanel rendered="{!(presentersPopupGrid.sObjectsList.size != 0 && topicOption='topic') }">
+                                                            <input type="button" value="Save" class="btn" onclick="selectTopic();" />&nbsp;
+                                                        </apex:outputPanel>
+                                                    </apex:outputPanel>
+                                                    <input type="button" value="Close" class="btn" onclick="handlePopupClose(this,true,'addTopicPopup');" />
+                                                </div>
+                                            </div>
+
+                                            <!--End of popup -->
+
+
+                                            <apex:actionFunction name="fetchAttendeesforVisit" action="{!fetchPresenterList}" rerender="attendeePopupList2,presenterOptionId2,searchPanel2,presenterPopupPageMsg2"
+                                                status="progressIndicator">
+                                                <apex:param name="userType" value="" />
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="refreshPresenterList" action="{!refreshPresenterList}" rerender="presentersGridView" status="progressIndicator">
+
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="refreshAddPresenterList" action="{!populatePresentersPopupGrid}" rerender="presentersPopupGrid,searchPanel,presenterPopupList,presenterPopupPageMsg,presentersSaveBtnId"
+                                                status="progressIndicator">
+
+                                            </apex:actionFunction>
+
+
+                                            <apex:actionFunction name="fetchPresenterList" action="{!fetchPresenterList}" rerender="searchPanel,presenterOptionId,presenterPopupList,presenterPopupPageMsg,presenterExpertiseFilter,presenterExpertiseAreaFilter,presentersSaveBtnId,attendeesPopupList,usersPopupList"
+                                                oncomplete="clearJSPresenterArrays('{!errorOccured}','{!presenterOption}',false);"
+                                                status="progressIndicator">
+                                                <apex:param name="userType" value="" />
+                                                <apex:param name="selectedLocation" value="ALL" assignTo="{!selectedLocation}" />
+                                                <apex:param name="selectedExpertise" value="ALL" assignTo="{!selectedExpertise}" />
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="fetchPresenterListInPopup" action="{!fetchPresenterList}" rerender="searchPanel,presenterOptionId,presenterPopupList,presenterPopupPageMsg,presenterExpertiseFilter,presenterExpertiseAreaFilter,presentersSaveBtnId,attendeesPopupList,usersPopupList"
+                                                oncomplete="clearJSPresenterArrays('{!errorOccured}','{!presenterOption}',false);"
+                                                status="progressIndicator">
+                                                <apex:param name="userType" value="" />
+                                                <apex:param name="selectedLocation" value="" assignTo="{!selectedLocation}" />
+                                                <apex:param name="selectedExpertise" value="NotAll" assignTo="{!selectedExpertise}" />
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="fetchExpertisedPresenterList" action="{!populatePresentersPopupGrid}" rerender="searchPanel,presenterPopupList,presenterPopupPageMsg,presentersSaveBtnId"
+                                                status="progressIndicator">
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="fetchLocationPresenterList" action="{!populatePresentersPopupGrid}" rerender="searchPanel,presenterPopupList,presenterPopupPageMsg,presentersSaveBtnId"
+                                                status="progressIndicator">
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="doNext" action="{!paginationDoNext}" rerender="searchPanel,presenterPopupList,presenterPopupPageMsg,presentersSaveBtnId,attendeesPopupList,usersPopupList"
+                                                status="progressIndicator">
+                                                <apex:param name="presenterType" value="" />
+                                                <apex:param name="selectedJSON" value="" />
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="doPrevious" action="{!paginationDoPrevious}" rerender="searchPanel,presenterPopupList,presenterPopupPageMsg,presentersSaveBtnId,attendeesPopupList,usersPopupList"
+                                                status="progressIndicator">
+                                                <apex:param name="presenterType" value="" />
+                                                <apex:param name="selectedJSON" value="" />
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="presentersPopupClose" action="{!presentersPopupClose}" rerender="searchPanel,presenterPopupList,presenterPopupPageMsg,attendeesPopupList,usersPopupList,presentersGridView,presentersPagination"
+                                                status="progressIndicator" />
+
+                                            <apex:actionFunction name="agendaPresenterPopupSave" action="{!presentersPopupSave}" onComplete="clearJSPresenterArrays('{!errorOccured}','{!presenterOption}',false);closePresenterPopupAfterSave('{!errorOccured}');saveAgenda(false);"
+                                                reRender="searchPanel,presenterPopupList,presenterPopupPageMsg,presentersSaveBtnId,attendeesPopupList,usersPopupList,presentersGridView,presentersPagination"
+                                                status="progressIndicator">
+                                                <apex:param name="presenterType" value="" />
+                                                <apex:param name="selectedJSON" value="" />
+                                            </apex:actionFunction>
+
+
+
+                                            <!-- Code Added for Topic Search  -->
+
+                                            <apex:actionFunction name="fetchTopicListInPopup" action="{!fetchTopicList}" rerender="topicSearchPanel,topicOptionId,topicPopupList,topicPopupPageMsg,topicExpertiseAreaFilter,topicCategoryFilter,topicSaveBtnId"
+                                                oncomplete="clearJSTopicArrays('{!errorOccured}','{!topicOption}',false);" status="progressIndicator">
+                                                <apex:param name="userType" value="" />
+                                                <apex:param name="selectedLocation" value="" assignTo="{!selectedLocation}" />
+                                                <apex:param name="selectedCategory" value="All" assignTo="{!selectedCategory}" />
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="fetchTopicList" action="{!fetchTopicList}" rerender="topicSearchPanel,topicOptionId,topicPopupList,topicExpertiseAreaFilter,topicCategoryFilter,topicSaveBtnId"
+                                                oncomplete="clearJSTopicArrays('{!errorOccured}','{!topicOption}',false);" status="progressIndicator">
+                                                <apex:param name="userType" value="" />
+                                                <apex:param name="selectedLocation" value="ALL" assignTo="{!selectedLocation}" />
+                                                <apex:param name="selectedCategory" value="ALL" assignTo="{!selectedCategory}" />
+                                            </apex:actionFunction>
+
+                                            <!---- Search Topic on Key Up -->
+
+                                            <apex:actionFunction name="fetchCategoryList" action="{!populateTopicPopupGrid}" rerender="topicSearchPanel,topicPopupList,topicPopupPageMsg,topicSaveBtnId"
+                                                status="progressIndicator">
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="selectTopicFields" action="{!populateTopicInfo}" rerender="agendaTitleId,agendaTitle,topicCategory,sessionTopic,showOnCustomerAgendaID,showOnCustomerSurveyID,showOnPresenterAgendaID"
+                                                oncomplete="clearJSPresenterArrays('{!errorOccured}','{!topicOption}',false);"
+                                                status="progressIndicator">
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="doNextForTopic" action="{!paginationDoNext}" rerender="topicSearchPanel,topicPopupList,topicPopupPageMsg,topicSaveBtnId"
+                                                status="progressIndicator">
+                                                <apex:param name="presenterType" value="" />
+                                                <apex:param name="selectedJSON" value="" />
+                                            </apex:actionFunction>
+
+                                            <apex:actionFunction name="doPreviousForTopic" action="{!paginationDoPrevious}" rerender="topicSearchPanel,topicPopupList,topicPopupPageMsg,topicSaveBtnId"
+                                                status="progressIndicator">
+                                                <apex:param name="presenterType" value="" />
+                                                <apex:param name="selectedJSON" value="" />
+                                            </apex:actionFunction>
+
+
+
+
+
+
+                                            <!-- Start Event Presenters Grid -->
+                                            <!-- <apex:actionRegion > -->
+                                            <apex:outputPanel id="presentersGridView">
+                                                <apex:outputPanel rendered="{!presentersGrid.sObjectsList.size!=0}">
+                                                    <!-- <apex:outputPanel rendered="{!(agendaRecord.Id!=null) && presentersGrid.sObjectsList.size!=0}"> -->
+                                                    <div class="pbBody presenterTb">
+                                                        <table cellpadding="0" cellspacing="0" class="list">
+                                                            <tr class="headerRow">
+                                                                <th>Presenter</th>
+                                                                <th>Company</th>
+                                                                <th>Title</th>
+                                                                <th>Email</th>
+
+                                                                <th>Available</th>
+                                                                <th>Invite Last Sent (User)</th>
+
+                                                                <th>Status</th>
+                                                                <th style="text-align: center;">Comments</th>
+                                                                <!-- <th>Override</th> -->
+                                                                <th>&nbsp;</th>
+                                                            </tr>
+                                                            <apex:repeat value="{!presentersGrid.sObjectsList}" var="sp">
+                                                                <tr class="dataRow">
+                                                                    <!--<td><apex:outputText value="{!sp.sObj['Presenter_Name__c']}"/></td>-->
+                                                                    <!--<td><apex:outputLink value="/{!sp.sobj['Presenter__c']}" target="_blank">{!sp.sobj['Presenter_Name__c']}</apex:outputLink></td>-->
+                                                                    <td>
+                                                                        <apex:outputPanel rendered="{!sp.sobj['Presenter__c']!=null}">
+                                                                            <apex:outputLink value="/{!sp.sobj['Presenter__c']}" target="_blank">{!sp.sobj['Presenter_Name__c']}</apex:outputLink>
+                                                                        </apex:outputPanel>
+
+                                                                        <apex:outputPanel rendered="{!sp.sobj['Presenter__c']==null}">
+                                                                            <apex:outputText value="{!sp.sobj['Presenter_Name__c']}" />
+                                                                        </apex:outputPanel>
+                                                                    </td>
+                                                                    <td>
+                                                                        <apex:outputText value="{!sp.sObj['Account_Name__c']}" />
+                                                                    </td>
+                                                                    <td>
+                                                                        <apex:outputText value="{!sp.sObj['Title_formula__c']}" />
+                                                                    </td>
+                                                                    <td>
+                                                                        <apex:outputText value="{!sp.sObj['Email__c']}" />
+                                                                    </td>
+
+                                                                    <td style="padding-left: 20px;">
+                                                                        <apex:outputPanel rendered="{!agendaRecord.Id !=null || sp.sObj['Attendee__c']!=null}">
+
+                                                                            <!--  this is for cross symbol visual indicator -->
+                                                                            <apex:outputText value="" rendered="{!if(sp.sObj['Accepted_for_agenda_session__c'] == true && sp.sObj['Status__c'] != 'Accepted', true, false)}">
+                                                                                <div style='font-size:10px;color:#fff; background: red; border-radius: 50%; padding: 3px; width: 13px; height: 13px; text-align: center;'>
+                                                                                    &#10006;
+                                                                                </div>
+                                                                            </apex:outputText>
+
+                                                                            <!--  this is for check symbol visual indicator -->
+                                                                            <apex:outputText value="" rendered="{!if(sp.sObj['Accepted_for_agenda_session__c'] == false && sp.sObj['Status__c'] != 'Accepted', true, false)}">
+                                                                                <div style='font-size:10px;color:#fff; background: green; border-radius: 50%; padding: 3px; width: 13px; height: 13px; text-align: center;'>
+                                                                                    &#10004;
+                                                                                </div>
+                                                                                <!-- <div style='font-size:15px;color:#fff; background: green; border-radius: 50%; padding: 3px; width: 20px; height: 20px; text-align: center;'>&#10004;</div> -->
+                                                                            </apex:outputText>
+
+                                                                        </apex:outputPanel>
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <apex:outputPanel rendered="{!agendaRecord.Id !=null || sp.sObj['Attendee__c']!=null}">
+                                                                            <apex:outputField value="{!sp.sObj['Invite_Sent_Resent__c']}" /></apex:outputPanel>
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <apex:outputPanel rendered="{!agendaRecord.Id!=null && sp.sObj['Attendee__c']==null}">
+                                                                            <a onclick="handleModifyPresenterStatusOpen('{!JSENCODE(sp.sObj['Presenter_name_formula__c'])}','{!JSENCODE(sp.sObj['Email__c'])}','{!JSENCODE(sp.sObj['Id'])}',{!JSENCODE(TEXT(presentersGrid.PageNumber))},'{!JSENCODE(sp.sObj['Status__c'])}');">
+                                                                                <apex:outputText value="{!sp.sObj['Status__c']}" />
+                                                                            </a>
+                                                                        </apex:outputPanel>
+                                                                        <apex:outputPanel rendered="{!agendaRecord.Id==null || sp.sObj['Attendee__c']!=null}">
+                                                                            <apex:outputText value="{!sp.sObj['Status__c']}" /></apex:outputPanel>
+                                                                    </td>
+
+                                                                    <td style="text-align: center;">
+                                                                        <apex:outputPanel rendered="{!sp.sObj['ResponseComments__c']!=null}" layout="none">
+                                                                            <img id="{!sp.sObj['id']}" class="infoIcon" src="/s.gif" alt="" title="" onclick="openPopUp(this.id);" />
+                                                                            <div id="model_{!sp.sObj['id']}" class="modal">
+                                                                                <div style="text-align: left;" class="modal-content">
+                                                                                    <span id="span_{!sp.sObj['id']}" class="close" onclick="closePopUp(this.id);">&times;</span>
+
+                                                                                    <h1>Presenter:&nbsp;</h1>
+                                                                                    <apex:outputText value="{!sp.sobj['Presenter_Name__c']}" />
+                                                                                    <br/>
+                                                                                    <!--  
+                                                            <apex:outputPanel rendered="{!sp.sObj['Proposed_Start_Date__c']!=null}">
+                                                                <h1>Proposed Start Date : &nbsp; </h1><apex:outputField value="{!sp.sobj['Proposed_Start_Date__c']}"/><br/>
+                                                                <h1>Proposed End Date : &nbsp; </h1><apex:outputField value="{!sp.sobj['Proposed_End_Date__c']}"/><br/>
+                                                            </apex:outputPanel>
+                                                            -->
+                                                                                    <br/>
+                                                                                    <apex:outPutField value="{!sp.sObj['ResponseComments__c']}" />
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </apex:outputPanel>
+                                                                    </td>
+
+
+
+                                                                    <td>
+                                                                        <!-- <input type="button" value="Invite" class="btn"/>
+                                            <input type="button" value="Remove" class="btn"/> -->
+                                                                        <!-- <apex:commandButton value="Invite" onclick="sendInvite('{!IF(JSENCODE(agendaId)==null,JSENCODE(sp.sObj['InternalId__c']),JSENCODE(sp.sObj['Id']))}');" rerender="dummy" rendered="{!sp.sObj['Status__c']=='Not Sent' || sp.sObj['Status__c']=='Cancelled'}" disabled="{!agendaRecord.Id==null}"/> -->
+                                                                        <!-- <apex:commandButton value="Re-Invite" onclick="sendReInvite('{!IF(JSENCODE(agendaId)==null,JSENCODE(sp.sObj['InternalId__c']),JSENCODE(sp.sObj['Id']))}');" rerender="dummy" rendered="{!sp.sObj['Status__c']!='Not Sent' && sp.sObj['Status__c']!='Cancelled'}"/> -->
+                                                                        <!-- <apex:commandButton value="Cancel Invite" onclick="cancelInvite('{!IF(JSENCODE(agendaId)==null,JSENCODE(sp.sObj['InternalId__c']),JSENCODE(sp.sObj['Id']))}');" rerender="dummy" rendered="{!sp.sObj['Status__c']!='Not Sent' && sp.sObj['Status__c']!='Cancelled'}"/> -->
+                                                                        <apex:commandButton value="Invite" onclick="sendInviteJS('{!JSENCODE(agendaId)}','{!JSENCODE(sp.sObj['InternalId__c'])}','{!JSENCODE(sp.sObj['Id'])}');"
+                                                                            rerender="dummy" rendered="{!(sp.sObj['Status__c']=='Not Sent' || sp.sObj['Status__c']=='Cancelled' || sp.sObj['Status__c']=='Declined') && sp.sObj['Attendee__c']==null}"
+                                                                            disabled="{!agendaRecord.Id==null}" />
+                                                                        <apex:commandButton value="Re-Invite" onclick="sendReInviteJS('{!JSENCODE(agendaId)}','{!JSENCODE(sp.sObj['InternalId__c'])}','{!JSENCODE(sp.sObj['Id'])}');"
+                                                                            rerender="dummy" rendered="{!sp.sObj['Status__c']!='Not Sent' && sp.sObj['Status__c']!='Cancelled' && sp.sObj['Status__c']!='Declined' && sp.sObj['Attendee__c']==null}"
+                                                                        />
+                                                                        <apex:commandButton value="Cancel Invite" onclick="cancelInviteJS('{!JSENCODE(agendaId)}','{!JSENCODE(sp.sObj['InternalId__c'])}','{!JSENCODE(sp.sObj['Id'])}');"
+                                                                            rerender="dummy" rendered="{!sp.sObj['Status__c']!='Not Sent' && sp.sObj['Status__c']!='Cancelled' && sp.sObj['Status__c']!='Declined' && sp.sObj['Attendee__c']==null}"
+                                                                        />
+                                                                        <apex:commandButton value="Remove" onclick="removePresenter('{!IF(JSENCODE(agendaId)==null,JSENCODE(sp.sObj['InternalId__c']),JSENCODE(sp.sObj['Id']))}');"
+                                                                            rerender="dummy" rendered="{!(sp.sObj['Status__c']=='Not Sent' && sp.sObj['Invite_Update_Count__c']==0) || sp.sObj['Status__c']=='Declined' || sp.sObj['Status__c']=='Cancelled' || sp.sObj['Attendee__c']!=null}"
+                                                                        />
+                                                                    </td>
+                                                                </tr>
+                                                            </apex:repeat>
+                                                        </table>
+                                                    </div>
+
+                                                </apex:outputPanel>
+                                                <apex:actionFunction name="sendInvite" action="{!sendInviteToPresenter}" status="progressIndicator" oncomplete="updateInvitedPresenterCount({!numberOfInvitedPresenters});"
+                                                    reRender="presentersGridView,presentersPagination,presenterGridPageMessagesId,AgendaSessionHeaderId">
+                                                    <apex:param name="presenterLinkId" value="" />
+                                                </apex:actionFunction>
+
+                                                <apex:actionFunction name="removePresenter" action="{!removePresenter}" status="progressIndicator" oncomplete="updateInvitedPresenterCount({!numberOfInvitedPresenters});"
+                                                    reRender="presentersGridView,presentersPagination,presenterGridPageMessagesId,AgendaSessionHeaderId">
+                                                    <apex:param name="presenterLinkId" value="" />
+                                                </apex:actionFunction>
+
+                                                <apex:actionFunction name="sendReInvite" action="{!sendReInvite}" status="progressIndicator" oncomplete="updateInvitedPresenterCount({!numberOfInvitedPresenters});"
+                                                    reRender="presentersGridView,presentersPagination,presenterGridPageMessagesId,AgendaSessionHeaderId">
+                                                    <apex:param name="presenterLinkId" value="" />
+                                                </apex:actionFunction>
+
+                                                <apex:actionFunction name="cancelInvite" action="{!cancelInvite}" status="progressIndicator" oncomplete="updateInvitedPresenterCount({!numberOfInvitedPresenters});"
+                                                    reRender="presentersGridView,presentersPagination,presenterGridPageMessagesId,AgendaSessionHeaderId">
+                                                    <apex:param name="presenterLinkId" value="" />
+                                                </apex:actionFunction>
+
+
+                                            </apex:outputPanel>
+                                            <!-- </apex:actionRegion> -->
+                                        </div>
+                                        <!-- End Event Presenters Grid -->
+
+                                    </div>
+                                    <!-- End of table presenter -->
+                                    <!-- next, previous and page info -->
+                                    <apex:outputPanel id="presentersPagination" style="padding-left: 10px;">
+                                        <apex:outputPanel rendered="{!presentersGrid.sObjectsList.size!=0}">
+                                            <apex:outputLabel value="Page {!presentersGrid.PageNumber} of {!presentersGrid.TotalPages}" style="float:right;padding-right: 10px;"
+                                            />
+
+                                            <apex:outputPanel rendered="{!presentersGrid.hasPrevious}">
+                                                <apex:commandLink action="{!presentersGrid.doPrevious}" value="Previous" rerender="dummy,presentersGridView,presentersPagination"
+                                                    rendered="{!presentersGrid.hasPrevious}" />
+                                            </apex:outputPanel>
+                                            <apex:outputLabel value="Previous" rendered="{!NOT(presentersGrid.hasPrevious)}" /> &nbsp; &nbsp;
+
+                                            <apex:outputPanel rendered="{!presentersGrid.hasNext}">
+                                                <apex:commandLink action="{!presentersGrid.doNext}" value="Next" rerender="dummy,presentersGridView,presentersPagination"
+                                                    rendered="{!presentersGrid.hasNext}" />
+                                            </apex:outputPanel>
+                                            <apex:outputLabel value="Next" rendered="{!NOT(presentersGrid.hasNext)}" /> &nbsp; &nbsp;
+                                            <br/>
+                                            <br/>
+
+
+                                            <div class="cBoth"></div>
+                                        </apex:outputPanel>
+                                        <!-- <apex:actionFunction name="goToNextPage" action="{!presentersGrid.doNext}" status="progressIndicator" reRender="presentersGridView,presentersPagination"/>
+                            <apex:actionFunction name="goToPreviousPage" action="{!presentersGrid.doPrevious}" status="progressIndicator" reRender="presentersGridView,presentersPagination"/> -->
+                                    </apex:outputPanel>
+
+
+                                </apex:outputPanel>
+
+                                <apex:actionRegion >
+                                    <apex:actionFunction name="overRidePresenterStatus" action="{!updatePresenterStatus}" rerender="presentersGridView,presentersPagination"
+                                        status="progressIndicator">
+                                        <apex:param name="presenterLinkId" value="" />
+                                        <apex:param name="currentPageNumber" value="" />
+                                    </apex:actionFunction>
+
+                                    <!-- Update Presenter Status -->
+                                    <div id="overRidePresenterStatusPopup" class="popupBox">
+                                        <!-- <apex:outputPanel layout="block" styleClass="popupBox" id="AddObjectivePopupAcc"> -->
+
+                                        <div class="popUpHeading">Update Presenter Status</div>
+
+                                        <div class="row">
+                                            <div class="colLarge">
+                                                <div class="label" style="display:inline">Presenter Name:</div> &nbsp;
+                                                <div id="presenterNameDiv" class="field" style="display:inline"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="colLarge">
+                                                <div class="label" style="display:inline">Presenter Email:</div> &nbsp;
+                                                <div id="presenterEmailDiv" class="field" style="display:inline"></div>
+                                            </div>
+                                        </div>
+
+                                        <br/>
+                                        <br/>
+                                        <div class="row">
+                                            <div class="colLarge">
+                                                <apex:pageMessages id="updateStatusPgMsgsId" />
+                                                <div class="label">Update Presenter's Availability for the Session</div>
+                                                <div class="field">
+                                                    <!-- <textarea name="Objective"></textarea> -->
+                                                    <apex:selectList value="{!selectedStatus}" id="statusList" size="1" style="width:22%!important">
+                                                        <apex:selectOptions value="{!presenterStatusOptions}" />
+                                                    </apex:selectList>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <br/>
+                                        <div class="cBoth"></div>
+                                        <div class="btnsDiv">
+                                            <!-- <input type="button" value="Save" class="closePopup btn" />
+                        <input type="button" value="Cancel" class="btn" /> -->
+                                            <apex:commandButton value="Save" onclick="overRidePresenterStatus(presenterLinkId, currentPageNumber)" rerender="dummy" oncomplete="handleIndependentPopupClose(this,'{!Not(errorOccured)}', 'false' ,'overRidePresenterStatusPopup');updateInvitedPresenterCount({!numberOfInvitedPresenters});"
+                                            />
+                                            <apex:commandButton value="Close" rerender="dummy" styleClass="closePopup" immediate="true" onclick="handleIndependentPopupClose(this, 'true', 'true' ,'overRidePresenterStatusPopup')"
+                                            />
+                                        </div>
+                                    </div>
+                                    <!-- </apex:outputPanel> -->
+                                </apex:actionRegion>
+
+
+
+
+                            </apex:outputPanel>
+
+                        </apex:actionRegion>
+                    </div>
+                    <!--  <div class="pbBottomButtons">
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="pbTitle">
+                                                <img width="1" height="1" src="/s.gif" class="minWidth"></img>
+                                            </td>
+                                            <td class="pbButtonb">
+                                                <apex:commandButton value="Save" action="{!saveAgenda}" />
+                                                <apex:commandButton value="Save & Close" action="{!saveAgendaandClose}" />           
+                                                <apex:outputPanel id="closeAgendaBtnId2">        
+                                                    <apex:commandButton value="{!IF(agendaRecord.Id!=null,'Close','Cancel')}" action="{!cancelAgenda}" />
+                                                </apex:outputPanel>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+      </div>        
+       -->
+
+                </div>
+            </div>
+
+            <c:AjaxStatusIndicator statusText="Processing..." />
+
+
+            <script>
+
+
+                function showDisablingDiv() {
+                    var divHeight = window.document.body.scrollHeight + 'px';
+                    document.getElementById('disablingDiv').style.display = 'block';
+                    document.getElementById('disablingDiv').style.width = '100%';
+                    document.getElementById('disablingDiv').style.height = divHeight;
+                }
+
+                function hideDisablingDiv() {
+                    document.getElementById('disablingDiv').style.display = 'none';
+                }
+            </script>
+
+
+            <script>
+
+                //********
+                //  Method for Auto complete Functionality in Topic Search
+                //********
+                //To remove conflictions of jquery
+                //    var j$ = jQuery.noConflict();            
+                $(document).ready(function () {
+                    //Auto complete textbox component
+                    var autoCompleteTextBoxId = "input[id$='autocomplete_textbox']";
+                    var queryTerm;
+                    //auto complete method
+                    /***     
+                            // Check if "VisitOps" exists
+                                 if(typeof VisitOps === 'undefined'){
+                                   // It doesn't, so create an object with that name
+                                   window["VisitOps"] = {};
+                                  
+                                   VisitOps.EventFormExtension = EventFormExtension;
+                                 }
+                         ***/
+
+                    $(autoCompleteTextBoxId).autocomplete({
+                        minLength: 2,
+                        source: function (request, response) {
+                            queryTerm = request.term;
+                            var sObjects;
+                            var searchText = $(autoCompleteTextBoxId).val();
+
+                            /*****
+                            VisitOps.EventFormExtension.getRecords(searchText,function(result, event){
+                                if(event.type == 'exception') {
+                                      alert(event.message);
+                                } else {
+                                     sObjects = result;
+                                     console.log("sObjects :: "+sObjects);
+                                     if(sObjects == ''){
+                                     console.log("isEmpty");
+                                     $('.warningM4').css({display:"block"}); 
+                                     response(sObjects);
+                                     //showErrorMsg();
+                                     }else{
+                                     $('.warningM4').hide();
+                                     response(sObjects);
+                                     }
+                                      
+                                     
+                                     
+                                }
+                            });
+                            
+                            ****/
+
+                            Visualforce.remoting.Manager.invokeAction(
+                                '{!$RemoteAction.EventFormExtension.getRecords}',
+                                searchText,
+                                function (result, event) {
+                                    if (event.status) {
+                                        sObjects = result;
+                                        console.log("sObjects :: " + sObjects);
+                                        if (sObjects == '') {
+                                            console.log("isEmpty");
+                                            $('.warningM4').css({ display: "block" });
+                                            response(sObjects);
+                                            //showErrorMsg();
+                                        } else {
+                                            $('.warningM4').hide();
+                                            response(sObjects);
+                                        }
+                                    } else if (event.type === 'exception') {
+                                        alert(event.message);
+                                    }
+                                },
+                                { escape: true }
+                            );
+
+                        },
+                        focus: function (event, ui) {
+                            console.log("focus");
+                            var uri_enc = decodeHtml(ui.item.VisitOps__TopicName__c);
+                            console.log('uri_enc -- ' + uri_enc);
+                            $(autoCompleteTextBoxId).val(uri_enc);
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            $(autoCompleteTextBoxId).val(ui.item.VisitOps__TopicName__c);
+                            $("input[id$='searchId']").val(ui.item.Id);
+                            console.log('ui.item.VisitOps__TopicName__c');
+                            $("input[id$='topicName']").val(ui.item.VisitOps__TopicNameOnAgenda__c);
+                            $("input[id$='categoryName']").val(ui.item.VisitOps__Topic_Category__r.Name);
+
+
+                            selectTopicValue(ui);
+                            return false;
+                        },
+                    })
+                        .data("autocomplete")._renderItem = function (ul, item) {
+                            console.log("AutoComplete");
+                            var entry = "<a>" + item.VisitOps__TopicName__c;
+
+                            entry = entry + "</a>";
+                            entry = entry.replace(queryTerm, "<b>" + queryTerm + "</b>");
+                            return $("<li></li>")
+                                .data("item.autocomplete", item)
+                                .append(entry)
+                                .appendTo(ul);
+                        };
+                });
+
+                function decodeHtml(html) {
+                    var txt = document.createElement("textarea");
+                    txt.innerHTML = html;
+                    return txt.value;
+                }
+                //********
+                //  Method for Topic Selection
+                //********
+                function selectTopicValue(ui) {
+
+                    console.log('Name: ' + ui.item.VisitOps__TopicName__c);
+                    console.log('Id: ' + ui.item.Id);
+                    console.log('Category: ' + ui.item.VisitOps__Topic_Category__r.Name);
+                    var popupId = 'addTopicPopup';
+                    $('#' + popupId).hide();
+                    $("input[id$='autocomplete_textbox']").val("");
+                    selectTopicFields();
+
+
+                }
+
+
+                function PresenterSelection() {
+                    this.Id = '';
+                    this.isSelected = false;
+                }
+
+                function topicSelection() {
+                    this.Id = '';
+                    this.isSelected = false;
+                    this.Category = '';
+                    this.TopicName = '';
+                }
+
+                var presenterArray = new Array();
+                var attendeeArray = new Array();
+                var userArray = new Array();
+
+                var topicArray = new Array();
+                var topicArrayToSave = new Array();
+
+                var presenterMap = new Object();
+                var attendeeMap = new Object();
+                var userMap = new Object();
+
+                var presenterTypeOption = '{!JSENCODE(presenterOption)}';
+                var newSelectedOption = null;
+
+                function handlePresenterCheckboxChange(isSelected, presenterId, presenterType) {
+                    var eachPresenter = new PresenterSelection();
+                    eachPresenter.Id = presenterId;
+                    eachPresenter.isSelected = isSelected;
+
+                    if (presenterType == 'presenters') {
+                        // Add selected Presenter details to the Presenter Array and map
+                        presenterArray = jQuery.grep(presenterArray, function (value) {
+                            return value.Id != presenterId;
+                        });
+                        if (isSelected == true || isSelected == 'true')
+                            presenterArray.push(eachPresenter);
+                    }
+
+                    else if (presenterType == 'attendees') {
+                        attendeeArray = jQuery.grep(attendeeArray, function (value) {
+                            return value.Id != presenterId;
+                        });
+                        // Add selected Presenter details to the Attendee Array and map
+                        if (isSelected == true || isSelected == 'true')
+                            attendeeArray.push(eachPresenter);
+                    }
+
+                    else if (presenterType == 'users') {
+                        userArray = jQuery.grep(userArray, function (value) {
+                            return value.Id != presenterId;
+                        });
+                        // Add selected Presenter details to the User Array and map
+                        if (isSelected == true || isSelected == 'true')
+                            userArray.push(eachPresenter);
+                    }
+                }
+
+                //********
+                //  Method for handle Topic Change
+                //********
+                function handleTopicChange(isSelected, topicId, topicCategory, topicName) {
+
+                    console.log('## HANDLE TOPIC CHANGE');
+
+                    var eachTopic = new topicSelection();
+                    eachTopic.Id = topicId;
+                    eachTopic.isSelected = isSelected;
+                    eachTopic.Category = topicCategory;
+                    eachTopic.TopicName = topicName;
+
+                    console.log('TopicName == ' + topicName);
+                    console.log('eachTopic.TopicName == ' + eachTopic.TopicName);
+                    // Add selected Topic details to the Topic Array 
+                    topicArray = new Array();
+
+                    topicArray = jQuery.grep(topicArray, function (value) {
+                        return value.Id != topicId;
+                    });
+
+
+                    var eachTopicForClass = new topicSelection();
+                    eachTopicForClass.Id = topicId;
+                    eachTopicForClass.isSelected = isSelected;
+
+                    console.log('TopicName == ' + topicName);
+                    // Add selected Topic details to the Topic Array 
+                    topicArrayToSave = new Array();
+
+                    topicArrayToSave = jQuery.grep(topicArrayToSave, function (value) {
+                        return value.Id != topicId;
+                    });
+
+                    if (isSelected == true || isSelected == 'true') {
+                        topicArrayToSave.push(eachTopicForClass);
+                        topicArray.push(eachTopic);
+                    }
+
+                    console.log('topicArray == ' + topicArray);
+
+                }
+
+                //********
+                //  Method To Save Topic After click on SAVE Button
+                //********
+
+                function selectTopic() {
+                    console.log("topicArray == " + topicArray);
+                    if (topicArray != '') {
+                        $("input[id$='searchId']").val(topicArray[0].Id);
+                        $("input[id$='categoryName']").val(topicArray[0].Category);
+                        $("input[id$='topicName']").val(topicArray[0].TopicName);
+                        var popupId = 'addTopicPopup';
+                        $('#' + popupId).hide();
+                        $("input[id$='autocomplete_textbox']").val("");
+                        selectTopicFields();
+                    } else {
+                        alert('Please select any record');
+                        return false;
+                    }
+
+
+                }
+
+
+
+                function presentersdoNext(presenterType) {
+
+                    if (presenterType == 'presenters') {
+                        var presenterArrayJSON = JSON.stringify(presenterArray);
+                        console.log('presenters:' + presenterArray);
+                        doNext('presenters', presenterArrayJSON);
+                    }
+
+                    else if (presenterType == 'attendees') {
+                        var attendeeArrayJSON = JSON.stringify(attendeeArray);
+                        console.log('Attendees:' + attendeeArray);
+                        doNext('attendees', attendeeArrayJSON);
+                    }
+
+                    else if (presenterType == 'users') {
+                        var userArrayJSON = JSON.stringify(userArray);
+                        console.log('Users:' + userArray);
+                        doNext('users', userArrayJSON);
+                    }
+                }
+
+                function topicsdoNext(presenterType) {
+                    if (presenterType == 'topic') {
+                        var topicArrayJSON = JSON.stringify(topicArrayToSave);
+                        console.log('topicArray:' + topicArrayToSave);
+                        doNextForTopic('topic', topicArrayJSON);
+                    }
+                }
+
+                function topicsdoPrevious(presenterType) {
+                    if (presenterType == 'topic') {
+                        var topicArrayJSON = JSON.stringify(topicArrayToSave);
+                        console.log('topicArray:' + topicArrayToSave);
+                        doPreviousForTopic('topic', topicArrayJSON);
+                    }
+                }
+
+                function goToCreateNewPresenterPage() {
+
+                    var createPresenterPage = '{!JSENCODE(createPresenterURL)}';
+                    if ('{!$User.UITheme}' == 'Theme4d') {
+                        // Code Added to returns user to presenter record and not back to Agenda session
+                        window.open(createPresenterPage);
+                    }
+                    else {
+                        window.open(createPresenterPage, '_blank');
+                    }
+                }
+                function redirectToVisit(visitid) {
+
+                    if ('{!$User.UITheme}' == 'Theme4d') {
+                        sforce.one.navigateToURL('/' + visitid);
+                    }
+                    else {
+                        window.open('/' + visitid)
+                    }
+                }
+
+                function presentersdoPrevious(presenterType) {
+
+                    if (presenterType == 'presenters') {
+                        var presenterArrayJSON = JSON.stringify(presenterArray);
+                        console.log('presenters:' + presenterArray);
+                        doPrevious('presenters', presenterArrayJSON);
+                    }
+
+                    else if (presenterType == 'attendees') {
+                        var attendeeArrayJSON = JSON.stringify(attendeeArray);
+                        console.log('Attendees:' + attendeeArray);
+                        doPrevious('attendees', attendeeArrayJSON);
+                    }
+
+                    else if (presenterType == 'users') {
+                        var userArrayJSON = JSON.stringify(userArray);
+                        console.log('Users:' + userArray);
+                        doPrevious('users', userArrayJSON);
+                    }
+                }
+
+                function handlePopupClose(ele, isClosePopup, popupId) {
+                    if (isClosePopup == true || isClosePopup == 'true') {
+                        console.log('closing');
+                        //console.log('id--'+$(ele).closest( '.popupBox' ).attr('id'));
+                        if (popupId != null && popupId != '') {
+                            $('#' + popupId).hide();
+                        } else {
+                            $(ele).closest('.popupBox').hide();
+                        }
+                        // Clear Presenter Array and Map
+                        presenterArray = new Array();
+                        presenterMap = new Object();
+                        // Clear Attendee Array and Map
+                        attendeeArray = new Array();
+                        attendeeMap = new Object();
+                        // Clear User Array and Map
+                        userArray = new Array();
+                        userMap = new Object();
+
+                        $("input[id$='inputSearchText']").val("");
+                        $("input[id$='autocomplete_textbox']").val("");
+                        //presentersPopupClose();
+                    }
+                }
+                function onKeypressTopic(ev, presType) {
+                    console.log("Searchhess!!");
+                    $('.warningM4').hide();
+                    if (window.event && window.event.keyCode == 13 || ev.which == 13) {
+                        console.log("Searchhess!!");
+                        fetchTopicList(presType);
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+
+                function noenter(ev, presType) {
+
+                    if (window.event && window.event.keyCode == 13 || ev.which == 13) {
+                        fetchPresenterList(presType);
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+
+
+                function saveSelectedPresentersList(presenterType) {
+                    if (presenterType == 'presenters') {
+                        var presenterArrayJSON = JSON.stringify(presenterArray);
+                        console.log('presenters:' + presenterArray);
+                        agendaPresenterPopupSave('presenters', presenterArrayJSON);
+                    }
+                    else if (presenterType == 'attendees') {
+                        var attendeesArrayJSON = JSON.stringify(attendeeArray);
+                        console.log('Attendees:' + attendeeArray);
+                        agendaPresenterPopupSave('attendees', attendeesArrayJSON);
+                    }
+                    else if (presenterType == 'users') {
+                        var usersArrayJSON = JSON.stringify(userArray);
+                        console.log('users:' + userArray);
+                        agendaPresenterPopupSave('users', usersArrayJSON);
+                    }
+                }
+
+                function clearJSPresenterArrays(errorOccured, currentPresenterOption, callFetchPresenters) {
+                    console.log('errorOccured:' + errorOccured);
+                    if (errorOccured == 'false') {
+                        console.log('Inside no error occured');
+                        if (presenterArray.length > 0) {
+                            console.log('Inside presenter array there');
+                            presenterArray = new Array();
+                            presenterMap = new Object();
+                        }
+                        if (attendeeArray.length > 0) {
+                            attendeeArray = new Array();
+                            attendeeMap = new Object();
+                        }
+                        if (userArray.length > 0) {
+                            userArray = new Array();
+                            userMap = new Object();
+                        }
+                        presenterTypeOption = currentPresenterOption;
+                        if ((callFetchPresenters == true || callFetchPresenters == 'true') && newSelectedOption != null) {
+                            fetchPresenterList(newSelectedOption);
+                        }
+                        if (currentPresenterOption == 'presenters') {
+                            document.getElementById('divCreatePresenter').style.visibility = 'visible';
+                            document.getElementById('divRefreshAddPresenter').style.visibility = 'visible';
+                        }
+                        else {
+                            document.getElementById('divCreatePresenter').style.visibility = 'hidden';
+                            document.getElementById('divRefreshAddPresenter').style.visibility = 'hidden';
+                        }
+                    }
+                }
+
+
+                function clearJSTopicArrays(errorOccured, currentPresenterOption, callFetchPresenters) {
+                    console.log('errorOccured:' + errorOccured);
+                    if (errorOccured == 'false') {
+                        console.log('Inside no error occured');
+                        if (presenterArray.length > 0) {
+                            console.log('Inside presenter array there');
+                            presenterArray = new Array();
+                            presenterMap = new Object();
+                        }
+                    }
+                }
+
+
+
+
+                function closePresenterPopupAfterSave(errorOccured) {
+                    if (errorOccured == 'false' || errorOccured == false) {
+                        $("input[id$='inputSearchText']").val("");
+                        $('#addPresenterPopup').hide();
+                    }
+                }
+
+                function saveAndFetchPresentersList(currentOption, newOption) {
+                    var confirmedYes = false;
+                    if (currentOption != null && currentOption == 'presenters' && presenterArray != null && presenterArray.length > 0) {
+                        if (confirm("Do you want to add selected Presenter(s) to the Presenter List?")) {
+                            confirmedYes = true;
+                            saveSelectedPresentersList('presenters');
+                        }
+                    }
+                    else if (currentOption != null && currentOption == 'attendees' && attendeeArray != null && attendeeArray.length > 0) {
+                        if (confirm("Do you want to add selected Attendee(s) to the Presenter List?")) {
+                            confirmedYes = true;
+                            saveSelectedPresentersList('attendees');
+                        }
+                    }
+                    else if (currentOption != null && currentOption == 'users' && userArray != null && userArray.length > 0) {
+                        if (confirm("Do you want to add selected User(s) to the Presenter List?")) {
+                            confirmedYes = true;
+                            saveSelectedPresentersList('users');
+                        }
+                    }
+
+                    if (confirmedYes == true || confirmedYes == 'true') {
+                        newSelectedOption = newOption;
+                    }
+                    else {
+                        newSelectedOption = null;
+                        fetchPresenterList(newOption);
+                    }
+                }
+
+                function reloadPresentersGridOnOverride(currentPageNum, presenterLinkId) {
+
+                }
+
+                var presenterLinkId = '';
+                var currentPageNumber = {!presentersGrid.PageNumber};
+                var presenterName = '';
+                var presenterEmail = '';
+
+                function handleModifyPresenterStatusOpen(presenterName, presenterEmail, presenterAgendaLinkId, currentPageNum, currentStatus) {
+                    console.log('presenterAgendaLinkId:' + presenterAgendaLinkId);
+                    console.log('currentPageNum:' + currentPageNum);
+                    console.log('currentStatus:' + currentStatus);
+                    console.log('presenterName:' + presenterName);
+                    console.log('presenterEmail:' + presenterEmail);
+
+                    $('#overRidePresenterStatusPopup').show();
+                    presenterLinkId = presenterAgendaLinkId;
+                    currentPageNumber = currentPageNum;
+                    this.presenterName = presenterName;
+                    this.presenterEmail = presenterEmail;
+                    //console.log('obj--'+obj);
+                    var statusListElement = document.getElementById('eventPageId:eventFormId:statusList');
+                    if (statusListElement != null) {
+                        statusListElement.value = currentStatus;
+                    }
+                    console.log(document.getElementById('presenterNameDiv'));
+                    var presenterNameDiv = document.getElementById("presenterNameDiv");
+                    console.log(presenterNameDiv);
+                    presenterNameDiv.innerHTML = presenterName;
+                    $("#presenterNameDiv").html(presenterName);
+                    document.getElementById("presenterEmailDiv").innerHTML = presenterEmail;
+                }
+
+                function handleIndependentPopupClose(ele, noErrorOccured, forceClose, popupId) {
+                    if ((forceClose == true || forceClose == 'true' || forceClose) || (noErrorOccured == true || noErrorOccured == 'true' || noErrorOccured)) {
+                        if (popupId != null && popupId != '') {
+                            $('#' + popupId).hide();
+                        } else {
+                            $(ele).closest('.popupBox').hide();
+                        }
+                    }
+                }
+
+
+                function openPopUp(modelID) {
+                    var modal = document.getElementById('model_' + modelID);
+                    modal.style.display = "block";
+                }
+                function closePopUp(spanID) {
+                    var modelID = spanID.replace('span_', '');
+                    var modal = document.getElementById('model_' + modelID);
+                    modal.style.display = "none";
+                }
+            </script>
+
+
+
+            <style>
+            </style>
+
+            <style>
+                <!-- Style Added for Lightning Experience -->body {
+                    font-size: 75% !important;
+                }
+
+                .popupLabel {
+                    display: inline;
+                }
+
+                .popupField {
+                    display: inline;
+                }
+            </style>
+
+
+
+        </apex:form>
+    </body>
+
+    </html>
+
+
+</apex:page>

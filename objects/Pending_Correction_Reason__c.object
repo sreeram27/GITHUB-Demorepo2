@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Pending_Correction_Reason_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Corrected Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Correction_Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Correction Comments</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Correction_Department__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Pending_Correction__r.Correction_Department__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Correction Department</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Pending_Correction__r.Implementation_Case__r.Id,Pending_Correction__r.Implementation_Case__r.OrderNumber )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Implementation Case</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initiator_Comments__c</fullName>
+        <description>Initiator Comments</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Initiator Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_Action_Completed_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Correction Action Completed Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Pending Correction Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending Correction Action</fullName>
+                    <default>true</default>
+                    <label>Pending Correction Action</label>
+                </value>
+                <value>
+                    <fullName>Corrected</fullName>
+                    <default>false</default>
+                    <label>Corrected</label>
+                </value>
+                <value>
+                    <fullName>Cannot Correct At This Time</fullName>
+                    <default>false</default>
+                    <label>Cannot Correct At This Time</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction__c</fullName>
+        <externalId>false</externalId>
+        <label>Pending Correction</label>
+        <referenceTo>Pending_Correction__c</referenceTo>
+        <relationshipLabel>Pending Correction Reasons</relationshipLabel>
+        <relationshipName>Pending_Correction_Reasons</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>SubType/Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Benefit booklets on draft</fullName>
+                    <default>false</default>
+                    <label>Benefit booklets on draft</label>
+                </value>
+                <value>
+                    <fullName>Benefit discrepancies - Sales is verifying</fullName>
+                    <default>false</default>
+                    <label>Benefit discrepancies - Sales is verifying</label>
+                </value>
+                <value>
+                    <fullName>Bill Entity Eff Date</fullName>
+                    <default>false</default>
+                    <label>Bill Entity Eff Date</label>
+                </value>
+                <value>
+                    <fullName>Billing Address</fullName>
+                    <default>false</default>
+                    <label>Billing Address</label>
+                </value>
+                <value>
+                    <fullName>Billing Issues</fullName>
+                    <default>false</default>
+                    <label>Billing Issues</label>
+                </value>
+                <value>
+                    <fullName>Case Eff Date</fullName>
+                    <default>false</default>
+                    <label>Case Eff Date</label>
+                </value>
+                <value>
+                    <fullName>Census</fullName>
+                    <default>false</default>
+                    <label>Census</label>
+                </value>
+                <value>
+                    <fullName>Clarification Due to Discrepancy of Info/Paper Work</fullName>
+                    <default>false</default>
+                    <label>Clarification Due to Discrepancy of Info/Paper Work</label>
+                </value>
+                <value>
+                    <fullName>Clarification Group Level Paperwork</fullName>
+                    <default>false</default>
+                    <label>Clarification Group Level Paperwork</label>
+                </value>
+                <value>
+                    <fullName>Clarification of voucher</fullName>
+                    <default>false</default>
+                    <label>Clarification of voucher</label>
+                </value>
+                <value>
+                    <fullName>COBRA</fullName>
+                    <default>false</default>
+                    <label>COBRA</label>
+                </value>
+                <value>
+                    <fullName>Company Address</fullName>
+                    <default>false</default>
+                    <label>Company Address</label>
+                </value>
+                <value>
+                    <fullName>Contract Code / BPL Update with Future Date</fullName>
+                    <default>false</default>
+                    <label>Contract Code / BPL Update with Future Date</label>
+                </value>
+                <value>
+                    <fullName>Contract Code to Move to Production Due to BC Error</fullName>
+                    <default>false</default>
+                    <label>Contract Code to Move to Production Due to BC Error</label>
+                </value>
+                <value>
+                    <fullName>Contracts Internal Only</fullName>
+                    <default>false</default>
+                    <label>Contracts Internal Only</label>
+                </value>
+                <value>
+                    <fullName>Discrepencies</fullName>
+                    <default>false</default>
+                    <label>Discrepencies</label>
+                </value>
+                <value>
+                    <fullName>Discrepency</fullName>
+                    <default>false</default>
+                    <label>Discrepency</label>
+                </value>
+                <value>
+                    <fullName>E&amp;B Internal Only</fullName>
+                    <default>false</default>
+                    <label>E&amp;B Internal Only</label>
+                </value>
+                <value>
+                    <fullName>Eligibility Incomplete</fullName>
+                    <default>false</default>
+                    <label>Eligibility Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Eligibility Not Received</fullName>
+                    <default>false</default>
+                    <label>Eligibility Not Received</label>
+                </value>
+                <value>
+                    <fullName>Enrollment</fullName>
+                    <default>false</default>
+                    <label>Enrollment</label>
+                </value>
+                <value>
+                    <fullName>Enrollment Forms</fullName>
+                    <default>false</default>
+                    <label>Enrollment Forms</label>
+                </value>
+                <value>
+                    <fullName>External Contact Incomplete</fullName>
+                    <default>false</default>
+                    <label>External Contact Incomplete</label>
+                </value>
+                <value>
+                    <fullName>External Contact Missing</fullName>
+                    <default>false</default>
+                    <label>External Contact Missing</label>
+                </value>
+                <value>
+                    <fullName>Focal Renewal Date</fullName>
+                    <default>false</default>
+                    <label>Focal Renewal Date</label>
+                </value>
+                <value>
+                    <fullName>Funding documents on draft</fullName>
+                    <default>false</default>
+                    <label>Funding documents on draft</label>
+                </value>
+                <value>
+                    <fullName>Health and Wellness Healthcare (HIP)</fullName>
+                    <default>false</default>
+                    <label>Health and Wellness Healthcare (HIP)</label>
+                </value>
+                <value>
+                    <fullName>Incomplete</fullName>
+                    <default>false</default>
+                    <label>Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Incorrect</fullName>
+                    <default>false</default>
+                    <label>Incorrect</label>
+                </value>
+                <value>
+                    <fullName>Internal Case Install Only</fullName>
+                    <default>false</default>
+                    <label>Internal Case Install Only</label>
+                </value>
+                <value>
+                    <fullName>Internal Contact Incomplete</fullName>
+                    <default>false</default>
+                    <label>Internal Contact Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Internal Contact Missing</fullName>
+                    <default>false</default>
+                    <label>Internal Contact Missing</label>
+                </value>
+                <value>
+                    <fullName>Issue Control Internal Only</fullName>
+                    <default>false</default>
+                    <label>Issue Control Internal Only</label>
+                </value>
+                <value>
+                    <fullName>Life Department Audit</fullName>
+                    <default>false</default>
+                    <label>Life Department Audit</label>
+                </value>
+                <value>
+                    <fullName>Life Eligibility</fullName>
+                    <default>false</default>
+                    <label>Life Eligibility</label>
+                </value>
+                <value>
+                    <fullName>Missing</fullName>
+                    <default>false</default>
+                    <label>Missing</label>
+                </value>
+                <value>
+                    <fullName>Missing Information</fullName>
+                    <default>false</default>
+                    <label>Missing Information</label>
+                </value>
+                <value>
+                    <fullName>Need additional paperwork - incomplete paperwork</fullName>
+                    <default>false</default>
+                    <label>Need additional paperwork - incomplete paperwork</label>
+                </value>
+                <value>
+                    <fullName>Not signed</fullName>
+                    <default>false</default>
+                    <label>Not signed</label>
+                </value>
+                <value>
+                    <fullName>Order level</fullName>
+                    <default>false</default>
+                    <label>Order level</label>
+                </value>
+                <value>
+                    <fullName>Pending for updated text from Compliance</fullName>
+                    <default>false</default>
+                    <label>Pending for updated text from Compliance</label>
+                </value>
+                <value>
+                    <fullName>Product Eff Date</fullName>
+                    <default>false</default>
+                    <label>Product Eff Date</label>
+                </value>
+                <value>
+                    <fullName>Question</fullName>
+                    <default>false</default>
+                    <label>Question</label>
+                </value>
+                <value>
+                    <fullName>Rate Bank</fullName>
+                    <default>false</default>
+                    <label>Rate Bank</label>
+                </value>
+                <value>
+                    <fullName>Rates w/ ACA Fees Broken Out</fullName>
+                    <default>false</default>
+                    <label>Rates w/ ACA Fees Broken Out</label>
+                </value>
+                <value>
+                    <fullName>Rate verification</fullName>
+                    <default>false</default>
+                    <label>Rate verification</label>
+                </value>
+                <value>
+                    <fullName>Renew Notify Period</fullName>
+                    <default>false</default>
+                    <label>Renew Notify Period</label>
+                </value>
+                <value>
+                    <fullName>Requesting New File</fullName>
+                    <default>false</default>
+                    <label>Requesting New File</label>
+                </value>
+                <value>
+                    <fullName>Rerate Month</fullName>
+                    <default>false</default>
+                    <label>Rerate Month</label>
+                </value>
+                <value>
+                    <fullName>Retirees</fullName>
+                    <default>false</default>
+                    <label>Retirees</label>
+                </value>
+                <value>
+                    <fullName>Review needed</fullName>
+                    <default>false</default>
+                    <label>Review needed</label>
+                </value>
+                <value>
+                    <fullName>Signature</fullName>
+                    <default>false</default>
+                    <label>Signature</label>
+                </value>
+                <value>
+                    <fullName>Spanish translation requested</fullName>
+                    <default>false</default>
+                    <label>Spanish translation requested</label>
+                </value>
+                <value>
+                    <fullName>Specialty RX</fullName>
+                    <default>false</default>
+                    <label>Specialty RX</label>
+                </value>
+                <value>
+                    <fullName>Suffix Eff Date</fullName>
+                    <default>false</default>
+                    <label>Suffix Eff Date</label>
+                </value>
+                <value>
+                    <fullName>Three tier RX</fullName>
+                    <default>false</default>
+                    <label>Three tier RX</label>
+                </value>
+                <value>
+                    <fullName>To QA (quality audit)</fullName>
+                    <default>false</default>
+                    <label>To QA (quality audit)</label>
+                </value>
+                <value>
+                    <fullName>UW Work Month</fullName>
+                    <default>false</default>
+                    <label>UW Work Month</label>
+                </value>
+                <value>
+                    <fullName>Void Bill +3 months Mgr Approval</fullName>
+                    <default>false</default>
+                    <label>Void Bill +3 months Mgr Approval</label>
+                </value>
+                <value>
+                    <fullName>Waiting for Compliance approval</fullName>
+                    <default>false</default>
+                    <label>Waiting for Compliance approval</label>
+                </value>
+                <value>
+                    <fullName>Waiting for revised SOBs (summary of benefits)</fullName>
+                    <default>false</default>
+                    <label>Waiting for revised SOBs (summary of benefits)</label>
+                </value>
+                <value>
+                    <fullName>Zip Code</fullName>
+                    <default>false</default>
+                    <label>Zip Code</label>
+                </value>
+                <value>
+                    <fullName>Other (add comment)</fullName>
+                    <default>false</default>
+                    <label>Other (add comment)</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>ID Cards</controllingFieldValue>
+                <valueName>Order level</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ID Cards</controllingFieldValue>
+                <controllingFieldValue>Life and Disability</controllingFieldValue>
+                <controllingFieldValue>MBU</controllingFieldValue>
+                <controllingFieldValue>Perform Guarantee</controllingFieldValue>
+                <controllingFieldValue>Pharmacy</controllingFieldValue>
+                <controllingFieldValue>Probationary Period</controllingFieldValue>
+                <controllingFieldValue>Proposal/Rate Sheet</controllingFieldValue>
+                <controllingFieldValue>Renewal Month</controllingFieldValue>
+                <controllingFieldValue>Case Name</controllingFieldValue>
+                <controllingFieldValue>Self-Bill Indicator</controllingFieldValue>
+                <controllingFieldValue>Case Number</controllingFieldValue>
+                <controllingFieldValue>SIC</controllingFieldValue>
+                <controllingFieldValue>CDH Questionaire</controllingFieldValue>
+                <controllingFieldValue>Tax ID</controllingFieldValue>
+                <controllingFieldValue>Contact</controllingFieldValue>
+                <controllingFieldValue>Termination/Cancellation</controllingFieldValue>
+                <controllingFieldValue>Contract Code</controllingFieldValue>
+                <controllingFieldValue>Underwriting</controllingFieldValue>
+                <controllingFieldValue>Contribution</controllingFieldValue>
+                <controllingFieldValue>Domestic Partners</controllingFieldValue>
+                <controllingFieldValue>EAP</controllingFieldValue>
+                <controllingFieldValue>Effective Date</controllingFieldValue>
+                <controllingFieldValue>Eligibility</controllingFieldValue>
+                <controllingFieldValue>Address</controllingFieldValue>
+                <controllingFieldValue>Alpha Prefix</controllingFieldValue>
+                <controllingFieldValue>ASO Funding Doc</controllingFieldValue>
+                <controllingFieldValue>ASO or ABF Finance Forms</controllingFieldValue>
+                <controllingFieldValue>ASO or ABF Stoploss Form</controllingFieldValue>
+                <controllingFieldValue>Benefit Summaries</controllingFieldValue>
+                <controllingFieldValue>Broker</controllingFieldValue>
+                <controllingFieldValue>Calcobra</controllingFieldValue>
+                <controllingFieldValue>Employer App</controllingFieldValue>
+                <controllingFieldValue>Group Structure</controllingFieldValue>
+                <valueName>Question</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ID Cards</controllingFieldValue>
+                <valueName>Review needed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Life and Disability</controllingFieldValue>
+                <valueName>Census</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Life and Disability</controllingFieldValue>
+                <valueName>Enrollment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Life and Disability</controllingFieldValue>
+                <valueName>Life Department Audit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Life and Disability</controllingFieldValue>
+                <valueName>Life Eligibility</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MBU</controllingFieldValue>
+                <controllingFieldValue>Perform Guarantee</controllingFieldValue>
+                <controllingFieldValue>Phone Number</controllingFieldValue>
+                <controllingFieldValue>Probationary Period</controllingFieldValue>
+                <controllingFieldValue>Proposal/Rate Sheet</controllingFieldValue>
+                <controllingFieldValue>CDH Questionaire</controllingFieldValue>
+                <controllingFieldValue>ASO Funding Doc</controllingFieldValue>
+                <controllingFieldValue>ASO or ABF Finance Forms</controllingFieldValue>
+                <controllingFieldValue>ASO or ABF Stoploss Form</controllingFieldValue>
+                <controllingFieldValue>Benefit Summaries</controllingFieldValue>
+                <controllingFieldValue>Broker</controllingFieldValue>
+                <controllingFieldValue>Calcobra</controllingFieldValue>
+                <controllingFieldValue>Employer App</controllingFieldValue>
+                <controllingFieldValue>Group Structure</controllingFieldValue>
+                <valueName>Incomplete</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>MBU</controllingFieldValue>
+                <controllingFieldValue>Phone Number</controllingFieldValue>
+                <controllingFieldValue>Probationary Period</controllingFieldValue>
+                <controllingFieldValue>Proposal/Rate Sheet</controllingFieldValue>
+                <controllingFieldValue>SIC</controllingFieldValue>
+                <controllingFieldValue>CDH Questionaire</controllingFieldValue>
+                <controllingFieldValue>Tax ID</controllingFieldValue>
+                <controllingFieldValue>Alpha Prefix</controllingFieldValue>
+                <controllingFieldValue>ASO Funding Doc</controllingFieldValue>
+                <controllingFieldValue>ASO or ABF Finance Forms</controllingFieldValue>
+                <controllingFieldValue>ASO or ABF Stoploss Form</controllingFieldValue>
+                <controllingFieldValue>Benefit Summaries</controllingFieldValue>
+                <controllingFieldValue>Calcobra</controllingFieldValue>
+                <controllingFieldValue>Employer App</controllingFieldValue>
+                <controllingFieldValue>Group Structure</controllingFieldValue>
+                <valueName>Missing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Benefit booklets on draft</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Benefit discrepancies - Sales is verifying</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Clarification of voucher</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Contracts Internal Only</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>E&amp;B Internal Only</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Funding documents on draft</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Internal Case Install Only</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Issue Control Internal Only</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Need additional paperwork - incomplete paperwork</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Pending for updated text from Compliance</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Rate verification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Spanish translation requested</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>To QA (quality audit)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Waiting for Compliance approval</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Waiting for revised SOBs (summary of benefits)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Other (add comment)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pharmacy</controllingFieldValue>
+                <valueName>Specialty RX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pharmacy</controllingFieldValue>
+                <valueName>Three tier RX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Proposal/Rate Sheet</controllingFieldValue>
+                <valueName>Rate Bank</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Proposal/Rate Sheet</controllingFieldValue>
+                <valueName>Rates w/ ACA Fees Broken Out</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Proposal/Rate Sheet</controllingFieldValue>
+                <valueName>Signature</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Month</controllingFieldValue>
+                <valueName>Focal Renewal Date</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Month</controllingFieldValue>
+                <valueName>Renew Notify Period</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Renewal Month</controllingFieldValue>
+                <valueName>Rerate Month</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contact</controllingFieldValue>
+                <valueName>External Contact Incomplete</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contact</controllingFieldValue>
+                <valueName>External Contact Missing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contact</controllingFieldValue>
+                <valueName>Internal Contact Incomplete</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contact</controllingFieldValue>
+                <valueName>Internal Contact Missing</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Termination/Cancellation</controllingFieldValue>
+                <valueName>Clarification Due to Discrepancy of Info/Paper Work</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Termination/Cancellation</controllingFieldValue>
+                <valueName>Clarification Group Level Paperwork</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contract Code</controllingFieldValue>
+                <valueName>Contract Code / BPL Update with Future Date</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contract Code</controllingFieldValue>
+                <valueName>Contract Code to Move to Production Due to BC Error</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Underwriting</controllingFieldValue>
+                <valueName>UW Work Month</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>EAP</controllingFieldValue>
+                <valueName>Health and Wellness Healthcare (HIP)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Effective Date</controllingFieldValue>
+                <valueName>Bill Entity Eff Date</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Effective Date</controllingFieldValue>
+                <valueName>Case Eff Date</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Effective Date</controllingFieldValue>
+                <valueName>Product Eff Date</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Effective Date</controllingFieldValue>
+                <valueName>Suffix Eff Date</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Eligibility</controllingFieldValue>
+                <valueName>Eligibility Incomplete</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Eligibility</controllingFieldValue>
+                <valueName>Eligibility Not Received</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Eligibility</controllingFieldValue>
+                <valueName>Enrollment Forms</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Eligibility</controllingFieldValue>
+                <valueName>Requesting New File</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Address</controllingFieldValue>
+                <valueName>Billing Address</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Address</controllingFieldValue>
+                <valueName>Company Address</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Address</controllingFieldValue>
+                <valueName>Zip Code</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Alpha Prefix</controllingFieldValue>
+                <valueName>Incorrect</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Billing</controllingFieldValue>
+                <valueName>Billing Issues</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Billing</controllingFieldValue>
+                <valueName>Void Bill +3 months Mgr Approval</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Broker</controllingFieldValue>
+                <valueName>Missing Information</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Employer App</controllingFieldValue>
+                <valueName>Discrepencies</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Employer App</controllingFieldValue>
+                <valueName>Not signed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Group Structure</controllingFieldValue>
+                <valueName>COBRA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Group Structure</controllingFieldValue>
+                <valueName>Discrepency</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Group Structure</controllingFieldValue>
+                <valueName>Retirees</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Address</fullName>
+                    <default>false</default>
+                    <label>Address</label>
+                </value>
+                <value>
+                    <fullName>Alpha Prefix</fullName>
+                    <default>false</default>
+                    <label>Alpha Prefix</label>
+                </value>
+                <value>
+                    <fullName>ASO Funding Doc</fullName>
+                    <default>false</default>
+                    <label>ASO Funding Doc</label>
+                </value>
+                <value>
+                    <fullName>ASO or ABF Finance Forms</fullName>
+                    <default>false</default>
+                    <label>ASO or ABF Finance Forms</label>
+                </value>
+                <value>
+                    <fullName>ASO or ABF Stoploss Form</fullName>
+                    <default>false</default>
+                    <label>ASO or ABF Stoploss Form</label>
+                </value>
+                <value>
+                    <fullName>Benefit Summaries</fullName>
+                    <default>false</default>
+                    <label>Benefit Summaries</label>
+                </value>
+                <value>
+                    <fullName>Billing</fullName>
+                    <default>false</default>
+                    <label>Billing</label>
+                </value>
+                <value>
+                    <fullName>Broker</fullName>
+                    <default>false</default>
+                    <label>Broker</label>
+                </value>
+                <value>
+                    <fullName>Calcobra</fullName>
+                    <default>false</default>
+                    <label>Calcobra</label>
+                </value>
+                <value>
+                    <fullName>Case Name</fullName>
+                    <default>false</default>
+                    <label>Case Name</label>
+                </value>
+                <value>
+                    <fullName>Case Number</fullName>
+                    <default>false</default>
+                    <label>Case Number</label>
+                </value>
+                <value>
+                    <fullName>CDH Questionaire</fullName>
+                    <default>false</default>
+                    <label>CDH Questionaire</label>
+                </value>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>false</default>
+                    <label>Contact</label>
+                </value>
+                <value>
+                    <fullName>Contract Code</fullName>
+                    <default>false</default>
+                    <label>Contract Code</label>
+                </value>
+                <value>
+                    <fullName>Contribution</fullName>
+                    <default>false</default>
+                    <label>Contribution</label>
+                </value>
+                <value>
+                    <fullName>Domestic Partners</fullName>
+                    <default>false</default>
+                    <label>Domestic Partners</label>
+                </value>
+                <value>
+                    <fullName>EAP</fullName>
+                    <default>false</default>
+                    <label>EAP</label>
+                </value>
+                <value>
+                    <fullName>Effective Date</fullName>
+                    <default>false</default>
+                    <label>Effective Date</label>
+                </value>
+                <value>
+                    <fullName>Eligibility</fullName>
+                    <default>false</default>
+                    <label>Eligibility</label>
+                </value>
+                <value>
+                    <fullName>Employer App</fullName>
+                    <default>false</default>
+                    <label>Employer App</label>
+                </value>
+                <value>
+                    <fullName>Group Structure</fullName>
+                    <default>false</default>
+                    <label>Group Structure</label>
+                </value>
+                <value>
+                    <fullName>ID Cards</fullName>
+                    <default>false</default>
+                    <label>ID Cards</label>
+                </value>
+                <value>
+                    <fullName>Life and Disability</fullName>
+                    <default>false</default>
+                    <label>Life and Disability</label>
+                </value>
+                <value>
+                    <fullName>MBU</fullName>
+                    <default>false</default>
+                    <label>MBU</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Perform Guarantee</fullName>
+                    <default>false</default>
+                    <label>Perform Guarantee</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy</fullName>
+                    <default>false</default>
+                    <label>Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>Phone Number</fullName>
+                    <default>false</default>
+                    <label>Phone Number</label>
+                </value>
+                <value>
+                    <fullName>Probationary Period</fullName>
+                    <default>false</default>
+                    <label>Probationary Period</label>
+                </value>
+                <value>
+                    <fullName>Proposal/Rate Sheet</fullName>
+                    <default>false</default>
+                    <label>Proposal/Rate Sheet</label>
+                </value>
+                <value>
+                    <fullName>Renewal Month</fullName>
+                    <default>false</default>
+                    <label>Renewal Month</label>
+                </value>
+                <value>
+                    <fullName>Self-Bill Indicator</fullName>
+                    <default>false</default>
+                    <label>Self-Bill Indicator</label>
+                </value>
+                <value>
+                    <fullName>SIC</fullName>
+                    <default>false</default>
+                    <label>SIC</label>
+                </value>
+                <value>
+                    <fullName>Tax ID</fullName>
+                    <default>false</default>
+                    <label>Tax ID</label>
+                </value>
+                <value>
+                    <fullName>Termination/Cancellation</fullName>
+                    <default>false</default>
+                    <label>Termination/Cancellation</label>
+                </value>
+                <value>
+                    <fullName>Underwriting</fullName>
+                    <default>false</default>
+                    <label>Underwriting</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Pending Correction Reason</label>
+    <nameField>
+        <displayFormat>PCR-{0000}</displayFormat>
+        <label>Pending Corrections Reason Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Pending Correction Reasons</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

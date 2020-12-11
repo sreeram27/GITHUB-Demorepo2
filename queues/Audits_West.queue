@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Audits West</name>
+    <queueMembers>
+        <users>
+            <user>zimt060@anthem.com2</user>
+            <user>ad36282@anthem.com2</user>
+            <user>ag29106@anthem.com2</user>
+            <user>ac00987@anthem.com2</user>
+            <user>zgoad93@anthem.com2</user>
+            <user>zrus146@anthem.com2</user>
+            <user>ag15981@anthem.com2</user>
+            <user>af02582@anthem.com2</user>
+            <user>ag33369@anthem.com2</user>
+            <user>maggie.rotonda@anthem.com2</user>
+            <user>mary.lear@anthem.com2</user>
+            <user>michael.flury@anthem.com2</user>
+            <user>ag25189@anthem.com2</user>
+            <user>rick.sullivan1@anthem.com2</user>
+            <user>zrus464@anthem.com2</user>
+            <user>yolanda.y.holmes@anthem.com2</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

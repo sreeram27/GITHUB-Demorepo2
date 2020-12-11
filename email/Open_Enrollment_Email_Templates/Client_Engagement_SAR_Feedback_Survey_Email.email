@@ -1,0 +1,132 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><span style="font-family:&quot;Verdana&quot;,sans-serif">Hello - </span><o:p></o:p></p>
+
+<p>You recently attended an OE meeting for the client:&nbsp; &nbsp; &nbsp;{!Open_Enrollment_Meetings__c.Account__c} <o:p></o:p></p>
+
+<p><o:p>&nbsp;</o:p></p>
+
+<p>Please take a few minutes to fill out the Open Enrollment Sales Feedback
+Survey by clicking on the link below. <o:p></o:p></p>
+
+<p><o:p>&nbsp;</o:p></p>
+
+<p>Your feedback is appreciated and important to us - Thank you! <o:p></o:p></p><p><br></p><p></p><p><a href="{!$Label.OE_Feedback_Survey}{!SFDC_Volunteer_Event__c.Client_Engagement_Consultant_SAR_String__c}">Feedback
+Survey</a><o:p></o:p></p><br><p></p><p></p><p>Thank you!<o:p></o:p></p><table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="0" style="width:430.0pt;border-collapse:collapse;mso-yfti-tbllook:1184;
+ mso-padding-alt:0in 0in 0in 0in">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:18.75pt">
+  <td width="223" style="width:167.0pt;border:solid windowtext 1.0pt;mso-border-alt:
+  solid windowtext .5pt;background:#4F81BD;padding:0in 0in 0in 0in;height:18.75pt">
+  <p class="MsoNormal"><strong>Company
+  Name</strong><o:p></o:p></p>
+  </td>
+  <td width="351" style="width:263.0pt;border:solid windowtext 1.0pt;border-left:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 0in 0in 0in;
+  height:18.75pt">{!Open_Enrollment_Meetings__c.Account__c}</td></tr><tr style="mso-yfti-irow:1;height:.25in"><td width="223" style="width:167.0pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#4F81BD;padding:0in 0in 0in 0in;
+  height:.25in"><p class="MsoNormal"><strong><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;
+  mso-fareast-font-family:&quot;Times New Roman&quot;">Type of Meeting</span></strong><o:p></o:p></p>
+  </td>
+  <td width="351" style="width:263.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 0in 0in 0in;height:.25in">{!SFDC_Volunteer_Event__c.Meeting_Type__c}</td>
+ </tr>
+ <tr style="mso-yfti-irow:2;height:15.75pt">
+  <td width="223" style="width:167.0pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#4F81BD;padding:0in 0in 0in 0in;
+  height:15.75pt">
+  <p class="MsoNormal"><strong><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;
+  mso-fareast-font-family:&quot;Times New Roman&quot;">Meeting Date</span></strong><o:p></o:p></p>
+  </td>
+  <td width="351" style="width:263.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 0in 0in 0in;height:15.75pt">{!SFDC_Volunteer_Event__c.Date__c}</td>
+ </tr>
+ <tr style="mso-yfti-irow:3;height:96.75pt">
+  <td width="223" style="width:167.0pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#4F81BD;padding:0in 0in 0in 0in;
+  height:96.75pt">
+  <p class="MsoNormal"><strong><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;
+  mso-fareast-font-family:&quot;Times New Roman&quot;">Session Times</span></strong><o:p></o:p></p>
+  </td>
+  <td width="351" style="width:263.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 0in 0in 0in;height:96.75pt">
+  {!SFDC_Volunteer_Event__c.Session_1_Start_Time__c}-{!SFDC_Volunteer_Event__c.Session_1_End_Time__c}<br>{!SFDC_Volunteer_Event__c.Session_2_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_2_End_Time__c}<br>{!SFDC_Volunteer_Event__c.Session_3_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_3_End_Time__c}<br>{!SFDC_Volunteer_Event__c.Session_4_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_4_End_Time__c}<br>{!SFDC_Volunteer_Event__c.Session_5_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_5_End_Time__c}<br>{!SFDC_Volunteer_Event__c.Session_6_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_6_End_Time__c}<br>{!SFDC_Volunteer_Event__c.Session_7_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_7_End_Time__c}&nbsp;</td>
+ </tr>
+ <tr style="mso-yfti-irow:4;height:15.75pt">
+  <td width="223" style="width:167.0pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#4F81BD;padding:0in 0in 0in 0in;
+  height:15.75pt">
+  <p class="MsoNormal"><strong><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;
+  mso-fareast-font-family:&quot;Times New Roman&quot;"># of Expected EE's</span></strong><o:p></o:p></p>
+  </td>
+  <td width="351" style="width:263.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 0in 0in 0in;height:15.75pt">{!SFDC_Volunteer_Event__c.Expected_of_Employees__c}</td>
+ </tr>
+ <tr style="mso-yfti-irow:5;height:43.5pt">
+  <td width="223" style="width:167.0pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#4F81BD;padding:0in 0in 0in 0in;
+  height:43.5pt">
+  <p class="MsoNormal"><strong><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;
+  mso-fareast-font-family:&quot;Times New Roman&quot;">Street Address</span></strong><o:p></o:p></p>
+  </td>
+  <td width="351" style="width:263.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 0in 0in 0in;height:43.5pt">{!SFDC_Volunteer_Event__c.Meeting_Street__c}<br>{!SFDC_Volunteer_Event__c.Meeting_City__c}<br>{!SFDC_Volunteer_Event__c.Meeting_State__c}<br>{!SFDC_Volunteer_Event__c.Meeting_Zip_Code__c}</td>
+ </tr>
+ <tr style="mso-yfti-irow:6;height:30.75pt">
+  <td width="223" style="width:167.0pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#4F81BD;padding:0in 0in 0in 0in;
+  height:30.75pt">
+  <p class="MsoNormal"><strong><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;
+  mso-fareast-font-family:&quot;Times New Roman&quot;">Site Contact Info.</span></strong><o:p></o:p></p>
+  </td>
+  <td width="351" style="width:263.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 0in 0in 0in;height:30.75pt">{!SFDC_Volunteer_Event__c.Meeting_Contact__c}<br>{!SFDC_Volunteer_Event__c.Contact_Phone_Number__c}</td>
+ </tr>
+ <tr style="mso-yfti-irow:7;height:24.75pt">
+  <td width="223" style="width:167.0pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-left-alt:solid windowtext .5pt;mso-border-bottom-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;background:#4F81BD;padding:0in 0in 0in 0in;
+  height:24.75pt">
+  <p class="MsoNormal"><strong><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;
+  mso-fareast-font-family:&quot;Times New Roman&quot;">Plan type</span></strong><o:p></o:p></p>
+  </td>
+  <td width="351" style="width:263.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0in 0in 0in 0in;height:24.75pt">{!Open_Enrollment_Meetings__c.Plan_Type__c}</td>
+ </tr>
+ <tr style="mso-yfti-irow:8;mso-yfti-lastrow:yes;height:.5in">
+  <td width="223" style="width:167.0pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  background:#4F81BD;padding:0in 0in 0in 0in;height:.5in">
+  <p class="MsoNormal"><strong><span style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;
+  mso-fareast-font-family:&quot;Times New Roman&quot;">NOTES</span></strong><o:p></o:p></p>
+  </td>
+  <td style="border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-bottom-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 0in 0in 0in;
+  height:.5in">{!SFDC_Volunteer_Event__c.Meeting_Comments__c}</td>
+ </tr>
+</tbody></table><br><p></p><div><p><span style="font-size: 12pt;">Thank you -</span></p><p>The Open Enrollment Team</p></div>]]></td>
+</tr>
+</table>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$Region__c</field>
+    </columns>
+    <columns>
+        <field>Account.AccountTeamMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Account$WARP_Medical_Members__c</field>
+    </columns>
+    <description>Account &amp; Account Team</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.AccountTeamMembers$TeamMemberRole</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account Executive,VP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Name</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>Carrie</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.AccountTeamMembers$TeamMemberRole</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>National BOB by Region</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Account_Teams_ANA__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account$WARP_Medical_Members__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account$Active_Renewal_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

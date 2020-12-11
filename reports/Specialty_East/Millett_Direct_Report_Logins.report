@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <columns>
+        <field>PROFILE</field>
+    </columns>
+    <columns>
+        <field>ROLE</field>
+    </columns>
+    <columns>
+        <field>USERNAME</field>
+    </columns>
+    <columns>
+        <field>ALIAS</field>
+    </columns>
+    <columns>
+        <field>ACTIVE</field>
+    </columns>
+    <columns>
+        <field>LAST_LOGIN</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7</booleanFilter>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>anthony savignano</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>jessica blais</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>kyle gilman</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>robyn rizzuto</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>nuno bernadino</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>paige hill</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FULL_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>terry lewis</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Millett Direct Report Logins</name>
+    <params>
+        <name>active</name>
+        <value>active</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>User</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>LAST_LOGIN</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>LAST_LOGIN</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

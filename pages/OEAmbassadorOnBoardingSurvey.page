@@ -1,0 +1,288 @@
+<!--
+*******************************************************************************
+* Purpose:  Allow an associate to volunteer or update their information
+* Created:  6/1/2014
+* Author:   Tony Angle
+******************************************************************************* 
+* Mod:      7/16/2014 - Added Bilingual to form as per Colleen and team 
+*                       and made other look and feel changes desired TA
+*           7/17/2014 - Correct comma issue in the intro paragraph TA
+*           2/10/2015 - Move the volunteer Button.  
+*                       Users complain that they can't see it. LG
+*           2/13/2015 - If Bilingual yes make RED. LG
+*           2/16/2015 - Move Bilingual to before Account Name. LG 
+*           2/24/2015 - TextArea Box edits. LG
+*           3/30/2016 - Modifications for 2016 season LG
+*           5/23/2016 - Mandatory management Approval LG 
+*           6/9/2016 - Modifications to response to existing ambassador LG
+*          11/23/2016- Modify page don't allow new volunteers in 2016 LG
+*          01/10/2017 - Modify to add Zip Code LG  
+*			// SPRINT 192.4 - XMen - Shifted from COM1
+*******************************************************************************
+-->
+<apex:page controller="OEAMBOnBoardingSurveyController" standardStylesheets="false" showHeader="false" sidebar="false">
+   
+    <apex:form >
+    <apex:stylesheet value="{!$Resource.main}"/>
+    <!-- "{!$Resource.main}" -->
+    <apex:Messages style="color:red;" />
+    <apex:pageMessage severity="error" strength="1"/>
+    <table width="900px">
+        <tr width="33%">
+            <td><apex:image value="{!$Resource.AnthemNewLogo}" height="59px" width="220px"/></td>
+            <td align="center" width="33%"><apex:outputText value="Open Enrollment {!IF(isConsultant,"Consultant", "Ambassador")}" styleClass="header"/>
+                <br/><apex:outputText value="Survey" styleClass="subheader"/>
+            </td>
+            <td align="right" width="33%"><apex:image value="{!$Resource.AnthemNewLogo}" height="59px" width="220px"/></td>
+        </tr>                                                 
+    </table>
+    
+    <br/>    
+    <div class="menubox">
+        <apex:commandButton value="Back" action="{!backToMeeting}" styleClass="button"/>
+    </div>  
+    <br/>    
+
+    <apex:pageBlock rendered="{!showReturnSurvey}">
+    <div class="box900">
+        <div class="innerbox">
+         <table width="100%">
+             <tr> <td width="100%">Survey For:&nbsp;&nbsp;{!facName}</td></tr>
+            <tr><td width="100%"><b>Thank you for your continued participation in the Open Enrollment Program.<br/>
+
+          Please complete all questions in the survey below and click “Submit “ when completed.</b></td></tr>
+            </table>               
+        </div>
+    </div>
+    <br/>
+    <div class="box900" >
+            <div class="boxcaption">Open Enrollment Survey</div>
+                <div class="innerbox">
+                <table width="100%">
+                    
+                    
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+
+                    <apex:outputPanel rendered="{!NOT isConsultant}">
+                        <tr><td><b><span style="color:red">By checking this box, I have confirmed I have received management approval to participate in the OE Program (MANDATORY)</span></b></td><!--<td><apex:inputField value="{!ambassador.Confirm_Manager_s_Approval__c}"/></td>--></tr>
+                    </apex:outputPanel>
+
+                    <tr><td><b>First Name</b></td><td><apex:inputField value="{!ambassador.FirstName}"/></td></tr>
+                    <!--<tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr> -->
+                    <tr><td><b>Last Name</b></td><td><apex:inputField value="{!ambassador.LastName}"/></td></tr>
+                    <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
+                    
+                    <apex:outputPanel rendered="{!NOT isConsultant}">
+                        <tr><td><b>US Domain ID</b></td><td><apex:inputField value="{!ambassador.US_Domain_ID__c}"/></td></tr>
+                        <tr><td><b>Title</b></td><td><apex:inputField value="{!ambassador.Title}"/></td></tr>
+                        <tr><td><b>Department</b></td><td><apex:inputField value="{!ambassador.Department}"/></td></tr>
+                        <tr><td><b>Are you in an EXTERNAL client facing role (dealing directly with external client’s high level contacts)?</b></td><td><apex:inputField value="{!ambassador.Are_you_in_a_client_facing_role__c}"/></td></tr>
+                        <tr><td><b>If yes, does this interaction involve commercial medical products/benefits?</b></td><td><apex:inputField value="{!ambassador.Commercial_Medical_Product_Benefits__c}"/></td></tr>
+                        <tr><td><b>Associate Type</b></td><td><apex:inputField value="{!ambassador.Associate_Type__c}"/></td></tr>
+                        <tr><td><b>Work Location</b></td><td><apex:inputField value="{!ambassador.Work_Location__c}"/></td></tr>
+                    </apex:outputPanel>                        
+
+                    <tr><td><b>City</b></td><td><apex:inputField value="{!ambassador.Billing_City__c}"/></td></tr>
+                    <tr><td><b>State</b></td><td><apex:inputField value="{!ambassador.Billing_State_Province__c}"/></td></tr>
+                    <tr><td><b>Zip Code</b></td><td><apex:inputField value="{!ambassador.Billing_Zip_Postal_Code__c}"/></td></tr>
+                    <tr><td><b>Email</b></td><td><apex:inputField value="{!ambassador.Email}"/></td></tr>
+                    <tr><td><b>Phone</b></td><td><apex:inputField value="{!ambassador.Phone}"/></td></tr>
+                    <tr><td><b>Mobile Phone</b></td><td><apex:inputField value="{!ambassador.MobilePhone}"/></td></tr>
+                    
+                    <apex:outputPanel rendered="{!NOT isConsultant}">                    
+                        <tr><td><b>Are you a part of the National Government Services (NGS)?</b></td><td><apex:inputField value="{!ambassador.Part_of_National_Government__c}"/></td></tr>
+                    </apex:outputPanel>
+                    
+                    <tr><td><b>Years as {!IF(isConsultant,"a Consultant", "an Ambassador")}</b></td><td><apex:inputField value="{!ambassador.Years_as_an_Ambassador__c}"/></td></tr>
+                    
+                    <apex:outputPanel rendered="{!NOT isConsultant}"> 
+                        <tr><td><b>Year Certified</b></td><!--<td><apex:inputField value="{!ambassador.Year_certified__c}"/></td>--></tr>
+                    </apex:outputPanel>
+                        
+                    <tr><td><b>Bilingual <i><small>(If you are bilingual, please check box and select from the languages below)</small></i></b></td><td><apex:inputField value="{!ambassador.Bilingual__c}"/></td></tr>
+                    <tr><td><b>Languages</b></td><td><apex:inputField value="{!ambassador.Languages__c}"/></td></tr>
+                    <tr><td><b>Other Language(s)</b></td><td><apex:inputField value="{!ambassador.Facilitator_Comments__c}"/></td></tr>
+                    
+                    <apex:outputPanel rendered="{!NOT isConsultant}">
+                        <tr><td><b>If you're part of an Associate Resource Group (ARG), please check box and select which team(s) below.</b></td><td><apex:inputField value="{!ambassador.ARG__c}"/></td></tr>
+                        <tr><td><b>ARG Team</b></td><td><apex:inputField value="{!ambassador.ARG_Names__c}"/></td></tr>
+                    </apex:outputPanel>
+                    
+                    <tr><td><b>Preferred Meeting Type</b></td><td><apex:inputField value="{!ambassador.Preferred_Meeting_Type__c}"/></td></tr>
+                    <tr><td><b>Please provide comments on why your prefer the selected Meeting Type(s)</b></td><!--<td><apex:inputField value="{!ambassador.Preferred_Meeting_Type_Reason__c}"/></td>--></tr>
+                   
+                </table>
+                </div>
+                <div class="boxcaption">Presentation Experience</div>
+                <div class="innerbox">
+                <table width="100%">
+                    <tr><td><b>Years of experience presenting <u>live</u>  medical products/specialty products within the OE Program</b></td><td><apex:inputField value="{!ambassador.Benefit_presentations_within_the_OEAP__c}"/></td></tr>
+                    <tr><td><b>Years of experience presenting <u>live</u> medical products/specialty products outside the OE Program</b></td><td><apex:inputField value="{!ambassador.Benefit_presentations_outside_the_OEAP__c}"/></td></tr>
+                    <tr><td><b>Years of experience with other types of <u>live</u> presentations within the company</b></td><td><apex:inputField value="{!ambassador.Other_live_presentation_within_Company__c}"/></td></tr>
+                    <tr><td><b>Years of experience with other types of <u>live</u> presentations outside the company</b></td><td><apex:inputField value="{!ambassador.Presentations_outside_the_company__c}"/></td></tr>
+                    <tr><td><b>Confidence level in conducting <u>live</u> presentations</b></td><td><apex:inputField value="{!ambassador.Confidence_level_conducting_presentation__c}"/></td></tr>
+                    
+                    <apex:outputPanel rendered="{!NOT isConsultant}">                    
+                        <tr><td><b>If you are interested in facilitating presentations, please elaborate on your experience (mandatory).</b></td><td><apex:inputField value="{!ambassador.Elaborate_On_Presentation_Experience__c}"/></td></tr>
+                    </apex:outputPanel>
+                    
+                </table>
+                </div>
+        <div class="boxcaption">Benefits/H&amp;W/Specialty Experience</div>
+                <div class="innerbox">
+                <table width="100%">
+                    <tr><td><b><i>Please provide your confidence level with the following:</i></b></td></tr>
+                  <tr><td><b>Understanding medical benefit plans (HMO, PPO, CDHP)</b></td><td><apex:inputField value="{!ambassador.Understanding_benefit_plans__c}"/></td></tr>
+                    <tr><td><b>Walking through medical benefit summaries and discussing/explaining medical plans</b></td><td><apex:inputField value="{!ambassador.Walking_through_benefit_summaries__c}"/></td></tr>
+                    <tr><td><b>Explaining and answering detailed questions on CDHP products</b></td><td><apex:inputField value="{!ambassador.Explaining_and_answering_CDHP_questions__c}"/></td></tr>
+                    <tr><td><b>Explaining health &amp; wellness programs and answering related questions </b></td><td><apex:inputField value="{!ambassador.Explaining_H_W_programs__c}"/></td></tr>
+                    <tr><td><b>Knowledge of specialty products (dental/vision/Life &amp; Disability) </b></td><td><apex:inputField value="{!ambassador.Knowledge_of_specialty_products__c}"/></td></tr>
+                    <tr><td><b>Explaining and answering questions on specialty benefits </b></td><td><apex:inputField value="{!ambassador.Explaining_specialty_benefits__c}"/></td></tr>
+                    </table>
+                </div>
+                
+                <div class="boxcaption">Submit your survey</div>
+                <div class="innerbox">
+                <table width="100%">
+                 <tr><td><apex:commandButton value="Submit" action="{!submitambassador}"/></td></tr>
+                </table>
+                </div>
+        </div>
+    <br/>
+    </apex:pageblock>
+    <apex:pageBlock rendered="{!DoNotshowNewVol}">
+    <div class="box900">
+        <div class="innerbox">
+    Thank you for your interest in the Open Enrollment Ambassador Program, however, we have currently closed ambassador recruitment.  
+
+    Recruitment for new ambassadors will start again in the spring of 2017.
+            </div>
+       </div>
+    </apex:pageblock> 
+    <apex:pageBlock rendered="{!ShowNewVol}">
+    <div class="box900">
+        <div class="innerbox">
+            Thank you for your interest in participating in the Open Enrollment program.<br/>  Please complete all questions in the survey below and click "Submit". Please only submit one sign-up survey.  You will receive an error if you try to sign-up more than once.   
+        </div>
+    </div>
+    <br/>
+    <div class="box900" >
+            <div class="boxcaption">General Information</div>
+                <div class="innerbox">
+                <table width="100%">
+                    <tr><td><b><span style="color:red">By checking this box, I have confirmed I have received management approval to participate in the OE Program (MANDATORY)</span></b></td><!--<td><apex:inputField value="{!ambassador.Confirm_Manager_s_Approval__c}"/></td>--></tr>
+                    <tr><td><b>First Name</b></td><td><apex:inputField ID="firstName" value="{!ambassador.FirstName}"/></td></tr>
+                    <tr><td><b>Last Name</b></td><td><apex:inputField id="lastName" value="{!ambassador.LastName}"/></td></tr>
+                    <tr><td><b>US Domain ID</b></td><td><apex:inputField id="USDomain" value="{!ambassador.US_Domain_ID__c}"/></td></tr>
+                    <tr><td><b>Title</b></td><td><apex:inputField Id="Title" value="{!ambassador.Title}"/></td></tr>
+                    <tr><td><b>Department</b></td><td><apex:inputField id="Department" value="{!ambassador.Department}"/></td></tr>
+                    <tr><td><b>Are you in an EXTERNAL client facing role (dealing directly with external client’s high level contacts)?</b></td><td><apex:inputField value="{!ambassador.Are_you_in_a_client_facing_role__c}"/></td></tr>
+                    <tr><td><b>If yes, does this interaction involve commercial medical products/benefits?</b></td><td><apex:inputField value="{!ambassador.Commercial_Medical_Product_Benefits__c}"/></td></tr>
+                    <tr><td><b>Associate Type</b></td><td><apex:inputField id="associateType" value="{!ambassador.Associate_Type__c}"/></td></tr>
+                    <tr><td><b>Work Location</b></td><td><apex:inputField id="workLocation" value="{!ambassador.Work_Location__c}"/></td></tr>
+                    <tr><td><b>City</b></td><td><apex:inputField id="City" value="{!ambassador.Billing_City__c}"/></td></tr>
+                    <tr><td><b>State</b></td><td><apex:inputField id="state" value="{!ambassador.Billing_State_Province__c}"/></td></tr>
+                    <tr><td><b>Zip Code</b></td><td><apex:inputField id="zipcode" value="{!ambassador.Billing_Zip_Postal_Code__c}"/></td></tr>
+                    <tr><td><b>Email</b></td><td><apex:inputField id="eMail" value="{!ambassador.Email}"/></td></tr>
+                    <tr><td><b>Phone</b></td><td><apex:inputField value="{!ambassador.Phone}"/></td></tr>
+                    <tr><td><b>Mobile Phone</b></td><td><apex:inputField value="{!ambassador.MobilePhone}"/></td></tr>
+                    <tr><td><b>Are you a part of the National Government Services (NGS)?</b></td><td><apex:inputField value="{!ambassador.Part_of_National_Government__c}"/></td></tr>
+                    <tr><td><b>Bilingual <i><small>(If you are bilingual, please check box and select from the languages below)</small></i></b></td><td><apex:inputField value="{!ambassador.Bilingual__c}"/></td></tr>
+                    <tr><td><b>Languages</b></td><td><apex:inputField value="{!ambassador.Languages__c}"/></td></tr> 
+                    <tr><td><b>Other Language(s)</b></td><td><apex:inputField value="{!ambassador.Facilitator_Comments__c}"/></td></tr>
+                    <tr><td><b>If you're part of an Associate Resource Group (ARG), please check box and select which team(s) below.</b></td><td><apex:inputField value="{!ambassador.ARG__c}"/></td></tr>
+                    <tr><td><b>ARG Team</b></td><td><apex:inputField value="{!ambassador.ARG_Names__c}"/></td></tr>
+                </table>
+                </div>
+                <div class="boxcaption">Presentation Experience</div>
+                <div class="innerbox">
+                <table width="100%">
+                    <tr><td><b>Years of experience presenting <u>live</u> medical products/specialty products outside the OE Program</b></td><td><apex:inputField value="{!ambassador.Benefit_presentations_outside_the_OEAP__c}"/></td></tr>
+                    <tr><td><b>Years of experience with other types of <u>live</u> presentations within the company</b></td><td><apex:inputField value="{!ambassador.Other_live_presentation_within_Company__c}"/></td></tr>
+                    <tr><td><b>Years of experience with other types of <u>live</u> presentations outside the company</b></td><td><apex:inputField value="{!ambassador.Presentations_outside_the_company__c}"/></td></tr>
+                    <tr><td><b>Confidence level in conducting <u>live</u> presentations</b></td><td><apex:inputField value="{!ambassador.Confidence_level_conducting_presentation__c}"/></td></tr>
+                    <tr><td><b>If you are interested in facilitating presentations, please elaborate on your experience (mandatory).</b></td><td><apex:inputField value="{!ambassador.Elaborate_On_Presentation_Experience__c}"/></td></tr>
+                </table>
+                </div>
+        <div class="boxcaption">Benefits/H&amp;W/Specialty Experience</div>
+                <div class="innerbox">
+                <table width="100%">
+                <tr><td><b><i>Please provide your confidence level with the following:</i></b></td></tr>
+                  <tr><td><b>Understanding medical benefit plans (HMO, PPO, CDHP)</b></td><td><apex:inputField value="{!ambassador.Understanding_benefit_plans__c}"/></td></tr>
+                    <tr><td><b>Walking through medical benefit summaries and discussing/explaining plans</b></td><td><apex:inputField value="{!ambassador.Walking_through_benefit_summaries__c}"/></td></tr>
+                    <tr><td><b>Explaining and answering detailed questions on CDHP products</b></td><td><apex:inputField value="{!ambassador.Explaining_and_answering_CDHP_questions__c}"/></td></tr>
+                    <tr><td><b>Explaining health &amp; wellness programs and answering related questions </b></td><td><apex:inputField value="{!ambassador.Explaining_H_W_programs__c}"/></td></tr>
+                    <tr><td><b>Knowledge of specialty products (dental/vision/Life &amp; Disability) </b></td><td><apex:inputField value="{!ambassador.Knowledge_of_specialty_products__c}"/></td></tr>
+                    <tr><td><b>Explaining and answering questions on specialty benefits </b></td><td><apex:inputField value="{!ambassador.Explaining_specialty_benefits__c}"/></td></tr>
+                    </table>
+                </div>
+                <div class="boxcaption">Submit your survey</div>
+                <div class="innerbox">
+                <table width="100%">
+                <tr><td><apex:commandButton value="Submit" action="{!submitambassador}"/></td></tr>
+                </table>
+                </div>
+        </div>
+  
+    </apex:pageblock>
+     <apex:pageBlock rendered="{!showNotCleared}">
+        Oops! Something went wrong. You do not have rights to view this page. Please contact the system administrator for more information.
+    </apex:pageBlock>
+        
+   <apex:pageBlock rendered="{!showThankYouNew}">
+        <div class="boxbase" style="width:900px;border-color:gray;Height:160px">
+        <div class="boxcaption" style="background-color:gray;border-color:gray">Thank You</div>
+        <apex:outputPanel rendered="{!NOT isConsultant}">
+            <div class="innerbox" style="border-color:gray;Height:110px">
+                Thank you for signing up!  The Open Enrollment Team will be in contact with your next steps. <br/><br/>
+    
+    Please feel free to explore our Open Enrollment SharePoint site for additional information regarding the OE Program.
+    <a href="https://share.antheminc.com/teams/oe_ambassador/SitePages/Home.aspx">https://share.antheminc.com/teams/oe_ambassador/SitePages/Home.aspx</a>
+    <br/><br/>
+            </div>
+        </apex:outputPanel>
+            
+        <apex:outputPanel rendered="{!isConsultant}">
+            <div class="innerbox" style="border-color:gray;Height:110px">
+                Thank you for completing or updating your survey information! We appreciate your commitment to providing 
+                the most accurate information to the Open Enrollment team.
+                <br/><br/>
+            </div>
+        </apex:outputPanel>            
+        </div> 
+    </apex:pageBlock>
+        
+    <apex:pageBlock rendered="{!showThankYouAmb}">
+        <div class="boxbase" style="width:900px;border-color:gray;Height:160px">
+        <div class="boxcaption" style="background-color:gray;border-color:gray">Thank You</div>
+        <apex:outputPanel rendered="{!NOT isConsultant}">
+            <div class="innerbox" style="border-color:gray;Height:110px">
+                Thank you for signing up!  The Open Enrollment Team will be in contact with your next steps. <br/><br/>
+    
+    Please feel free to explore our Open Enrollment SharePoint site for additional information regarding the OE Program.
+    <a href="https://share.antheminc.com/teams/oe_ambassador/SitePages/Home.aspx">https://share.antheminc.com/teams/oe_ambassador/SitePages/Home.aspx</a>
+    <br/><br/>
+            </div>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!isConsultant}">
+            <div class="innerbox" style="border-color:gray;Height:110px">
+                Thank you for completing or updating your survey information in {!YEAR(TODAY())}! We appreciate your commitment to providing 
+                the most accurate information to the Open Enrollment team.
+                <br/><br/>
+            </div>
+        </apex:outputPanel>            
+        </div> 
+    </apex:pageBlock>
+        <apex:pageBlock rendered="{!showAlreadyVolunteered}">
+        <div class="boxbase" style="width:900px;border-color:gray;Height:160px">
+        <div class="boxcaption" style="background-color:gray;border-color:gray">STOP – ERROR</div>
+        <div class="innerbox" style="border-color:gray;Height:110px">
+            STOP – ERROR  - WE ALREADY HAVE YOUR US DOMAIN ID ON FILE – WHICH MEANS YOU ALREADY SIGNED-UP OR ARE ALREADY AN AMBASSADOR.  If you feel this is an error, please contact Colleen Douma at colleen.douma@anthem.com. <br/>
+<br/>
+
+<br/><br/>
+        </div>
+        </div> 
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

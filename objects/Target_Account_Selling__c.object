@@ -1,0 +1,2293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Target_Account_Selling_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>KF(20130603) Add for Labor, TAS object (Target Account Selling)</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AIM__c</fullName>
+        <externalId>false</externalId>
+        <label>AIM</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ANA_Leader_Engagement__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the level of engagement by Anthem Leadership?</inlineHelpText>
+        <label>Anthem Leader Engagement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ANA_Leaders_Engaged__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is Anthem Leadership team engaged with this prospect?</inlineHelpText>
+        <label>Anthem Leaders Engaged</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Target Account Selling</relationshipLabel>
+        <relationshipName>Target_Account_Selling</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Ana_Leader_Engaged_Optional__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Is there a second Anthem Leadership team engaged with this prospect?</inlineHelpText>
+        <label>Anthem Leader Engaged (Optional)</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Target Account Selling (Ana Leader Engaged (Optional))</relationshipLabel>
+        <relationshipName>Target_Account_Selling2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ana_Leader_Engaged__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Anthem Leader Engaged</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Target Account Selling (Ana Leader Engaged)</relationshipLabel>
+        <relationshipName>Target_Account_Selling3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Anthem_Health_Guide__c</fullName>
+        <externalId>false</externalId>
+        <label>Anthem Health Guide</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Anthem_Spend_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Anthem Spend Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2016</fullName>
+                    <default>false</default>
+                    <label>2016</label>
+                </value>
+                <value>
+                    <fullName>2017</fullName>
+                    <default>false</default>
+                    <label>2017</label>
+                </value>
+                <value>
+                    <fullName>2018</fullName>
+                    <default>false</default>
+                    <label>2018</label>
+                </value>
+                <value>
+                    <fullName>2019</fullName>
+                    <default>false</default>
+                    <label>2019</label>
+                </value>
+                <value>
+                    <fullName>2020</fullName>
+                    <default>false</default>
+                    <label>2020</label>
+                </value>
+                <value>
+                    <fullName>2021</fullName>
+                    <default>false</default>
+                    <label>2021</label>
+                </value>
+                <value>
+                    <fullName>2022</fullName>
+                    <default>false</default>
+                    <label>2022</label>
+                </value>
+                <value>
+                    <fullName>2023</fullName>
+                    <default>false</default>
+                    <label>2023</label>
+                </value>
+                <value>
+                    <fullName>2024</fullName>
+                    <default>false</default>
+                    <label>2024</label>
+                </value>
+                <value>
+                    <fullName>2025</fullName>
+                    <default>false</default>
+                    <label>2025</label>
+                </value>
+                <value>
+                    <fullName>2026</fullName>
+                    <default>false</default>
+                    <label>2026</label>
+                </value>
+                <value>
+                    <fullName>2027</fullName>
+                    <default>false</default>
+                    <label>2027</label>
+                </value>
+                <value>
+                    <fullName>2028</fullName>
+                    <default>false</default>
+                    <label>2028</label>
+                </value>
+                <value>
+                    <fullName>2029</fullName>
+                    <default>false</default>
+                    <label>2029</label>
+                </value>
+                <value>
+                    <fullName>2030</fullName>
+                    <default>false</default>
+                    <label>2030</label>
+                </value>
+                <value>
+                    <fullName>2031</fullName>
+                    <default>false</default>
+                    <label>2031</label>
+                </value>
+                <value>
+                    <fullName>2032</fullName>
+                    <default>false</default>
+                    <label>2032</label>
+                </value>
+                <value>
+                    <fullName>2033</fullName>
+                    <default>false</default>
+                    <label>2033</label>
+                </value>
+                <value>
+                    <fullName>2034</fullName>
+                    <default>false</default>
+                    <label>2034</label>
+                </value>
+                <value>
+                    <fullName>2035</fullName>
+                    <default>false</default>
+                    <label>2035</label>
+                </value>
+                <value>
+                    <fullName>2036</fullName>
+                    <default>false</default>
+                    <label>2036</label>
+                </value>
+                <value>
+                    <fullName>2037</fullName>
+                    <default>false</default>
+                    <label>2037</label>
+                </value>
+                <value>
+                    <fullName>2038</fullName>
+                    <default>false</default>
+                    <label>2038</label>
+                </value>
+                <value>
+                    <fullName>2039</fullName>
+                    <default>false</default>
+                    <label>2039</label>
+                </value>
+                <value>
+                    <fullName>2040</fullName>
+                    <default>false</default>
+                    <label>2040</label>
+                </value>
+                <value>
+                    <fullName>2041</fullName>
+                    <default>false</default>
+                    <label>2041</label>
+                </value>
+                <value>
+                    <fullName>2042</fullName>
+                    <default>false</default>
+                    <label>2042</label>
+                </value>
+                <value>
+                    <fullName>2043</fullName>
+                    <default>false</default>
+                    <label>2043</label>
+                </value>
+                <value>
+                    <fullName>2044</fullName>
+                    <default>false</default>
+                    <label>2044</label>
+                </value>
+                <value>
+                    <fullName>2045</fullName>
+                    <default>false</default>
+                    <label>2045</label>
+                </value>
+                <value>
+                    <fullName>2046</fullName>
+                    <default>false</default>
+                    <label>2046</label>
+                </value>
+                <value>
+                    <fullName>2047</fullName>
+                    <default>false</default>
+                    <label>2047</label>
+                </value>
+                <value>
+                    <fullName>2048</fullName>
+                    <default>false</default>
+                    <label>2048</label>
+                </value>
+                <value>
+                    <fullName>2049</fullName>
+                    <default>false</default>
+                    <label>2049</label>
+                </value>
+                <value>
+                    <fullName>2050</fullName>
+                    <default>false</default>
+                    <label>2050</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Anthem_Vendor_Spend__c</fullName>
+        <externalId>false</externalId>
+        <label>Anthem Vendor Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CDHP__c</fullName>
+        <externalId>false</externalId>
+        <label>CDHP</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Carrier_1_Members__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier 1 Members</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier_2_Members__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier 2 Members</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carrier_3_Members__c</fullName>
+        <externalId>false</externalId>
+        <label>Carrier 3 Members</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Castlight__c</fullName>
+        <externalId>false</externalId>
+        <label>Castlight</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cede_Required__c</fullName>
+        <externalId>false</externalId>
+        <label>Cede Required</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Ceding_Plan__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Required if selecting Cede Required</inlineHelpText>
+        <label>Ceding Plan</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Cede_Required__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Alabama</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Alabama</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Arizona</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Arizona</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Arkansas</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Arkansas</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Colorado</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Colorado</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Connecticut</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Connecticut</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Florida</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Florida</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Georgia</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Georgia</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Illinois - HCSC</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Illinois - HCSC</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Indiana</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Indiana</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Kansas</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Kansas</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Kansas City (Missouri)</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Kansas City (Missouri)</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Kentucky</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Kentucky</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Louisiana</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Louisiana</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Maine</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Maine</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Massachusetts</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Massachusetts</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Michigan</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Michigan</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Minnesota</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Minnesota</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Mississippi</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Mississippi</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Missouri</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Missouri</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Montana - HCSC</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Montana - HCSC</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Nebraska</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Nebraska</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Nevada</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Nevada</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of New Hampshire</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of New Hampshire</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of New Mexico - HCSC</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of New Mexico - HCSC</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of North Carolina</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of North Carolina</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of North Dakota</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of North Dakota</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Ohio</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Ohio</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Oklahoma</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Oklahoma</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Rhode Island</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Rhode Island</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of South Carolina</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of South Carolina</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Tennesse</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Tennesse</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Texas - HCSC</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Texas - HCSC</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Vermont</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Vermont</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Virginia</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Virginia</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Western New York</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Western New York</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Wisconsin</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Wisconsin</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross Blue Shield of Wyoming</fullName>
+                    <default>false</default>
+                    <label>Blue Cross Blue Shield of Wyoming</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross California</fullName>
+                    <default>false</default>
+                    <label>Blue Cross California</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross of Idaho</fullName>
+                    <default>false</default>
+                    <label>Blue Cross of Idaho</label>
+                </value>
+                <value>
+                    <fullName>Blue Cross of Northeastern Pennsylvania</fullName>
+                    <default>false</default>
+                    <label>Blue Cross of Northeastern Pennsylvania</label>
+                </value>
+                <value>
+                    <fullName>Blue Shield of California</fullName>
+                    <default>false</default>
+                    <label>Blue Shield of California</label>
+                </value>
+                <value>
+                    <fullName>Blue Shield of Northeastern New York</fullName>
+                    <default>false</default>
+                    <label>Blue Shield of Northeastern New York</label>
+                </value>
+                <value>
+                    <fullName>Capital Blue Cross (Central Pennsylvania)</fullName>
+                    <default>false</default>
+                    <label>Capital Blue Cross (Central Pennsylvania)</label>
+                </value>
+                <value>
+                    <fullName>CareFirst District of Columbia</fullName>
+                    <default>false</default>
+                    <label>CareFirst District of Columbia</label>
+                </value>
+                <value>
+                    <fullName>CareFirst Maryland</fullName>
+                    <default>false</default>
+                    <label>CareFirst Maryland</label>
+                </value>
+                <value>
+                    <fullName>CareFirst Virginia</fullName>
+                    <default>false</default>
+                    <label>CareFirst Virginia</label>
+                </value>
+                <value>
+                    <fullName>EMPIRE BCBS</fullName>
+                    <default>false</default>
+                    <label>EMPIRE BCBS</label>
+                </value>
+                <value>
+                    <fullName>Excellus Blue Cross Blue Shield (Central NY)</fullName>
+                    <default>false</default>
+                    <label>Excellus Blue Cross Blue Shield (Central NY)</label>
+                </value>
+                <value>
+                    <fullName>Highmark Blue Cross Blue Shield (Western Pennsylvania)</fullName>
+                    <default>false</default>
+                    <label>Highmark Blue Cross Blue Shield (Western Pennsylvania)</label>
+                </value>
+                <value>
+                    <fullName>Highmark Blue Cross Blue Shield Delaware (Delaware)</fullName>
+                    <default>false</default>
+                    <label>Highmark Blue Cross Blue Shield Delaware (Delaware)</label>
+                </value>
+                <value>
+                    <fullName>Highmark Blue Cross Blue Shield West Virginia (West Virginia)</fullName>
+                    <default>false</default>
+                    <label>Highmark Blue Cross Blue Shield West Virginia (West Virginia)</label>
+                </value>
+                <value>
+                    <fullName>Highmark Blue Shield (Northeastern, Eastern &amp; Central Pennsylvania)</fullName>
+                    <default>false</default>
+                    <label>Highmark Blue Shield (Northeastern, Eastern &amp; Central Pennsylvania)</label>
+                </value>
+                <value>
+                    <fullName>Horizon Blue Cross Blue Shield of New Jersey</fullName>
+                    <default>false</default>
+                    <label>Horizon Blue Cross Blue Shield of New Jersey</label>
+                </value>
+                <value>
+                    <fullName>Independence Blue Cross (Philadelphia, Southeastern Pennsylvania)</fullName>
+                    <default>false</default>
+                    <label>Independence Blue Cross (Philadelphia, Southeastern Pennsylvania)</label>
+                </value>
+                <value>
+                    <fullName>Premera Blue Cross (Washington)</fullName>
+                    <default>false</default>
+                    <label>Premera Blue Cross (Washington)</label>
+                </value>
+                <value>
+                    <fullName>Premera Blue Cross Blue Shield of Alaska</fullName>
+                    <default>false</default>
+                    <label>Premera Blue Cross Blue Shield of Alaska</label>
+                </value>
+                <value>
+                    <fullName>Regence Blue Cross Blue Shield of Oregon</fullName>
+                    <default>false</default>
+                    <label>Regence Blue Cross Blue Shield of Oregon</label>
+                </value>
+                <value>
+                    <fullName>Regence Blue Cross Blue Shield of Utah</fullName>
+                    <default>false</default>
+                    <label>Regence Blue Cross Blue Shield of Utah</label>
+                </value>
+                <value>
+                    <fullName>Regence Blue Shield (Washington)</fullName>
+                    <default>false</default>
+                    <label>Regence Blue Shield (Washington)</label>
+                </value>
+                <value>
+                    <fullName>Regence Blue Shield of Idaho</fullName>
+                    <default>false</default>
+                    <label>Regence Blue Shield of Idaho</label>
+                </value>
+                <value>
+                    <fullName>Wellmark Blue Cross Blue Shield Iowa</fullName>
+                    <default>false</default>
+                    <label>Wellmark Blue Cross Blue Shield Iowa</label>
+                </value>
+                <value>
+                    <fullName>Wellmark Blue Cross Blue Shield South Dakota</fullName>
+                    <default>false</default>
+                    <label>Wellmark Blue Cross Blue Shield South Dakota</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Alabama</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Arizona</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Arkansas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Colorado</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Connecticut</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Florida</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Georgia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Illinois - HCSC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Indiana</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Kansas</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Kansas City (Missouri)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Kentucky</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Louisiana</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Maine</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Massachusetts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Michigan</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Minnesota</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Mississippi</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Missouri</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Montana - HCSC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Nebraska</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Nevada</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of New Hampshire</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of New Mexico - HCSC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of North Carolina</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of North Dakota</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Ohio</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Oklahoma</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Rhode Island</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of South Carolina</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Tennesse</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Texas - HCSC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Vermont</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Virginia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Western New York</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Wisconsin</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross Blue Shield of Wyoming</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross California</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross of Idaho</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Cross of Northeastern Pennsylvania</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Shield of California</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Blue Shield of Northeastern New York</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Capital Blue Cross (Central Pennsylvania)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>CareFirst District of Columbia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>CareFirst Maryland</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>CareFirst Virginia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>EMPIRE BCBS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Excellus Blue Cross Blue Shield (Central NY)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Highmark Blue Cross Blue Shield (Western Pennsylvania)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Highmark Blue Cross Blue Shield Delaware (Delaware)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Highmark Blue Cross Blue Shield West Virginia (West Virginia)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Highmark Blue Shield (Northeastern, Eastern &amp; Central Pennsylvania)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Horizon Blue Cross Blue Shield of New Jersey</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Independence Blue Cross (Philadelphia, Southeastern Pennsylvania)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Premera Blue Cross (Washington)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Premera Blue Cross Blue Shield of Alaska</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Regence Blue Cross Blue Shield of Oregon</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Regence Blue Cross Blue Shield of Utah</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Regence Blue Shield (Washington)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Regence Blue Shield of Idaho</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Wellmark Blue Cross Blue Shield Iowa</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Yes</controllingFieldValue>
+                <valueName>Wellmark Blue Cross Blue Shield South Dakota</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Client_Characteristics__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Field limited to 255 Characters</inlineHelpText>
+        <label>Client Characteristics</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Client_History__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Field limited to 255 Characters</inlineHelpText>
+        <label>Client History</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Client_Relationships__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Client Relationships</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <encryptionScheme>ProbabilisticEncryption</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact_Name_Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact_Name__r.Title</formula>
+        <label>Contact Name Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Target Account Selling</relationshipLabel>
+        <relationshipName>Target_Account_Selling</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrentDentalCarrier__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Dental Carrier</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Service Provider</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Target Account Selling (Current Dental Carrier)</relationshipLabel>
+        <relationshipName>Target_Account_Selling4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrentMedicalCarrier1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Medical Carrier 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Service Provider</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Target Account Selling (Current Medical Carrier 1)</relationshipLabel>
+        <relationshipName>Target_Account_Selling1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrentMedicalCarrier2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Medical Carrier 2</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Service Provider</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Target Account Selling (Current Medical Carrier 2)</relationshipLabel>
+        <relationshipName>Target_Account_Selling2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrentMedicalCarrier3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Medical Carrier 3</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Service Provider</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Target Account Selling (Current Medical Carrier 3)</relationshipLabel>
+        <relationshipName>Target_Account_Selling3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrentPharmacyCarrier__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Pharmacy Carrier</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Service Provider</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Target Account Selling (Current Pharmacy Carrier)</relationshipLabel>
+        <relationshipName>Target_Account_Selling6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrentVisionCarrier__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Vision Carrier</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Service Provider</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Target Account Selling (Current Vision Carrier)</relationshipLabel>
+        <relationshipName>Target_Account_Selling5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_RFP_Expected__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Expected date of next RFP</inlineHelpText>
+        <label>Date RFP Expected</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Dental_Members__c</fullName>
+        <externalId>false</externalId>
+        <label>Dental Members</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dental__c</fullName>
+        <externalId>false</externalId>
+        <label>Dental</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EAP__c</fullName>
+        <externalId>false</externalId>
+        <label>EAP</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Estimated_CoC_Coverage__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Estimated CoC Coverage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exchange__c</fullName>
+        <externalId>false</externalId>
+        <label>Exchange</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>GRS__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Group Retiree Solutions</inlineHelpText>
+        <label>GRS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HMO__c</fullName>
+        <externalId>false</externalId>
+        <label>HMO</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Health_Wellness__c</fullName>
+        <externalId>false</externalId>
+        <label>Health &amp; Wellness</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Integrated_Health_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Integrated Health Model</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Last_Contact_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Last Contact Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Meets_ANA_Criteria__c</fullName>
+        <externalId>false</externalId>
+        <label>Meets ANA Criteria</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mercer_Health_Advantage__c</fullName>
+        <externalId>false</externalId>
+        <label>Mercer Health Advantage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mobile_Health_Consumer__c</fullName>
+        <externalId>false</externalId>
+        <label>Mobile Health Consumer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NCN__c</fullName>
+        <externalId>false</externalId>
+        <label>NCN</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>National_Sales_Ranking__c</fullName>
+        <externalId>false</externalId>
+        <label>National Sales Ranking</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PPO__c</fullName>
+        <externalId>false</externalId>
+        <label>PPO</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pharmacy_Members__c</fullName>
+        <externalId>false</externalId>
+        <label>Pharmacy Members</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pharmacy__c</fullName>
+        <externalId>false</externalId>
+        <label>Pharmacy</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Comments__c</fullName>
+        <encryptionScheme>ProbabilisticEncryption</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Product Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Prospect_Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Prospect - Recent Contact (within the past year) 
+Prospect - No recent contact - (within the past year)</inlineHelpText>
+        <label>Prospect Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prospect- Recent Contact Interest</fullName>
+                    <default>false</default>
+                    <label>Prospect- Recent Contact Interest</label>
+                </value>
+                <value>
+                    <fullName>Prospect - Recent Contact No Interest</fullName>
+                    <default>false</default>
+                    <label>Prospect - Recent Contact No Interest</label>
+                </value>
+                <value>
+                    <fullName>Prospect- No recent contact</fullName>
+                    <default>false</default>
+                    <label>Prospect- No recent contact</label>
+                </value>
+                <value>
+                    <fullName>Prospect - RFP expected</fullName>
+                    <default>false</default>
+                    <label>Prospect - RFP expected</label>
+                </value>
+                <value>
+                    <fullName>Prospect: Does not meet ANA criteria</fullName>
+                    <default>false</default>
+                    <label>Prospect: Does not meet ANA criteria</label>
+                </value>
+                <value>
+                    <fullName>Company No Longer Exists</fullName>
+                    <default>false</default>
+                    <label>Company No Longer Exists</label>
+                </value>
+                <value>
+                    <fullName>HQ Relocated</fullName>
+                    <default>false</default>
+                    <label>HQ Relocated</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Regional_Sales_Ranking__c</fullName>
+        <externalId>false</externalId>
+        <label>Regional Sales Ranking</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relationship_Contact_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Internal/External contact that has relationship with prospect</inlineHelpText>
+        <label>Relationship Contact Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Target Account Selling (Relationship Contact Name)</relationshipLabel>
+        <relationshipName>Target_Account_Selling1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Relationship_status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Internal/External contacts relationship with prospect</inlineHelpText>
+        <label>Relationship status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Vendor</fullName>
+                    <default>false</default>
+                    <label>Vendor</label>
+                </value>
+                <value>
+                    <fullName>Board of Directors</fullName>
+                    <default>false</default>
+                    <label>Board of Directors</label>
+                </value>
+                <value>
+                    <fullName>Personal</fullName>
+                    <default>false</default>
+                    <label>Personal</label>
+                </value>
+                <value>
+                    <fullName>Charity</fullName>
+                    <default>false</default>
+                    <label>Charity</label>
+                </value>
+                <value>
+                    <fullName>Prior Business</fullName>
+                    <default>false</default>
+                    <label>Prior Business</label>
+                </value>
+                <value>
+                    <fullName>Prior Employment</fullName>
+                    <default>false</default>
+                    <label>Prior Employment</label>
+                </value>
+                <value>
+                    <fullName>Association</fullName>
+                    <default>false</default>
+                    <label>Association</label>
+                </value>
+                <value>
+                    <fullName>Affiliation</fullName>
+                    <default>false</default>
+                    <label>Affiliation</label>
+                </value>
+                <value>
+                    <fullName>Government</fullName>
+                    <default>false</default>
+                    <label>Government</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SFDCLegacyID__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <label>SFDCLegacyID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Situs_State_Sales_Ranking__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Ranking is based on prospect Situs State</inlineHelpText>
+        <label>Situs State Sales Ranking</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stop_Loss__c</fullName>
+        <externalId>false</externalId>
+        <label>Stop Loss</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Target_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2017</fullName>
+                    <default>false</default>
+                    <label>2017</label>
+                </value>
+                <value>
+                    <fullName>2018</fullName>
+                    <default>false</default>
+                    <label>2018</label>
+                </value>
+                <value>
+                    <fullName>2019</fullName>
+                    <default>false</default>
+                    <label>2019</label>
+                </value>
+                <value>
+                    <fullName>2020</fullName>
+                    <default>false</default>
+                    <label>2020</label>
+                </value>
+                <value>
+                    <fullName>2021</fullName>
+                    <default>false</default>
+                    <label>2021</label>
+                </value>
+                <value>
+                    <fullName>2022</fullName>
+                    <default>false</default>
+                    <label>2022</label>
+                </value>
+                <value>
+                    <fullName>2023</fullName>
+                    <default>false</default>
+                    <label>2023</label>
+                </value>
+                <value>
+                    <fullName>2024</fullName>
+                    <default>false</default>
+                    <label>2024</label>
+                </value>
+                <value>
+                    <fullName>2025</fullName>
+                    <default>false</default>
+                    <label>2025</label>
+                </value>
+                <value>
+                    <fullName>2026</fullName>
+                    <default>false</default>
+                    <label>2026</label>
+                </value>
+                <value>
+                    <fullName>2027</fullName>
+                    <default>false</default>
+                    <label>2027</label>
+                </value>
+                <value>
+                    <fullName>2028</fullName>
+                    <default>false</default>
+                    <label>2028</label>
+                </value>
+                <value>
+                    <fullName>2029</fullName>
+                    <default>false</default>
+                    <label>2029</label>
+                </value>
+                <value>
+                    <fullName>2030</fullName>
+                    <default>false</default>
+                    <label>2030</label>
+                </value>
+                <value>
+                    <fullName>2031</fullName>
+                    <default>false</default>
+                    <label>2031</label>
+                </value>
+                <value>
+                    <fullName>2032</fullName>
+                    <default>false</default>
+                    <label>2032</label>
+                </value>
+                <value>
+                    <fullName>2033</fullName>
+                    <default>false</default>
+                    <label>2033</label>
+                </value>
+                <value>
+                    <fullName>2034</fullName>
+                    <default>false</default>
+                    <label>2034</label>
+                </value>
+                <value>
+                    <fullName>2035</fullName>
+                    <default>false</default>
+                    <label>2035</label>
+                </value>
+                <value>
+                    <fullName>2036</fullName>
+                    <default>false</default>
+                    <label>2036</label>
+                </value>
+                <value>
+                    <fullName>2037</fullName>
+                    <default>false</default>
+                    <label>2037</label>
+                </value>
+                <value>
+                    <fullName>2038</fullName>
+                    <default>false</default>
+                    <label>2038</label>
+                </value>
+                <value>
+                    <fullName>2039</fullName>
+                    <default>false</default>
+                    <label>2039</label>
+                </value>
+                <value>
+                    <fullName>2040</fullName>
+                    <default>false</default>
+                    <label>2040</label>
+                </value>
+                <value>
+                    <fullName>2041</fullName>
+                    <default>false</default>
+                    <label>2041</label>
+                </value>
+                <value>
+                    <fullName>2042</fullName>
+                    <default>false</default>
+                    <label>2042</label>
+                </value>
+                <value>
+                    <fullName>2043</fullName>
+                    <default>false</default>
+                    <label>2043</label>
+                </value>
+                <value>
+                    <fullName>2044</fullName>
+                    <default>false</default>
+                    <label>2044</label>
+                </value>
+                <value>
+                    <fullName>2045</fullName>
+                    <default>false</default>
+                    <label>2045</label>
+                </value>
+                <value>
+                    <fullName>2046</fullName>
+                    <default>false</default>
+                    <label>2046</label>
+                </value>
+                <value>
+                    <fullName>2047</fullName>
+                    <default>false</default>
+                    <label>2047</label>
+                </value>
+                <value>
+                    <fullName>2048</fullName>
+                    <default>false</default>
+                    <label>2048</label>
+                </value>
+                <value>
+                    <fullName>2049</fullName>
+                    <default>false</default>
+                    <label>2049</label>
+                </value>
+                <value>
+                    <fullName>2050</fullName>
+                    <default>false</default>
+                    <label>2050</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Contracts__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Contracts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Membership__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Membership</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Towers_CCMU__c</fullName>
+        <externalId>false</externalId>
+        <label>Towers CCMU</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Utilization_Management_Case_Management__c</fullName>
+        <externalId>false</externalId>
+        <label>Utilization Management/Case Management</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Vision_Members__c</fullName>
+        <externalId>false</externalId>
+        <label>Vision Members</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vision__c</fullName>
+        <externalId>false</externalId>
+        <label>Vision</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Target Account Selling</label>
+    <nameField>
+        <displayFormat>TAS-{00000000}</displayFormat>
+        <label>Target Account Selling Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Target Account Selling</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>ANA_VR_TAS01_ANALeaderReq</fullName>
+        <active>true</active>
+        <description>If leader is engaged, select one</description>
+        <errorConditionFormula>AND( !$User.BypassValidation__c , ISPICKVAL(ANA_Leaders_Engaged__c,&quot;Yes&quot;) &amp;&amp; ISBLANK(Ana_Leader_Engaged__c))</errorConditionFormula>
+        <errorDisplayField>Ana_Leader_Engaged__c</errorDisplayField>
+        <errorMessage>If Selecting That an ANA Leader is Engaged Please Enter Here</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ANA_VR_TAS02_RequireCedingPlan</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( !$User.BypassValidation__c ,ISPICKVAL(Cede_Required__c,&quot;Yes&quot;) &amp;&amp; ISPICKVAL(Ceding_Plan__c, &quot;&quot;))</errorConditionFormula>
+        <errorDisplayField>Ceding_Plan__c</errorDisplayField>
+        <errorMessage>A Ceding Plan Is Required If Answering Yes to Cede Required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ANA_VR_TAS03_PostitiveMembershipOnly</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( !$User.BypassValidation__c ,Total_Membership__c &lt; 0)</errorConditionFormula>
+        <errorDisplayField>Total_Membership__c</errorDisplayField>
+        <errorMessage>A Negative Number Isn&apos;t Allowed Here</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ANA_VR_TAS04_PositiveContractsOnly</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( !$User.BypassValidation__c ,Total_Contracts__c &lt; 0)</errorConditionFormula>
+        <errorDisplayField>Total_Contracts__c</errorDisplayField>
+        <errorMessage>A Negative Number Isn&apos;t Allowed Here</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ANA_VR_TAS05_DateRFPExpected</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( !$User.BypassValidation__c ,Date_RFP_Expected__c &lt;= TODAY())</errorConditionFormula>
+        <errorDisplayField>Date_RFP_Expected__c</errorDisplayField>
+        <errorMessage>Expected RFP Date Must Be In The Future</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>SME_User_Data_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Claim_System_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( INCLUDES ( Claim_System__c, &quot;NASCO&quot; ), &quot;NASCO; &quot;,NULL) &amp; 
+IF ( INCLUDES ( Claim_System__c, &quot;WGS 2.0&quot; ), &quot;WGS 2.0&quot;,NULL)</formula>
+        <label>Claim System Text</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_System__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim System</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>NASCO</fullName>
+                    <default>false</default>
+                    <label>NASCO</label>
+                </value>
+                <value>
+                    <fullName>WGS 2.0</fullName>
+                    <default>false</default>
+                    <label>WGS 2.0</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Department_Text1__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( INCLUDES ( Department__c, &quot;Act Wise CDH&quot; ), &quot;Act Wise CDH; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Act Wise FSA&quot; ), &quot;Act Wise FSA; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;AIMEast&quot; ), &quot;AIMEast; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Anthem Flex Hour&quot; ), &quot;Anthem Flex Hour; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Anthem Health Guide&quot; ), &quot;Anthem Health Guide; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Anthem Health Rewards&quot; ), &quot;Anthem Health Rewards; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Behavioral Health&quot; ), &quot;Behavioral Health; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Benefit Booklets/Contracts&quot; ), &quot;Benefit Booklets/Contracts; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Blue Exchange (BX)&quot; ), &quot;Blue Exchange (BX); &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Bold&quot; ), &quot;Bold; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Broker Compensation&quot; ), &quot;Broker Compensation; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;CCMU&quot; ), &quot;CCMU; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Claims&quot; ), &quot;Claims; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Claims Retro&quot;), &quot;Claims Retro; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Client Reporting&quot; ), &quot;Client Reporting; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Coordinated Care Model&quot; ), &quot;Coordinated Care Model; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Data Interface Team (DIT)&quot; ), &quot;Data Interface Team (DIT); &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;DeCare&quot; ), &quot;DeCare; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Dental&quot; ), &quot;Dental; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;EAP&quot; ), &quot;EAP; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;eBusiness&quot; ), &quot;eBusiness; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Enrollment and Billing (E/B)&quot; ), &quot;Enrollment and Billing (E/B); &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Group Services&quot; ), &quot;Group Services; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Health and Wellness Solutions&quot; ), &quot;Health and Wellness Solutions; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;HealthEquity/WageWorks/FSA/COBRA&quot; ), &quot;HealthEquity/WageWorks/FSA/COBRA; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;ID Cards&quot; ), &quot;ID Cards; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;IHM&quot; ), &quot;IHM; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Implementations&quot; ), &quot;Implementations; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Interplan&quot; ), &quot;Interplan; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;IT&quot; ), &quot;IT; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;JAA/NTS&quot; ), &quot;JAA/NTS; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Life and Disability&quot; ), &quot;Life and Disability; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;LITES CDH&quot; ), &quot;LITES CDH; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Live Health Online&quot; ), &quot;Live Health Online; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Medical Benefits&quot; ), &quot;Medical Benefits; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Medical Benefits - NASCO Retro&quot; ), &quot;Medical Benefits - NASCO Retro; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Mercer Health Advantage&quot; ), &quot;Mercer Health Advantage; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;NCN&quot; ), &quot;NCN; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Network Management&quot; ), &quot;Network Management; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Onsite Clinic&quot; ), &quot;Onsite Clinic; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Pharmacy&quot; ), &quot;Pharmacy; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Pricing Configuration Management (PCM)&quot; ), &quot;Pricing Configuration Management (PCM); &quot;,NULL)</formula>
+        <label>Department Text1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department_Text2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( INCLUDES ( Department__c, &quot;SBC&quot; ), &quot;SBC; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Service Operations&quot; ), &quot;Service Operations; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Service Operations Retro&quot; ), &quot;Service Operations Retro; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Spider&quot; ), &quot;Spider; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Subrogation&quot; ), &quot;Subrogation; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;TeleHealth&quot; ), &quot;TeleHealth; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Telephony&quot; ), &quot;Telephony; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Testing Team&quot; ), &quot;Testing Team; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;UM Intake&quot; ), &quot;UM Intake; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Underwriting&quot; ), &quot;Underwriting; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Virtual Second Opinion&quot; ), &quot;Virtual Second Opinion; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Vision&quot; ), &quot;Vision; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;WINFertility&quot; ), &quot;WINFertility; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Specialty Sales&quot; ), &quot;Specialty Sales; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Performance Guarantees&quot; ), &quot;Performance Guarantees; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Pre-Imp Audit&quot; ), &quot;Pre-Imp Audit; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Production Support&quot; ), &quot;Production Support; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;PSCCR&quot; ), &quot;PSCCR; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Marketing&quot; ), &quot;Marketing; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Grievance &amp; Appeals&quot; ), &quot;Grievance &amp; Appeals; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Fraud Investigations&quot; ), &quot;Fraud Investigations; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;COB&quot; ), &quot;COB; &quot;,NULL) &amp;
+IF ( INCLUDES ( Department__c, &quot;Billing/Finance - ASO&quot; ), &quot;Billing/Finance - ASO; &quot;,NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Department Text2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Department</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Act Wise CDH</fullName>
+                    <default>false</default>
+                    <label>Act Wise CDH</label>
+                </value>
+                <value>
+                    <fullName>Actwise FSA</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Actwise FSA</label>
+                </value>
+                <value>
+                    <fullName>Act Wise FSA</fullName>
+                    <default>false</default>
+                    <label>Act Wise FSA</label>
+                </value>
+                <value>
+                    <fullName>Actwise HRA</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Actwise HRA</label>
+                </value>
+                <value>
+                    <fullName>Actwise HSA</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Actwise HSA</label>
+                </value>
+                <value>
+                    <fullName>AIM</fullName>
+                    <default>false</default>
+                    <label>AIM</label>
+                </value>
+                <value>
+                    <fullName>Anthem Flex Hour</fullName>
+                    <default>false</default>
+                    <label>Anthem Flex Hour</label>
+                </value>
+                <value>
+                    <fullName>Anthem Health Guide</fullName>
+                    <default>false</default>
+                    <label>Anthem Health Guide</label>
+                </value>
+                <value>
+                    <fullName>Anthem Health Rewards</fullName>
+                    <default>false</default>
+                    <label>Anthem Health Rewards</label>
+                </value>
+                <value>
+                    <fullName>Behavioral Health</fullName>
+                    <default>false</default>
+                    <label>Behavioral Health</label>
+                </value>
+                <value>
+                    <fullName>Benefit Booklets/Contracts</fullName>
+                    <default>false</default>
+                    <label>Benefit Booklets/Contracts</label>
+                </value>
+                <value>
+                    <fullName>Billing/Finance - ASO</fullName>
+                    <default>false</default>
+                    <label>Billing/Finance - ASO</label>
+                </value>
+                <value>
+                    <fullName>Blue Exchange</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Blue Exchange</label>
+                </value>
+                <value>
+                    <fullName>Blue Exchange (BX)</fullName>
+                    <default>false</default>
+                    <label>Blue Exchange (BX)</label>
+                </value>
+                <value>
+                    <fullName>Bold</fullName>
+                    <default>false</default>
+                    <label>Bold</label>
+                </value>
+                <value>
+                    <fullName>Broker Compensation</fullName>
+                    <default>false</default>
+                    <label>Broker Compensation</label>
+                </value>
+                <value>
+                    <fullName>CCMU</fullName>
+                    <default>false</default>
+                    <label>CCMU</label>
+                </value>
+                <value>
+                    <fullName>Claims</fullName>
+                    <default>false</default>
+                    <label>Claims</label>
+                </value>
+                <value>
+                    <fullName>Claims Retro</fullName>
+                    <default>false</default>
+                    <label>Claims Retro</label>
+                </value>
+                <value>
+                    <fullName>Client Reporting</fullName>
+                    <default>false</default>
+                    <label>Client Reporting</label>
+                </value>
+                <value>
+                    <fullName>COB</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>COB</label>
+                </value>
+                <value>
+                    <fullName>Coordinated Care Model</fullName>
+                    <default>false</default>
+                    <label>Coordinated Care Model</label>
+                </value>
+                <value>
+                    <fullName>Coordinated Care Model (formerly Medical Management)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Coordinated Care Model (formerly Medical Management)</label>
+                </value>
+                <value>
+                    <fullName>Coordination of Benefits</fullName>
+                    <default>false</default>
+                    <label>Coordination of Benefits</label>
+                </value>
+                <value>
+                    <fullName>Data Interface Team</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Data Interface Team</label>
+                </value>
+                <value>
+                    <fullName>Data Interface Team (DIT)</fullName>
+                    <default>false</default>
+                    <label>Data Interface Team (DIT)</label>
+                </value>
+                <value>
+                    <fullName>DeCare</fullName>
+                    <default>false</default>
+                    <label>DeCare</label>
+                </value>
+                <value>
+                    <fullName>Dental</fullName>
+                    <default>false</default>
+                    <label>Dental</label>
+                </value>
+                <value>
+                    <fullName>EAP</fullName>
+                    <default>false</default>
+                    <label>EAP</label>
+                </value>
+                <value>
+                    <fullName>eBusiness</fullName>
+                    <default>false</default>
+                    <label>eBusiness</label>
+                </value>
+                <value>
+                    <fullName>Enrollement and Billing (E/B)</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Enrollement and Billing (E/B)</label>
+                </value>
+                <value>
+                    <fullName>Enrollment &amp; Billing</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Enrollment &amp; Billing</label>
+                </value>
+                <value>
+                    <fullName>Enrollment and Billing (E/B)</fullName>
+                    <default>false</default>
+                    <label>Enrollment and Billing (E/B)</label>
+                </value>
+                <value>
+                    <fullName>Fraud Investigations</fullName>
+                    <default>false</default>
+                    <label>Fraud Investigations</label>
+                </value>
+                <value>
+                    <fullName>Grievance &amp; Appeals</fullName>
+                    <default>false</default>
+                    <label>Grievance &amp; Appeals</label>
+                </value>
+                <value>
+                    <fullName>Group Services</fullName>
+                    <default>false</default>
+                    <label>Group Services</label>
+                </value>
+                <value>
+                    <fullName>Health &amp; Wellness Solutions</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Health &amp; Wellness Solutions</label>
+                </value>
+                <value>
+                    <fullName>Health and Wellness Solutions</fullName>
+                    <default>false</default>
+                    <label>Health and Wellness Solutions</label>
+                </value>
+                <value>
+                    <fullName>HealthEquity/WageWorks/FSA/COBRA</fullName>
+                    <default>false</default>
+                    <label>HealthEquity/WageWorks/FSA/COBRA</label>
+                </value>
+                <value>
+                    <fullName>ID Cards</fullName>
+                    <default>false</default>
+                    <label>ID Cards</label>
+                </value>
+                <value>
+                    <fullName>IHM</fullName>
+                    <default>false</default>
+                    <label>IHM</label>
+                </value>
+                <value>
+                    <fullName>Implementations</fullName>
+                    <default>false</default>
+                    <label>Implementations</label>
+                </value>
+                <value>
+                    <fullName>Interplan</fullName>
+                    <default>false</default>
+                    <label>Interplan</label>
+                </value>
+                <value>
+                    <fullName>IT</fullName>
+                    <default>false</default>
+                    <label>IT</label>
+                </value>
+                <value>
+                    <fullName>JAA/NTS</fullName>
+                    <default>false</default>
+                    <label>JAA/NTS</label>
+                </value>
+                <value>
+                    <fullName>Life &amp; Disability</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Life &amp; Disability</label>
+                </value>
+                <value>
+                    <fullName>Life and Disability</fullName>
+                    <default>false</default>
+                    <label>Life and Disability</label>
+                </value>
+                <value>
+                    <fullName>LITES CDH</fullName>
+                    <default>false</default>
+                    <label>LITES CDH</label>
+                </value>
+                <value>
+                    <fullName>LiveHealth Online</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>LiveHealth Online</label>
+                </value>
+                <value>
+                    <fullName>Live Health Online</fullName>
+                    <default>false</default>
+                    <label>Live Health Online</label>
+                </value>
+                <value>
+                    <fullName>Marketing</fullName>
+                    <default>false</default>
+                    <label>Marketing</label>
+                </value>
+                <value>
+                    <fullName>Medical Benefits</fullName>
+                    <default>false</default>
+                    <label>Medical Benefits</label>
+                </value>
+                <value>
+                    <fullName>Medical Benefits - NASCO Retro</fullName>
+                    <default>false</default>
+                    <label>Medical Benefits - NASCO Retro</label>
+                </value>
+                <value>
+                    <fullName>Mercer Health Advantage</fullName>
+                    <default>false</default>
+                    <label>Mercer Health Advantage</label>
+                </value>
+                <value>
+                    <fullName>NCN</fullName>
+                    <default>false</default>
+                    <label>NCN</label>
+                </value>
+                <value>
+                    <fullName>Network Management</fullName>
+                    <default>false</default>
+                    <label>Network Management</label>
+                </value>
+                <value>
+                    <fullName>Onsite Clinic</fullName>
+                    <default>false</default>
+                    <label>Onsite Clinic</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Performance Guarantees</fullName>
+                    <default>false</default>
+                    <label>Performance Guarantees</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy</fullName>
+                    <default>false</default>
+                    <label>Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>Pre-Imp Audit</fullName>
+                    <default>false</default>
+                    <label>Pre-Imp Audit</label>
+                </value>
+                <value>
+                    <fullName>Pricing Configuration and Management (PCM),</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Pricing Configuration and Management (PCM),</label>
+                </value>
+                <value>
+                    <fullName>Pricing Configuration Management (PCM)</fullName>
+                    <default>false</default>
+                    <label>Pricing Configuration Management (PCM)</label>
+                </value>
+                <value>
+                    <fullName>Production Support</fullName>
+                    <default>false</default>
+                    <label>Production Support</label>
+                </value>
+                <value>
+                    <fullName>PSCCR</fullName>
+                    <default>false</default>
+                    <label>PSCCR</label>
+                </value>
+                <value>
+                    <fullName>SBC</fullName>
+                    <default>false</default>
+                    <label>SBC</label>
+                </value>
+                <value>
+                    <fullName>Service Operations</fullName>
+                    <default>false</default>
+                    <label>Service Operations</label>
+                </value>
+                <value>
+                    <fullName>Service Operations Retro</fullName>
+                    <default>false</default>
+                    <label>Service Operations Retro</label>
+                </value>
+                <value>
+                    <fullName>Specialty Sales</fullName>
+                    <default>false</default>
+                    <label>Specialty Sales</label>
+                </value>
+                <value>
+                    <fullName>Spider</fullName>
+                    <default>false</default>
+                    <label>Spider</label>
+                </value>
+                <value>
+                    <fullName>Subrogation</fullName>
+                    <default>false</default>
+                    <label>Subrogation</label>
+                </value>
+                <value>
+                    <fullName>TeleHealth</fullName>
+                    <default>false</default>
+                    <label>TeleHealth</label>
+                </value>
+                <value>
+                    <fullName>Telephony</fullName>
+                    <default>false</default>
+                    <label>Telephony</label>
+                </value>
+                <value>
+                    <fullName>Testing Team</fullName>
+                    <default>false</default>
+                    <label>Testing Team</label>
+                </value>
+                <value>
+                    <fullName>Total Health Total You</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Total Health Total You</label>
+                </value>
+                <value>
+                    <fullName>UM Intake</fullName>
+                    <default>false</default>
+                    <label>UM Intake</label>
+                </value>
+                <value>
+                    <fullName>Underwriting</fullName>
+                    <default>false</default>
+                    <label>Underwriting</label>
+                </value>
+                <value>
+                    <fullName>Virtual Second Opinion</fullName>
+                    <default>false</default>
+                    <label>Virtual Second Opinion</label>
+                </value>
+                <value>
+                    <fullName>Vision</fullName>
+                    <default>false</default>
+                    <label>Vision</label>
+                </value>
+                <value>
+                    <fullName>WINFertility</fullName>
+                    <default>false</default>
+                    <label>WINFertility</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Region_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( INCLUDES ( Region__c, &quot;Central&quot; ), &quot;Central; &quot;,NULL) &amp; 
+IF ( INCLUDES ( Region__c, &quot;North East&quot; ), &quot;North East; &quot;,NULL) &amp; 
+IF ( INCLUDES ( Region__c, &quot;South East&quot; ), &quot;South East; &quot;,NULL) &amp; 
+IF ( INCLUDES ( Region__c, &quot;West&quot; ), &quot;West&quot;,NULL)</formula>
+        <label>Region Text</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Central</fullName>
+                    <default>false</default>
+                    <label>Central</label>
+                </value>
+                <value>
+                    <fullName>North East</fullName>
+                    <default>false</default>
+                    <label>North East</label>
+                </value>
+                <value>
+                    <fullName>South East</fullName>
+                    <default>false</default>
+                    <label>South East</label>
+                </value>
+                <value>
+                    <fullName>West</fullName>
+                    <default>false</default>
+                    <label>West</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>US_21833</description>
+        <externalId>false</externalId>
+        <label>Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SME_Email__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>SME Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SME_Imp_Case_Rec_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>SME Imp Case Rec ID</label>
+        <referenceTo>Order</referenceTo>
+        <relationshipLabel>SME User Data</relationshipLabel>
+        <relationshipName>SME_User_Data</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SME_Imp_Case__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>SME Imp Case</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SME_Status__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>SME Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SME_Title__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>SME Title</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SME_User_Name__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>SME User Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>SME User Data</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Department__c</columns>
+        <columns>Required__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SMEUSER-{000}</displayFormat>
+        <label>SME Record ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>SME User Data</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>SME_User_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SME_Email__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SME_Title__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Department__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Claim_System__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Region__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>SME_User_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SME_Email__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SME_Title__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Department__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Claim_System__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Region__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

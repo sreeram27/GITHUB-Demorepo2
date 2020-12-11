@@ -1,0 +1,16 @@
+Hello {!Underwriting__c.OwnerFirstName}, </br> 
+</br> 
+
+Please be advised that an underwriting record has been assigned to you on the Implementation Case: {!Underwriting__c.Implementation_Case_Number__c}.</br>
+</br>  
+
+Details: </br> 
+</br> 
+Account Name : {!Underwriting__c.Account_Legal_Name__c}.</br> 
+</br> 
+Underwriting Number: {!Underwriting__c.Name}.</br> 
+</br>
+To view the Underwriting record, please see the below link: {!Underwriting__c.Link}.</br> 
+</br>  
+
+Thank you!

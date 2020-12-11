@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>VisitOps Group Site Permissions</label>
+    <permissionSets>VisitOps_Site_Anthem</permissionSets>
+    <permissionSets>VisitOps__VisitOps_Site_Managed</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Request__c.Percentage_Build_Complete__c:SUM / RowCount</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Overall Build Percentage</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Build Status</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_46797065</developerName>
+        <masterLabel>Build Status</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Request__c.Percentage_Build_Complete__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>2</to>
+            </sourceValues>
+            <value>Not Started</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>2</from>
+                <to>20</to>
+            </sourceValues>
+            <value>Just Started</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>20</from>
+                <to>65</to>
+            </sourceValues>
+            <value>Inprogress</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>65</from>
+                <to>80</to>
+            </sourceValues>
+            <value>Almost Complete</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>80</from>
+                <to>85</to>
+            </sourceValues>
+            <value>Code Complete</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>85</from>
+                <to>99</to>
+            </sourceValues>
+            <value>Unit Tesing</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>99</from>
+            </sourceValues>
+            <value>Build Complete</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>Donut</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_46797065</groupingColumn>
+        <legendPosition>Bottom</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>true</showPercentage>
+        <showTotal>true</showTotal>
+        <showValues>true</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>Sprint 4 Build Status</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Request__c.Percentage_Build_Complete__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Title__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Request__c.Planned_Release__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Sprint 4</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Requirement_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Technical</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Close: Rejected,Close: Duplicate,Identify: New Requirement,Identify: Deferred</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_46797065</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>ICE Sprint 4 Build Status</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Request__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,149 @@
+<apex:component >
+  <script>
+      app.controller('anaProductConfiguratorController', function($scope) {
+          $scope.cloneBlock = function(block, child, $index){
+              var obj = $scope.bpTree.response.AddLHOs.LHO;
+              if(typeof obj !== 'undefined' && obj && obj.constructor === Array){
+
+              }
+              else{
+                  var objLHO = $scope.bpTree.response.AddLHOs.LHO;
+                  $scope.bpTree.response.AddLHOs.LHO = [];
+                  $scope.bpTree.response.AddLHOs.LHO[0] = objLHO;
+                  $scope.bpTree.response.AddLHOs.LHO[1] = objLHO;
+              }
+              /*console.info(child.response[$index]);
+              console.info(child);
+              console.info($index);
+
+              $scope.bpTree.response.AddLHOs.LHO[$index] = {};
+              $scope.bpTree.response.AddLHOs.LHO[$index].PackageContractCodeLHO = {};
+              $scope.bpTree.response.AddLHOs.LHO[$index].PackageContractCodeLHO = child.response[$index].PackageContractCodeLHO;*/
+          }
+      });
+
+      baseCtrl.prototype.vlcCustom_addItem = function(scp, control, index)
+      {
+          console.info("Internal");
+          var newItem = angular.copy(control.eleArray[index]);
+          console.info(newItem);
+
+          nullifyResponse(newItem);
+          /*if(typeof newItem.response.LHOComponents != "undefined"){
+              newItem.response.LHOComponents = "";
+          }
+          if(typeof newItem.response.LHOBHM != "undefined" && typeof newItem.response.LHOBHM.LHOBHCostShareLHO != "undefined"){
+              newItem.response.LHOBHM.LHOBHCostShareLHO = "";
+          }*/
+
+          newItem.index = index+1;
+          control.eleArray.splice(index+1, 0, newItem);
+          for(var i=index+2; i<control.eleArray.length; i++)
+              control.eleArray[i].index = control.eleArray[i].index+1;
+          if(control.eleArray[0].type === 'Block' && scp.$parent && scp.$parent.$parent) {
+              var parentNode = (sfdcVars.layout === 'lightning')?scp.$parent.$parent.$parent:scp.$parent.$parent;
+              if(parentNode)
+                  scp.aggregate(parentNode, control.index, control.indexInParent, false, index);
+          }
+          else
+              scp.aggregate(scp, control.index, control.indexInParent, false, index);
+      };
+
+      function nullifySrvErr(eleNode)
+        {
+            if(eleNode)
+            {
+                console.log(eleNode);
+                if(eleNode.srvErr)
+                    eleNode.srvErr = null;
+                if(eleNode.children.length === 0)
+                    return;
+                else
+                {
+                    for(var i=0; i<eleNode.children.length; i++)
+                    {
+                        for(var j=0; j<eleNode.children[i].eleArray.length; j++)
+                        {
+                            console.log(eleNode.children[i].eleArray[j]);
+                            nullifySrvErr(eleNode.children[i].eleArray[j]);
+                        }
+                    }
+                }
+            }
+        };
+
+        function nullifyResponse(eleNode)
+        {
+            console.info("========nullifyResponse==========");
+            console.info(eleNode);
+            if(eleNode.name == 'LHO' || eleNode.name == 'LHOComponents' || eleNode.name == 'LHOBHM' || eleNode.name == 'LHOBHCostShareLHO')
+            {
+                if(eleNode.type === 'Block')
+                {
+                    var blkResp = eleNode.response;
+                    if(blkResp){
+                        console.info("========nullifyBlockResponse==========");
+                        console.info(blkResp);
+                        eleNode.response = nullifyBlockResponse(blkResp);
+                    }
+                }
+                else
+                    eleNode.response = null;
+                if(eleNode.type === 'Multi-select' && angular.isArray(eleNode.propSetMap.options))
+                {
+                    for(var k=0; k<eleNode.propSetMap.options.length; k++)
+                        delete eleNode.propSetMap.options[k].selected;
+                }
+                if(eleNode.type === 'Checkbox' || eleNode.type === 'Disclosure')
+                {
+                    eleNode.response = false;
+                }
+                if(eleNode.children.length === 0)
+                    return;
+                else
+                {
+                    for(var i=0; i<eleNode.children.length; i++)
+                    {
+                        if(eleNode.children[i].response)
+                            eleNode.children[i].response = nullifyBlockResponse(eleNode.children[i].response);
+
+                        for(var j=0; j<eleNode.children[i].eleArray.length; j++)
+                        {
+                            console.log(eleNode.children[i].eleArray[j]);
+                            nullifyResponse(eleNode.children[i].eleArray[j]);
+                        }
+                    }
+                }
+            }
+        };
+
+        function nullifyBlockResponse(value)
+        {
+            var returnVal = value;
+            if(value === true)
+                returnVal = false;
+            else if(value.constructor === Object)
+            {
+                for (var key in value)
+                {
+                    if(value.hasOwnProperty(key))
+                    {
+                        var data = value[key];
+                        if(data)
+                            returnVal[key] = nullifyBlockResponse(data);
+                    }
+                }
+            }
+            else if(angular.isArray(value))
+            {
+                for(var i=0; i<value.length; i++)
+                    if(value[i])
+                        returnVal[i] = nullifyBlockResponse(value[i]);
+            }
+            else
+                returnVal = null;
+
+            return returnVal;
+        };
+  </script>
+</apex:component>

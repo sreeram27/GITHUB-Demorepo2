@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Account_Legal_Name__c</fullName>
+        <description>This field is created as part of story PRDCRM-46265</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( Group__r.Account__r.Id , Group__r.Account__r.Name )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Legal Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Class_Name__c</fullName>
+        <description>This field is created as part of story PRDCRM-46265</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer defined</inlineHelpText>
+        <label>Employee Class Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Class_Type__c</fullName>
+        <description>This field is created as part of story PRDCRM-46265</description>
+        <externalId>false</externalId>
+        <label>Employee Class Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Division</fullName>
+                    <default>false</default>
+                    <label>Division</label>
+                </value>
+                <value>
+                    <fullName>Geographic Location</fullName>
+                    <default>false</default>
+                    <label>Geographic Location</label>
+                </value>
+                <value>
+                    <fullName>Payroll Location</fullName>
+                    <default>false</default>
+                    <label>Payroll Location</label>
+                </value>
+                <value>
+                    <fullName>Salary Class</fullName>
+                    <default>false</default>
+                    <label>Salary Class</label>
+                </value>
+                <value>
+                    <fullName>State</fullName>
+                    <default>false</default>
+                    <label>State</label>
+                </value>
+                <value>
+                    <fullName>Store Number</fullName>
+                    <default>false</default>
+                    <label>Store Number</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>All</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Formatted_Last_Modified_Date__c</fullName>
+        <description>Its a formula field to format last modified date in MM/DD/YYYY format and to display in Account structure Omni script</description>
+        <externalId>false</externalId>
+        <formula>LastModifiedBy.FirstName + &apos; &apos;+  LastModifiedBy.LastName +&apos; &apos;  +TEXT(MONTH(DATEVALUE(LastModifiedDate)))+&quot;/&quot; +
+TEXT(DAY(DATEVALUE(LastModifiedDate)))+&quot;/&quot; +
+TEXT(YEAR(DATEVALUE(LastModifiedDate)))+ &quot; &quot; +
+IF( OR( VALUE( MID( TEXT( LastModifiedDate ), 12, 2 ) ) = 0, VALUE( MID( TEXT( LastModifiedDate ), 12, 2 ) ) = 12 ), &quot;12&quot;, TEXT( VALUE( MID( TEXT( LastModifiedDate ), 12, 2 ) ) - IF( VALUE( MID( TEXT( LastModifiedDate ), 12, 2 ) ) &lt; 12, 0, 12 ) ) ) &amp; &quot;:&quot; &amp; MID( TEXT( LastModifiedDate ), 15, 2 ) &amp; &quot;:&quot; &amp; MID( TEXT( LastModifiedDate ), 18, 2 ) &amp; &quot; &quot; &amp; IF( VALUE( MID( TEXT( LastModifiedDate ), 12, 2 ) ) &lt; 12, &quot;AM&quot;, &quot;PM&quot; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Formatted Last Modified Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is created as part of story PRDCRM-46265</description>
+        <externalId>false</externalId>
+        <label>Group</label>
+        <referenceTo>Group__c</referenceTo>
+        <relationshipLabel>Employee Class</relationshipLabel>
+        <relationshipName>Employee_Class</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Employee Class</label>
+    <nameField>
+        <displayFormat>CLASS-{000000}</displayFormat>
+        <label>Employee Class Record ID</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Employee Classes</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

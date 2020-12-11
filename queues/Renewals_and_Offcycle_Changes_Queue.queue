@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Renewals/Off-cycle/Term Queue</name>
+    <queueMembers>
+        <users>
+            <user>amanda.mccarthy2@anthem.com2.iceprod</user>
+            <user>brenna.benvan@anthem.com2.iceprod</user>
+            <user>carolina.vazquezperez@anthem.com2</user>
+            <user>tamara.chapman@anthem.com2.iceprod</user>
+            <user>cristy.hong@anthem.com2</user>
+            <user>ac42089@anthem.com2</user>
+            <user>ab94428@anthem.com2</user>
+            <user>kelly.casey@anthem.com2</user>
+            <user>liza.roepke@anthem.com2.iceprod</user>
+            <user>mark.madsen@decare.com2.iceprod</user>
+            <user>paula.moore2@decare.com2.iceprod</user>
+            <user>chelsea.rice@decare.com2.iceprod</user>
+            <user>stephanie.schmucker@anthem.com2.iceprod</user>
+            <user>jason.scott@anthem.com2.iceprod</user>
+            <user>ab94287@anthem.com2</user>
+            <user>tjohnson@anthemdentaladmin.com2</user>
+            <user>ae00532@anthem.com2</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Dental_Complete__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Life_and_Disability__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Vision__c</sobjectType>
+    </queueSobject>
+</Queue>

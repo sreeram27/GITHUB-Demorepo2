@@ -1,0 +1,10 @@
+Group Services has reviewed and completed the Group Number assignment. See details below. 
+
+Group Number: 
+{!Group__c.Name}
+
+Group Services comments / notes: 
+{!Group__c.GroupServicesGroupNumberNotes__c} 
+
+Click on the below link (or copy and paste into your browser) to view your opportunity: 
+{!Group__c.TECH_OpportunityLink__c}

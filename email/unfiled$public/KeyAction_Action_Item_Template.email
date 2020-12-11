@@ -1,0 +1,5 @@
+Hi {!Key_Action_Decision__c.AssignedTo__c}, 
+
+Below Action Item/ Decision is assigned to you. Please review. 
+
+{!Key_Action_Decision__c.Link}

@@ -1,0 +1,11 @@
+Please log in to Salesforce {!DNC_Preferences__c.Link} to review a new Group DNC request with the Account Name:{!Account.Name}.
+ 
+You are responsible for the approval process in Salesforce. Written approval from the Sales VP responsible is required to add groups to DNC. Please use the following process:
+ 
+1)      Login to Salesforce, review the request and any documentation provided
+2)      Send a summary of the request along with approve/deny recommendation to Sales VP via email
+3)      If Sales VP approves, log into Salesforce and upload Sales VP approval email. Mark the request approved in Salesforce.
+4)      If denied, mark request denied in Salesforce
+5)      The requestor will receive automated notification of the decision by email  
+ 
+Note: Once a request is denied in Salesforce it cannot be reconsidered or changed. A new request must  be submitted for approval.

@@ -1,0 +1,12 @@
+<p>
+This communication is to inform you the following Product has been marked Sold. Please confirm it's ready for hand-off to implementation. 
+</p>
+<table border="1">
+<tr><td>Client Name: </td><td>{!QuoteLineItem.ClientName__c}</td></tr>
+<tr><td>Account Executive: </td><td>{!QuoteLineItem.AccountExecutive__c}</td></tr>
+<tr><td>Effective Date: </td><td>{!QuoteLineItem.OpportunityEffectiveDate__c}</td></tr>
+<tr><td>Region: </td><td>{!QuoteLineItem.Region__c}</td></tr>
+<tr><td>New or existing: </td><td>{!QuoteLineItem.OppType__c}</td></tr>
+<tr><td>Market: </td><td>National Accounts</td></tr>
+<tr><td>Claims Platform: </td><td>{!QuoteLineItem.ClaimsPlatform__c}</td></tr>
+</table>

@@ -1,0 +1,3 @@
+Please Note <a href="{!Order.Link}">{!Order.OrderNumber}</a> for <a href="{!Account.Link}">{!Order.AccountLegalName__c}</a> and <a href="{!Order.Opportunity_Hyper__c}">{!Order.Opportunity}</a> has been withdrawn by {!Order.Assigned_Implementer_Name__c}. 
+<br/><br/>
+<font color="red">Please refer to the ICR comments and/or the email in the attachments for withdrawal reasons.</font>

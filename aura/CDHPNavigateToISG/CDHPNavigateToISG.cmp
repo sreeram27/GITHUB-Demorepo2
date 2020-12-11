@@ -1,0 +1,35 @@
+<aura:component description="CDHPNavigateToISG" implements="force:lightningQuickAction,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+
+    <aura:attribute name="record" type="Object"
+                    description="The record object to be displayed"/>
+    <aura:attribute name="OpptyRecord" type="Object"
+                    description="A simplified view record object to be displayed"/>
+    <aura:attribute name="recordError" type="String"
+                    description="An error message bound to force:recordData"/>
+  <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+
+    <force:recordData aura:id="record"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.OpptyRecord }"
+                      fields="Opportunity.CDHP_SF_Id_From_ISG__c"
+                      mode="VIEW"/>
+
+    <!-- Display a lightning card with details about the record -->
+    <div class="Oppty Details">
+        <lightning:card iconName="standard:scan_card">
+		<aura:set attribute="title">
+           <a href="{!$Label.c.CDHPISGLink_Part1+v.OpptyRecord.Opportunity.CDHP_SF_Id_From_ISG__c+$Label.c.CDHPISGLink_Part2}" target="_blank">CDHP Record</a>
+    	</aura:set>          
+        </lightning:card>
+    </div>
+
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+                {!v.recordError}</div>
+    </aura:if>
+</aura:component>

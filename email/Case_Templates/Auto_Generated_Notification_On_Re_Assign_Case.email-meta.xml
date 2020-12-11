@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Auto Generated Notification On Re-Assign Case</name>
+    <style>none</style>
+    <subject>Automated Follow-up From Re-Assigned Case {!Case.CaseNumber}  {!Case.Thread_Id}</subject>
+    <textOnly>Waiver Case Created
+
+Dear {!NullValue(Contact.FirstName, &quot;&quot;)} {!NullValue(Contact.LastName, &quot;&quot;)},
+
+Thank you for contacting Anthem.
+Your revised Case Number is {!Case.CaseNumber} and has been assigned to a representative.
+If you have additional details to provide, please wait until a representative contacts you and then respond to their communication
+For your reference, your Inquiry Case Number is {!Case.CaseNumber} .
+
+Thank You,
+Anthem</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

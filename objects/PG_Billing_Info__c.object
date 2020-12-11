@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Report__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>PG Billing Info</relationshipLabel>
+        <relationshipName>PG_Billing_Info</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Required_Approvals__c</fullName>
+        <description>UW user types the additional approver names in this text field.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter Name(s) of the additional approvers.  (Settlement Amount Greater than $500,000)</inlineHelpText>
+        <label>Additional Required Approvals</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Notes__c</fullName>
+        <description>UW user types the additional approval notes/comments in this text field.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any notes on approval related activity performed.</inlineHelpText>
+        <label>Approval Notes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bill_Level_1_Report__c</fullName>
+        <externalId>false</externalId>
+        <formula>Bill_Level_1__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bill Level 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bill_Level_1__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Group&apos;s primary bill level, typically the group level, e.g.  case number on WGS, group number on Nasco</description>
+        <externalId>false</externalId>
+        <label>Bill Level 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Group__c.IsActive__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>Group__c.Account__r.Id</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Group__c</referenceTo>
+        <relationshipLabel>PG Billing Info</relationshipLabel>
+        <relationshipName>PG_Billing_Info</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Bill_Level_2__c</fullName>
+        <description>Lower level group structure for the billed charged as defined in membership system (e.g. subgroup or division level).</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Bill Level 2</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bill_Line_Note__c</fullName>
+        <description>Description of the charge which shows on the invoice in addition to the charge code description (e.g. add time period). The charge code description is &quot;Performance Guarantee&quot;</description>
+        <externalId>false</externalId>
+        <label>Bill Line Note</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Final Settlement for period ending 2018</fullName>
+                    <default>false</default>
+                    <label>2018 - Final Settlement for period ending 2018</label>
+                </value>
+                <value>
+                    <fullName>Final Settlement for period ending 2019</fullName>
+                    <default>false</default>
+                    <label>2019 - Final Settlement for period ending 2019</label>
+                </value>
+                <value>
+                    <fullName>Final Settlemet for period ending 2020</fullName>
+                    <default>false</default>
+                    <label>2020 - Final Settlement for period ending 2020</label>
+                </value>
+                <value>
+                    <fullName>Final Settlemet for period ending 2021</fullName>
+                    <default>false</default>
+                    <label>2021 - Final Settlement for period ending 2021</label>
+                </value>
+                <value>
+                    <fullName>Final Settlemet for period ending 2022</fullName>
+                    <default>false</default>
+                    <label>2022 - Final Settlement for period ending 2022</label>
+                </value>
+                <value>
+                    <fullName>Interim Settlement for period ending 2019</fullName>
+                    <default>false</default>
+                    <label>2019 - Interim Settlement for period ending 2019</label>
+                </value>
+                <value>
+                    <fullName>Interim Settlement for period ending 2020</fullName>
+                    <default>false</default>
+                    <label>2020 - Interim Settlement for period ending 2020</label>
+                </value>
+                <value>
+                    <fullName>Interim Settlement for period ending 2021</fullName>
+                    <default>false</default>
+                    <label>2021 - Interim Settlement for period ending 2021</label>
+                </value>
+                <value>
+                    <fullName>Interim Settlement for period ending 2022</fullName>
+                    <default>false</default>
+                    <label>2022 - Interim Settlement for period ending 2022</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billing_Upload_Date__c</fullName>
+        <description>ASO Billing will enter the date the record was processed</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>This date is provided by ASO Billing team.</inlineHelpText>
+        <label>Billing Upload Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Billing_in_Process_Date__c</fullName>
+        <description>Date that status moved to &apos;Billing in Process</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Billing in Process Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Confirmed_Signed_Contract__c</fullName>
+        <description>Indicate that a signed ASO agreement exists for the PGs where a settlement is being billed</description>
+        <externalId>false</externalId>
+        <label>Confirmed Signed Contract</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CreatedBy__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName + &apos; &apos; + CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Did_You_Get_UW_VP_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This checkbox indicates appropriate approvals have been obtained based on company approval guidelines / policy.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Attach the proof of approval (Email or document) if its approved.</inlineHelpText>
+        <label>Did You Get Required  Approvals ?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>File_Type__c</fullName>
+        <description>A extra note field that is not on the invoice.   The note could be used for accounting, providing additional information about the charge, e.g.  charge covers a certain period</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>File Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Generic_1_Amount__c</fullName>
+        <description>Amount credited or charged / billed (negative is a credit, positive is a charge)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount credited or charged / billed (negative is a credit, positive is a charge)</inlineHelpText>
+        <label>Generic 1 Amount</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Generic_1_Billing_Charge_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Generic 1 Billing Charge Code</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PERF_GNT</fullName>
+                    <default>true</default>
+                    <label>PERF_GNT</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Incurred_Start_Date__c</fullName>
+        <description>Date charge being calculated or the time period covered by the bill.  Not the date the charge is billed.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Incurred Start Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Membership_Source_System__c</fullName>
+        <description>The membership system code.   Select the appropriate dropdown
+* WGS - WGS
+* NSC - Nacso
+* FAC - Facets
+* CS90 - CS90
+* ACE - Aces
+* CHP - Chips</description>
+        <externalId>false</externalId>
+        <label>Membership Source System</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>WGS</fullName>
+                    <default>false</default>
+                    <label>WGS</label>
+                </value>
+                <value>
+                    <fullName>NSC</fullName>
+                    <default>false</default>
+                    <label>NSC</label>
+                </value>
+                <value>
+                    <fullName>FAC</fullName>
+                    <default>false</default>
+                    <label>FAC</label>
+                </value>
+                <value>
+                    <fullName>CS90</fullName>
+                    <default>false</default>
+                    <label>CS90</label>
+                </value>
+                <value>
+                    <fullName>ACE</fullName>
+                    <default>false</default>
+                    <label>ACE</label>
+                </value>
+                <value>
+                    <fullName>CHP</fullName>
+                    <default>false</default>
+                    <label>CHP</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PG_Settlement_Approval_Guidelines__c</fullName>
+        <defaultValue>$Label.PG_Settlement_Approval_Guidelines</defaultValue>
+        <description>Used only to display Guidelines to the Users.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>PG Settlement Approval Guidelines</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PG_Type__c</fullName>
+        <description>The PG category which this settlement applies.   Select the appropriate dropdown</description>
+        <externalId>false</externalId>
+        <label>PG Type</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <label>All</label>
+                </value>
+                <value>
+                    <fullName>Operations Guarantee</fullName>
+                    <default>false</default>
+                    <label>Operations Guarantee</label>
+                </value>
+                <value>
+                    <fullName>Clinical Guarantees</fullName>
+                    <default>false</default>
+                    <label>Clinical Guarantees</label>
+                </value>
+                <value>
+                    <fullName>Trend Guarantees</fullName>
+                    <default>false</default>
+                    <label>Trend Guarantees</label>
+                </value>
+                <value>
+                    <fullName>Cost Savings Guarantees</fullName>
+                    <default>false</default>
+                    <label>Cost Savings Guarantees</label>
+                </value>
+                <value>
+                    <fullName>Network Guarantees</fullName>
+                    <default>false</default>
+                    <label>Network Guarantees</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy Ops Guarantees</fullName>
+                    <default>false</default>
+                    <label>Pharmacy Ops Guarantees</label>
+                </value>
+                <value>
+                    <fullName>Other Guarantees</fullName>
+                    <default>false</default>
+                    <label>Other Guarantees</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Previous_PG_Record_Being_Corrected__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field when this entry is an offsetting correction of another PG record.</inlineHelpText>
+        <label>Previous PG Record Being Corrected</label>
+        <referenceTo>PG_Billing_Info__c</referenceTo>
+        <relationshipLabel>PG Billing Info</relationshipLabel>
+        <relationshipName>PG_Billing_Info</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Previous_PG_Record_Corrected_Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any comments about the correction being made.</inlineHelpText>
+        <label>Previous PG Record Corrected Comments</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>PG Record status (ex: Pending/Complete) used to address last stage of the record while entering the &quot;Billing Upload Date&quot; field</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>true</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Billing in Process</fullName>
+                    <default>false</default>
+                    <label>Billing in Process</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UW_RVP_Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Searching Anthem assocaiates for the UW RVP by State.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Search / Select the Approving Underwriting RVP</inlineHelpText>
+        <label>UW RVP Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PG_Billing_Info</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UW_VP_Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Searching Anthem assocaiates for the UW VP approver by State.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Search / Select the Approving Underwriting VP</inlineHelpText>
+        <label>UW VP Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PG_Billing_Info1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>PG Billing Info</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PG-{0000}</displayFormat>
+        <label>PG Billing Record ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>PG Billing Info</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Lock_Down_PG_Billing_Info</fullName>
+        <active>true</active>
+        <description>When status moves to &quot;Billing in Process&quot;, lock down entire record with the exception of &quot;Billing Upload Date&quot;</description>
+        <errorConditionFormula>AND(
+ISPICKVAL(Status__c, &apos;Billing in Process&apos;),
+OR(
+ISCHANGED( Account_Report__c ),
+ISCHANGED( Additional_Required_Approvals__c ),
+ISCHANGED( Approval_Notes__c ),
+ISCHANGED( Bill_Level_2__c ),
+ISCHANGED( Bill_Line_Note__c ),
+ISCHANGED( Completed_Date__c ),
+ISCHANGED( Confirmed_Signed_Contract__c ),
+ISCHANGED( Did_You_Get_UW_VP_Approval__c ),
+ISCHANGED( File_Type__c ),
+ISCHANGED( Generic_1_Amount__c ),
+ISCHANGED( Generic_1_Billing_Charge_Code__c ),
+ISCHANGED( Incurred_Start_Date__c ),
+ISCHANGED( Membership_Source_System__c ),
+ISCHANGED( PG_Settlement_Approval_Guidelines__c ),
+ISCHANGED( Billing_in_Process_Date__c ),
+ISCHANGED( PG_Type__c )))</errorConditionFormula>
+        <errorMessage>Cannot modify record when status is &apos;Billing in Process&apos;. (Except for the Billing Upload Date)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Down_PG_Billing_Info_Complete</fullName>
+        <active>true</active>
+        <description>When Status moves to Complete lock down the entire record.</description>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Status__c, &apos;Complete&apos;), 
+OR( 
+ISCHANGED( Account_Report__c ), 
+ISCHANGED( Additional_Required_Approvals__c ), 
+ISCHANGED( Approval_Notes__c ), 
+ISCHANGED( Bill_Level_2__c ), 
+ISCHANGED( Bill_Line_Note__c ), 
+ISCHANGED( Completed_Date__c ), 
+ISCHANGED( Confirmed_Signed_Contract__c ), 
+ISCHANGED( Did_You_Get_UW_VP_Approval__c ), 
+ISCHANGED( File_Type__c ), 
+ISCHANGED( Generic_1_Amount__c ), 
+ISCHANGED( Generic_1_Billing_Charge_Code__c ), 
+ISCHANGED( Incurred_Start_Date__c ), 
+ISCHANGED( Membership_Source_System__c ), 
+ISCHANGED( PG_Settlement_Approval_Guidelines__c ), 
+ISCHANGED( Billing_in_Process_Date__c ), 
+ISCHANGED( Billing_Upload_Date__c ),
+ISCHANGED( PG_Type__c )))</errorConditionFormula>
+        <errorMessage>Cannot modify record when status is &apos;Complete&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Previous_PG_Record_Corrected_Comment_Req</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+
+NOT(ISBLANK(Previous_PG_Record_Being_Corrected__c)),
+
+
+ISBLANK(Previous_PG_Record_Corrected_Comments__c )
+
+)</errorConditionFormula>
+        <errorDisplayField>Previous_PG_Record_Corrected_Comments__c</errorDisplayField>
+        <errorMessage>Previous PG Record Corrected Comments is required when Previous PG Record Being Corrected is not blank.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_Status_Complete_Mandatry_fields</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( (ISPICKVAL(Status__c , &quot;Complete&quot;)),OR(ISBLANK( Billing_Upload_Date__c ) ,(Did_You_Get_UW_VP_Approval__c = FALSE),
+ (NOT(ISPICKVAL(Confirmed_Signed_Contract__c, &quot;Yes&quot;)))))</errorConditionFormula>
+        <errorMessage>In order to change the record status to &apos;Complete&apos;, please ensure “Billing Upload Date”, “Did You Get Required Approvals?” And “Confirmed signed contract” fields are filled.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_UW_RVP_VP_and_Additnal_Approval</fullName>
+        <active>true</active>
+        <description>Created this validation rule to make &apos;UW RVP Approver&apos; , &apos;UW VP Approver&apos; &amp; &apos;Additional Required Approvals&apos; as mandatory if &quot;Did You Get Required Approvals ? is checked and Generic 1 Amount is greater than or equals to $500k.&quot;</description>
+        <errorConditionFormula>(Did_You_Get_UW_VP_Approval__c = TRUE) &amp;&amp; ( Generic_1_Amount__c  &gt;= 500000 ) &amp;&amp; (OR(ISBLANK(UW_RVP_Approver__c ),ISBLANK(UW_VP_Approver__c) ,ISBLANK(Additional_Required_Approvals__c) ))</errorConditionFormula>
+        <errorMessage>Please ensure UW RVP Approver, UW VP Approver &amp; Additional Required Approvals fields are filled.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_UW_RVP_and_VP_Approver</fullName>
+        <active>true</active>
+        <description>Created this validation rule to make &apos;UW RVP Approver&apos; &amp; &apos;UW VP Approver&apos; as mandatory if &quot;Did You Get Required Approvals ? is checked and Generic 1 Amount is less than $500k.&quot;</description>
+        <errorConditionFormula>(Did_You_Get_UW_VP_Approval__c = TRUE) &amp;&amp; ( Generic_1_Amount__c &lt; 500000 ) &amp;&amp; (OR(ISBLANK(UW_RVP_Approver__c ),ISBLANK(UW_VP_Approver__c) ))</errorConditionFormula>
+        <errorMessage>Please ensure UW RVP Approver &amp; UW VP Approver fields are filled.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

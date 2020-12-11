@@ -1,0 +1,14 @@
+<apex:page standardController="Group_Outsourcing_Restriction__c">
+<script>
+window.document.onload = new function(e){
+     
+    if("{!$Profile.Name}" == "National Sales" || "National Sales Dual" || "System Administrator"){
+        var redirect = confirm('Please use the Group Offshoring restriction Update Button to the right to update an existing Group Offshoring restriction record');
+        //alert(redirect); 
+        var txtRedirect = "{!$Label.GOR_Create_Update_Redirect}";               
+        window.open(txtRedirect,"_self");
+        window.close();
+    }
+}
+</script>
+</apex:page>

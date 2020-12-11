@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveLens xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <content xsi:nil="true"/>
+    <application>ChrisLenses</application>
+    <datasets>National_DataSet</datasets>
+    <description>ARD=Active Renewal Date field</description>
+    <masterLabel>Audit Medium 8 - RFP Status=Active Renewal, Full RFP - ARD NOT current year</masterLabel>
+    <visualizationType>pivottable</visualizationType>
+</WaveLens>

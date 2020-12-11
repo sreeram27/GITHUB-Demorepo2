@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Record rejected at any time</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>IC Email Template of Rejections</name>
+    <style>none</style>
+    <subject>The Internal Commissions Record For {!Internal_Commission__c.Opportunity_Name__c} Has Been Rejected</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>CEP_Escalation_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Actual_Resolution_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Actual Resolution Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_to_COO_Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Assigned to COO Office</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Add COO direct reports</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Add COO direct reports</label>
+                </value>
+                <value>
+                    <fullName>Alison Forte</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Alison Forte</label>
+                </value>
+                <value>
+                    <fullName>Anne DeFusco</fullName>
+                    <default>false</default>
+                    <label>Anne DeFusco</label>
+                </value>
+                <value>
+                    <fullName>Brian Williams</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Brian Williams</label>
+                </value>
+                <value>
+                    <fullName>Cheryl Gibson</fullName>
+                    <default>false</default>
+                    <label>Cheryl Gibson</label>
+                </value>
+                <value>
+                    <fullName>Cory Courtney</fullName>
+                    <default>false</default>
+                    <label>Cory Courtney</label>
+                </value>
+                <value>
+                    <fullName>Dan Brier</fullName>
+                    <default>false</default>
+                    <label>Dan Brier</label>
+                </value>
+                <value>
+                    <fullName>Denise Tomechko</fullName>
+                    <default>false</default>
+                    <label>Denise Tomechko</label>
+                </value>
+                <value>
+                    <fullName>Gina Arnold</fullName>
+                    <default>false</default>
+                    <label>Gina Arnold</label>
+                </value>
+                <value>
+                    <fullName>Joe Garrett</fullName>
+                    <default>false</default>
+                    <label>Joe Garrett</label>
+                </value>
+                <value>
+                    <fullName>Matt Borner</fullName>
+                    <default>false</default>
+                    <label>Matt Borner</label>
+                </value>
+                <value>
+                    <fullName>Monica Kaufman</fullName>
+                    <default>false</default>
+                    <label>Monica Kaufman</label>
+                </value>
+                <value>
+                    <fullName>William Potter</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>William Potter</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>COO_Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>COO Comments</label>
+        <length>32000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Connected_to_Transformation_Initiative__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this issue connect with an existing Transformation Initiative?</inlineHelpText>
+        <label>Connected to Transformation Initiative?</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description_Background__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Description/Background</label>
+        <length>32000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description_of_Final_Resolution__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Description of Final Resolution</label>
+        <length>32000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Escalated_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Escalated Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Escalated_To__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Escalated To</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Escalated_by__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Escalated by</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>CEP_Escalation</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_Request__c</fullName>
+        <externalId>false</externalId>
+        <label>External Request</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Issue_Name__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>To be completed by requestor</inlineHelpText>
+        <label>Issue Name</label>
+        <length>60</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Issue_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Issue Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Investigating</fullName>
+                    <default>false</default>
+                    <label>Investigating</label>
+                </value>
+                <value>
+                    <fullName>Implementing</fullName>
+                    <default>false</default>
+                    <label>Implementing</label>
+                </value>
+                <value>
+                    <fullName>Escalated</fullName>
+                    <default>false</default>
+                    <label>Escalated</label>
+                </value>
+                <value>
+                    <fullName>Resolved/Closed</fullName>
+                    <default>false</default>
+                    <label>Resolved/Closed</label>
+                </value>
+                <value>
+                    <fullName>Opened in Error/Closed</fullName>
+                    <default>false</default>
+                    <label>Opened in Error/Closed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Issue_type__c</fullName>
+        <externalId>false</externalId>
+        <label>Issue type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Clinical</fullName>
+                    <default>false</default>
+                    <label>Clinical</label>
+                </value>
+                <value>
+                    <fullName>External Facing</fullName>
+                    <default>false</default>
+                    <label>External Facing</label>
+                </value>
+                <value>
+                    <fullName>Migrations</fullName>
+                    <default>false</default>
+                    <label>Migrations</label>
+                </value>
+                <value>
+                    <fullName>Web/Mobile</fullName>
+                    <default>false</default>
+                    <label>Web/Mobile</label>
+                </value>
+                <value>
+                    <fullName>Network</fullName>
+                    <default>false</default>
+                    <label>Network</label>
+                </value>
+                <value>
+                    <fullName>Operational</fullName>
+                    <default>false</default>
+                    <label>Operational</label>
+                </value>
+                <value>
+                    <fullName>Privacy/Security</fullName>
+                    <default>false</default>
+                    <label>Privacy/Security</label>
+                </value>
+                <value>
+                    <fullName>Product, Reporting</fullName>
+                    <default>false</default>
+                    <label>Product, Reporting</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Last_Modified_Date__c</fullName>
+        <description>DO NOT DELETE. Used in a Workflow Rule</description>
+        <externalId>false</externalId>
+        <formula>LastModifiedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Last Modified Date_Clone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Priority_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority Level</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Process Improvement Idea Only</fullName>
+                    <default>false</default>
+                    <label>Process Improvement Idea Only</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Requestor__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName + &quot;  &quot; + CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requestor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Required_COO_intervention__c</fullName>
+        <externalId>false</externalId>
+        <label>Required COO intervention</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SME_Assigned__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>SME Assigned</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target_Resolution_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Target Resolution Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>60</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Urgent_Resolution_Required__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Answer Yes If
+Requires Resolution in 48 Hours</inlineHelpText>
+        <label>Urgent Resolution Required</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>What_is_the__c</fullName>
+        <externalId>false</externalId>
+        <label>What is the #</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>COO Escalation</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Priority_Level__c</columns>
+        <columns>Issue_Status__c</columns>
+        <columns>Assigned_to_COO_Office__c</columns>
+        <columns>Escalated_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Issues</fullName>
+        <columns>NAME</columns>
+        <columns>Priority_Level__c</columns>
+        <columns>Assigned_to_COO_Office__c</columns>
+        <columns>Issue_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Issue_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Resolved/Closed</value>
+        </filters>
+        <label>Open Issues</label>
+    </listViews>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>COO Escalation Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>COO Escalation</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>CEP_Escalation</fullName>
+        <active>true</active>
+        <label>COO Escalation</label>
+        <picklistValues>
+            <picklist>Assigned_to_COO_Office__c</picklist>
+            <values>
+                <fullName>Anne DeFusco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cheryl Gibson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cory Courtney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denise Tomechko</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Joe Garrett</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monica Kaufman</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Connected_to_Transformation_Initiative__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>External_Request__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Status__c</picklist>
+            <values>
+                <fullName>Escalated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Opened in Error%2FClosed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved%2FClosed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_type__c</picklist>
+            <values>
+                <fullName>Clinical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Facing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Migrations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Network</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operational</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Privacy%2FSecurity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product%2C Reporting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web%2FMobile</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority_Level__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Process Improvement Idea Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Required_COO_intervention__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Urgent_Resolution_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Priority_Level__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Issue_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Escalated_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Assigned_to_COO_Office__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Assigned_to_COO_Office__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Escalated_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Final_Resolution_Required</fullName>
+        <active>true</active>
+        <description>Description of Final Resolution field is required when Issue Status is &quot;Resolved/Closed&quot;</description>
+        <errorConditionFormula>AND(
+ISBLANK( Description_of_Final_Resolution__c ),
+ ISPICKVAL( Issue_Status__c , &quot;Resolved/Closed&quot;))</errorConditionFormula>
+        <errorDisplayField>Description_of_Final_Resolution__c</errorDisplayField>
+        <errorMessage>Final Resolution field is required when Issue Status is &quot;Resolved/Closed&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Urgent_Resolution_Required_Date</fullName>
+        <active>true</active>
+        <description>If Urgent Resolution field is required then Escalated Date field must be populated</description>
+        <errorConditionFormula>AND(
+ ISBLANK( Escalated_Date__c ) ,
+ISPICKVAL( Urgent_Resolution_Required__c , &apos;Yes&apos;))</errorConditionFormula>
+        <errorDisplayField>Escalated_Date__c</errorDisplayField>
+        <errorMessage>If Urgent Resolution field is required then Escalated Date field must be populated</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>What_is_the_number_and_Title_Required</fullName>
+        <active>true</active>
+        <description>When Connected to Transformation Initiative? is yes then What is the # and Title fields are required.</description>
+        <errorConditionFormula>AND(
+ISBLANK(  Title__c  ),
+ISBLANK(   What_is_the__c   ),
+ ISPICKVAL(  Connected_to_Transformation_Initiative__c , &quot;Yes&quot;))</errorConditionFormula>
+        <errorMessage>When Connected to Transformation Initiative? is YES then &quot;What is the #&quot; and &quot;Title&quot; fields are required.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

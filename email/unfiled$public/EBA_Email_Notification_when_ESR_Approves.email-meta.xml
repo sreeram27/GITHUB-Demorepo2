@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>EBA Email Notification when ESR Approves</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>EBA Email Notification when ESR Approves</name>
+    <style>none</style>
+    <subject>The Benefit Plan Design Record For {!BPD__c.Account__c} Has Been Approved by Employer Service Representative</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

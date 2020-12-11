@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Request__c.Category__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Title__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Description__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Request__c.Ready_for_Business_Review__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Comments__c</field>
+    </columns>
+    <description>Additional requirements to be included in Phase 1b</description>
+    <filter>
+        <criteriaItems>
+            <column>Request__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>release,close</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Planned_Release__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Release 1b</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Category__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account Management</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Ready_for_Business_Review__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Identify: Validated by Business</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>1B: AM Reqs deferred from 1a</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Request__c@Request__c.Capability__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CUST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Request__c.StartTime_Approved_Emergency_Release__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,394 @@
+<apex:component >
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcProductSelection.html Template.  Created at 2017-12-05 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+
+<script type="text/ng-template" id="vlcProductSelection.html">
+ <div class="panel panel-default" ng-controller="Productstagecontroller as ctrl">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">
+       <label class="slds-checkbox">
+         <input type="checkbox" ng-model='ctrl.selectAll' ng-change="ctrl.selectAllChange(true);"/>
+         <span class="slds-checkbox--faux"></span>
+       </label>
+       <div ng-if="ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in ctrl.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>
+       <div ng-if="!ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in ctrl.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>
+         
+     </th>
+     <th>Product Name</th>
+     <th>Stage
+        <div class="select-custom-element">
+            <select name="loopnameStageRenewal" id="vlcproductrenewalStage" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                 style="font-size:12px;font-weight:bold;max-width:100%;" ng-init="p.vlcproductrenewalStage= p.Changes"
+                 ng-model="ctrl.vlcproductrenewalstage" ng-change="ctrl.updateStage(control)">              
+                <option ng-repeat="option in bpTree.response['IC-OpptyRecordType']" value="{{option}}">{{option}}</option>
+            </select>         
+         </div>
+     </th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this); ctrl.selectAllChange(false);'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.ProductName}}</td>
+     <td>
+        <div class="select-custom-element">
+            <select  name="loopname" id="vlcBundleStage"  ng-disabled="!p.vlcSelected" ng-model="p.vlcBundleStage" 
+            class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched"  
+            style="font-size:12px;font-weight:bold;max-width:100%;" ng-init="p.vlcBundleStage = p.ProductStage"  
+            ng-options="programState for programState in bpTree.response['IMP-ProgramStages']" ng-change="updateProbability(p)"> </select>
+        </div>
+     </td> 
+   </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcProductSelection.html  Template. -->
+<!-- ----------------------------- -->
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcProductSelectionLG.html Template.  Created at 2017-12-05 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcProductSelectionLG.html">
+ <div class="panel panel-default" ng-controller="Productstagecontroller as ctrl">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">
+       <label class="slds-checkbox">
+         <input type="checkbox" ng-model='ctrl.selectAll' ng-change="ctrl.selectAllChange(true);"  ng-disabled="ctrl.showImpactedProductCheckBox(control) == 'Full Group Term'?true:false"/>
+         <span class="slds-checkbox--faux"></span>
+       </label>
+       <div ng-if="ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in ctrl.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>
+       <div ng-if="!ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in ctrl.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>
+         
+     </th>
+     <th>Product Name</th>
+     <th>Line of business</th>
+     <th >Stage
+        <div class="select-custom-element" ng-show="ctrl.showImpactedProductCheckBox(control) == 'Full Group Term'?false:true"> 
+            <select name="loopnameStageRenewal" id="vlcproductrenewalStage" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                 style="font-size:12px;font-weight:bold;max-width:100%;" ng-init="p.vlcproductrenewalStage= p.Changes" 
+                 ng-model="ctrl.vlcproductrenewalstage" ng-change="ctrl.updateStage(control)">              
+                <option ng-repeat="option in bpTree.response['IC-OpptyRecordType']" value="{{option}}">{{option}}</option>
+            </select>         
+         </div>
+     </th>
+     <th ng-if="ctrl.showImpactedProductCheckBox(control) == 'Full Group Term' || ctrl.showImpactedProductCheckBox(control) == 'Change Request Off Cycle'">Impacted Products</th><!--added vikings 40698-->
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this); ctrl.selectAllChange(false);' ng-disabled="ctrl.showImpactedProductCheckBox(control) == 'Full Group Term'?true:false" />
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.ProductName}}</td>
+     <td>{{p.ProductType}}</td>
+     <td>
+        <!-- PRDCRM-40698- Defaulting Stage to Termed for all products for Full Group Term -->
+        <div class="select-custom-element" ng-if="ctrl.showImpactedProductCheckBox(control) == 'Full Group Term'">
+            <select  name="loopname" id="vlcBundleStage"  ng-disabled=true ng-model="p.vlcBundleStage" 
+            class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched"  
+            style="font-size:12px;font-weight:bold;max-width:100%;" ng-init="p.vlcBundleStage = 'Termed';p.Probability = '0%';"  
+            ng-options="programState for programState in bpTree.response['IMP-ProgramStages']" ng-change="updateProbability(p)"> </select>
+        </div>
+        <div class="select-custom-element" ng-if="ctrl.showImpactedProductCheckBox(control) != 'Full Group Term'">
+            <select  name="loopname" id="vlcBundleStage"  ng-disabled="!p.vlcSelected" ng-model="p.vlcBundleStage" 
+            class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched"  
+            style="font-size:12px;font-weight:bold;max-width:100%;" ng-init="p.vlcBundleStage = p.ProductStage",  
+            ng-options="programState for programState in bpTree.response['IMP-ProgramStages']" ng-change="updateProbability(p)"> </select>
+        </div>
+    </td>
+    
+    <!-- PRDCRM-42057 Defaulting ImpactedProducts CheckBox to checked for all products for Full Group Term -->
+    <!-- PRDCRM-43753 Impacted Products should be locked and Display Only all products for Full Group Term -->
+    <td ng-if="ctrl.showImpactedProductCheckBox(control) == 'Full Group Term'">
+        <label class="slds-checkbox" style="margin-left: 45%;">
+          <input type="checkbox" ng-model='p.ImpactedProducts' ng-init="p.ImpactedProducts=true" value="{{p.ImpactedProducts}}" onclick="return false;"/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+    </td>
+    <td ng-if="ctrl.showImpactedProductCheckBox(control) == 'Change Request Off Cycle'">
+        <label class="slds-checkbox" style="margin-left: 45%;">
+          <input type="checkbox" ng-model='p.ImpactedProducts' value="{{p.ImpactedProducts}}" ng-disabled="!p.vlcSelected" ng-change="updateImpactedProducts(control.vlcSI[control.itemsKey], p, p.ImpactedProducts)"/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+    </td>
+   </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcProductSelectionLG.html  Template. -->
+<!-- ----------------------------- -->
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcProductRenewalSelection.html Template.  Created at 2017-12-05 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcProductRenewalSelection.html">
+ <div class="panel panel-default" ng-controller="Productstagecontroller as ctrl">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">
+       <label class="slds-checkbox">
+         <input type="checkbox" ng-model='ctrl.selectAll' ng-change="ctrl.selectAllChange(true);"/>
+         <span class="slds-checkbox--faux"></span>
+       </label>
+       <div ng-if="ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in ctrl.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>
+       <div ng-if="!ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in ctrl.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>         
+     </th>
+     <th>Product Name</th>
+     <th>Stage
+        <div class="select-custom-element">
+            <select name="loopnameStageRenewal" id="vlcproductrenewalStage" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                 style="font-size:12px;font-weight:bold;max-width:100%;" ng-init="p.vlcproductrenewalStage= p.Changes"
+                 ng-model="ctrl.vlcproductrenewalstage" ng-change="ctrl.updateStage(control)">              
+                <option ng-repeat="option in bpTree.response['IC-OpptyRecordType']" value="{{option}}">{{option}}</option>
+            </select>        
+         </div>
+     </th>
+     <td ng-if="ctrl.getImplType(control) == 'Renewal'">
+         Renewed with Changes
+        <div class="select-custom-element">
+            <select name="loopnameStageRenewalChange" id="vlcproductrenewalChange" ng-init="p.vlcproductrenewalChange= p.Changes"
+                ng-model="ctrl.vlcproductrenewalchange"
+                class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" ng-required='p.vlcSelectedRenewalChange' 
+                style="font-size:12px;font-weight:bold;max-width:100%;"  
+                ng-change="ctrl.updateRenewalChange(control)">
+                <option value=""></option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option> 
+            </select>
+         </div>
+     </td>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input id="xyz" type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this); ctrl.selectAllChange(false);'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.ProductName}}</td>
+    <td> 
+    <div class="select-custom-element" >
+        <select  name="loopname" id="vlcBundleStage"  ng-disabled="!p.vlcSelected"  class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched"  style="font-size:12px;font-weight:bold;max-width:100%;" 
+        ng-init="p.vlcBundleStage = p.ProductStage" ng-model="p.vlcBundleStage"
+        ng-options="programState for programState in bpTree.response['IMP-ProgramStages']" ng-change="updateProbability(p)"> </select>
+    </div>
+    </td>
+<td ng-if="ctrl.getImplType(control) == 'Renewal'">
+<div class="select-custom-element">
+<select name="loopname1" id="vlcproductrenewal" ng-init="p.vlcproductrenewal= p.Changes"
+ ng-disabled="!p.vlcSelected" ng-model="p.vlcproductrenewal"
+ class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" ng-required='p.vlcSelected' style="font-size:12px;font-weight:bold;max-width:100%;"  >
+<option value="">None</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option> 
+</select>
+         <span class="vlc-asterix icon-v-asterix ng-scope"></span>
+            </div>
+            </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcProductRenewalSelection.html  Template. -->
+<!-- ----------------------------- -->
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcBundleSelection.html Template.  Created at 2017-12-05 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcBundleSelection.html">
+ <div class="panel panel-default" ng-controller="Productstagecontroller as ctrl">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">
+       <label class="slds-checkbox">
+         <input type="checkbox" ng-model='ctrl.selectAll' ng-change="ctrl.selectAllChange(true);" ng-disabled="ctrl.showImpactedProductCheckBox(control) == 'Full Group Term'?true:false"/>
+         <span class="slds-checkbox--faux"></span>
+       </label>
+       <div ng-if="ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in ctrl.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>
+       <div ng-if="!ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in ctrl.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>                  
+     </th>
+    <th>Bundle Name</th>
+     <th>Program Name</th>
+     <th>Program Status
+        <div class="select-custom-element" ng-show="ctrl.showImpactedProductCheckBox(control) == 'Full Group Term'?false:true">
+            <select name="loopnameStageRenewal" id="vlcproductrenewalStage" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                 style="font-size:12px;font-weight:bold;max-width:100%;" ng-init="p.vlcproductrenewalStage= p.Changes"
+                 ng-model="ctrl.vlcproductrenewalstage" ng-change="ctrl.updateStage(control)">              
+                <option ng-repeat="option in bpTree.response['IC-OpptyRecordType']" value="{{option}}">{{option}}</option>
+            </select>        
+         </div>         
+      </th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this); ctrl.selectAllChange(false);' ng-disabled="ctrl.showImpactedProductCheckBox(control) == 'Full Group Term'?true:false"/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+      <td style="width:400px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;">{{p.BundleName}}</td>
+      <td ng-if="p.ProgramStatus !='In Progress' && p.ProgramStatus!='IGAP In Progress' && p.ProgramStatus!='Jeopardy'" ng-style="NoneProgrressStyle">{{p.ProgramName}}</td>
+      <td ng-if="p.ProgramStatus=='In Progress' || p.ProgramStatus=='IGAP In Progress' || p.ProgramStatus=='Jeopardy'" ng-style="InProgrressStyle">{{p.ProgramName}}</td>
+
+    <td >
+        <!-- PRDCRM-40698- Defaulting Stage to Termed for all programs for Full Group Term -->
+        <div class="select-custom-element" ng-if="ctrl.showImpactedProductCheckBox(control) == 'Full Group Term'">
+            <select name="loopname" id="vlcBundleStage" ng-disabled=true ng-style="{color: '##49739c'}"  class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched"  style="font-size:12px;font-weight:bold;max-width:100%;" ng-init="p.vlcBundleStage = 'Termed';p.Probability = '0%';"  ng-model="p.vlcBundleStage" ng-options="programState for programState in bpTree.response['IMP-ProgramStages']" ng-change="updateProbability(p)"> </select>
+        </div>
+        <div class="select-custom-element" ng-if="ctrl.showImpactedProductCheckBox(control) != 'Full Group Term'">
+                <select name="loopname" id="vlcBundleStage" ng-disabled="!p.vlcSelected" ng-if="p.ProgramStatus=='In Progress' || p.ProgramStatus=='IGAP In Progress' || p.ProgramStatus=='Jeopardy'" ng-style="{color: 'red'}"  class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched"  style="font-size:12px;font-weight:bold;max-width:100%;" ng-init="p.vlcBundleStage = p.ProgramStatus" ng-model="p.vlcBundleStage" ng-options="programState for programState in bpTree.response['IMP-ProgramStages']" ng-change="updateProbability(p)"> </select>
+
+                <select name="loopname" id="vlcBundleStage" ng-disabled="!p.vlcSelected" ng-if="p.ProgramStatus !='In Progress' && p.ProgramStatus!='IGAP In Progress' && p.ProgramStatus!='Jeopardy'" ng-style="{color: '##49739c'}"  class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched"  style="font-size:12px;font-weight:bold;max-width:100%;" ng-init="p.vlcBundleStage = p.ProgramStatus" ng-model="p.vlcBundleStage" ng-options="programState for programState in bpTree.response['IMP-ProgramStages']" ng-change="updateProbability(p)"> </select>
+        </div>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+
+<!-- Start of vlcTaxIds.html Template.  Created at 2017-12-05 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcTaxIds.html">
+   <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-wrap" style="table-layout: auto;width:50%;height: 100%">
+   <thead>
+   <tr>
+    <th class="slds-cell-wrap" style="word-wrap: break-word;"><b>Tax ID</b></th>
+    </tr>
+    </thead>
+     <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+      <tr ng-repeat="p in control.vlcSI[control.itemsKey]" ng-init="onSelectItem(control, p, $index, this, true);" ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+         <td class="slds-cell-wrap" style="word-wrap: break-word;"> 
+           <input type="text" name="TaxId" ng-model="p.TaxId" class="slds-input"/>
+         </td>
+      </tr>
+     </tbody>
+     </table>
+    </script>
+
+<!-- ----------------------------- -->
+<!-- End of vlcTaxIds.html  Template. -->
+<!-- ----------------------------- -->
+
+<!-- Start of vlcQLIs.html Template.  Created at 2017-12-05 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcQLIs.html">
+    <div class="panel panel-default" ng-controller="Productstagecontroller as ctrl">
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-wrap" style="table-layout: auto;width:100%;height: 100%">
+    <thead>
+    <tr>
+    <th class="slds-cell-wrap" style="word-wrap: break-word;font-size:14px;font-weight:bold;"><b>Plan Name</b></th>
+    <th class="slds-cell-wrap" style="word-wrap: break-word;font-size:14px;font-weight:bold;"><b>Funding</b></th>
+    <th class="slds-cell-wrap"  style="word-wrap: break-word;font-size:14px;font-weight:bold;"><b>HPCC Code</b></th>
+    <th class="slds-cell-wrap" style="word-wrap: break-word;font-size:14px;font-weight:bold;"><b>Benefit Period</b></th>
+    <th class="slds-cell-wrap" style="word-wrap: break-word;font-size:14px;font-weight:bold;"><b>HSA Banding Partner</b></th>
+    <th class="slds-cell-wrap" style="word-wrap: break-word;font-size:14px;font-weight:bold;"><b>Embedded EAP</b></th>
+    </tr>
+    </thead>
+     <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+      <tr ng-repeat="p in control.vlcSI[control.itemsKey]" ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+      <td class="wrapword" style= "white-space:Normal;font-size: 12px;">{{p.PlanName}}</td>
+       
+         
+         <!--  <input type="text" name="Funding" ng-model="p.Funding" class="slds-input ng-pristine ng-untouched ng-valid-minlength ng-valid-maxlength ng-empty ng-valid ng-valid-required"/> -->
+         <td style="padding: 12px;font-size:12px;"> 
+         <div class="select-custom-element">
+            <select name="loopname" id="Funding" ng-style="{color: '##49739c'}" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" style="font-size:12px;max-width:100%;" ng-model="p.Funding" ng-change="ctrl.addQLItoJSON(p)" class="slds-input ng-pristine ng-untouched ng-valid-minlength ng-valid-maxlength ng-empty ng-valid ng-valid-required" ng-options="funding for funding in bpTree.response.fundingPickValues"> </select>
+        </div>
+        </td>
+         <td style="padding: 12px;font-size:12px;"> 
+           <input type="text" name="HPCCCode" ng-model="p.HPCCCode" ng-change="ctrl.addQLItoJSON(p)" style="height:30px;width:74%;"/>
+         </td>
+         <td style="padding: 12px;font-size:12px;"> 
+           <div class="select-custom-element">       
+          <!-- <input type="text" name="BenefitPeriod" ng-model="p.BenefitPeriod" class="slds-input ng-pristine ng-untouched ng-valid-minlength ng-valid-maxlength ng-empty ng-valid ng-valid-required"/> -->
+          <select name="loopname" id="BenefitPeriod" ng-style="{color: '##49739c'}" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" style="font-size:12px;max-width:100%;" ng-model="p.BenefitPeriod" ng-change="ctrl.addQLItoJSON(p)" class="slds-input ng-pristine ng-untouched ng-valid-minlength ng-valid-maxlength ng-empty ng-valid ng-valid-required" ng-options="BenefitPeriod for BenefitPeriod in bpTree.response.benfitPickValues"> </select>
+          </div>          
+         </td>
+         <td style="padding: 12px;font-size:12px;">
+            <div class="select-custom-element">      
+          <!-- <input type="text" name="HSABankingPartner" ng-model="p.HSABankingPartner" class="slds-input ng-pristine ng-untouched ng-valid-minlength ng-valid-maxlength ng-empty ng-valid ng-valid-required"/> -->
+          <select name="loopname" id="HSABankingPartner" ng-style="{color: '##49739c'}" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" style="font-size:12px;max-width:100%;" ng-model="p.HSABankingPartner" ng-change="ctrl.addQLItoJSON(p)" class="slds-input ng-pristine ng-untouched ng-valid-minlength ng-valid-maxlength ng-empty ng-valid ng-valid-required" ng-options="HSABankingPartner for HSABankingPartner in bpTree.response.hsaPickValues"> </select>
+           </div>
+         </td>
+          <td class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.EmployeeAssistanceProgram' ng-change="ctrl.addQLItoJSON(p)" class="slds-input ng-pristine ng-untouched ng-valid-minlength ng-valid-maxlength ng-empty ng-valid ng-valid-required"/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+        </td>
+         
+      </tr>
+     </tbody>
+     </table>
+    </div>
+    </script>
+
+<!-- ----------------------------- -->
+<!-- End of vlcQLIs.html  Template. -->
+<!-- ----------------------------- -->
+</apex:component>

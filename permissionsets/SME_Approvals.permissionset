@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Permission set gives edit access to SME Approvals.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>SME Approvals</label>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>SME_Approvals__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <tabSettings>
+        <tab>SME_Approvals__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

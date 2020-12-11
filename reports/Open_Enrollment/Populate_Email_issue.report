@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Executive__c</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Account.SARAcctMgmt__c</field>
+    </columns>
+    <columns>
+        <field>Account.Client_Engagement_Consultant_SAR1__c</field>
+    </columns>
+    <columns>
+        <field>MEMBER_NAME</field>
+    </columns>
+    <columns>
+        <field>MEMBER_ROLE</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>GeoCon</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT.NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>McCorkle Nurseries Inc</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Populate Email issue</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountTeam</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

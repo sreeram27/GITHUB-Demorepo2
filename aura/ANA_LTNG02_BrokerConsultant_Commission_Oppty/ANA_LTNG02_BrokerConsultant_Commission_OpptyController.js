@@ -27,6 +27,5 @@
 	saveNewBR : function(component, event, helper){ 
         debugger;
         helper.saveRecordBR(component, event, helper);
-		//saitest
     }
 })

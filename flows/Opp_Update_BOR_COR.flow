@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>BOR</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>5.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision10</name>
+        <label>myDecision10</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision12</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_11</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_11_A1</targetReference>
+            </connector>
+            <label>OOC</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>6.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision12</name>
+        <label>myDecision12</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision14</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_13</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_13</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_13_A1</targetReference>
+            </connector>
+            <label>Update GenAgency</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>7.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision14</name>
+        <label>myDecision14</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_15</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_15</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_15_A1</targetReference>
+            </connector>
+            <label>Remove GenAgency</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision2</name>
+        <label>myDecision2</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision4</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_3_A1</targetReference>
+            </connector>
+            <label>COR</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision4</name>
+        <label>myDecision4</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision6</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_5</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_5_A1</targetReference>
+            </connector>
+            <label>Remove BOR</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>3.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision6</name>
+        <label>myDecision6</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision8</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_7</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_7</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_7_A1</targetReference>
+            </connector>
+            <label>Remove COR</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>4.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision8</name>
+        <label>myDecision8</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision10</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_9</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_9</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_9_A1</targetReference>
+            </connector>
+            <label>OOB</label>
+        </rules>
+    </decisions>
+    <description>Update Opportunity with BOR and COR for reporting</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+OR(
+  AND(
+    [Brokerage_and_Consultant1__c].Brokerage_of_Record__c = TRUE,
+    ISNEW(),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Brokerage__c))
+  ),
+  AND(
+    [Brokerage_and_Consultant1__c].Brokerage_of_Record__c = TRUE,
+    ISCHANGED([Brokerage_and_Consultant1__c].Brokerage__c),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Brokerage__c))
+  ),
+  And(
+  [Brokerage_and_Consultant1__c].Brokerage_of_Record__c = TRUE,
+  ISCHANGED([Brokerage_and_Consultant1__c].Brokerage_of_Record__c),
+  NOT(ISBLANK([Brokerage_and_Consultant1__c].Brokerage__c))
+  )
+)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(
+  AND(
+    {!myVariable_current.Brokerage_of_Record__c} = TRUE,
+    ISNEW(),
+    NOT(ISBLANK({!myVariable_current.Brokerage__c}))
+  ),
+  AND(
+    {!myVariable_current.Brokerage_of_Record__c} = TRUE,
+    ISCHANGED({!myVariable_current.Brokerage__c}),
+    NOT(ISBLANK({!myVariable_current.Brokerage__c}))
+  ),
+  And(
+  {!myVariable_current.Brokerage_of_Record__c} = TRUE,
+  ISCHANGED({!myVariable_current.Brokerage_of_Record__c}),
+  NOT(ISBLANK({!myVariable_current.Brokerage__c}))
+  )
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+OR(
+  AND(
+    [Brokerage_and_Consultant1__c].Consultant_of_Record__c = FALSE,
+    ISNEW(),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Consultant__c))
+  ),
+  AND(
+    [Brokerage_and_Consultant1__c].Consultant_of_Record__c = FALSE,
+    ISCHANGED([Brokerage_and_Consultant1__c].Consultant__c),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Consultant__c))
+  ),
+  AND(
+    [Brokerage_and_Consultant1__c].Consultant_of_Record__c = FALSE,
+    ISCHANGED([Brokerage_and_Consultant1__c].Consultant_of_Record__c),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Consultant__c))
+  )
+),
+AND(
+OR(
+ISPICKVAL([Brokerage_and_Consultant1__c].Broker_Role__c, &quot;Broker&quot;),
+ISPICKVAL([Brokerage_and_Consultant1__c].Broker_Role__c, &quot;Consultant&quot;)
+)
+)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_11</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(
+  AND(
+    {!myVariable_current.Consultant_of_Record__c} = FALSE,
+    ISNEW(),
+    NOT(ISBLANK({!myVariable_current.Consultant__c}))
+  ),
+  AND(
+    {!myVariable_current.Consultant_of_Record__c} = FALSE,
+    ISCHANGED({!myVariable_current.Consultant__c}),
+    NOT(ISBLANK({!myVariable_current.Consultant__c}))
+  ),
+  AND(
+    {!myVariable_current.Consultant_of_Record__c} = FALSE,
+    ISCHANGED({!myVariable_current.Consultant_of_Record__c}),
+    NOT(ISBLANK({!myVariable_current.Consultant__c}))
+  )
+),
+AND(
+OR(
+ISPICKVAL({!myVariable_current.Broker_Role__c}, &quot;Broker&quot;),
+ISPICKVAL({!myVariable_current.Broker_Role__c}, &quot;Consultant&quot;)
+)
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+OR(
+  AND(
+    [Brokerage_and_Consultant1__c].Brokerage_of_Record__c = False,
+    ISNEW(),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Brokerage__c))
+  ),
+  
+  AND(
+    [Brokerage_and_Consultant1__c].Brokerage_of_Record__c = FALSE,
+	 NOT(ISBLANK([Brokerage_and_Consultant1__c].Brokerage__c)),
+	 OR(
+		ISCHANGED([Brokerage_and_Consultant1__c].Brokerage__c),		
+		ISCHANGED([Brokerage_and_Consultant1__c].Brokerage_Role__c),
+		ISCHANGED([Brokerage_and_Consultant1__c].Brokerage_End_Date__c)		
+        
+     )
+    )
+),
+ISBLANK([Brokerage_and_Consultant1__c].Brokerage_End_Date__c),
+ISPICKVAL([Brokerage_and_Consultant1__c].Brokerage_Role__c, &quot;General Agency&quot;)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_13</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(
+  AND(
+    {!myVariable_current.Brokerage_of_Record__c} = False,
+    ISNEW(),
+    NOT(ISBLANK({!myVariable_current.Brokerage__c}))
+  ),
+  
+  AND(
+    {!myVariable_current.Brokerage_of_Record__c} = FALSE,
+	 NOT(ISBLANK({!myVariable_current.Brokerage__c})),
+	 OR(
+		ISCHANGED({!myVariable_current.Brokerage__c}),		
+		ISCHANGED({!myVariable_current.Brokerage_Role__c}),
+		ISCHANGED({!myVariable_current.Brokerage_End_Date__c})		
+        
+     )
+    )
+),
+ISBLANK({!myVariable_current.Brokerage_End_Date__c}),
+ISPICKVAL({!myVariable_current.Brokerage_Role__c}, &quot;General Agency&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>OR(
+AND(
+[Brokerage_and_Consultant1__c].Brokerage_End_Date__c &gt;= Today(),
+ISCHANGED([Brokerage_and_Consultant1__c].Brokerage_End_Date__c)
+),
+AND(
+ISCHANGED([Brokerage_and_Consultant1__c].Brokerage_Role__c) ,
+PRIORVALUE([Brokerage_and_Consultant1__c].Brokerage_Role__c)= &quot;General Agency&quot;)
+
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_15</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+AND(
+{!myVariable_current.Brokerage_End_Date__c} &gt;= Today(),
+ISCHANGED({!myVariable_current.Brokerage_End_Date__c})
+),
+AND(
+ISCHANGED({!myVariable_current.Brokerage_Role__c}) ,
+PRIORVALUE({!myVariable_current.Brokerage_Role__c})= &quot;General Agency&quot;)
+
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+OR(
+  AND(
+    [Brokerage_and_Consultant1__c].Consultant_of_Record__c  = TRUE,
+    ISNEW(),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Consultant__c))
+  ),  
+  AND(
+      [Brokerage_and_Consultant1__c].Consultant_of_Record__c  = TRUE,
+      ISCHANGED([Brokerage_and_Consultant1__c].Consultant_of_Record__c),
+      NOT(ISBLANK([Brokerage_and_Consultant1__c].Consultant__c))
+    ),
+  AND(
+    [Brokerage_and_Consultant1__c].Consultant_of_Record__c  = TRUE,
+    ISCHANGED([Brokerage_and_Consultant1__c].Consultant__c),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Consultant__c))
+  )
+)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_3</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(
+  AND(
+    {!myVariable_current.Consultant_of_Record__c}  = TRUE,
+    ISNEW(),
+    NOT(ISBLANK({!myVariable_current.Consultant__c}))
+  ),  
+  AND(
+      {!myVariable_current.Consultant_of_Record__c}  = TRUE,
+      ISCHANGED({!myVariable_current.Consultant_of_Record__c}),
+      NOT(ISBLANK({!myVariable_current.Consultant__c}))
+    ),
+  AND(
+    {!myVariable_current.Consultant_of_Record__c}  = TRUE,
+    ISCHANGED({!myVariable_current.Consultant__c}),
+    NOT(ISBLANK({!myVariable_current.Consultant__c}))
+  )
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>OR(
+AND(
+[Brokerage_and_Consultant1__c].Brokerage_End_Date__c &gt;= Today(),
+ISCHANGED([Brokerage_and_Consultant1__c].Brokerage_End_Date__c)
+),
+AND(
+ISCHANGED([Brokerage_and_Consultant1__c].Brokerage_of_Record__c) ,
+[Brokerage_and_Consultant1__c].Brokerage_of_Record__c = FALSE
+)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_5</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+AND(
+{!myVariable_current.Brokerage_End_Date__c} &gt;= Today(),
+ISCHANGED({!myVariable_current.Brokerage_End_Date__c})
+),
+AND(
+ISCHANGED({!myVariable_current.Brokerage_of_Record__c}) ,
+{!myVariable_current.Brokerage_of_Record__c} = FALSE
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>
+OR(
+AND(
+[Brokerage_and_Consultant1__c].ConsultantEndDate__c  &gt;= Today(),
+ISCHANGED([Brokerage_and_Consultant1__c].ConsultantEndDate__c )
+),
+AND(
+ISCHANGED([Brokerage_and_Consultant1__c].consultant_of_Record__c) ,
+[Brokerage_and_Consultant1__c].consultant_of_Record__c = FALSE
+)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_7</name>
+        <dataType>Boolean</dataType>
+        <expression>
+OR(
+AND(
+{!myVariable_current.ConsultantEndDate__c}  &gt;= Today(),
+ISCHANGED({!myVariable_current.ConsultantEndDate__c} )
+),
+AND(
+ISCHANGED({!myVariable_current.Consultant_of_Record__c}) ,
+{!myVariable_current.Consultant_of_Record__c} = FALSE
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+OR(
+  AND(
+    [Brokerage_and_Consultant1__c].Brokerage_of_Record__c = FALSE,
+    ISNEW(),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Brokerage__c))
+  ),
+  AND(
+    [Brokerage_and_Consultant1__c].Brokerage_of_Record__c = FALSE,
+    ISCHANGED([Brokerage_and_Consultant1__c].Brokerage__c),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Brokerage__c))
+  ),
+  AND(
+    [Brokerage_and_Consultant1__c].Brokerage_of_Record__c = FALSE,
+    ISCHANGED([Brokerage_and_Consultant1__c].Brokerage_of_Record__c),
+    NOT(ISBLANK([Brokerage_and_Consultant1__c].Brokerage__c))
+  )
+),
+AND(
+ISPICKVAL([Brokerage_and_Consultant1__c].Brokerage_Role__c, &quot;Brokerage&quot;)
+)
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_9</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+OR(
+  AND(
+    {!myVariable_current.Brokerage_of_Record__c} = FALSE,
+    ISNEW(),
+    NOT(ISBLANK({!myVariable_current.Brokerage__c}))
+  ),
+  AND(
+    {!myVariable_current.Brokerage_of_Record__c} = FALSE,
+    ISCHANGED({!myVariable_current.Brokerage__c}),
+    NOT(ISBLANK({!myVariable_current.Brokerage__c}))
+  ),
+  AND(
+    {!myVariable_current.Brokerage_of_Record__c} = FALSE,
+    ISCHANGED({!myVariable_current.Brokerage_of_Record__c}),
+    NOT(ISBLANK({!myVariable_current.Brokerage__c}))
+  )
+),
+AND(
+ISPICKVAL({!myVariable_current.Brokerage_Role__c}, &quot;Brokerage&quot;)
+)
+)</expression>
+    </formulas>
+    <interviewLabel>Opp_Update_BOR_COR-13_InterviewLabel</interviewLabel>
+    <label>Opp - Update BOR &amp; COR</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Brokerage_and_Consultant1__c</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Brokerage_and_Consultant1__c].Opportunity</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_11_A1</name>
+        <label>OOC</label>
+        <locationX>1100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision12</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Other Opportunity Consultant</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Other_Opportunity_Consultant__c</field>
+            <value>
+                <elementReference>myVariable_current.Consultant__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Brokerage_and_Consultant1__c].Opportunity</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_13_A1</name>
+        <label>Update GenAgency</label>
+        <locationX>1300</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Opportunity General Agency</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Opportunity_General_Agency__c</field>
+            <value>
+                <elementReference>myVariable_current.Brokerage__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Brokerage_and_Consultant1__c].Opportunity</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_15_A1</name>
+        <label>Remove Gen Agency</label>
+        <locationX>1500</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Opportunity General Agency</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Opportunity_General_Agency__c</field>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Brokerage_and_Consultant1__c].Opportunity</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Update BOR</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Opportunity Brokerage of Record</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Opportunity_Brokerage_of_Record__c</field>
+            <value>
+                <elementReference>myVariable_current.Brokerage__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Brokerage_and_Consultant1__c].Opportunity</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_3_A1</name>
+        <label>Update COR</label>
+        <locationX>300</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision4</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Opportunity Consultant of Record</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Opportunity_Consultant_of_Record__c</field>
+            <value>
+                <elementReference>myVariable_current.Consultant_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Brokerage_and_Consultant1__c].Opportunity</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_5_A1</name>
+        <label>Remove BOR from Opp</label>
+        <locationX>500</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision6</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Opportunity Brokerage of Record</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Opportunity_Brokerage_of_Record__c</field>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Brokerage_and_Consultant1__c].Opportunity</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_7_A1</name>
+        <label>Remove COR from Opp</label>
+        <locationX>700</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision8</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Opportunity Consultant of Record</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Opportunity_Consultant_of_Record__c</field>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Brokerage_and_Consultant1__c].Opportunity</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_9_A1</name>
+        <label>OOB</label>
+        <locationX>900</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision10</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Opportunity__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Other Opportunity Brokerage</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Other_Opportunity_Brokerage__c</field>
+            <value>
+                <elementReference>myVariable_current.Brokerage__r.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Brokerage_and_Consultant1__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Brokerage_and_Consultant1__c</objectType>
+    </variables>
+</Flow>

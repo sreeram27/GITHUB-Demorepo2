@@ -1,0 +1,57 @@
+<body>
+
+Account Management Teams:<p/>
+The following outlines the 2018 renewal process as well as our spring data clean-up for your accounts.
+Please be sure to complete all required items by <mark>no later than DATE TBD</mark>.<p/>
+<b><u>The January YYYY Renewal was created based on the following:</u></b>
+<ul style="list-style-type:disc">
+  <li>Previous Year's Finalized Opportunity</li>
+  <li>In Group Add Product Opportunities (on-cycle and off-cycle)</li>
+  <li>New Business Opportunity</li>
+  <li>All Opportunities start at the “Initiated Stage” and a 10% “Probability 	Stage”</li>
+
+</ul><p/>
+<b><u>What action do I need to take for my January 2018 renewals?</u></b>
+<ul style="list-style-type:disc">
+ 
+ <li>Update the RFP Status
+ <ul>
+ <li><b>Rate Guarantee =</b> Rate is under a current guarantee or multi-year guarantee </li>
+ <li><b>Active Renewal =</b> Rate negotiation/renewal opportunities</li>
+ </ul>
+ </li>
+  <li>In Group Add Product when there is not a full RFP for the entire renewal</li>
+  <li>In Group Change Opportunities that do not require an RFP
+  Full RFP = Any Opportunity where a formal Full RFP is included</li> 
+<li>Review the 2018 Opportunities for any missing information including products and group numbers</li>
+<li>Remove any duplicate products from under a group number</li>
+</ul>
+<b><u>The following outlines the checklist to review for each of your accounts:</u></b>
+</body>
+<ul>
+<li>Validate Opportunity Effective Date</li>
+<li>Validate MBU</li>
+<li>Validate the Account Team information is correct</li>
+<li>RVP, Director, Account Manager, and Account Executive</li>
+<li>Specialty team members remain on the account</li>
+<li>Validate Headquarter State</li>
+<li>Validate Client Address</li>
+<li>Validate Group Size</li>
+<li>Validate Eligible Employees</li>
+<li>Validate SIC Code</li>
+<li>Validate the program lines under the each respective product bundles</li>
+<li>Validate the correct Brokerage and Consultant of Record (BOR and COR) is assigned to the group</li>
+<li>Validate a Primary Contact is on file 
+Validate Competitors are up to date on Service Provider Relationship (very important to update
+this information if things changed from the previous year)</li>
+<li>If a carrier listed in Salesforce is no longer applicable, delete the record from Salesforce</li>
+<li>Exchange clients should list all applicable carriers and approximate membership</li>
+<li>Do not leave the membership field blank or 0 (Estimate as necessary)</li>
+<li>Validate Client Vendor Relationships are up to date on Service Provider Relationship</li>
+<li>If a vendor listed in Salesforce is no longer applicable, enter the termination date and add the
+new vendor if applicable</li>
+<li><mark>Important:</mark> Once your review is complete for each account, <mark>please check mark the Yearly
+Refresh box</mark> on the Account Detail screen. (Screen print below).</li>
+</ul>
+<img src="https://commercial--config--c.cs51.content.force.com/servlet/servlet.ImageServer?id=0154B000000E9zb&oid=00D4B000000CxUX&lastMod=1498645289000"/>
+</body>

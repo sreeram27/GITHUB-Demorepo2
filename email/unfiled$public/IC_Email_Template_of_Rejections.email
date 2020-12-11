@@ -1,0 +1,5 @@
+Dear {!Internal_Commission__c.Account_Executive__c},
+
+The {!Internal_Commission__c.Name} for {!Internal_Commission__c.Opportunity_Name__c} has been rejected.
+
+{!Internal_Commission__c.Link}

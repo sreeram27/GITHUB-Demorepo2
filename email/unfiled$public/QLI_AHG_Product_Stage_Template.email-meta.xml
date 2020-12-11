@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sales - This email template is used to notify Other-Anthem Health Guide Product Stage to Anthem health Guide(Sold,IGAP Sold,Lost,Dead,IGAP Lost,IGAP Dead) team.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>QLI - AHG Product Stage Template</name>
+    <style>none</style>
+    <subject>Other-Anthem Health Guide Product Stage</subject>
+    <textOnly>This communication is to inform you the following Product has been marked {!QuoteLineItem.ProductStage__c}. Please ensure to submit for approval and confirm it&apos;s ready for hand-off to implementation.
+
+Client Name: {!QuoteLineItem.ClientName__c}
+Account Executive: {!QuoteLineItem.AccountExecutive__c}
+Effective Date: {!QuoteLineItem.OpportunityEffectiveDate__c}
+Region: {!QuoteLineItem.Region__c}
+HQ State: {!QuoteLineItem.HQState__c}
+New or existing: {!QuoteLineItem.OppType__c}
+Market: National Accounts
+Claims Platform: {!QuoteLineItem.ClaimsPlatform__c}
+Product:{!QuoteLineItem.ProductName__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

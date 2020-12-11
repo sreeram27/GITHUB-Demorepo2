@@ -1,0 +1,53 @@
+<apex:page standardController="Contact" extensions="WM4SF3.ctrl_usage" docType="html-5.0" >
+    <style type="text/css">
+        .not-identify-wrapper {
+          width: 800px;
+          height: 370px;
+          padding-top:130px;
+          margin:0 auto;
+          background-color: #f4f4f4;
+        }
+        
+        .not-identify-image {
+          width: 165px;
+          height: 165px;
+          margin: 0 auto 26px;
+          background: #f4f4f4 url() no-repeat 0 0;
+        }
+        
+        .not-identify-text {
+          margin: 0;
+          font-family: "Open Sans", sans-serif;
+          font-size: 16px;
+          color: #5f5f5f;
+          line-height:24px;
+          text-align: center;
+        }
+        
+        .not-identify-text.bold {
+          font-weight: 600;
+        }
+    </style>
+
+    <apex:iframe src="https://insights.walkme.com?uid={!uid}&euid={!Contact[euidField]}&guid={!token}" rendered="{!uid !='' && Contact[euidField]!=''}" height="1500px" scrolling="true"/>
+
+    <div id="NoDataSection" rendered="{!uid =='' || Contact[euidField] =='' }" align="center">
+        
+          
+        <div class="not-identify-wrapper" rendered="{!Contact[euidField] ==''}">
+            <div class="not-identify-image">
+              <apex:image value="{!$Resource.WM4SF3__NoDataImage}" alt="No Data Was Found Image"/>
+            </div>
+          <p class="not-identify-text bold">WalkMe does not identify this Contact yet.</p>
+          <p class="not-identify-text">To see their WalkMe interactions, add value to "{!$ObjectType.Contact.Fields[euidField].Label}" field</p>
+        </div>
+        
+        
+        <div class="not-identify-wrapper" rendered="{!uid ==''}">
+            <div class="not-identify-image">
+              <apex:image value="{!$Resource.WM4SF3__NoDataImage}" alt="No Data Was Found Image"/>
+            </div>
+          <p class="not-identify-text">WalkMe Was Not Set Up To View WalkMe Usage, Please Contact Your WalkMe Admin.</p>
+        </div>
+    </div>
+</apex:page>

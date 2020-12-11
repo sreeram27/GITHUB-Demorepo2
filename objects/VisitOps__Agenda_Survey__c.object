@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>VisitOps__Agenda_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VisitOps__Agenda__r.VisitOps__Agenda_Title__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agenda</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Agenda__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Agenda</label>
+        <referenceTo>VisitOps__Agenda__c</referenceTo>
+        <relationshipLabel>Agenda Survey</relationshipLabel>
+        <relationshipName>Agenda_Survey</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Arrival_Date_Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>DATETIMEVALUE(  VisitOps__Survey__r.VisitOps__Visit__r.VisitOps__ArrivalDateTimeLocationTZ__c  )</formula>
+        <label>Arrival Date (Location)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Comments</inlineHelpText>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Departure_Date_Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>DATETIMEVALUE(  VisitOps__Survey__r.VisitOps__Visit__r.VisitOps__DepartureDateTimeLocationTZ__c  )</formula>
+        <label>Departure Date (Location)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Session_Expectations_Met__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Did these sessions/presenters meet your expectations?</inlineHelpText>
+        <label>Session Expectations Met?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>Somewhat</fullName>
+                    <default>false</default>
+                    <label>Somewhat</label>
+                </value>
+                <value>
+                    <fullName>Not really</fullName>
+                    <default>false</default>
+                    <label>Not really</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Session_Rating__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Session Rating</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Survey__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Survey</label>
+        <referenceTo>VisitOps__Survey__c</referenceTo>
+        <relationshipLabel>Agenda Survey</relationshipLabel>
+        <relationshipName>Agenda_Survey</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Agenda Survey</label>
+    <listViews>
+        <fullName>VisitOps__All</fullName>
+        <columns>NAME</columns>
+        <columns>VisitOps__Agenda__c</columns>
+        <columns>VisitOps__Survey__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_ACTIVITY</columns>
+        <columns>VisitOps__Agenda_Title__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>VisitOps__Session_Rating__c</columns>
+        <columns>VisitOps__Comments__c</columns>
+        <columns>VisitOps__Session_Expectations_Met__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>AS {0000}</displayFormat>
+        <label>Agenda Survey Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Agenda Survey</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>VisitOps__Survey__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__Agenda__c</customTabListAdditionalFields>
+        <listViewButtons>VisitOps__Update_Selected_Session_Presenter_Ratings</listViewButtons>
+        <lookupDialogsAdditionalFields>VisitOps__Survey__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>VisitOps__Survey__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>VisitOps__Survey__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Update_Selected_Session_Presenter_Ratings_Lightning</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Update Selected Session/Presenter Ratings Lightning</masterLabel>
+        <openType>sidebar</openType>
+        <page>VOUpdateSelectedSessionPresenterRatings</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>VisitOps__Update_Selected_Session_Presenter_Ratings</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Update Selected Session/Presenter Ratings</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/9.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/apex.js&quot;)}
+{!REQUIRESCRIPT(&quot;/support/console/30.0/integration.js&quot;)}
+var records = {!GETRECORDIDS( $ObjectType.VisitOps__Agenda_Survey__c)};
+var childwindow;
+var url = location.href;
+if (records[0] == null) {
+alert(&apos;Please select at least one record.&apos;)
+}
+else{
+
+var urlrec;
+
+urlrec= &apos;/apex/VisitOps__MassUpdateAgendaSurvey?idlist=&apos;+records+&apos;&amp;retURL=/{!VisitOps__Agenda_Survey__c.Id}&amp;saveURL=/{!VisitOps__Agenda_Survey__c.Id}&apos;;
+
+popitup(urlrec);
+
+
+}
+function popitup(url) {
+newwindow = window.open(url,&apos;Mass Edit Agenda Survey&apos;,&apos;height=450,width=600&apos;);
+var polltimer = setInterval(function(){ 
+		if(newwindow != null){
+                if(newwindow.closed)
+		{
+			clearInterval(polltimer);
+			window.location.reload();
+		}}
+	}, 500);
+
+
+return false;
+}
+
+window.addEventListener(&apos;message&apos;,function(e) {
+window.location.reload();
+},false);</url>
+    </webLinks>
+</CustomObject>

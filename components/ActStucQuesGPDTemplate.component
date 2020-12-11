@@ -1,0 +1,487 @@
+<apex:component >
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcActStrcQuesEmpClassQliGpd.html Template.  Created at 2019-10-01 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcActStrcQuesEmpClassQliGpd.html">
+<div class="panel panel-default" ng-controller="EmpClassQliGpdController as ctrl"  style="width: 80%">
+
+  <!-- Start | code for setting all effective date | Date : 23rd Nov 2019 | Changed by Accenture-Panthers -->
+    Set All Effective Date :
+    <select id="setEffectiveDate" name="setEffectiveDate" ng-model="setEffectiveDateOption">
+        <option value="Individual" selected>Individual</option>
+        <option value="All">All</option>
+    </select>
+    <!--<input style="font-size:12px;" ng-show="setEffectiveDateOption=='All'" type="date" ng-change="ctrl.setAllEffectiveDate();" ng-blur="ctrl.changeAllEffectiveDate();" onkeydown="return false" ng-model="allDate"/>-->
+    <input style="font-size:12px;" ng-show="setEffectiveDateOption=='All'" type="date" ng-change="ctrl.changeAllEffectiveDate();" ng-blur="ctrl.setAllEffectiveDate();" onkeydown="return false" ng-model="allDate"/>
+    <br/>    
+    <br/> 
+    <!-- End | code for setting all effective date | Date : 23rd Nov 2019 | Changed by Accenture-Panthers -->
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;" width="100%">
+  <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th  style="font-size:12px;">Select<br/></th>     
+     <th class="slds-cell-shrink" style="font-size:12px;" ng-click="ctrl.sortBy('PlanName')">Plan Name
+     <span class="sortorder" ng-show="propertyName === 'PlanName'" ng-class="{reverse: reverse}"></span>
+     </th>     
+     <th class="slds-cell-shrink" style="font-size:12px;"  ng-click="ctrl.sortBy('ProductLOB')">Line Of<br/>Business
+     <span class="sortorder" ng-show="propertyName === 'ProductLOB'" ng-class="{reverse: reverse}"></span>
+     </th>  
+     <th class="slds-cell-shrink" style="font-size:12px;" ng-click="ctrl.sortBy('Funding')">Funding
+     <span class="sortorder" ng-show="propertyName === 'Funding'" ng-class="{reverse: reverse}"></span>
+     </th>   
+     <th class="slds-cell-shrink" style="font-size:12px;" ng-click="ctrl.sortBy('ContractCode')">Contract<br/>Code
+     <span class="sortorder" ng-show="propertyName === 'ContractCode'" ng-class="{reverse: reverse}"></span>
+     </th>    
+     <th class="slds-cell-shrink" style="font-size:12px;" ng-click="ctrl.sortBy('EmpCategory')">Employee<br/>Category
+     <span class="sortorder" ng-show="propertyName === 'EmpCategory'" ng-class="{reverse: reverse}"></span>
+     </th>       
+     <th class="slds-cell-shrink" style="font-size:12px;" ng-click="ctrl.sortBy('EmpClassName')">Employee<br/>Class Name
+     <span class="sortorder" ng-show="propertyName === 'EmpClassName'" ng-class="{reverse: reverse}"></span>
+     </th>    
+     <!--<th class="slds-cell-shrink" style="font-size:12px;" ng-click="ctrl.sortBy('GPDName')">GPD ID
+     <span class="sortorder" ng-show="propertyName === 'GPDName'" ng-class="{reverse: reverse}"></span> -->
+     </th> 
+     <th class="slds-cell-shrink" style="font-size:12px;">Sequence<br/>Number</th> 
+     <th class="slds-cell-shrink" style="font-size:12px;">Group Suffix<br/>Effective Date</th> 
+     <th class="slds-cell-shrink" style="font-size:12px;">Group Suffix<br/>Cancel Date</th>  
+     <th class="slds-cell-shrink" style="font-size:12px;" ng-click="ctrl.sortBy('GroupPlanDescription')">Group Plan<br/>Description
+     <span class="sortorder" ng-show="propertyName === 'GroupPlanDescription'" ng-class="{reverse: reverse}"></span>
+     </th>     
+    </tr>
+   </thead>
+
+  
+      
+  <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat="gpdItem in (control.vlcSI[control.itemsKey] | orderBy:propertyName:reverse)" ng-class="{'vlc-selectableitem-selected' : gpdItem.vlcSelected }" >
+      
+       <th class="slds-cell-shrink" style="font-size:12px;">
+        <label class="slds-checkbox">
+           <input type="checkbox" ng-model='gpdItem.vlcSelected' 
+                       ng-change='ctrl.selectUnselectCheckBox($index,gpdItem)'
+                       ng-init='onSelectItem(control, gpdItem, $index, this, false)' />
+         <span class="slds-checkbox--faux"></span>
+
+        </label>
+     </th>
+          <td style="width:500px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;font-size:12px;">{{gpdItem.PlanName}}</td> 
+          <td style="font-size:12px;">{{gpdItem.ProductLOB}}</td>                                                  
+          <td style="font-size:12px;">{{gpdItem.Funding}}</td>
+          <td style="font-size:12px;">{{gpdItem.ContractCode}}</td>
+          <td style="width:500px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;font-size:12px;">{{gpdItem.EmpCategory}}</td>          
+           <td style="width:500px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;font-size:12px;">{{gpdItem.EmpClassName}}</td>    
+          <!-- <td style="font-size:12px;">{{gpdItem.GPDName}}</td> -->
+          <td style="padding: 12px;font-size:12px;">    
+            <p ng-show="!gpdItem.vlcSelected || !ctrl.checkEditAcces(gpdItem)" style="font-size:12px;">{{ gpdItem.SequenceNumber }}</p>
+           <input type="text" name="SequenceNumber" ng-show="gpdItem.vlcSelected && ctrl.checkEditAcces(gpdItem)" ng-model="gpdItem.SequenceNumber"
+           style="resize:none;font-size:12px;width:50px;"/>
+           
+          </td>
+         
+        <td style="font-size:12px;" ng-init="ctrl.convertEffectiveDateStrToDate()">
+        
+         <p ng-show="!gpdItem.vlcSelected">{{ gpdItem.GroupSuffixEffectiveDate | date :  "MM/dd/yyyy" }}</p>
+         
+           <input type="date" ng-model="gpdItem.GroupSuffixEffectiveDate"  ng-change="ctrl.changeEffDate($index,gpdItem)"
+                        ng-show="gpdItem.vlcSelected" ng-required="gpdItem.vlcSelected" onkeydown="return false"
+                        style="width: 112px;"
+                        ng-style="{'border' : (gpdItem.vlcSelected == true) ? '1px solid #ff0000' : 'none'}"/>
+         
+            
+         </td>
+         
+          <td style="font-size:12px;" ng-init="ctrl.convertCancelDateStrToDate()">
+                 
+         <p ng-show="!gpdItem.vlcSelected">{{ gpdItem.GroupSuffixCancelDate | date :  "MM/dd/yyyy" }}</p>
+         
+           <input type="date" ng-model="gpdItem.GroupSuffixCancelDate"  ng-change="ctrl.changeCancelDate($index,gpdItem)" onkeydown="return false"
+                        ng-show="gpdItem.vlcSelected" style="width: 117px;"/>
+     
+         </td>
+           
+          <td style="text-align:center;">          
+           <textarea name="text" wrap="soft" ng-readonly="!gpdItem.vlcSelected" ng-model="gpdItem.GroupPlanDescription"
+           style="resize:none;font-size:12px"/>
+           
+          </td>
+     </tr>
+       
+     </tbody>
+     </table>
+</div>
+
+
+ <p>&nbsp;</p>
+</script>
+
+<!-- Hiding the StepChart for Plan Design -->
+<!--<script type="text/ng-template" id="vlcSldsRightPanel.html">
+<div class="vlc-slds-right--panel--custom" ng-if="!bpTree.RTTracking['GroupPlanDesignSuffix']['watchStarted']">
+    <div vlc-slds-step-chart map="StepChart" class="testClass"></div>
+    <ng-include ng-repeat="vlcPC in ::bpTree.propSetMap.persistentComponent"
+                ng-if='bpTree.showPCNew[vlcPC.pcIndex] && ($index === 1 )'
+                id='{{::vlcPC.id}}'
+                knowledge="true"
+                src="::bpTree.dfHPSTmpl[vlcPC.pcIndex]"/>
+</div>
+</script> -->
+
+
+
+<!-- ------------------------------------------------------------------- -->
+<!-- End of vlcActStrcQuesEmpClassQliGpd.html Template -->
+<!-- ------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcActStrcQuesEligibilityProductData.html Template.  Created at 2019-11-18 UTC -->
+<!-- ------------------------------------------------------------------- -->
+
+<script type="text/ng-template" id="vlcActStrcQuesEligibilityProductData.html">
+ <div class="panel panel-default" ng-controller="EmpClassQliGpdController as ctrl"  style="width: 100%">
+ 
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;" width="100%">
+  <thead>
+    <tr>   
+    
+     <th class="slds-cell-shrink" style="font-size:12px;">Plan Name </th> </td>   
+     <th class="slds-cell-shrink" style="font-size:12px;">Line Of<br/>Business </th>    
+     <th class="slds-cell-shrink" style="font-size:12px;">% Prem Paid For Each Sub <br/><center>Per Month</center></th>
+     <th class="slds-cell-shrink" style="font-size:12px;">% Prem Paid For Each Sub <br/><center>Dep Per Month</center</th>    
+     <th class="slds-cell-shrink" style="font-size:12px;">Domestic Partner<br/>Indicator</th>
+     <th class="slds-cell-shrink" style="font-size:12px;">New Hire Probationary<br/><center>Period</center></th> 
+    </tr>
+   </thead>
+  
+      
+  <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat="p in control.vlcSI[control.itemsKey] track by $index">
+      
+         <td style="width:200px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;font-size:12px;">{{p.ProductName}}</td> 
+          <td style="font-size:12px;">{{p.ProductLOB}}</td>
+           <td style="font-size:12px;text-align-last: center;"><input type="text" style="height:30px"  maxlength="3" size="6"  ng-change="ctrl.addEligibilityQLItoJSON(p)" ng-model="p.PercentageSubMonth" /></td>
+          <td style="font-size:12px;text-align-last: center;"><input type="text" style="height:30px"  maxlength="3" size="6"  ng-change="ctrl.addEligibilityQLItoJSON(p)" ng-model="p.PercentageSubDepMonth" /></td>
+          <td>
+          <div class="select-custom-element" >
+            
+              <select ng-if="bpTree.response['DomesticPartnerValues'].length==undefined" 
+                name="DomesticPartnerIndicator" id="DomesticPartnerIndicator" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                style="font-size:12px;width:30px;" 
+                ng-model="p.DomesticPartnerIndicator"
+                ng-change="ctrl.addEligibilityQLItoJSON(p)">
+                    <option value="{{bpTree.response.DomesticPartnerValues.value}}">{{bpTree.response.DomesticPartnerValues.apiName}}</option>
+            </select>
+            
+            
+            <select ng-if="bpTree.response['DomesticPartnerValues'].length > 1"  name="DomesticPartnerIndicator" id="DomesticPartnerIndicator" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                 style="font-size:12px;max-width:100%; " 
+                 ng-model="p.DomesticPartnerIndicator" ng-options="item.value as item.apiName for item in bpTree.response['DomesticPartnerValues']"
+                 ng-change="ctrl.addEligibilityQLItoJSON(p)">
+                 </select>
+                
+            </div>
+          </td>
+          <td>
+                  <div class="select-custom-element" >
+
+            
+              <select ng-if="bpTree.response['NewHireProbValues'].length==undefined" 
+                name="NewHireProbationaryPeriod" id="NewHireProbationaryPeriod" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                style="font-size:12px;max-width:100%" 
+                ng-model="p.NewHireProbationaryPeriod"
+                ng-change="ctrl.addEligibilityQLItoJSON(p)">
+                    <option value="{{bpTree.response.NewHireProbValues.value}}">{{bpTree.response.NewHireProbValues.apiName}}</option>
+            </select>
+            
+            
+            <select ng-if="bpTree.response['NewHireProbValues'].length > 1"  name="NewHireProbationaryPeriod" id="NewHireProbationaryPeriod" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                 style="font-size:12px;max-width:100%;" 
+                 ng-model="p.NewHireProbationaryPeriod" ng-options="item.value as item.apiName for item in bpTree.response['NewHireProbValues']"
+                 ng-change="ctrl.addEligibilityQLItoJSON(p)">
+                 </select>
+                
+            </div>
+           
+            
+            
+          </td>
+     </tr>       
+     </tbody>
+     </table>
+ </div>
+ 
+ 
+
+ 
+ <p>&nbsp;</p>
+</script>
+<!-- ------------------------------------------------------------------- -->
+<!-- End of vlcActStrcQuesEligibilityProductData.html Template.  Created at 2019-11-25 UTC -->
+<!-- ------------------------------------------------------------------- -->
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcActStrcQuesQliProductData.html Template.  Created at 2019-10-17 UTC -->
+<!-- ------------------------------------------------------------------- -->
+
+<script type="text/ng-template" id="vlcActStrcQuesQliProductData.html">
+ <div class="panel panel-default" ng-controller="EmpClassQliGpdController as ctrl"  style="width: 100%">
+ 
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;" width="100%">
+  <thead>
+    <tr>   
+    
+     <th class="slds-cell-shrink" style="font-size:12px;">Plan Name</th>    
+     <th class="slds-cell-shrink" style="font-size:12px;">Line Of<br/>Business</th>    
+     <th class="slds-cell-shrink" style="font-size:12px;">Members</th>    
+     <th class="slds-cell-shrink" style="font-size:12px;">Contract<br/>Code</th>    
+     <th class="slds-cell-shrink" style="font-size:12px;">Product<br/>Stage</th>
+     <th class="slds-cell-shrink" style="font-size:12px;">Alphanumeric<br/>Prefix Network</th> 
+     <th class="slds-cell-shrink" style="font-size:12px;">Claims Route<br/>Code</th>
+     <!-- PRDCRM2-1440-->
+     <th class="slds-cell-shrink" style="font-size:12px;">Claims Grace<br/>Days</th>
+     <!-- EOF PRDCRM2-1440-->
+    </tr>
+   </thead>
+  
+      
+  <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat="p in control.vlcSI[control.itemsKey] track by $index" ng-init="ctrl.checkRouteCodeValidation(control)">
+          <td style="width:500px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;font-size:12px;">{{p.ProductName}}</td> 
+          <td style="font-size:12px;">{{p.ProductLOB}}</td>
+          <td style="font-size:12px;">{{p.Members}}</td>   
+          <td style="font-size:12px;">{{p.ContractCodeASF}}</td>
+          <td style="font-size:12px;">{{p.ProductStage}}</td>
+          <td>
+            <div class="select-custom-element">
+            
+              <select ng-if="bpTree.response['APNs'].length==undefined" 
+                name="apnName" id="apnName" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                style="font-size:12px;max-width:100%" 
+                ng-model="p.APN"
+                ng-change="ctrl.addQLItoJSON(p); ">
+                    <option value="">-- Please Select --</option>
+                    <option value="{{bpTree.response.APNs.APNId}}">{{bpTree.response.APNs.AlphanumericPrefixProductsName}}</option>
+            </select>
+            
+            
+            <select ng-if="bpTree.response['APNs'].length > 1"  name="apnName" id="apnName" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                 style="font-size:12px;max-width:100%;" 
+                 ng-model="p.APN" ng-options="item.APNId as item.AlphanumericPrefixProductsName for item in bpTree.response['APNs']"
+                 ng-change="ctrl.addQLItoJSON(p)">
+                    <option value="">-- Please Select --</option>
+                 </select>
+                
+            </div>
+          </td>
+          <td style="font-size:12px;"> 
+			<span class="vlc-asterix icon-v-asterix vlc-editblock-asterix ng-scope" ng-show="!p.ClaimsRouteCode"></span>
+            <input type="text" style="height:30px;width:74%;" ng-required="true" ng-model="p.ClaimsRouteCode" ng-change="ctrl.addQLItoJSON(p);ctrl.checkRouteCodeValidation(control)"/>  
+          </td>
+            <!-- PRDCRM2-1440-->
+           <td>
+                
+            <!-- 30 days -->
+            <div class="select-custom-element" ng-if="p.ClaimsGraceDays == '' && (p.ClaimsGraceDayState == 'California' || p.ClaimsGraceDayState == 'Colorado'|| p.ClaimsGraceDayState == 'Connecticut'|| p.ClaimsGraceDayState == 'Kentucky'|| p.ClaimsGraceDayState == 'Maine'|| p.ClaimsGraceDayState == 'Missouri'|| p.ClaimsGraceDayState == 'New Hampshire'|| p.ClaimsGraceDayState == 'Nevada'|| p.ClaimsGraceDayState == 'Ohio')" >
+                <select 
+                    name="ClaimsGraceDays" id="ClaimsGraceDays" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                    style="font-size:12px;max-width:100%" 
+                    ng-model="p.ClaimsGraceDays"
+                    ng-options="option.value as option.name for option in ClaimsGraceDays"
+                    ng-init="p.ClaimsGraceDays = ClaimsGraceDays[0].value; onSelectItem(control, p, $index, this,true)"
+                    ng-change="ctrl.addQLItoJSON(p)">
+                </select>
+            </div>
+              
+            <!-- 31 days -->
+            <div class="select-custom-element" ng-if="p.ClaimsGraceDays == '' && (p.ClaimsGraceDayState == 'Georgia' || p.ClaimsGraceDayState == 'Indiana'|| p.ClaimsGraceDayState == 'Virginia'|| p.ClaimsGraceDayState == 'Wisconsin')" >
+                <select 
+                    name="ClaimsGraceDays" id="ClaimsGraceDays" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                    style="font-size:12px;max-width:100%" 
+                    ng-model="p.ClaimsGraceDays"
+                    ng-options="option.value as option.name for option in ClaimsGraceDays"
+                    ng-init="p.ClaimsGraceDays = ClaimsGraceDays[1].value; onSelectItem(control, p, $index, this,true)"
+                    ng-change="ctrl.addQLItoJSON(p)">
+                </select>
+            </div>
+            
+            <!-- 999 days -->
+            <div class="select-custom-element" ng-if="p.ClaimsGraceDays == '' && (p.ClaimsGraceDayState == 'New York')">
+                <select  
+                    name="ClaimsGraceDays" id="ClaimsGraceDays" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                    style="font-size:12px;max-width:100%" 
+                    ng-model="p.ClaimsGraceDays"
+                    ng-options="option.value as option.name for option in ClaimsGraceDays"
+                    ng-init="p.ClaimsGraceDays = ClaimsGraceDays[4].value; onSelectItem(control, p, $index, this,true)"
+                    ng-change="ctrl.addQLItoJSON(p)">
+                </select>
+            </div>
+
+            <!-- already populated -->
+            <div class="select-custom-element" ng-if="p.ClaimsGraceDays != ''">               
+            <select   
+            	 name="ClaimsGraceDays" id="ClaimsGraceDays" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" 
+                 style="font-size:12px;max-width:100%;" 
+                 ng-model="p.ClaimsGraceDays" 
+                 ng-options="option.value as option.name for option in ClaimsGraceDays"
+                 ng-init="onSelectItem(control, p, $index, this, true)"
+                 ng-change="ctrl.addQLItoJSON(p)">
+            </select>     
+            </div>
+                 
+          </td>  
+          <!--EOF PRDCRM2-1440-->
+     </tr>       
+     </tbody>
+     </table>
+ </div>
+ 
+ 
+
+ 
+ <p>&nbsp;</p>
+</script>
+   
+<!-- ------------------------------------------------------------------- -->
+<!-- End of vlcActStrcQuesQliProductData.html Template.-->
+<!-- ------------------------------------------------------------------- -->
+ 
+    
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcActStrcQuesInvoiceGPDMapping.html Template.  Created at 2019-10-22 UTC Created By Accenture(Panthers)-->
+<!-- ------------------------------------------------------------------- -->
+
+<script type="text/ng-template" id="vlcActStrcQuesInvoiceGPDMapping.html">
+ <div class="panel panel-default" ng-controller="EmpClassQliGpdController as ctrl"  style="width: 80%">
+     
+     <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;" width="100%">
+  <thead>
+    <tr>   
+    
+     <th style="font-size:12px;">Invoice ID</th>    
+     <th class="slds-cell-shrink" style="font-size:12px;">Plan Name</th>    
+     <th class="slds-cell-shrink" style="font-size:12px;">Line Of<br/>Business</th>  
+     <th class="slds-cell-shrink" style="font-size:12px;">Contract<br/>Code</th>
+     <th class="slds-cell-shrink" style="font-size:12px;">Employee<br/>Category</th> 
+     <th class="slds-cell-shrink" style="font-size:12px;">Employee Class<br/>Name</th> 
+     <th class="slds-cell-shrink" style="font-size:12px;">Group Plan<br/>Description</th> 
+     <th class="slds-cell-shrink" style="font-size:12px;">GPD ID</th>
+     <th class="slds-cell-shrink" style="font-size:12px;">GPD Effective<br/>Date</th>
+     <th class="slds-cell-shrink" style="font-size:12px;">GPD Cancel<br/>Date</th>
+    </tr>
+   </thead>  
+     
+  <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat="p in control.vlcSI[control.itemsKey] track by $index">
+        
+          <td style="width:500px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;font-size:12px;">{{p.InvoiceId}}</td>
+          <td style="width:500px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;font-size:12px;">{{p.PlanName}}</td>
+          <td style="font-size:12px;">{{p.LineOfBusiness}}</td>
+          <td style="font-size:12px;">{{p.ContractCode}}</td>
+          <td style="width:500px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;font-size:12px;">{{p.EmpCategory}}</td>  
+          <td style="width:500px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;font-size:12px;">{{p.EmpClassName}}</td>    
+          <td style="width:500px;overflow-x: hidden; overflow-y: scroll,auto;text-overflow:ellipsis;height:64px;white-space: initial;font-size:12px;">{{p.GroupPlanDescription}}</td>
+          <td style="font-size:12px;">{{p.GPDRecordId}}</td>
+          <td style="font-size:12px;">{{p.EffectiveDate}}</td>
+          <td style="font-size:12px;">{{p.CancelDate}}</td>
+     </tr>       
+     </tbody>
+     </table>
+ </div>
+ <p>&nbsp;</p>
+</script>    
+
+<!-- ------------------------------------------------------------------- -->
+<!-- End of vlcActStrcQuesInvoiceGPDMapping.html Template.-->
+<!-- ------------------------------------------------------------------- -->
+ 
+    
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcActStrcQuesEmployeeCategory.html Template. PRDCRM-43938 . Created at 2019-11-01 UTC Created By Accenture(Panthers)-->
+<!-- ------------------------------------------------------------------- -->
+
+
+<script type="text/ng-template" id="vlcActStrcQuesEmployeeCategory.html">
+<div class="panel panel-default" ng-controller="EmpClassQliGpdController as ctrl"  style="width: 40%">
+
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;" width="100%">
+  <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th  style="font-size:12px;">Select </th>    
+     <th class="slds-cell-shrink" style="font-size:12px;">Employee<br/>Category</th>      
+    </tr>
+   </thead>
+  
+      
+  <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat="empCat in control.vlcSI[control.itemsKey] track by $index" ng-class="{'vlc-selectableitem-selected' : empCat.vlcSelected }" >
+      
+       <th class="slds-cell-shrink" style="font-size:12px;">
+        <label class="slds-checkbox">
+           <input type="checkbox" ng-model='empCat.vlcSelected'
+                       ng-change='ctrl.selectUnselectCheckBoxEmpCat($index,empCat)'
+                       ng-init='onSelectItem(control, empCat, $index, this, false)' />
+         <span class="slds-checkbox--faux"></span>
+
+        </label>
+     </th>
+          <td style="font-size:12px;">{{empCat.employeeCategory}}</td> 
+          
+     </tr>
+       
+     </tbody>
+     </table>
+</div>
+
+
+ <p>&nbsp;</p>
+</script>
+
+<!-- ------------------------------------------------------------------- -->
+<!-- End of vlcActStrcQuesEmployeeCategory.html Template.-->
+<!-- ------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcActStrcQuesBillingArrangement.html Template. PRDCRM-45916 . Created at 2019-11-21 UTC Created By Accenture(Panthers)-->
+<!-- ------------------------------------------------------------------- -->
+
+
+<script type="text/ng-template" id="vlcActStrcQuesBillingArrangement.html">
+<div class="panel panel-default" ng-controller="EmpClassQliGpdController as ctrl"  style="width: 40%">
+
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;" width="100%">
+  <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th  style="font-size:12px; text-align-last: center;">Select</th>    
+     <th class="slds-cell-shrink" style="font-size:12px;">Invoice<br/>Preference</th>      
+    </tr>
+   </thead>
+  
+      
+  <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat="billingEach in ctrl.getInvoivePreferences(control.vlcSI[control.itemsKey])"  >
+    
+     <td class="slds-cell-shrink">
+            <label class="slds-checkbox" style="text-align: center;">
+               <input type="checkbox" ng-model='billingEach.vlcSelected' ng-change='onSelectItem(control, billingEach , $index, this);ctrl.checkBillingArrangementSelected();'/>
+             <span class="slds-checkbox--faux"></span>
+
+            </label>
+        </td>
+    
+     
+          <td style="font-size:12px;">{{billingEach.billing}}</td> 
+          
+     </tr>
+       
+     </tbody>
+     </table>
+</div>
+
+
+ <p>&nbsp;</p>
+</script>
+
+<!-- ------------------------------------------------------------------- -->
+<!-- End of vlcActStrcQuesBillingArrangement.html Template.-->
+<!-- ------------------------------------------------------------------- -->
+</apex:component>

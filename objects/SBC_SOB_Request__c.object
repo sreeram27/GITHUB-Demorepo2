@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>SBC_SOB_Request_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_ERISA_Qualified__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Opportunity__r.Account.Is_this_Group_subject_to_ERISA__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account ERISA Qualified</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Executive__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Account_Executive__r.FirstName + &apos; &apos; + Opportunity__r.Account.Account_Executive__r.LastName</formula>
+        <label>Account Executive</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Group_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.GroupNumbers__c</formula>
+        <label>Account Group Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Account_Manager__r.FirstName + &apos; &apos; + Opportunity__r.Account.Account_Manager__r.LastName</formula>
+        <label>Account Manager</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Renewal_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Active_Renewal_Date__c</formula>
+        <label>Account Renewal Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Account_Situs_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Opportunity__r.Account.Situs_State__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Situs State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Name</formula>
+        <label>Account</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_SBC_Completion_Date_BD__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(MOD(Actual_SBC_Completion_Date__c - DATE(1900, 1, 7), 7), 0,Actual_SBC_Completion_Date__c - 2, 6,Actual_SBC_Completion_Date__c - 1,Actual_SBC_Completion_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual SBC Completion Date BD</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_SBC_Completion_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Actual SBC Completion Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CEP_Approval_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+CEP_Approval__c,
+&quot;Yes&quot;,
+&quot;No&quot;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CEP Approval Formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CEP_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CEP Approval?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>20</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contract_Code__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Standard Contract Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Custom_Contract_Code__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Custom Contract Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Custom_SBC_Requested__c</fullName>
+        <externalId>false</externalId>
+        <label>Custom SBC Requested</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>true</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Custom_SOB_Requested__c</fullName>
+        <externalId>false</externalId>
+        <label>Custom SOB Requested</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Date_SBC_Requested_BD__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(MOD(Date_SBC_Requested__c - DATE(1900, 1, 7), 7), 0,Date_SBC_Requested__c + 1, 6,Date_SBC_Requested__c + 2,Date_SBC_Requested__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date SBC Requested BD</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_SBC_Requested__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Date SBC Requested</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EPIC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Enhanced Privacy ID</inlineHelpText>
+        <label>EPIC</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Email_Subject__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( AND(TEXT(Custom_SBC_Requested__c) = &apos;Yes&apos;, Revision__c  &lt;&gt; True), &apos;New COM2 SBC Request&apos;, &apos;Revision to Existing SBC Request&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email Subject</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_SBC_Completion_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Estimated SBC Completion Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Funding_Type__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Funding Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Group_Size__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Opportunity__r.Account.Group_Size__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Size</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HPCC_Code__c</fullName>
+        <defaultValue>&apos; &apos;</defaultValue>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>HPCC Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MEC__c</fullName>
+        <externalId>false</externalId>
+        <label>Minimum Essential Coverage (MEC)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MV__c</fullName>
+        <externalId>false</externalId>
+        <label>Minimum Value Standards (MV)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opportunity_ICR_ID_s__c</fullName>
+        <description>To store all the related Implementation case record ID&apos;s to an Opportunity.
+Backend field</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Opportunity ICR ID&apos;s</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Record Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>SBC_SOB_Request</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Plan_Type__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Plan Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Request_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pre-Sale</fullName>
+                    <default>false</default>
+                    <label>Pre-Sale</label>
+                </value>
+                <value>
+                    <fullName>Post-Sale</fullName>
+                    <default>false</default>
+                    <label>Post-Sale</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Revision__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked sends the Email to SBC team</description>
+        <externalId>false</externalId>
+        <label>Revision</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Turnaround_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Actual_SBC_Completion_Date_BD__c &lt; Date_SBC_Requested_BD__c, 0, 
+   Actual_SBC_Completion_Date_BD__c - Date_SBC_Requested_BD__c - 
+   FLOOR((Actual_SBC_Completion_Date_BD__c - Date_SBC_Requested_BD__c)/7) *2 -
+   IF (MOD(Date_SBC_Requested_BD__c - DATE(1900, 1, 7), 7)&gt; 
+       MOD(Actual_SBC_Completion_Date_BD__c - DATE(1900, 1, 7), 7), 2, 0
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Turnaround Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Custom SBC/SOB Request</label>
+    <listViews>
+        <fullName>Completed_SBC_Records</fullName>
+        <columns>NAME</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Actual_SBC_Completion_Date__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Date_SBC_Requested__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Opportunity_Record_Type__c</columns>
+        <columns>Account_Situs_State__c</columns>
+        <columns>Group_Size__c</columns>
+        <columns>Custom_SBC_Requested__c</columns>
+        <columns>Turnaround_Time__c</columns>
+        <columns>Estimated_SBC_Completion_Date__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Actual_SBC_Completion_Date__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Custom_SBC_Requested__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <label>Completed SBC Records</label>
+    </listViews>
+    <listViews>
+        <fullName>In_Progress_SBC_Records</fullName>
+        <columns>NAME</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Actual_SBC_Completion_Date__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Date_SBC_Requested__c</columns>
+        <columns>Comments__c</columns>
+        <columns>Opportunity_Record_Type__c</columns>
+        <columns>Account_Situs_State__c</columns>
+        <columns>Group_Size__c</columns>
+        <columns>Custom_SBC_Requested__c</columns>
+        <columns>Turnaround_Time__c</columns>
+        <columns>Estimated_SBC_Completion_Date__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Actual_SBC_Completion_Date__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Custom_SBC_Requested__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <label>In Progress SBC Records</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SBC/SOB-{0000}</displayFormat>
+        <label>Custom SBC/SOB Request</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Custom SBC/SOB Request</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Actual_SBC_Completion_Date_Validation</fullName>
+        <active>true</active>
+        <description>Actual SBC Completion Date cannot be less than Date SBC Requested</description>
+        <errorConditionFormula>Actual_SBC_Completion_Date__c &lt; Date_SBC_Requested__c</errorConditionFormula>
+        <errorDisplayField>Actual_SBC_Completion_Date__c</errorDisplayField>
+        <errorMessage>Actual SBC Completion Date cannot be before Date SBC Requested</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Record_Once_SBC_Completed</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR
+(
+AND
+(
+NOT ISBLANK(PRIORVALUE( Actual_SBC_Completion_Date__c )),
+NOT ISBLANK(Actual_SBC_Completion_Date__c ), ($Profile.Name &lt;&gt; &apos;System Administrator&apos; &amp;&amp; $Profile.Name &lt;&gt; &apos;API User&apos; &amp;&amp; $Profile.Name &lt;&gt; &apos;System Admin&apos; )
+),
+AND
+(
+ISCHANGED (Actual_SBC_Completion_Date__c),
+ISBLANK (Actual_SBC_Completion_Date__c ),
+($Profile.Name &lt;&gt; &apos;System Administrator&apos; &amp;&amp; $Profile.Name &lt;&gt; &apos;API User&apos; &amp;&amp; $Profile.Name &lt;&gt; &apos;System Admin&apos; ))
+)</errorConditionFormula>
+        <errorMessage>This request has been completed and cannot be updated</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

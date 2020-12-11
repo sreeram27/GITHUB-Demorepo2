@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Plain_Letterhead</letterhead>
+    <name>Automated Email to Provider Services for New Groups</name>
+    <style>freeForm</style>
+    <subject>Provider Service Team - New Business Notification - {!Order.AccountLegalName__c}</subject>
+    <textOnly>Hello
+
+This email serves as notification of a new National Account being Implemented on {!Order.Claim_system__c}.  Please review the details below to forecast calls and determine staffing needed to ensure provider calls are handled timely.
+
+Group name: {!Order.AccountLegalName__c}
+Group Number: {!Order.Group_Number__c}
+Effective Date: {!Order.EffectiveDate}
+Estimated Membership: {!Order.Estimated_Membership__c}
+Outsourcing Restrictions: {!Order.Outsourcing_Restrictions__c}
+Provider Calls Handled OffShore: {!Order.Provider_Calls_Handled_OffShore__c}
+Claims Handled OffShore: {!Order.Claims_Handled_OffShore__c}
+Membership Handled OffShore: {!Order.Membership_Handled_OffShore__c}
+
+Thank you
+{!Order.Assigned_Implementer__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>SystemAdministrator</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>L_D_VSH_UW_Case_Users</sharedTo>
+        <sharedToType>Group</sharedToType>
+    </folderShares>
+    <name>Specialty - L&amp;D VSH UW Reports</name>
+</ReportFolder>

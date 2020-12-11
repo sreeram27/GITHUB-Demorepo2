@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>47.0</apiVersion>
+    <available>true</available>
+    <description>This template stores the SBC and it&apos;s related object details whenever new SBC record created OR when a SBC record is revised.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ALERT:Email Notification to SBC Team</name>
+    <style>none</style>
+    <subject>-</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

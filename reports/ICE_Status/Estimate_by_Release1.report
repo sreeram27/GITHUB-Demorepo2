@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Request__c.TotEst__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Vlocity_Reviewed__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Vlocity_Fit_Confirmed__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>CIP Management,Account Management Handoff,Group Structure Set-Up,SME Management,NIDB Client Info,Project Plan and NIDB Task Management,Vendor Management,Communications and Task Management,Implementation Reporting,Document Management</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Requirement_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Business</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Identify: RFQ,Close: Rejected,Close: Duplicate</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Request__c.Planned_Release__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Estimate by Release</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Request__c@Request__c.Capability__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Request__c.StartTime_Approved_Emergency_Release__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

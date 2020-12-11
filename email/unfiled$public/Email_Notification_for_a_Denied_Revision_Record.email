@@ -1,0 +1,10 @@
+To: {!Impl_Revision__c.CreatedBy} 
+Account: {!Impl_Revision__c.Account__c}
+
+{!Order.Assigned_Implementer__c} has responded to your revision with the following information. Your immediate attention is requested. 
+
+Revision Return Reason: {!Impl_Revision__c.Return_Reason__c} 
+
+Comments: {!Impl_Revision__c.Comments__c} 
+
+{!Impl_Revision__c.Url__c}

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Commission_Eligible_Quotes_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AMMangerApproval__c</fullName>
+        <externalId>false</externalId>
+        <label>AMMangerApproval</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved By AM1</fullName>
+                    <default>false</default>
+                    <label>Approved By AM1</label>
+                </value>
+                <value>
+                    <fullName>Approved By AM2</fullName>
+                    <default>false</default>
+                    <label>Approved By AM2</label>
+                </value>
+                <value>
+                    <fullName>Approved By AM3</fullName>
+                    <default>false</default>
+                    <label>Approved By AM3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AM_CEQ_Approval_Status__c</fullName>
+        <description>US27028</description>
+        <externalId>false</externalId>
+        <label>AM CEQ Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>Pending Response From AM Initial Comp</fullName>
+                    <default>false</default>
+                    <label>Pending Response From AM Initial Comp</label>
+                </value>
+                <value>
+                    <fullName>Approved By AM Initial Comp</fullName>
+                    <default>false</default>
+                    <label>Approved By AM Initial Comp</label>
+                </value>
+                <value>
+                    <fullName>Pending Response From AM Final Comp</fullName>
+                    <default>false</default>
+                    <label>Pending Response From AM Final Comp</label>
+                </value>
+                <value>
+                    <fullName>Approved By AM Final Comp</fullName>
+                    <default>false</default>
+                    <label>Approved By AM Final Comp</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_1_Multiplier_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Manager 1 Multiplier Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_1_Proration_Percentage__c</fullName>
+        <description>US27428</description>
+        <externalId>false</externalId>
+        <label>Account Manager 1 Proration Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_2_Multiplier_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Manager 2 Multiplier Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_2_Proration_Percentage__c</fullName>
+        <description>US27428</description>
+        <externalId>false</externalId>
+        <label>Account Manager 2 Proration Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>US27028</description>
+        <externalId>false</externalId>
+        <label>Account Manager 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Commission_Eligible_Quotes1</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_3_Multiplier_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Manager 3 Multiplier Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_3_Proration_Percentage__c</fullName>
+        <description>US27428</description>
+        <externalId>false</externalId>
+        <label>Account Manager 3 Proration Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Manager_3__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Manager 3</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Commission_Eligible_Quotes2</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>US27028, US27428</description>
+        <externalId>false</externalId>
+        <label>Account Manager 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Commission_Eligible_Quotes</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Claim_System__c</fullName>
+        <description>US27028</description>
+        <externalId>false</externalId>
+        <formula>Quote_Name__r.Claim_System__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Claim System</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Division_Name__c</fullName>
+        <description>US27028</description>
+        <externalId>false</externalId>
+        <formula>Quote_Name__r.DivisionName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Division Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Quote_Name__r.GroupNumber__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>US27028</description>
+        <externalId>false</externalId>
+        <label>Group Number</label>
+        <referenceTo>Group__c</referenceTo>
+        <relationshipLabel>Commission Eligible Quotes</relationshipLabel>
+        <relationshipName>Commission_Eligible_Quotes</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Internal_Commissions__c</fullName>
+        <description>US27028</description>
+        <externalId>false</externalId>
+        <label>Internal Commissions</label>
+        <referenceTo>Internal_Commission__c</referenceTo>
+        <relationshipLabel>Commission Eligible Quotes</relationshipLabel>
+        <relationshipName>Commission_Eligible_Quotes</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Quote_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>US27028</description>
+        <externalId>false</externalId>
+        <label>Quote Name</label>
+        <referenceTo>Quote</referenceTo>
+        <relationshipLabel>Commission Eligible Quotes</relationshipLabel>
+        <relationshipName>Commission_Eligible_Quotes</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UpdateWhenAMApprovesrecord__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>This Field gets updated when anyone of the AM1,AM2 or AM3 approves the record</description>
+        <externalId>false</externalId>
+        <label>UpdateWhenAMApprovesrecord</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Commission Eligible Quotes</label>
+    <nameField>
+        <displayFormat>CEQTE-{00000}</displayFormat>
+        <label>Commission Eligible Quotes Record ID</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Commission Eligible Quotes</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>CEQ_VR1_AMPercentageShouldNotExceed100</fullName>
+        <active>true</active>
+        <description>US27428(Callidus Moockups_1-11-19 says that the Percentage fields should not exceed more than 100%)</description>
+        <errorConditionFormula>OR(
+(Account_Manager_1_Proration_Percentage__c &gt; 100),(Account_Manager_2_Proration_Percentage__c &gt; 100),
+(Account_Manager_3_Proration_Percentage__c &gt;100),
+(Account_Manager_1_Proration_Percentage__c + Account_Manager_2_Proration_Percentage__c + Account_Manager_3_Proration_Percentage__c &gt;100),
+(Account_Manager_1_Proration_Percentage__c + Account_Manager_2_Proration_Percentage__c &gt;100),
+Account_Manager_2_Proration_Percentage__c + Account_Manager_3_Proration_Percentage__c &gt;100,
+Account_Manager_1_Proration_Percentage__c + Account_Manager_3_Proration_Percentage__c &gt;100)</errorConditionFormula>
+        <errorMessage>Account Manager Split Percentage Cannot Exceed 100%</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

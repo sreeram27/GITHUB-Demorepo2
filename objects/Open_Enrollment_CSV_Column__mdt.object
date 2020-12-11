@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Holds the Column Name to Object API Name pairing for the Open Enrollment CSV Upload</description>
+    <fields>
+        <fullName>API_Name__c</fullName>
+        <description>Name of the Api field of the Open Enrollment Object that the Column Header shall map to</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Name of the Api field of the Open Enrollment Object that the Column Header shall map to</inlineHelpText>
+        <label>API Name</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Column_Name__c</fullName>
+        <description>Name of the Column in the CSV Upload File for Open Enrollments</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Name of the Column in the CSV Upload File for Open Enrollments</inlineHelpText>
+        <label>Column Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Open Enrollment CSV Column</label>
+    <pluralLabel>Open Enrollment CSV Columns</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

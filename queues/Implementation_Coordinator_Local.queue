@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Implementation Coordinator - Local</name>
+    <queueSobject>
+        <sobjectType>Implementation_Coordinator_Repeatable__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Implementation_Coordinator__c</sobjectType>
+    </queueSobject>
+</Queue>

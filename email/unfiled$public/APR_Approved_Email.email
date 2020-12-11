@@ -1,0 +1,12 @@
+Hello {!Alpha_Prefix_Request__c.Owner_First_Name__c }, 
+
+Your request for an Alphanumeric Prefix has been approved by the InterPlan team. 
+
+Details- 
+Account Name: {!Alpha_Prefix_Request__c.AccountLegalName__c}
+Request Number: {!Alpha_Prefix_Request__c.Name} 
+Link: {!Alpha_Prefix_Request__c.Link} 
+
+Thank you, 
+
+InterPlan Team

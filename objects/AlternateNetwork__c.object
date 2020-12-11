@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AltNetStateOptions__c</fullName>
+        <externalId>false</externalId>
+        <label>Advantage Network State Options</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>1G0 – IN Anthem HealthSync</fullName>
+                    <default>false</default>
+                    <label>1G0 – IN Anthem HealthSync</label>
+                </value>
+                <value>
+                    <fullName>1G2 WI Blue Priority</fullName>
+                    <default>false</default>
+                    <label>1G2 WI Blue Priority</label>
+                </value>
+                <value>
+                    <fullName>1G7 - CT Century Preferred Tiered</fullName>
+                    <default>false</default>
+                    <label>1G7 - CT Century Preferred Tiered</label>
+                </value>
+                <value>
+                    <fullName>1G8 - CO Pathway</fullName>
+                    <default>false</default>
+                    <label>1G8 - CO Pathway</label>
+                </value>
+                <value>
+                    <fullName>1G9 - IL BlueChoice Options</fullName>
+                    <default>false</default>
+                    <label>1G9 - IL BlueChoice Options</label>
+                </value>
+                <value>
+                    <fullName>1GD - AZ Blue Preferred PPO I</fullName>
+                    <default>false</default>
+                    <label>1GD – AZ Blue Alternative</label>
+                </value>
+                <value>
+                    <fullName>1GE - DC/MD/Northern VA BlueChoice</fullName>
+                    <default>false</default>
+                    <label>1GE - DC/MD/Northern VA BlueChoice Adv Open Access</label>
+                </value>
+                <value>
+                    <fullName>1GG - CA Select PPO</fullName>
+                    <default>false</default>
+                    <label>1GG - CA Select PPO</label>
+                </value>
+                <value>
+                    <fullName>1GJ - NY Empire POS</fullName>
+                    <default>false</default>
+                    <label>1GJ - NY Empire POS</label>
+                </value>
+                <value>
+                    <fullName>1GM - MO POS Adv Net</fullName>
+                    <default>false</default>
+                    <label>1GM - MO POS Adv Net</label>
+                </value>
+                <value>
+                    <fullName>1GN - MO PPO Adv Net</fullName>
+                    <default>false</default>
+                    <label>1GN - MO PPO Adv Net</label>
+                </value>
+                <value>
+                    <fullName>1GO - GA POS Adv Net</fullName>
+                    <default>false</default>
+                    <label>1GO - GA POS Adv Net</label>
+                </value>
+                <value>
+                    <fullName>1GP - WI Blue Preferred POS</fullName>
+                    <default>false</default>
+                    <label>1GP - WI Blue Preferred POS</label>
+                </value>
+                <value>
+                    <fullName>1GQ - FL PPO Adv Net</fullName>
+                    <default>false</default>
+                    <label>1GQ - FL PPO Adv Net</label>
+                </value>
+                <value>
+                    <fullName>1GR - KC, MO PPO</fullName>
+                    <default>false</default>
+                    <label>1GR - KC, MO PPO</label>
+                </value>
+                <value>
+                    <fullName>1GS - NJ PPO Adv Net</fullName>
+                    <default>false</default>
+                    <label>1GS - NJ PPO Adv Net</label>
+                </value>
+                <value>
+                    <fullName>1GT – TN Network S PPO</fullName>
+                    <default>false</default>
+                    <label>1GT – TN Network S PPO</label>
+                </value>
+                <value>
+                    <fullName>1GU - GA EPO Adv Net</fullName>
+                    <default>false</default>
+                    <label>1GU - GA EPO Adv Net</label>
+                </value>
+                <value>
+                    <fullName>1GY - NH BlueChoice Open Access POS</fullName>
+                    <default>false</default>
+                    <label>1GY - NH BlueChoice Open Access POS</label>
+                </value>
+                <value>
+                    <fullName>3GA - NC Blue Value (POS)</fullName>
+                    <default>false</default>
+                    <label>3GA - NC Blue Value (POS)</label>
+                </value>
+                <value>
+                    <fullName>3GB – CO WellChoice – C</fullName>
+                    <default>false</default>
+                    <label>3GB – CO WellChoice – C</label>
+                </value>
+                <value>
+                    <fullName>3GC – CO WellChoice – H</fullName>
+                    <default>false</default>
+                    <label>3GC – CO WellChoice – H</label>
+                </value>
+                <value>
+                    <fullName>3GD – CO WellChoice – U</fullName>
+                    <default>false</default>
+                    <label>3GD – CO WellChoice – U</label>
+                </value>
+                <value>
+                    <fullName>3GE – MO Anthem Alliance</fullName>
+                    <default>false</default>
+                    <label>3GE – MO Anthem Alliance</label>
+                </value>
+                <value>
+                    <fullName>3GH - TX Blue Premier Access</fullName>
+                    <default>false</default>
+                    <label>3GH - TX Blue Premier Access</label>
+                </value>
+                <value>
+                    <fullName>3GI - MN High Value</fullName>
+                    <default>false</default>
+                    <label>3GI - MN High Value</label>
+                </value>
+                <value>
+                    <fullName>NY Empire Blue Access</fullName>
+                    <default>false</default>
+                    <label>NY Empire Blue Access</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CorrespondingPackageCodeContractCode__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Corresponding Package Code/Contract Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CorrespondingPrefix__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Corresponding Prefix</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveDate__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LoggedInUserProfile__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.ProfileName__c</formula>
+        <label>Logged In User Profile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QuoteLineItem__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Quote Line Item</label>
+        <referenceTo>QuoteLineItem</referenceTo>
+        <relationshipName>Alternate_Networks</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SFDCLegacyID__c</fullName>
+        <description>Used for data load, the CIP, and Open Enrollment processes that need to be maintained in the old Commercial ORG.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <inlineHelpText>Used for data load, the CIP, and Open Enrollment processes that need to be maintained in the old Commercial ORG.</inlineHelpText>
+        <label>SFDCLegacyID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TermDate__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Term Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Advantage Network</label>
+    <nameField>
+        <displayFormat>AdvNet-{00000}</displayFormat>
+        <label>Advantage Network Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Advantage Networks</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

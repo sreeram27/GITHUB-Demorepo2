@@ -1,0 +1,10 @@
+<p>A new Onsite Clinics product has been submitted for approval on <b>{!QuoteLineItemApproval__c.LastModifiedDate}</b> by <b>{!QuoteLineItemApproval__c.LastModifiedBy}</b>.</p> 
+
+<table border="1">
+<tr><td>Client Name: </td><td>{!QuoteLineItemApproval__c.ClientName__c} </td></tr>
+<tr><td>Effective Date:</td><td>{!QuoteLineItemApproval__c.EffectiveDate__c} </td></tr>
+</table>
+
+<p>
+To review and approve / reject the product, please click this link. 
+<a href="{!QuoteLineItemApproval__c.Link}">click here</a></p>

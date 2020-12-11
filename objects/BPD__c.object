@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Benefit_Plan_Design_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>BPD_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>BPD_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Account_Name__c</fields>
+        <fields>Group_Number__c</fields>
+        <fields>Effective_Date__c</fields>
+        <fields>Benefit_Plan_Design_Name__c</fields>
+        <label>BPD-Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Acc_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Benefit_Plan_Design1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Demo__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Account_Demo__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Demo</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Implementation_Tracking_ID__r.Account_Legal_Name__r.Id, Implementation_Tracking_ID__r.Account_Legal_Name__r.Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Account_Legal_Name__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Process_Field_Updates__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Process Field Updates</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assigned to Implementer1</fullName>
+                    <default>false</default>
+                    <label>Assigned to Implementer1</label>
+                </value>
+                <value>
+                    <fullName>ESR Rejected</fullName>
+                    <default>false</default>
+                    <label>ESR Rejected</label>
+                </value>
+                <value>
+                    <fullName>AM Rejected to Implementer1</fullName>
+                    <default>false</default>
+                    <label>AM Rejected to Implementer1</label>
+                </value>
+                <value>
+                    <fullName>AM Approved to Implementer1</fullName>
+                    <default>false</default>
+                    <label>AM Approved to Implementer1</label>
+                </value>
+                <value>
+                    <fullName>Resubmission</fullName>
+                    <default>false</default>
+                    <label>Resubmission</label>
+                </value>
+                <value>
+                    <fullName>AI Rejected</fullName>
+                    <default>false</default>
+                    <label>AI Rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Approved_BPD__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Approved BPD</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_Implementer__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Assigned_Implementer__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assigned ImplementerFormulla</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BPD_Edit_Counting__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>BPD Edit Counting</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BPD_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>BPD Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Initiated In Implementations Review</fullName>
+                    <default>false</default>
+                    <label>Initiated In Implementations Review</label>
+                </value>
+                <value>
+                    <fullName>Pending Response from ESR</fullName>
+                    <default>false</default>
+                    <label>Pending Response from ESR</label>
+                </value>
+                <value>
+                    <fullName>Pending Response from Sales/AM</fullName>
+                    <default>false</default>
+                    <label>Pending Response from Sales/AM</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Benefit_Plan_Design_Name__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Benefit Plan Design Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Acct_Mgmt_Approved_BPD__c</fullName>
+        <externalId>false</externalId>
+        <formula>Approved_BPD__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date Acct Mgmt Approved BPD</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Design_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Tech_Rejected__c,&quot;AM Rejected&quot;),&apos;Re&apos;,&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Design Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disabler_Enabler_Checkbox_of_PBO2__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Disabler/Enabler Checkbox of PBO2</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EBA_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>EBA Lead</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.ProfileName__c</field>
+                <operation>equals</operation>
+                <value>SME, SME Dual</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Benefit_Plan_Design</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Effective_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Employer_Service_Representative_ESR__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>US 21398</description>
+        <externalId>false</externalId>
+        <label>Employer Service Representative (ESR)</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Benefit_Plan_Design3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EnablerCheckbox_for_PB__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>EnablerCheckbox for PB</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Group_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Implementation_Tracking_ID__r.Group_Number__c ,Implementation_Tracking_ID__r.Group_Number__r.Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Record_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Implementation_Tracking_ID__r.Implementation_Record_ID__r.Id,   Implementation_Tracking_ID__r.Implementation_Record_ID__r.OrderNumber )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Implementation Case Record ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Tracking_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Implementation Tracking ID</label>
+        <referenceTo>Implementation_Tracking__c</referenceTo>
+        <relationshipLabel>Benefit Plan Design</relationshipLabel>
+        <relationshipName>Benefit_Plan_Design</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Implementer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned Implementer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Benefit_Plan_Design2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Date_EBA_Sent_BPD_To_Imp__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Initial Date EBA Sent BPD To Imp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Date_ESR_Sent_BPD_To_Acct_Mgmt__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Initial Date ESR Sent BPD To Acct Mgmt</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Date_Imp_Received_BPD_From_EBA__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Initial Date Imp Received BPD From EBA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Date_Imp_Sent_BPD_To_Acct_Mgmt__c</fullName>
+        <externalId>false</externalId>
+        <formula>Pending_BPD__c</formula>
+        <label>Initial Date Imp Sent BPD To ESR</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Is_Client_Approval_Needed__c</fullName>
+        <externalId>false</externalId>
+        <label>Is Client Approval Needed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Logic_to_Send_One_Not_to_AI__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Logic to Send One Not to AI</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Times_BPD_Was_Updated__c</fullName>
+        <externalId>false</externalId>
+        <formula>BPD_Edit_Counting__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number Of Times BPD Was Updated</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_BPD__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending BPD</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Re_submission_wording_for_template__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Rejected_by_AM__c , 
+&quot;(Resubmitted)&quot;, &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Re submission wording for template</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rejected_by_AM__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Rejected by AM</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Resubmitting_for_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Resubmitting for Approval</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Skip_Implementer_Approval_BPD__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Skip Implementer Approval_BPD</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tech_Impl_Reject_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Tech Impl Reject Flag</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tech_Rejected__c</fullName>
+        <externalId>false</externalId>
+        <label>Tech Rejected</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Implementer Rejected</fullName>
+                    <default>false</default>
+                    <label>Implementer Rejected</label>
+                </value>
+                <value>
+                    <fullName>AM Rejected</fullName>
+                    <default>false</default>
+                    <label>AM Rejected</label>
+                </value>
+                <value>
+                    <fullName>ESR Rejected</fullName>
+                    <default>false</default>
+                    <label>ESR Rejected</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Url__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT($Api.Partner_Server_URL_340, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_340)) &amp; Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Url</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Benefit Plan Design</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>BPD-{000000}</displayFormat>
+        <label>BPD Record ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Benefit Plan Design</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Master_Duplicate</fullName>
+        <active>true</active>
+        <label>Master Duplicate</label>
+        <picklistValues>
+            <picklist>Approval_Process_Field_Updates__c</picklist>
+            <values>
+                <fullName>AI Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM Approved to Implementer1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM Rejected to Implementer1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assigned to Implementer1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BPD_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initiated In Implementations Review</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending Response from Sales%2FAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_Client_Approval_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Tech_Rejected__c</picklist>
+            <values>
+                <fullName>AM Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementer Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Read_Only</fullName>
+        <active>true</active>
+        <label>Read Only</label>
+        <picklistValues>
+            <picklist>Approval_Process_Field_Updates__c</picklist>
+            <values>
+                <fullName>AI Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM Approved to Implementer1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM Rejected to Implementer1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assigned to Implementer1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resubmission</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BPD_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initiated In Implementations Review</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Pending Response from Sales%2FAM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_Client_Approval_Needed__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Tech_Rejected__c</picklist>
+            <values>
+                <fullName>AM Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Implementer Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>VR01_BPD01_Is_Client_Approval_Needed</fullName>
+        <active>true</active>
+        <description>The field &quot;Is Client Approval Needed&quot; is not editable by SMEs</description>
+        <errorConditionFormula>AND(!$User.BypassValidation__c,  $User.Id &lt;&gt;  Implementer__r.Id 
+ ,ISCHANGED(Is_Client_Approval_Needed__c)=true)</errorConditionFormula>
+        <errorMessage>The field &quot;Is Client Approval Needed&quot; cannot be edited</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

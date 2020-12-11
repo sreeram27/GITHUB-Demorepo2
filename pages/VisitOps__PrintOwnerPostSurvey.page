@@ -1,0 +1,301 @@
+<!--
+/**********************************************************************
+Name:  PrintOwnerPostSurvey
+Copyright © 2019  VisitOps  
+======================================================
+Purpose: Print Survey Screen                                                                                                                      
+======================================================
+======================================================
+History                                                            
+-------                                                            
+VERSION AUTHOR       DATE           DETAIL                 		  					FEATURES/CSR/TTP
+1.0 -   Tanuj        10/06/2019		Print Page for Visit Owner Post Sorvey			Ticket :- I-0399
+									
+***********************************************************************/
+-->
+<apex:page standardController="VisitOps__Survey__c" extensions="VisitOps.PrintOwnerPostSurveyExtension" showHeader="false" language="{!selectedLang}">
+    <apex:form id="formId">
+        
+        <script>
+        $('li[style*="list-style: none"]').remove();
+        </script>
+        
+        <apex:styleSheet value="{!$Resource.VisitOps__survey_css}"/> 
+        <apex:includeScript value="{!$Resource.VisitOps__jquery1_11_1_min}"/>
+        <apex:includeScript value="{!$Resource.VisitOps__function_js}"/>
+        
+        <div class="rightContent"> 
+            <!-- <apex:image url="{!DocumentLogoUrl}" style="padding-left:12px;width:186px;height:60px"/> -->
+            <!--<apex:image url="{!DocumentLogoUrl}" style="padding-left:12px;width:128px;height:128px"/>-->
+            <apex:image url="{!DocumentLogoUrl}" style="padding-left:12px;"/>
+            <div class="screenHeading" style="padding-left:12px;"><br/>Visit Owner Post Survey</div> 
+            <apex:pageMessages />     
+            <apex:outputPanel rendered="{!visitRecord!=null}"> 
+                <div class="surveyDetails">
+                    <div class="spacing">
+                        <apex:outputPanel id="VisitDetails" rendered="{!visitRecord!=null}"> 
+                            <div class="row">
+                                <div class="labelText">{!$Label.visitops__name}</div>
+                                <div class="fieldText">
+                                    <apex:outputField value="{!visitRecord.VisitOps__VisitName__c}"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="labelText">{!$Label.visitops__attendee_name}</div>
+                                <div class="fieldText">
+                                </div>
+                            </div>                 
+                        </apex:outputPanel>
+                    </div> 
+                </div>
+                
+                <!-- <div class="row"> -->
+                <div class="" style = "font-size:18px">
+                    <ol  class="surveyQuestions">
+                        <apex:outputPanel rendered="{!IF(preSurveyRecord!=null && preSurveyRecord.VisitOps__Accomplishment_Owner_pre__c!=null,true,false)}"> 
+                            <li>
+                                <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Accomplishment_Owner_post__c.inlineHelpText}" /></div>
+                                <div class="txtItalic"><apex:inputTextArea value="{!preSurveyRecord.VisitOps__Accomplishment_Owner_pre__c}" disabled="true" style="width:80%;height:130px"/></div>
+                                <div class="rowDiv"></div> 
+                                <div>
+                                    <apex:outputPanel rendered="{!!flag1}"> <apex:inputField value="{!surveyRecord.VisitOps__Accomplishment_Owner_post__c}" style="width:400px;"/></apex:outputPanel>
+                                    <apex:outputPanel rendered="{!flag}"><div class="disablable"><apex:outputText value="{!IF(surveyRecord.VisitOps__Accomplishment_Owner_post__c==NULL,$Label.visitops__none,surveyRecord.VisitOps__Accomplishment_Owner_post__c)}"/></div></apex:outputPanel>
+                                </div> 
+                                <br/>
+                                <!--  <div class="txtItalic">Comments (optional)</div> 
+<div>
+<apex:inputTextArea value="{!surveyRecord.Accomplishment_comments_Owner_post__c}" disabled="{!flag}" style="width:400px;height:60px"/>
+</div>-->
+                            </li> 
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(preSurveyRecord!=null && preSurveyRecord.VisitOps__Biggest_fear__c!=null,true,false)}"> 
+                            <li>
+                                <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Biggest_fear_pick__c.inlineHelpText}" /></div>
+                                <div class="txtItalic"><apex:inputTextArea value="{!preSurveyRecord.VisitOps__Biggest_fear__c}" disabled="true" style="width:80%;height:130px"/></div>
+                                <div class="rowDiv"></div>
+                                <div>
+                                    <apex:outputPanel rendered="{!!flag1}"> <apex:inputfield value="{!surveyRecord.VisitOps__Biggest_fear_pick__c}"  style="width:400px;"/></apex:outputPanel>
+                                    <apex:outputPanel rendered="{!flag}"><div class="disablable"><apex:outputText value="{!IF(surveyRecord.VisitOps__Biggest_fear_pick__c==NULL,$Label.visitops__none,surveyRecord.VisitOps__Biggest_fear_pick__c)}"/></div></apex:outputPanel>
+                                </div> 
+                            </li>
+                        </apex:outputPanel>
+                        
+                        <li>         
+                            <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Satisfaction_Rating__c.inlineHelpText}"/></div>
+                            <div class="rowDiv">
+                            </div>
+                            <div class="ratings">
+                                
+                                <div class="likelyDiv"> <span class="ratingTxt">{!$Label.Dissatisfied}</span> </div>
+                                <div class="ntlikelyDiv"> <span class="ratingTxt">{!$Label.Very_Satisfied}</span> </div>
+                                <div class="cBoth"></div>
+                                
+                                <div class="ratingCount">
+                                    <div class="row"> 
+                                        <div>
+                                            <apex:selectRadio value="{!surveyRecord.VisitOps__Satisfaction_Rating__c}"  layout="table" styleClass="radioClass" dir="LTR" disabled="{!flag}">
+                                                <apex:selectOptions value="{!RadioOpts}"/>
+                                            </apex:selectRadio> 
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </li> 
+                        <li>
+                            <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Things_You_Would_Like_To_Change__c.inlineHelpText}"/></div>
+                            <div class="rowDiv"></div>
+                            <div>
+                                <apex:inputTextArea value="{!surveyRecord.VisitOps__Things_You_Would_Like_To_Change__c}" style="width:80%;height:130px" disabled="{!flag}"/>
+                            </div> 
+                        </li>
+                        
+                        <li>
+                            <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Things_You_Would_Leave_The_Same__c.inlineHelpText}"/></div>
+                            <div class="rowDiv">
+                            </div>
+                            <div>
+                                <apex:inputTextArea value="{!surveyRecord.VisitOps__Things_You_Would_Leave_The_Same__c}" style="width:80%;height:130px" disabled="{!flag}"/>
+                            </div> 
+                        </li>
+                        <li style="display:{!if(agendaPresenterWrapperList.size>0,'','none')}">
+                            <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Recommendation__c.inlineHelpText}"/></div>                   
+                            <div class="rowDiv"></div>
+                            <div class="rowDiv">
+                                <apex:repeat value="{!agendaPresenterWrapperList}" var="AG" >  
+                                    <div class="largeColrating">
+                                        <div class="likelyDiv">
+                                            <span class="ratingTxt">{!$Label.Not_Likely_at_all}</span>
+                                        </div>
+                                        <div class="ntlikelyDiv">
+                                            <span class="ratingTxt">{!$Label.Extremely_Likely}</span>
+                                        </div>
+                                        <div class="cBoth"></div> 
+                                        <div class="ratingCount">
+                                            <div class="row">
+                                                <span>0</span>
+                                                <span>1</span>
+                                                <span>2</span>
+                                                <span>3</span>
+                                                <span>4</span>
+                                                <span>5</span>
+                                                <span>6</span>
+                                                <span>7</span>
+                                                <span>8</span>
+                                                <span>9</span>
+                                                <span>10</span> 
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <div  class="largeColratingtext">    
+                                        <b><apex:outputField value="{!AG.agendaSurvey.Agenda__r.VisitOps__Agenda_Title__c}"/></b><br/> </div>
+                                    
+                                    <div  class="largeColrating">
+                                        <apex:selectRadio value="{!AG.agendaSurvey.VisitOps__Session_Rating__c}"  layout="table" styleClass="radioClass" required="true" disabled="{!flag}">
+                                            <apex:selectOptions value="{!RadioOptsNoLabel}"/>
+                                        </apex:selectRadio> 
+                                    </div>
+                                    <apex:repeat value="{!AG.presenterSurveyList}" var="lp">   
+                                        <div  class="largeColratingtext"> 
+                                            {!$Label.Presenter} :<apex:outputLabel value="{!lp.Presenter_Agenda_Link__r.VisitOps__Presenter_Name__c}"/> <br/>
+                                        </div>     
+                                        <div  class="largeColrating">
+                                            <apex:selectRadio value="{!lp.VisitOps__Presenter_Rating__c}"  layout="table" styleClass="radioClass" required="true" disabled="{!flag}">
+                                                <apex:selectOptions value="{!RadioOptsNoLabel}"/>
+                                            </apex:selectRadio> 
+                                        </div>
+                                    </apex:repeat>
+                                    <hr/>
+                                </apex:repeat>  
+                            </div>
+                        </li>
+                        <li>
+                            <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Recommendation_Strategy__c.inlineHelpText}"/></div>
+                            <div class="rowDiv"></div>
+                            <div class="rowDiv">
+                            </div>
+                            <div class="ratings">
+                                <div class="likelyDiv">
+                                    <span class="ratingTxt">{!$Label.Not_Likely_at_all}</span>
+                                </div>
+                                <div class="ntlikelyDiv">
+                                    <span class="ratingTxt">{!$Label.Extremely_Likely}</span>
+                                </div>
+                                <div class="cBoth"></div> 
+                                <div class="ratingCount">
+                                    
+                                    <div class="row" >
+                                        <apex:selectRadio value="{!surveyRecord.VisitOps__Recommendation_Strategy__c}"  layout="table" styleClass="radioClass" required="true" disabled="{!flag}">
+                                            <apex:selectOptions value="{!RadioOpts}"/>
+                                        </apex:selectRadio> 
+                                    </div>
+                                </div>
+                            </div>  
+                            
+                        </li>
+                        <li>
+                            <div class="questions"><apex:outputText value="{!$ObjectType.VisitOps__Survey__c.fields.VisitOps__Recommendation_Comments__c.inlineHelpText}"/></div>
+                            <div class="rowDiv"></div>
+                            <div > 
+                                <apex:inputTextArea value="{!surveyRecord.VisitOps__Recommendation_Comments__c}" style="width:80%;height:130px" disabled="{!flag}"/>    
+                            </div>
+                            
+                        </li>
+                    </ol>  
+                </div>
+                <center>
+                    <!-- <b><apex:commandButton value="Submit" action="{!submitSurvey}" oncomplete="alertUser({!showSubmitButton});" style="width:5%;height:75%;" reRender="formId" rendered="{!showSubmitButton}"/></b>--><br/><br/><br/><br/> 
+                </center><br/><br/>   
+            </apex:outputPanel>
+        </div>
+        <div class="footer"><!--<apex:image url="{!DocumentFooterUrl}" style="padding-left:0px;width:1440px;height:58px"/>--></div> 
+    </apex:form>
+    <style>
+        
+        
+        <!-- Style Added for Lightning Experience -->
+        @media print{@page {size: portrait}}
+        
+        .errorMessage{
+        text-align: center;
+        color : #B40404;
+        font-size:16px; 
+        font-family:sans-serif;
+        }
+        .radioClass td{width:35px; text-align:center;}
+        .radioClass {width:396px!important;}
+        .radioClass label{display:block;}
+        .radioClass input[type="radio"]{vertical-align:top;}
+        .ratingCount1 span {
+        display: inline-block;
+        width: 8%;
+        text-align: center;
+        }
+        .ratingCount1{
+        padding-left:19px!important;
+        padding-right:16px!important;
+        }
+        
+        .ratingCount {
+        margin-left: 16px !important;
+        }
+        
+        .ratingCount span {
+        width: 32px !important;
+        }
+        
+        .row{display: inline-block; width: 100%; }
+        
+        .ntlikelyDiv {float: right;padding-right:0;}
+        .ratings {width:440px;}
+        .ratingTxt {
+        color: #000000;
+        font-size: 0.8em;
+        padding-top: 5px;
+        float: left;
+        }
+        .largeColratingtext{width:800px;position:absolute;left:487px;font-size: 0.8em;}
+        .largeColrating{width:429px;}
+        hr {
+        width: 60%;
+        float: left;        
+        }
+        .spacing {
+        padding-left:12px;
+        }
+        .disablable {
+        width: 402px;
+        border-style:hidden;
+        background-color:#DDDDDD;
+        padding: 0.5%;
+        font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+        } 
+        /*.footer {
+        background-image: none;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-position: 0% 0%;
+        position: fixed;
+        bottom: 0pt;
+        left: 0pt;*/
+        
+        
+        .labelText{font-size:18px;}
+        /*.largeColratingtext{width:24%;float: right;font-size: 0.8em;}
+        .largeColrating{width:77%;}
+        .surveyQuestions input[type=text]{width:35%;padding:0.5%;height:20px; font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;}
+        .surveyDetails{
+        width: 40% !important;  
+        }*/
+                           
+    </style>
+    <script>
+    $(document).ready(function(){
+        window.print();
+    });
+    function alertUser(errorOccured){
+        if(errorOccured=='false' || errorOccured==false) {
+            alert('Survey has been submitted successfully. You may now close the window.');
+        } 
+    }
+    </script>
+</apex:page>

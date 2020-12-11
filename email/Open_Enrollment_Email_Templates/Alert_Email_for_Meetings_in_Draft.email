@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p>Hello!</p><p>&nbsp;</p><p>Please note that there is an un-submitted meeting record in Salesforce under Account Name, {!Open_Enrollment_Meetings__c.Account__c}.&nbsp; To review this record, please&nbsp;click on the meeting&nbsp;link, {!Open_Enrollment_Meetings__c.Link}, and submit as needed.</p><p>&nbsp;</p><p>If you do not&nbsp;wish to complete this&nbsp;meeting request, no action is required as this meeting will be deleted after 30 days.</p><p>&nbsp;</p><p>Thank you,</p><p>&nbsp;</p><p>The Open Enrollment Team</p>]]></td>
+</tr>
+</table>

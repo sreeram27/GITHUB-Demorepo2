@@ -1,0 +1,11 @@
+<apex:component controller="APLG_01_OpportunityEmailTemplate_CC" access="global">
+    <apex:attribute name="accountSitusCode" type="String" description="Account Situs Code" assignTo="{!sAccSitusCode}"/>
+    <apex:attribute name="accountBranding" type="String" description="Account Branding" assignTo="{!sAccBranding}"/>
+    <div>
+        
+        {!DynamicFooter.Footer_1st_line__c}
+        <br/><br/>
+        {!DynamicFooter.Footer_part_1__c} {!DynamicFooter.Footer_part_2__c} 
+    </div>
+  
+</apex:component>

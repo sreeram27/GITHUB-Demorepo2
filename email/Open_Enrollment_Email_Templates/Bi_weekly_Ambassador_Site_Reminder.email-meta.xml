@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Bi-weekly Ambassador Reminder with URL to OE Ambassador Website</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Plain_Letterhead</letterhead>
+    <name>Bi-weekly Ambassador Site Reminder</name>
+    <style>freeForm</style>
+    <subject>FRIENDLY REMINDER: OE Ambassador Support Needed!</subject>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

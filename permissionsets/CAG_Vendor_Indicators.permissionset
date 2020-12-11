@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Requirement is to not allow users to update this field except those in the COO office.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.ClientCAGStartDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.CAG__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContactRelationship__c.CAGCallParticipationOnly__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContactRelationship__c.CAG_old__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContactRelationship__c.ClientCAGStartDate_old__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CAG Vendor Indicators</label>
+</PermissionSet>

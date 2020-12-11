@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Facilitator Reminder Email - 1 week prior to event for National Sales users</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Plain_Letterhead</letterhead>
+    <name>National Sales Facilitator Reminder Email</name>
+    <style>freeForm</style>
+    <subject>Event Reminder</subject>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission to View Bulk Data Load Jobs</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bulk Data Load Jobs</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApiEnabled</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageDataIntegrations</name>
+    </userPermissions>
+</PermissionSet>

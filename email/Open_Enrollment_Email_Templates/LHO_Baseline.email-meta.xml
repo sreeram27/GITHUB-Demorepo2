@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sent to LHO - when request is submitted</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Updated_Anthem_Logo</letterhead>
+    <name>LHO  Baseline</name>
+    <style>freeForm</style>
+    <subject>Anthem LHO Support Request</subject>
+    <textOnly>Hi Anthem LHO Account Executive,
+
+
+
+We have received a request for Live Health Online Registration assistance for Anthem National Account client:  {!Open_Enrollment_Meetings__c.Account__c}
+
+Requester Name: {Enter Name of person who submitted request}
+
+Meeting Name: {!SFDC_Volunteer_Event__c.Name}
+
+Total # of Expected Employees: {!SFDC_Volunteer_Event__c.Expected_of_Employees__c}
+Meeting type:  {!SFDC_Volunteer_Event__c.Meeting_Type__c}
+Meeting Date:  {!SFDC_Volunteer_Event__c.Date__c}
+Account Manager: {!SFDC_Volunteer_Event__c.Account_Manager_Formula__c}
+
+Meeting Street:{!SFDC_Volunteer_Event__c.Meeting_Street__c}
+Meeting City/State/Zip:  {!SFDC_Volunteer_Event__c.Meeting_City__c},
+{!SFDC_Volunteer_Event__c.Meeting_State__c} {!SFDC_Volunteer_Event__c.Meeting_Zip_Code__c}
+
+Shipping Address:
+{!SFDC_Volunteer_Event__c.Shipping_Street__c}
+{!SFDC_Volunteer_Event__c.Shipping_City__c}, {!SFDC_Volunteer_Event__c.Shipping_State__c} {!SFDC_Volunteer_Event__c.Shipping_Zip_Code__c}
+
+Meeting Site Contact Info.:
+{!SFDC_Volunteer_Event__c.Meeting_Contact__c}
+{!SFDC_Volunteer_Event__c.Contact_Phone_Number__c}
+{!SFDC_Volunteer_Event__c.Meeting_Contact_Email__c}
+
+Session Times:
+{!SFDC_Volunteer_Event__c.Session_1_Start_Time__c} -{!SFDC_Volunteer_Event__c.Session_1_End_Time__c}
+{!SFDC_Volunteer_Event__c.Session_2_Start_Time__c} -{!SFDC_Volunteer_Event__c.Session_2_End_Time__c}
+{!SFDC_Volunteer_Event__c.Session_3_Start_Time__c}
+{!SFDC_Volunteer_Event__c.Session_4_Start_Time__c}
+{!SFDC_Volunteer_Event__c.Session_4_End_Time__c}
+{!SFDC_Volunteer_Event__c.Session_5_Start_Time__c}
+{!SFDC_Volunteer_Event__c.Session_5_End_Time__c}
+{!SFDC_Volunteer_Event__c.Session_6_Start_Time__c}
+{!SFDC_Volunteer_Event__c.Session_6_End_Time__c}
+{!SFDC_Volunteer_Event__c.Session_7_Start_Time__c}
+{!SFDC_Volunteer_Event__c.Session_7_End_Time__c}
+
+Thanks
+ANA Open Enrollment Coordinator: {!SFDC_Volunteer_Event__c.OE_Coordinator_Contact__c}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,27 @@
+<messaging:emailTemplate subject="Group Offshoring Restriction - Needs Your Review/Approval" recipientType="User" relatedToType="Group_Outsourcing_Approval__c">
+<messaging:htmlEmailBody >
+
+Hi {!relatedTo.Senior_Management_Approval__r.FirstName}, <br/><br/>
+
+The below Group Offshoring Restriction record is submitted for your review/approval.<br/><br/>
+
+1. Use this link to perform Approval actions for "GOR Approval Record":<br/><br/>
+   
+   <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+relatedto.Id} " target="_blank">Click here</a> <br/><br/>
+
+2. Use this link to review the Group Offshoring Restriction details:<br/><br/>
+
+   <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+relatedto.Group_Outsourcing_Restriction__r.Id} " target="_blank">Click here</a><br/><br/> 
+
+Please review this record and take the necessary action. <br/>
+- You may 'Approve' the record by changing the field 'Approval Status' value to 'Approved'  and Click 'Save'. <br/>
+- You may request the revision by changing the field 'Approval Status' value to 'Needs Revision' and Click 'Save'. <br/>
+- Add any notes/comments using the field 'Comments'.<br/><br/>
+
+Note: Once the record is 'Approved' the Group Offshoring Record will get locked and No users will be able to make any changes. <br/><br/> 
+
+Thank You.
+
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

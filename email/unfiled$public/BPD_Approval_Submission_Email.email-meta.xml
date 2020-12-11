@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BPD Approval Generic Email Format</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BPD Approval Submission Email</name>
+    <style>none</style>
+    <subject>A Benefit Plan Design Record For {!BPD__c.Account__c} Has Been {!BPD__c.Design_Status__c}Submitted To You {!BPD__c.Re_submission_wording_for_template__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

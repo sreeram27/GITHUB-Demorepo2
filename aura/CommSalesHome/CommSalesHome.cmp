@@ -1,0 +1,35 @@
+<aura:component implements="lightning:homeTemplate" description="Comm Sales Home Page">
+    <aura:attribute name="cmp1" type="Aura.Component[]" />
+    <aura:attribute name="cmp2" type="Aura.Component[]" />
+    <aura:attribute name="cmp3" type="Aura.Component[]" />
+    <aura:attribute name="cmp4" type="Aura.Component[]" />
+    <aura:attribute name="cmp5" type="Aura.Component[]" />
+    <aura:attribute name="cmp6" type="Aura.Component[]" />
+    <aura:attribute name="cmp7" type="Aura.Component[]" />
+    
+    <div>
+        <lightning:layout multipleRows="true" >
+            <lightning:layoutItem size="12" flexibility="auto" padding="around-small">
+                {!v.cmp1}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                {!v.cmp2}
+            </lightning:layoutItem>
+            <lightning:layoutItem size="6" flexibility="auto" padding="around-small">
+                {!v.cmp3}
+            </lightning:layoutItem> 
+            <lightning:layoutItem size="3" flexibility="auto" padding="around-small">
+                {!v.cmp4}
+            </lightning:layoutItem> 
+            <lightning:layoutItem size="3" flexibility="auto" padding="around-small">
+                {!v.cmp5}
+            </lightning:layoutItem> 
+            <lightning:layoutItem size="3" flexibility="auto" padding="around-small">
+                {!v.cmp6}
+            </lightning:layoutItem> 
+            <lightning:layoutItem size="3" flexibility="auto" padding="around-small">
+                {!v.cmp7}
+            </lightning:layoutItem> 
+        </lightning:layout>        
+    </div>    
+</aura:component>

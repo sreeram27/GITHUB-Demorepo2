@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Backup_Resource_Name__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Backup Resource Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Employee</label>
+        <referenceTo>Employee__c</referenceTo>
+        <relationshipName>Vacations</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Current_month__c</fullName>
+        <externalId>false</externalId>
+        <formula>MONTH( TODAY() )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current month</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dates_of_vacaton__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Dates of vacaton</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(  Type_of_Leave__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Details_of_work_Performed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Details of work Performed</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_Date_of_Week_End__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATE(
+YEAR(  End_Date__c  ),
+Month(End_Date__c),
+DAY(End_Date__c)-MOD(End_Date__c - DATE(1900, 1, 1), 7))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start Date of Week_End_Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>End</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Floating_Holidays__c</fullName>
+        <externalId>false</externalId>
+        <label>Floating Holidays</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pongal January 14</fullName>
+                    <default>false</default>
+                    <label>Pongal January 14</label>
+                </value>
+                <value>
+                    <fullName>Guru Gobind Singh&apos;s Birthday January 18</fullName>
+                    <default>false</default>
+                    <label>Guru Gobind Singh&apos;s Birthday January 18</label>
+                </value>
+                <value>
+                    <fullName>Thiruvalluvar Day January 15</fullName>
+                    <default>false</default>
+                    <label>Thiruvalluvar Day January 15</label>
+                </value>
+                <value>
+                    <fullName>Uzhavar Thirunal January 16</fullName>
+                    <default>false</default>
+                    <label>Uzhavar Thirunal January 16</label>
+                </value>
+                <value>
+                    <fullName>ID-E-Milad January 25</fullName>
+                    <default>false</default>
+                    <label>ID-E-Milad January 25</label>
+                </value>
+                <value>
+                    <fullName>Basant Panchami February 15</fullName>
+                    <default>false</default>
+                    <label>Basant Panchami February 15</label>
+                </value>
+                <value>
+                    <fullName>Next day of MahasivarathriMarch 11</fullName>
+                    <default>false</default>
+                    <label>Next day of MahasivarathriMarch 11</label>
+                </value>
+                <value>
+                    <fullName>Holika Dahan March 26</fullName>
+                    <default>false</default>
+                    <label>Holika Dahan March 26</label>
+                </value>
+                <value>
+                    <fullName>Holi March 27</fullName>
+                    <default>false</default>
+                    <label>Holi March 27</label>
+                </value>
+                <value>
+                    <fullName>Good Friday March 29</fullName>
+                    <default>false</default>
+                    <label>Good Friday March 29</label>
+                </value>
+                <value>
+                    <fullName>Chandramana Ugadi April 11</fullName>
+                    <default>false</default>
+                    <label>Chandramana Ugadi April 11</label>
+                </value>
+                <value>
+                    <fullName>Bengali New Year Day April 15</fullName>
+                    <default>false</default>
+                    <label>Bengali New Year Day April 15</label>
+                </value>
+                <value>
+                    <fullName>Ram Navami April 19</fullName>
+                    <default>false</default>
+                    <label>Ram Navami April 19</label>
+                </value>
+                <value>
+                    <fullName>Mahavir Jayanti April 24</fullName>
+                    <default>false</default>
+                    <label>Mahavir Jayanti April 24</label>
+                </value>
+                <value>
+                    <fullName>Shab-E-Meraj June 07</fullName>
+                    <default>false</default>
+                    <label>Shab-E-Meraj June 07</label>
+                </value>
+                <value>
+                    <fullName>Shab-E-Barath June 25</fullName>
+                    <default>false</default>
+                    <label>Shab-E-Barath June 25</label>
+                </value>
+                <value>
+                    <fullName>Jamat -Ul- Vida August 02</fullName>
+                    <default>false</default>
+                    <label>Jamat -Ul- Vida August 02</label>
+                </value>
+                <value>
+                    <fullName>Shab-E-Qadar August 05</fullName>
+                    <default>false</default>
+                    <label>Shab-E-Qadar August 05</label>
+                </value>
+                <value>
+                    <fullName>Varalakshmi Vratham August 16</fullName>
+                    <default>false</default>
+                    <label>Varalakshmi Vratham August 16</label>
+                </value>
+                <value>
+                    <fullName>Raksha Bandan August 20</fullName>
+                    <default>false</default>
+                    <label>Raksha Bandan August 20</label>
+                </value>
+                <value>
+                    <fullName>Janmashtami August 28</fullName>
+                    <default>false</default>
+                    <label>Janmashtami August 28</label>
+                </value>
+                <value>
+                    <fullName>Ganesh Chaturthi September 09</fullName>
+                    <default>false</default>
+                    <label>Ganesh Chaturthi September 09</label>
+                </value>
+                <value>
+                    <fullName>Onam September 16</fullName>
+                    <default>false</default>
+                    <label>Onam September 16</label>
+                </value>
+                <value>
+                    <fullName>Mahalaya Amavasya October 04</fullName>
+                    <default>false</default>
+                    <label>Mahalaya Amavasya October 04</label>
+                </value>
+                <value>
+                    <fullName>Durga Puja: Saptami October 11</fullName>
+                    <default>false</default>
+                    <label>Durga Puja: Saptami October 11</label>
+                </value>
+                <value>
+                    <fullName>Bakrid October 16</fullName>
+                    <default>false</default>
+                    <label>Bakrid October 16</label>
+                </value>
+                <value>
+                    <fullName>Karva Chouth October 22</fullName>
+                    <default>false</default>
+                    <label>Karva Chouth October 22</label>
+                </value>
+                <value>
+                    <fullName>Balipadyami November 04</fullName>
+                    <default>false</default>
+                    <label>Balipadyami November 04</label>
+                </value>
+                <value>
+                    <fullName>Bhai Dhuj November 05</fullName>
+                    <default>false</default>
+                    <label>Bhai Dhuj November 05</label>
+                </value>
+                <value>
+                    <fullName>Chhat Puja November 08</fullName>
+                    <default>false</default>
+                    <label>Chhat Puja November 08</label>
+                </value>
+                <value>
+                    <fullName>Muharram November 14</fullName>
+                    <default>false</default>
+                    <label>Muharram November 14</label>
+                </value>
+                <value>
+                    <fullName>Christmas Eve December 24</fullName>
+                    <default>false</default>
+                    <label>Christmas Eve December 24</label>
+                </value>
+                <value>
+                    <fullName>Next day of Christmas December 26</fullName>
+                    <default>false</default>
+                    <label>Next day of Christmas December 26</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Hours_Of_Vacation__c</fullName>
+        <externalId>false</externalId>
+        <formula>Hours_Of_Vacation_month_1__c  +  Hours_Of_Vacation_month_2__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours Of Vacation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hours_Of_Vacation_month_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Hours Of Vacation month 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hours_Of_Vacation_month_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Hours Of Vacation month 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsAllDayEvent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsAllDayEvent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_Number__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Mobile Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>MonthNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>MonthNumber</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Month_Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(
+MONTH(Start_Date__c),
+1, &quot;January&quot;,
+2, &quot;February&quot;,
+3, &quot;March&quot;,
+4, &quot;April&quot;,
+5, &quot;May&quot;,
+6, &quot;June&quot;,
+7, &quot;July&quot;,
+8, &quot;August&quot;,
+9, &quot;September&quot;,
+10, &quot;October&quot;,
+11, &quot;November&quot;,
+12, &quot;December&quot;,
+&quot;None&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Month</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>MONTH( Start_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Month of start</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Month_of_End__c</fullName>
+        <externalId>false</externalId>
+        <formula>MONTH( End_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Month of End</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Vacation_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>No.of Vacation Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Same_Month__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Same Month</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Same_Year__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Same Year</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Select_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Select Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Past Vacations</fullName>
+                    <default>false</default>
+                    <label>Past Vacations</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date_of_Week_strt__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATE(
+    YEAR( Start_Date__c ),
+    Month(Start_Date__c),
+    DAY(Start_Date__c)-MOD(Start_Date__c - DATE(1900, 1, 1), 7))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start Date of Week_start_Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Start</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Test__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Test</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type_of_Leave__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Leave</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SickLeave</fullName>
+                    <default>false</default>
+                    <label>SickLeave</label>
+                </value>
+                <value>
+                    <fullName>Training</fullName>
+                    <default>false</default>
+                    <label>Training</label>
+                </value>
+                <value>
+                    <fullName>Planned Vacation</fullName>
+                    <default>false</default>
+                    <label>Planned Vacation</label>
+                </value>
+                <value>
+                    <fullName>Floating</fullName>
+                    <default>false</default>
+                    <label>Floating</label>
+                </value>
+                <value>
+                    <fullName>Compensatory Off</fullName>
+                    <default>false</default>
+                    <label>Compensatory Off</label>
+                </value>
+                <value>
+                    <fullName>Emergency / Unplanned</fullName>
+                    <default>false</default>
+                    <label>Emergency / Unplanned</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Vacation_Applied_On__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(Dates_of_vacaton__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vacation Applied On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Vocation_Hours__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Vocation Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Weekly_Start_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Weekly Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>YEAR( Start_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Year of start</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year_of_End__c</fullName>
+        <externalId>false</externalId>
+        <formula>YEAR( End_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Year of End</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>email__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>email</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>team_lead_name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.Team_Lead_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>team lead name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Out of Office</label>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Out of Office Description</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Out of Office</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Vacation_End_Date_Greater_Start</fullName>
+        <active>true</active>
+        <errorConditionFormula>End_Date__c &lt; Start_Date__c</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End date should be greater than of Start Date</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

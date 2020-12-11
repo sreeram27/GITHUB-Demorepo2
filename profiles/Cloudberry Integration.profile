@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>APXTConga4__CongaMerge</application>
@@ -94484,6 +94483,26 @@
         <recordType>Account.vlocity_ins__AgencyBrokerage</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Account-Account Layout - Brokerage</layout>
+        <recordType>Account.Brokerage</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout - Customer</layout>
+        <recordType>Account.Confidential</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout - Customer</layout>
+        <recordType>Account.Customer</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout - Prospect</layout>
+        <recordType>Account.Prospect</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Account-Account Layout-Vendor</layout>
+        <recordType>Account.ServiceProvider</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -94525,26 +94544,6 @@
     <layoutAssignments>
         <layout>Account-Account Layout</layout>
         <recordType>Account.vlocity_ins__MobilePhoneAccount</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Account-Account Layout - Brokerage</layout>
-        <recordType>Account.Brokerage</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Account-Account Layout - Customer</layout>
-        <recordType>Account.Confidential</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Account-Account Layout - Customer</layout>
-        <recordType>Account.Customer</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Account-Account Layout - Prospect</layout>
-        <recordType>Account.Prospect</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Account-Account Layout-Vendor</layout>
-        <recordType>Account.ServiceProvider</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Account-vlocity_ins__Account %28Vlocity 2%2E7%29</layout>
@@ -94760,11 +94759,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Billing__c-Billing Layout</layout>
-        <recordType>Billing__c.Billing</recordType>
+        <recordType>Billing__c.BillingASO</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Billing__c-Billing Layout</layout>
-        <recordType>Billing__c.BillingASO</recordType>
+        <recordType>Billing__c.Billing</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Broker_Consultant_Commissions1__c-Broker%2FConsultant Commissions1 Layout</layout>
@@ -95801,6 +95800,22 @@
         <layout>Open_Enrollment_Meetings__c-Open Enrollment Meetings Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout - IGAP</layout>
+        <recordType>Opportunity.In_Group_Add_Product</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout - IGC</layout>
+        <recordType>Opportunity.In_Group_Change</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout - New Business</layout>
+        <recordType>Opportunity.New_Business</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Opportunity-Opportunity Layout - Renewal</layout>
+        <recordType>Opportunity.Renewal</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Opportunity-Opportunity Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -95838,22 +95853,6 @@
     <layoutAssignments>
         <layout>Opportunity-Opportunity Layout</layout>
         <recordType>Opportunity.StopLoss</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Opportunity-Opportunity Layout - IGAP</layout>
-        <recordType>Opportunity.In_Group_Add_Product</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Opportunity-Opportunity Layout - IGC</layout>
-        <recordType>Opportunity.In_Group_Change</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Opportunity-Opportunity Layout - New Business</layout>
-        <recordType>Opportunity.New_Business</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Opportunity-Opportunity Layout - Renewal</layout>
-        <recordType>Opportunity.Renewal</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Opportunity-vlocity_ins__Mobile Opportunity %28Vlocity 2%2E5%29</layout>
@@ -96690,54 +96689,6 @@
         <layout>Support_Request__c-End User Support Request</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.Communication_Request</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.Configuration_Change_Request</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.Data_Change_Request</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.Defect</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.EUSR_User_Create</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.EUSR_User_Create1</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.Existing_User_Access_Change</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.On_The_Spot_User_Guidance_Resolution</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.Reporting</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.Training_Request</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.User_Access_Request</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.User_Deactivation_Request</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Sutter_Status__c-Sutter Status Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -96748,38 +96699,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Task-Task Layout</layout>
-        <recordType>Task.LID__InMail</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Task-Task Layout</layout>
-        <recordType>Task.LID__LinkedIn_Call</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Task-Task Layout</layout>
-        <recordType>Task.LID__Message</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Task-Task Layout</layout>
-        <recordType>Task.LID__PointDrive_Presentation_Created</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Task-Task Layout</layout>
-        <recordType>Task.LID__PointDrive_Presentation_Viewed</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Task-Task Layout</layout>
-        <recordType>Task.Log_a_Call</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Task-Task Layout</layout>
-        <recordType>Task.Quote</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Task-Task Layout</layout>
-        <recordType>Task.SA_Task</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Task-vlocity_ins__Mobile Task %28Vlocity 2%2E5%29</layout>
@@ -96826,14 +96745,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Underwriting_Record__c-Underwriting - Renewal</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Underwriting_Record__c-Underwriting - Renewal</layout>
-        <recordType>Underwriting_Record__c.LG_Underwriting</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Underwriting_Record__c-Underwriting - Renewal</layout>
-        <recordType>Underwriting_Record__c.Renewal</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Underwriting__c-Underwriting Layout</layout>
@@ -96985,14 +96896,6 @@
         <layout>VisitOps__Room__c-VisitOps__Room Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>VisitOps__Room__c-VisitOps__Room Layout</layout>
-        <recordType>VisitOps__Room__c.VisitOps__PrivateResource</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>VisitOps__Room__c-VisitOps__Room Layout</layout>
-        <recordType>VisitOps__Room__c.VisitOps__Room</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>VisitOps__Status_Mapping__c-VisitOps__Status Mapping Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -97040,10 +96943,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>VisitOps__Visit_Logistics__c-VisitOps__Visit Logistics Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>VisitOps__Visit_Logistics__c-VisitOps__Visit Logistics Layout</layout>
-        <recordType>VisitOps__Visit_Logistics__c.VisitOps__Restaurant</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>VisitOps__Visit__c-VisitOps__Visit Version 2%2E0 Layout</layout>
@@ -97172,102 +97071,10 @@
         <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.CA</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.CO</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.CT</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.GA</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.IN</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.KY</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.ME</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.MO</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.NH</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.NV</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.NY</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.OH</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.VA</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Application__c-vlocity_ins__Application %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__Application__c.WI</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>vlocity_ins__AssessmentAnswer__c-vlocity_ins__Assessment Answer Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__AssessmentQuestion__c-vlocity_ins__Assessment Question Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__AssessmentQuestion__c-vlocity_ins__Assessment Question Layout</layout>
-        <recordType>vlocity_ins__AssessmentQuestion__c.vlocity_ins__Checkbox</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__AssessmentQuestion__c-vlocity_ins__Assessment Question Layout</layout>
-        <recordType>vlocity_ins__AssessmentQuestion__c.vlocity_ins__Date</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__AssessmentQuestion__c-vlocity_ins__Assessment Question Layout</layout>
-        <recordType>vlocity_ins__AssessmentQuestion__c.vlocity_ins__FreeText</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__AssessmentQuestion__c-vlocity_ins__Assessment Question Layout</layout>
-        <recordType>vlocity_ins__AssessmentQuestion__c.vlocity_ins__Instruction</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__AssessmentQuestion__c-vlocity_ins__Assessment Question Layout</layout>
-        <recordType>vlocity_ins__AssessmentQuestion__c.vlocity_ins__MultiSelect</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__AssessmentQuestion__c-vlocity_ins__Assessment Question Layout</layout>
-        <recordType>vlocity_ins__AssessmentQuestion__c.vlocity_ins__Number</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__AssessmentQuestion__c-vlocity_ins__Assessment Question Layout</layout>
-        <recordType>vlocity_ins__AssessmentQuestion__c.vlocity_ins__QuestionTableMultiSelect</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__AssessmentQuestion__c-vlocity_ins__Assessment Question Layout</layout>
-        <recordType>vlocity_ins__AssessmentQuestion__c.vlocity_ins__QuestionTableSingleSelect</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__AssessmentQuestion__c-vlocity_ins__Assessment Question Layout</layout>
-        <recordType>vlocity_ins__AssessmentQuestion__c.vlocity_ins__SingleSelect</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__Assessment__c-vlocity_ins__Assessment Template Layout</layout>
@@ -97361,14 +97168,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__CalculationProcedure__c-vlocity_ins__Pricing Procedure Declarative %28Vlocity 3%2E0%29</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__CalculationProcedure__c-vlocity_ins__Pricing Procedure Declarative %28Vlocity 3%2E0%29</layout>
-        <recordType>vlocity_ins__CalculationProcedure__c.vlocity_ins__ClassBased</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__CalculationProcedure__c-vlocity_ins__Pricing Procedure Declarative %28Vlocity 3%2E0%29</layout>
-        <recordType>vlocity_ins__CalculationProcedure__c.vlocity_ins__Declarative</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__CampaignContentDocument__c-vlocity_ins__Campaign Content Document Layout</layout>
@@ -97470,14 +97269,6 @@
         <layout>vlocity_ins__Datastore__c-vlocity_ins__Vlocity Data Store Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>vlocity_ins__Datastore__c-vlocity_ins__Vlocity Data Store Layout</layout>
-        <recordType>vlocity_ins__Datastore__c.vlocity_ins__CPQAPI</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Datastore__c-vlocity_ins__Vlocity Data Store Layout</layout>
-        <recordType>vlocity_ins__Datastore__c.vlocity_ins__ProductHierarchy</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>vlocity_ins__DecompositionRelationship__c-vlocity_ins__Decomposition Relationship %28Vlocity XOM%29 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -97547,10 +97338,6 @@
         <layout>vlocity_ins__FinancialAccount__c-vlocity_ins__Financial Account Layout %28Vlocity 2%2E7%29</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>vlocity_ins__FinancialAccount__c-vlocity_ins__Financial Account Layout %28Vlocity 2%2E7%29</layout>
-        <recordType>vlocity_ins__FinancialAccount__c.vlocity_ins__Investment</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>vlocity_ins__FinancialSecurityPosition__c-vlocity_ins__Security Position %28Vlocity 2%2E7%29</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -97590,14 +97377,6 @@
         <layout>vlocity_ins__FulfilmentRequest__c-vlocity_ins__Fulfilment Request %28Vlocity XOM%29 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>vlocity_ins__FulfilmentRequest__c-vlocity_ins__Fulfilment Request %28Vlocity XOM%29 Layout</layout>
-        <recordType>vlocity_ins__FulfilmentRequest__c.vlocity_ins__FulfilmentRequest</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__FulfilmentRequest__c-vlocity_ins__Fulfilment Request %28Vlocity XOM%29 Layout</layout>
-        <recordType>vlocity_ins__FulfilmentRequest__c.vlocity_ins__ServiceQualificationRequest</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>vlocity_ins__FunctionDefinition__mdt-vlocity_ins__Function Definition Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -97634,10 +97413,6 @@
         <layout>vlocity_ins__Household__c-vlocity_ins__Household %28Vlocity 2%2E5%29</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>vlocity_ins__Household__c-vlocity_ins__Household %28Vlocity 2%2E5%29</layout>
-        <recordType>vlocity_ins__Household__c.vlocity_ins__Household</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>vlocity_ins__InboundRESTInterface__c-vlocity_ins__Inbound REST Interface %28Vlocity XOM%29 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -97654,14 +97429,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__InsuranceClaimInvolvedProperty__c-vlocity_ins__Involved Property %28Vlocity 2%2E5%29</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__InsuranceClaimInvolvedProperty__c-vlocity_ins__Involved Property %28Vlocity 2%2E5%29</layout>
-        <recordType>vlocity_ins__InsuranceClaimInvolvedProperty__c.vlocity_ins__Property</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__InsuranceClaimInvolvedProperty__c-vlocity_ins__Involved Property %28Vlocity 2%2E5%29</layout>
-        <recordType>vlocity_ins__InsuranceClaimInvolvedProperty__c.vlocity_ins__Vehicle</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__InsuranceClaimLitigation__c-vlocity_ins__Claim Litigation %28Vlocity 2%2E7%29</layout>
@@ -97691,18 +97458,6 @@
         <layout>vlocity_ins__IntegrationRetryPolicy__c-vlocity_ins__Integration Retry Policy Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>vlocity_ins__IntegrationRetryPolicy__c-vlocity_ins__Integration Retry Policy Layout</layout>
-        <recordType>vlocity_ins__IntegrationRetryPolicy__c.vlocity_ins__MonotonousForeverRetryPolicy</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__IntegrationRetryPolicy__c-vlocity_ins__Integration Retry Policy Layout</layout>
-        <recordType>vlocity_ins__IntegrationRetryPolicy__c.vlocity_ins__MonotonousRetryPolicy</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__IntegrationRetryPolicy__c-vlocity_ins__Integration Retry Policy Layout</layout>
-        <recordType>vlocity_ins__IntegrationRetryPolicy__c.vlocity_ins__NoRetryPolicy</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>vlocity_ins__InterfaceImplementationDetail__c-vlocity_ins__Interface Implementation Detail Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -97722,14 +97477,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__InventoryItem__c-vlocity_ins__Inventory Item Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__InventoryItem__c-vlocity_ins__Inventory Item Layout</layout>
-        <recordType>vlocity_ins__InventoryItem__c.vlocity_ins__InventoryItem</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__InventoryItem__c-vlocity_ins__Inventory Item Layout</layout>
-        <recordType>vlocity_ins__InventoryItem__c.vlocity_ins__ServiceQualificationResult</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__ItemImplementation__c-vlocity_ins__Item Implementation %28Vlocity XOM%29 Layout</layout>
@@ -97763,14 +97510,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__ObjectClass__c-vlocity_ins__Object Class Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__ObjectClass__c-vlocity_ins__Object Class Layout</layout>
-        <recordType>vlocity_ins__ObjectClass__c.vlocity_ins__Object</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__ObjectClass__c-vlocity_ins__Object Class Layout</layout>
-        <recordType>vlocity_ins__ObjectClass__c.vlocity_ins__ObjectType</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__ObjectElement__c-vlocity_ins__Vlocity Object Section Element Layout</layout>
@@ -97812,14 +97551,6 @@
         <layout>vlocity_ins__OperatingHoursEntry__c-vlocity_ins__Operating Hours Entry Exception Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>vlocity_ins__OperatingHoursEntry__c-vlocity_ins__Operating Hours Entry Exception Layout</layout>
-        <recordType>vlocity_ins__OperatingHoursEntry__c.vlocity_ins__Exception</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__OperatingHoursEntry__c-vlocity_ins__Operating Hours Entry Exception Layout</layout>
-        <recordType>vlocity_ins__OperatingHoursEntry__c.vlocity_ins__Standard</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>vlocity_ins__OperatingHours__c-vlocity_ins__Operating Hours Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -97839,34 +97570,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__OrchestrationItemDefinition__c-vlocity_ins__Auto Task %28Vlocity XOM%29 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__OrchestrationItemDefinition__c-vlocity_ins__Auto Task %28Vlocity XOM%29 Layout</layout>
-        <recordType>vlocity_ins__OrchestrationItemDefinition__c.vlocity_ins__AutoTask</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__OrchestrationItemDefinition__c-vlocity_ins__Auto Task %28Vlocity XOM%29 Layout</layout>
-        <recordType>vlocity_ins__OrchestrationItemDefinition__c.vlocity_ins__Callout</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__OrchestrationItemDefinition__c-vlocity_ins__Auto Task %28Vlocity XOM%29 Layout</layout>
-        <recordType>vlocity_ins__OrchestrationItemDefinition__c.vlocity_ins__ManualTask</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__OrchestrationItemDefinition__c-vlocity_ins__Auto Task %28Vlocity XOM%29 Layout</layout>
-        <recordType>vlocity_ins__OrchestrationItemDefinition__c.vlocity_ins__Milestone</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__OrchestrationItemDefinition__c-vlocity_ins__Auto Task %28Vlocity XOM%29 Layout</layout>
-        <recordType>vlocity_ins__OrchestrationItemDefinition__c.vlocity_ins__PullEvent</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__OrchestrationItemDefinition__c-vlocity_ins__Auto Task %28Vlocity XOM%29 Layout</layout>
-        <recordType>vlocity_ins__OrchestrationItemDefinition__c.vlocity_ins__PushEvent</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__OrchestrationItemDefinition__c-vlocity_ins__Auto Task %28Vlocity XOM%29 Layout</layout>
-        <recordType>vlocity_ins__OrchestrationItemDefinition__c.vlocity_ins__SubPlan</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__OrchestrationItem__c-vlocity_ins__Orchestration Item %28Vlocity XOM%29 Layout</layout>
@@ -97957,10 +97660,6 @@
         <layout>vlocity_ins__PolicyLineItem__c-vlocity_ins__Insured People %28Vlocity 2%2E5%29</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>vlocity_ins__PolicyLineItem__c-vlocity_ins__Insured People %28Vlocity 2%2E5%29</layout>
-        <recordType>vlocity_ins__PolicyLineItem__c.vlocity_ins__People</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>vlocity_ins__PolicyLineItem__c-vlocity_ins__Insured Property %28Vlocity 2%2E5%29</layout>
         <recordType>vlocity_ins__PolicyLineItem__c.vlocity_ins__Property</recordType>
     </layoutAssignments>
@@ -97987,10 +97686,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__Policy__c-vlocity_ins__Policy %28Vlocity 2%2E5%29</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Policy__c-vlocity_ins__Policy %28Vlocity 2%2E5%29</layout>
-        <recordType>vlocity_ins__Policy__c.vlocity_ins__Default</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__Policy__c-vlocity_ins__Policy Commercial Lines %28Vlocity 2%2E5%29</layout>
@@ -98022,14 +97717,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__PricingComponent__c-vlocity_ins__Pricing Component Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__PricingComponent__c-vlocity_ins__Pricing Component Layout</layout>
-        <recordType>vlocity_ins__PricingComponent__c.vlocity_ins__Alteration</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__PricingComponent__c-vlocity_ins__Pricing Component Layout</layout>
-        <recordType>vlocity_ins__PricingComponent__c.vlocity_ins__ChargeSpec</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__PricingElement__c-vlocity_ins__Pricing Element Layout</layout>
@@ -98125,18 +97812,6 @@
         <layout>vlocity_ins__ProviderNetwork__c-vlocity_ins__Provider Network Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>vlocity_ins__ProviderNetwork__c-vlocity_ins__Provider Network Layout</layout>
-        <recordType>vlocity_ins__ProviderNetwork__c.vlocity_ins__Pharmacy</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__ProviderNetwork__c-vlocity_ins__Provider Network Layout</layout>
-        <recordType>vlocity_ins__ProviderNetwork__c.vlocity_ins__Producer</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__ProviderNetwork__c-vlocity_ins__Provider Network Layout</layout>
-        <recordType>vlocity_ins__ProviderNetwork__c.vlocity_ins__Provider</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>vlocity_ins__QuoteAppliedPromotionItem__c-vlocity_ins__Quote Applied Promotion Affected Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -98204,14 +97879,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__Statement__c-vlocity_ins__Statement Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Statement__c-vlocity_ins__Statement Layout</layout>
-        <recordType>vlocity_ins__Statement__c.vlocity_ins__Bill</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__Statement__c-vlocity_ins__Statement Layout</layout>
-        <recordType>vlocity_ins__Statement__c.vlocity_ins__Statement</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__StringTranslation__c-vlocity_ins__Vlocity String Translation Layout</layout>
@@ -98304,14 +97971,6 @@
         <layout>vlocity_ins__VlocitySearchWidgetSetup__c-vlocity_ins__Vlocity Search Widget Setup Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>vlocity_ins__VlocitySearchWidgetSetup__c-vlocity_ins__Vlocity Search Widget Setup Layout</layout>
-        <recordType>vlocity_ins__VlocitySearchWidgetSetup__c.vlocity_ins__ClassBased</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>vlocity_ins__VlocitySearchWidgetSetup__c-vlocity_ins__Vlocity Search Widget Setup Layout</layout>
-        <recordType>vlocity_ins__VlocitySearchWidgetSetup__c.vlocity_ins__ObjectBased</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>vlocity_ins__VlocityStateModelVersion__c-vlocity_ins__Vlocity State Model Version Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -98347,6 +98006,7 @@
     <layoutAssignments>
         <layout>vlocity_ins__VqResource__c-vlocity_ins__Vlocity Acuity Resource Layout</layout>
     </layoutAssignments>
+    <loginHours/>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>

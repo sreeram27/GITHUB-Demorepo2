@@ -1,0 +1,27 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><font face="Times New Roman,Times,Serif" size="4"><strong><u>2017 New Sign-up Survey</u></strong></font></p>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p><font face="Times New Roman,Times,Serif">Hello,<!--?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /--><!--?xml:namespace prefix = o /--></font>
+</p><p class="MsoNormal" style="margin: 0in 0in 0pt;"><br></p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><font face="Times New Roman,Times,Serif">You are receiving this email because you've shown interest in signing up again for the Open Enrollment Ambassador Program.&nbsp; Please submit your sign-up survey by clicking on the link below <em>(click on the word "Onboarding")</em>.<span style="mso-spacerun: yes;">&nbsp; </span><o:p></o:p></font></p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><o:p><font face="Times New Roman,Times,Serif">&nbsp;</font></o:p></p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><font face="Times New Roman,Times,Serif">You will see that the survey&nbsp;may be&nbsp;pre-populated with information from when you previously signed-up.&nbsp; We ask that you update your information, as well as fill in any blanks.<span style="mso-spacerun: yes;">&nbsp; </span><o:p></o:p></font></p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><o:p><font face="Times New Roman,Times,Serif">&nbsp;</font></o:p></p><font face="Times New Roman,Times,Serif">
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><a href="{!$Label.OE_Amb_Onboarding_Survey}facid={!Contact.Id}&amp;Email={!Contact.Email}"><u><font color="#3333ff" face="Verdana,Helvetica,Sans-Serif">Ambassador </font></u><font color="#3333ff" face="Verdana,Helvetica,Sans-Serif"><strong>Onboarding</strong></font><u><font color="#3333ff" face="Verdana,Helvetica,Sans-Serif"> Survey </font></u></a></p></font>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><o:p><font face="Times New Roman,Times,Serif"></font></o:p>&nbsp;</p><p class="MsoNormal" style="margin: 0in 0in 0pt;"><strong><font face="Times New Roman,Times,Serif">All sign-up surveys must be completed by July 31, 2017 in order to become a certified Ambassador for 2017.</font></strong></p><p class="MsoNormal" style="margin: 0in 0in 0pt;"><strong><font face="Times New Roman"><br></font></strong></p><p class="MsoNormal" style="margin: 0in 0in 0pt;"><font face="Times New Roman">Once you submit you survey, you will receive training information within a couple days.</font></p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><o:p><font face="Times New Roman,Times,Serif"><br></font></o:p></p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><o:p><font face="Times New Roman,Times,Serif">&nbsp;</font></o:p></p>
+<p class="MsoNormal" style="margin: 0in 0in 0pt;"><font face="Times New Roman,Times,Serif">Thank you for your support of the OEAP!<o:p></o:p></font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<p><font face="Times New Roman,Times,Serif"></font>&nbsp;</p>
+<p><font face="Times New Roman,Times,Serif">Sincerely,</font></p>
+<p><font face="Times New Roman,Times,Serif">&nbsp;</font></p>
+<p><font face="Times New Roman,Times,Serif">Colleen Douma</font></p><p><font face="Times New Roman">Program Manager, OEAP</font></p>]]></td>
+</tr>
+</table>

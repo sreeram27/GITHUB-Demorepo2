@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Check_if_existing_Membership_records_are_present</name>
+        <label>Check if existing Membership records are present</label>
+        <locationX>472</locationX>
+        <locationY>52</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Records_Not_Present</name>
+            <conditionLogic>1</conditionLogic>
+            <conditions>
+                <leftValueReference>ExistingMembershipRecords</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Membership_Records</targetReference>
+            </connector>
+            <label>Records Not Present</label>
+        </rules>
+    </decisions>
+    <description>PRDCRM-35427: Auto-Creation of New Business SME records</description>
+    <interviewLabel>Create Membership for Implementation Tracking {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Membership Record for ImplementationTracking</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Membership_Records</name>
+        <label>Create Membership Records</label>
+        <locationX>734</locationX>
+        <locationY>56</locationY>
+        <inputAssignments>
+            <field>Implementation_Tracking_ID__c</field>
+            <value>
+                <elementReference>TrackingID</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Enrollment_and_Billing__c</object>
+    </recordCreates>
+    <recordLookups>
+        <description>Used to get records from Membership object</description>
+        <name>Query_on_the_Membership_Object</name>
+        <label>Query on the Membership Object</label>
+        <locationX>262</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_existing_Membership_records_are_present</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Implementation_Tracking_ID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TrackingID</elementReference>
+            </value>
+        </filters>
+        <object>Enrollment_and_Billing__c</object>
+        <outputReference>ExistingMembershipRecords</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <startElementReference>Query_on_the_Membership_Object</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <description>To Check any existing Membership records</description>
+        <name>ExistingMembershipRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Enrollment_and_Billing__c</objectType>
+    </variables>
+    <variables>
+        <description>Used to capture the ID from Process Builder</description>
+        <name>TrackingID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

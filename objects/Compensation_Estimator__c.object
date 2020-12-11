@@ -1,0 +1,1664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Compensation_Estimator_Breadth_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>Compensation_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>Compensation_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Total_Commissions__c</fields>
+        <fields>Total_Medical_Commission__c</fields>
+        <fields>Total_Specialty_Commission__c</fields>
+        <fields>Persistency_Bonus_Payment__c</fields>
+        <label>Compensation Compact Layout</label>
+    </compactLayouts>
+    <compactLayouts>
+        <fullName>Compensation_Single_Line_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Total_Commissions_Single_Field__c</fields>
+        <label>Compensation - Single Line Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Allows sales users eligible for incentive compensation to simulate calculations</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Actual_Persistency__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Persistency</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Actual_Persistency__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Year-End Persistency</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Dental_Included__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select to include Dental in the estimate</inlineHelpText>
+        <label>Dental</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disability_Included__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Disability</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disclaimers__c</fullName>
+        <externalId>false</externalId>
+        <label>Disclaimers</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New Business Renewal Notes</fullName>
+                    <default>false</default>
+                    <label>Select HERE to review New Business &amp; Renewal Notes (then expand the arrow to the left)</label>
+                </value>
+                <value>
+                    <fullName>Year-End Persistency Bonus Payout Table</fullName>
+                    <default>false</default>
+                    <label>Select HERE to review the Year-End Persistency Bonus Payout Table</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Life_Included__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Life</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Included__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select to include Medical in the estimate</inlineHelpText>
+        <label>Medical</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Renewals_at_Risk__c</fullName>
+        <externalId>false</externalId>
+        <formula>Renewal_Medical_Commission__c * 0.2</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Your target persistency bonus payout is 20% of Medical Renewals commissions.  Your ACTUAL payout is a percentage of your target times your persistency.  See the table above for the ranges.</inlineHelpText>
+        <label>Medical Renewals at Risk</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Dental_Goal_Eligible_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>New Bus Dental  Goal Eligible Amount</label>
+        <summarizedField>Compensation_Estimator_Product__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Disability_Goal_Eligible_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>New Bus Disability Goal Eligible Amount</label>
+        <summarizedField>Compensation_Estimator_Product__c.Total_Premium__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Disability</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Life_Goal_Eligible_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>New Bus Life Goal Eligible Amount</label>
+        <summarizedField>Compensation_Estimator_Product__c.Total_Premium__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Life</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Medical_Goal_Eligible_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>New Bus Medical Goal Eligible Amount</label>
+        <summarizedField>Compensation_Estimator_Product__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Supplemental_Goal_Eligibl_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>New Bus Supplemental Goal Eligibl Amount</label>
+        <summarizedField>Compensation_Estimator_Product__c.Total_Premium__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Supplemental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Total_Dental_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Business_Dental_Base_Payment__c +  New_Business_Dental_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Bus Total Dental Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Total_Disability_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Business_Disability_Base_Payment__c +   New_Business_Disability_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Bus Total Disability Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Total_Life_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Business_Life_Base_Payment__c +  New_Business_Life_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Bus Total Life Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Total_Medical_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Business_Medical_Base_Payment__c +  New_Business_Medical_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Bus Total Medical Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Total_Supplemental_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Business_Supplemental_Base_Payment__c  +   New_Business_Supplemental_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Bus Total Supplemental Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Total_Vision_Commissions__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Business_Vision_Base_Payment__c +  New_Business_Vision_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Bus Total Vision Commissions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Bus_Vision_Goal_Eligible_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>New Bus Vision Goal Eligible Amount</label>
+        <summarizedField>Compensation_Estimator_Product__c.Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Dental_Base_Payment__c</fullName>
+        <externalId>false</externalId>
+        <label>New Business Dental Base Payment</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Dental_GTA__c</fullName>
+        <externalId>false</externalId>
+        <formula>if ( New_Business_Dental_Goal__c = 0, 0,  New_Bus_Dental_Goal_Eligible_Amount__c / New_Business_Dental_Goal__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Dental GTA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Dental_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Dental Goal</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Included__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Dental_Kicker__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(  New_Business_Dental_GTA__c = 0, 0, 
+
+ New_Business_Dental_Base_Payment__c / New_Business_Dental_GTA__c *
+
+If(New_Business_Dental_GTA__c &lt;= 0.8, 0,
+
+If(New_Business_Dental_GTA__c &lt;= 1.15, (New_Business_Dental_GTA__c - 0.8)*0.5,
+
+IF(New_Business_Dental_GTA__c &lt;= 1.5, 0.35*0.5 + (New_Business_Dental_GTA__c - 1.15)*1,
+
+(0.35*0.5)+(0.35*1)+((New_Business_Dental_GTA__c -1.5)*1.5))
+)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Dental Kicker</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Disability_Base_Payment__c</fullName>
+        <externalId>false</externalId>
+        <label>New Business Disability Base Payment</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Disability</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Disability_GTA__c</fullName>
+        <externalId>false</externalId>
+        <formula>if ( New_Business_Disability_Goal__c = 0, 0, New_Bus_Disability_Goal_Eligible_Amount__c / New_Business_Disability_Goal__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Disability GTA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Disability_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Disability Goal</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Included__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Disability</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Disability_Kicker__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(  New_Business_Disability_GTA__c = 0, 0,  
+
+  
+
+New_Business_Disability_Base_Payment__c / New_Business_Disability_GTA__c * 
+
+  
+
+If(New_Business_Disability_GTA__c &lt;= 0.8, 0, 
+
+  
+
+If(New_Business_Disability_GTA__c &lt;= 1.15, (New_Business_Disability_GTA__c - 0.8)*0.5, 
+
+  
+
+IF(New_Business_Disability_GTA__c &lt;= 1.5, 0.35*0.5 + (New_Business_Disability_GTA__c - 1.15)*1, 
+
+  
+
+(0.35*0.5)+(0.35*1)+((New_Business_Disability_GTA__c -1.5)*1.5)) 
+
+)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Disability Kicker</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Life_Base_Payment__c</fullName>
+        <externalId>false</externalId>
+        <label>New Business Life Base Payment</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Life</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Life_GTA__c</fullName>
+        <externalId>false</externalId>
+        <formula>if ( New_Business_Life_Goal__c = 0, 0, New_Bus_Life_Goal_Eligible_Amount__c / New_Business_Life_Goal__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Life GTA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Life_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Life Goal</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Included__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Life</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Life_Kicker__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(  New_Business_Life_GTA__c = 0, 0,  
+
+  
+
+New_Business_Life_Base_Payment__c / New_Business_Life_GTA__c * 
+
+  
+
+If(New_Business_Life_GTA__c &lt;= 0.8, 0, 
+
+  
+
+If(New_Business_Life_GTA__c &lt;= 1.15, (New_Business_Life_GTA__c - 0.8)*0.5, 
+
+  
+
+IF(New_Business_Life_GTA__c &lt;= 1.5, 0.35*0.5 + (New_Business_Life_GTA__c - 1.15)*1, 
+
+  
+
+(0.35*0.5)+(0.35*1)+((New_Business_Life_GTA__c -1.5)*1.5)) 
+
+)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Life Kicker</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Medical_Base_Payment__c</fullName>
+        <externalId>false</externalId>
+        <label>New Business Medical Base Payment</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Medical_GTA__c</fullName>
+        <externalId>false</externalId>
+        <formula>If( New_Business_Medical_Goal__c = 0, 0,   New_Bus_Medical_Goal_Eligible_Amount__c  / New_Business_Medical_Goal__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Medical GTA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Medical_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical Goal</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Included__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Medical_Kicker__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(  New_Business_Medical_GTA__c = 0, 0, 
+
+ New_Business_Medical_Base_Payment__c / New_Business_Medical_GTA__c *
+
+If(New_Business_Medical_GTA__c &lt;= 0.8, 0,
+
+If(New_Business_Medical_GTA__c &lt;= 1.15, (New_Business_Medical_GTA__c - 0.8)*0.5,
+
+IF(New_Business_Medical_GTA__c &lt;= 1.5, 0.35*0.5 + (New_Business_Medical_GTA__c - 1.15)*1,
+
+(0.35*0.5)+(0.35*1)+((New_Business_Medical_GTA__c -1.5)*1.5))
+
+)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Medical Kicker</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Supplemental_Base_Payment__c</fullName>
+        <externalId>false</externalId>
+        <label>New Business Supplemental Base Payment</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Supplemental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Supplemental_GTA__c</fullName>
+        <externalId>false</externalId>
+        <formula>if ( New_Business_Supplemental_Goal__c = 0, 0, New_Bus_Supplemental_Goal_Eligibl_Amount__c / New_Business_Supplemental_Goal__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Supplemental GTA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Supplemental_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Supplemental Goal</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Included__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Supplemental</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Supplemental_Kicker__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(  New_Business_Supplemental_GTA__c = 0, 0,  
+
+  
+
+New_Business_Supplemental_Base_Payment__c / New_Business_Supplemental_GTA__c * 
+
+  
+
+If(New_Business_Supplemental_GTA__c &lt;= 0.8, 0, 
+
+  
+
+If(New_Business_Supplemental_GTA__c &lt;= 1.15, (New_Business_Supplemental_GTA__c - 0.8)*0.5, 
+
+  
+
+IF(New_Business_Supplemental_GTA__c &lt;= 1.5, 0.35*0.5 + (New_Business_Supplemental_GTA__c - 1.15)*1, 
+
+  
+
+(0.35*0.5)+(0.35*1)+((New_Business_Supplemental_GTA__c -1.5)*1.5)) 
+
+)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Supplemental Kicker</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Vision_Base_Payment__c</fullName>
+        <externalId>false</externalId>
+        <label>New Business Vision Base Payment</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Vision_GTA__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( New_Business_Vision_Goal__c = 0, 0, New_Bus_Vision_Goal_Eligible_Amount__c / New_Business_Vision_Goal__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Vision GTA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Vision_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Vision Goal</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Included__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>New_Business_Vision_Kicker__c</fullName>
+        <externalId>false</externalId>
+        <formula>If (New_Business_Vision_GTA__c = 0, 0,
+
+
+New_Business_Vision_Base_Payment__c / New_Business_Vision_GTA__c *
+
+If(New_Business_Vision_GTA__c &lt;= 0.8, 0,
+
+If(New_Business_Vision_GTA__c &lt;= 1.15, (New_Business_Vision_GTA__c - 0.8)*0.5,
+
+IF(New_Business_Vision_GTA__c &lt;= 1.5, 0.35*0.5 + (New_Business_Vision_GTA__c - 1.15)*1,
+
+(0.35*0.5)+(0.35*1)+((New_Business_Vision_GTA__c -1.5)*1.5))
+
+)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>New Business Vision Kicker</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Persistency_Above_Below_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Persistency Above/Below Goal</label>
+        <summarizedField>Compensation_Estimator_Goal__c.above_or_below_goal_del_del__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Year-End Persistency</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Persistency_Annual_Cancellations__c</fullName>
+        <externalId>false</externalId>
+        <label>Persistency Annual Cancellations</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Annual_Cancellations__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Year-End Persistency</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Persistency_Annual_Renewals__c</fullName>
+        <externalId>false</externalId>
+        <label>Persistency Annual Renewals</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Annual_Renewals__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Year-End Persistency</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Persistency_Bonus_Payment__c</fullName>
+        <externalId>false</externalId>
+        <label>Year End Persistency Bonus</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Persistency_Bonus_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Year-End Persistency</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Persistency_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Persistency Goal</label>
+        <summarizedField>Compensation_Estimator_Goal__c.Persistency_Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Goal__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Year-End Persistency</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Goal__c.Estimation_Summary__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Refresh__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Refresh YTD Sold And Prorated Goal?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Dental_Commission__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Dental Commission</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>Renewals</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Disability_Commission__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Disability Commission</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Disability</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>Renewals</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Life_Commission__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Life Commission</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>Renewals</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Life</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Medical_Commission__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Medical Commission</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>Renewals</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Supplemental_Commission__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Supplemental Commission</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Supplemental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>Renewals</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Vision_Commission__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Vision Commission</label>
+        <summarizedField>Compensation_Estimator_Product__c.Base_Payment__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>Renewals</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Supplemental_Included__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Supplemental</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Total_Commissions_Single_Field__c</fullName>
+        <defaultValue>&quot;$0.00&quot;</defaultValue>
+        <description>This is populated via the Compensation Estimator process builder due to the length of the formulas.  When the formula for all 6 lines of business is compiled, it exceeds the 5000 character limit for formula fields.  A process builder does not have this character limit.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays the total commissions in a single field</inlineHelpText>
+        <label>Total Commissions</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Commissions__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <description>This is populated via the Compensation Estimator process builder due to the length of the formulas.  When the formula for all 6 lines of business is compiled, it exceeds the 5000 character limit for formula fields.  A process builder does not have this character limit.</description>
+        <externalId>false</externalId>
+        <label>Total Commissions</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Dental_Commission__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Bus_Total_Dental_Commissions__c +  Renewal_Dental_Commission__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Dental Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Disability_Commission__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Bus_Total_Disability_Commissions__c +  Renewal_Disability_Commission__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Disability Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Kicker__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Business_Medical_Kicker__c + New_Business_Vision_Kicker__c  + New_Business_Dental_Kicker__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Kicker</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Life_Commission__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Bus_Total_Life_Commissions__c + Renewal_Life_Commission__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Life Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Medical_Commission__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Bus_Total_Medical_Commissions__c +  Renewal_Medical_Commission__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Medical Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Specialty_Commission__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Specialty Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Supplemental_Commission__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Bus_Total_Supplemental_Commissions__c +  Renewal_Supplemental_Commission__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Supplemental Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Vision_Commission__c</fullName>
+        <externalId>false</externalId>
+        <formula>New_Bus_Total_Vision_Commissions__c +  Renewal_Vision_Commission__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Vision Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Vision_Included__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select to include Vision in the estimate</inlineHelpText>
+        <label>Vision</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ZZZ_DELETE_New_Business_Dental_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>ZZZ_DELETE_New Business Dental Goal</label>
+        <summarizedField>Compensation_Estimator_Product__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ZZZ_DELETE_New_Business_Medical_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>ZZZ DELETE New Business Medical Goal</label>
+        <summarizedField>Compensation_Estimator_Product__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ZZZ_DELETE_New_Business_Vision_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>ZZZ DELETE New Business Vision Goal</label>
+        <summarizedField>Compensation_Estimator_Product__c.Goal__c</summarizedField>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Include__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Goal_Eligible__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Line_of_Business__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Compensation_Estimator_Product__c.Sales_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Compensation_Estimator_Product__c.Compensation_Estimator__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ZZZ_DELETE_Total_Commission__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Medical_Commission__c +  Total_Vision_Commission__c +  Total_Dental_Commission__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ZZZ DELETE Total Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ZZZ_DELETE_Total_Specialty_Commission__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Life_Commission__c +  Total_Disability_Commission__c +  Total_Supplemental_Commission__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ZZZ DELETE Total Specialty Commission</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Compensation Estimator</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>January_2020_Estimates</fullName>
+        <columns>NAME</columns>
+        <columns>Total_Medical_Commission__c</columns>
+        <columns>Total_Dental_Commission__c</columns>
+        <columns>Total_Vision_Commission__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>January</value>
+        </filters>
+        <label>January YTD 2020 Estimates</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>November</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>Nov</value>
+        </filters>
+        <label>November</label>
+    </listViews>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Compensation Estimate Parent</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Compensation Estimations</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Compensation_Estimator</fullName>
+        <active>true</active>
+        <label>Compensation Estimator</label>
+        <picklistValues>
+            <picklist>Disclaimers__c</picklist>
+            <values>
+                <fullName>New Business Renewal Notes</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Year-End Persistency Bonus Payout Table</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Line_of_Business_Required</fullName>
+        <active>true</active>
+        <description>Requires user to select at least one line of business</description>
+        <errorConditionFormula>AND(
+
+NOT(  Medical_Included__c ),
+NOT(  Dental_Included__c ),
+NOT(  Vision_Included__c ),
+NOT(  Life_Included__c ),
+NOT(  Disability_Included__c ),
+NOT(  Supplemental_Included__c )
+
+)</errorConditionFormula>
+        <errorMessage>You must select at least one Line of Business -- Medical, Dental, Vision, Life, Disability, or Supplemental</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

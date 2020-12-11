@@ -1,0 +1,14 @@
+<messaging:emailTemplate subject="Group Offshoring Restriction - Needs Revision" recipientType="User" relatedToType="Group_Outsourcing_Approval__c">
+<messaging:htmlEmailBody >
+Hi {!relatedTo.CreatedBy.FirstName},<br/><br/>
+The below Group Offshoring Restriction record has an update to review:<br/><br/>
+1. GOR Approval Record ID: <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+relatedto.Id} " target="_blank">Click here</a> <br/>
+2. Group Offshoring Restriction Record: <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))+relatedto.Group_Outsourcing_Restriction__r.Id} " target="_blank">Click here</a><br/><br/> 
+Please review this record and take the necessary action. You may update the record and again 'Submit for Approval'. <br/><br/>
+
+Thank You.
+
+
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

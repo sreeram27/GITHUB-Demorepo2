@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>VisitOps__API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>API Name</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Additional_Details__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Additional Details</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__IsEmail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>IsEmail</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__IsMandatory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>IsMandatory</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Order_No__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Order No</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Restrict_Picklist_Value__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Restrict Picklist Value</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Metadata_CSVHeaderForAttendees</label>
+    <pluralLabel>Metadata_CSVHeaderForAttendees</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

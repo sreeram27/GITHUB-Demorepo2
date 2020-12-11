@@ -1,0 +1,8 @@
+<apex:component controller="AP25_Email_Controller"  access="global">
+
+    <p> <font color="Black ">User Name: {!CurrUser.firstname} {!CurrUser.lastname} </font>, <font color="SlateGrey ">User Title: {!CurrUser.title} </font></p> 
+    <p> <font color="SlateGrey ">Address: {!CurrUser.street} {!CurrUser.city} {!CurrUser.country} {!CurrUser.postalcode} </font> </p>
+    <p> <font color="SlateGrey ">Phone No: {!CurrUser.phone} </font></p>
+    <p> <font color="SlateGrey ">Email: {!CurrUser.email}</font></p>
+    
+</apex:component>

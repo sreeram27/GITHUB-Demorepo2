@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order.Implementation_Type__c</field>
+    </columns>
+    <columns>
+        <field>Order.Intake_Type_Renewal_As_Is__c</field>
+    </columns>
+    <columns>
+        <field>Account.Situs_State__c</field>
+    </columns>
+    <columns>
+        <field>Order.Account_Group_Size__c</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Effective_Date__c</field>
+    </columns>
+    <columns>
+        <field>ORDER_NUMBER</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Case_Name__c</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Case_Topic__c</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Status__c</field>
+    </columns>
+    <columns>
+        <field>Order.Assigned_Implementer_Name__c</field>
+    </columns>
+    <columns>
+        <field>Account.Account_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Order.Ready_for_Implementations_Status__c</field>
+    </columns>
+    <columns>
+        <field>ORDER_EFFECTIVE_DATE</field>
+    </columns>
+    <columns>
+        <field>Order.Current_SME_Stage__c</field>
+    </columns>
+    <columns>
+        <field>Order.SME_time__c</field>
+    </columns>
+    <columns>
+        <field>Order.Additional_Comments__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Order.Pending_SME_Review__c</field>
+    </columns>
+    <columns>
+        <field>Order.Pending_SME_Review_St__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Order.Int_Ret_Rev_time__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Order.Pending_Correction_Time__c</field>
+    </columns>
+    <columns>
+        <field>Order.Imp_Time__c</field>
+    </columns>
+    <columns>
+        <field>Order.Total_Imp_Time__c</field>
+    </columns>
+    <columns>
+        <field>Order.Total_Time__c</field>
+    </columns>
+    <columns>
+        <field>ORDER_LAST_UPDATE</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11 OR 12 OR 13 OR 14 OR 15 OR 16 OR 17)</booleanFilter>
+        <criteriaItems>
+            <column>Order.Anthem_Entity__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Local/Large Group</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Neelima Marepally</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Abilash A</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Sai Kumar Goranta</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Nageshwari Marepalli</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Aravind Yadav</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Nagen Kumar Pani</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Ullas Gowda</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Prasad Ubbala Penchnla</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Ramya Bellamkonda</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Robin Smith</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Pooja AT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Jangthailung Pamei</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Asha R</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Kiran Kumar</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Anirud Obali</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Assigned_Implementer_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>sachin S</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Off Shore staff ALL TIME</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OrderList</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Order.Pending_SME_Review__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>ORDER_EFFECTIVE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

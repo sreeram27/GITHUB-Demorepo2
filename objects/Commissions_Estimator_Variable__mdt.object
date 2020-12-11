@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores the variables used in calculations for the Sales Commissions Estimator Line Item object</description>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Denotes if the current variable is active.  Default is true (active)</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Base_Rate__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Enter the base rate or the term &quot;Variable&quot;</inlineHelpText>
+        <label>zzz DELETE Base Rate</label>
+        <length>8</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Goal_eligible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Denotes if a Commissions Variables is required to have a goal associated</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Goal eligible</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Variable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is Variable</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Line_of_Business__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Line of Business</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>true</default>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>Dental</fullName>
+                    <default>false</default>
+                    <label>Dental</label>
+                </value>
+                <value>
+                    <fullName>Vision</fullName>
+                    <default>false</default>
+                    <label>Vision</label>
+                </value>
+                <value>
+                    <fullName>Life</fullName>
+                    <default>false</default>
+                    <label>Life</label>
+                </value>
+                <value>
+                    <fullName>Disability</fullName>
+                    <default>false</default>
+                    <label>Disability</label>
+                </value>
+                <value>
+                    <fullName>Supplemental</fullName>
+                    <default>false</default>
+                    <label>Supplemental</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Maximum_Premium__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>This is the upper limit for the lines of business that are tiered by premium</inlineHelpText>
+        <label>Maximum Premium</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Min_Premium_for_LOB__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Min Premium for LOB</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Minimum_Premium__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>This is the lower limit for the lines of business that are tiered by premium</inlineHelpText>
+        <label>Minimum Premium</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Plan_Year__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Plan Year</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2019</fullName>
+                    <default>false</default>
+                    <label>2019</label>
+                </value>
+                <value>
+                    <fullName>2020</fullName>
+                    <default>false</default>
+                    <label>2020</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Premium_Level__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Input the level for case premium thresholds</inlineHelpText>
+        <label>Premium Level</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>true</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Premium_Rate_Tier_1__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Premium Rate Tier 1</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premium_Rate_Tier_2__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Premium Rate Tier 2</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premium_Rate_Tier_3__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Premium Rate Tier 3</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Product Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rate__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Rate</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Type__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Sales Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New Business</fullName>
+                    <default>true</default>
+                    <label>New Business</label>
+                </value>
+                <value>
+                    <fullName>Renewals</fullName>
+                    <default>false</default>
+                    <label>Renewals</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unit_of_Measure__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Unit of Measure</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Members</fullName>
+                    <default>true</default>
+                    <label>Members</label>
+                </value>
+                <value>
+                    <fullName>Premium</fullName>
+                    <default>false</default>
+                    <label>Premium</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Commissions Estimator Variable</label>
+    <pluralLabel>Commissions Estimator Variables</pluralLabel>
+    <validationRules>
+        <fullName>Base_Rate_Must_be_a_Number_or_Variable</fullName>
+        <active>false</active>
+        <description>The Base Rate Must be a Number or set to the term &quot;Variable&quot;</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Base_Rate__c)),
+NOT(
+OR(Base_Rate__c =&quot;Variable&quot;,
+AND(VALUE(Base_Rate__c )&gt;0,VALUE(Base_Rate__c )&lt;20)
+)))</errorConditionFormula>
+        <errorDisplayField>Base_Rate__c</errorDisplayField>
+        <errorMessage>You must enter a value between $0 and $20 for the base rate, OR enter the term &quot;Variable&quot; (without quotations)</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

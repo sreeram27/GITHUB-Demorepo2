@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_48665233</developerName>
+        <masterLabel>Group Size</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Group_Size__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>51 - 99</sourceValue>
+            </sourceValues>
+            <value>51-99 Subscribers</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>100 - 249</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>250 - 499</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>500 - 999</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>501 - 1000</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>1000+</sourceValue>
+            </sourceValues>
+            <value>100+ Subscribers</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE2</field>
+    </columns>
+    <columns>
+        <field>QuoteLineItem.Financing__c</field>
+    </columns>
+    <columns>
+        <field>QuoteLineItem.Members__c</field>
+    </columns>
+    <columns>
+        <field>PROBABILITY</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <description>Includes summary showing WARP Subscribers and Members totals by Funding, Group Size and Opportunity Effective Date</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.Situs_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Indiana</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ACCOUNT_RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.LG_Customer,Account.LG_Prospect</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QuoteLineItem.ProductLOB__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Medical</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>PROBABILITY</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STAGE_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Initiated,Quoting,Submitted to Customer,Finalist,Verbal Commitment,Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.New_Business_Local,Opportunity.New_Business</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>CLOSE_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>QuoteLineItem.Funding__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_48665233</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Slimmed Down Sales Strategy IN Forecast</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>QuoteProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <endDate>2020-01-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2019-01-01</startDate>
+    </timeFrameFilter>
+</Report>

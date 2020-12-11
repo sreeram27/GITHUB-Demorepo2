@@ -1,0 +1,15 @@
+<apex:page standardController="Underwriting_Record__c"
+           sidebar="false"
+           showHeader="True"
+           showChat="false">
+           
+           <!--CSS Style Example JJH -->
+           <style type="text/css">
+                .message { font-size: Large; }
+           </style>
+
+<apex:pageMessage summary="Renewal" 
+                  severity="Please complete the fields below for a Renewal." 
+                  strength="1"
+                   />
+</apex:page>

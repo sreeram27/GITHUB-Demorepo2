@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://prod-anthem.highroads.com/app/p2a/integration?ext=sfdc</canvasUrl>
+        <locations>Chatter</locations>
+        <locations>Visualforce</locations>
+        <locations>Aura</locations>
+        <locations>Publisher</locations>
+        <locations>ChatterFeed</locations>
+        <locations>ServiceDesk</locations>
+        <locations>OpenCTI</locations>
+        <locations>MobileNav</locations>
+        <locations>PageLayout</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>arun.siddappa@anthem.com</contactEmail>
+    <label>HighRoads</label>
+    <oauthConfig>
+        <callbackUrl>https://test-anthem.highroads.com/app/p2a/integration?ext=sfdc</callbackUrl>
+        <consumerKey>3MVG9eQyYZ1h89HeO90UV6o6amNY97lKa7YXaxFVA.T9KF.Fm9ptxBL6TEeVfNKnFsFO.XFbOqVjEKfYU5sFH</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <scopes>Full</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>Specialty Post Sales</profileName>
+    <profileName>Local Sales</profileName>
+    <profileName>Local Implementations</profileName>
+    <profileName>Specialty</profileName>
+    <profileName>Local Sales Dual</profileName>
+    <profileName>Local Implementations Dual</profileName>
+    <profileName>System Admin IT</profileName>
+    <profileName>SME Dual</profileName>
+    <profileName>SME</profileName>
+    <profileName>SFDC Program Management</profileName>
+    <profileName>Specialty Dual</profileName>
+    <profileName>Specialty Post Sales Dual</profileName>
+    <profileName>Specialty Post Sales Dual - LDEB - Case</profileName>
+    <profileName>Specialty Dual - LDEB - Case</profileName>
+    <profileName>Specialty - LDEB - Case</profileName>
+    <profileName>SME - EB - Case</profileName>
+    <profileName>Specialty Dual - Sales Support - Case</profileName>
+    <profileName>System Administrator</profileName>
+    <startUrl>https://prod-anthem.highroads.com/app/p2a/integration?ext=sfdc</startUrl>
+</ConnectedApp>

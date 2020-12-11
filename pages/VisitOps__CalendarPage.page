@@ -1,0 +1,2176 @@
+<apex:page id="pg" controller="VisitOps.CalendarController"  tabStyle="Calendar__tab" showHeader="{!showHeader}"  sidebar="{!IF(showSide, $Label.visitops__sidebar,false)}">
+    
+	<!--====================================================-->
+    <!--Name:CalendarPage                                                                           -->
+    <!--Copyright notice:  © 2019  VisitOps                                                                                                 -->
+    <!--====================================================-->
+    <!--====================================================-->
+    <!-- Purpose:  Calendar Display                                                                                                         -->
+    <!---------                                                                                                                -->
+    <!--====================================================-->
+    <!-- History    -->
+    <!-- -------     -->
+    <!-- VERSION  AUTHOR           DATE              Change#            				RELEASE/CSR        -->
+    <!--   1.0 -  Tanuj            11/08/2013       Ticket-I-0828,I-0824       			Updated Code for Visit Team Owner display on Hover/Fixed Hover for Accepted Presenters                   -->
+    <!--   2.0 -  Tanuj            11/11/2013       Ticket-I-0840       			    Code Added to Line -2092  to Encode Special characters in URL                   -->
+
+    <!-- Line -  -->
+    
+    <!-- ASSUMPTIONS / CONSTRAINTS -->
+    <!-- For the custom datepicker for ArrivalDateTimeLocationTZ__c, DepartureDateTimeLocationTZ__c fields to work, set API Version of this page to 29.0 or less.
+https://success.salesforce.com/issues_view?id=a1p300000008XU5AAM
+-->
+    <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+            
+            <apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/bootstrapForSFHeaderSidebar.css')}"/> 
+            <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jquery-1.11.1.min.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jqueryUI_1_10_3_js.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/bootstrapJSForSFHeaderSidebar.js')}"/>
+            
+            <apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'images/calenderIcon.png')}" />
+            <link href="{!$Resource.fullCalendarCss154}" rel="stylesheet" />  
+            <apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/styles.css')}" />
+            <style type="text/css">
+                <!-- Style Added for Lightning Experience -->
+                body { font-size:75% !important;
+                }
+            </style>    
+            <script src="{!$Resource.FullCalendarResouce154}"></script>
+            
+            <style>
+                
+                
+                
+                .loadingDiv {
+                    /* background-color: rgba(0,0,0,0.2); */
+                    text-align: center;
+                    width: 100%;
+                    height: 100%;
+                    position: fixed;
+                    z-index: 9999;
+                    top: 0;
+                    left: 0;
+                } 
+            .loadingImage { vertical-align:bottom; }.loadingDescription { padding:0 1.5em 0 0.5em; }
+            .loadingHolder {
+                background: #fff url('/img/alohaSkin/overlay_crns.png') repeat-x;
+                position: relative;
+                top: 45%;
+                padding:1%;
+                white-space: nowrap;
+                border-radius: 5px;
+            }
+            .fc-sun{
+                vertical-align: middle !important;
+            }
+            .bs select{
+                height: 30px !important;
+            }
+            .fc-border-separate td.fc-last, .fc-border-separate th.fc-last{
+                border-right: 1px solid #ccc !important;
+            }    
+            .bs .row{
+                margin-left: -10px !important;
+            }    
+            .bs .form-group{
+                padding-right: 0px !important;
+            }    
+            .lookupCustomCss select{
+                height: 35px;
+                margin-top: -7px;
+                border-radius: 3px;
+                border: 1px solid #ccc;
+            }
+            .lookupCustomCss .lookupInput input:not([class]){
+                height: 35px;
+                margin-top: -7px;
+                margin-left: 2px;
+                padding-top: 2px;
+                padding-left: 12px;
+                padding-right: 38px;
+                border-radius: 3px;
+                border: 1px solid #ccc;
+            }
+            #calendar a:hover{
+            color: #fff !important;
+            }
+            #table1 a, #table2 a, #table3 a,#calendar a,#tableForEventForm a{
+            color: #000 !important;
+            }
+            #table1 a, #table2 a, #table3 a,#tableForEventForm a{
+            text-decoration: underline !important;
+            }
+            #table1 a:hover, #table2 a:hover, #table3 a:hover, #tableForEventForm a:hover{
+            text-decoration: underline !important;
+            color: #fff !important;
+            }
+            .messageCell h4, .messageCell h5,.messageCell h6 {
+                margin-top: 0px !important;
+                margin-bottom: 0px !important;
+                font-size: 1.1em !important;
+            }
+            #RoomUnavailableFormModal{
+            /*position: absolute !important;*/
+            z-index: 100 !important;
+            }    
+            .lookupCustomCss{
+                width: 100%;
+                height: 35px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                padding: 6px 12px;
+            }
+            .lookupIconOn{
+                margin-left:-38px !important;
+            }
+            .lookupIcon{
+                margin-left:-38px !important;
+            }
+            .bs .modal-backdrop.in {
+                opacity: 0.9;
+                z-index: 0 !important;
+            }
+            @media(min-width:992px){
+                .bs .modal-dialog {
+                    width:850px;
+                }
+            }
+            @media(min-width:480px){
+                .bs .breadcrumbText .row {
+                    width:55%;
+                    margin-right:45%;
+                }
+            }    
+            .bs .modal-backdrop.in {
+                opacity: 0.9;
+                z-index: 0 !important;
+            }
+            
+            @media(max-width:480px){
+                .fc-button-content{
+                    height:2.3em !important;
+                    line-height:2.3em !important;
+                }
+                a.fc-event {
+                    min-width:10px !important;
+                }
+                .calendarViewDiv{
+                    margin-left: 6px !important;
+                }        
+                .fc-header-title{
+                    padding-right:5px;
+                }
+                #calendar .fc-header td.fc-header-left{
+                display: block !important;
+                padding-left:5px;
+            }
+            #calendar .fc-header td.fc-header-center{
+            display: block !important;
+            text-align: left !important;
+            margin-bottom: 8px !important;
+            padding-left:5px;
+            }
+            #calendar .fc-header td.fc-header-right{
+            display:block !important;
+            text-align: left !important;
+            padding-left:5px;
+            }
+            .fc-agenda-days{            
+                height:400px !important;            
+            }
+            .fc-view-resourceDay{            
+                position: relative !important;
+                height: 400px !important;
+                /* overflow-y: hidden !important; */
+            }        
+            .fc-view-agendaWeek .fc-agenda-days .fc-widget-header:not(:last-child){
+                font-size:0.75em !important;
+                font-weight:bold !important; 
+            }
+            .fc-view-agendaWeek .fc-agenda-days .fc-widget-header:last-child{
+                font-size:0.75em !important;
+                font-weight:bold !important;            
+            }
+            .fc-view-month{            
+                height:400px !important;
+                /*width:310px !important;*/
+            }        
+            .fc-view-resourceDay > div > div{             
+                height:342px !important;
+            }   
+            .fc-view-agendaWeek .fc-agenda-axis {
+                width: 33px !important;
+                padding: 0px 0px !important;
+                vertical-align: middle !important;
+            }
+            .fc-view-resourceDay{
+                -webkit-overflow-scrolling: touch;
+                overflow-x: scroll !important;
+            }        
+            .fc-view-month tr th.fc-first{
+                padding:5px !important;
+            }
+            #cal-legend{
+            float:left !important;
+            }
+            }
+            
+            /*.bs .row{
+        margin-left: 0px !important;
+    }*/
+    
+    table.scroll thead tr{
+        width:100% !important;
+    }
+        
+        .requiredExample {
+            border-left: 3px solid #c00;
+            font-size: 90%;
+            padding:2px 4px;
+        }
+        .requiredBlock{
+            background-color: #c00;
+            position: absolute;
+            left: 11px;
+            width: 3px;
+            top: 25px;
+            bottom: 1px;
+        }
+        .VisitScreen {
+            border-top:3px solid #D95D2E;
+            border-radius:4px;
+            background-color:#f8f8f8;
+            border-color:2px solid #D95D2E;
+            padding:5px;
+        }
+        .VisitScreen .heading{
+            font-size:14px;
+            color:black;
+            font-weight:bold;
+            border-color:#ddd;
+        }
+        .AccountScreen {
+            border-top:2px solid #D95D2E;
+            border-radius:4px;
+            background-color:#f8f8f8;
+            border-color:2px solid #D95D2E;
+            padding:5px;
+            margin:10px;
+        }
+        .AccountScreen .heading{
+            font-size:14px;
+            color:black;
+            font-weight:bold;
+            border-color:#ddd;
+        }
+        .bs .form-control { font-size:12px !important;}
+        .panel-heading {
+            background-image: url({!URLFOR($Resource.VMSResources, "images/opacity75.png")});
+            background-repeat: repeat;
+            border-width: 0!important;
+            background-color: #d18361!important;
+            border-color: #d18361!important;
+        }
+        .bs .panel{
+            background-color: #f8f8f8;
+        }
+        .bs .breadcrumbText{
+            padding:10px 0px;
+        }
+        .bs .plus{
+            font-size:20px;
+            font-weight:bold;
+        }
+        .bs .panel-title > a {
+            font-size:0.8em;
+            font-weight:bold;
+        }
+        .bs .panel-heading {
+            padding: 8px 15px;
+        }
+        .Custom15Tab .pageTitleIcon, .individualPalette .Custom15Block .pageTitleIcon {
+            margin:4px;
+        }
+        .bs .panel-group { 
+            margin-bottom:20px; 
+        }
+        .NewvisitScreen {
+            border-top:2px solid #D95D2E;
+            border-radius:4px;
+            background-color:#f8f8f8;
+            border-color:2px solid #D95D2E;
+        }
+        .NewvisitScreen .heading{
+            font-size:14px;
+            color:black;
+            font-weight:bold;
+            border-color:#ddd;
+        }
+        .NewvisitScreen .col-md-4{
+            margin-top:13px;
+            margin-left:13px;
+        }
+        .panel-body {
+            background-color:#f8f8f8;
+        }
+        .bs label{
+            display:block;
+        }
+        .roomTableDiv table td{
+            height: 45px !important;
+        }
+        
+        table.scroll.availableRmEventForm tbody {
+            max-height: 180px;
+        }
+        table.scroll.availableRmEventForm tbody td:first-child, table.scroll.availableRmEventForm thead th:first-child {
+            width:10% !important;
+        }
+        table.scroll.availableRmEventForm tbody td:nth-child(2), table.scroll.availableRmEventForm thead th:nth-child(2){
+            width:35% !important;
+        }
+        table.scroll.availableRmEventForm tbody td:nth-child(3), table.scroll.availableRmEventForm thead th:nth-child(3){
+            width:28% !important;
+            text-align:center !important;
+        }
+        table.scroll.availableRmEventForm tbody td:nth-child(4), table.scroll.availableRmEventForm thead th:nth-child(4){
+            width:27% !important;
+            text-align:center !important;
+        }
+        table.scroll.availableRmEventForm>thead>tr>td, table.scroll.availableRmEventForm>tbody>tr>td{
+            border-top: 0px !important;
+            border-right: 0px !important;
+            border-left: 0px !important;
+            border-bottom: 1px solid #ddd !important;
+        }    
+        table.scroll.availableRmEventForm>thead>tr>th, table.scroll.availableRmEventForm>thead>tr>td{
+            border-bottom-width: 0px !important;
+        }
+        
+        table.scroll.availableRm tbody td:first-child, table.scroll.availableRm thead th:first-child {
+            width:20% !important;
+        }
+        table.scroll.availableRm tbody td:nth-child(2), table.scroll.availableRm thead th:nth-child(2){
+            width:40% !important;
+        }
+        table.scroll.availableRm tbody td:nth-child(3), table.scroll.availableRm thead th:nth-child(3){
+            width:40% !important;
+        }  
+        table.scroll.availableRm>thead>tr>td, table.scroll.availableRm>tbody>tr>td{
+            border-top: 0px !important;
+            border-right: 0px !important;
+            border-left: 0px !important;
+            border-bottom: 1px solid #ddd !important;
+        }    
+        table.scroll.availableRm>thead>tr>th, table.scroll.availableRm>thead>tr>td{
+            border-bottom-width: 0px !important;
+        }
+        table.scroll.unavailableRm tbody td:first-child, table.scroll.unavailableRm thead th:first-child {
+            width:20% !important;
+        }
+        table.scroll.unavailableRm tbody td:nth-child(2), table.scroll.unavailableRm thead th:nth-child(2){
+            width:40% !important;
+        }
+        table.scroll.unavailableRm tbody td:nth-child(3), table.scroll.unavailableRm thead th:nth-child(3){
+            width:40% !important;
+        }
+        table.scroll.unavailableRm>thead>tr>td, table.scroll.unavailableRm>tbody>tr>td{
+            border-top: 0px !important;
+            border-right: 0px !important;
+            border-left: 0px !important;
+            border-bottom: 1px solid #ddd !important;
+        }
+        table.scroll.unavailableRm>thead>tr>th, table.scroll.unavailableRm>thead>tr>td{
+            border-bottom-width: 0px !important;
+        }
+        table.scroll.bookedRm tbody td:first-child, table.scroll.bookedRm thead th:first-child {
+            width:20% !important;
+        }
+        table.scroll.bookedRm tbody td:nth-child(2), table.scroll.bookedRm thead th:nth-child(2){
+            width:40% !important;
+        }
+        table.scroll.bookedRm tbody td:nth-child(3), table.scroll.bookedRm thead th:nth-child(3){
+            width:40% !important;
+        }
+        table.scroll.bookedRm>thead>tr>td, table.scroll.bookedRm>tbody>tr>td{
+            border-top: 0px !important;
+            border-right: 0px !important;
+            border-left: 0px !important;
+            border-bottom: 1px solid #ddd !important;
+        }
+        table.scroll.bookedRm>thead>tr>th, table.scroll.bookedRm>thead>tr>td{
+            border-bottom-width: 0px !important;
+        }
+        .bs h2, .bs .h2 {
+            font-size:100%;
+            font-weight:bold;
+        }
+        table.scroll.availableRm tbody{
+            max-height:134px;
+        }
+        table.scroll.unavailableRm tbody{
+            max-height:134px;
+        }
+        table.scroll.bookedRm tbody{
+            max-height:134px;
+        }
+        </style>
+        
+        <!--some styling. Modify this to fit your needs-->
+            <style>
+            #cal-options {float:left;}
+        #cal-legend { float:right;}
+        #cal-legend ul {margin:0;padding:0;list-style:none;}
+        #cal-legend ul li {margin:0;padding:5px;float:left;}
+        #cal-legend ul li span {display:block; height:16px; width:16px; margin-right:4px; float:left; border-radius:4px;}
+        #calendar {margin-top:20px;}
+        #calendar a:hover {color:#fff !important;}
+        .fc-event-inner {padding:3px;}
+        .event-available {background:green;border:1px solid #000;}
+        .event-booked {background:#F6531A;}
+        .event-onhold {background:#EFE217;color:black}
+        .event-notavail {background:#4d7999;}
+        .event-agenda {background:#444444;}
+        .event-multi-agenda {background:#808080;}
+        .event-visit{background:blue;border-color:#1797c0; }
+        .event-visitButton{background:red;}
+                     <!--.event-room{background:#FF7FAA; } -->
+                     .calendarcls{background-color:white;} 
+                                     .padding{padding:10px 15px 15px 40px;}
+                                     .bookedRoomsSideBar{
+                                         background:#F6531A;color:Black;font-weight: bold;
+                                     }
+                                     .sidebarSearch{
+                                         font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif; 
+                                         font-size:1.250em; 
+                                         line-height:18px; 
+                                         color:#2a2d33
+                                         
+                                     }
+                                     
+                                     .bgColor tr:hover{
+                                         background-color : pink; 
+                                     }
+                                     
+                                     #calendar table{
+                                     //table-layout: fixed;         
+                                    }
+                     
+                     
+                     .fc-widget-header:not(:first-child){
+                         
+                         word-wrap: break-word !important;
+                         white-space: pre-line !important;
+                         padding: 5px !important;
+                         vertical-align: middle;
+                         
+                     }
+                     
+                     .fc-widget-header:not(:last-child){
+                         /*min-width:60px !important;
+        min-height:50px !important;*/
+    }
+                     
+                     
+                     .fc-event-time{
+                         display : none !important;
+                     }
+                     
+                     
+                     #Rooms-Sidebar .roomSearchDiv input[type="text"]{
+                     width:50%;
+                     
+                    }
+                             #Rooms-Sidebar .roomSearchDiv select{
+                             width:51%;
+                             /*height:22px;*/
+                            }
+                       .apexp .bPageBlock.apexDefaultPageBlock .pbBody {
+                           margin: 7px!important;
+                       }
+                       .availableRm thead tr, .unavailableRm thead tr, .bookedRm thead tr{border-bottom: 1px solid #ccc;}
+                       .availableRm tbody tr:hover, .bs .availableRm>tbody>tr:hover td{ background-color:#2AB622 !important;}
+                       .availableRm tbody tr:hover, .bs .availableRmEventForm>tbody>tr:hover td{ background-color:#2AB622 !important;}
+                       .unavailableRm tbody tr:hover, .bs .unavailableRm>tbody>tr:hover td{ background-color:#AD1D05 !important;}
+                       .bookedRm tbody tr:hover, .bs .bookedRm>tbody>tr:hover td{ background-color:#F6531A !important;}
+                       
+                       
+                       
+                       
+                       
+                       </style>
+                       
+                       
+                       
+                       
+                       <apex:outputPanel id="eventListJSONOP">
+                           <script>
+                           var eventsList = "{!JSENCODE(eventListJSON)}";
+                                                                                 
+                                                                                 </script>
+        </apex:outputPanel>
+        
+        <script>
+        var prevX=0,prevY=0;
+        var prevView = "{!JSENCODE(view)}";
+        var resourcedayHeight = 0;
+        //**** On ready function call to onload function calendar with default attributes
+        
+        $(document).ready(function() { 
+            
+            $(".lookupCustomCss").each(function(){
+                if($(this).find("select").length!=0){
+                    $(this).css({'white-space':'nowrap','padding-left':'0px','border':'none'});
+                }
+            });
+            
+            if( navigator.userAgent.match(/iPhone|iPod/i) ) {
+                $('.bs .modal').on('show.bs.modal', function() {
+                    $('body').css({
+                        position: 'fixed',                    
+                    });
+                });
+                $('.bs .modal').on('hide.bs.modal', function() {
+                    $('body').css({
+                        position: 'absolute',                    
+                    });
+                });
+                $('body').css({
+                    position: 'absolute',                    
+                });
+                $(".container").width(window.innerWidth-40);
+                $(".calendarViewDiv").width(window.innerWidth-40);
+                $(".waitingSearchDiv").find(".waitingHolder").css({top:"20%"});
+                window.onkeydown=function(){ // Workaround for known issue with SFDC(https://success.salesforce.com/issues_view?id=a1p30000000T5l1AAC)
+                    window.focus();
+                }
+            }
+            if(navigator.userAgent.match(/iPad/i) ) {
+                $('.bs .modal').on('show.bs.modal', function() {
+                    $('body').css({
+                        position: 'fixed',                    
+                    });
+                });
+                $('.bs .modal').on('hide.bs.modal', function() {
+                    $('body').css({
+                        position: 'absolute',                    
+                    });
+                });
+                $(".container").width(window.innerWidth-40);
+                $(".calendarViewDiv").width(window.innerWidth-40);
+                window.onkeydown=function(){ // Workaround for known issue with SFDC(https://success.salesforce.com/issues_view?id=a1p30000000T5l1AAC)
+                    window.focus();
+                }
+            }
+            
+            onloadFunction();
+            
+            //To set the top for ResourceDay View on page load.
+            var top=0;
+            $( ".fc-agenda-days > thead" ).each(function( index ) {
+                if($(this).height()>0){
+                    top = $(this).height();
+                }
+            });
+            resourcedayHeight = $(".fc-view-resourceDay").height();
+            $(".fc-view-resourceDay>div").css('top',top+'px');
+            
+            adjustCSS();
+            
+        } );
+        
+        function adjustCalendar(){
+            
+            if(navigator.userAgent.match(/iPad/i) ) {
+                $(".container").width(window.innerWidth-50);
+            }
+            var view = $('#calendar').fullCalendar('getView').name;
+            if(view == 'resourceDay'){
+                $("#calendar").find(".fc-view-resourceDay > div > div").width($("#calendar").find(".fc-content tr:first").outerWidth());
+                $(".fc-view-resourceDay > div > div").width($(".fc-view-resourceDay")[0].scrollWidth);
+            }
+            $(".fc-button-prev").trigger('click'); // To make sure the calendar is loaded properly
+            $(".fc-button-next").trigger('click'); // To make sure the calendar is loaded properly
+            
+        }
+        
+        
+        function adjustCSS(){
+            
+            
+            //hiding the makeRoomUnavailable button and mark available section in mobile app
+            if((typeof sforce != 'undefined') && (sforce != null) && (typeof sforce.one != 'undefined')){
+                //   $(".roomUnavailBtn").remove();
+                //   $(".markAvailBtn").attr("disabled","true");
+                
+            }
+            
+            var view = $('#calendar').fullCalendar('getView').name;
+            
+            /* fix : two pages are being opened due to href and sforce.one in ipad/iphone */
+            if(typeof sforce != 'undefined' && sforce != null && (typeof sforce.one != 'undefined')){
+                if(view == 'resourceDay'){
+                    $(".fc-view-resourceDay > div a").each(function(){
+                        $(this).attr("href","javascript:void(0);");
+                    });
+                }else if(view == 'agendaWeek'){
+                    $(".fc-view-agendaWeek > div a").each(function(){
+                        $(this).attr("href","javascript:void(0);");
+                    });
+                }else if(view == 'month'){
+                    $(".fc-view-month > div a").each(function(){
+                        $(this).attr("href","javascript:void(0);");
+                    });   
+                }
+            }
+            
+            
+            $(".fc-button-month").bind("click",function(){
+                
+                /* fix : two pages are being opened due to href and sforce.one in ipad/iphone */
+                if(typeof sforce != 'undefined' && sforce != null && (typeof sforce.one != 'undefined')){
+                    $(".fc-view-month > div a").each(function(){
+                        $(this).attr("href","javascript:void(0);");
+                    });
+                }
+            });
+            
+            /* fix : two pages are being opened due to href and sforce.one in ipad/iphone */
+            if(view == 'month'){
+                if(typeof sforce != 'undefined' && sforce != null && (typeof sforce.one != 'undefined')){
+                    $(".fc-view-month > div a").each(function(){
+                        $(this).attr("href","javascript:void(0);");
+                    });
+                }
+            }
+            
+            if(view == 'agendaWeek'){
+                
+                var top=0;
+                $( ".fc-agenda-days > thead" ).each(function( index ) {
+                    if($(this).height()>0){
+                        top = $(this).height();
+                    }
+                });
+                $(".fc-view-agendaWeek>div").css('top',top+'px'); 
+                /*Week view fixed header start */
+                $(".fc-view-agendaWeek").css("overflow-y","hidden");
+                $(".fc-view-agendaWeek > div > div").css("overflow-y","auto");
+                $(".fc-view-agendaWeek > div > div").height($(".fc-view-agendaWeek > table").height() - $(".fc-view-agendaWeek > .fc-agenda-days > thead").height());
+                $(".fc-view-agendaWeek").css("border-bottom","1px solid gainsboro");
+                /*Week view fixed header end */
+                $(".fc-button-prev").trigger('click'); // To make sure the calendar is loaded properly in Week View
+                $(".fc-button-next").trigger('click'); // To make sure the calendar is loaded properly in Week View
+            }
+            
+            if(view == 'resourceDay'){
+                $("#calendar").find(".fc-view-resourceDay > div > div").width($("#calendar").find(".fc-content tr:first").outerWidth());
+                $(".fc-view-resourceDay > div > div").width($(".fc-view-resourceDay")[0].scrollWidth);
+            }
+            
+            //For large number of rooms in resource view, ensure that enclosed div width is set to table width so that entire content is visible on clicking on 'next','prev','resource' buttons 
+            $(".fc-button-prev, .fc-button-next, .fc-button-resourceDay, .fc-button-agendaWeek, .fc-button-today").bind("click",function(){
+                var view = $('#calendar').fullCalendar('getView').name;
+                
+                if(view == 'resourceDay'){
+                    var top=0;
+                    $( ".fc-agenda-days > thead" ).each(function( index ) {
+                        if($(this).height()>0){
+                            top = $(this).height();
+                        }
+                    });
+                    
+                    $(".fc-view-resourceDay>div").css('top',top+'px');
+                    $("#calendar").find(".fc-view-resourceDay > div > div").width($("#calendar").find(".fc-content tr:first").outerWidth());
+                    $(".fc-view-resourceDay > div > div").width($(".fc-view-resourceDay")[0].scrollWidth);
+                }
+                if(view == 'agendaWeek'){
+                    $("#calendar").find("div.fc-view-agendaWeek > div").css("top","26px");
+                    
+                    //to set the top
+                    var top=0;
+                    $( ".fc-agenda-days > thead" ).each(function( index ) {
+                        if($(this).height()>0){
+                            top = $(this).height();
+                        }
+                    });
+                    $(".fc-view-agendaWeek>div").css('top',top+'px');
+                    
+                    /*Week view fixed header start */
+                    $(".fc-view-agendaWeek").css("overflow-y","hidden");
+                    $(".fc-view-agendaWeek > div > div").css("overflow-y","auto");
+                    $(".fc-view-agendaWeek > div > div").height($(".fc-view-agendaWeek > table").height() - $(".fc-view-agendaWeek > .fc-agenda-days > thead").height());
+                    $(".fc-view-agendaWeek").css("border-bottom","1px solid gainsboro");
+                    /*Week view fixed header end */
+                    
+                }
+                /* fix : two pages are being opened due to href and sforce.one in ipad/iphone */
+                if(typeof sforce != 'undefined' && sforce != null && (typeof sforce.one != 'undefined')){
+                    if(view == 'resourceDay'){
+                        $(".fc-view-resourceDay > div a").each(function(){
+                            $(this).attr("href","javascript:void(0);");
+                        });
+                    }else if(view == 'agendaWeek'){
+                        $(".fc-view-agendaWeek > div a").each(function(){
+                            $(this).attr("href","javascript:void(0);");
+                        });
+                    }else if(view == 'month'){
+                        $(".fc-view-month > div a").each(function(){
+                            $(this).attr("href","javascript:void(0);");
+                        });   
+                    }
+                }
+            });
+            
+            
+            $(".fc-button-month, .fc-button-resourceDay, .fc-button-agendaWeek").bind("click",function(){
+                var view = $('#calendar').fullCalendar('getView').name;
+                if(prevView != "" && prevView != view){
+                    $('#calendar').fullCalendar('removeEvents');
+                    var calStartDate = $.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visStart, "yyyy-MM-dd HH:mm:ss");
+                    var calEndDate = $.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visEnd, "yyyy-MM-dd HH:mm:ss");
+                    refetchEventsJS(view,calStartDate,calEndDate);
+                    prevView = view;
+                }
+            });  
+            
+            $(".fc-button-prev, .fc-button-next, .fc-button-today").bind("click",function(){
+                var view = $('#calendar').fullCalendar('getView').name;
+                $('#calendar').fullCalendar('removeEvents');
+                var calStartDate = $.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visStart, "yyyy-MM-dd HH:mm:ss");
+                var calEndDate = $.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visEnd, "yyyy-MM-dd HH:mm:ss");
+                refetchEventsJS(view,calStartDate,calEndDate);
+            });    
+        }
+        
+        function generateNewEventsJS(){
+            
+            var obj = $.parseJSON(eventsList);
+            var eventObj =[];
+            
+            for(var i in obj){
+                if(obj[i].owner==null){
+                    obj[i].owner='';
+                }
+                if(obj[i].ReasonForUnavialable==null){
+                    obj[i].ReasonForUnavialable='';
+                }else{
+                    obj[i].ReasonForUnavialable = obj[i].ReasonForUnavialable.replace("*****","'").replace(/\\"/g,"\"");
+                }
+                if(obj[i].visitTitle!=null){
+                    obj[i].visitTitle = obj[i].visitTitle.replace("*****","'").replace(/\\"/g,"\"");
+                }
+                else{
+                    obj[i].visitTitle = '';
+                }
+                if(obj[i].title!=null){
+                    obj[i].title = obj[i].title.replace("*****","'").replace(/\\"/g,"\"");
+                }
+                if(obj[i].roomName!=null){
+                    obj[i].roomName = obj[i].roomName.replace("*****","'").replace(/\\"/g,"\"");
+                }
+                else{
+                    obj[i].roomName = '';
+                }
+                if(obj[i].visitNumber==null){
+                    obj[i].visitNumber = '';
+                }
+                if(obj[i].roomNumber==null){
+                    obj[i].roomNumber = '';
+                }
+                
+                if(obj[i].visitTeamOwner == null){
+                    obj[i].visitTeamOwner = '';
+                }
+                
+                //Timezone Changes
+                eventObj.push({"id": obj[i].id,"title":obj[i].title,"start":obj[i].startString,"end":obj[i].endString,"locTZStart":obj[i].locationTZStartTime,"locTZEnd":obj[i].locationTZEndTime,"url":obj[i].url,"capacity":obj[i].capacity,"description" : obj[i].description , "resourceId":obj[i].resourceId,"roomName":obj[i].roomName,"roomNumber":obj[i].roomNumber,"ReasonForUnavialable":obj[i].ReasonForUnavialable, "VisitNumber":obj[i].visitNumber,"VisitName":obj[i].visitTitle,"VisitStatus":obj[i].visitStatus,"VisitType":obj[i].VisitType,"owner":obj[i].owner,"VisitTeamOwner":obj[i].visitTeamOwner,"className":obj[i].className,"numberOfAttendeesWrapper":obj[i].numberOfAttendeesWrapper,"AcceptedAttendeesList":obj[i].AcceptedAttendeesList,"numberOfAcceptedPresentersWrapper":obj[i].numberOfAcceptedPresentersWrapper });
+                
+            }
+            
+            $('#calendar').fullCalendar('removeEvents');
+            $('#calendar').fullCalendar('addEventSource', eventObj);
+            
+        }
+        
+        function afterRefreshFunction(arrivalDateYear,arrivalDateMonth,arrivalDateDay,roomList,viewName,isValidate){
+            onloadFunction(arrivalDateYear,arrivalDateMonth,arrivalDateDay,roomList,viewName,isValidate);
+            
+            if(viewName == 'agendaWeek'){
+                
+                /*Week view fixed header start */
+                $(".fc-view-agendaWeek").css("overflow-y","hidden");
+                $(".fc-view-agendaWeek > div > div").css("overflow-y","auto");
+                $(".fc-view-agendaWeek > div > div").height($(".fc-view-agendaWeek > table").height() - $(".fc-view-agendaWeek > .fc-agenda-days > thead").height());
+                $(".fc-view-agendaWeek").css("border-bottom","1px solid gainsboro");
+                /*Week view fixed header end */
+                
+            }
+            
+            if(viewName == 'resourceDay'){
+                var top=0;
+                $( ".fc-agenda-days > thead" ).each(function( index ) {
+                    if($(this).height()>0){
+                        top = $(this).height();
+                    }
+                });
+                $(".fc-view-resourceDay>div").css('top',top+'px');
+            }
+            adjustCSS();
+        }
+        
+        //**** Onload function call to load calendar  
+        
+        function onloadFunction(arrivalDateYear,arrivalDateMonth,arrivalDateDay,roomList,viewName,isValidate){
+            
+            console.log('Creating Calendar');  
+            console.log('arrivalDateYear - '+arrivalDateYear);  
+            console.log('arrivalDateMonth - '+arrivalDateMonth);
+            console.log('arrivalDateDay - '+arrivalDateDay);
+            console.log('roomList - '+roomList);
+            console.log('viewName - '+viewName);
+            console.log('eventsList - '+eventsList);
+            
+            if(isValidate == 'true'){
+                roomList = undefined;
+                viewName =  undefined;
+                eventsList = '[]'; 
+                
+            } 
+            
+            
+            
+            //viewName = 'agendaWeek';
+            if(typeof viewName === 'undefined'){
+                viewName = '{!JSENCODE(view)}';
+            }
+            
+            
+            if(typeof roomList === 'undefined'){   
+                var resourceObj =[
+                    <apex:repeat value="{!allRoomWrapper}" var="object">
+                    {
+                    "id" : "{!JSENCODE(object.rm.id)}",
+                    "name" : "{!JSENCODE(object.rm.Name)}",
+                    },
+                    </apex:repeat>
+                ]; 
+                
+            }    
+            else{
+                
+                var obj = $.parseJSON(roomList );
+                var resourceObj =[];
+                var resourceObjSorted =[];
+                var map = new Object(); 
+                
+                
+                for(var i in obj){
+                    
+                    resourceObjSorted.push(obj[i].rm.Name);
+                    map[obj[i].rm.Name] = obj[i].rm.Id;  
+                }
+                
+                resourceObjSorted =resourceObjSorted.sort();
+                
+                for(var i in resourceObjSorted ){
+                    resourceObj.push({"id": map[resourceObjSorted[i]], "name": resourceObjSorted[i]});
+                }
+                
+                
+            }  
+            
+            //**** events list
+            
+            if(typeof eventsList === 'undefined'){
+                var obj = $.parseJSON(eventsList);
+                var eventObj = [];
+                for(var i in obj){
+                    if(obj[i].owner==null){
+                        obj[i].owner='';
+                    }
+                    if(obj[i].ReasonForUnavialable==null){
+                        obj[i].ReasonForUnavialable='';
+                    }else{
+                        obj[i].ReasonForUnavialable = obj[i].ReasonForUnavialable.replace("*****","'").replace(/\\"/g,"\"");
+                    }
+                    if(obj[i].visitTitle!=null){
+                        obj[i].visitTitle = obj[i].visitTitle.replace("*****","'").replace(/\\"/g,"\"");
+                    }
+                    else{
+                        obj[i].visitTitle = '';
+                    }
+                    if(obj[i].title!=null){
+                        obj[i].title = obj[i].title.replace("*****","'").replace(/\\"/g,"\"");
+                    }
+                    if(obj[i].roomName!=null){
+                        obj[i].roomName = obj[i].roomName.replace("*****","'").replace(/\\"/g,"\"");
+                    }
+                    else{
+                        obj[i].roomName = '';
+                    }
+                    if(obj[i].visitNumber==null){
+                        obj[i].visitNumber = '';
+                    }
+                    if(obj[i].roomNumber==null){
+                        obj[i].roomNumber = '';
+                    }
+                    
+                    if(obj[i].visitTeamOwner == null){
+                        obj[i].visitTeamOwner = '';
+                    }
+                    
+                    eventObj.push({"id": obj[i].id,"title":obj[i].title,"start":obj[i].startString,"end":obj[i].endString,"locTZStart":obj[i].locationTZStartTime,"locTZEnd":obj[i].locationTZEndTime,"url":obj[i].url,"capacity":obj[i].capacity,"description" : obj[i].description , "resourceId":obj[i].resourceId,"roomName":obj[i].roomName,"roomNumber":obj[i].roomNumber,"ReasonForUnavialable":obj[i].ReasonForUnavialable, "VisitNumber":obj[i].visitNumber,"VisitName":obj[i].visitTitle,"VisitStatus":obj[i].visitStatus,"VisitType":obj[i].VisitType,"owner":obj[i].owner,"VisitTeamOwner":obj[i].visitTeamOwner,"className":obj[i].className,"numberOfAttendeesWrapper":obj[i].numberOfAttendeesWrapper,"AcceptedAttendeesList":obj[i].AcceptedAttendeesList,"numberOfAcceptedPresentersWrapper":obj[i].numberOfAcceptedPresentersWrapper });
+                }
+            }    
+            else{
+                
+                
+                var obj = $.parseJSON(eventsList );
+                
+                var eventObj =[];
+                
+                for(var i in obj){
+                    if(obj[i].owner==null){
+                        obj[i].owner='';
+                    }
+                    if(obj[i].ReasonForUnavialable==null){
+                        obj[i].ReasonForUnavialable='';
+                    }else{
+                        obj[i].ReasonForUnavialable = obj[i].ReasonForUnavialable.replace("*****","'").replace(/\\"/g,"\"");
+                    }
+                    if(obj[i].visitTitle!=null){
+                        obj[i].visitTitle = obj[i].visitTitle.replace("*****","'").replace(/\\"/g,"\"");
+                    }
+                    else{
+                        obj[i].visitTitle = '';
+                    }
+                    if(obj[i].title!=null){
+                        obj[i].title = obj[i].title.replace("*****","'").replace(/\\"/g,"\"");
+                    }
+                    if(obj[i].roomName!=null){
+                        obj[i].roomName = obj[i].roomName.replace("*****","'").replace(/\\"/g,"\"");
+                    }
+                    else{
+                        obj[i].roomName = '';
+                    }
+                    if(obj[i].visitNumber==null){
+                        obj[i].visitNumber = '';
+                    }
+                    if(obj[i].roomNumber==null){
+                        obj[i].roomNumber = '';
+                    }
+                    
+                    if(obj[i].visitTeamOwner == null){
+                        obj[i].visitTeamOwner = '';
+                    }
+                    
+                    //Timezone Changes
+                    eventObj.push({"id": obj[i].id,"title":obj[i].title,"start":obj[i].startString,"end":obj[i].endString,"locTZStart":obj[i].locationTZStartTime,"locTZEnd":obj[i].locationTZEndTime,"url":obj[i].url,"capacity":obj[i].capacity,"description" : obj[i].description , "resourceId":obj[i].resourceId,"roomName":obj[i].roomName,"roomNumber":obj[i].roomNumber,"ReasonForUnavialable":obj[i].ReasonForUnavialable, "VisitNumber":obj[i].visitNumber,"VisitName":obj[i].visitTitle,"VisitStatus":obj[i].visitStatus,"VisitType":obj[i].VisitType,"owner":obj[i].owner,"VisitTeamOwner":obj[i].visitTeamOwner,"className":obj[i].className,"numberOfAttendeesWrapper":obj[i].numberOfAttendeesWrapper,"AcceptedAttendeesList":obj[i].AcceptedAttendeesList,"numberOfAcceptedPresentersWrapper":obj[i].numberOfAcceptedPresentersWrapper });
+                    
+                }
+                
+            }              
+            
+            if(typeof arrivalDateYear === 'undefined'){
+                arrivalDateYear = '{!JSENCODE(arrivalYear)}';
+            }
+            if(typeof arrivalDateMonth === 'undefined'){
+                arrivalDateMonth = '{!JSENCODE(arrivalMonth)}';
+            }
+            if(typeof arrivalDateDay === 'undefined'){
+                arrivalDateDay = '{!JSENCODE(arrivalDay)}';
+            }
+            arrivalDateMonth = arrivalDateMonth-1;
+            
+            //Call the fullCallendar method. You can replace the '#calendar' with the ID of the dom element where you want the calendar to go. 
+            
+            console.log('=:isSourceVisitScreenInCalender:='+'{!isSourceVisitScreen}');
+    			
+    			var calendarButtons = 'resourceDay,agendaWeek,month';
+    			
+    			if('{!isSourceVisitScreen}' == 'true'){
+    				calendarButtons = 'resourceDay'; 
+    			}
+             
+            
+            $('#calendar').fullCalendar({
+                
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: calendarButtons
+                },
+                
+                editable: true,
+                year: arrivalDateYear,
+                
+                month: arrivalDateMonth,
+                date: arrivalDateDay,  
+                allDaySlot : false,   
+                slotMinutes :15,
+                firstHour :'{!JSENCODE(defaultTime)}',   
+                startEditable :true,             
+                allDayDefault: false,
+                minTime: '00:00:00', 
+                maxTime: '24:00:00', 
+                droppable: true,
+                draggable:false, 
+                selectable: true,
+                selectHelper: true,
+                slotEventOverlap: true,
+                eventStartEditable: true,
+                defaultEventMinutes:0,
+                defaultView: viewName,
+                
+                
+                
+                select: function(start, end, allDay,roomName, event, resourceId) {
+                    var start = $.fullCalendar.formatDate(start, "yyyy-MM-dd HH:mm:ss");
+                    var end = $.fullCalendar.formatDate(end, "yyyy-MM-dd HH:mm:ss");
+                    var description ='roomSlotforHold';
+                    
+                },
+                
+                //*** Event Mouse Click Function ***        
+                
+                eventClick: function(event) {
+                    // opens events in a popup window
+                    if((typeof sforce != 'undefined') && (sforce!=null) && (typeof sforce.one != 'undefined') && ({!isFromVisitTeam}) && ('{!$User.UITheme}'!='Theme4d')){
+                        
+                        if(event.description=='RoomBooked'){
+                            var tooltip = '<div>' +'<b>'+'Visit Name: </b>' +event.VisitName +'<br/><br/><b>'+'Start Time (Location): </b>' +$.fullCalendar.formatDate($.fullCalendar.parseDate(event.locTZStart), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'End Time (Location): </b> ' +$.fullCalendar.formatDate($.fullCalendar.parseDate(event.locTZEnd), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'# of Attendees: </b> ' +event.numberOfAttendeesWrapper +'</div>';
+                        }
+                        
+                        if(event.description=='RoomOnHold'){
+                            var tooltip = '<div>' +'<b>'+'Visit Name: </b>' +event.VisitName +'<br/><br/><b>'+'Start Time (Location): </b>' +$.fullCalendar.formatDate($.fullCalendar.parseDate(event.locTZStart), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'End Time (Location): </b> ' +$.fullCalendar.formatDate($.fullCalendar.parseDate(event.locTZEnd), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'# of Attendees: </b> ' +event.numberOfAttendeesWrapper +'</div>';
+                        }
+                        
+                        if(event.description=='RoomUnavailable'){
+                            var tooltip = '<div>' +'<b>'+'Unavailable Room ID: </b>' +event.roomNumber +'<br/><br/><b>'+'Reason: </b>' +event.ReasonForUnavialable +'<br/><br/><b>'+'Owner: </b>' +event.owner +'</div>';     
+                        }
+                        
+                        if(event.description=='Agenda'){
+                            var tooltip = '<div>' +'<b>'+'Visit Number: </b>' +event.VisitNumber+'<br/><br/><b>'+'Visit Name: </b>' +event.VisitName +'<br/><br/><b>'+'Start Time (Location): </b>' +$.fullCalendar.formatDate($.fullCalendar.parseDate(event.locTZStart), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'Agenda Title: </b>' +event.title+'<br/><br/><b>'+'No of Accepted Presenters: </b>' +event.AcceptedAttendeesList + '</div>';
+                        }
+                        
+                        if(event.description=='Visit'){
+                            var tooltip = '<div>' +'Title:' + event.title+'<br/>'+'Room:' +event.roomName+'<br/>'+'Description:' +event.description + '</div>'; 
+                        }
+                        $("#showRoomDetailsModal .modal-body").html(tooltip);
+                        var eventUrl = event.url.replace("/","");
+                        $("#showRoomDetailsModal .modal-footer").html('<button type="button" onClick="openDetailsinSF1(\''+eventUrl+'\');"'+' class="btn btn-default btn-sm">Record Details</button>'+'<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>');
+                        $("#showRoomDetailsModal").modal();
+                    }else{
+                        if({!isFromVisitTeam}){
+                            if('{!$User.UITheme}'=='Theme4d'){
+                                sforce.one.navigateToURL(event.url); 
+                            }
+                            else{
+                                popup = window.open(event.url, '_blank');  //, 'width=1000,height=600');
+                                popup.focus();
+                            }
+                        }
+                    }
+                    return false;
+                },  
+                
+                //**** Event Render Function
+                
+                eventRender: function(event, element) {
+                    
+                    if((typeof sforce == 'undefined') || (sforce!=null && typeof sforce.one == 'undefined') || ('{!$User.UITheme}'=='Theme4d')){    
+                        if(event.description=='Agenda'){
+                            var title = '';
+                            var details = '';
+                            element.find('.fc-event-title').text( title );
+                            if({!isFromVisitTeam}){
+                                if(event.VisitNumber!=''){
+                                    details += "<br/>" + event.VisitNumber;          
+                                }
+                                
+                                if(event.VisitName!=''){
+                                    details += "<br/>" + event.VisitName+"<br/>";          
+                                }
+                            }
+                            if(event.roomName!=''){
+                                details += event.roomName + "<br/>";          
+                            }
+                            element.find('.fc-event-title').append(details);
+                        } 
+                        if(event.description=='RoomBooked'){
+                            
+                            var title = '';
+                            var details = '';
+                            
+                            if(event.VisitNumber!=''){
+                                details += "<br/>" + event.VisitNumber;          
+                            }
+                            if(event.VisitName!=''){
+                                details += "<br/>" + event.VisitName;          
+                            }
+                            if(event.roomName!=''){
+                                details += "<br/>" + event.roomName;          
+                            }
+                            element.find('.fc-event-title').text( title );
+                            element.find('.fc-event-title').append(details);
+                        }
+                        
+                        if(event.description=='RoomUnavailable'){
+                            
+                            var title = "";
+                            var details = '';
+                            if(event.roomNumber!=''){
+                                details += "<br/>" + event.roomNumber;          
+                            }
+                            if(event.roomName!=''){
+                                details += "<br/>" + event.roomName+"<br/>";          
+                            }
+                            element.find('.fc-event-title').text( title );
+                            element.find('.fc-event-title').append(details);
+                            
+                        } 
+                        
+                        if(event.description=='RoomOnHold'){
+                            var title = "";
+                            var details = '';
+                            if(event.VisitNumber!=''){
+                                details += "<br/>" + event.VisitNumber;          
+                            }
+                            if(event.VisitName!=''){
+                                details += "<br/>" + event.VisitName+"<br/>";          
+                            }
+                            if(event.roomName!=''){
+                                details += "<br/>" + event.roomName;          
+                            }
+                            element.find('.fc-event-title').text( title );
+                            element.find('.fc-event-title').append(details);
+                        }
+                        
+                    }else{
+                        var title = '';
+                        element.find('.fc-event-title').text(title);
+                    }
+                },   
+                
+                
+                //*** Event Mouse hover Function ***
+                
+                eventMouseover: function(calEvent,jsEvent) {
+                    console.log('calEvent.VisitTeamOwner : '+calEvent.VisitTeamOwner);
+                    
+                    if(((typeof sforce == 'undefined') || (sforce!=null && typeof sforce.one == 'undefined') || ('{!$User.UITheme}'=='Theme4d'))&&({!isFromVisitTeam})){
+                        prevX = jsEvent.pageX;
+                        prevY = jsEvent.pageY;
+                        if(calEvent.description=='RoomBooked'){
+                            var tooltip = '<div class="tooltipevent" style="width:250px;height:140px; color:  #4d4d4d; border-style: solid; border-width: 1px;padding: 10px 10px 10px 10px;background:white;position:absolute;z-index:10001;border-bottom-left-radius:10px;border-bottom-right-radius: 10px;border-top-right-radius:10px;">' +'<b>'+'Visit Name: </b>' +calEvent.VisitName +'<br/><br/><b>'+'Visit Team Owner: </b>' +calEvent.VisitTeamOwner +'<br/><br/><b>'+'Start Time (Location): </b>'+$.fullCalendar.formatDate($.fullCalendar.parseDate(calEvent.locTZStart), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'End Time (Location): </b> ' +$.fullCalendar.formatDate($.fullCalendar.parseDate(calEvent.locTZEnd), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'# of Attendees: </b> ' +calEvent.numberOfAttendeesWrapper +'</div>';
+                        }
+                        
+                        if(calEvent.description=='RoomOnHold'){
+                            var tooltip = '<div class="tooltipevent" style="width:250px;height:140px; color:  #4d4d4d; border-style: solid; border-width: 1px;padding: 10px 10px 10px 10px;background:white;position:absolute;z-index:10001;border-bottom-left-radius:10px;border-bottom-right-radius: 10px;border-top-right-radius:10px;">' +'<b>'+'Visit Name: </b>' +calEvent.VisitName +'<br/><br/><b>'+'Visit Team Owner: </b>' +calEvent.VisitTeamOwner +'<br/><br/><b>'+'Start Time (Location): </b>' +$.fullCalendar.formatDate($.fullCalendar.parseDate(calEvent.locTZStart), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'End Time (Location): </b> ' +$.fullCalendar.formatDate($.fullCalendar.parseDate(calEvent.locTZEnd), "MM/dd/yyyy hh:mm TT")+'<br/><br/><b>'+'# of Attendees: </b> ' +calEvent.numberOfAttendeesWrapper +'</div>';
+                        }
+                        
+                        
+                        
+                        
+                        if(calEvent.description=='RoomUnavailable'){
+                            var tooltip = '<div class="tooltipevent" style="width:250px;height:140px; color:  #4d4d4d; border-style: solid; border-width: 1px;padding: 10px 10px 10px 10px;background:white;position:absolute;z-index:10001;border-bottom-left-radius:10px;border-bottom-right-radius: 10px;border-top-right-radius:10px;">'+'<b>'+'Unavailable Room ID: </b>' +calEvent.roomNumber +'<br/><br/><b>'+'Reason: </b>' +calEvent.ReasonForUnavialable +'<br/><br/><b>'+'Owner: </b>' +calEvent.owner+'<br/><br/><b>'+'Start Time (Location): </b>' +$.fullCalendar.formatDate($.fullCalendar.parseDate(calEvent.start), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'End Time (Location): </b> ' +$.fullCalendar.formatDate($.fullCalendar.parseDate(calEvent.end), "MM/dd/yyyy hh:mm TT") +'</div>';     
+                            
+                            //alert('==='+$.fullCalendar.formatDate($.fullCalendar.parseDate(calEvent.locTZStart), "MM/dd/yyyy hh:mm TT"));
+                            
+                        }
+                        
+                        if(calEvent.description=='Agenda'){
+                            var tooltip = '<div class="tooltipevent" style="width:250px;min-height:200px; color:  #4d4d4d; border-style: solid; border-width: 1px;padding: 10px 10px 10px 10px;background:white;position:absolute;z-index:10001;border-bottom-left-radius:10px;border-bottom-right-radius: 10px;border-top-right-radius:10px;">' +'<b>'+'Visit Number: </b>' +calEvent.VisitNumber+'<br/><br/><b>'+'Visit Name: </b>' +calEvent.VisitName +'<br/><br/><b>'+'Start Time (Location): </b>' +$.fullCalendar.formatDate($.fullCalendar.parseDate(calEvent.locTZStart), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'End Time (Location): </b> ' +$.fullCalendar.formatDate($.fullCalendar.parseDate(calEvent.locTZEnd), "MM/dd/yyyy hh:mm TT") +'<br/><br/><b>'+'Agenda Title: </b>' +calEvent.title+'<br/><br/><b>'+'No of Accepted Presenters: </b>' +calEvent.AcceptedAttendeesList + '</div>';
+                            
+                        }
+                        
+                        if(calEvent.description=='Visit'){
+                            var tooltip = '<div class="tooltipevent" style="width:200px;height:150px;background:white;position:absolute;z-index:10001;border-bottom-left-radius: 100%10px;border-bottom-right-radius: 100%10px;border-top-right-radius: 100%10px;">' +'Title:' + calEvent.title+'<br/>'+'Room:' +calEvent.roomName+'<br/>'+'Description:' +calEvent.description + '</div>'; 
+                        }
+                        
+                        
+                        
+                        $("body").append(tooltip);
+                        $(this).mouseover(function(e) {
+                            $(this).css('z-index', 10000);
+                            $('.tooltipevent').fadeIn('500');
+                            $('.tooltipevent').fadeTo('10', 1.9);
+                        }).mousemove(function(e) {
+                            
+                            var mousex = e.pageX - 90; //Get X coodrinates
+                            var mousey = e.pageY  - 400; //Get Y coordinates
+                            var tipWidth = $('.tooltipevent').width(); //Find width of tooltip
+                            var tipHeight = $('.tooltipevent').height(); //Find height of tooltip
+                            
+                            //Distance of element from the right edge of viewport
+                            var tipVisX = $(window).width() - (mousex + tipWidth);
+                            //Distance of element from the bottom of viewport
+                            var tipVisY = $(window).height() - (mousey + tipHeight);
+                            
+                            if ( tipVisX < tipWidth ) { //If tooltip exceeds the X coordinate of viewport
+                                mousex = e.pageX - tipWidth - 90;
+                                mousex +=50;
+                            }else{
+                                mousex  +=120;    
+                            } 
+                            if ( tipVisY < tipHeight ) { //If tooltip exceeds the Y coordinate of viewport
+                                mousey = e.pageY - tipHeight - 90;
+                                mousey += 68;
+                            }else{
+                                mousey += 403; 
+                            }
+                            
+                            $('.tooltipevent').css('top', mousey);
+                            $('.tooltipevent').css('left', mousex);
+                            
+                        });
+                    }
+                },
+                
+                //**** Event Mouse Out Function
+                
+                eventMouseout: function(calEvent, jsEvent) {
+                    if(prevX == jsEvent.pageX && prevY == jsEvent.pageY){
+                        return;    
+                    }
+                    $(this).css('z-index', 8);
+                    $('.tooltipevent').remove();
+                    
+                },
+                
+                //**** Event Resize(Dragging withing the calendar)  Function      
+                
+                eventResize: function( event, dayDelta,minuteDelta, revertFunc, jsEvent, ui, view )  {
+                    
+                    var start = $.fullCalendar.formatDate(event.start, "yyyy-MM-dd HH:mm:ss");
+                    var end = $.fullCalendar.formatDate(event.end, "yyyy-MM-dd HH:mm:ss");
+                    if('{!JSENCODE(isFromVisitTeamText)}'=='false'){
+                        alert('You dont have permission to drag or drop this item');
+                        revertFunc();
+                        return false;
+                    }
+                    
+                    if(event.description =='Agenda' ){
+                        alert('Agenda Room Time Slot can not be changed');
+                        revertFunc();
+                        
+                    }
+                    
+                    
+                    if(event.description =='RoomBooked'  || event.description =='RoomUnavailable' || event.description =='RoomOnHold'){
+                        var input = checkOverlap(event);
+                        if(input ){ 
+                            if (!confirm("Do you want to save this change?")) {
+                                revertFunc();
+                                
+                            }
+                            
+                            else{
+                                saveAction(event.id,start,end,dayDelta,event.resourceId,event.description,event.VisitNumber );
+                            } 
+                        }
+                        else
+                            revertFunc();
+                        
+                    }
+                    
+                }, 
+                
+                
+                
+                
+                //**** Event Drop(Dropping within the calendar)  Function 
+                
+                eventDrop: function(event, dayDelta, minuteDelta, allDay, revertFunc ) {
+                    
+                    var end = $.fullCalendar.formatDate(event.end, "yyyy-MM-dd HH:mm:ss");
+                    var start = $.fullCalendar.formatDate(event.start, "yyyy-MM-dd HH:mm:ss");
+                    if('{!JSENCODE(isFromVisitTeamText)}'=='false'){
+                        alert('You dont have permission to drag or drop this item');
+                        revertFunc();
+                        return false;
+                    }
+                    
+                    if(event.description =='Agenda'  ){
+                        alert('Agenda Time Slot can not be changed');
+                        event.resourceId=event.oldResourceId;
+                        revertFunc();
+                    }
+                    if(event.description =='RoomBooked' ||event.description =='RoomOnHold' || event.description =='RoomUnavailable'){
+                        if(event.resourceId!=event.oldResourceId) {                  
+                            alert('Room changes must be done from the Visit Record. \n '+ 
+                                  'If you have navigated from Visit Record, Please click on "Book Room" button against the available room.');
+                            event.resourceId=event.oldResourceId;
+                            revertFunc();
+                        }
+                        else{
+                            
+                            var input = checkOverlap(event);
+                            if(input ){ 
+                                if (!confirm("Do you want to save this change?")) {
+                                    revertFunc();
+                                    
+                                }
+                                
+                                else{
+                                    saveAction(event.id,start,end,dayDelta,event.resourceId,event.description,event.VisitNumber );
+                                    
+                                } 
+                            }
+                            else
+                                revertFunc();
+                            
+                            
+                        }
+                        
+                    }
+                    
+                    
+                }, 
+                
+                windowResize: function(view) {
+                    adjustCalendar();
+                },
+                
+                //**** Resource json data  
+                
+                resources:resourceObj,           
+                
+                
+                
+                //**** All Events json data 
+                
+                events:eventObj,
+                
+                
+            }); 
+            
+        }
+        
+        
+        function openDetailsinSF1(url){
+            $("#showRoomDetailsModal").modal('hide');
+            sforce.one.navigateToSObject(url);
+        }
+        
+        </script>
+        
+        <script>
+        
+        function checkOverlap(event) {  
+            var validDrop = true;
+            
+            var ev = $("#calendar").fullCalendar("clientEvents");
+            for(var e in ev)
+            {
+                
+                if(ev[e].id!=event.id)
+                {
+                    
+                    if(event.resourceId==ev[e].resourceId &&  event.start <= ev[e].start && event.start <= ev[e].end && event.end >= ev[e].start && event.end <= ev[e].end ){
+                        validDrop=false;
+                    }
+                    
+                    else if(event.resourceId==ev[e].resourceId && event.start >= ev[e].start && event.end >= ev[e].start && event.start <= ev[e].end && event.end <= ev[e].end){
+                        validDrop=false; 
+                    }
+                        else if(event.resourceId==ev[e].resourceId && event.start >= ev[e].start && event.end >= ev[e].start && event.start<=ev[e].end && event.end >=ev[e].end){
+                            
+                            validDrop=false; 
+                        }
+                            else if(event.resourceId==ev[e].resourceId && event.start <= ev[e].start && event.end >= ev[e].start && event.end >=ev[e].start && event.end >=ev[e].end){
+                                
+                                validDrop=false; 
+                            }    
+                    
+                }
+                
+                if(!validDrop){     
+                    var input = confirm('This booking now overlaps with another booking. Press OK to continue or Cancel.');  
+                    return input;
+                }  
+                
+            }
+            return true;
+            
+        }    
+        function bookRoomJS(roomId,arrDate,depDate,noOfAttendees)
+        {
+            
+            var arrDateValue = document.getElementById(arrDate).value;
+            var depDateValue =  document.getElementById(depDate).value;
+            var numberOfattendeeValue = document.getElementById(noOfAttendees).value;
+            
+            window.opener.populateRoomJS(roomId,arrDateValue,depDateValue,numberOfattendeeValue);
+            window.close();
+        }
+        
+        var selectedRooms = new Array();
+        
+        function searchRoomsJS(){
+            var currView = $('#calendar').fullCalendar('getView').name;
+            selectedRooms = new Array();
+            searchRooms(currView);
+        }
+        
+        
+        
+        
+        
+        function searchRooms(){
+            console.log('LOCALE --- '+'{!userLocale}');
+            var isValidDateTime = checkEmptyValue();
+            if(!isValidDateTime){
+                $('.error-msg').show();
+                $('.error-Text').text('Please Enter Valid Start/End Date/Time');
+                return false;
+            }
+            
+            if('{!userLocale}' == 'en_GB'){
+                isEnglishUKLocale();
+            }else{
+                var currView = $('#calendar').fullCalendar('getView').name;
+                var arrivalDate = $('.arr-cls').val();
+                var departureDate = $('.dep-cls').val();
+                console.log("dateofArrivalbefore -- "+arrivalDate);
+                var dateofArrival = new Date(arrivalDate);
+                var dateofDeparture = new Date(departureDate);
+                console.log("dateofArrival -- "+dateofArrival);
+                console.log("dateofDeparture -- "+dateofDeparture);
+                if(dateofDeparture < dateofArrival){
+                    $('.error-msg').show();
+                    $('.error-Text').text('End Date should be greater than Start Date');
+                }else{
+                    //  alert('correct Date');
+                    selectedRooms = new Array();
+                    searchRooms(currView);
+                }
+            }
+            
+        }   
+        
+        function isEnglishUKLocale(){
+            
+            console.log("Inside UK");
+            var currView = $('#calendar').fullCalendar('getView').name;
+            var arrivalDate = $('.arr-cls').val();
+            var departureDate = $('.dep-cls').val();
+            console.log("dateofArrivalbefore -- "+arrivalDate);
+            var dateofArrival = new Date(arrivalDate);
+            var dateofDeparture = new Date(departureDate);
+            
+            
+            console.log("dateofArrival -- "+dateofArrival);
+            console.log("dateofDeparture -- "+dateofDeparture);
+            
+            var arr = arrivalDate.split('/');
+            console.log('=split value='+arr+'=:index1:='+arr[0]+'=:index2:='+arr[1]+'=:index3:='+arr[2]+'=:hours:='+dateofArrival.getHours()+'=:minutes:='+dateofArrival.getMinutes());
+            var dep = departureDate.split('/');
+            console.log('=split value='+dep+'=:index1:='+dep[0]+'=:index2:='+dep[1]+'=:index3:='+dep[2]+'=:hours:='+dateofDeparture.getHours()+'=:minutes:='+dateofDeparture.getMinutes());        
+            
+            var yearTimeArr = arr[2].split(' ');
+            
+            console.log('yearTimeArr[0] '+yearTimeArr[0]);
+            console.log('yearTimeArr[1] '+yearTimeArr[1]);
+            
+            var timeArr = yearTimeArr[1].split(':');
+            console.log('timeArr[0] '+timeArr[0]);
+            console.log('timeArr[1] '+timeArr[1]);
+            
+            var mydate = new Date();
+            mydate.setFullYear(parseInt(yearTimeArr[0], 10));
+            console.log(parseInt(arr[1], 10));
+            mydate.setMonth(parseInt(arr[1]-1, 10));
+            mydate.setDate(parseInt(arr[0], 10));
+            mydate.setHours(parseInt(timeArr[0], 10));
+            mydate.setMinutes(parseInt(timeArr[1], 10));  
+            
+            console.log('DATE -- '+mydate);
+            
+            
+            
+            var yearTimeDep = dep[2].split(' ');
+            
+            console.log('yearTimedep[0] '+yearTimeDep[0]);
+            console.log('yearTimedep[1] '+yearTimeDep[1]);
+            
+            var timedep = yearTimeDep[1].split(':');
+            console.log('timedep[0] '+timedep[0]);
+            console.log('timedep[1] '+timedep[1]);
+            
+            var mydateDep = new Date();
+            mydateDep.setFullYear(parseInt(yearTimeDep[0], 10));
+            console.log(parseInt(dep[1], 10));
+            mydateDep.setMonth(parseInt(dep[1]-1, 10));
+            mydateDep.setDate(parseInt(dep[0], 10));
+            mydateDep.setHours(parseInt(timedep[0], 10));
+            mydateDep.setMinutes(parseInt(timedep[1], 10));  
+            
+            console.log('DEp-DATE -- '+mydateDep);
+            
+            
+            if(mydateDep < mydate){
+                $('.error-msg').show();
+                $('.error-Text').text('End Date should be greater than Start Date');
+                
+            }else{
+                
+                selectedRooms = new Array();
+                searchRooms(currView); 
+            }
+            
+        }
+        
+        
+        function resetSelectedRoomsSet(){
+            selectedRooms = new Array();
+        }
+        
+        function openRoomDetailPage(roomid){
+            if(typeof sforce != 'undefined' && (sforce != null) && (typeof sforce.one != 'undefined')){
+                sforce.one.navigateToSObject(roomid);
+            }else{
+                window.open("/"+roomid,"_blank");
+            }
+        }
+        
+        function addRoomToBookListJS(elem,rmId){
+            var ele = $(elem);
+            if(ele.is(':checked')){
+                selectedRooms.push(rmId);
+            }else{
+                if($(".checkAllRooms").is(':checked')){
+                    $(".checkAllRooms").removeAttr('checked');
+                }
+                var tempArray = selectedRooms;
+                resetSelectedRoomsSet();
+                for(var rId in tempArray){
+                    if(tempArray[rId] != rmId){
+                        selectedRooms.push(tempArray[rId]);
+                    }
+                }
+            }
+        }
+        
+        function bookSelectedRoomsJS(){
+            var selectedRoomsString = '';
+            for(var item in selectedRooms){
+                selectedRoomsString += selectedRooms[item] + '-';
+            }
+            if(selectedRoomsString==''){
+                alert('Please select the rooms to be booked!');
+            }else{
+                bookSelectedRooms(selectedRoomsString);
+                window.opener.bookSelectedRoomsFromCalendar(selectedRoomsString);
+                selectedRoomsString = '';
+                window.close();
+            }
+        }
+        
+        function closeCalendarPage(){
+            /*if('{!$User.UITheme}'=='Theme4d') {
+             sforce.one.back(true);
+        }*/
+        //else{
+        window.close();
+        //}
+    }
+        
+        function checkAllRoomsJS(elem){
+            var ele = $(elem);
+            resetSelectedRoomsSet();
+            if(ele.is(':checked')){
+                //Select all the rooms and add to the set
+                $(".roomsCheckbox").each(function(){
+                    if($(this).attr("disabled")== undefined){
+                        $(this).prop('checked', true);
+                        selectedRooms.push($(this).attr("class").split("rm_")[1]);
+                    }
+                });
+            }else{
+                //De-select all the rooms and add to the set
+                $(".roomsCheckbox").each(function(){
+                    if($(this).attr("disabled")== undefined && $(this).prop("checked")){
+                        $(this).prop('checked', false);
+                    }
+                });
+            }
+        } 
+        
+        function showRoomDetailsOnHover(roomid){
+            if(typeof sforce == 'undefined' || (sforce!=null && typeof sforce.one == 'undefined') || ('{!$User.UITheme}'=='Theme4d')){
+                LookupHoverDetail.getHover('rm_'+roomid, '/'+roomid+'/m?retURL=%2F'+roomid+'&isAjaxRequest=1').show();
+            }
+        }
+        
+        function hideRoomDetailsOnHover(roomid){
+            if(typeof sforce == 'undefined' || (sforce!=null && typeof sforce.one == 'undefined') || ('{!$User.UITheme}'=='Theme4d')){
+                LookupHoverDetail.getHover('rm_'+roomid).hide();
+            }
+        }
+        
+        function fetchingDataJS(isStart){
+            if(isStart){
+                $(".fetchingDataStatusDiv").show();
+            }else{
+                $(".fetchingDataStatusDiv").hide();
+            }
+        }
+        
+        
+        function calculateLocationDateTime(){
+            var isValidDateTime = checkEmptyValue();
+            if(isValidDateTime)
+                calculateLocationDateTimeValues();
+        };
+        
+        
+        
+        function checkEmptyValue(){
+            var arrivalDate = $('.arr-cls').val();
+            var departureDate = $('.dep-cls').val();
+            var dateofArrival = new Date(arrivalDate);
+            var dateofDeparture = new Date(departureDate);
+            var isValidDateTime = false;
+            console.log(dateofArrival);
+            console.log(dateofDeparture);
+            
+            if(dateofArrival == ''|| dateofDeparture == ''){
+                $('.error-msg').show();
+                $('.error-Text').text('Please Enter Valid Start/End Date/Time');
+            }else{
+                isValidDateTime = true;
+            }
+            
+            return isValidDateTime;
+        }        
+        
+        
+        
+        </script>
+        
+    </head>
+    <body>
+        <div class="container bs" style="width:100%;">
+            <div class="breadcrumbText" style="display:{!IF(isSourceVisitScreen,'none','')}">
+                <div class="row" style="">
+                    <div class="col-md-1"><img alt="Visit" class="pageTitleIcon" src="/s.gif" title="Visit"></img></div> 
+                <div class="col-md-9"><div style="font-size:0.9em;font-weight: bold;color:#4a4a56;margin:4px;">Visit Calendar</div><div style="font-size:1.8em;"><label style="font-weight:normal;">View Visit Calendar</label></div></div>
+            </div>
+        </div>
+        
+        <apex:form id="frm1">
+            
+            <apex:actionRegion id="showRoomDetailsModalRegion">
+                <div class="modal fade" id="showRoomDetailsModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Details</h4>
+                            </div>
+                            <div class="modal-body">
+                                <!-- generated from clickEvents in JS -->
+                            </div>
+                            <div class="modal-footer">
+                                <!-- generates a button (Record Details,close) from clickevents js-->
+                            </div>
+                        </div>                          
+                    </div>
+                </div>
+            </apex:actionRegion>
+            <div class="message errorM3 error-msg" role="alert" style="display:none;">
+                <table border="0" cellpadding="0" cellspacing="0" class="messageTable" style="padding:0px;margin:0px;">
+                    <tbody>
+                        <tr valign="top">
+                            <td><img alt="ERROR" class="msgIcon" src="/s.gif" title="ERROR"/></td>
+                            <td class="messageCell">
+                                <div class="messageText">
+                                    <span style="color:#cc0000">
+                                        <h4>Error:</h4>
+                                    </span>
+                                    <span class="error-Text">
+                                        
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
+            
+            <apex:pageMessages id="pgMsgsId"/>
+            <!-- Component to provide ajax loading support -->
+            <c:AjaxStatusIndicator statusText="Processing..." />
+            <div class="row" id="inputs1" style="display:{!IF(isSourceVisitScreen,'none','')}">
+                <div class="col-md-4 col-sm-12 form-group">
+                    <label> Start Time (Location): </label>
+                    <div class="requiredInput">
+                        <div class="requiredBlock"></div>
+                        <apex:actionRegion >
+                            <apex:inputText styleClass="form-control arr-cls" value="{!locationTZArrivalDateTimeString}" id="arrDateLocTZID" onfocus="DatePicker.pickDate(true, '{!$Component.arrDateLocTZID}', true);" disabled="{!isSourceEventFormScreen}">
+                                <apex:actionSupport event="onchange" action="{!calculateUserTZDateTimeValues}" rerender="arrDateID,pgMsgsId" status="progressIndicator">
+                                    <apex:param name="contextField" value="arrivalDateTime"/>
+                                </apex:actionSupport>
+                            </apex:inputText>
+                        </apex:actionRegion>
+                    </div>
+                    <apex:inputHidden value="{!userTZArrivalDateTimeString}" id="arrDateID"/>
+                </div>
+                <div class="col-md-4 col-sm-12 form-group">                           
+                    <label> End Time (Location): </label>
+                    <div class="requiredInput">
+                        <div class="requiredBlock"></div>
+                        <apex:actionRegion >
+                            <apex:inputText value="{!locationTZDepartureDateTimeString}" id="depDateLocTZID" onfocus="DatePicker.pickDate(true, '{!$Component.depDateLocTZID}', true);" styleClass="form-control dep-cls" disabled="{!isSourceEventFormScreen}">
+                                <apex:actionSupport event="onchange" action="{!calculateUserTZDateTimeValues}" rerender="depDateID,pgMsgsId" status="progressIndicator">
+                                    <apex:param name="contextField" value="departureDateTime"/>
+                                </apex:actionSupport>
+                            </apex:inputText>
+                        </apex:actionRegion>
+                    </div>
+                    <apex:inputHidden value="{!userTZDepartureDateTimeString}" id="depDateID"/>
+                </div>
+                <div class="col-md-4 col-sm-12 form-group">
+                    <label>Location: </label>
+                    <apex:selectList styleClass="form-control" disabled="{!isSourceVisitScreen}" onchange="calculateLocationDateTime();" id="locId" required="true" value="{!locationValue}" size="1" >
+                        <apex:selectOptions value="{!LocationValues}"/>
+                        <apex:actionSupport event="onchange" action="{!calculateLocationTZDateTimeValues}" reRender="placeId,arrDateLocTZID,depDateLocTZID,pgMsgsId" status="progressIndicator" onComplete="searchRoomsJS();"/>
+                    </apex:selectList>
+                </div>
+            </div>
+            <br/><!-- Adding as this is not rendering properly in Ipad-->
+            <div class="row" id="inputs2" style="display:{!IF(isSourceVisitScreen,'none','')}">
+                <div class="col-md-4 col-sm-12 form-group">
+                    <label>Place: </label>
+                    <apex:selectList required="true" id="placeId" styleClass="form-control" value="{!PlaceValue}" size="1" >
+                        <apex:selectOptions value="{!places}"/>
+                    </apex:selectList>
+                </div>
+                <div class="col-md-4 col-sm-12 form-group">
+                    <label>No. of Attendees: </label>
+                    <apex:inputField id="noOfAttendeeId" styleClass="form-control" value="{!vst.VisitOps__TotalNoOfAttendees__c}"  />
+                </div>
+                <div class="col-md-4 col-sm-12 form-group" style="margin-top:20px;">
+                    <!--<apex:commandButton value="Search Rooms" styleClass="btn btn-default btn-sm" onClick="searchRoomsJS();" rerender="dummy"  />-->
+                    <button type="button" class="btn btn-default btn-sm" onClick="searchRoomsJS();" >Search Rooms</button>&nbsp;                              
+                    <!--<apex:commandButton value="New Visit" styleClass="btn btn-default btn-sm" rendered="{!IF(isSourceVisitScreen,false,true)}" status="progressIndicator" onclick="openVisitWindow()" rerender="dummy"  />-->
+                    <button type="button" class="btn btn-default btn-sm" style="display:{!IF(isSourceVisitScreen || isSourceEventFormScreen,'none','')}" status="progressIndicator" onclick="openVisitWindow()">New Visit</button>
+                    <p style="font-size:12px;font-weight:bold;margin:2px;">(Search is based on user time zone date/time fields)</p>
+                </div>
+            </div>
+            
+            <!--<apex:outputText id="errId" style="color:#CC0000" value="{!errMsgonDatesValidation}" />-->
+            
+            <apex:actionFunction name="callShowStatusAction"  status="progressIndicator" reRender="calendarPanelid1,calendar,eventListJSONOP" oncomplete="afterRefreshFunction('{!arrivalYear}','{!arrivalMonth}','{!arrivalDay}','{!JSENCODE(roomListJSON)}','{!viewName}');"  action="{!checkRoom}"  >
+                <apex:param name="room" value="" assignTo="{!roomid}"  />
+                <apex:param name="checkedStatus" value="" assignTo="{!checkedStatus}"  />
+                <apex:param name="viewName" value="" assignTo="{!viewName}"/>
+                <apex:param value="" name="calStartDate"/>
+                <apex:param value="" name="calEndDate"/>
+                <apex:param name="currentViewDate" value=""/>
+            </apex:actionFunction>
+            
+            <apex:actionFunction name="calculateLocationDateTimeValues" action="{!calculateLocationTZDateTimeValues}" reRender="placeId,arrDateLocTZID,depDateLocTZID,pgMsgsId" status="progressIndicator" onComplete="searchRoomsJS();"/>
+            
+            
+            
+            <apex:actionFunction name="searchRooms" status="progressIndicator" action="{!searchRoom}" onComplete="afterRefreshFunction('{!arrivalYear}','{!arrivalMonth}','{!arrivalDay}','{!JSENCODE(roomListJSON)}','{!viewName}','{!isValidate}');" rerender="calendarPanelId,frm1,pb,table1,table2,table3,tableForEventForm,eventListJSONOP">
+                <apex:param value="" name="view" assignTo="{!viewName}"/>
+            </apex:actionFunction>
+            <apex:actionFunction name="refetchEventsJS" status="myStatus" action="{!generateevents}" onComplete="generateNewEventsJS();" rerender="eventListJSONOP">
+                <apex:param value="" name="view" assignTo="{!viewName}"/>
+                <apex:param value="" name="calStartDate"/>
+                <apex:param value="" name="calEndDate"/>
+            </apex:actionFunction>
+            <apex:actionFunction name="bookSelectedRooms" status="progressIndicator" action="{!bookSelectedRooms}" rerender="frm1,pb,tableForEventForm">
+                <apex:param value="" name="selectedRooms"/>
+            </apex:actionFunction>
+            <apex:actionFunction name="toggleAgenda"  action="{!toggleMyAgenndas}" status="progressIndicator" oncomplete="afterRefreshFunction('{!arrivalYear}','{!arrivalMonth}','{!arrivalDay}','{!JSENCODE(roomListJSON)}','{!viewName}');"  rerender="frm3,calendarPanelId,eventListJSONOP">  
+                <apex:param name="viewAgenda" value="" assignTo="{!viewAgendaDate}"  />
+                <apex:param name="viewName" value="" assignTo="{!viewName}"  />
+                <apex:param value="" name="calStartDate"/>
+                <apex:param value="" name="calEndDate"/>
+            </apex:actionFunction>
+            
+            <div id="Rooms-Sidebar2" class="calendarViewDiv" style="width:100% !important;padding-top:0px !important;">
+                <apex:actionFunction name="saveAction" action="{!save}" rerender="dummy">
+                    <apex:param name="id" value="id" assignTo="{!eventId}"  />
+                    <apex:param name="startdateTime" value="startdateTime" assignTo="{!startdateTime}"  />
+                    <apex:param name="enddateTime" value="enddateTime" assignTo="{!enddateTime}"  />
+                    <apex:param name="dayDelta" value="dayDelta" assignTo="{!dayDelta}"  />
+                    <apex:param name="resourceId" value="resourceId" assignTo="{!resourceId}"  />
+                    <apex:param name="eventType" value="eventType" assignTo="{!eventType}"  />
+                    <apex:param name="visitNumber" value="visitNumber" assignTo="{!visitNumber}"  />
+                </apex:actionFunction>        
+                <div class="row">
+                    <div class="col-md-8">
+                        
+                    </div>
+                </div>
+                
+                <div style="clear:both;"><!--fix floats--></div> 
+                
+                <apex:outputPanel id="calendarPanelId">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="col-md-6" style="padding-left: 0px; padding-bottom: 5px;">
+                                <div id="cal-options">
+                                    <!-- <apex:commandButton rendered="{!isFromVisitTeam}" rerender="frm3,Rooms-Sidebar2" onclick="windowRefreshtoCurrentDate()" value="{!IF(includeMyAgenda ,'Hide Agendas','View Agendas')}" /><!--  action="{!toggleMyAgenndas}" />    -->   
+                                    <!--  <input type="button" class="btn"  onclick="windowRefreshtoCurrentDate()" value="{!IF(includeMyAgenda ,'Hide Agendas','View Agendas')}" />  -->               
+                                    <apex:commandButton id="viewHideAgendaBtn" styleClass="btn btn-sm btn-default" rendered="{!isFromVisitTeam}" onclick="windowRefreshtoCurrentDate()" value="{!IF(includeMyAgenda ,'Hide Agenda Sessions in Visit Room','View Agenda Sessions in Visit Room')}" rerender="dummy"/>&nbsp;&nbsp;
+                                    <apex:commandButton styleClass="btn btn-sm btn-default roomUnavailBtn" rendered="{!AND(isFromVisitTeam,NOT(isSourceVisitScreen),NOT(isSourceEventFormScreen))}" onclick="openRoomUnavailableForm('{!JSENCODE(source)}','pg:frm1:arrDateID','pg:frm1:depDateID','pg:frm1:locId','pg:frm1:placeId','pg:frm1:noOfAttendeeId','pg:frm1:noOfAttendeeId');"  value="Make Room Unavailable" rerender="dummy"/>
+                                    <!--<apex:commandButton styleClass="btn btn-sm btn-default" rendered="{!isSourceVisitScreen}" value="Close Calendar"   onclick="windowCloseAndfocusParent();" rerender="dummy"   />-->
+                                </div> 
+                            </div>
+                            <div class="col-md-6" style="padding-right: 0px; padding-bottom: 5px;">
+                                <div id="cal-legend">
+                                    <ul>
+                                        <!--<li><span class="event-available"></span>Rooms Available</li> -->
+                                        <li><span class="event-booked"></span>Booked</li>
+                                        <li><span class="event-onhold"></span>On Hold</li>
+                                        <li><span class="event-agenda"></span>Agenda</li>
+                                        <li><span class="event-multi-agenda"></span>Additional Room</li>
+                                        <li><span class="event-notavail"></span>Unavailable</li>
+                                        <!-- <li class="event-agenda-li"><span class="event-agenda"></span>Agenda</li> -->
+                                    </ul>
+                                    <div style="clear:both;"><!--fix floats--> </div>
+                                </div>
+                            </div>
+                            <apex:outputPanel id="calendarPanelid1">
+                                
+                                <div id="calendar" style="width:100%">
+                                    <div id="chartStatus" class="fetchingDataStatusDiv loadingDiv" style="display:none;position:absolute !important;">
+                                        <span id="chartHolder" class="loadingHolder">
+                                            <img class="loadingImage" style="width:20px;" title="Loading..." alt="Loading..." src="/img/loading.gif"/>
+                                            <span>Processing...</span>
+                                        </span>
+                                    </div>
+                                    <apex:actionStatus id="myStatus" onstart="fetchingDataJS(true)" onstop="fetchingDataJS(false)"/>
+                                    <!-- <apex:actionStatus stopText="" id="calendarProgress">
+<apex:facet name="start">
+<div>
+<div>
+<img src="/img/loading.gif" title="Fetching Data..." height="25" width="25"/>
+<span>Fetching Data...</span>
+</div>
+</div>
+</apex:facet>
+</apex:actionStatus> -->
+                                </div>
+                            </apex:outputPanel>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="" id="tablesEvent" style="display:{!IF(isSourceEventFormScreen,'','none')}">
+                                <p style="font-size:12px;color:red;">Listing rooms with matching criteria. To search again, refine criteria and click Search Rooms.</p>
+                                <div class="form-group">
+                                    <p style="font-size:12px;font-weight:bold;color:green;">Available rooms at this location</p>
+                                    <div class="roomTableDiv table-responsive">
+                                        <table class="table table-bordered scroll availableRmEventForm table-striped" id="tableForEventForm" data-click-to-select="true" data-pagination="true">
+                                            <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" name="selectAllavailable" checked="true" onclick="checkAll(this,checked)" /></th>
+                                                    <th>Room Name</th>
+                                                    <th>Capacity</th>
+                                                    <th style="height:19px;"><apex:inputCheckBox style="margin-top:0px;" styleClass="checkAllRooms" onclick="checkAllRoomsJS(this);" rendered="{!isSourceEventFormScreen}"/>Book Room</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <apex:repeat value="{!roomAvailWrapperForAgendas}" var="wraprec" rendered="{!isSourceEventFormScreen}" id="table1_ForAgenda">
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" checked="true" value="{!wraprec.rm.id}" onclick="callShowStatusActionJS('{!wraprec.rm.id}',checked,$('#calendar').fullCalendar('getView').name)" name="roomAvail"/>
+                                                        </td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" id="rm_{!wraprec.rm.id}" onClick="openRoomDetailPage('{!wraprec.rm.id}');" onblur="hideRoomDetailsOnHover('{!wraprec.rm.id}');" onfocus="showRoomDetailsOnHover('{!wraprec.rm.id}');" onmouseout="hideRoomDetailsOnHover('{!wraprec.rm.id}');" onmouseover="showRoomDetailsOnHover('{!wraprec.rm.id}');">{!wraprec.rm.Name}</a>
+                                                        </td>
+                                                        <td>{!wraprec.rm.Room_Capacity__c}</td>
+                                                        <td>
+                                                            <apex:inputCheckBox value="{!wraprec.isRoomChecked}" styleClass="roomsCheckbox rm_{!wraprec.rm.id}" onclick="addRoomToBookListJS(this,'{!wraprec.rm.id}');" disabled="{!wraprec.isRoomChecked}"/>
+                                                        </td>
+                                                    </tr>                        
+                                                </apex:repeat>
+                                            </tbody>
+                                        </table>
+                                        <apex:commandButton styleClass="btn btn-sm btn-default" onClick="bookSelectedRoomsJS();" rendered="{!isSourceEventFormScreen}" value="Book Selected Rooms" rerender="tableForEventForm"/>&nbsp;
+                                        <apex:commandButton styleClass="btn btn-sm btn-default" onClick="closeCalendarPage();" rendered="{!isSourceEventFormScreen}" value="Return to Form" rerender="dummy"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="" id="tables1" style="display:{!IF(isSourceVisitScreen || isSourceEventFormScreen,'none','')}">
+                                <p style="font-size:12px;color:red;">Listing rooms with matching criteria. To search again, refine criteria and click Search Rooms.</p>
+                                <div class="form-group">
+                                    <p style="font-size:12px;font-weight:bold;color:green;">Available rooms at this location</p>
+                                    <div class="roomTableDiv table-responsive">
+                                        <table class="table table-bordered scroll availableRm table-striped" id="table1" data-click-to-select="true" data-pagination="true">
+                                            <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" name="selectAllavailable" checked="true" onclick="checkAll(this,checked)" /></th>
+                                                    <th>Room Name</th>
+                                                    <th>Capacity</th>
+                                                    <!--<th>Book Room</th>-->
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <apex:repeat value="{!roomAvailWrapper}" var="wraprec" rendered="{!!isSourceEventFormScreen}">
+                                                    <tr>
+                                                        <td><input type="checkbox" checked="true" value="{!wraprec.rm.id}"  onclick="callShowStatusActionJS('{!wraprec.rm.id}',checked,$('#calendar').fullCalendar('getView').name)" name="roomAvail"/></td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" id="rm_{!wraprec.rm.id}" onClick="openRoomDetailPage('{!wraprec.rm.id}');" onblur="hideRoomDetailsOnHover('{!wraprec.rm.id}');" onfocus="showRoomDetailsOnHover('{!wraprec.rm.id}');" onmouseout="hideRoomDetailsOnHover('{!wraprec.rm.id}');" onmouseover="showRoomDetailsOnHover('{!wraprec.rm.id}');">{!wraprec.rm.Name}</a>
+                                                        </td>
+                                                        <td>{!wraprec.rm.Room_Capacity__c}</td>
+                                                        <!--<td>
+<apex:commandButton styleClass="btn btn-default btn-sm" onclick="bookRoomJS('{!wraprec.rm.id}','{!$Component.arrDateLocTZID}','{!$Component.depDateLocTZID}','{!$Component.noOfAttendeeId}');" disabled="{!IF(isSourceVisitScreen,false,true)}" value="Book Room"  />
+</td>-->
+                                                    </tr>
+                                                </apex:repeat>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <apex:outputPanel rendered="{!!isSourceEventFormScreen}">
+                                    <div class="form-group">
+                                        <p style="font-size:12px;font-weight:bold;color:orange;">Booked rooms at this location</p>
+                                        <div class="roomTableDiv table-responsive">
+                                            <table class="table table-bordered scroll bookedRm table-striped" id="table2" data-click-to-select="true" data-pagination="true">
+                                                <thead>
+                                                    <tr>
+                                                        <th><input type="checkbox" checked="true" name="selectAllbooked" onclick="checkAll(this,checked)"/></th>
+                                                        <th>Room Name</th>
+                                                        <th>Capacity</th>
+                                                        <!--<th>Status</th>
+<th>Book Room</th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <apex:repeat value="{!roomBookedWrapper}" var="wraprec">
+                                                        <tr>
+                                                            <td><input type="checkbox" onclick="callShowStatusActionJS('{!wraprec.rm.id}',checked,$('#calendar').fullCalendar('getView').name)"  checked="true" name="roomBooked" value="{!wraprec.rm.id}"  /></td>
+                                                            <td><a href="javascript:void(0);" id="rm_{!wraprec.rm.id}" onClick="openRoomDetailPage('{!wraprec.rm.id}');" onblur="hideRoomDetailsOnHover('{!wraprec.rm.id}');" onfocus="showRoomDetailsOnHover('{!wraprec.rm.id}');" onmouseout="hideRoomDetailsOnHover('{!wraprec.rm.id}');" onmouseover="showRoomDetailsOnHover('{!wraprec.rm.id}');">{!wraprec.rm.Name}</a>
+                                                            </td>
+                                                            <td>{!wraprec.rm.Room_Capacity__c}</td>
+                                                            <!--<td>{!wraprec.status}</td>
+<td>
+<apex:commandButton styleClass="btn btn-default btn-sm" value="Book Room" onclick="bookRoomJS('{!wraprec.rm.id}','{!$Component.arrDateLocTZID}','{!$Component.depDateLocTZID}','{!$Component.noOfAttendeeId}');"  disabled="{!IF(AND(isSourceVisitScreen,isFromVisitTeam),false,true)}"/>
+</td>-->
+                                                        </tr>
+                                                    </apex:repeat>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </apex:outputPanel>
+                            </div>
+                            <apex:outputPanel rendered="{!!isSourceEventFormScreen}">
+                                <div class="" id="tables2" style="display:{!IF(isSourceVisitScreen,'none','')}">
+                                    <div class="form-group">
+                                        <p style="font-size:12px;font-weight:bold;color:red;">Unavailable rooms at this location</p>
+                                        <div class="roomTableDiv table-responsive">
+                                            <table class="table table-bordered scroll unavailableRm table-striped" id="table3" data-click-to-select="true" data-pagination="true">
+                                                <thead>
+                                                    <tr>
+                                                        <th><input type="checkbox" name="selectAllunavail" checked="true" onclick="checkAll(this,checked)"/></th>
+                                                        <th>Room Name</th>
+                                                        <!--<th>Capacity</th>-->
+                                                        <th class="hideThisInMobile">Mark Available</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <apex:repeat value="{!roomNotAvailWrapper}" var="wraprec">
+                                                        <tr>
+                                                            <td><input type="checkbox" onclick="callShowStatusActionJS(this.value,checked,$('#calendar').fullCalendar('getView').name);" checked="true" name="roomUnavail" value="{!wraprec.rm.id}"  /></td>
+                                                            <td>
+                                                                <a href="javascript:void(0);" id="rm_{!wraprec.rm.id}" onClick="openRoomDetailPage('{!wraprec.rm.id}');" onblur="hideRoomDetailsOnHover('{!wraprec.rm.id}');" onfocus="showRoomDetailsOnHover('{!wraprec.rm.id}');" onmouseout="hideRoomDetailsOnHover('{!wraprec.rm.id}');" onmouseover="showRoomDetailsOnHover('{!wraprec.rm.id}');">{!wraprec.rm.Name}</a>
+                                                            </td>
+                                                            <!--<td>{!wraprec.rm.Room_Capacity__c}</td>-->
+                                                            <td class="hideThisInMobile"><apex:commandButton styleClass="btn btn-default btn-sm markAvailBtn" disabled="{!IF(isFromVisitTeam,false,true)}" value="Mark Available" onclick="openRoomAvailableForm('{!JSENCODE(source)}','{!wraprec.rm.id}','{!$Component.arrDateID}','{!$Component.depDateID}','{!$Component.locId}','{!$Component.placeId}','{!$Component.noOfAttendeeId}');" rerender="dummy"/></td>
+                                                        </tr>
+                                                    </apex:repeat>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                        </div>
+                    </div>
+                    
+                </apex:outputPanel>        
+            </div>  
+            
+            
+            
+            
+            
+        </apex:form>
+    </div>
+    
+    
+</body>
+<script> 
+// ****Select all checkbox functionality for available rooms
+
+function checkAll(cb,checked)
+{
+    
+    var elem ='';
+    if(cb.name=='selectAllavailable'){
+        elem = document.getElementsByName('roomAvail');
+    }  
+    else if(cb.name=='selectAllbooked'){
+        elem = document.getElementsByName('roomBooked');
+    }
+        else if(cb.name=='selectAllunavail'){
+            elem = document.getElementsByName('roomUnavail');
+        }     
+    var namelist = "";
+    for(var i = 0; i < elem.length; i++)
+    {
+        
+        if(cb.checked){
+            elem[i].checked=true;
+        }
+        else
+        {
+            elem[i].checked=false;
+        }
+        
+        namelist += elem[i].value + ";";
+    }
+    if(elem.length>0){
+        var moment = $('#calendar').fullCalendar('getDate');
+        var currentDate = $.fullCalendar.formatDate(moment, "dd/MM/yyyy");
+        callShowStatusAction(namelist,checked,$('#calendar').fullCalendar('getView').name,$.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visStart, 'yyyy-MM-dd HH:mm:ss'),$.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visEnd, 'yyyy-MM-dd HH:mm:ss'),currentDate);
+    }
+    
+}
+
+function callShowStatusActionJS(recId,checked,currViewName){
+    console.log($.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visStart, 'yyyy-MM-dd HH:mm:ss'));
+    console.log($.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visEnd, 'yyyy-MM-dd HH:mm:ss'));
+    var moment = $('#calendar').fullCalendar('getDate');
+    var currentDate = $.fullCalendar.formatDate(moment, "dd/MM/yyyy");
+    callShowStatusAction(recId,checked,currViewName,$.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visStart, 'yyyy-MM-dd HH:mm:ss'),$.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visEnd, 'yyyy-MM-dd HH:mm:ss'),currentDate);
+}
+
+
+function checkSingle(cb,Id,checked){
+    
+    
+    var checkAllValues, elem,masterElem='';
+    elem = document.getElementsByName(cb.name)
+    for(var i = 0; i < elem.length; i++)
+    {
+        
+        if(elem[i].checked){
+            checkAllValues = true;
+        }
+        else{
+            checkAllValues = false;
+            break;
+        } 
+    }
+    
+    if(checkAllValues == true)  
+    {
+        if(cb.name=='roomBooked' ){
+            
+            masterElem = document.getElementsByName('selectAllbooked');
+            masterElem.checked = true;
+            
+        }
+        
+    }
+    
+    
+    
+    
+}
+
+
+function openRoomUnavailableForm(source,start,end,location,place,numberOfattendee)
+
+{
+    
+    
+    var location = document.getElementById(location).value;
+    var start = document.getElementById(start).value;
+    var end =  document.getElementById(end).value;
+    var place = document.getElementById(place).value;
+    // Code Added to Encode Special characters in URL
+    place = encodeURIComponent(place);
+    var numberOfattendee = document.getElementById(numberOfattendee).value;
+    
+    
+    window.open('{!$Page.VisitOps__MakeRoomUnavailableFormNew}?source='+source+'&arrivaldate='+start+'&depdate='+end+'&LocationName='+location+'&PlaceValue='+place+'&NumberOfAttendee='+numberOfattendee, 'unavail');     
+    
+}
+
+
+
+
+function openRoomAvailableForm(source,rmId,arrDateId,depDateId,locationId,placeId,numberOfattendees)
+
+{
+    
+    
+    var arrivaldateValue = document.getElementById(arrDateId).value;
+    var depdateValue = document.getElementById(depDateId).value;
+    var locationValue = document.getElementById(locationId).value;
+    var placeValue = document.getElementById(placeId).value;
+    // Code Added to Encode Special characters in URL
+    placeValue = encodeURIComponent(placeValue);
+    var numberOfAttendees = document.getElementById(numberOfattendees).value;
+    
+    var moment = $('#calendar').fullCalendar('getDate');
+    var view = $('#calendar').fullCalendar('getView');
+    //var currentDate = $.fullCalendar.formatDate(moment, "MM/dd/yyyy hh:mm TT");
+    var currentDate = $.fullCalendar.formatDate(moment, "yyyy-MM-dd HH:mm:ss");
+    var viewName= view.name;
+    
+    window.open('{!$Page.VisitOps__MakeRoomAvailableForm}?rmId='+rmId+'&source='+source+'&arrivaldate='+arrivaldateValue+'&depdate='+depdateValue+'&arrivaldateonform='+currentDate+'&LocationName='+locationValue+'&placeValue='+placeValue+'&NumberOfAttendee='+numberOfAttendees, 'avail'); 
+    
+}
+
+
+
+function windowCloseAndfocusParent(isValid){
+    if(isValid){
+        $("#RoomUnavailableFormModal").modal('hide');
+        var currView = $('#calendar').fullCalendar('getView').name;
+        searchRooms(currView);
+    }
+} 
+
+function windowRefreshtoCurrentDate(){
+    
+    var moment = $('#calendar').fullCalendar('getDate');
+    var view = $('#calendar').fullCalendar('getView');
+    var currentDate = $.fullCalendar.formatDate(moment, "dd/MM/yyyy");
+    
+    var viewName= view.name;
+    var calStartDate = $.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visStart, "yyyy-MM-dd HH:mm:ss");
+    var calEndDate = $.fullCalendar.formatDate($('#calendar').fullCalendar('getView').visEnd, "yyyy-MM-dd HH:mm:ss");
+    toggleAgenda(currentDate,viewName,calStartDate,calEndDate);
+    
+}
+
+
+
+</script>
+
+<script>
+function openVisitWindow(){
+    if((typeof sforce != 'undefined') && (sforce != null) && (typeof sforce.one != 'undefined')){
+        sforce.one.navigateToURL("{!$Page.VisitOps__VisitScreen}");
+    }else{
+        window.open("{!$Page.VisitOps__VisitScreen}","_self");
+    }
+}
+</script>
+
+</html>
+</apex:page>

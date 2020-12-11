@@ -1,0 +1,42 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><font face="Arial, sans-serif" size="2">Hello &nbsp;,</font></p>
+<p><font face="Arial, sans-serif" size="2">&nbsp;</font></p>
+<p><font face="Arial, sans-serif" size="2">The OE Team has a OE Ambassador who is willing to attend the event listed below.&nbsp;</font></p>
+<p><font face="Arial, sans-serif" size="2"><br></font></p><p><font face="Arial, sans-serif" size="2">For {Insert OEA Name} to attend, their approximate travel costs will be ${insert amt.}.</font></p><p><font face="Arial, sans-serif" size="2"><br></font></p><p><font face="Arial, sans-serif" size="2">Do you approve the travel costs indicated to allow this individual to attend the event?&nbsp;&nbsp;</font></p><p><font face="Arial, sans-serif" size="2"><br></font></p><p><font face="Arial, sans-serif" size="2">Thanks&nbsp;</font></p>
+<p style="font-size: 12pt; font-family: arial;"><font size="2"></font>&nbsp;</p><font color="#000000" size="2" style="font-size: 12pt; font-family: arial;">
+<p>
+<table style="WIDTH: 430pt; BORDER-COLLAPSE: collapse" border="0" cellspacing="0" cellpadding="0" width="574">
+<colgroup>
+<col style="WIDTH: 167pt; mso-width-source: userset; mso-width-alt: 8155" width="223">
+<col style="WIDTH: 263pt; mso-width-source: userset; mso-width-alt: 12836" width="351">
+</colgroup><tbody>
+<tr style="HEIGHT: 18.75pt; mso-height-source: userset" height="25">
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: windowtext 0.5pt solid; BACKGROUND-COLOR: rgb(79,129,189); WIDTH: 167pt; HEIGHT: 18.75pt; BORDER-TOP: windowtext 0.5pt solid; BORDER-RIGHT: windowtext 0.5pt solid" class="xl66" height="25" width="223"><strong><font size="2" face="Verdana">Company Name</font></strong></td>
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: rgb(240,240,240); BACKGROUND-COLOR: white; WIDTH: 263pt; BORDER-TOP: windowtext 0.5pt solid; BORDER-RIGHT: windowtext 0.5pt solid" class="xl67" width="351"><font size="2" face="Verdana">{!Open_Enrollment_Meetings__c.Account__c}</font></td></tr>
+<tr style="HEIGHT: 18pt; mso-height-source: userset" height="24">
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: windowtext 0.5pt solid; BACKGROUND-COLOR: rgb(79,129,189); WIDTH: 167pt; HEIGHT: 18pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl68" height="24" width="223"><strong><font size="2" face="Verdana">Type of Meeting</font></strong></td>
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: rgb(240,240,240); BACKGROUND-COLOR: white; WIDTH: 263pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl69" width="351"><font size="2" face="Verdana">{!SFDC_Volunteer_Event__c.Meeting_Type__c}</font></td></tr>
+<tr style="HEIGHT: 15.75pt; mso-height-source: userset" height="21">
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: windowtext 0.5pt solid; BACKGROUND-COLOR: rgb(79,129,189); WIDTH: 167pt; HEIGHT: 15.75pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl68" height="21" width="223"><strong><font size="2" face="Verdana">Meeting Date</font></strong></td>
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: rgb(240,240,240); BACKGROUND-COLOR: white; WIDTH: 263pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl69" width="351"><font size="2" face="Verdana">{!SFDC_Volunteer_Event__c.Date__c}</font></td></tr>
+<tr style="HEIGHT: 96.75pt; mso-height-source: userset" height="129">
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: windowtext 0.5pt solid; BACKGROUND-COLOR: rgb(79,129,189); WIDTH: 167pt; HEIGHT: 96.75pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl68" height="129" width="223"><strong><font size="2" face="Verdana">Session Times</font></strong></td>
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: rgb(240,240,240); BACKGROUND-COLOR: white; WIDTH: 263pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl69" width="351"><font size="2" face="Verdana">{!SFDC_Volunteer_Event__c.Session_1_Start_Time__c}&nbsp; - {!SFDC_Volunteer_Event__c.Session_1_End_Time__c}{!SFDC_Volunteer_Event__c.Session_2_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_2_End_Time__c}{!SFDC_Volunteer_Event__c.Session_3_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_3_End_Time__c}{!SFDC_Volunteer_Event__c.Session_4_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_4_End_Time__c}{!SFDC_Volunteer_Event__c.Session_5_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_5_End_Time__c}{!SFDC_Volunteer_Event__c.Session_6_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_6_End_Time__c}{!SFDC_Volunteer_Event__c.Session_7_Start_Time__c}{!SFDC_Volunteer_Event__c.Session_7_End_Time__c}</font></td></tr>
+<tr style="HEIGHT: 15.75pt; mso-height-source: userset" height="21">
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: windowtext 0.5pt solid; BACKGROUND-COLOR: rgb(79,129,189); WIDTH: 167pt; HEIGHT: 15.75pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl68" height="21" width="223"><strong><font size="2" face="Verdana"># of Expedcted EE's</font></strong></td>
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: rgb(240,240,240); BACKGROUND-COLOR: white; WIDTH: 263pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl69" width="351"><font size="2" face="Verdana">{!SFDC_Volunteer_Event__c.Expected_of_Employees__c}</font></td></tr>
+<tr style="HEIGHT: 43.5pt; mso-height-source: userset" height="58">
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: windowtext 0.5pt solid; BACKGROUND-COLOR: rgb(79,129,189); WIDTH: 167pt; HEIGHT: 43.5pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl68" height="58" width="223"><strong><font size="2" face="Verdana">Street Address</font></strong></td>
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: rgb(240,240,240); BACKGROUND-COLOR: white; WIDTH: 263pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl69" width="351"><font size="2" face="Verdana">{!SFDC_Volunteer_Event__c.Meeting_Street__c} {!SFDC_Volunteer_Event__c.Meeting_City__c} {!SFDC_Volunteer_Event__c.Meeting_State__c} {!SFDC_Volunteer_Event__c.Meeting_Zip_Code__c}</font></td></tr>
+<tr style="HEIGHT: 30.75pt; mso-height-source: userset" height="41">
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: windowtext 0.5pt solid; BACKGROUND-COLOR: rgb(79,129,189); WIDTH: 167pt; HEIGHT: 30.75pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl68" height="41" width="223"><strong><font size="2" face="Verdana">Site Contact Info.</font></strong></td>
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: rgb(240,240,240); BACKGROUND-COLOR: white; WIDTH: 263pt; BORDER-TOP: rgb(240,240,240); BORDER-RIGHT: windowtext 0.5pt solid" class="xl69" width="351"><font size="2" face="Verdana">{!SFDC_Volunteer_Event__c.Meeting_Contact__c}<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>{!SFDC_Volunteer_Event__c.Contact_Phone_Number__c}</font></td></tr>
+<tr style="HEIGHT: 36pt; mso-height-source: userset" height="48">
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: windowtext 0.5pt solid; BACKGROUND-COLOR: rgb(79,129,189); WIDTH: 167pt; HEIGHT: 36pt; BORDER-TOP: windowtext 0.5pt solid; BORDER-RIGHT: windowtext 0.5pt solid" class="xl66" height="48" width="223"><strong><font size="2" face="Verdana">NOTES</font></strong></td>
+<td style="BORDER-BOTTOM: windowtext 0.5pt solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 0.5pt solid; BORDER-RIGHT: windowtext 0.5pt solid" class="xl72"><font size="2" face="Verdana">{!SFDC_Volunteer_Event__c.Meeting_Comments__c}</font></td></tr></tbody></table></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></font>]]></td>
+</tr>
+</table>

@@ -1,0 +1,1555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>An instance of an application submitted by a customer, agent/broker or a provider. For example, an application may be submitted by a customer to apply for individual insurance. An application may be submitted by an agent/broker to start the appointment process. An application may be submitted by a provider to become an in-network provider for one or more networks. The Application object is used to track the party&apos;s request through the approval process.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fieldSets>
+        <fullName>vlocity_ins__ApplicationChildListFieldSet</fullName>
+        <description>Application Child list under other objects</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>vlocity_ins__Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>vlocity_ins__OwnerLink__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>vlocity_ins__Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>ApplicationChildListFieldSet</label>
+    </fieldSets>
+    <fields>
+        <fullName>AccountLegalName__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Legal Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Applications (Account Legal Name)</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(	AccountLegalName__r.Situs_State__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Association_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Association Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Applications (Association Name)</relationshipLabel>
+        <relationshipName>Applications8</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>vlocity_ins__OpportunityId__r.CloseDate</formula>
+        <inlineHelpText>Matches &apos;Opportunity Effective Date&apos; On The Related Opportunity.</inlineHelpText>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Group_Number_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Group Number 2</label>
+        <referenceTo>Group__c</referenceTo>
+        <relationshipLabel>Applications (Group Number 2)</relationshipLabel>
+        <relationshipName>Applications1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Group_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Group Number</label>
+        <referenceTo>Group__c</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>vlocity_ins__OpportunityId__c</formula>
+        <label>Opportunity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__AccountId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__ApplicationReferenceNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Application Reference Number</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__ApplicationTemplateId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Application Template</label>
+        <referenceTo>vlocity_ins__ApplicationTemplate__c</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__Content__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Content</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__FilesMap__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Files Map</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__FullJSON__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Full JSON</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__JSONData__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Data JSON</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__OmniScriptId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Vlocity OmniScript</label>
+        <referenceTo>vlocity_ins__OmniScript__c</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__OmniScriptLanguage__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(vlocity_ins__OmniScriptId__r.vlocity_ins__Language__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OmniScriptLanguage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__OpportunityId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__OwnerLink__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp;  OwnerId ,    Owner:User.FirstName &amp; &quot; &quot; &amp; Owner:User.LastName  , &quot;_parent&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__PrimaryApplicantLink__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is used for drill down.</description>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( vlocity_ins__PrimaryPartyId__r.vlocity_ins__AccountId__r.Id ), HYPERLINK(&quot;/&quot; &amp;  vlocity_ins__PrimaryPartyId__r.vlocity_ins__ContactId__r.Id ,  vlocity_ins__PrimaryPartyId__r.Name   , &quot;_parent&quot;), HYPERLINK(&quot;/&quot; &amp; vlocity_ins__PrimaryPartyId__r.vlocity_ins__AccountId__r.Id, vlocity_ins__PrimaryPartyId__r.Name , &quot;_parent&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Applicant Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__PrimaryPartyId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Applicant Party</label>
+        <referenceTo>vlocity_ins__Party__c</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__Product2Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>ID of the product for which the prospect or customer is applying.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__QuoteId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Quote</label>
+        <referenceTo>Quote</referenceTo>
+        <relationshipLabel>Applications</relationshipLabel>
+        <relationshipName>Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__ScreeningResult__c</fullName>
+        <deprecated>false</deprecated>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Screening Result</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Incomplete</fullName>
+                    <default>false</default>
+                    <label>Incomplete</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Manual Review</fullName>
+                    <default>false</default>
+                    <label>Manual Review</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__Summary__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Summary of the reason for screening failure.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Summary</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>vlocity_ins__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <label>All</label>
+                </value>
+                <value>
+                    <fullName>Individual Health</fullName>
+                    <default>false</default>
+                    <label>Individual Health</label>
+                </value>
+                <value>
+                    <fullName>Individual Dental</fullName>
+                    <default>false</default>
+                    <label>Individual Dental</label>
+                </value>
+                <value>
+                    <fullName>Individual Vision</fullName>
+                    <default>false</default>
+                    <label>Individual Vision</label>
+                </value>
+                <value>
+                    <fullName>Medicare Supplemental</fullName>
+                    <default>false</default>
+                    <label>Medicare Supplemental</label>
+                </value>
+                <value>
+                    <fullName>Medicare Advantage</fullName>
+                    <default>false</default>
+                    <label>Medicare Advantage</label>
+                </value>
+                <value>
+                    <fullName>Medicare Part D</fullName>
+                    <default>false</default>
+                    <label>Medicare Part D</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Application</label>
+    <listViews>
+        <fullName>vlocity_ins__All</fullName>
+        <columns>NAME</columns>
+        <columns>vlocity_ins__ApplicationReferenceNumber__c</columns>
+        <columns>vlocity_ins__Type__c</columns>
+        <columns>vlocity_ins__Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Application Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Applications</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>CA</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State CA</description>
+        <label>CA</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CO</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State CO</description>
+        <label>CO</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CT</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State CT</description>
+        <label>CT</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>GA</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State GA</description>
+        <label>GA</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>IN</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State IN</description>
+        <label>IN</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>KY</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State KY</description>
+        <label>KY</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ME</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State ME</description>
+        <label>ME</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MO</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State MO</description>
+        <label>MO</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NH</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State NH</description>
+        <label>NH</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NV</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State NV</description>
+        <label>NV</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NY</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State NY</description>
+        <label>NY</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OH</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State OH</description>
+        <label>OH</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>VA</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State VA</description>
+        <label>VA</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>WI</fullName>
+        <active>true</active>
+        <description>This record type is for Applications having Situs State WI</description>
+        <label>WI</label>
+        <picklistValues>
+            <picklist>vlocity_ins__Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>vlocity_ins__Type__c</picklist>
+            <values>
+                <fullName>All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Individual Vision</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Part D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Supplemental</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>vlocity_ins__ApplicationReferenceNumber__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>vlocity_ins__Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>vlocity_ins__Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>vlocity_ins__ApplicationReferenceNumber__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>vlocity_ins__Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>vlocity_ins__Status__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>vlocity_ins__ApplicationReferenceNumber__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>vlocity_ins__Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>vlocity_ins__Status__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>vlocity_ins__ApplicationReferenceNumber__c</searchFilterFields>
+        <searchFilterFields>vlocity_ins__Type__c</searchFilterFields>
+        <searchFilterFields>vlocity_ins__Status__c</searchFilterFields>
+        <searchResultsAdditionalFields>vlocity_ins__ApplicationReferenceNumber__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>vlocity_ins__Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>vlocity_ins__Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>vlocity_ins__Review</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Review</masterLabel>
+        <openType>replace</openType>
+        <page>vlocity_ins__ApplicationReviewPage</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>vlocity_ins__Screen</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Screen</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)} 
+var namespace_prefix = &apos;&apos;; 
+var gettingnamespace = sforce.connection.query(&quot;SELECT NamespacePrefix FROM ApexClass WHERE Name=&apos;ApplicationUtilities&apos; LIMIT 1&quot;); 
+var getname = gettingnamespace.getArray(&quot;records&quot;);
+var className = &quot;ScreenApplication&quot;;
+if(getname.length &gt; 0) 
+{ 
+namespace_prefix = getname[0].NamespacePrefix; 
+className = namespace_prefix + &quot;.ScreenApplication&quot;;
+}
+var res=sforce.apex.execute(className,&quot;Screen&quot;,{sAppId:&quot;{!vlocity_ins__Application__c.Id}&quot;, sType:&quot;{!vlocity_ins__Application__c.vlocity_ins__Type__c }&quot;});  
+alert(res);</url>
+    </webLinks>
+</CustomObject>

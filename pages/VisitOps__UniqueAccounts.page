@@ -1,0 +1,34 @@
+<apex:page controller="VisitOps.VisitSummaryCtrl" showHeader="false" sidebar="false">
+<apex:form >
+    <div> 
+         <div class= "header"> Number of Unique Accounts that Visited
+      </div> 
+              <table width= "100%" border="1" cellspacing="5">     
+         
+                      <tr >
+                      <td style="background:#A9D0F5;"><i><b># of Unique Accounts that visited</b></i></td>
+                      <td ><apex:outputtext value="{!noofUniqueAccounts}"/></td>                                  
+                      </tr>
+                     
+
+              </table>           
+    </div> 
+ </apex:form> 
+ 
+ <style>
+ .header {
+        font-style: oblique;
+        display: block;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        background-color: rgb(221, 221, 221);
+        padding: 5px 0px !important;
+        width: 100% !important;
+        text-align: center;
+     }
+   
+ </style>
+</apex:page>

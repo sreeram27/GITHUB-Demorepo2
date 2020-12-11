@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>LG Rx Email</name>
+    <style>none</style>
+    <subject>ESI Build Complete: {!Rx__c.Implementation_Case_Name_ReadOnly__c}</subject>
+    <textOnly>ESI has completed the requested pharmacy changes for {!Rx__c.Account_Legal_Name__c},  {!Rx__c.MBU_Codes__c}.  Below you will find the assigned Proxy ID and Proxy Stage:
+
+- Proxy ID: {!Rx__c.Name}
+- Proxy Stage: {!Rx__c.Stage__c}
+
+Click on the below link to access the record:
+{!Rx__c.Link}
+
+Thank you,
+PSG QA Team</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>New sign-ups who did not finish certification process but completed survey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Updated_Anthem_Logo</letterhead>
+    <name>New sign-ups - already completed survey</name>
+    <style>formalLetter</style>
+    <subject>2017 New Sign-up Survey</subject>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

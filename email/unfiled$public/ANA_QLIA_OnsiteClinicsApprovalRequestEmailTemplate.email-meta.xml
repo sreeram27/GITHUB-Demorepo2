@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ANA-QLIA - Onsite Clinics Approval Request Email Template</name>
+    <style>none</style>
+    <subject>Onsite Clinics Approval Requested for {!QuoteLineItemApproval__c.ClientName__c}</subject>
+    <textOnly>A new Onsite Clinics product has been submitted for approval on {!QuoteLineItemApproval__c.LastModifiedDate} by {!QuoteLineItemApproval__c.LastModifiedBy}.
+
+Client Name:  {!QuoteLineItemApproval__c.ClientName__c}
+Effective Date: {!QuoteLineItemApproval__c.EffectiveDate__c}
+
+To review and approve / reject the product, please click this link. click here</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

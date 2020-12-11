@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>PRDCRM-27575</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Group Structure Approved</name>
+    <style>none</style>
+    <subject>Reminder to Review and Update HCR detail for {!Group_Services__c.Account_Legal_Name_Display_Text__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

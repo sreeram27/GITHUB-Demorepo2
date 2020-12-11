@@ -1,0 +1,38 @@
+<apex:component >
+  <script>
+      (function() {
+          'use strict';
+          angular
+          .module('vsAnthemIDCardReqsApp')
+          .controller('IDCardReqscontroller', IDCardReqscontroller);
+       }());
+       IDCardReqscontroller.$inject = ['$scope', '$filter', '$window' ,'$rootScope' ];
+       var IdReqsResult = [];
+       function IDCardReqscontroller($scope, $filter, $window , $rootScope) {
+            console.info("Controller Loaded");
+            var vm = this;
+            vm.filterUniquePGNumber = function(IdReqs){
+              console.info("Controller Loaded Inside");
+              if (IdReqsResult.length > 0) {
+                  return IdReqsResult;
+              }
+              else {
+                  console.info("b = " + IdReqs.length);
+                  IdReqs.map(function(item){
+                       var unique = true;
+                       IdReqsResult.map(function(itemresult){
+                          if (item.PGNumber === itemresult.PGNumber) {
+                              unique = false;
+                          }
+                       });
+                       if (unique === true){
+                              IdReqsResult.push(item);
+                       }
+                 });
+                 console.info("IdReqsResult = " + IdReqsResult); 
+                 return IdReqsResult;
+             }
+           }
+    }
+   </script>
+</apex:component>

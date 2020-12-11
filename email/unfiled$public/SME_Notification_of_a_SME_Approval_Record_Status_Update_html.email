@@ -1,0 +1,13 @@
+The status of {!SME_Approvals__c.Name} was updated. Please review and take appropriate steps. <br/> <br/>
+
+Account name: {!SME_Approvals__c.Account_Legal_Name__c} <br/>
+
+Implementation Case name: {!SME_Approvals__c.Impl_Case_Name__c} <br/>
+
+Implementation Case status: {!SME_Approvals__c.Implementation_Status__c} <br/>
+
+SME Approval record status: {!SME_Approvals__c.Status__c} <br/> <br/>
+
+The view the SME Approval record, please see the below link : <br/>
+
+<a href={!SME_Approvals__c.Link}> {!SME_Approvals__c.Name} </a>

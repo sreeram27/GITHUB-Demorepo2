@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>This process updates the Status Picklist when Status reference field gets updated on Visit</description>
+    <label>Update Status Picklist when Status Field is Updated on Visit</label>
+    <processType>Workflow</processType>
+</Flow>

@@ -1,0 +1,28 @@
+<p>
+The AHG you submitted for approval was Approved.
+</p>
+<table border="1">
+<tr><td>Client Name: </td><td>{!QuoteLineItemApproval__c.ClientName__c}</td></tr>
+<tr><td>Effective Date: </td><td>{!QuoteLineItemApproval__c.EffectiveDate__c}</td></tr>
+<tr><td>Region: </td><td>{!QuoteLineItemApproval__c.Region__c}</td></tr> 
+<tr><td>New or existing: </td><td>{!QuoteLineItemApproval__c.Neworexisting__c}</td></tr>
+<tr><td>Market: </td><td>National Accounts</td></tr>
+<tr><td>Likelihood of winning: </td><td>{!QuoteLineItemApproval__c.Likelihoodofwinning__c}</td></tr>
+<tr><td>Claims Platform: </td><td>{!QuoteLineItemApproval__c.ClaimsPlatform__c}</td></tr>
+<tr><td>Financing: </td><td>{!QuoteLineItemApproval__c.Financing__c}</td></tr>
+<tr><td>Med Management Platform: </td><td>{!QuoteLineItemApproval__c.MedManagementPlatform__c}</td></tr>
+<tr><td>Clinical Model: </td><td>{!QuoteLineItemApproval__c.ClinicalModel__c}</td></tr>
+<tr><td>Estimated Membership: </td><td>{!QuoteLineItemApproval__c.EstimatedMembership__c}</td></tr>
+<tr><td>Additional Comments: </td><td>{!QuoteLineItemApproval__c.BackgroundFurtherExplanation__c}</td></tr>
+<tr><td>Contracting/Situs State: </td><td>{!QuoteLineItemApproval__c.SitusState__c}</td></tr>
+<tr><td>Core Clinical and Specialty Products: </td><td>{!QuoteLineItemApproval__c.CoreClinicalProducts__c}</td></tr>
+<tr><td>Service Hours: </td><td>{!QuoteLineItemApproval__c.AHG_Service_Hours__c}</td></tr>
+<tr><td>AHG Outbound Campaigns: </td><td>{!QuoteLineItemApproval__c.AHG_Outbound_Campaigns__c}</td></tr>
+<tr><td>Welcome Calls: </td><td>{!QuoteLineItemApproval__c.AHG_Welcome_Calls__c}</td></tr>
+<tr><td>Members not already engaged with Clinical or through Engage, prioritize without PCP: </td><td>{!QuoteLineItemApproval__c.AHG_Prioritize_wo_PCP__c}</td></tr>
+<tr><td>Low Risk Impactable: </td><td>{!QuoteLineItemApproval__c.AHG_Low_Risk_Impactable_Values__c}</td></tr>
+</table>
+<p>
+To view all details around the request, please see the below link:
+<a href="{!QuoteLineItemApproval__c.Link}">Click here</a>
+</p>

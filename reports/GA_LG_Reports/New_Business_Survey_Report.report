@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order.Implementation_Effective_Date__c</field>
+    </columns>
+    <columns>
+        <field>ORDER_NUMBER</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>Account.MBU_Codes__c</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Type__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_OWNER</field>
+    </columns>
+    <columns>
+        <field>ORDER_EFFECTIVE_DATE</field>
+    </columns>
+    <columns>
+        <field>Order.Imp_Completed_Date__c</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Status__c</field>
+    </columns>
+    <columns>
+        <field>Order.Assigned_Implementer__c</field>
+    </columns>
+    <description>This report is used to send the new business implementation customer satisfaction surveys</description>
+    <filter>
+        <criteriaItems>
+            <column>Order.Implementation_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Implementation Completed,Post Implementation Warranty</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Implementation_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Business</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Situs_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Georgia</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>New Business Survey Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OrderList</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ORDER_CREATED_DATE</dateColumn>
+        <endDate>2019-11-01</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2019-09-01</startDate>
+    </timeFrameFilter>
+</Report>

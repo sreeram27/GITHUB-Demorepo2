@@ -1,0 +1,11 @@
+ESI has completed the requested pharmacy changes for {!Rx__c.Account_Legal_Name__c},  {!Rx__c.MBU_Codes__c}.  Below you will find the assigned Proxy ID and Proxy Stage: <Br><BR>
+
+  - Proxy ID: {!Proxy__c.Name} <Br>
+  - Proxy Stage: {!Proxy__c.Proxy_Stage__c}<Br><Br>
+
+Click on the below link to access the record:<Br>
+{!Rx__c.Link}<Br><Br>
+
+Thank you,<Br>
+
+PSG QA Team

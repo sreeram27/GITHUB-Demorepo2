@@ -1,0 +1,133 @@
+<messaging:emailTemplate subject="Voluntary Site of Care Form for Customer {!relatedTo.Quote.Opportunity.Account.Name}" recipientType="User" relatedToType="QuoteLineItem">
+<messaging:htmlEmailBody >
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+     border-collapse: collapse;
+     text-align: left;
+}
+
+}
+</style>
+</head>
+<body>
+
+
+<p>Details have been captured in Salesforce for the <b>'Anthem Medical Specialty Site of Care Re-Direction Program Client Profile and Implementation Form'</b> on {!MONTH(TODAY())}/{!DAY(TODAY())}/{!YEAR(TODAY())} by {!relatedTo.Quote.Opportunity.Account.AccountOwnerName__c}. This is an automated notification for your awareness
+</p>
+<br>
+</br>
+
+
+<table style='position:relative'>
+  <tr>
+  <th>Client Name</th>
+     <td> {!relatedTo.Quote.Opportunity.Account.Name} </td>
+  </tr>
+  <tr>
+  <th>Number of Medical Lives</th>
+      <td>{!ROUND(relatedTo.Members__c, 0)}</td>
+  </tr>
+  <tr>
+  <th>Target Start Date</th>
+      <td>{!Month(relatedTo.Quote.Opportunity.CloseDate)}/{!Day(relatedTo.Quote.Opportunity.CloseDate)}/{!Year(relatedTo.Quote.Opportunity.CloseDate)}</td>
+  </tr>
+  <tr>
+  <th>Anthem Group ID Number</th>
+      <td>{!relatedTo.Quote.GroupNumber__r.Name} </td>
+  </tr>
+  <tr>
+  <th>Claims Platform</th>
+      <td>{!relatedTo.Quote.Claim_System__c} </td>
+  </tr>
+  <tr>
+  <th>New or Existing Client</th>
+      <td>{!relatedTo.Quote.Opportunity.RecordType.name} </td>
+  </tr>
+  <tr>
+  <th>Market</th>
+      <td>{!relatedTo.Quote.Opportunity.AnthemEntity__c} </td>
+  </tr>
+  <tr>
+  <th>Region</th>
+      <td>{!relatedTo.Quote.Opportunity.Account.Region__c} </td>
+  </tr>
+  <tr>
+  <th>Funding</th>
+      <td>{!relatedTo.Funding__c}</td>
+  </tr>
+  <tr>
+  <th>Financing</th>
+      <td>{!relatedTo.Financing__c}</td>
+  </tr>
+  <tr>
+  <th>Client PBM Provider</th>
+      <td>{!relatedTo.RXVendors__c}</td>
+  </tr>
+  <tr>
+  <th>Anthem Client Account Executive</th>
+      <td>{!relatedTo.Quote.Opportunity.Account.AccountOwnerName__c}</td>
+  </tr>
+  <tr>
+  <th>Anthem Implementation Lead</th>
+    <c:GetAccountImplementerComponent orderID="{!relatedTo.Quote.Opportunity.ID}"/> 
+  </tr>
+  <tr>
+  <th>Anthem Home Plan and Member Letter Version</th>
+      <td>{!relatedTo.Home_Plan_and_Member_Letter_Version__c}</td>
+  </tr>
+  <tr>
+  <th>Anthem BlueCross BlueShield State Plans</th>
+      <td>{!relatedTo.Anthem_BC_BS_State__c}</td>
+  </tr>
+  <tr>
+  <th>Does Client Have IHM Team</th>
+      <td>{!relatedTo.Does_Client_Have_IHM_Team__c} </td>
+  </tr>
+  <tr>
+  <th>Does Client Have MHA Team</th>
+      <td>{!relatedTo.Does_Client_Have_MHA_Team__c}</td>
+  </tr>
+   <tr>
+  <th>Does Client Have Anthem Health Guide</th>
+      <td>{!relatedTo.Does_Client_Have_Anthem_Health_Guide__c}</td>
+  </tr>
+  <tr>
+  <th>Require Language Translation Services</th>
+      <td>{!relatedTo.Require_Language_Translation_Services__c}</td>
+  </tr>
+  <tr>
+  <th>Did Client Signoff</th>
+      <td>{!relatedTo.Did_Client_Signoff__c}</td>
+  </tr>
+  <tr>
+  <th>Client Signatory Name</th>
+      <td>{!relatedTo.Client_Signatory_Name__c}</td>
+  </tr>
+ <tr>
+  <th>Client Signatory Date</th>
+      <td>{!Month(relatedTo.Client_Signatory_Date__c)}/{!Day(relatedTo.Client_Signatory_Date__c)}/{!Year(relatedTo.Client_Signatory_Date__c)}</td>
+ </tr>
+  <tr>
+  <th>Client Signatory Title</th>
+      <td>{!relatedTo.Client_Signatory_Title__c}</td>
+ </tr>
+ <tr>
+  <th>Notes/Comments</th>
+      <td>{!relatedTo.Voluntary_Site_of_Care_Comments__c}</td>
+ </tr>
+
+</table>
+
+<p>If you wish to review this Product directly in Salesforce, please click this link.<a href="{!RelatedTo.Email_URL__c}" target="_blank"> Click here </a></p>
+
+
+
+
+
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

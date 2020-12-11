@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>The Owner of the Quote will receive an email notification if the user did not complete the Engage Scoping Form</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Non Completion of ESForm</name>
+    <style>none</style>
+    <subject>{!QuoteLineItem.ClientName__c} -  Engage Scoping Completion Required</subject>
+    <textOnly>This e-mail is a reminder to advise that the Engage Scoping form must be completed for the following products: Engage Elite, Engage Elite Plus, Engage Essentials, Engage Essentials Plus and the stage = Sold or IGAP Sold. 
+
+To create the Engage Scoping, please navigate to the &quot;Engage Scoping And Engage Standard&quot; button located on the Action Panel within the Quote:{!Quote.QuoteHyper__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

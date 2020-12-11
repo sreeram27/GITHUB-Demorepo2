@@ -1,0 +1,1721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Marketing_Project_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>KF(20130716) Custom Object to bring in yearly Marketing Expense Tracking, child object off Marketing Expenses, enter project detail</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Anthem_Check_Request_Number__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Anthem Check Request Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Audience__c</fullName>
+        <externalId>false</externalId>
+        <label>Audience</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Member</fullName>
+                    <default>false</default>
+                    <label>Member</label>
+                </value>
+                <value>
+                    <fullName>Association/ Chamber</fullName>
+                    <default>false</default>
+                    <label>Association/ Chamber</label>
+                </value>
+                <value>
+                    <fullName>Broker/Producer</fullName>
+                    <default>false</default>
+                    <label>Broker/Producer</label>
+                </value>
+                <value>
+                    <fullName>Consultant</fullName>
+                    <default>false</default>
+                    <label>Consultant</label>
+                </value>
+                <value>
+                    <fullName>Employer</fullName>
+                    <default>false</default>
+                    <label>Employer</label>
+                </value>
+                <value>
+                    <fullName>Internal</fullName>
+                    <default>false</default>
+                    <label>Internal</label>
+                </value>
+                <value>
+                    <fullName>Labor/ Union</fullName>
+                    <default>false</default>
+                    <label>Labor/ Union</label>
+                </value>
+                <value>
+                    <fullName>Prospect-Consumer</fullName>
+                    <default>false</default>
+                    <label>Prospect-Consumer</label>
+                </value>
+                <value>
+                    <fullName>Provider</fullName>
+                    <default>false</default>
+                    <label>Provider</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <encryptionScheme>ProbabilisticEncryption</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Communication_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Communication Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sheet, Flyer, Insert, Overview</fullName>
+                    <default>false</default>
+                    <label>Sheet, Flyer, Insert, Overview</label>
+                </value>
+                <value>
+                    <fullName>Binder Cover/Spines</fullName>
+                    <default>false</default>
+                    <label>Binder Cover/Spines</label>
+                </value>
+                <value>
+                    <fullName>Booklet/handbook</fullName>
+                    <default>false</default>
+                    <label>Booklet/handbook</label>
+                </value>
+                <value>
+                    <fullName>Brochure</fullName>
+                    <default>false</default>
+                    <label>Brochure</label>
+                </value>
+                <value>
+                    <fullName>Calendar</fullName>
+                    <default>false</default>
+                    <label>Calendar</label>
+                </value>
+                <value>
+                    <fullName>Card/Coupon</fullName>
+                    <default>false</default>
+                    <label>Card/Coupon</label>
+                </value>
+                <value>
+                    <fullName>CD</fullName>
+                    <default>false</default>
+                    <label>CD</label>
+                </value>
+                <value>
+                    <fullName>Decal</fullName>
+                    <default>false</default>
+                    <label>Decal</label>
+                </value>
+                <value>
+                    <fullName>Design Only</fullName>
+                    <default>false</default>
+                    <label>Design Only</label>
+                </value>
+                <value>
+                    <fullName>Direct Mailer</fullName>
+                    <default>false</default>
+                    <label>Direct Mailer</label>
+                </value>
+                <value>
+                    <fullName>Display/Banner</fullName>
+                    <default>false</default>
+                    <label>Display/Banner</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Envelope</fullName>
+                    <default>false</default>
+                    <label>Envelope</label>
+                </value>
+                <value>
+                    <fullName>Excel Spreadsheet</fullName>
+                    <default>false</default>
+                    <label>Excel Spreadsheet</label>
+                </value>
+                <value>
+                    <fullName>Explanation of Benefits</fullName>
+                    <default>false</default>
+                    <label>Explanation of Benefits</label>
+                </value>
+                <value>
+                    <fullName>FAQ</fullName>
+                    <default>false</default>
+                    <label>FAQ</label>
+                </value>
+                <value>
+                    <fullName>Flyer</fullName>
+                    <default>false</default>
+                    <label>Flyer</label>
+                </value>
+                <value>
+                    <fullName>Folder</fullName>
+                    <default>false</default>
+                    <label>Folder</label>
+                </value>
+                <value>
+                    <fullName>Insert</fullName>
+                    <default>false</default>
+                    <label>Insert</label>
+                </value>
+                <value>
+                    <fullName>Invitation</fullName>
+                    <default>false</default>
+                    <label>Invitation</label>
+                </value>
+                <value>
+                    <fullName>Letter</fullName>
+                    <default>false</default>
+                    <label>Letter</label>
+                </value>
+                <value>
+                    <fullName>Magnet</fullName>
+                    <default>false</default>
+                    <label>Magnet</label>
+                </value>
+                <value>
+                    <fullName>Masthead</fullName>
+                    <default>false</default>
+                    <label>Masthead</label>
+                </value>
+                <value>
+                    <fullName>Newsletter</fullName>
+                    <default>false</default>
+                    <label>Newsletter</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Overview (Single Value)</fullName>
+                    <default>false</default>
+                    <label>Overview (Single Value)</label>
+                </value>
+                <value>
+                    <fullName>Payroll Stuffer</fullName>
+                    <default>false</default>
+                    <label>Payroll Stuffer</label>
+                </value>
+                <value>
+                    <fullName>Postcard</fullName>
+                    <default>false</default>
+                    <label>Postcard</label>
+                </value>
+                <value>
+                    <fullName>Poster</fullName>
+                    <default>false</default>
+                    <label>Poster</label>
+                </value>
+                <value>
+                    <fullName>PowerPoint Presentation</fullName>
+                    <default>false</default>
+                    <label>PowerPoint Presentation</label>
+                </value>
+                <value>
+                    <fullName>Schedule of Benefits</fullName>
+                    <default>false</default>
+                    <label>Schedule of Benefits</label>
+                </value>
+                <value>
+                    <fullName>Sheet</fullName>
+                    <default>false</default>
+                    <label>Sheet</label>
+                </value>
+                <value>
+                    <fullName>Signage</fullName>
+                    <default>false</default>
+                    <label>Signage</label>
+                </value>
+                <value>
+                    <fullName>Sticker</fullName>
+                    <default>false</default>
+                    <label>Sticker</label>
+                </value>
+                <value>
+                    <fullName>Tent Card</fullName>
+                    <default>false</default>
+                    <label>Tent Card</label>
+                </value>
+                <value>
+                    <fullName>Translation</fullName>
+                    <default>false</default>
+                    <label>Translation</label>
+                </value>
+                <value>
+                    <fullName>Video</fullName>
+                    <default>false</default>
+                    <label>Video</label>
+                </value>
+                <value>
+                    <fullName>Web Banner/Ad</fullName>
+                    <default>false</default>
+                    <label>Web Banner/Ad</label>
+                </value>
+                <value>
+                    <fullName>Web Content</fullName>
+                    <default>false</default>
+                    <label>Web Content</label>
+                </value>
+                <value>
+                    <fullName>Word Template</fullName>
+                    <default>false</default>
+                    <label>Word Template</label>
+                </value>
+                <value>
+                    <fullName>Writing Only</fullName>
+                    <default>false</default>
+                    <label>Writing Only</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Complete_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Complete Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CostTotal__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost_1_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost 1 Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Creative Development</fullName>
+                    <default>false</default>
+                    <label>Creative Development</label>
+                </value>
+                <value>
+                    <fullName>Print Production</fullName>
+                    <default>false</default>
+                    <label>Print Production</label>
+                </value>
+                <value>
+                    <fullName>Fulfillment</fullName>
+                    <default>false</default>
+                    <label>Fulfillment</label>
+                </value>
+                <value>
+                    <fullName>Postage</fullName>
+                    <default>false</default>
+                    <label>Postage</label>
+                </value>
+                <value>
+                    <fullName>Shipping</fullName>
+                    <default>false</default>
+                    <label>Shipping</label>
+                </value>
+                <value>
+                    <fullName>Premium Items</fullName>
+                    <default>false</default>
+                    <label>Premium Items</label>
+                </value>
+                <value>
+                    <fullName>Sweepstakes</fullName>
+                    <default>false</default>
+                    <label>Sweepstakes</label>
+                </value>
+                <value>
+                    <fullName>Translation</fullName>
+                    <default>false</default>
+                    <label>Translation</label>
+                </value>
+                <value>
+                    <fullName>Video</fullName>
+                    <default>false</default>
+                    <label>Video</label>
+                </value>
+                <value>
+                    <fullName>Web Resource</fullName>
+                    <default>false</default>
+                    <label>Web Resource</label>
+                </value>
+                <value>
+                    <fullName>Webinar</fullName>
+                    <default>false</default>
+                    <label>Webinar</label>
+                </value>
+                <value>
+                    <fullName>Receipt Outside Vendor</fullName>
+                    <default>false</default>
+                    <label>Receipt Outside Vendor</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cost_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost 1</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_2_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost 2 Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Creative Development</fullName>
+                    <default>false</default>
+                    <label>Creative Development</label>
+                </value>
+                <value>
+                    <fullName>Print Production</fullName>
+                    <default>false</default>
+                    <label>Print Production</label>
+                </value>
+                <value>
+                    <fullName>Fulfillment</fullName>
+                    <default>false</default>
+                    <label>Fulfillment</label>
+                </value>
+                <value>
+                    <fullName>Postage</fullName>
+                    <default>false</default>
+                    <label>Postage</label>
+                </value>
+                <value>
+                    <fullName>Shipping</fullName>
+                    <default>false</default>
+                    <label>Shipping</label>
+                </value>
+                <value>
+                    <fullName>Premium Items</fullName>
+                    <default>false</default>
+                    <label>Premium Items</label>
+                </value>
+                <value>
+                    <fullName>Sweepstakes</fullName>
+                    <default>false</default>
+                    <label>Sweepstakes</label>
+                </value>
+                <value>
+                    <fullName>Translation</fullName>
+                    <default>false</default>
+                    <label>Translation</label>
+                </value>
+                <value>
+                    <fullName>Video</fullName>
+                    <default>false</default>
+                    <label>Video</label>
+                </value>
+                <value>
+                    <fullName>Web Resource</fullName>
+                    <default>false</default>
+                    <label>Web Resource</label>
+                </value>
+                <value>
+                    <fullName>Webinar</fullName>
+                    <default>false</default>
+                    <label>Webinar</label>
+                </value>
+                <value>
+                    <fullName>Receipt Outside Vendor</fullName>
+                    <default>false</default>
+                    <label>Receipt Outside Vendor</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cost_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost 2</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_3_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost 3 Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Creative Development</fullName>
+                    <default>false</default>
+                    <label>Creative Development</label>
+                </value>
+                <value>
+                    <fullName>Print Production</fullName>
+                    <default>false</default>
+                    <label>Print Production</label>
+                </value>
+                <value>
+                    <fullName>Fulfillment</fullName>
+                    <default>false</default>
+                    <label>Fulfillment</label>
+                </value>
+                <value>
+                    <fullName>Postage</fullName>
+                    <default>false</default>
+                    <label>Postage</label>
+                </value>
+                <value>
+                    <fullName>Shipping</fullName>
+                    <default>false</default>
+                    <label>Shipping</label>
+                </value>
+                <value>
+                    <fullName>Premium Items</fullName>
+                    <default>false</default>
+                    <label>Premium Items</label>
+                </value>
+                <value>
+                    <fullName>Sweepstakes</fullName>
+                    <default>false</default>
+                    <label>Sweepstakes</label>
+                </value>
+                <value>
+                    <fullName>Translation</fullName>
+                    <default>false</default>
+                    <label>Translation</label>
+                </value>
+                <value>
+                    <fullName>Video</fullName>
+                    <default>false</default>
+                    <label>Video</label>
+                </value>
+                <value>
+                    <fullName>Web Resource</fullName>
+                    <default>false</default>
+                    <label>Web Resource</label>
+                </value>
+                <value>
+                    <fullName>Webinar</fullName>
+                    <default>false</default>
+                    <label>Webinar</label>
+                </value>
+                <value>
+                    <fullName>Receipt Outside Vendor</fullName>
+                    <default>false</default>
+                    <label>Receipt Outside Vendor</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cost_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost 3</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_4_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost 4 Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Creative Development</fullName>
+                    <default>false</default>
+                    <label>Creative Development</label>
+                </value>
+                <value>
+                    <fullName>Print Production</fullName>
+                    <default>false</default>
+                    <label>Print Production</label>
+                </value>
+                <value>
+                    <fullName>Fulfillment</fullName>
+                    <default>false</default>
+                    <label>Fulfillment</label>
+                </value>
+                <value>
+                    <fullName>Postage</fullName>
+                    <default>false</default>
+                    <label>Postage</label>
+                </value>
+                <value>
+                    <fullName>Shipping</fullName>
+                    <default>false</default>
+                    <label>Shipping</label>
+                </value>
+                <value>
+                    <fullName>Premium Items</fullName>
+                    <default>false</default>
+                    <label>Premium Items</label>
+                </value>
+                <value>
+                    <fullName>Sweepstakes</fullName>
+                    <default>false</default>
+                    <label>Sweepstakes</label>
+                </value>
+                <value>
+                    <fullName>Translation</fullName>
+                    <default>false</default>
+                    <label>Translation</label>
+                </value>
+                <value>
+                    <fullName>Video</fullName>
+                    <default>false</default>
+                    <label>Video</label>
+                </value>
+                <value>
+                    <fullName>Web Resource</fullName>
+                    <default>false</default>
+                    <label>Web Resource</label>
+                </value>
+                <value>
+                    <fullName>Webinar</fullName>
+                    <default>false</default>
+                    <label>Webinar</label>
+                </value>
+                <value>
+                    <fullName>Receipt Outside Vendor</fullName>
+                    <default>false</default>
+                    <label>Receipt Outside Vendor</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cost_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost 4</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_5_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost 5 Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Creative Development</fullName>
+                    <default>false</default>
+                    <label>Creative Development</label>
+                </value>
+                <value>
+                    <fullName>Print Production</fullName>
+                    <default>false</default>
+                    <label>Print Production</label>
+                </value>
+                <value>
+                    <fullName>Fulfillment</fullName>
+                    <default>false</default>
+                    <label>Fulfillment</label>
+                </value>
+                <value>
+                    <fullName>Postage</fullName>
+                    <default>false</default>
+                    <label>Postage</label>
+                </value>
+                <value>
+                    <fullName>Shipping</fullName>
+                    <default>false</default>
+                    <label>Shipping</label>
+                </value>
+                <value>
+                    <fullName>Premium Items</fullName>
+                    <default>false</default>
+                    <label>Premium Items</label>
+                </value>
+                <value>
+                    <fullName>Sweepstakes</fullName>
+                    <default>false</default>
+                    <label>Sweepstakes</label>
+                </value>
+                <value>
+                    <fullName>Translation</fullName>
+                    <default>false</default>
+                    <label>Translation</label>
+                </value>
+                <value>
+                    <fullName>Video</fullName>
+                    <default>false</default>
+                    <label>Video</label>
+                </value>
+                <value>
+                    <fullName>Web Resource</fullName>
+                    <default>false</default>
+                    <label>Web Resource</label>
+                </value>
+                <value>
+                    <fullName>Webinar</fullName>
+                    <default>false</default>
+                    <label>Webinar</label>
+                </value>
+                <value>
+                    <fullName>Receipt Outside Vendor</fullName>
+                    <default>false</default>
+                    <label>Receipt Outside Vendor</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cost_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost 5</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>Cost_1__c + Cost_2__c + Cost_3__c + Cost_4__c + Cost_5__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cost Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DeadlineDate__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Deadline Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Invoiced_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoiced Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Issued_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Issued To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Group</fullName>
+                    <default>false</default>
+                    <label>Group</label>
+                </value>
+                <value>
+                    <fullName>TP Vendor</fullName>
+                    <default>false</default>
+                    <label>TP Vendor</label>
+                </value>
+                <value>
+                    <fullName>Broker</fullName>
+                    <default>false</default>
+                    <label>Broker</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MarketingExpense__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketing Expense</label>
+        <referenceTo>Marketing_Tracking__c</referenceTo>
+        <relationshipLabel>Marketing Projects</relationshipLabel>
+        <relationshipName>Marketing_Projects</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Output__c</fullName>
+        <externalId>false</externalId>
+        <label>Output</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Electronic/PDF</fullName>
+                    <default>false</default>
+                    <label>Electronic/PDF</label>
+                </value>
+                <value>
+                    <fullName>Mail</fullName>
+                    <default>false</default>
+                    <label>Mail</label>
+                </value>
+                <value>
+                    <fullName>Posted to Internet</fullName>
+                    <default>false</default>
+                    <label>Posted to Internet</label>
+                </value>
+                <value>
+                    <fullName>Posted to Intranet</fullName>
+                    <default>false</default>
+                    <label>Posted to Intranet</label>
+                </value>
+                <value>
+                    <fullName>Print</fullName>
+                    <default>false</default>
+                    <label>Print</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SFDCLegacyID__c</fullName>
+        <description>Used for data load, the CIP, and Open Enrollment processes that need to be maintained in the old Commercial ORG.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <inlineHelpText>Used for data load, the CIP, and Open Enrollment processes that need to be maintained in the old Commercial ORG.</inlineHelpText>
+        <label>SFDCLegacyID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+                <value>
+                    <fullName>Hold</fullName>
+                    <default>false</default>
+                    <label>Hold</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vendor_Invoice_Number__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Vendor Invoice Number</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(MarketingExpense__r.Year__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Year</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Marketing Project</label>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Marketing Project Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Marketing Projects</pluralLabel>
+    <recordTypes>
+        <fullName>Invoice</fullName>
+        <active>true</active>
+        <label>Invoice</label>
+        <picklistValues>
+            <picklist>Audience__c</picklist>
+            <values>
+                <fullName>Association%2F Chamber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker%2FProducer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labor%2F Union</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospect-Consumer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Communication_Type__c</picklist>
+            <values>
+                <fullName>Binder Cover%2FSpines</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Booklet%2Fhandbook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brochure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card%2FCoupon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mailer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Display%2FBanner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Envelope</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excel Spreadsheet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Explanation of Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flyer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Folder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invitation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Magnet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Masthead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Newsletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overview %28Single Value%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payroll Stuffer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postcard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PowerPoint Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schedule of Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sheet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sheet%2C Flyer%2C Insert%2C Overview</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sticker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tent Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Translation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Banner%2FAd</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Writing Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cost_1_Description__c</picklist>
+            <values>
+                <fullName>Creative Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium Items</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Receipt Outside Vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweepstakes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Translation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Resource</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cost_2_Description__c</picklist>
+            <values>
+                <fullName>Creative Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium Items</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Receipt Outside Vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweepstakes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Translation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Resource</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cost_3_Description__c</picklist>
+            <values>
+                <fullName>Creative Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium Items</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Receipt Outside Vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweepstakes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Translation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Resource</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cost_4_Description__c</picklist>
+            <values>
+                <fullName>Creative Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium Items</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Receipt Outside Vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweepstakes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Translation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Resource</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cost_5_Description__c</picklist>
+            <values>
+                <fullName>Creative Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Postage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premium Items</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Receipt Outside Vendor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweepstakes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Translation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Resource</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issued_To__c</picklist>
+            <values>
+                <fullName>Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TP Vendor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Output__c</picklist>
+            <values>
+                <fullName>Electronic%2FPDF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Posted to Internet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Posted to Intranet</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hold</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>MP_SpendingOverage_Invoices</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(Invoiced_Amount__c &gt;  (MarketingExpense__r.Total_Fund_Remaining_Balance__c ), true,false)</errorConditionFormula>
+        <errorMessage>You will exceed your remaining balance with this invoice.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MP_Validate_Invoice_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(Invoice_Date__c &gt;  MarketingExpense__r.End_Date__c ||  Invoice_Date__c &lt;  MarketingExpense__r.Start_Date__c ,true,false)</errorConditionFormula>
+        <errorMessage>Your Invoice Date is Not Within the Range of This Project</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

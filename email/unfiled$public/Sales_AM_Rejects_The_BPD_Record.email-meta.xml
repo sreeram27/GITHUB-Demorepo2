@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Sales/AM Rejects The BPD Record</name>
+    <style>none</style>
+    <subject>The Benefit Plan Design Record For {!BPD__c.Account__c}Has Been Rejected</subject>
+    <textOnly>Dear {!BPD__c.EBA_Lead__c}, 
+
+The {!BPD__c.Name} you submitted for {!BPD__c.Account__c} has been rejected. 
+
+{!BPD__c.Url__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

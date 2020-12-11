@@ -1,0 +1,60 @@
+<messaging:emailTemplate relatedToType="Order" 
+recipientType="User" 
+subject="{!relatedTo.Revision_Text__c} {!relatedTo.Implementation_Type__c} {!relatedTo.Intake_Type_Mail_Merge__c} Implementation for {!relatedTo.Anthem_Entity__c} - {!relatedTo.AccountLegalName__c} - Eff. {!relatedTo.Implementation_Effective_Date__c}">
+<messaging:htmlEmailBody >
+ 
+ <html>
+      <body>
+        <font face="arial" size="2">
+          <p> <font color="red"> ***Please Note – if you are receiving this email, you are being requested to take the action(s) outlined below. ***** </font></p>
+          
+         <br></br>
+         <p> All – </p>
+         
+         <br></br>
+         <p> This communication is to make you aware of the implementation for {!relatedTo.AccountLegalName__c} that I have been assigned to manage. </p>
+         <br></br>
+          <p>
+{!IF(relatedTo.Discovery_call_Desired__c == 'Yes', " I will be scheduling a Discovery Call to discuss the requirements for this implementation.", 
+"Based on the requirements of this Implementation, a Discovery Call is not warranted. If you would like to request a Discovery Call to discuss any concerns or questions, please contact me directly as soon as possible. " )}
+         </p>
+        
+         <br></br>
+         <p> <i> <b>Please provide the names of your dedicated resources for this implementation as soon as possible,</b> if you have not already done so. In addition, please make sure the assigned resources go into the Implementation Case Record (link provided below) and provide their review as soon as possible. </i> </p>
+         <br></br>
+                   <p> &#8226;       Group Name:<b> {!relatedTo.AccountLegalName__c} </b></p>                   
+                   <p> &#8226;       Group Number: <b> {!relatedTo.Email_Template_Group_Number__c} </b></p>                   
+                   <p> &#8226;       Effective Date:<b> <apex:outputText value="{0, date, MM/dd/yyyy}"> <apex:Param value="{!relatedTo.Implementation_Effective_Date__c}" /> </apex:OutputText> </b></p>           
+                   <p> &#8226;       Type of Business:<b> {!relatedTo.Implementation_Type__c}</b> on <b>{!relatedTo.Claim_system__c}</b> </p>
+                   <p> &#8226;       Account is:<b> {!relatedTo.Anthem_Entity__c} </b></p>                   
+                   <p> &#8226;       Account Management Region:<b> {!relatedTo.Region__c}</b></p>                   
+                   <p> &#8226;       Funding Arrangement:<b> {!relatedTo.Email_Template_Funding_Arrangement__c}</b></p>                   
+                   <p> &#8226;       Serviced out of:<b> {!relatedTo.Call_Service_Center__c}</b> </p>
+                   
+                   <p>      Below is the list of all products and their associated stages: </p>
+                  
+                   <c:EmailTemplate orderID="{!relatedTo.ID}"/>                  
+                   
+                   <p> &#8226;          Implementation Lead:<b> {!relatedTo.Assigned_Implementer__r.Name} </b></p>
+                   <p> &#8226;          Implementation Case Record ID:<b> {!relatedTo.OrderNumber} </b></p>
+           
+         
+         <p>  To review the requirements, please review the Intake Form (link provided below). Please note that only what is known at this point is what has been provided. As the implementation unveils, the outstanding requirements will be finalized.    </p>
+          <br></br>
+          <p>  Link to Implementation Case Record:<a href="{!RelatedTo.Email_Url__c}" target="_blank"> Click here </a> </p>
+         
+          <apex:outputPanel rendered="{!relatedTo.Revision_Record_Link_For_Template__c}">
+          Link to Revision Record:<a href="{!RelatedTo.Revision_Email_Url__c}" target="_blank"> Click here </a><br></br>         
+          </apex:outputPanel>
+            <p> Let me know if you have any questions. I look forward to working with all of you!  </p><br></br>
+           <p> <b> NOTE: If you no longer need to receive notifications of this nature, please forward this email to Jean Phillips and request to be removed from future distributions.</b> </p><br></br>
+           <p> Sincerely, </p>
+           <p> <b><font color="DeepSkyBlue ">Anthem, Inc.  </font></b></p>
+           <hr><font color="SlateGrey"></font></hr>
+           <c:User_Detail />
+          </font>
+      </body>
+ </html>
+ 
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

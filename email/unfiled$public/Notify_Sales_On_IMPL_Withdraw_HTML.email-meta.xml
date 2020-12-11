@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Notify Sales On IMPL Withdraw HTML</name>
+    <style>none</style>
+    <subject>{!Order.OrderNumber} for {!Order.AccountLegalName__c} has been Withdrawn</subject>
+    <textOnly>Please Note {!Order.OrderNumber} for {!Order.AccountLegalName__c} and {!Order.Opportunity} has been withdrawn by {!Order.Assigned_Implementer_Name__c}. 
+
+
+
+Please refer to the ICR comments and/or the email in the attachments for withdrawal reasons</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>46.0</apiVersion>
+    <available>true</available>
+    <description>Follow Up Email to Local Sales User when the Intake return stays in Pending Response from Sales Stage for 48 hours after status change.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email to Sales on IR FollowUp</name>
+    <style>none</style>
+    <subject>An Implementation Case for {!IntakeReturn__c.Account_Name__c} Has Been Returned</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

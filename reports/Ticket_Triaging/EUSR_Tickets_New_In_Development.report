@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Support_Request__c.WellPoint_Entity__c</field>
+    </columns>
+    <columns>
+        <field>Support_Request__c.Request_Reason__c</field>
+    </columns>
+    <columns>
+        <field>Support_Request__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Support_Request__c.Assigned_To__c</field>
+    </columns>
+    <columns>
+        <field>Support_Request__c.Jira_Ticket__c</field>
+    </columns>
+    <description>EUSR tickets that are new or still in development.</description>
+    <filter>
+        <criteriaItems>
+            <column>Support_Request__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New,In Development</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>EUSR Tickets - New/In Development</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Support_Request__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Support_Request__c.Status__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

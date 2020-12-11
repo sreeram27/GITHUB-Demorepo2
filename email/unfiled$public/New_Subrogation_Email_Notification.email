@@ -1,0 +1,102 @@
+<messaging:emailTemplate relatedToType="Order" 
+recipientType="User" 
+subject="Anthem Subrogation Team Implementation Alert for: {!relatedTo.AccountLegalName__c} with Effective Date {!relatedTo.Implementation_Effective_Date__c}"              >
+<messaging:htmlEmailBody >
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+     border-collapse: collapse;
+     text-align: left;
+     widht:50%;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<p>This communication is to make you aware of an Implementation in Salesforce that has been submitted for SME review on {!MONTH(TODAY())}/{!DAY(TODAY())}/{!YEAR(TODAY())} and may contain at least one of the following:<br></br>1.  New Group<br></br>2.  Group Termination<br></br>3.  Group Number Change<br></br>4.  Claim System Change<br></br><br></br>This is an automated notification for your awareness.</p>
+
+<table >
+  <tr>
+  <th>Implementation Type:</th>
+     <td>{!relatedTo.Implementation_Type__c}</td>
+  </tr>
+  <tr>
+  <th>Intake Type(s):</th>
+      <td>{!relatedTo.Applicable_Intake_Types__c}</td>
+  </tr>
+</table>
+<br>
+</br>
+<table >
+  <tr>
+  <th>Client Name:</th>
+      <td>{!relatedTo.AccountLegalName__c}</td>
+  </tr>
+  <tr>
+  <th>Group Number:</th>
+      <td>{!relatedTo.Quote.GroupNumber__r.Name} </td>
+  </tr>
+  <tr>
+  <th>Implementation Case Record ID:  </th>
+      <td>{!relatedTo.OrderNumber} </td>
+  </tr>
+  <tr>
+  <th>Implementation Effective Date:</th>
+      <td>{!Day(relatedTo.Implementation_Effective_Date__c)}/{!Month(relatedTo.Implementation_Effective_Date__c)}/{!Year(relatedTo.Implementation_Effective_Date__c)}</td>
+  </tr>
+  <tr>
+  <th>Implementation Case Topic:</th>
+      <td>{!relatedTo.Implementation_Case_Topic__c} </td>
+  </tr>
+  <tr>
+  <th>Claim System:</th>
+      <td>{!relatedTo.Claim_system__c} </td>
+  </tr>
+  <tr>
+  <th>Account Market:</th>
+      <td>{!relatedTo.Anthem_Entity__c}</td>
+  </tr>
+  <tr>
+  <th>Account Management Region:</th>
+      <td>{!relatedTo.Region__c}</td>
+  </tr>
+  <tr>
+  <th>State:</th>
+      <td>{!relatedTo.Situs_State__c}</td>
+  </tr>
+  <tr>
+  <th>JAA Group:</th>
+      <td>{!if(relatedTo.JAA_Group__c == true,'Yes','No')}</td>
+  </tr>
+  <tr>
+  <th>Assigned Implementer:</th>
+   <td>{!relatedTo.Assigned_Implementer__r.Name}</td>
+  </tr>
+  <tr>
+  <th>Account Manager:</th>
+      <td>{!relatedTo.Account_Manager__r.Name}</td>
+  </tr>
+  <tr>
+  <th>If Group Term, New Carrier</th>
+      <td>{!relatedTo.New_Carrier_Name__r.Name}</td>
+  </tr>
+</table>
+
+<p>To review additional details captured as part of this Implementation, please review the Salesforce Implementation Case or reach out to the Account Manager / Assigned Implementer for clarification.</p>
+
+<p><b> Link to Implementation Case: </b> <a href="{!RelatedTo.Email_URL__c}" target="_blank"> {!RelatedTo.Email_URL__c} </a></p>
+
+<p><i>Note: This email is automatically triggered when an Implementation Case has Status = Pending SME Review and one of the following criteria is met:<br></br>
+   A) Implementation Type = New Business<br></br>
+   B) Intake Type designation contains at least one of: Group Term, Transfer Market Segment, Existing Shift to JAA, Migration, Spin Off, Acquisition 
+</i>
+</p>
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

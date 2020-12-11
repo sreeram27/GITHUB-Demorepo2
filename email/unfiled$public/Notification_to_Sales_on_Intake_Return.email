@@ -1,0 +1,6 @@
+Dear {!IntakeReturn__c.Implementation_Case_Owner__c}, 
+
+The Implementation Case Record for {!IntakeReturn__c.Account_Name__c} has been returned for your review. Your immediate action is required. 
+
+Please click the following link to view details: 
+{!IntakeReturn__c.Link}

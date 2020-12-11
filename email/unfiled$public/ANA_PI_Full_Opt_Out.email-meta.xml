@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for ANA Full Opt Out</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ANA PI Full Opt Out</name>
+    <style>none</style>
+    <subject>Full Opt Out Request on {!QuoteLineItemApproval__c.CreatedDate} by {!QuoteLineItemApproval__c.CreatedBy} for {!QuoteLineItemApproval__c.ClientName__c}</subject>
+    <textOnly>Client Name:  {!QuoteLineItemApproval__c.ClientName__c}
+
+Effective Date:  {!QuoteLineItemApproval__c.EffectiveDate__c}
+
+Region:  {!QuoteLineItemApproval__c.Region__c}
+
+New or existing:  {!QuoteLineItemApproval__c.Neworexisting__c}
+
+Market:  National Accounts
+
+Likelihood of winning:  {!QuoteLineItemApproval__c.Likelihoodofwinning__c}
+
+Financing:  {!QuoteLineItemApproval__c.Financing__c}
+
+Claims Platform:  {!QuoteLineItemApproval__c.ClaimsPlatform__c}
+
+Full Opt Out:  {!QuoteLineItemApproval__c.Full_Opt_Out__c}
+
+Comments:  {!QuoteLineItemApproval__c.FOO_Comments__c}
+
+Estimated Membership:  {!QuoteLineItemApproval__c.EstimatedMembership__c}
+
+To view and Approve or Reject {!QuoteLineItemApproval__c.Link}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

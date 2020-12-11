@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>DL CACONV Large Group ID Cards</name>
+    <queueMembers>
+        <users>
+            <user>cathy.godfrey@anthem.com2</user>
+            <user>denise.o&apos;neal@anthem.com2</user>
+            <user>ab04293@bcbsga.com2</user>
+            <user>ab55402@anthem.com2</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

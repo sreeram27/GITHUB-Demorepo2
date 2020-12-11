@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Request__c.Capability__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Title__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Description__c</field>
+    </columns>
+    <description>This is all 13 requirements which Business agreed with us to remove from MVP for Phase 1</description>
+    <filter>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>149,167,282,283,284,295,383,384,385,387,391,422,429</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <name>Reviewed with Business End of Discovery</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Request__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Request__c.StartTime_Approved_Emergency_Release__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

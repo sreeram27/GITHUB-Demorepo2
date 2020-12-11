@@ -1,0 +1,10 @@
+Account Name: {!Opportunity.Account}
+
+Effective Date: {!Opportunity.CloseDate}
+
+Account Manager: {!Opportunity.Account_Manager__c}
+
+
+To view all details around the request, please see the below link:
+
+{!Opportunity.Link}

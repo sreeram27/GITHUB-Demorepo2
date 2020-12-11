@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Execution_Steps__c.Step_Order__c</field>
+    </columns>
+    <columns>
+        <field>Execution_Steps__c.Step_Name__c</field>
+    </columns>
+    <columns>
+        <field>Execution_Steps__c.Expected_Result__c</field>
+    </columns>
+    <description>Step Name and Expected Results</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Step Name and Expected Results</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Execution_Steps__c@Execution_Steps__c.Test_Script_Name__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Execution_Steps__c.Step_Order__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

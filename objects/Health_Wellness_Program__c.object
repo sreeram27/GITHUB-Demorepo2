@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Health_Wellness_Program_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>At the Opportunity level, to track the H&amp;W program</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Baseline_Intro_Letter_Sent__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Baseline Intro Letter Sent</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Build_Health_and_Wellness_Package__c</fullName>
+        <externalId>false</externalId>
+        <label>Build Health &amp; Wellness Package</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All In</fullName>
+                    <default>false</default>
+                    <label>All In</label>
+                </value>
+                <value>
+                    <fullName>Biometric Screening</fullName>
+                    <default>false</default>
+                    <label>Biometric Screening</label>
+                </value>
+                <value>
+                    <fullName>Biometric Screening Pooled</fullName>
+                    <default>false</default>
+                    <label>Biometric Screening Pooled</label>
+                </value>
+                <value>
+                    <fullName>Cooking Demo</fullName>
+                    <default>false</default>
+                    <label>Cooking Demo</label>
+                </value>
+                <value>
+                    <fullName>Fitness or Nutrition Seminars</fullName>
+                    <default>false</default>
+                    <label>Fitness or Nutrition Seminars</label>
+                </value>
+                <value>
+                    <fullName>Get More</fullName>
+                    <default>false</default>
+                    <label>Get More</label>
+                </value>
+                <value>
+                    <fullName>Get Moving</fullName>
+                    <default>false</default>
+                    <label>Get Moving</label>
+                </value>
+                <value>
+                    <fullName>Get Smart</fullName>
+                    <default>false</default>
+                    <label>Get Smart</label>
+                </value>
+                <value>
+                    <fullName>Massage Therapy</fullName>
+                    <default>false</default>
+                    <label>Massage Therapy</label>
+                </value>
+                <value>
+                    <fullName>Mental Health Seminars</fullName>
+                    <default>false</default>
+                    <label>Mental Health Seminars</label>
+                </value>
+                <value>
+                    <fullName>Mobile Health Core</fullName>
+                    <default>false</default>
+                    <label>Mobile Health Core</label>
+                </value>
+                <value>
+                    <fullName>Mobile Health Core Plus</fullName>
+                    <default>false</default>
+                    <label>Mobile Health Core Plus</label>
+                </value>
+                <value>
+                    <fullName>Online Activity Challenge (Anthem Vendor)</fullName>
+                    <default>false</default>
+                    <label>Online Activity Challenge (Anthem Vendor)</label>
+                </value>
+                <value>
+                    <fullName>Online Wellness Survey (KTC)</fullName>
+                    <default>false</default>
+                    <label>Online Wellness Survey (KTC)</label>
+                </value>
+                <value>
+                    <fullName>Onsite Nutrition Class</fullName>
+                    <default>false</default>
+                    <label>Onsite Nutrition Class</label>
+                </value>
+                <value>
+                    <fullName>Preventive Health Seminars</fullName>
+                    <default>false</default>
+                    <label>Preventive Health Seminars</label>
+                </value>
+                <value>
+                    <fullName>Stress Management Seminars</fullName>
+                    <default>false</default>
+                    <label>Stress Management Seminars</label>
+                </value>
+                <value>
+                    <fullName>Weight Management Seminars</fullName>
+                    <default>false</default>
+                    <label>Weight Management Seminars</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Health_Wellness_Advantage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Users are allowed to select which level of benefits the client has</inlineHelpText>
+        <label>H&amp;W Advantage Option</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>B - Baseline</fullName>
+                    <default>false</default>
+                    <label>B - Baseline</label>
+                </value>
+                <value>
+                    <fullName>ESS - Essential</fullName>
+                    <default>false</default>
+                    <label>ESS - Essential</label>
+                </value>
+                <value>
+                    <fullName>ENH - Enhanced</fullName>
+                    <default>false</default>
+                    <label>ENH - Enhanced</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mobile_Health_Consumer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Users will be able to capture all of the data related to the Mobile Health Consumer on the opportunity</inlineHelpText>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Health &amp; Wellness</relationshipLabel>
+        <relationshipName>Mobile_Health_Consumers</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Attendee__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Webinar Attendee</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Webinar_Completion_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Webinar Completion Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Health &amp; Wellness Program</label>
+    <nameField>
+        <displayFormat>1-{000}</displayFormat>
+        <label>H&amp;W Record ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Health &amp; Wellness Program</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

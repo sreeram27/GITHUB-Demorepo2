@@ -1,0 +1,186 @@
+<messaging:emailTemplate subject=" {!relatedTo.Email_Subject__c}- {!relatedTo.Account__c}" recipientType="User" relatedToType="SBC_SOB_Request__c">
+<messaging:HTMLEmailBody >
+A SBC Request has been created in Salesforce.
+<br/><br/>
+ <table>
+  <col width="300px">
+  <col width="250px">
+  <style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    tr {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    table.bdrless ,table.bdrless td{
+        width:600px;
+        border: none !important;
+    }
+</style>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Custom SBC/SOB Request #<br/></b></td>
+     <td>
+     <apex:outputlink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+relatedTo.Id}">{!relatedTo.Name}</apex:outputlink>
+     </td> 
+  </tr>
+  <tr >
+     <td style="background-color:#89b5f0"><b>Implementation Record ID<br/></b></td>
+     <td>
+        <apex:outputField value="{!relatedTo.Opportunity_ICR_ID_s__c}">
+        </apex:outputField>
+     </td>
+  </tr>
+  <tr >
+     <td style="background-color:#89b5f0"><b>Account<br/></b></td>
+     <td>
+        {!relatedTo.Opportunity__r.Account.name}
+     </td>
+  </tr>
+  <tr >
+     <td style="background-color:#89b5f0"><b>Group Size<br/></b></td>
+     <td>
+         {!relatedTo.Opportunity__r.Account.Group_Size__c}
+     </td>
+  </tr>
+  <tr >
+     <td style="background-color:#89b5f0"><b>Group Number<br/></b></td>
+     <td>
+        {!relatedTo.Opportunity__r.Account.GroupNumbers__c}
+     </td>
+  </tr>
+  <tr >
+     <td style="background-color:#89b5f0"><b>Opportunity<br/></b></td>
+     <td>{!relatedTo.Opportunity__r.name}<br/></td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Opportunity Effective Date<br/></b></td>
+     <td>
+         <apex:outputText value="{0,date,MM/dd/yyyy}">
+            <apex:param value="{!relatedTo.Opportunity__r.CloseDate}"/>
+         </apex:outputText>
+      </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Renewal Date</b></td>
+     <td>
+        <apex:outputText value="{0,date,MM/dd/yyyy}">
+            <apex:param value="{!relatedTo.Opportunity__r.Account.Active_Renewal_Date__c}"/>
+         </apex:outputText>
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Situs State</b></td>
+     <td>
+        {!relatedTo.Opportunity__r.Account.Situs_State__c}
+     </td>
+  </tr>
+  <tr> 
+     <td style="background-color:#89b5f0"><b>Account Manager</b></td>
+     <td>
+        {!relatedTo.Opportunity__r.Account.Account_Manager__r.name}
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Account Executive</b></td>
+     <td>{!relatedTo.Opportunity__r.Account.Account_Executive__r.name}</td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Sales Account Representative</b></td>
+     <td>{!relatedTo.Opportunity__r.Account.Sales_Account_Representative__c}</td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Created By</b></td>
+     <td>
+        {!relatedTo.CreatedBy.name}
+     </td>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Request Type</b></td>
+     <td>
+        {!relatedTo.Request_Type__c}
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Custom SOB Requested</b></td>
+     <td>
+        {!relatedTo.Custom_SOB_Requested__c}
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Date SBC Requested</b></td>
+     <td>
+        <apex:outputText value="{0,date,MM/dd/yyyy}">
+            <apex:param value="{!relatedTo.Date_SBC_Requested__c}"/>
+        </apex:outputText>
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Estimated SBC Completion Date</b></td>
+     <td>
+        <apex:outputText value="{0,date,MM/dd/yyyy}">
+            <apex:param value="{!relatedTo.Estimated_SBC_Completion_Date__c}"/>
+        </apex:outputText>
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>CEP Approval</b></td>
+     <td>
+        {!relatedTo.CEP_Approval_Formula__c}
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Funding Type</b></td>
+     <td>
+        <apex:outputField value="{!relatedTo.Funding_Type__c}">
+        </apex:outputField>
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Plan Type</b></td>
+     <td>
+        <apex:outputField value="{!relatedTo.Plan_Type__c}">
+        </apex:outputField>
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>Contract Code(s)</b></td>
+     <td>
+        <apex:outputField value="{!relatedTo.Contract_Code__c}">
+        </apex:outputField>
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>HPCC Code(s)</b></td>
+     <td>
+        <apex:outputField value="{!relatedTo.HPCC_Code__c}">
+        </apex:outputField>
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>ERISA Qualified</b></td>
+     <td>
+        {!relatedTo.Opportunity__r.Account.Is_this_Group_subject_to_ERISA__c}
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>MEC</b></td>
+     <td>
+        {!relatedTo.MEC__c}
+     </td>
+  </tr>
+  <tr>
+     <td style="background-color:#89b5f0"><b>MV</b></td>
+     <td>
+        {!relatedTo.MV__c}
+     </td>
+  </tr>
+  </tr>
+  </col>
+  </col>
+  </table>
+<br/>
+Thank you,<br/>
+SF Admin<br/>
+</messaging:HTMLEmailBody>
+</messaging:emailTemplate>

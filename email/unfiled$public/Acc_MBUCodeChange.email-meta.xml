@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Alerts GS of a MBU Code Change</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>APXTConga4__Conga_Email_Letterhead</letterhead>
+    <name>Acc-MBUCodeChange</name>
+    <style>freeForm</style>
+    <subject>MBU Code Change for Account: {!Account.Name}</subject>
+    <textOnly>Hi
+This email is to notify you that there has been a change to the MBU code in Salesforce.com on Account: {!Account.Name}
+
+Last Modified By: {!Account.LastModifiedBy}
+
+Please direct any questions to your account management team.
+
+Thanks</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

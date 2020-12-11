@@ -1,0 +1,29 @@
+<messaging:emailTemplate relatedToType="Order"
+recipientType="User" 
+subject="{!relatedTo.Implementation_Type__c} Implementation for {!relatedTo.Anthem_Entity__c} - {!relatedTo.AccountLegalName__c} - Eff. {!relatedTo.Implementation_Effective_Date__c}">
+<messaging:htmlEmailBody >
+ 
+ <html>
+      <body>
+        <font face="arial" size="2">
+          
+         
+         <p> All – </p>
+         
+         <br></br>
+         <p>This communication is to make you aware that the Implementation Case Record for {!relatedTo.AccountLegalName__c} has been approved with a production date target of {!Month(relatedTo.Production_Date__c)}/{!Day(relatedTo.Production_Date__c)}/{!Year(relatedTo.Production_Date__c)}. We are proceeding with the implementation as outlined, unless there are any concerns in which we should be notified immediately. </p>
+         <br></br>
+     
+          <p>  Link to Implementation Case Record:<a href="{!RelatedTo.Email_Url__c}" target="_blank"> Click here </a> </p>
+          <p> Implementation Case Record ID: {!relatedTo.OrderNumber} </p><br></br>
+          <p>  Thank you! Please let me know if you have any additional questions.</p><br></br>
+          <p> Sincerely, </p>
+          <p> <b><font color="DeepSkyBlue ">Anthem, Inc.  </font></b></p>
+           <hr><font color="SlateGrey"></font></hr>
+            <c:User_Detail_SME />
+          </font>
+      </body>
+ </html>
+ 
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

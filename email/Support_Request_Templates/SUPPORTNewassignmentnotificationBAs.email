@@ -1,0 +1,9 @@
+*** NEW ICE SUPPORT REQUEST NOTIFICATION  ***  
+
+The following support request has been assigned to you.  
+Support Request #:  {!Support_Request__c.Name}
+Organization: ICE Platform 
+Subject:  {!Support_Request__c.Subject__c}
+Description: {!Support_Request__c.Description__c}  
+
+Click on the link to access the case:  {!Support_Request__c.Link}

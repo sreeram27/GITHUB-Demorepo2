@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>46.0</apiVersion>
+    <available>true</available>
+    <description>Initial Email to Local Sales User when the Intake return stage is changed to Pending Response from Sales</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email to Sales on IR</name>
+    <style>none</style>
+    <subject>An Implementation Case for  Has Been Returned</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

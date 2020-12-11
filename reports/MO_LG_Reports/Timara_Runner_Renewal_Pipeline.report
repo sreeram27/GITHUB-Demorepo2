@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_89502709</developerName>
+        <masterLabel>Stage</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Opportunities$StageName</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Closed Won</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Renewal Finalized</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Change Confirmed</sourceValue>
+            </sourceValues>
+            <value>Sold</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Prospecting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Qualification</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Needs Analysis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Value Proposition</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Id. Decision Makers</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Perception Analysis</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Proposal/Price Quote</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Negotiation/Review</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Submitted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Initiated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Quoting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeopardy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Submitted to Customer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Finalist</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Verbal Commitment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Chance of Occurring</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Suspect</sourceValue>
+            </sourceValues>
+            <value>Pending</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DTQ by Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DTQ by UW</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Closed Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Closed Dead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Customer Termed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DTQ</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Change Cancelled</sourceValue>
+            </sourceValues>
+            <value>Lost</value>
+        </values>
+    </buckets>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Subscribers__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Members__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Owner</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$StageName</field>
+    </columns>
+    <columns>
+        <field>Account$BrokerageBroker__c</field>
+    </columns>
+    <columns>
+        <field>Account$Group_Size__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Competitor__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$CompetitorStatus__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$ProductLOB__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$ProductName__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$ProductStage__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Stage_Reason__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Account.Opportunities$Probability</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes$Claim_System__c</field>
+    </columns>
+    <columns>
+        <field>Account$GroupNumbers__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Funding__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Financing__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Executive_Comments__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Description</field>
+    </columns>
+    <description>Created 6.11.19</description>
+    <filter>
+        <criteriaItems>
+            <column>Account$Branding__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Anthem BCBS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Situs_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Missouri</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Renewal_Local</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Account_Manager__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Timara</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <field>Account.Opportunities$CloseDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_89502709</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Timara Runner Renewal Pipeline</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_Opportunities_Quotes_and_QLI__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account.Opportunities$CloseDate</dateColumn>
+        <interval>INTERVAL_CURNEXT1</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Email Notifications For ID Cards</name>
+    <style>none</style>
+    <subject>ID Cards Requirements Approval</subject>
+    <textOnly>Hello {!ID_Cards__c.Account_Legal_Name__c}, The following {!ID_Cards__c.ID_Cards_Hy__c} has been submitted for your Approval.  {!ID_Cards__c.ID_Url__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

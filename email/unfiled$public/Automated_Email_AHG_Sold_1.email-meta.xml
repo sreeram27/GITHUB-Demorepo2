@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Plain_Letterhead</letterhead>
+    <name>Automated Email AHG Sold 1</name>
+    <style>freeForm</style>
+    <subject>{!Account.Name} - Dashboard Needed</subject>
+    <textOnly>Please create the basic Dashboard for this new Mercer Health Advantage (MHA)w/AHG client.
+
+Client Name: {!Account.Name}
+
+Group Number: {!Account.QLI_Group_Number__c}
+
+Effective Date: {!Account.QLI_Effective_Date__c}
+
+Branding: {!Account.Branding__c}
+
+
+Please confirm receipt of request and advise if there is anything additional needed at this time.
+
+Anthem, Inc.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

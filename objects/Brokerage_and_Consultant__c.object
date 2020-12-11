@@ -1,0 +1,1487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Brokerage_and_Consultant_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AccountCity__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.BillingCity</formula>
+        <label>Account City</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AccountState__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.BillingState</formula>
+        <label>Account State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Brokerage and Consultant</relationshipLabel>
+        <relationshipName>Brokerage_and_Consultant</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BrokerRole__c</fullName>
+        <externalId>false</externalId>
+        <label>Broker Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Broker</fullName>
+                    <default>false</default>
+                    <label>Broker</label>
+                </value>
+                <value>
+                    <fullName>Consultant</fullName>
+                    <default>false</default>
+                    <label>Consultant</label>
+                </value>
+                <value>
+                    <fullName>General Agent</fullName>
+                    <default>false</default>
+                    <label>General Agent</label>
+                </value>
+                <value>
+                    <fullName>Writing Agent</fullName>
+                    <default>false</default>
+                    <label>Writing Agent</label>
+                </value>
+                <value>
+                    <fullName>Account Exec</fullName>
+                    <default>false</default>
+                    <label>Account Exec</label>
+                </value>
+                <value>
+                    <fullName>Account Manager</fullName>
+                    <default>false</default>
+                    <label>Account Manager</label>
+                </value>
+                <value>
+                    <fullName>Analyst</fullName>
+                    <default>false</default>
+                    <label>Analyst</label>
+                </value>
+                <value>
+                    <fullName>Broker of Record</fullName>
+                    <default>false</default>
+                    <label>Broker of Record</label>
+                </value>
+                <value>
+                    <fullName>Co-Broker</fullName>
+                    <default>false</default>
+                    <label>Co-Broker</label>
+                </value>
+                <value>
+                    <fullName>Direct</fullName>
+                    <default>false</default>
+                    <label>Direct</label>
+                </value>
+                <value>
+                    <fullName>Soliciting Broker</fullName>
+                    <default>false</default>
+                    <label>Soliciting Broker</label>
+                </value>
+                <value>
+                    <fullName>Marketing Manager</fullName>
+                    <default>false</default>
+                    <label>Marketing Manager</label>
+                </value>
+                <value>
+                    <fullName>Service Rep</fullName>
+                    <default>false</default>
+                    <label>Service Rep</label>
+                </value>
+                <value>
+                    <fullName>Former Broker</fullName>
+                    <default>false</default>
+                    <label>Former Broker</label>
+                </value>
+                <value>
+                    <fullName>Assistant</fullName>
+                    <default>false</default>
+                    <label>Assistant</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BrokerageAddress__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage__r.BillingStreet</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brokerage Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BrokerageAndConsultant__c</fullName>
+        <externalId>false</externalId>
+        <label>Brokerage/Consultant</label>
+        <summaryForeignKey>Broker_Consultant_Commissions__c.BrokerageAndConsultant__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>BrokerageCity_LG__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage_LG__r.BillingCity</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brokerage City</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BrokerageCity__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage__r.BillingCity</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brokerage City</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BrokerageEffectiveDate__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Brokerage Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BrokerageEndDate__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Brokerage End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BrokerageRole__c</fullName>
+        <externalId>false</externalId>
+        <label>Brokerage Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>true</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Brokerage</fullName>
+                    <default>false</default>
+                    <label>Brokerage</label>
+                </value>
+                <value>
+                    <fullName>Co-Broker</fullName>
+                    <default>false</default>
+                    <label>Co-Broker</label>
+                </value>
+                <value>
+                    <fullName>Consultancy</fullName>
+                    <default>false</default>
+                    <label>Consultancy</label>
+                </value>
+                <value>
+                    <fullName>Direct</fullName>
+                    <default>false</default>
+                    <label>Direct</label>
+                </value>
+                <value>
+                    <fullName>General Agency</fullName>
+                    <default>false</default>
+                    <label>General Agency</label>
+                </value>
+                <value>
+                    <fullName>Producer</fullName>
+                    <default>false</default>
+                    <label>Producer</label>
+                </value>
+                <value>
+                    <fullName>Soliciting Broker</fullName>
+                    <default>false</default>
+                    <label>Soliciting Broker</label>
+                </value>
+                <value>
+                    <fullName>TPA</fullName>
+                    <default>false</default>
+                    <label>TPA</label>
+                </value>
+                <value>
+                    <fullName>Broker of Record</fullName>
+                    <default>false</default>
+                    <label>Broker of Record</label>
+                </value>
+                <value>
+                    <fullName>Trustee</fullName>
+                    <default>false</default>
+                    <label>Trustee</label>
+                </value>
+                <value>
+                    <fullName>Former Broker</fullName>
+                    <default>false</default>
+                    <label>Former Broker</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BrokerageState__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage__r.BillingState</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brokerage State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BrokerageZipCode__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage__r.BillingPostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brokerage Zip Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Brokerage_Address_LG__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage_LG__r.BillingStreet</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brokerage Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Brokerage_LG__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Brokerage</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>LG Brokerage, LG Self Relationship</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Brokerage and Consultant (Brokerage)</relationshipLabel>
+        <relationshipName>Brokerage_and_Consultant2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Brokerage_State_LG__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage_LG__r.BillingState</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brokerage State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Brokerage_Zip_Code_LG__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage_LG__r.BillingPostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brokerage Zip Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Brokerage__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Brokerage</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Brokerage</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.BROKCANCEL__c</field>
+                <operation>equals</operation>
+                <value>Active</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Customer Accounts</relationshipLabel>
+        <relationshipName>Brokerage_and_Consultant1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Brokerage_of_Record__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Brokerage of Record for this Account</inlineHelpText>
+        <label>BOR</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ConsultantEffectiveDate__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Consultant Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ConsultantEmail__c</fullName>
+        <description>Consultant__r.Email</description>
+        <externalId>false</externalId>
+        <formula>Consultant__r.Email__c</formula>
+        <label>Consultant Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConsultantEndDate__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Consultant End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ConsultantInactive__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY() &gt; ConsultantEndDate__c</formula>
+        <label>Consultant Inactive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ConsultantPhone_LG__c</fullName>
+        <externalId>false</externalId>
+        <formula>Consultant_LG__r.Phone__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Consultant Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConsultantPhone__c</fullName>
+        <description>Consultant__r.Phone</description>
+        <externalId>false</externalId>
+        <formula>Consultant__r.Phone__c</formula>
+        <label>Consultant Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConsultantTitle_LG__c</fullName>
+        <externalId>false</externalId>
+        <formula>Consultant_LG__r.Title__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Consultant Title</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConsultantTitle__c</fullName>
+        <description>Consultant__r.Title</description>
+        <externalId>false</externalId>
+        <formula>Consultant__r.Title__c</formula>
+        <label>Consultant Title</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consultant_LG__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Consultant</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 AND (2 OR 4) AND 3</booleanFilter>
+            <errorMessage>Please select an Active Consultant from the specified Brokerage Account.</errorMessage>
+            <filterItems>
+                <field>ContactRelationship__c.Account__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Brokerage_LG__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>ContactRelationship__c.CONTCANCEL__c</field>
+                <operation>equals</operation>
+                <value>Active</value>
+            </filterItems>
+            <filterItems>
+                <field>ContactRelationship__c.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>LG_Brokerage_Consultant_Relationship</value>
+            </filterItems>
+            <filterItems>
+                <field>$Profile.Name</field>
+                <operation>equals</operation>
+                <value>API User</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>ContactRelationship__c</referenceTo>
+        <relationshipLabel>Brokerage and Consultant (Consultant)</relationshipLabel>
+        <relationshipName>Brokerage_and_Consultant2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Consultant_Name__c</fullName>
+        <description>Consultant__r.Contact__r.FirstName &amp;&quot; &quot;&amp; Consultant__r.Contact__r.LastName</description>
+        <externalId>false</externalId>
+        <formula>Consultant__r.Name</formula>
+        <inlineHelpText>Consultant of Record for the Account</inlineHelpText>
+        <label>Consultant Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consultant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Consultant must be a Contact on the selected Brokerage.</inlineHelpText>
+        <label>Consultant</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Please select an Active Consultant from the specified Brokerage Account.</errorMessage>
+            <filterItems>
+                <field>ContactRelationship__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Consultant Contact</value>
+            </filterItems>
+            <filterItems>
+                <field>ContactRelationship__c.Account__r.Id</field>
+                <operation>equals</operation>
+                <valueField>$Source.Brokerage__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>ContactRelationship__c.CONTCANCEL__c</field>
+                <operation>equals</operation>
+                <value>Active</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>ContactRelationship__c</referenceTo>
+        <relationshipLabel>Brokerage and Consultant</relationshipLabel>
+        <relationshipName>Brokerage_and_Consultant</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Consultant_of_Record__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Consultant of Record for the Account</inlineHelpText>
+        <label>COR</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CreatedBy__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName + &apos; &apos; +  CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created By</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CurrentSpecialtyGroupRanking_LG__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage_LG__r.CurrentSpecialtyGroupRanking__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Specialty Group Ranking</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CurrentSpecialtyGroupRanking__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage__r.CurrentSpecialtyGroupRanking__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Specialty Group Ranking</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ELBAC_LG__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage_LG__r.ELBAC__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ELBAC</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ELBAC__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage__r.ELBAC__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ELBAC</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LastModifiedBy__c</fullName>
+        <externalId>false</externalId>
+        <formula>LastModifiedBy.FirstName + &apos; &apos; +  LastModifiedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Last Modified By</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LineOfBusiness__c</fullName>
+        <externalId>false</externalId>
+        <label>Line of Business</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>false</default>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>Dental</fullName>
+                    <default>false</default>
+                    <label>Dental</label>
+                </value>
+                <value>
+                    <fullName>Vision</fullName>
+                    <default>false</default>
+                    <label>Vision</label>
+                </value>
+                <value>
+                    <fullName>Life</fullName>
+                    <default>false</default>
+                    <label>Life</label>
+                </value>
+                <value>
+                    <fullName>STD</fullName>
+                    <default>false</default>
+                    <label>STD</label>
+                </value>
+                <value>
+                    <fullName>LTD</fullName>
+                    <default>false</default>
+                    <label>LTD</label>
+                </value>
+                <value>
+                    <fullName>FMLA</fullName>
+                    <default>false</default>
+                    <label>FMLA</label>
+                </value>
+                <value>
+                    <fullName>AIM</fullName>
+                    <default>false</default>
+                    <label>AIM</label>
+                </value>
+                <value>
+                    <fullName>Expatriate</fullName>
+                    <default>false</default>
+                    <label>Expatriate</label>
+                </value>
+                <value>
+                    <fullName>Health &amp; Wellness</fullName>
+                    <default>false</default>
+                    <label>Health &amp; Wellness</label>
+                </value>
+                <value>
+                    <fullName>Medicare</fullName>
+                    <default>false</default>
+                    <label>Medicare</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy</fullName>
+                    <default>false</default>
+                    <label>Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>Stop Loss</fullName>
+                    <default>false</default>
+                    <label>Stop Loss</label>
+                </value>
+                <value>
+                    <fullName>Benefits Admin</fullName>
+                    <default>false</default>
+                    <label>Benefits Admin</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Intermittent Workforce</fullName>
+                    <default>false</default>
+                    <label>Intermittent Workforce</label>
+                </value>
+                <value>
+                    <fullName>Accident</fullName>
+                    <default>false</default>
+                    <label>Accident</label>
+                </value>
+                <value>
+                    <fullName>Critical Illness</fullName>
+                    <default>false</default>
+                    <label>Critical Illness</label>
+                </value>
+                <value>
+                    <fullName>Hospital Indemnity</fullName>
+                    <default>false</default>
+                    <label>Hospital Indemnity</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Line_of_Business__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Line of Business</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Group__c.Account__r.Id</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Group__c</referenceTo>
+        <relationshipLabel>Brokerage and Consultant</relationshipLabel>
+        <relationshipName>Brokerage_and_Consultant</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Brokerage_Ranking__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical Brokerage Ranking</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Tier 1</fullName>
+                    <default>false</default>
+                    <label>Tier 1</label>
+                </value>
+                <value>
+                    <fullName>Tier 2</fullName>
+                    <default>false</default>
+                    <label>Tier 2</label>
+                </value>
+                <value>
+                    <fullName>Tier 3</fullName>
+                    <default>false</default>
+                    <label>Tier 3</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NPN__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage_LG__r.National_Producer_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NPN Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NameofBrokerage__c</fullName>
+        <description>Contains the name of the Brokerage for reporting purposes</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Name of Brokerage</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NameofConsultant__c</fullName>
+        <description>Contains the name of the Consultant for reporting purposes</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Name Of Consultant</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SFDCLegacyID__c</fullName>
+        <description>Used for data load, the CIP, and Open Enrollment processes that need to be maintained in the old Commercial ORG.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <inlineHelpText>Used for data load, the CIP, and Open Enrollment processes that need to be maintained in the old Commercial ORG.</inlineHelpText>
+        <label>SFDCLegacyID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SendEOC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Send EOC</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SpecialtyBrokerProgram_LG__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( Brokerage_LG__r.SpecialtyBrokerProgram__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Specialty Broker Program</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SpecialtyBrokerProgram__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( Brokerage__r.SpecialtyBrokerProgram__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Specialty Broker Program</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tax_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Brokerage_LG__r.Tax_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tax ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WGSBrokerNumber_LG__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(BrokerageRole__c, &apos;General Agency&apos;), Brokerage_LG__r.GABrokerNumber__c, Brokerage_LG__r.WGSBrokerNumber__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>WGS Broker Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WGSBrokerNumber__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(BrokerageRole__c, &apos;General Agency&apos;), Brokerage__r.GABrokerNumber__c, Brokerage__r.WGSBrokerNumber__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>WGS Broker Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Brokerage and Consultant</label>
+    <nameField>
+        <displayFormat>{00000}</displayFormat>
+        <label>Record ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Brokerage and Consultant</pluralLabel>
+    <recordTypes>
+        <fullName>LG_Brokerage_Consultant</fullName>
+        <active>true</active>
+        <label>LG Brokerage Consultant</label>
+        <picklistValues>
+            <picklist>BrokerRole__c</picklist>
+            <values>
+                <fullName>Account Exec</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Analyst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Broker of Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Rep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soliciting Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Writing Agent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BrokerageRole__c</picklist>
+            <values>
+                <fullName>Broker of Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brokerage</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Co-Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Producer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soliciting Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LineOfBusiness__c</picklist>
+            <values>
+                <fullName>AIM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Critical Illness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expatriate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FMLA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health %26 Wellness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital Indemnity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermittent Workforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stop Loss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vision</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Medical_Brokerage_Ranking__c</picklist>
+            <values>
+                <fullName>Tier 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NA_Brokerage_Consultant</fullName>
+        <active>true</active>
+        <label>NA Brokerage Consultant</label>
+        <picklistValues>
+            <picklist>BrokerRole__c</picklist>
+            <values>
+                <fullName>Account Exec</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Analyst</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broker of Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Agent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Rep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soliciting Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Writing Agent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BrokerageRole__c</picklist>
+            <values>
+                <fullName>Broker of Record</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brokerage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Co-Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Former Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Producer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soliciting Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LineOfBusiness__c</picklist>
+            <values>
+                <fullName>AIM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benefits Admin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Critical Illness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expatriate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FMLA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health %26 Wellness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital Indemnity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Intermittent Workforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Life</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>STD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stop Loss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vision</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Medical_Brokerage_Ranking__c</picklist>
+            <values>
+                <fullName>Tier 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>ANA_VR_BRKConsultant01NameChangeError</fullName>
+        <active>false</active>
+        <description>BW 2015 
+Sprint 3</description>
+        <errorConditionFormula>AND( !$User.BypassValidation__c , (ISCHANGED(Consultant__c)) &amp;&amp; 
+( 	BrokerageAndConsultant__c &gt;= 1))</errorConditionFormula>
+        <errorMessage>The Consultant cannot be modified due to an associated Brokerage/Consultant Commission</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

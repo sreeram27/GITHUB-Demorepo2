@@ -1,0 +1,5 @@
+<apex:page standardController="Reference_Account_Information__c">
+ <script type="text/javascript">
+  {window.alert("Please contact and confirm with Account Executive prior to reaching out to this customer");}
+ </script>
+</apex:page>

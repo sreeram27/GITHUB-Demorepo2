@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>IntakeReturn_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Demo__c</fullName>
+        <externalId>false</externalId>
+        <formula>OrderId__r.Account_Demo__c</formula>
+        <label>Account Demo</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Account_Legal_Name__c</fullName>
+        <description>This field holds the hyperlink for the corresponding Account ID and displays Account Name on the Intake Return Layouts</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( &quot;/&quot; &amp;  OrderId__r.AccountId, OrderId__r.Account.Name , &quot;_self&quot;)</formula>
+        <label>Account Legal Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>OrderId__r.Account.Name</formula>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ActionDisplay__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Stage__c,&quot;Pending Response from Sales/ Account Management&quot;),&apos;Sales&apos;,IF(OR(ISPICKVAL(Stage__c,&quot;In Progress&quot;),ISPICKVAL(Stage__c,&quot;Ready for Imps&quot;)),&apos;Implementations&apos;,&apos;Others&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Action Display</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anthem_Entity__c</fullName>
+        <description>This field fetches the Anthem Entity of the parent Implementation Case.</description>
+        <externalId>false</externalId>
+        <formula>IF(OrderId__r.Anthem_Entity__c == &apos;National Accounts&apos;,&apos;National&apos;,
+	IF(OR(OrderId__r.Anthem_Entity__c == &apos;Local/Large Group&apos;,OrderId__r.Anthem_Entity__c == &apos;Labor and Trust&apos;),&apos;Local&apos;,&apos;&apos;)
+)</formula>
+        <label>Anthem Entity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assigned_Implementer_Email__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Assigned Implementer Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Owner_Email__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Case Owner Email</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>OrderId__r.CreatedBy.FirstName +&apos; &apos;+ OrderId__r.CreatedBy.LastName</formula>
+        <label>Implementation Case Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Intake_Reasons_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Intake Reasons Count</label>
+        <summaryFilterItems>
+            <field>IntakeReason__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Pending AM Action</value>
+        </summaryFilterItems>
+        <summaryForeignKey>IntakeReason__c.IntReturnId__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Intake_Return_URL__c</fullName>
+        <description>This field holds the domain specific URL to form links to corresponding Account/Opportunity/Imp Case of Intake Return on the Email Template</description>
+        <externalId>false</externalId>
+        <formula>LEFT($Api.Partner_Server_URL_390, FIND( &apos;/services&apos;,  $Api.Partner_Server_URL_390 ))</formula>
+        <label>Intake Return URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Implementer_Logged_In__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(  OrderId__r.Assigned_Implementer__c  = $User.Id,True,False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Implementer Logged In</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LnT_Identifer__c</fullName>
+        <description>This field is being used as an identifier for LnT records where Local Sales user can act as an Implementer.</description>
+        <externalId>false</externalId>
+        <formula>IF(
+	AND(Anthem_Entity__c == &apos;Labor and Trust&apos;,
+					 ISPICKVAL(OrderId__r.Implementation_Status__c, &apos;Ready for Imps&apos;),
+		    OR($Profile.Name ==&apos;Local Sales&apos;,$Profile.Name ==&apos;Local Sales Dual&apos; )),&apos;LnT&apos;,&apos;Non-LnT&apos;)</formula>
+        <label>LnT Identifer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( &quot;/&quot; &amp; OrderId__r.OpportunityId, OrderId__r.Opportunity.Name , &quot;_self&quot;)</formula>
+        <label>Opportunity Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderId__c</fullName>
+        <externalId>false</externalId>
+        <label>Implementation Case Id</label>
+        <referenceTo>Order</referenceTo>
+        <relationshipName>IntakeReturns</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Profile_Group_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF
+	(OR
+		(
+		AND($User.ProfileName__c=&apos;Local Sales&apos;,LnT_Identifer__c != &apos;LnT&apos;),
+		AND($User.ProfileName__c=&apos;Local Sales Dual&apos;,LnT_Identifer__c != &apos;LnT&apos;),
+		$User.ProfileName__c=&apos;National Sales&apos;,
+		$User.ProfileName__c=&apos;Specialty Dual&apos;,
+		$User.ProfileName__c=&apos;National Sales Dual&apos;,
+		$User.ProfileName__c=&apos;Specialty&apos;),&apos;Sales&apos;,
+		
+			IF(OR
+				(LnT_Identifer__c == &apos;LnT&apos;,
+				$User.ProfileName__c=&apos;National Implementations&apos;,
+				$User.ProfileName__c=&apos;Local Implementations&apos;,
+				$User.ProfileName__c=&apos;National Implementations Dual&apos;,
+				$User.ProfileName__c=&apos;Local Implementations Dual&apos;,
+				$User.ProfileName__c=&apos;Specialty Post Sales&apos;,
+				$User.ProfileName__c=&apos;Specialty Post Sales Dual&apos;),&apos;Implementations&apos;,
+				
+				IF(OR
+					($User.ProfileName__c=&apos;SME&apos;,
+					$User.ProfileName__c=&apos;SME Dual&apos;),&apos;SME&apos;,&apos;Others&apos;)
+			)
+	)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Profile Group Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quote_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK( &quot;/&quot; &amp;  OrderId__r.QuoteId , OrderId__r.Quote.Name, &quot;_self&quot;)</formula>
+        <label>Quote Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReSubmission_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>ReSubmission Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ReSubmission_Id__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>ReSubmission Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Situs_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(OrderId__r.Account.Situs_State__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Situs State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>true</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Pending Response from Sales/ Account Management</fullName>
+                    <default>false</default>
+                    <label>Pending Response from Sales/ Account Management</label>
+                </value>
+                <value>
+                    <fullName>Incomplete</fullName>
+                    <default>false</default>
+                    <label>Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Ready for Imps</fullName>
+                    <default>false</default>
+                    <label>Ready for Implementations</label>
+                </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submission_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Submission Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Time_Lapse_For_Follow_Up_Notification__c</fullName>
+        <description>Field which holds the time at which the stage is changed to Pending Response from Sales to send an Email Follow up after 48 hours if the Intake Return is not resolved.
+Populated from Process Builder : Return Implementation Case to Sales</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Time Lapse For Follow Up Notification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Time_Lapse_For_Initial_Notification__c</fullName>
+        <description>Field which holds a time 1 hour and 2 mins ahead of time at which the stage is changed to Pending Response from Sales to send an Initial Email with a delay of 2 mins.
+Populated from Process Builder : Return Implementation Case to Sales</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Time Lapse For Initial Notification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Total_Corrected_Intake_Reasons_Count__c</fullName>
+        <description>Counts total number of Corrected Intake Reason Records</description>
+        <externalId>false</externalId>
+        <label>Total Corrected Intake Reasons Count</label>
+        <summaryFilterItems>
+            <field>IntakeReason__c.Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Pending AM Action</value>
+        </summaryFilterItems>
+        <summaryForeignKey>IntakeReason__c.IntReturnId__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Intake Return</label>
+    <listViews>
+        <fullName>All_in_Process_Intake_Return</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Name__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Implementation_Case_Owner__c</columns>
+        <columns>Submission_Date__c</columns>
+        <columns>ReSubmission_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>In Progress,Pending Response from Sales/ Account Management,Incomplete,Ready for Imps</value>
+        </filters>
+        <label>All in Process Intake Return</label>
+    </listViews>
+    <listViews>
+        <fullName>Approved_Intake_Return</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Name__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Implementation_Case_Owner__c</columns>
+        <columns>Submission_Date__c</columns>
+        <columns>ReSubmission_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>Approved Intake Return</label>
+    </listViews>
+    <listViews>
+        <fullName>Copy_of_Intake_Returns</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Account_Name__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Copy of Intake Returns</label>
+        <sharedTo>
+            <role>CO_Admin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Copy_of_Intake_Returns1</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>6/30/2019 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Account_Name__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>CO Admin Intake Return</label>
+        <sharedTo>
+            <role>CO_Admin</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Intake_Returns</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>Intake Returns</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Intake_Return</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Name__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Implementation_Case_Owner__c</columns>
+        <columns>Submission_Date__c</columns>
+        <columns>ReSubmission_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Is_Implementer_Logged_In__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Intake Return</label>
+    </listViews>
+    <listViews>
+        <fullName>Ohio_Open_Intake_Returns</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Name__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Implementation_Case_Owner__c</columns>
+        <columns>Submission_Date__c</columns>
+        <columns>ReSubmission_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Approved,Accepted,Cancelled</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Ohio</value>
+        </filters>
+        <label>Ohio Open Intake Returns</label>
+    </listViews>
+    <nameField>
+        <displayFormat>RETURN-{000000}</displayFormat>
+        <label>Intake Return Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Intake Return</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Implementers_Readonly</fullName>
+        <active>true</active>
+        <label>Implementers Read Only</label>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Response from Sales%2F Account Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Imps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sales_ReadOnly</fullName>
+        <active>true</active>
+        <label>Sales Read Only</label>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Incomplete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Response from Sales%2F Account Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Imps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

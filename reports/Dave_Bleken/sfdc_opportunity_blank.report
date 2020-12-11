@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Account</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$SFDCLegacyID__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Account.Anthem_Entity__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Local/Large Group</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Account.Situs_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>California,Colorado,Georgia,Indiana,Kentucky,Missouri,Nevada,Ohio,Virginia,Wisconsin</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>sfdc opportunity blank</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>HN_Opportunities__c</reportType>
+    <roleHierarchyFilter>SystemAdministrator</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

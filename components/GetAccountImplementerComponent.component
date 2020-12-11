@@ -1,0 +1,4 @@
+<apex:component controller="AP25_Email_Controller" access="global" >
+    <apex:attribute name="orderID" type="string" assignTo="{!orderRecId}" description="orderId is set by the email template"/>   
+    <span>{!AccImpl}</span>       
+</apex:component>

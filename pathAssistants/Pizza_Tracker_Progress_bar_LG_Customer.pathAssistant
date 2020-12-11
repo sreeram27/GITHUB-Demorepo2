@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Account</entityName>
+    <fieldName>Account_Implementation_Status__c</fieldName>
+    <masterLabel>Pizza Tracker/Progress bar-LG Customer</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Reference_Implementation_Case__c</fieldNames>
+        <picklistValueName>Application Completed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Reference_Implementation_Case__c</fieldNames>
+        <picklistValueName>Application Received</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Reference_Implementation_Case__c</fieldNames>
+        <picklistValueName>Group Setup in Progress</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Reference_Implementation_Case__c</fieldNames>
+        <picklistValueName>Group Setup is Complete</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Reference_Implementation_Case__c</fieldNames>
+        <picklistValueName>ID Card Work Completed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Reference_Implementation_Case__c</fieldNames>
+        <picklistValueName>Member Enrollment in Progress</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Reference_Implementation_Case__c</fieldNames>
+        <picklistValueName>Member Enrollment is Complete</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>LG_Customer</recordTypeName>
+</PathAssistant>

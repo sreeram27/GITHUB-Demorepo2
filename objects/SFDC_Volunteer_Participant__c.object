@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>OE_Ambassador_Volunteers_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A junction object used for linking Volunteer Events to a participant</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Attended_mtgs_for_this_client_before__c</fullName>
+        <externalId>false</externalId>
+        <label>Attended mtgs. for this client before?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Car_Rental_per_day__c</fullName>
+        <description>PRDCRM-27721/ Created By-Karthik</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the cost of the car rental per day even if the meeting requires more than 1 day</inlineHelpText>
+        <label>Car Rental per day</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Comment__c</fullName>
+        <description>LG(20140422)   No changes to this field without Development Team Signoff.  Comments from the OE Ambassador volunteer</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any comments you have related to the meeting for which you are volunteering.</inlineHelpText>
+        <label>Comment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Confidence_conducting_live_presentations__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(OE_Ambassador_Volunteer__r.Confidence_level_conducting_presentation__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Confidence level with presenting</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Coordinator_Comment__c</fullName>
+        <description>This is a comment field for the coordinator to communicate with the Volunteer when they are not selected to facilitate</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Coordinator Comment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Facilitator_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(OE_Ambassador_Volunteer__r.Facilitator_Status__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Facilitator Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Facilitator_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(OE_Ambassador_Volunteer__r.Facilitator_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Facilitator Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Flight_Cost__c</fullName>
+        <description>PRDCRM-27721/Created by-Karthik.D</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the cost of the round trip flight</inlineHelpText>
+        <label>Flight Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Hotel_Cost__c</fullName>
+        <description>PRDCRM-27721/ Created by Karthik.D</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the cost of the hotel per day even if the meeting requires more than 1 day</inlineHelpText>
+        <label>Hotel Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Live_Presentations_outside_of_the_comp__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(OE_Ambassador_Volunteer__r.Presentations_outside_the_company__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Live Presentations-outside of company</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meeting_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Volunteer_Event__r.Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Meeting Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OE_Ambassador_City_and_State__c</fullName>
+        <description>The City and State of the OE Ambassador from the contact record</description>
+        <externalId>false</externalId>
+        <formula>OE_Ambassador_Volunteer__r.MailingCity  + &apos;, &apos; + OE_Ambassador_Volunteer__r.MailingState</formula>
+        <label>OE Ambassador City and State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OE_Ambassador_Region_Location__c</fullName>
+        <description>Formula field to show the region of the OE Ambassador Volunteer</description>
+        <externalId>false</externalId>
+        <formula>IF (INCLUDES(OE_Ambassador_Volunteer__r.Region_Location__c, &quot;Central&quot;), &quot;Central&quot;, &quot;&quot;) + IF (INCLUDES(OE_Ambassador_Volunteer__r.Region_Location__c, &quot;Central&quot;), &quot;;&quot;, &quot;&quot;)+IF (INCLUDES(OE_Ambassador_Volunteer__r.Region_Location__c, &quot;North East&quot;), &quot;North East&quot;, &quot;&quot;) + IF (INCLUDES(OE_Ambassador_Volunteer__r.Region_Location__c, &quot;North East&quot;), &quot;;&quot;, &quot;&quot;)+ IF (INCLUDES(OE_Ambassador_Volunteer__r.Region_Location__c, &quot;South East&quot;), &quot;South East&quot;, &quot;&quot;) + IF (INCLUDES(OE_Ambassador_Volunteer__r.Region_Location__c, &quot;South East&quot;), &quot;;&quot;, &quot;&quot;)+ IF (INCLUDES(OE_Ambassador_Volunteer__r.Region_Location__c, &quot;West&quot;), &quot;West&quot;, &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OE Ambassador Region/Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OE_Ambassador_Volunteer__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>(LG20140424)- Please consult Dev Team before changing this field.  The OE Ambassador who volunteered for the parent meeting from the force.com site</description>
+        <externalId>false</externalId>
+        <label>OE Ambassador Volunteer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.ContactAccountName__c</field>
+                <operation>equals</operation>
+                <value>Open Enrollment</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>OE Ambassador Volunteers</relationshipLabel>
+        <relationshipName>Volunteer_Participants</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OE_Coordinator__c</fullName>
+        <externalId>false</externalId>
+        <formula>Volunteer_Event__r.OE_Coordinator_Contact__r.FirstName  &amp; &apos; &apos;  &amp;  Volunteer_Event__r.OE_Coordinator_Contact__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OE Coordinator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reaon_for_not_being_selected__c</fullName>
+        <description>field to be added to the Thank you but no Thank you email template</description>
+        <externalId>false</externalId>
+        <label>Reason for not being selected</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Controlling travel expenses</fullName>
+                    <default>false</default>
+                    <label>Controlling travel expenses</label>
+                </value>
+                <value>
+                    <fullName>Account Manager/Sales decided to attend</fullName>
+                    <default>false</default>
+                    <label>Account Manager/Sales decided to attend</label>
+                </value>
+                <value>
+                    <fullName>Meeting date change</fullName>
+                    <default>false</default>
+                    <label>Meeting date change</label>
+                </value>
+                <value>
+                    <fullName>Meeting was cancelled</fullName>
+                    <default>false</default>
+                    <label>Meeting was cancelled</label>
+                </value>
+                <value>
+                    <fullName>Buddy Ambassador was not secured.</fullName>
+                    <default>false</default>
+                    <label>Buddy Ambassador was not secured.</label>
+                </value>
+                <value>
+                    <fullName>Did not submit mileage/estimate of travel expenses</fullName>
+                    <default>false</default>
+                    <label>Did not submit mileage/estimate of travel expenses</label>
+                </value>
+                <value>
+                    <fullName>Secured local representation</fullName>
+                    <default>false</default>
+                    <label>Secured local representation</label>
+                </value>
+                <value>
+                    <fullName>Another Ambassador near you volunteered sooner</fullName>
+                    <default>false</default>
+                    <label>Another Ambassador near you volunteered sooner</label>
+                </value>
+                <value>
+                    <fullName>Specific experience level needed for sensitive client, new group, presentation, etc.</fullName>
+                    <default>false</default>
+                    <label>Specific experience level needed for sensitive client, new group, presentation, etc.</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>A consultant volunteered sooner than you.</fullName>
+                    <default>false</default>
+                    <label>A consultant volunteered sooner than you.</label>
+                </value>
+                <value>
+                    <fullName>Local consultant was secured.</fullName>
+                    <default>false</default>
+                    <label>Local consultant was secured.</label>
+                </value>
+                <value>
+                    <fullName>Internal associate was secured.</fullName>
+                    <default>false</default>
+                    <label>Internal associate was secured.</label>
+                </value>
+                <value>
+                    <fullName>Thanks but No thanks</fullName>
+                    <default>false</default>
+                    <label>Thanks but No thanks</label>
+                </value>
+                <value>
+                    <fullName>Multiple Ambassadors Volunteered</fullName>
+                    <default>false</default>
+                    <label>Multiple Ambassadors Volunteered</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Requested_Buddy_Program__c</fullName>
+        <description>If the meeting is buddy program eligible then the user must select Yes or No that they would like a Buddy to Facilitate the meeting with them.</description>
+        <externalId>false</externalId>
+        <label>Requested Buddy Program</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SFDC_Legacy_OEAMBID__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <label>SFDC Legacy OEAMBID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Selected_For_Facilitator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>(LG20140423) Please consult with the dev team before modifying.  This field is used in a workflow.  This field indicates this OE Ambassador was selected to Facilitate the Meeting.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please check this box if this is the Open Enrollment Ambassador selected to Facilitate the meeting.</inlineHelpText>
+        <label>Selected For Facilitator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Selected_for_Facilitator_Tally__c</fullName>
+        <externalId>false</externalId>
+        <formula>OE_Ambassador_Volunteer__r.OE_Amb_Selected_Current_Year_Tally__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Selected for Fac Current Year Tally</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thanks_but_No_Thanks_Tally__c</fullName>
+        <externalId>false</externalId>
+        <formula>OE_Ambassador_Volunteer__r.OE_Amb_No_Thanks_Current_Year_Tally__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>No Thanks Current Year Tally</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Thanks_but_No_Thanks__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check box to trigger a workflow to send a thank you you have not been selected email.</description>
+        <externalId>false</externalId>
+        <label>Thanks but No Thanks</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>OE_Ambassador_Volunteer__r.Title</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Travel_Cost__c</fullName>
+        <description>PRDCRM-27721 / Created By-Karthik.D</description>
+        <externalId>false</externalId>
+        <formula>Flight_Cost__c + Hotel_Cost__c + Car_Rental_per_day__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is the sum of all noted expenses</inlineHelpText>
+        <label>Total Travel Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Travel_Details__c</fullName>
+        <externalId>false</externalId>
+        <formula>Travel_Distance__c&amp; &apos;, &apos;&amp;Travel_Duration__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is the mileage and time as calculated based on the Volunteer’s zip code and Meeting address. This mileage is each way.</inlineHelpText>
+        <label>Duration/Distance</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Travel_Distance__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Travel Distance</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Travel_Duration__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Travel Duration</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Event__c</fullName>
+        <externalId>false</externalId>
+        <label>Meeting Name</label>
+        <referenceTo>SFDC_Volunteer_Event__c</referenceTo>
+        <relationshipLabel>OE Ambassador Volunteers</relationshipLabel>
+        <relationshipName>R00N30000001WZmFEAW</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Volunteered_for_1_meeting_in_group__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>PRDCRM-27721/ Created By : Karthik</description>
+        <externalId>false</externalId>
+        <label>Volunteered for &gt; 1 meeting in group?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Watch__c</fullName>
+        <externalId>false</externalId>
+        <formula>OE_Ambassador_Volunteer__r.Watch__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Watch</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>field_to_count__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>field to count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>OE Ambassador Volunteers</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>CONSULTANT_VOLUNTEERS</fullName>
+        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
+        <columns>NAME</columns>
+        <columns>OE_Ambassador_Volunteer__c</columns>
+        <columns>Facilitator_Type__c</columns>
+        <columns>Meeting_Date__c</columns>
+        <columns>Volunteer_Event__c</columns>
+        <columns>Thanks_but_No_Thanks__c</columns>
+        <columns>Selected_For_Facilitator__c</columns>
+        <columns>Reaon_for_not_being_selected__c</columns>
+        <columns>Coordinator_Comment__c</columns>
+        <columns>Comment__c</columns>
+        <columns>Travel_Details__c</columns>
+        <columns>OE_Ambassador_City_and_State__c</columns>
+        <columns>OE_Coordinator__c</columns>
+        <columns>Facilitator_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Facilitator_Type__c</field>
+            <operation>equals</operation>
+            <value>Consultant</value>
+        </filters>
+        <filters>
+            <field>Meeting_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2019</value>
+        </filters>
+        <filters>
+            <field>Thanks_but_No_Thanks__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Selected_For_Facilitator__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Consultant Volunteers</label>
+    </listViews>
+    <listViews>
+        <fullName>Oe_Ambassador_Volunteer_Records</fullName>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <columns>OE_Ambassador_Volunteer__c</columns>
+        <columns>Travel_Duration__c</columns>
+        <columns>Travel_Distance__c</columns>
+        <columns>Travel_Details__c</columns>
+        <columns>Meeting_Date__c</columns>
+        <columns>Volunteer_Event__c</columns>
+        <columns>NAME</columns>
+        <columns>Selected_For_Facilitator__c</columns>
+        <columns>Thanks_but_No_Thanks__c</columns>
+        <columns>Reaon_for_not_being_selected__c</columns>
+        <columns>Comment__c</columns>
+        <columns>Coordinator_Comment__c</columns>
+        <columns>OE_Ambassador_City_and_State__c</columns>
+        <columns>OE_Ambassador_Region_Location__c</columns>
+        <columns>Watch__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Meeting_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2019</value>
+        </filters>
+        <filters>
+            <field>Facilitator_Type__c</field>
+            <operation>equals</operation>
+            <value>OE Ambassador</value>
+        </filters>
+        <filters>
+            <field>Facilitator_Type__c</field>
+            <operation>equals</operation>
+            <value>Consultant</value>
+        </filters>
+        <label>OE Ambassador Volunteer Records</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Volunteer_ID {0000}</displayFormat>
+        <label>Volunteer Participant ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>OE Ambassador Volunteers</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Volunteer</fullName>
+        <availability>online</availability>
+        <description>saves and returns to parent</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Volunteer</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a0o/e?CF00NF0000008S0Qj={! SFDC_Volunteer_Event__c.Name }&amp;CF00NF0000008S0Qj_lkid={! SFDC_Volunteer_Event__c.Id }&amp;retURL=%2F{!SFDC_Volunteer_Event__c.Id}&amp;saveURL=%2F{!SFDC_Volunteer_Event__c.Id}</url>
+    </webLinks>
+</CustomObject>

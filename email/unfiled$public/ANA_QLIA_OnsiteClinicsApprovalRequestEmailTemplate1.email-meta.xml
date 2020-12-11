@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Automated Email sent to user Onsite Clinics Approver requesting review/approval.  -This email is initiated when the product is ready to be submitted for approval and the user clicks to submit</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ANA-QLIA - Onsite Clinics Approval Request Email Template1</name>
+    <style>none</style>
+    <subject>Onsite Clinics Approval Requested for {!QuoteLineItemApproval__c.ClientName__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Marketing_Tracking__c.Region__c</field>
+    </columns>
+    <columns>
+        <field>Marketing_Tracking__c.Year__c</field>
+    </columns>
+    <columns>
+        <field>Marketing_Tracking__c.Total_Fund_Starting_Balance__c</field>
+    </columns>
+    <columns>
+        <field>Marketing_Tracking__c.Allocated_Communication_Allowance_Start__c</field>
+    </columns>
+    <columns>
+        <field>Marketing_Tracking__c.Completed_Communication_Sum_Amount__c</field>
+    </columns>
+    <columns>
+        <field>Marketing_Tracking__c.Active_Communication_Sum_Amount__c</field>
+    </columns>
+    <columns>
+        <field>Marketing_Tracking__c.Total_Remaining_Communication_Allowance__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <description>Marketing Communication Allowance Fund Tracking</description>
+    <filter>
+        <criteriaItems>
+            <column>Marketing_Tracking__c.Year__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>2017</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Communication Allowance Fund Tracking</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$Marketing_Tracking__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

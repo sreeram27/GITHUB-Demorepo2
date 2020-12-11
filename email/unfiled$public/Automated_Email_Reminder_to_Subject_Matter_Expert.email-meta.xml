@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Automated Email Reminder to Subject Matter Expert (Pending 48 hours)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Automated Email Reminder to Subject Matter Expert</name>
+    <style>none</style>
+    <subject>Alert – Aging SME Approval Record on Salesforce Requires your Attention</subject>
+    <textOnly>Hello,  
+Please be advised that there is a SME Approval Record assigned to your department for review under Implementation Case Record {!Order.Implementation_Record_ID__c} that is in a status of {!Order.Implementation_Status__c} for over 48 hours. Please ensure this record is reviewed and updated today.  
+Thank you.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

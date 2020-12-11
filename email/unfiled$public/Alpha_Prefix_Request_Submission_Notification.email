@@ -1,0 +1,8 @@
+Hello, 
+
+An Alphanumeric Prefix request {!Alpha_Prefix_Request__c.Name} has been submitted by {!Alpha_Prefix_Request__c.CreatedBy } and is ready for review.
+ 
+Account Name: {!Alpha_Prefix_Request__c.AccountLegalName__c}
+{!Alpha_Prefix_Request__c.Link} 
+
+Thank you.

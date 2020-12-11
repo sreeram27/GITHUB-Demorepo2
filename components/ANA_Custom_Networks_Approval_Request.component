@@ -1,0 +1,119 @@
+<apex:component controller="ANA_VFC02_CustomNetworksApprovalRequest" access="global" >
+    <apex:attribute name="qlitemappId"  type="String" assignTo="{!qlitemappNewId}" description="Id of the QuotelineitemApproval"/>
+    <apex:outputText value="{!beanAssignment}" />
+     <table border = "1" cellspacing = "5">
+       
+        <tr>
+            <td>ANA Sales or Account rep making request:</td>
+            <td>{!qlibean.ANASalesorAccountrep}</td>                
+        </tr>
+        <tr>
+            <td>GROUP NAME:</td>
+            <td>{!qlibean.GROUPNAME}</td>              
+        </tr>
+        <tr>
+            <td>RVP</td>
+            <td>{!qlibean.RVP}</td>              
+        </tr> 
+        <tr>
+            <td>Request Type:</td>
+            <td>{!qlibean.RequestType}</td>              
+        </tr>
+        <tr>
+            <td>Request Type Comment:</td>
+            <td>{!qlibean.RequestTypeComment}</td>             
+        </tr>
+        <tr>
+            <td>RFP or Critical Meeting date required:</td>
+            <td>{!qlibean.RFPORCriticalMeetingdaterequired}</td>              
+        </tr>
+        <tr>
+            <td>Does request include integrating with a third party Vendor?:</td>
+            <td>{!qlibean.DoesrequestincludeintegratingwiththirdpartyVendor}</td>              
+        </tr>
+        <tr>
+            <td>Markets affected by request:</td>
+            <td>{!qlibean.Marketsaffectedbyrequest}</td>              
+        </tr>
+        <tr>
+            <td>New Sales or Current Account:</td>
+            <td>{!qlibean.NewSalesorCurrentAccount}</td>              
+        </tr>
+        <tr>
+            <td>Number of Employees:</td>
+            <td>{!qlibean.NumberofEmployees}</td>              
+        </tr>
+        <tr>
+            <td>Number of Members:</td>
+            <td>{!qlibean.NumberofMembers}</td>              
+        </tr>
+        <tr>
+            <td>HQ State:</td>
+            <td>{!qlibean.HQState}</td>              
+        </tr>
+        <!-- <tr>
+            <td>Consultant:</td>
+            <td></td>              
+        </tr> -->
+        <tr>
+            <td>Competitor Status:</td>
+            <td>{!qlibean.CompetitorStatus}</td>              
+        </tr>
+        <tr>
+            <td>Claim System:</td>
+            <td>{!qlibean.ClaimSystem}</td>              
+        </tr>
+       <!--  <tr>
+            <td>Renewal % of Base Expense Covered:</td>
+            <td></td>              
+        </tr>
+        <tr>
+            <td>Renewal % of Total Expense Covered:</td>
+            <td></td>              
+        </tr>
+        <tr>
+            <td>Duration of Guarantee:</td>
+            <td></td>              
+        </tr>
+        <tr>
+            <td>Current Year of Guarantee:</td>
+            <td></td>              
+        </tr> -->
+        <tr>
+            <td>Will request require IT work to implement?:</td>
+            <td>{!qlibean.WillrequestrequireITWImpl}</td>              
+        </tr>
+        <tr>
+            <td>Estimated dollar cost to Anthem if request approved (If known):</td>
+            <td>{!qlibean.Estimateddlrcost2AnthemreqApp}</td>              
+        </tr>
+        <tr>
+            <td>Alternatives discussed with client:</td>
+            <td>{!qlibean.Alternativesdiscussedwithclient}</td>              
+        </tr>
+        <tr>
+            <td>Vendor name:</td>
+            <td>{!qlibean.Vendorname}</td>              
+        </tr>
+        <tr>
+            <td>Does Anthem currently work with this vendor?:</td>
+            <td>{!qlibean.DoesAnthemcurrentlyworkwiththisvendor}</td>              
+        </tr>
+        <tr>
+            <td>Would custom solution benefit other ANA accounts?:</td>
+            <td>{!qlibean.WouldcustomslBenfOthANAaccounts}</td>              
+        </tr>
+        <tr> 
+            <td>Will this solution require local contracting team involvement?:</td>
+            <td>{!qlibean.Willthissolreqlocalcontrteaminv}</td>              
+        </tr>
+        <tr>
+            <td>Please describe any additional details, background or relevant history:</td>
+            <td>{!qlibean.Plzdescribeanyadddetbackghistory}</td>              
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>              
+        </tr>
+    </table>
+</apex:component>

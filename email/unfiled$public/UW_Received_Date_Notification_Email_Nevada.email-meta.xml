@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>A notification email is sent out to the underwriters when UW Received Date is populated on an opportunity for Local/Large Group for states Nevada</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>UW Received Date Notification Email Nevada</name>
+    <style>none</style>
+    <subject>{!Opportunity.Name} effective {!Opportunity.CloseDate} for Account {!Account.Name}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

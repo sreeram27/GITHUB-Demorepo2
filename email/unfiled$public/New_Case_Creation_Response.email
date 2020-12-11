@@ -1,0 +1,8 @@
+Thank you for contacting Anthem.  Your inquiry titled “{!Case.Subject}” has been assigned to a representative and they will respond to you shortly.  If you have additional details to provide, please wait until a representative contacts you and then respond to their communication. 
+
+For your reference, your Inquiry Case Number is {!Case.CaseNumber}. 
+
+Thank You,
+Anthem
+
+{!Case.Thread_Id}

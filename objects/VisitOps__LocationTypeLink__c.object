@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>VisitOps__Account_Mandatory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box if an Account must be selected before a request can be submitted for this Location and Visit Type.</inlineHelpText>
+        <label>Account Mandatory</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Allow_Editing_During_These_Statuses__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Allow requestors to edit their own records during these statuses.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Chosen statuses will allow Owners to edit portions of their own requests after submitting.</inlineHelpText>
+        <label>Allow Editing During These Statuses</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <label>Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Finalized</fullName>
+                    <default>false</default>
+                    <label>Finalized</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Allow_Multiple_Rooms__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box to allow requestors to book more than the primary room during the request process.</inlineHelpText>
+        <label>Allow Multiple Rooms</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Contact_Mandatory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box if a Contact or Attendee must be added before a request can be submitted for this Location and Visit Type.</inlineHelpText>
+        <label>Contact Mandatory</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Create_Agenda_Session__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box to automatically create agenda sessions for each additional room booked during the request process.</inlineHelpText>
+        <label>Create Agenda Session</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Customer_Post_Survey__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of days after the visit that you&apos;d like surveys to be sent. If you do not want surveys for this Location and Visit Type, leave the field blank.</inlineHelpText>
+        <label>Customer Post Survey</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Customer_Pre_Survey__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of days prior to the visit that you&apos;d like surveys to be sent. If you do not want surveys for this Location and Visit Type, leave the field blank.</inlineHelpText>
+        <label>Customer Pre Survey</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Hide_Presenters_on_Survey__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Hide Presenters on Survey</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__IsRoomMandatory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether room is mandatory for a particular Location and Visit Type combination</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether an available room is required to submit a request. If checked, all groups must be in the Available section in &quot;Restrict room booking for&quot;.</inlineHelpText>
+        <label>Room Mandatory</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Lead_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This stores the number of days below which a non - Visit team/admin user should not able to submit a visit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of lead time days required before a request can be submitted for this Location and Visit Type. Example: Requests cannot be submitted with less than 21 days lead time. If no lead time is required, leave the field blank.</inlineHelpText>
+        <label>Lead Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Location__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <referenceTo>VisitOps__Location__c</referenceTo>
+        <relationshipLabel>Associated Visit Types</relationshipLabel>
+        <relationshipName>LocationTypeLink</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Opportunity_Mandatory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box if an Opportunity must be selected before a request can be submitted for this Location and Visit Type.</inlineHelpText>
+        <label>Opportunity Mandatory</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Owner_Post_Survey__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of days after the visit that you&apos;d like surveys to be sent. If you do not want surveys for this Location and Visit Type, leave the field blank.</inlineHelpText>
+        <label>Owner Post Survey</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Owner_Pre_Survey__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of days prior to the visit that you&apos;d like surveys to be sent. If you do not want surveys for this Location and Visit Type, leave the field blank.</inlineHelpText>
+        <label>Owner Pre Survey</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Presenter_Post_Survey__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of days after the visit that you&apos;d like surveys to be sent. If you do not want surveys for this Location and Visit Type, leave the field blank.</inlineHelpText>
+        <label>Presenter Post Survey</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VisitOps__RestrictRoomBookingFor__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates user types who cannot book a room for a visit for a particular Location and Visit Type combination. (The picklist values are obtained from UserType__c picklist field on User object. Ensure these picklist values are always in sync). RestrictRoomBookingFor__c field takes precendence over IsRoomMandatory__c field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Groups in the Chosen section will be restricted from booking a room during the request process.</inlineHelpText>
+        <label>Restrict room booking for</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Visit Team</fullName>
+                    <default>false</default>
+                    <label>Visit Team</label>
+                </value>
+                <value>
+                    <fullName>Sales Team</fullName>
+                    <default>false</default>
+                    <label>Sales Team</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VisitOps__Schedule_Survey__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, this indicates that surveys will be sent based on the days entered. If no surveys are to be sent, leave the fields empty.</inlineHelpText>
+        <label>Schedule Survey</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VisitOps__VisitType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>VisitType</label>
+        <referenceTo>VisitOps__VisitType__c</referenceTo>
+        <relationshipLabel>Associated Locations</relationshipLabel>
+        <relationshipName>LocationTypeLinks</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>VisitOps__of_rooms_allowed__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of additional rooms requestors can book during the request process.</inlineHelpText>
+        <label># of rooms allowed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Location Type Link</label>
+    <listViews>
+        <fullName>VisitOps__All</fullName>
+        <columns>NAME</columns>
+        <columns>VisitOps__Location__c</columns>
+        <columns>VisitOps__VisitType__c</columns>
+        <columns>VisitOps__Lead_Time__c</columns>
+        <columns>VisitOps__Customer_Pre_Survey__c</columns>
+        <columns>VisitOps__Schedule_Survey__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>LTL{0000}</displayFormat>
+        <label>LocationTypeLink Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Location Type Links</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>VisitOps__Location__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>VisitOps__VisitType__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

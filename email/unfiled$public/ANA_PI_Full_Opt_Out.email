@@ -1,0 +1,18 @@
+</p>
+<table border="1">
+<tr><td>Client Name: </td><td>{!QuoteLineItemApproval__c.ClientName__c}</td></tr>
+<tr><td>Effective Date: </td><td>{!QuoteLineItemApproval__c.EffectiveDate__c}</td></tr>
+<tr><td>Region: </td><td>{!QuoteLineItemApproval__c.Region__c}</td></tr> 
+<tr><td>New or existing: </td><td>{!QuoteLineItemApproval__c.Neworexisting__c}</td></tr>
+<tr><td>Market: </td><td>National Accounts</td></tr>
+<tr><td>Likelihood of winning: </td><td>{!QuoteLineItemApproval__c.Likelihoodofwinning__c}</td></tr>
+<tr><td>Financing: </td><td>{!QuoteLineItemApproval__c.Financing__c}</td></tr>
+<tr><td>Claims Platform: </td><td>{!QuoteLineItemApproval__c.ClaimsPlatform__c}</td></tr>
+<tr><td>Full Opt Out: </td><td>{!QuoteLineItemApproval__c.Full_Opt_Out__c}</td></tr>
+<tr><td>Comments: </td><td>{!QuoteLineItemApproval__c.FOO_Comments__c}</td></tr>
+<tr><td>Estimated Membership: </td><td>{!QuoteLineItemApproval__c.EstimatedMembership__c}</td></tr>
+</table>
+<p>
+To review and approve / reject the Opt Out, please click this link. 
+<a href="{!QuoteLineItemApproval__c.Link}">Click here</a>
+</p>

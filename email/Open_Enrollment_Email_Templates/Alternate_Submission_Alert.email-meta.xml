@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email will alert the OE Coordinator when they need to take action in uploading Alternate submission file</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Alternate Submission Alert</name>
+    <style>none</style>
+    <subject>Alternate Submission Alert</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomNotificationType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customNotifTypeName>Trigger Ready Date Alert To ID Card Owner</customNotifTypeName>
+    <desktop>true</desktop>
+    <masterLabel>Trigger Ready Date Alert To ID Card Owner</masterLabel>
+    <mobile>true</mobile>
+</CustomNotificationType>

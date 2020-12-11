@@ -1,0 +1,88 @@
+<apex:component >
+<apex:includeScript value="{!URLFOR($Resource.vlocity_ins__LodashJS)}" />
+
+
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcMUProdSelection.html Template.  Created at 2017-06-20 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcMUProdSelection.html">
+
+  <style>
+  .via-slds .memberField{
+    border: 1px solid #cfd7e6 !important;
+    width: 80px;
+    font-size: 13px;
+    padding-left: 3px;
+  }
+  .via-slds .propField{
+    background: rgb(255, 255, 255);
+    border-radius: 1px;
+    border: 1px solid #cfd7e6 !important;
+    min-width: 60px;
+    padding-left: 3px;
+  }
+  
+  .via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+  .via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+  </style>
+ <div class="panel panel-default" ng-controller="anaMembershipController as anaMembership">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">
+       <label class="slds-checkbox">
+         <input type="checkbox" ng-model='anaMembership.selectAll' ng-change="anaMembership.selectAllChange(true);"/>
+         <span class="slds-checkbox--faux"></span>
+       </label>
+       <div ng-if="anaMembership.selectAll && anaMembership.selectAllInit" ng-repeat="p in anaMembership.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>
+       <div ng-if="!anaMembership.selectAll && anaMembership.selectAllInit" ng-repeat="p in anaMembership.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>
+     </th>
+     <th>Product</th>
+     <th>Stage</th>
+     <th>Probability</th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey] track by $index' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this); anaMembership.selectAllChange(false);'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.Name}}</td>
+     <td>{{p.ProductStage}}</td>
+     <td>{{p.Probability__c}}</td>
+ 
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcMUProdSelection.html Template. -->
+<!-- ----------------------------- -->
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcOpptySelection.html Template.  Created at 2017-05-25 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+
+
+
+
+</apex:component>

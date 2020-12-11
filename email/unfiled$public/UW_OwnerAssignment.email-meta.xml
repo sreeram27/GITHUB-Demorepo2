@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>UW OwnerAssignment</name>
+    <style>none</style>
+    <subject>An Underwriting record has been assigned to you</subject>
+    <textOnly>Hello {!Underwriting__c.OwnerFirstName},  Please be advised that an underwriting record has been assigned to you on the Implementation Case: {!Underwriting__c.Implementation_Case_Number__c}.  Details:  Account Name : {!Underwriting__c.Account_Legal_Name__c}.  Underwriting Number: {!Underwriting__c.Name}.  To view the Underwriting record, please see the below link: {!Underwriting__c.Link}.  Thank you!</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

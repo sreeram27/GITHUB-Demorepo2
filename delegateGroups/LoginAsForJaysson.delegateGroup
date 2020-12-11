@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DelegateGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groups>Maine Read Access</groups>
+    <groups>EAD LG Sales Assoc</groups>
+    <groups>EAD Specialty Sales Assoc</groups>
+    <groups>EAD Specialty Exec</groups>
+    <groups>EAD National AE</groups>
+    <groups>EAD National ASC</groups>
+    <groups>EAD National Exec</groups>
+    <groups>EAD LG Exec</groups>
+    <groups>EAD Specialty Support Assoc</groups>
+    <groups>EAD NA Implementation</groups>
+    <label>End User Support</label>
+    <loginAccess>true</loginAccess>
+    <roles>CA Admin</roles>
+    <roles>CA Local Sales</roles>
+    <roles>CO Admin</roles>
+    <roles>CO Local Sales</roles>
+    <roles>CT Admin</roles>
+    <roles>CT Local Sales</roles>
+    <roles>Commercial Director 1</roles>
+    <roles>Commercial Director 2</roles>
+    <roles>Commercial Director 3</roles>
+    <roles>Commercial Director 4</roles>
+    <roles>Commercial Director 5</roles>
+    <roles>Commercial Director 6</roles>
+    <roles>Commercial GM/VP</roles>
+    <roles>Commercial Rep 1</roles>
+    <roles>Commercial Rep 2</roles>
+    <roles>Commercial Rep 3</roles>
+    <roles>Commercial Rep 4</roles>
+    <roles>Commercial Rep 5</roles>
+    <roles>Commercial Rep 6</roles>
+    <roles>Enterprise Role</roles>
+    <roles>GA Admin</roles>
+    <roles>GA Local Sales</roles>
+    <roles>IN Admin</roles>
+    <roles>IN Local Sales</roles>
+    <roles>KY Admin</roles>
+    <roles>Labor Admin</roles>
+    <roles>Labor Local Sales</roles>
+    <roles>Labor/Special Accounts Director 1</roles>
+    <roles>Labor/Special Accounts Director 2</roles>
+    <roles>Labor/Special Accounts Director 3</roles>
+    <roles>Labor/Special Accounts GM/VP</roles>
+    <roles>Labor/Special Accounts Rep 1</roles>
+    <roles>Labor/Special Accounts Rep 2</roles>
+    <roles>Labor/Special Accounts Rep 3</roles>
+    <roles>Local Sales</roles>
+    <roles>Local Accounts Manager</roles>
+    <roles>ME Admin</roles>
+    <roles>ME Local Sales</roles>
+    <roles>MO Admin</roles>
+    <roles>MO Local Sales</roles>
+    <roles>NH Admin</roles>
+    <roles>NH Local Sales</roles>
+    <roles>NV Admin</roles>
+    <roles>NV Local Sales</roles>
+    <roles>NY Admin</roles>
+    <roles>OH Admin</roles>
+    <roles>OH Local Sales</roles>
+    <roles>VA Admin</roles>
+    <roles>VA Local Sales</roles>
+    <roles>WI Admin</roles>
+    <roles>WI Local Sales</roles>
+    <roles>Accenture Team</roles>
+    <roles>National Sales</roles>
+    <roles>National Sales Manager</roles>
+    <roles>SVP Customer Experience</roles>
+</DelegateGroup>

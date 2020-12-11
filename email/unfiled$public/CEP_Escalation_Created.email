@@ -1,0 +1,11 @@
+Thank you for your submission.
+ 
+An associate from the National COO team will respond within 24 business hours.
+ 
+COO Escalation Name: {!COO_Escalation__c.Name}
+External Request: {!COO_Escalation__c.External_Request__c}
+Description/Background: {!COO_Escalation__c.Description_Background__c} 
+Urgent Resolution Required:
+ {!COO_Escalation__c.Urgent_Resolution_Required__c}
+ 
+Link: {!COO_Escalation__c.Link}

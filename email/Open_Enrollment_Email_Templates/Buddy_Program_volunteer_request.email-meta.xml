@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notifying Ambassador we&apos;ve received their buddy program request and are looking for a buddy</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Plain_Letterhead</letterhead>
+    <name>Buddy Program request received notification</name>
+    <style>freeForm</style>
+    <subject>We&apos;ve received your Buddy Program request</subject>
+    <textOnly>Thank you for visiting the OE Ambassador Volunteer site!
+
+
+You have volunteered for the following OE Meeting:
+
+
+{!SFDC_Volunteer_Event__c.Name}
+
+
+Please note that volunteering for an event does not confirm you will be attending this event.  The Open Enrollment Coordinator will reach out shortly and advise you on whether you are confirmed to attend.
+
+
+Please do not respond to this email.  If you have any questions or comments please contact the OE Coordinator for this meeting, {!SFDC_Volunteer_Participant__c.OE_Coordinator__c}.
+
+
+Thanks for your support!
+
+
+
+Thank you,
+
+
+The Open Enrollment Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

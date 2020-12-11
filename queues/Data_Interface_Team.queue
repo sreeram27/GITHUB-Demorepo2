@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Data Interface Team</name>
+    <queueMembers>
+        <users>
+            <user>waltont@wellpoint.com2</user>
+            <user>zgnss60@wellpoint.com2</user>
+            <user>aa17050@wellpoint.com2</user>
+            <user>fordcr@wellpoint.com2</user>
+            <user>jordadn@wellpoint.com2</user>
+            <user>lisa.bond@anthem.com2</user>
+            <user>nicole.fleury@anthem.com2</user>
+            <user>ab43350@wellpoint.com2</user>
+            <user>ac95497@wellpoint.com2</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Data_Interface_Team__c</sobjectType>
+    </queueSobject>
+</Queue>

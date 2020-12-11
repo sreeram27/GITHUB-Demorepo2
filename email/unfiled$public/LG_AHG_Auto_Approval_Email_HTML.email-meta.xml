@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LG AHG Auto Approval Email HTML</name>
+    <style>none</style>
+    <subject>AHG Approval Request Approved for {!QuoteLineItemApproval__c.ClientName__c}</subject>
+    <textOnly>Your client meets all standard criteria, you are approved to include AHG in your proposal. The client’s information will be added to the AHG pipeline tracker, where you can view servicing sites as needed. Please note the AHG solution does not standardly include &gt;65 retiree or HMO populations; they would need to be discussed by exception. Please inform the AHG MHA Intake Mailbox of the group decision at least 4.5 months ahead of the effective date. 
+
+
+To view all details around the request, please see the below link: 
+
+{!QuoteLineItemApproval__c.Link}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

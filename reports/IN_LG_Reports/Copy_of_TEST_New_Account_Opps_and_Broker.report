@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$SARAcctMgmt__c</field>
+    </columns>
+    <columns>
+        <field>Account$Account_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Brokerage_and_Consultant11__r$Brokerage__c</field>
+    </columns>
+    <columns>
+        <field>Account$Account_service_representative__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Brokerage_and_Consultant11__r$Name</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Copy of TEST New Account Opps and Broker</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Opps_and_Brokers__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$Active_Renewal_Date__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

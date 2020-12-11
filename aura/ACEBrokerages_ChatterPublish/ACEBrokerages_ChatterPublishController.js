@@ -11,6 +11,5 @@
             }
         });
         $A.enqueueAction(action);
-        //saitest
     }
 })

@@ -1,0 +1,246 @@
+<apex:component >
+  <script>
+      (function() {
+          'use strict';
+          angular
+          .module('vsAnthemProductApp')
+          .controller('Productstagecontroller', Productstagecontroller);
+        }());
+        Productstagecontroller.$inject = ['$scope', '$filter', '$window' ,'$rootScope' ];
+        function Productstagecontroller($scope, $filter, $window , $rootScope) {
+            console.info("Controller Loaded");
+            var vm = this;
+            vm.ImplementationType = '';            
+            vm.getImplType = function(control) {
+                var result = '';
+                //console.info("Controller getImplType BEFORE OppDetails=" + JSON.stringify($scope.bpTree.response['OppDetails']));
+                
+                vm.ImplementationType = $scope.bpTree.response['OppDetails']['Frm-ImpType'];
+                result = $scope.bpTree.response['OppDetails']['Frm-ImpType'];
+                return result;
+            }
+
+            vm.getImplTypeVal = function(control) {
+                var result = '';
+                console.info("Controller getImplTypeVal 111 QuoteDetails=" + JSON.stringify($scope.bpTree.response['QuoteDetails']));
+                
+                vm.ImplementationType = $scope.bpTree.response['QuoteDetails']['OpptyRecordType'];
+                console.info("Controller getImplTypeVal 112 OpptyRecordType=" + JSON.stringify($scope.bpTree.response['QuoteDetails']['OpptyRecordType']));
+                
+                result = $scope.bpTree.response['OppDetails']['Frm-ImpType'];
+                return result;
+            }
+            
+            //Pre-select all the master checkbox
+            vm.selectAll = false;
+            //Pre-select all the dependent checkbox
+            vm.selectAllInit = false;
+            
+            vm.selectAllChange = function(val){
+                console.info("Productstagecontroller Before vm.selectAllInit = "+vm.selectAllInit);
+                vm.selectAllInit = val;
+                console.info("Productstagecontroller After vm.selectAllInit = "+vm.selectAllInit);
+            }
+            
+            //Start: Added by Deloitte 22/07/2019 for User Story: PRDCRM-36898
+            vm.ImpType = '';
+            vm.showImpactedProductCheckBox = function(control) {
+                var ImpType = $scope.bpTree.response['Select-IMPType']['IMPTypeBlock']['IMPType'];
+                //console.log("@@@ vm.ImpType : "+vm.ImpType);
+                return ImpType;
+            }
+            //End: Added by Deloitte 22/07/2019 for User Story: PRDCRM-36898
+
+            vm.vlcproductrenewalstage = '';
+            vm.updateStage = function(control) {
+
+                console.info("Controller updateStage inside");
+                console.info("Controller updateStage control=" + control);
+                console.info("Controller updateStage vm.vlcproductrenewalstage=" + vm.vlcproductrenewalstage);
+                
+                var massResult = [];
+
+                if (typeof control != 'undefined' && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                    if(control.vlcSI[control.itemsKey].length > 0 && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                        control.vlcSI[control.itemsKey].map(function(item){
+                            if(item.vlcSelected && vm.vlcproductrenewalstage != '') {
+                                console.info("Controller updateStage BEFORE item=" + JSON.stringify(item));
+                                item.vlcBundleStage = vm.vlcproductrenewalstage;
+                                console.info("Controller updateStage AFTER item=" + JSON.stringify(item));
+                                                    
+                                massResult.push(item);
+                            }
+                        });
+                    }
+                }
+                
+                return massResult;
+            };   
+            
+            vm.vlcproductrenewalchange = '';
+            vm.updateRenewalChange = function(control) {
+
+                console.info("Controller updateRenewalChange inside");
+                console.info("Controller updateRenewalChange control=" + control);
+                console.info("Controller updateRenewalChange vm.vlcproductrenewalchange=" + vm.vlcproductrenewalchange);
+                
+                var massResult = [];
+
+                if (typeof control != 'undefined' && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                    if(control.vlcSI[control.itemsKey].length > 0 && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                        control.vlcSI[control.itemsKey].map(function(item){
+                            if(item.vlcSelected && vm.vlcproductrenewalchange != '') {
+                                console.info("Controller updateRenewalChange BEFORE item=" + JSON.stringify(item));
+                                item.vlcproductrenewal = vm.vlcproductrenewalchange;
+                                console.info("Controller updateRenewalChange AFTER item=" + JSON.stringify(item));
+                                                    
+                                massResult.push(item);
+                            }
+                        });
+                    }
+                }
+                
+                return massResult;
+            };   
+            
+            vm.retrieveMassProducts = function(control) {
+                
+                var massResult = [];
+                /*console.info(control);*/
+
+                if (typeof control != 'undefined' && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                    if(control.vlcSI[control.itemsKey].length > 0 && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                        control.vlcSI[control.itemsKey].map(function(item){
+                              if(vm.allProductsvlcSelected){
+                                item.vlcSelected = true;
+                              }
+
+                              massResult.push(item);
+                        });
+                    }
+                }
+                return massResult;
+            };  
+            
+            vm.impactedProducts = [];  
+            vm.impactedProductsName = [];
+            $scope.updateImpactedProducts = function(stageList, p, selected)
+            {
+                var impactedProductsToDelete = [];
+                var afterRemovingImpacted = [];
+                var afterRemovingImpactedNames = [];
+                if(selected) {
+                    
+                    vm.impactedProductsName.push(p.ProductName);
+                    $scope.bpTree.response.ImpactedProductNames = vm.impactedProductsName.join();
+                        
+                    if(p.ProductType == "Disability" || p.ProductType == "Dental" || p.ProductType == "Vision" || p.ProductType == "STD" || p.ProductType == "Life" || p.ProductType == "Hospital Indemnity" || p.ProductType == "LTD" || p.ProductType == "Critical Illness" || p.ProductType == "Accident"){
+                        if(vm.impactedProducts.length == 0 || !vm.impactedProducts.includes(p.ProductType)) {
+                            vm.impactedProducts.push(p.ProductType);
+                            $scope.bpTree.response.ImpactedProductTypes = vm.impactedProducts.join();
+                        }
+                    }
+                    
+                } else {
+                    impactedProductsToDelete = $filter('filter')(stageList, function (item) {
+                        return item.ImpactedProducts && item.ProductType == p.ProductType
+                    });
+                    
+                    if (impactedProductsToDelete.length == 0 && vm.impactedProducts.includes(p.ProductType)) {
+                        console.info("-----vm.impactedProducts---"+vm.impactedProducts);
+                        afterRemovingImpacted = $filter('filter')(vm.impactedProducts, function (item) {
+                            return item != p.ProductType
+                        });
+                        vm.impactedProducts = afterRemovingImpacted;
+                        $scope.bpTree.response.ImpactedProductTypes = afterRemovingImpacted.join();
+                    }
+                    
+                    afterRemovingImpactedNames = $filter('filter')(vm.impactedProductsName, function (item) {
+                        return item != p.ProductName
+                    });
+                    vm.impactedProductsName = afterRemovingImpactedNames;
+                    $scope.bpTree.response.ImpactedProductNames = afterRemovingImpactedNames.join();
+                    
+                }
+                
+                
+                //alert(impactedProducts);
+                console.info("----impactedProducts----"+vm.impactedProducts);
+                //$scope.bpTree.response.impactedProducts = vm.impactedProducts.join();
+            };
+            //As per PRDCRM2-2662 by Raptors
+            vm.addQLItoJSON = function(selectedQLI){
+                
+                if($scope.bpTree.response.PlanInformation.Plan_Information == null) {
+                     $scope.bpTree.response.PlanInformation.Plan_Information = [];
+                     $scope.bpTree.response.PlanInformation.Plan_Information.push(selectedQLI);                
+                }
+                
+                if($scope.bpTree.response.PlanInformation.Plan_Information && $scope.bpTree.response.PlanInformation.Plan_Information.length > 0 && typeof $scope.bpTree.response.PlanInformation.Plan_Information != 'undefined') {
+
+                    var matches = false;
+                    angular.forEach($scope.bpTree.response.PlanInformation.Plan_Information, function(qli){
+                        if(qli.QLIID == selectedQLI.QLIID){
+                            matches = true;
+                        }                    
+                    });
+                    if(!matches){
+                          console.log ("GPDs not found, added 1 GPD");
+                          $scope.bpTree.response.PlanInformation.Plan_Information.push(selectedQLI);
+                    }
+                }
+                console.log($scope.bpTree.response);
+            
+            };
+            //As per PRDCRM2-2662 by Raptors
+            
+            $scope.updateProbability = function(p)
+            {
+                console.info("Controller Loaded inside");
+                console.info("p.vlcBundleStage = " + p.vlcBundleStage);
+                switch (p.vlcBundleStage)
+                {
+                    case 'In Progress': case 'IGAP In Progress':
+                        p.Probability= '10%';
+                        break;
+                    case 'Sold': case 'IGAP Sold': case 'Renewed': case 'Termed':
+                        p.Probability= '100%';
+                        break;
+                    case 'IGAP Lost':  case 'Lost': case 'IGAP Dead': case 'Dead':
+                        p.Probability= '0%'; 
+                        break;
+                     case 'Jeopard': 
+                        p.Probability= '50%'; 
+                        break;
+                    default:
+                        break;      
+                }
+            console.info(" p.Probability = " +  p.Probability);
+          
+          }
+          $scope.InProgrressStyle = {
+                "width" : "400px",
+                "color" : "red",
+                "overflow-x": "hidden",
+                "overflow-y": "auto",
+                "text-overflow": "ellipsis",
+                "height" : "64px",
+                "white-space": "initial"
+          };
+          $scope.NoneProgrressStyle = {
+                "width" : "400px",
+                "color" : "##49739c",
+                "overflow-x": "hidden",
+                "overflow-y": "auto",
+                "text-overflow": "ellipsis",
+                "height" : "64px",
+                "white-space": "initial"
+          };
+  }
+</script>
+ 
+
+               
+
+
+</apex:component>

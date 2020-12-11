@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$Region__c</field>
+    </columns>
+    <columns>
+        <field>Account$WARP_Medical_Members__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>System-Service Center Pivot</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Account_Quotes__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account$WARP_Medical_Members__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <endDate>2017-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2017-06-01</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,396 @@
+<apex:component >
+    <script>
+    console.log('@@@@@@insertlog EmpClassQliGpdController');
+    (function() {
+        'use strict';
+        angular
+        .module('vsAnthemProductApp')
+        .controller('EmpClassQliGpdController', EmpClassQliGpdController);
+        }());
+
+    EmpClassQliGpdController.$inject = ['$scope', '$filter', '$window' ,'$rootScope' ];
+    
+    
+        
+    
+    function EmpClassQliGpdController($scope, $filter, $window , $rootScope) {
+        console.info("EmpClassQliGpdController Controller Loaded");
+        
+        
+        var vm = this;
+        
+        
+        vm.selectAllQLI = true;        
+        vm.selectAllQLIInit = true;
+        
+        //Pre-select all the master checkbox
+        vm.selectAll = false;
+        //Pre-select all the dependent checkbox
+        vm.selectAllInit = false;
+        
+        vm.checkEditAcces = function(val) {
+            console.info("---ProductLOB---"+val.ProductLOB);
+            var editAccess = true;
+            //Life, Disability, STD, LTD, Voluntary Disability and  Voluntary Life
+            if(val.ProductLOB.toLowerCase() == "life" || val.ProductLOB == "Disability" || val.ProductLOB == "STD" || val.ProductLOB == "LTD" || val.ProductLOB == "Voluntary Disability" || val.ProductLOB == "Voluntary Life") {
+                editAccess = true;
+            } else {
+                editAccess = false;
+            }
+            console.info("---editAccess---"+editAccess);
+            return editAccess;
+        }
+        
+        vm.selectAllChange = function(val){
+            console.info("EmpClassQliGpdController Before vm.selectAllInit = "+vm.selectAllInit);
+            vm.selectAllInit = val;
+            console.info("EmpClassQliGpdController After vm.selectAllInit = "+vm.selectAllInit);
+            
+        } 
+        
+        vm.changeEffDate = function(position,item){ 
+            if(item.GroupSuffixEffectiveDate){
+                item.GroupSuffixEffectiveDate = $filter('date')(item.GroupSuffixEffectiveDate, "MM/dd/yyyy");
+                item.GroupSuffixEffectiveDateString = item.GroupSuffixEffectiveDate;
+            }
+        }
+
+        vm.changeCancelDate = function(position,item){      
+            if(item.GroupSuffixCancelDate == null){             
+                item.GroupSuffixCancelDate = "null";                
+            } else{
+                item.GroupSuffixCancelDate = $filter('date')(item.GroupSuffixCancelDate, "MM/dd/yyyy");
+            }
+        }
+        
+        vm.convertEffectiveDateStrToDate = function(){
+            var gpdlen = $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns.length;   
+            var selectedAtleastOneGPDCount = 0;         
+            for (var i=0; i<gpdlen; i++) {  
+
+                 if($scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns[i].vlcSelected){
+                        selectedAtleastOneGPDCount++;
+                    }       
+                
+                 var effectiveDate = $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns[i].GroupSuffixEffectiveDate;             
+                 if(effectiveDate){
+                    effectiveDate = $filter('date')(effectiveDate, "MM/dd/yyyy");
+                    var effectiveDateAsDate = new Date(effectiveDate);
+                    $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns[i].GroupSuffixEffectiveDate = effectiveDateAsDate;
+                    
+                 }
+            }
+            
+            $scope.bpTree.response.selectedGPD = selectedAtleastOneGPDCount;
+        
+        }
+        
+        vm.convertCancelDateStrToDate = function(){
+            var gpdlen = $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns.length;          
+            for (var i=0; i<gpdlen; i++) {  
+                 var cancelDate = $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns[i].GroupSuffixCancelDate;
+                 if(cancelDate){
+                    cancelDate = $filter('date')(cancelDate, "MM/dd/yyyy");
+                    
+                        var cancelDateAsDate = new Date(cancelDate);
+                        $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns[i].GroupSuffixCancelDate = cancelDateAsDate;
+                    
+                    
+                 }
+            }
+        
+        }
+        
+        vm.addGPDtoJSON = function(selectedGPD){
+            if(selectedGPD.BillingId == null){
+                selectedGPD.BillingId = "null";
+            }
+            if($scope.bpTree.response.InvoiceGPDMappingStep.GPD == null) {
+                 $scope.bpTree.response.InvoiceGPDMappingStep.GPD = [];
+                 $scope.bpTree.response.InvoiceGPDMappingStep.GPD.push(selectedGPD);                
+            } 
+             if($scope.bpTree.response.InvoiceGPDMappingStep.GPD && $scope.bpTree.response.InvoiceGPDMappingStep.GPD.length > 0 && typeof $scope.bpTree.response.InvoiceGPDMappingStep.GPD != 'undefined') {
+           
+                var matches = false;
+                angular.forEach($scope.bpTree.response.InvoiceGPDMappingStep.GPD, function(gpd){
+                    if(gpd.GPDId == selectedGPD.GPDId){
+                        matches = true;
+                    }                    
+                });
+                if(!matches){
+                      console.log ("GPDs not found, added 1 GPD");
+                      $scope.bpTree.response.InvoiceGPDMappingStep.GPD.push(selectedGPD);
+                }
+            }
+            console.log($scope.bpTree.response);
+        
+        }
+        
+        vm.checkRouteCodeValidation = function(control){
+            console.log("----$scope.bpTree.response.RouteCodeCheck----"+$scope.bpTree.response.RouteCodeCheck);
+            var emptyRouteCodes = [];
+            emptyRouteCodes = $filter('filter')(control.vlcSI[control.itemsKey], function (item) {
+                console.log("------item.ClaimsRouteCode----"+item.ClaimsRouteCode);
+                return item.ClaimsRouteCode == "" || !item.ClaimsRouteCode;
+            });
+            if(emptyRouteCodes.length == 0) {
+                $scope.bpTree.response.RouteCodeCheck = false;
+            } else {
+                $scope.bpTree.response.RouteCodeCheck = true;
+            }
+        };
+        
+        vm.addQLItoJSON = function(selectedQLI){
+                        
+            
+            if(selectedQLI.APN == null){
+                selectedQLI.APN = "null";
+            }
+            console.log(selectedQLI.APN);
+            if($scope.bpTree.response.QLIProductsData.QLIProducts == null) {
+                $scope.bpTree.response.QLIProductsData.QLIProducts = [];
+                $scope.bpTree.response.QLIProductsData.QLIProducts.push(selectedQLI);                
+            } 
+            
+             if($scope.bpTree.response.QLIProductsData.QLIProducts && $scope.bpTree.response.QLIProductsData.QLIProducts.length > 0 && typeof $scope.bpTree.response.QLIProductsData.QLIProducts != 'undefined') {
+           
+                var matches = false;
+                angular.forEach($scope.bpTree.response.QLIProductsData.QLIProducts, function(qli){
+                    if(qli.QLIId == selectedQLI.QLIId){
+                        matches = true;
+                    }                    
+                });
+                
+                if(!matches){
+                      console.log ("QLI not found, added 1 qli");
+                      $scope.bpTree.response.QLIProductsData.QLIProducts.push(selectedQLI);
+                }
+            }
+        
+        
+        }
+        
+        
+       vm.selectUnselectCheckBox = function(pos,selectedItem){
+            console.info("EmpClassQliGpdController inside  vm.unselectCheckBox GroupSuffixCancelDate: " + selectedItem.GroupSuffixCancelDate + " , effective    date " + selectedItem.GroupSuffixEffectiveDate);
+            
+            
+             selectedItem.GroupSuffixCancelDate = $filter('date')(selectedItem.GroupSuffixCancelDate, "MM/dd/yyyy");   
+               
+            if(selectedItem.GroupSuffixCancelDate){
+                var cancelDateAsDate = new Date(selectedItem.GroupSuffixCancelDate);
+                selectedItem.GroupSuffixCancelDate = cancelDateAsDate;
+            }
+            
+            selectedItem.GroupSuffixEffectiveDate = $filter('date')(selectedItem.GroupSuffixEffectiveDate, "MM/dd/yyyy");
+            selectedItem.GroupSuffixEffectiveDateString = selectedItem.GroupSuffixEffectiveDate;
+            
+            if(selectedItem.GroupSuffixEffectiveDate){
+                var effDateAsDate = new Date(selectedItem.GroupSuffixEffectiveDate);
+                selectedItem.GroupSuffixEffectiveDate = effDateAsDate;
+            }
+            
+            $scope.gpdItem = selectedItem;
+            
+            var countActiveGPD = $scope.bpTree.response.selectedGPD;
+            if(selectedItem.vlcSelected){
+                countActiveGPD++;
+            }else{
+                countActiveGPD--;
+            }
+            
+           if($scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns && $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns.length > 0 && typeof $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns != 'undefined') {
+           
+           var matches = false;
+           
+           angular.forEach($scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns, function(gpdEach){
+                                    
+                    if(gpdEach.GPDId == selectedItem.GPDId){
+                        matches = true;
+                        gpdEach.vlcSelected = selectedItem.vlcSelected;
+                    }                    
+                });
+                
+                
+                
+                if(!matches){
+                      console.log ("GPD not found, added 1 gpd");
+                      $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns.push(selectedItem);
+                }
+            }
+            
+            if($scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns == null) {
+                 $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns = [];
+                 $scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns.push(selectedItem);  
+                 
+            }    
+
+            $scope.bpTree.response.selectedGPD = countActiveGPD;
+            console.log("Count active GPD : " + $scope.bpTree.response.selectedGPD);            
+            
+        };    
+        
+        
+       
+        
+         // PRDCRM-43938 : added for Emp Category selection | Accenture Panthers
+        
+        vm.selectUnselectCheckBoxEmpCat = function(pos,selectedItem){     
+        
+        
+            if($scope.bpTree.response.SelectedEmpCategory == null) {
+                 $scope.bpTree.response.SelectedEmpCategory = selectedItem.employeeCategory;
+            } else {            
+                var multiSelectEmpCat = $scope.bpTree.response.SelectedEmpCategory;
+                var empCatArr = multiSelectEmpCat.split(";");               
+                var selectedEmpCat = selectedItem.employeeCategory;
+                var isEmpCatSelected = selectedItem.vlcSelected;
+                if(!isEmpCatSelected && empCatArr.includes(selectedEmpCat)){                        
+                    var indexOfRemovedEmpCat = empCatArr.indexOf(selectedEmpCat);
+                    empCatArr.splice(indexOfRemovedEmpCat,1);
+                }               
+                if(isEmpCatSelected && !empCatArr.includes(selectedEmpCat)){
+                    empCatArr.push(selectedEmpCat);
+                }
+                if(empCatArr.length == 1 && empCatArr[0] == ''){
+                    empCatArr.push(";");
+                }
+                
+                 if(empCatArr.length == 0){
+                    empCatArr.push(";");
+                }
+                
+                multiSelectEmpCat = empCatArr.join(";");
+                
+                $scope.bpTree.response.SelectedEmpCategory = multiSelectEmpCat;
+            }   
+        }; 
+        
+        vm.getInvoivePreferences = function(invoicePreferences){
+            var fltInvoicePreferences = [];
+            if(invoicePreferences.length) {
+                fltInvoicePreferences = $filter('filter')(invoicePreferences, function (item) {
+                    console.log("------item.billing----"+item.billing);
+                    return item.billing == "Single Invoice (containing all Suffixes)" || item.billing == "One Invoice per Employee Class";
+                });
+            }
+            return fltInvoicePreferences;
+        };
+        
+        // END PRDCRM-43938 : added for Emp Category selection | Accenture Panthers
+        
+        
+        // PRDCRM-46570 :  Enable user to have the ability to Sort whichever column they chose | Date : 23rd Nov 2019 | Changed by Accenture-Panthers
+        
+        $scope.propertyName = 'GPDName';
+        $scope.reverse = true;
+        
+         vm.sortBy = function(propertyName) {
+             $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : true;
+             $scope.propertyName = propertyName;
+        };
+        
+       // End PRDCRM-46570 | Date : 23rd Nov 2019 | Changed by Accenture-Panthers
+        
+        
+        
+        //Start | code for setting all effective date | Date : 23rd Nov 2019 | Changed by Accenture-Panthers
+        vm.changeAllEffectiveDate = function() {            
+            angular.forEach($scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns, function(gpdEach, index){                                    
+                if(gpdEach.vlcSelected){
+                    gpdEach.GroupSuffixEffectiveDate = $filter('date')(gpdEach.GroupSuffixEffectiveDate, "MM/dd/yyyy");
+                    gpdEach.GroupSuffixEffectiveDateString = gpdEach.GroupSuffixEffectiveDate;
+                    //gpdEach.GroupSuffixEffectiveDate = $scope.allDate.getMonth() + "/" + $scope.allDate.getDate() + "/" + $scope.allDate.getFullYear();  
+                }                    
+            });
+        }
+        vm.setAllEffectiveDate = function() {
+             angular.forEach($scope.bpTree.response.GroupPlanDesignSuffix.GroupPlanDesigns, function(gpdEach, index){                                    
+                 if(gpdEach.vlcSelected){
+                       gpdEach.GroupSuffixEffectiveDate = $scope.allDate;
+                       gpdEach.GroupSuffixEffectiveDateString =  gpdEach.GroupSuffixEffectiveDateString = $scope.allDate.getMonth()+1 + "/" + $scope.allDate.getDate() + "/" + $scope.allDate.getFullYear(); 
+                 }                    
+             });
+        };
+        //End | code for setting all effective date | Date : 23rd Nov 2019 | Changed by Accenture-Panthers
+        
+         //Start | code for checking billing arrangement | Date : 17th Jan 2020 | Changed by Accenture-Panthers | PRDCRM2-1114
+       
+        vm.checkBillingArrangementSelected = function() {   
+           if(!$scope.bpTree.response.BillingArrangementstep.BillingArrangement){
+             $scope.bpTree.response.NoBillingPatternSelected = true;
+           }else{
+             $scope.bpTree.response.NoBillingPatternSelected = false;
+           }
+        }
+        
+        //End | code for checking billing arrangement | Date : 17th Jan 2020 | Changed by Accenture-Panthers | PRDCRM2-1114
+        
+        
+          vm.addEligibilityQLItoJSON = function(selectedEligibilityQLI){
+                        
+            console.log('@@@@@@insertlog TESTS INSIDE ELIGIBILITY');
+          
+            
+            if($scope.bpTree.response.QLIProductEligibility.QliEligibility == null) {
+                 $scope.bpTree.response.QLIProductEligibility.QliEligibility = [];
+                 $scope.bpTree.response.QLIProductEligibility.QliEligibility.push(selectedEligibilityQLI);                
+            } 
+            
+             if($scope.bpTree.response.QLIProductEligibility.QliEligibility && $scope.bpTree.response.QLIProductEligibility.QliEligibility.length > 0 && typeof $scope.bpTree.response.QLIProductEligibility.QliEligibility != 'undefined') {
+           
+                var matches = false;
+                angular.forEach($scope.bpTree.response.QLIProductEligibility.QliEligibility, function(qli){
+                    if(qli.QLIId == selectedEligibilityQLI.QLIId){
+                        matches = true;
+                    }                    
+                });
+                
+                if(!matches){
+                      console.log ("QLI not found, added 1 qli");
+                      $scope.bpTree.response.QLIProductEligibility.QliEligibility.push(selectedEligibilityQLI);
+                }
+            }
+        
+        console.log($scope.bpTree.response.QLIProductEligibility.QliEligibility);
+        }  
+         
+            
+            $scope.InProgrressStyle = {
+                "width" : "400px",
+                "color" : "red",
+                "overflow-x": "hidden",
+                "overflow-y": "auto",
+                "text-overflow": "ellipsis",
+                "height" : "64px",
+                "white-space": "initial"
+            };
+            $scope.NoneProgrressStyle = {
+                "width" : "400px",
+                "color" : "##49739c",
+                "overflow-x": "hidden",
+                "overflow-y": "auto",
+                "text-overflow": "ellipsis",
+                "height" : "64px",
+                "white-space": "initial"
+            };
+        
+            $scope.ClaimsGraceDays = [{
+                value: '30',
+                name: '30 days'
+            }, {
+                value: '31',
+                name: '31 days'
+            }, {
+                value: '60',
+                name: '60 days'
+            }, {
+                value: '90',
+                name: '90 days'
+            },{
+                value: '999',
+                name: '999 days(NY Only)'
+            }];
+        }
+    </script>             
+</apex:component>

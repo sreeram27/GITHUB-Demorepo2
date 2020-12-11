@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Check_if_existing_CaseInstallation_records_are_present</name>
+        <label>Check if existing Case installation records are present</label>
+        <locationX>472</locationX>
+        <locationY>52</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Records_Not_Present</name>
+            <conditionLogic>1</conditionLogic>
+            <conditions>
+                <leftValueReference>ExistingCaseInstallationRecords</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_CaseInstallation_Records</targetReference>
+            </connector>
+            <label>Records Not Present</label>
+        </rules>
+    </decisions>
+    <description>PRDCRM-35427: Auto-Creation of New Business SME records</description>
+    <interviewLabel>Create Case installation Record for ImplementationTracking {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Case installation Record for ImplementationTracking</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_CaseInstallation_Records</name>
+        <label>Create Case installation Records</label>
+        <locationX>734</locationX>
+        <locationY>56</locationY>
+        <inputAssignments>
+            <field>Implementation_Tracking_ID__c</field>
+            <value>
+                <elementReference>TrackingID</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Issue_Control__c</object>
+    </recordCreates>
+    <recordLookups>
+        <description>Used to get records from Case Installation object</description>
+        <name>Query_on_the_Case_Installation_Object</name>
+        <label>Query on the Case Installation	Object</label>
+        <locationX>262</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_existing_CaseInstallation_records_are_present</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Implementation_Tracking_ID__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TrackingID</elementReference>
+            </value>
+        </filters>
+        <object>Issue_Control__c</object>
+        <outputReference>ExistingCaseInstallationRecords</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <startElementReference>Query_on_the_Case_Installation_Object</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <description>To Check any existing Case Installation records</description>
+        <name>ExistingCaseInstallationRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Issue_Control__c</objectType>
+    </variables>
+    <variables>
+        <description>Used to capture the ID from Process Builder</description>
+        <name>TrackingID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Accenture_Emp_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Accenture Emp Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Certification__c</fullName>
+        <externalId>false</externalId>
+        <label>Certification</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Salesforce Administrator</fullName>
+                    <default>false</default>
+                    <label>Salesforce Administrator</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Advanced Administrator</fullName>
+                    <default>false</default>
+                    <label>Salesforce Advanced Administrator</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Platform App Builder</fullName>
+                    <default>false</default>
+                    <label>Salesforce Platform App Builder</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Domain Specialist</fullName>
+                    <default>false</default>
+                    <label>Salesforce Domain Specialist</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Domain Architect</fullName>
+                    <default>false</default>
+                    <label>Salesforce Domain Architect</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Technical Architect</fullName>
+                    <default>false</default>
+                    <label>Salesforce Technical Architect</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Developer</fullName>
+                    <default>false</default>
+                    <label>Salesforce Developer</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Platform Developer I</fullName>
+                    <default>false</default>
+                    <label>Salesforce Platform Developer I</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Platform Developer II</fullName>
+                    <default>false</default>
+                    <label>Salesforce Platform Developer II</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Sales Cloud Consultant</fullName>
+                    <default>false</default>
+                    <label>Salesforce Sales Cloud Consultant</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Service Cloud Consultant</fullName>
+                    <default>false</default>
+                    <label>Salesforce Service Cloud Consultant</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Marketing Cloud Consultant</fullName>
+                    <default>false</default>
+                    <label>Salesforce Marketing Cloud Consultant</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Pardot Consultant</fullName>
+                    <default>false</default>
+                    <label>Salesforce Pardot Consultant</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Pardot Specialist</fullName>
+                    <default>false</default>
+                    <label>Salesforce Pardot Specialist</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Marketing Cloud Email Specialist</fullName>
+                    <default>false</default>
+                    <label>Salesforce Marketing Cloud Email Specialist</label>
+                </value>
+                <value>
+                    <fullName>Salesforce Marketing Cloud Social Specialist</fullName>
+                    <default>false</default>
+                    <label>Salesforce Marketing Cloud Social Specialist</label>
+                </value>
+                <value>
+                    <fullName>Veeva Administrator</fullName>
+                    <default>false</default>
+                    <label>Veeva Administrator</label>
+                </value>
+                <value>
+                    <fullName>Veeva Vault Administrator</fullName>
+                    <default>false</default>
+                    <label>Veeva Vault Administrator</label>
+                </value>
+                <value>
+                    <fullName>Veeva Network Administrator</fullName>
+                    <default>false</default>
+                    <label>Veeva Network Administrator</label>
+                </value>
+                <value>
+                    <fullName>Veeva Events Management Administrator</fullName>
+                    <default>false</default>
+                    <label>Veeva Events Management Administrator</label>
+                </value>
+                <value>
+                    <fullName>ModelN</fullName>
+                    <default>false</default>
+                    <label>ModelN</label>
+                </value>
+                <value>
+                    <fullName>MuleSoft</fullName>
+                    <default>false</default>
+                    <label>MuleSoft</label>
+                </value>
+                <value>
+                    <fullName>SteelBrick</fullName>
+                    <default>false</default>
+                    <label>SteelBrick</label>
+                </value>
+                <value>
+                    <fullName>Conga</fullName>
+                    <default>false</default>
+                    <label>Conga</label>
+                </value>
+                <value>
+                    <fullName>DocuSign</fullName>
+                    <default>false</default>
+                    <label>DocuSign</label>
+                </value>
+                <value>
+                    <fullName>EchoSign</fullName>
+                    <default>false</default>
+                    <label>EchoSign</label>
+                </value>
+                <value>
+                    <fullName>SaaS Methodology Practitioner</fullName>
+                    <default>false</default>
+                    <label>SaaS Methodology Practitioner</label>
+                </value>
+                <value>
+                    <fullName>Intelligent Patient Platform</fullName>
+                    <default>false</default>
+                    <label>Intelligent Patient Platform</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>India</fullName>
+                    <default>false</default>
+                    <label>India</label>
+                </value>
+                <value>
+                    <fullName>US</fullName>
+                    <default>false</default>
+                    <label>US</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Manager_TL__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Manager ?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ALL</fullName>
+                    <default>false</default>
+                    <label>ALL</label>
+                </value>
+                <value>
+                    <fullName>CRM</fullName>
+                    <default>false</default>
+                    <label>CRM</label>
+                </value>
+                <value>
+                    <fullName>Presales</fullName>
+                    <default>false</default>
+                    <label>Presales</label>
+                </value>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Roll_Off_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Roll Off Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Roll_On_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Roll On Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Skill_Set__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Skill Set</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Team_Lead_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Team Lead Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Employee__c.Team_Lead__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>Employee__c.Manager_TL__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Employee__c</referenceTo>
+        <relationshipLabel>Employees (Team Lead Name)</relationshipLabel>
+        <relationshipName>Employees1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Team_Lead__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Team Lead?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Team_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Manager</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Employee__c.Manager_TL__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Employee__c</referenceTo>
+        <relationshipLabel>Employees</relationshipLabel>
+        <relationshipName>Employees</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Employee</label>
+    <nameField>
+        <encryptionScheme>None</encryptionScheme>
+        <label>Employee Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Employees</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Employee_by_Release_Allocation</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Employee By Release Allocation</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/VFP_EmployeeAllocation_Clone?Id={!Employee__c.Id}</url>
+    </webLinks>
+</CustomObject>

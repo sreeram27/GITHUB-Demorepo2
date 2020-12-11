@@ -1,0 +1,132 @@
+<apex:page standardController="VisitOps__Visit__c" extensions="VisitOps.DecisionCon" showHeader="false" tabstyle="VisitOps__Visit__c">
+<style>
+    .btnId1{
+        width:120px;
+    }   
+    .errorMessage{
+    text-align: center;
+    color : black;
+    font-size:15px;
+    font-family:sans-serif;
+} 
+</style>
+<div style="height:10px">
+ </div>
+ <div class="errorMessage">
+        <apex:messages />
+</div>
+
+    <head>
+         <apex:styleSheet value="{!$Resource.VisitOps__survey_css}"/>
+         <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/jquery-1.11.1.min.js')}"/>
+         <apex:stylesheet value="{!URLFOR($Resource.VisitOps__VMSResources, 'css/styles.css')}" />
+         <apex:includeScript value="{!URLFOR($Resource.VisitOps__VMSResources, 'js/functions.js')}"/> 
+      </head> 
+      
+      <apex:form id="table1" style="width:100%">  
+                                    <div class="bPageBlock">
+                                        <div class="pbHeader">
+                                            <table cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="pbTitle">
+                                                          <h3 align="center">Decision Survey</h3>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                             </table>
+                                        </div> 
+
+<div align="center">
+
+      <apex:commandButton value="Send Survey" action="{!sendSurvey}" status="progressIndicator" reRender="table1" oncomplete="showAlert({!NOT(errorOccured)},{!recepientsAvailable});" disabled="{!flag1}"/>
+      <apex:commandButton value="Cancel"  onClick="window.close();"/> 
+</div><br/><br/>
+<apex:pageMessages id="pageMsgId"/>
+<apex:actionfunction name="testAF" action="{!updateEmail}" rerender="button1,EmailId,checkedone1">
+<apex:param name="DecisionIndex" value="" assignTo="{!tempRowIndex}"/>
+</apex:actionFunction>
+<div class="pbBody">        
+<table cellpadding="0" cellspacing="0" class="list">
+    <tr class="headerRow">
+        
+           <th>Opportunity Name</th>
+           <th>Account Name</th>
+           <th>Sales Stage</th>
+           <th>Select <br/>Select All<br/><apex:inputCheckbox onclick="checkAll1(this,'checkedone1')"/></th>
+           <th>Attendees</th>
+           <th>Email</th>
+           <th>Last Sent To</th>
+           <th>Action</th>
+           
+    </tr>
+    
+    <apex:repeat value="{!dwe}" var="p" > 
+    
+    <tr class="dataRow">   
+    <td><apex:outputText value="{!p.OpportunityName}"/></td>
+    <td><apex:outputText value="{!p.AccountName}"/></td>
+    <td><apex:outputText value="{!p.SalesStage}"/></td>
+    
+    <!--<td><apex:inputCheckbox id="checkedone1" disabled="{!(p.SalesStage=='Closed Won')}" /></td>-->
+    <td><apex:inputCheckbox id="checkedone1" value="{!p.isSelected}" disabled="{!p.isdisable || p.surveyStatus}"/></td>
+    <td><apex:selectList value="{!p.selectedAttendeeId}" multiselect="false" size="1" onChange="testAF({!p.rowNo});">
+            <apex:selectOptions value="{!p.attendeeOptions}" />
+        </apex:selectList>
+    </td>
+       <td><apex:outputText id="EmailId" value="{!p.Email}"/></td>
+       
+       <!--<td><apex:commandButton styleclass="btnId1" value="Send Survey" action="{!sendSurveyIndex}" status="progressIndicator"  oncomplete="showAlert({!NOT(errorOccured)}),{!recepientsAvailable});" disabled="{!(p.SalesStage=='Closed Won')}" disabled="{!flag1}">-->
+       <td><apex:outputText value="{!p.surveyRecepient}"/></td>
+       <td><apex:commandButton styleclass="btnId1" id="button1" value="{!IF(p.surveyStatus==true,'Resend Survey','Send Survey')}" action="{!sendSurveyIndex}" status="progressIndicator" reRender="table1" oncomplete="showAlert({!NOT(errorOccured)});" disabled="{!p.isdisable}">
+
+       <apex:param name="DecisionIndex" value="{!p.rowNo}" assignTo="{!rowIndex}"/>
+       </apex:commandButton>
+       </td>
+       </tr>
+       
+       </apex:repeat>
+       
+       
+    </table>
+    </div>
+    </div>
+    <center><br/><br/>
+        <apex:commandButton value="Send Survey" action="{!sendSurvey}" status="progressIndicator" reRender="table1" oncomplete="showAlert({!NOT(errorOccured)},{!recepientsAvailable});" disabled="{!flag1}"/>
+        <apex:commandButton value="Cancel"  onClick="window.close();"/>   
+</center>
+<script type="text/javascript">
+function showAlert(isSuccessful) {
+    if(isSuccessful==true || isSuccessful=='true') {
+        alert('Survey sent successfully');
+    }
+}
+
+function showAlert(isSuccessful, recepientsAvailable) {
+    if((recepientsAvailable==false || recepientsAvailable=='false') && (isSuccessful==true || isSuccessful=='true')) {
+        alert('No recepients selected for sending Survey');
+    }
+    else if(isSuccessful==true || isSuccessful=='true') {
+        alert('Survey sent successfully');
+    }
+}
+
+function checkAll1(cb,cbid)
+        {
+            AllcheckPostDis = false;
+            fewDis = false;
+            var inputElem = document.getElementsByTagName("input");                    
+            for(var i=0; i<inputElem.length; i++)
+            {            
+                 if(inputElem[i].id.indexOf(cbid)!=-1){   
+                    if(!inputElem[i].disabled){  
+                     fewDis = true;                                  
+                     inputElem[i].checked = cb.checked;
+                    }
+                }
+            }
+        }
+  </script>
+</apex:form>
+<c:AjaxStatusIndicator statusText="Please Wait..."/>
+</apex:page>

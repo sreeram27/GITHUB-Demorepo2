@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Private_Resources_with_Visit_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Private Resources with Visit Team</label>
+        <sharedTo>
+            <group>VisitOps_Visit_Team</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Private Resource</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Rooms_with_All_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share Rooms with All Users</label>
+        <sharedTo>
+            <group>VisitOps_All_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Room</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

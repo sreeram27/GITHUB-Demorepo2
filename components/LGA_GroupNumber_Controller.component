@@ -1,0 +1,143 @@
+<!--
+  @File Name          : LGA_GroupNumber_Controller.component
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 3/4/2020, 4:15:59 PM
+  @Modification Log   : 
+  Ver       Date            Author                  Modification
+  1.0    3/4/2020   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<apex:component >
+    <script>
+    console.log('@@@@@@insertlog');
+    (function() {
+        'use strict';
+        angular
+        .module('vsAnthemProductApp')
+        .controller('ManualGroupNumerController', ManualGroupNumerController);
+    }());
+    ManualGroupNumerController.$inject = ['$scope', '$filter', '$window' ,'$rootScope' ];
+    function ManualGroupNumerController($scope, $filter, $window , $rootScope) {
+        console.info("Controller Loaded");
+        var vm = this;
+        //Pre-select all the master checkbox
+        vm.selectAll = false;
+        //vm.deletedDCStatus = true;
+        //Pre-select all the dependent checkbox
+        vm.selectAllInit = false;
+        vm.selectAllRequiredInit = false;
+        vm.claimSystems = [];//["WGS1","WGS2"];
+        vm.claimSystemGroups = {};
+        vm.groupDetailsToUpdate = [];
+        vm.test = [];
+        vm.showManualGroup = false;
+        vm.buttonName = "Exit";
+        
+        //vlocity_ins.DRProcessResult result = vlocity_ins.DRGlobal.process((Map<String, Object>)ob1, 'postQuoteMotorPremium');
+        
+        
+        vm.grpSelectItem = function(item){
+            console.info("-----------item----" + item.GroupNumber);
+            if(item.GroupNumber) {
+                item.showForEdit = false;
+            } else {
+                item.showForEdit = true;
+            }
+            
+        };
+        
+        vm.retrieveMassProducts = function(control) {
+            var massResult = [];
+            vm.showManualGroup = false;
+            vm.buttonName = "Exit";
+            //PKM
+            //vm.Checkbox3 = false;
+            console.log('@@@@@@retrieveMassProducts');
+            
+            if (typeof control != 'undefined' && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                if(control.vlcSI[control.itemsKey].length > 0 && typeof control.vlcSI[control.itemsKey] != 'undefined') {
+                    control.vlcSI[control.itemsKey].map(function(item){
+                        console.log("-------------DR_Output_QLIDetails-------------"+ $scope.bpTree.response.DR_Output_QLIDetails);
+                        
+                        if($scope.bpTree.response.DR_Output_QLIDetails) {
+                            console.log("-------------Hiiii 124-------------"+ item.QLIId);
+                            var DBValue = {};
+                            if (JSON.parse($scope.bpTree.response.DR_Output_QLIDetails) instanceof Array) {
+                                DBValue = JSON.parse($scope.bpTree.response.DR_Output_QLIDetails).find(function(sourceItem) { 
+                                    //console.log("-------------Hiiii  126-------------"+ JSON.stringify(JSON.parse($scope.bpTree.response.DR_Output_QLIDetails)));
+                                    return sourceItem.QLIId == item.QLIId;
+                                });
+                            } else {
+                                DBValue = JSON.parse($scope.bpTree.response.DR_Output_QLIDetails);
+                            }
+                            //console.log("-------------Hiiii 129-------------"+ DBValue.QLIId);
+                            
+                            if (!DBValue.GroupNumber || DBValue.GroupNumber == "") {
+                                item.showForEdit = true;
+                            } else {
+                                item.showForEdit = false;
+                                item.ClaimSystem = DBValue.ClaimSystem;
+                                item.GroupNumber = DBValue.GroupNumber;
+                            }
+                            
+                        }
+                        console.log("-------------GroupNumber-------------"+ item.GroupNumber);
+                        
+                        if(item.showForEdit){
+                            vm.showManualGroup = true;   
+                            vm.buttonName = "Next";   
+                            //PKM
+                            //vm.Checkbox3 = true;                      
+                        }
+                        //item.vlcConfirmSelection = vm.vlcConfirmSelection1;
+                        massResult.push(item);
+                    });
+                    console.log('@@@@@@$scope.bpTree.response'+$scope.bpTree.response.AutoGroupNoTriggered);
+                    if($scope.bpTree.response.AutoGroupNoTriggered) {
+                        $scope.bpTree.response.VF_AutoGroupNoTriggered = true; 
+                    }
+                }
+                console.log('@@@@@@massResult'+massResult);
+            }
+            document.getElementById("GroupNumberRequest_nextBtn").textContent = vm.buttonName;
+            document.getElementById("GroupNumberRequest_nextBtn").style.cssText = "color: white; text-color: red; line-height: 0rem; display: block; width: 90%; overflow-x: hidden; white-space: nowrap; text-overflow: ellipsis; position: absolute; left: 50%; transform: translate(-50%, -50%); color: rgb(255, 255, 255); text-align: center; font-size: 0.8rem;";
+            $scope.bpTree.response.VF_ShowManualGroupStep = vm.showManualGroup;
+            return massResult;
+            
+        };
+        
+        vm.updateExistingGroupNumbers = function(qli) {
+            var changedQLIToUpdate = [];
+            $scope.bpTree.response.QliGrpDetailsToUpdate = vm.test;
+            console.info("-----------vm.claimSystemGroups----" + vm.claimSystemGroups);
+            qli.ExistingGroupNumbers = vm.claimSystemGroups[qli.ClaimSystem];
+            if (vm.claimSystemGroups[qli.ClaimSystem] && vm.claimSystemGroups[qli.ClaimSystem].split(",").length == 1) {
+                console.log("----GroupNumber----"+vm.claimSystemGroups[qli.ClaimSystem]);
+                qli.GroupNumber = vm.claimSystemGroups[qli.ClaimSystem];
+            } else {
+                qli.GroupNumber = "";
+            }
+            if($scope.bpTree.response.QliGrpDetailsToUpdate.length == 0) {
+                console.info("-----------qli----" + qli);
+                $scope.bpTree.response.QliGrpDetailsToUpdate.push(qli);
+            } else {
+                changedQLIToUpdate = $filter('filter')($scope.bpTree.response.QliGrpDetailsToUpdate, function (item) {
+                    return item.QLIId == qli.QLIId
+                });
+                if(changedQLIToUpdate.length == 0){
+                    $scope.bpTree.response.QliGrpDetailsToUpdate.push(qli);
+                }
+            }
+            
+        };
+        
+        vm.getExistingGroupNumbers = function(){
+            vm.claimSystems = $scope.bpTree.response.AllClaimSystems;
+            vm.claimSystemGroups = $scope.bpTree.response.ActiveAccGrpData;
+            console.info("-----------ClaimSyatems----" + $scope.bpTree.response.AllClaimSystems);
+        };  
+    }
+    </script>             
+</apex:component>

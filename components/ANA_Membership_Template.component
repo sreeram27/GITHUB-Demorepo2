@@ -1,0 +1,731 @@
+<apex:component >
+<apex:includeScript value="{!URLFOR($Resource.vlocity_ins__LodashJS)}" />
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcSGCProdSelection.html Template.  Created at 2017-05-25 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcSGCProdSelection.html">
+
+  <style>
+  .via-slds .memberField{
+    border: 1px solid #cfd7e6 !important;
+    width: 80px;
+    font-size: 13px;
+    padding-left: 3px;
+  }
+  .via-slds .propField{
+    background: rgb(255, 255, 255);
+    border-radius: 1px;
+    border: 1px solid #cfd7e6 !important;
+    min-width: 60px;
+    padding-left: 3px;
+  }
+
+  .via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+  .via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+  </style>
+
+ <div class="panel panel-default" ng-controller="anaMembershipController as anaMembership">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th ng-if="anaMembership.groupNumberCalc == 'Grow' || anaMembership.groupNumberCalc == 'Partial' || anaMembership.groupNumberCalc == 'Acquisition' || anaMembership.groupNumberCalc == 'Divestiture'" class="slds-cell-shrink">
+       <label class="slds-checkbox">
+         <input type="checkbox" ng-model='anaMembership.selectAll' ng-change="anaMembership.selectAllChange(true);"/>
+         <span class="slds-checkbox--faux"></span>
+       </label>
+       <div ng-if="anaMembership.selectAll && anaMembership.selectAllInit" ng-repeat="p in anaMembership.retrieveProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+            <p ng-init="onSelectItem(control, p, $index, this, true); anaMembership.updateMembersTotal(true);"></p>
+          </div>
+       </div>
+       <div ng-if="!anaMembership.selectAll && anaMembership.selectAllInit" ng-repeat="p in anaMembership.retrieveProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected">
+            <p ng-init="onSelectItem(control, p, $index, this, true); anaMembership.updateMembersTotal(true);"></p>
+          </div>
+       </div>
+     </th>
+     <th ng-if="anaMembership.groupNumberCalc == 'PartialNew' || anaMembership.groupNumberCalc == 'PartialExisting' || anaMembership.groupNumberCalc == 'FullNew' || anaMembership.groupNumberCalc == 'FullExisting'" class="slds-cell-shrink">Select</th>
+     <th>Product</th>
+     <th>Subscribers</th>
+     <th ng-if="anaMembership.groupNumberCalc == 'Grow'">Grow
+       <div>
+         <input type="number" ng-model="addSubcriberLives" class="memberField ng-pristine ng-valid ng-scope ng-empty ng-touched" ng-change="anaMembership.updateSubscriberLives(addSubcriberLives)">
+       </div>
+     </th>
+     <th ng-if="anaMembership.groupNumberCalc == 'Partial'">Lose
+       <div>
+         <input type="number" ng-model="addSubcriberLives" class="memberField ng-pristine ng-valid ng-scope ng-empty ng-touched" ng-change="anaMembership.updateSubscriberLives(addSubcriberLives)">
+       </div>
+     </th>
+     <th ng-if="anaMembership.groupNumberCalc == 'Acquisition'">Add Lives
+       <div>
+         <input type="number" ng-model="addSubcriberLives" class="memberField ng-pristine ng-valid ng-scope ng-empty ng-touched" ng-change="anaMembership.updateSubscriberLives(addSubcriberLives)">
+       </div>
+     </th>
+     <th ng-if="anaMembership.groupNumberCalc == 'Divestiture'">Lose Lives
+       <div>
+         <input type="number" ng-model="addSubcriberLives" class="memberField ng-pristine ng-valid ng-scope ng-empty ng-touched" ng-change="anaMembership.updateSubscriberLives(addSubcriberLives)">
+       </div>
+     </th>
+     <th ng-if="anaMembership.groupNumberCalc == 'PartialNew'">Lost</th>
+     <th ng-if="anaMembership.groupNumberCalc == 'PartialExisting'">Lost</th>
+     <!--<th ng-if="anaMembership.groupNumberCalc == 'FullNew'"></th>
+     <th ng-if="anaMembership.groupNumberCalc == 'FullExisting'"></th>-->
+     <th>Members</th>
+     <th ng-if="anaMembership.groupNumberCalc == 'Grow'">Grow
+       <div>
+         <input type="number" ng-model="addMemberLives" class="memberField ng-pristine ng-valid ng-scope ng-empty ng-touched" ng-change="anaMembership.updateMemberLives(addMemberLives)">
+       </div>
+     </th>
+     <th ng-if="anaMembership.groupNumberCalc == 'Partial'">Lose
+       <div>
+         <input type="number" ng-model="addMemberLives" class="memberField ng-pristine ng-valid ng-scope ng-empty ng-touched" ng-change="anaMembership.updateMemberLives(addMemberLives)">
+       </div>
+     </th>
+     <th ng-if="anaMembership.groupNumberCalc == 'Acquisition'">Add Lives
+       <div>
+         <input type="number" ng-model="addMemberLives" class="memberField ng-pristine ng-valid ng-scope ng-empty ng-touched" ng-change="anaMembership.updateMemberLives(addMemberLives)">
+       </div>
+     </th>
+     <th ng-if="anaMembership.groupNumberCalc == 'Divestiture'">Lose Lives
+       <div>
+         <input type="number" ng-model="addMemberLives" class="memberField ng-pristine ng-valid ng-scope ng-empty ng-touched" ng-change="anaMembership.updateMemberLives(addMemberLives)">
+       </div>
+     </th>
+     <th ng-if="anaMembership.groupNumberCalc == 'PartialNew'">Lost</th>
+     <th ng-if="anaMembership.groupNumberCalc == 'PartialExisting'">Lost</th>
+     <!--<th ng-if="anaMembership.groupNumberCalc == 'FullNew'"></th>
+     <th ng-if="anaMembership.groupNumberCalc == 'FullExisting'"></th>-->
+     <th ng-if="anaMembership.groupNumberCalc == 'Grow' || anaMembership.groupNumberCalc == 'Partial'">Probability
+       <div>
+         <select ng-model="addProbability" ng-init="p.probability=''" class="propField ng-pristine ng-valid ng-scope ng-empty ng-touched" ng-options="numberList for numberList in anaMembership.range(0, 100, 5)" ng-change="anaMembership.updateProbability(addProbability)"></select>
+       </div>
+     </th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in anaMembership.retrieveProducts(control) track by $index' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }">
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this); anaMembership.selectAllChange(false); anaMembership.updateMembersTotal(false);'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.Name}}</td>
+     <td>{{p.Subscribers__c}}</td>
+     <td ng-if="anaMembership.groupNumberCalc != 'FullNew' && anaMembership.groupNumberCalc != 'FullExisting'" ng-init="p.subsChange = '0'; p.cumSubscribers = p.Subscribers__c"><input type="number" ng-disabled="!p.vlcSelected" ng-if="p.Subscribers__c" ng-model="p.subsChange" class="memberField" ng-change="anaMembership.updateMembersCount(p); anaMembership.updateMembersTotal(false);"/></td>
+     <td ng-show="false" ng-if="anaMembership.groupNumberCalc == 'FullNew' || anaMembership.groupNumberCalc == 'FullExisting'" ng-init="p.subsChange = p.Subscribers__c; p.cumSubscribers = p.Subscribers__c"></td>
+     <td>{{p.Members__c}}</td>
+     <td ng-if="anaMembership.groupNumberCalc != 'FullNew' && anaMembership.groupNumberCalc != 'FullExisting'" ng-init="p.memChange = '0'; p.cumMembers = p.Members__c"><input type="number" ng-disabled="!p.vlcSelected" ng-if="p.Members__c" ng-model="p.memChange" class="memberField" ng-change="anaMembership.updateMembersCount(p); anaMembership.updateMembersTotal(false);"/></td>
+     <td ng-show="false" ng-if="anaMembership.groupNumberCalc == 'FullNew' || anaMembership.groupNumberCalc == 'FullExisting'" ng-init="p.memChange = p.Members__c; p.cumMembers = p.Members__c"></td>
+     <td ng-if="anaMembership.groupNumberCalc == 'Grow' || anaMembership.groupNumberCalc == 'Partial'"><select ng-model="p.probability" ng-init="p.probability=''" ng-disabled="!p.vlcSelected" class="propField" ng-options="numberList for numberList in anaMembership.range(0, 100, 5)"></select> </td>
+   </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcSGCProdSelection.html Template. -->
+<!-- ----------------------------- -->
+
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcSGCRcvProdSelection.html Template.  Created at 2017-05-25 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcSGCRcvProdSelection.html">
+ <div class="panel panel-default" ng-controller="anaMembershipController as anaMembership">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">Select</th>
+     <th>Product</th>
+     <th>Subscribers</th>
+     <th>Receiving</th>
+     <th>Members</th>
+     <th>Receiving</th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in anaMembership.filterUnselectedRCVProducts(control.vlcSI[control.itemsKey])' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.Name}}</td>
+     <td>{{p.Subscribers__c}}</td>
+     <td ng-init="p.subsChange = ''; p.cumSubscribers = p.Subscribers__c"><input type="number" ng-disabled="!p.vlcSelected" ng-if="p.Subscribers__c" ng-model="p.subsChange" class="memberField" ng-change="anaMembership.updateRCVMembersCount(p); anaMembership.updateRCVMembersTotal();"/></td>
+     <td>{{p.Members__c}}</td>
+     <td ng-init="p.memChange = ''; p.cumMembers = p.Members__c"><input type="number" ng-disabled="!p.vlcSelected" ng-if="p.Members__c" ng-model="p.memChange" class="memberField" ng-change="anaMembership.updateRCVMembersCount(p); anaMembership.updateRCVMembersTotal();"/></td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcSGCRcvProdSelection.html  Template. -->
+<!-- ----------------------------- -->
+
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcSGCRcvAllProdSelection.html Template.  Created at 2017-05-25 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcSGCRcvAllProdSelection.html">
+ <div class="panel panel-default" ng-controller="anaMembershipController as anaMembership">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">Select</th>
+     <th>Product</th>
+     <th>Subscribers</th>
+     <th>Members</th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in anaMembership.filterUnselectedRCVAllProducts(control.vlcSI[control.itemsKey])' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this); anaMembership.updateRCVAllMembersTotal();'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.Name}}</td>
+     <td ng-init="p.subsChange = 0; p.cumSubscribers = 0"><input type="number" ng-disabled="!p.vlcSelected" ng-model="p.subsChange" class="memberField" ng-change="anaMembership.updateRCVAllMembersCount(p); anaMembership.updateRCVAllMembersTotal();"/></td>
+     <td ng-init="p.memChange = 0; p.cumMembers = 0"><input type="number" ng-disabled="!p.vlcSelected" ng-model="p.memChange" class="memberField" ng-change="anaMembership.updateRCVAllMembersCount(p); anaMembership.updateRCVAllMembersTotal();"/></td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcSGCRcvAllProdSelection.html  Template. -->
+<!-- ----------------------------- -->
+
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcANALightningProductSelection.html Template.             -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcANALightningProductSelection.html">
+<style>
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+    background: beige;
+    width: 100%;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 20px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+}
+</style>
+
+
+  <div class="slds-scrollable_x">
+    <div class="slds-grid slds-grid--horizontal" style="flex-wrap:wrap" ng-controller="anaMembershipController as anaMembership">
+<div style="display:none">{{control.vlcSI['recSet']}}</div>
+      <div class="vlc-slds-items--container vlc-slds-insurance-selectableItem"
+        ng-repeat="p in control.vlcSI['recSet']" ng-init='onSelectItem(control, p, $index, this)'>
+
+          <div class="slds-box vlc-slds-selectableItem" style="width:200px">
+
+            <div class="vlc-slds-selectableItem__name">
+              <div class="vlc-slds-item--details">
+
+              <div class="tooltip">
+                  <label class="slds-form__element__label" style="font-size:12px;font-weight:bold;max-width:150%;text-align:center;">
+                       {{p.Name}}
+                  </label>
+                  <span class="tooltiptext" ng-if="p.HelpText != undefined">{{p.HelpText}}</span>
+             </div>
+              </div>
+              <div class='vlc-slds-item-selectableItem-link' ng-init="p.vlcSelected=false" ng-class="{'vlc-selectableitem-selected' : p.vlcSelected || p.vlcSelected == undefined }">
+                  <button
+                      class="btn btn-default btn-block"
+                      ng-click="onSelectItem(control, p, $index, this, true)">
+                        <span ng-hide="p.vlcSelected">Select Product</span>
+                        <span ng-show="p.vlcSelected" class="selected"><i class="icon icon-v-check"></i>Selected</span>
+                  </button>
+              </div>
+            </div>
+            <div class="vls-slds-item--action" vlc-slds-added="{{ p.vlcSelected }}" >
+                <span class="slds-icon_container slds-icon-action-approval slds-icon_container--circle">
+                    <div class="slds-icon slds-icon--small">
+                       <img src="/resource/1491332014000/vlocity_ins__slds/assets/icons/action/approval.svg" align="middle" width="25" height="15">
+                    </div>
+                </span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+</script>
+<!-- -------------------------------------------------------- -->
+<!-- End of vlcANALightningProductSelection.html Template.    -->
+<!-- -------------------------------------------------------- -->
+
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcANALightningVarBundle.html Template.                    -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcANALightningVarBundle.html">
+<style>
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+    background: beige;
+    width: 100%;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+</style>
+
+  <div class="slds-scrollable_x">
+    <div class="slds-grid slds-grid--horizontal" style="flex-wrap:wrap" ng-controller="anaMembershipController as anaMembership">
+      <div style="display:none">{{control.vlcSI}}</div>
+         <div class="vlc-slds-items--container vlc-slds-insurance-selectableItem"
+        ng-repeat="p in control.vlcSI['recSet'] track by $index" ng-init='onSelectItem(control, p, $index, this)'>
+
+            <div class="slds-box vlc-slds-selectableItem" style="width:200px">
+
+            <div class="vlc-slds-selectableItem__name">
+             <div class="vlc-slds-item--details">
+
+             <div class="tooltip">
+                  <label class="slds-form__element__label" style="font-size:12px;font-weight:bold;max-width:150%;text-align:center;">
+                       {{p.Name}}
+                  </label>
+                  <span class="tooltiptext" ng-if="p.Description != undefined">{{p.Description}}</span>
+             </div>
+             </div>
+
+             <div class="select-custom-element">
+                    <select name="loopname" id="vlcBundleStage" class="slds-select ng-pristine ng-empty ng-valid ng-valid-required ng-touched" style="font-size:12px;font-weight:bold;max-width:100%;" ng-model="vlcBundleStage" ng-change="p.vlcBundleStage = vlcBundleStage">
+        <option value="">Stage</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Renewed">Renewed</option>
+        <option value="Jeopardy">Jeopardy</option>
+        <option value="IGAP In Progress">IGAP In Progress</option>
+                    </select>
+             </div>
+
+              <div class='vlc-slds-item-selectableItem-link' ng-init="p.vlcSelected=false" ng-class="{'vlc-selectableitem-selected' : p.vlcSelected || p.vlcSelected == undefined }">
+                  <button
+                      class="btn btn-default btn-block"
+                      ng-click="onSelectItem(control, p, $index, this, true)">
+                        <span ng-hide="p.vlcSelected">Select Program</span>
+                        <span ng-show="p.vlcSelected" class="selected"><i class="icon icon-v-check"></i>Selected</span>
+                  </button>
+              </div>
+            </div>
+            <div class="vls-slds-item--action" vlc-slds-added="{{ p.vlcSelected }}" >
+                <span class="slds-icon_container slds-icon-action-approval slds-icon_container--circle">
+                    <div class="slds-icon slds-icon--small">
+                       <img src="/resource/1491332014000/vlocity_ins__slds/assets/icons/action/approval.svg" align="middle" width="25" height="15">
+                    </div>
+                </span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+</script>
+<!-- ------------------------------------------------- -->
+<!-- End of vlcANALightningVarBundle.html Template.    -->
+<!-- ------------------------------------------------- -->
+
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcANALightningFixBundle.html Template.                    -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcANALightningFixBundle.html">
+<style>
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+    background: beige;
+    width: 100%;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+</style>
+
+  <div class="slds-scrollable_x">
+    <div class="slds-grid slds-grid--horizontal" style="flex-wrap:wrap" ng-controller="anaMembershipController as anaMembership">
+      <div style="display:none">{{control.vlcSI}}</div>
+         <div class="vlc-slds-items--container vlc-slds-insurance-selectableItem"
+        ng-repeat="p in control.vlcSI['recSet'] track by $index" ng-init='onSelectItem(control, p, $index, this)'>
+
+            <div class="slds-box vlc-slds-selectableItem" style="width:200px">
+
+            <div class="vlc-slds-selectableItem__name">
+             <div class="vlc-slds-item--details">
+
+             <div class="tooltip">
+                  <label class="slds-form__element__label" style="font-size:12px;font-weight:bold;max-width:150%;text-align:center;">
+                       {{p.Name}}
+                  </label>
+                  <span class="tooltiptext" ng-if="p.Description != undefined">{{p.Description}}</span>
+             </div>
+             </div>
+              <div class='vlc-slds-item-selectableItem-link' ng-init="onSelectItem(control, p, $index, this, true)" ng-class="{'vlc-selectableitem-selected' : p.vlcSelected || p.vlcSelected == undefined }">
+                  <button
+                      class="btn btn-default btn-block"
+                      ng-click="onSelectItem(control, p, $index, this, true)">
+                        <span ng-hide="p.vlcSelected">Select Program</span>
+                        <span ng-show="p.vlcSelected" class="selected"><i class="icon icon-v-check"></i>Selected</span>
+                  </button>
+              </div>
+            </div>
+            <div class="vls-slds-item--action" vlc-slds-added="{{ p.vlcSelected }}" >
+                <span class="slds-icon_container slds-icon-action-approval slds-icon_container--circle">
+                    <div class="slds-icon slds-icon--small">
+                       <img src="/resource/1491332014000/vlocity_ins__slds/assets/icons/action/approval.svg" align="middle" width="25" height="15">
+                    </div>
+                </span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+</script>
+<!-- ------------------------------------------------- -->
+<!-- End of vlcANALightningFixBundle.html Template.    -->
+<!-- ------------------------------------------------- -->
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcMUProdSelection.html Template.  Created at 2017-06-20 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcMUProdSelection.html">
+
+  <style>
+  .via-slds .memberField{
+    border: 1px solid #cfd7e6 !important;
+    width: 80px;
+    font-size: 13px;
+    padding-left: 3px;
+  }
+  .via-slds .propField{
+    background: rgb(255, 255, 255);
+    border-radius: 1px;
+    border: 1px solid #cfd7e6 !important;
+    min-width: 60px;
+    padding-left: 3px;
+  }
+
+  .via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+  .via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+  </style>
+ <div class="panel panel-default" ng-controller="anaMembershipController as anaMembership">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">
+       <label class="slds-checkbox">
+         <input type="checkbox" ng-model='anaMembership.selectAll' ng-change="anaMembership.selectAllChange(true);"/>
+         <span class="slds-checkbox--faux"></span>
+       </label>
+       <div ng-if="anaMembership.selectAll && anaMembership.selectAllInit" ng-repeat="p in anaMembership.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>
+       <div ng-if="!anaMembership.selectAll && anaMembership.selectAllInit" ng-repeat="p in anaMembership.retrieveMassProducts(control) track by $index" ng-hide="true">
+          <div ng-if="p.vlcSelected">
+            <p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+          </div>
+       </div>
+     </th>
+     <th>Product</th>
+     <th>Stage</th>
+     <th>Probability</th>
+     <th>Subscribers</th>
+     <th>Members</th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey] track by $index' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this); anaMembership.selectAllChange(false);'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.Name}}</td>
+     <td>{{p.ProductStage}}</td>
+     <td>{{p.Probability__c}}</td>
+     <td>{{p.Subscribers__c}}</td>
+     <td>{{p.Members__c}}</td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcMUProdSelection.html Template. -->
+<!-- ----------------------------- -->
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcOpptySelection.html Template.  Created at 2017-05-25 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcOpptySelection.html">
+ <div class="panel panel-default" ng-controller="anaMembershipController as anaMembership">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">Select</th>
+     <th>Effective Date</th>
+     <th>Oppty Name</th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.EffectiveDate}}</td>
+     <td>{{p.Name}}</td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcOpptySelection.html  Template. -->
+<!-- ----------------------------- -->
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcGroupSelection.html Template.  Created at 2017-07-25 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcGroupSelection.html">
+ <div class="panel panel-default" ng-controller="anaMembershipController as anaMembership">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">Select</th>
+     <th>Number</th>
+     <th>Division Name</th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.GrpNumber}}</td>
+     <td>{{p.DivisionName}}</td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcGroupSelection.html  Template. -->
+<!-- ----------------------------- -->
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcGroupSelectionMulti.html Template.  Created at 2017-09-15 17:31:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcGroupSelectionMulti.html">
+  <style>
+  .via-slds .memberField{
+    border: 1px solid #cfd7e6 !important;
+    width: 80px;
+    font-size: 13px;
+    padding-left: 3px;
+  }
+  .via-slds .propField{
+    background: rgb(255, 255, 255);
+    border-radius: 1px;
+    border: 1px solid #cfd7e6 !important;
+    min-width: 60px;
+    padding-left: 3px;
+  }
+
+  .via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+  .via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+ </style>
+
+ <div class="panel panel-default" ng-controller="anaMembershipController as anaMembership">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">Select</th>
+     <th>Number</th>
+     <th>Division Name</th>
+     <th>Subscribers</th>
+     <th>Members</th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.GrpNumber}}</td>
+     <td>{{p.DivisionName}}</td>
+     <td ng-init="p.subsChange = 0; p.cumSubscribers = 0"><input type="number" ng-disabled="!p.vlcSelected" ng-model="p.subsChange" class="memberField"/></td>
+     <td ng-init="p.memChange = 0; p.cumMembers = 0"><input type="number" ng-disabled="!p.vlcSelected" ng-model="p.memChange" class="memberField"/></td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcGroupSelectionMulti.html  Template. -->
+<!-- ----------------------------- -->
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of 
+ProductSelection.html Template.  Created at 2018-03-22 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+
+
+<script type="text/ng-template" id="SplitProductSelection.html">
+ <div class="panel panel-default" ng-controller="anaMembershipController as anaMembership">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">Select</th>
+     <th>Product Name</th>
+    </tr>
+   </thead>
+    
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0">
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.Name}}</td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of SplitProductSelection.html  Template. -->
+<!-- ----------------------------- -->
+
+</apex:component>

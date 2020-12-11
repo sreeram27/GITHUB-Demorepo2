@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order$Opportunity</field>
+    </columns>
+    <columns>
+        <field>Order$Situs_State__c</field>
+    </columns>
+    <columns>
+        <field>Order$OrderNumber</field>
+    </columns>
+    <columns>
+        <field>Order$Quote.Id</field>
+    </columns>
+    <columns>
+        <field>Order$AccountLegalName__c</field>
+    </columns>
+    <columns>
+        <field>Order$Implementation_Effective_Date__c</field>
+    </columns>
+    <columns>
+        <field>Order$Implementation_Type__c</field>
+    </columns>
+    <columns>
+        <field>Order$Are_there_changes_to_Broker_Commissions__c</field>
+    </columns>
+    <columns>
+        <field>Order$Are_Broker_Commissions_Impacted__c</field>
+    </columns>
+    <columns>
+        <field>Order$Implementation_Status__c</field>
+    </columns>
+    <description>Has Impl Case  Broker Com fields</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <column>Order$Anthem_Entity__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>National</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order$Implementation_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Business,Renewal,Change Request Off Cycle</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order$Implementation_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>,Withdrawn</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>2 Implementation Cases for Comp</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Imp_Cases_to_Quotes_to_QLI__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Order$Implementation_Effective_Date__c</dateColumn>
+        <endDate>2020-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2019-01-01</startDate>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,187 @@
+<apex:component >
+   <script type="text/ng-template" id="vlcIGroupPlanDesignsUpload.html">
+   <div class="panel panel-default" ng-controller="IDCGroupPlanDesignController as ctrl" style="width: 100%">
+     <table class="slds-table slds-table--bordered slds-table--cell-buffer nobordertop slds-wrap" style="table-layout: auto;width:100%;height: 100%">
+   <thead>
+   <tr>
+   <th class="slds-cell-shrink" ng-show="bpTree.response.OrdType == 'Change Request Off Cycle'">
+	<label class="slds-checkbox" style="text-align: center;">
+	<input type="checkbox" ng-model='ctrl.selectAll' ng-change="ctrl.selectAllChange(true);"/>
+	<a ng-model='ctrl.selectAll' ng-click="ctrl.selectAllChange(ctrl.selectAll);" style="color: #514f4d;"><b>Select</b></a>
+	<!--<u><b>Select All</b></u>-->
+	</label>
+	<div ng-if="ctrl.selectFlag">
+	<div ng-if="ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in control.vlcSI[control.itemsKey] track by $index" ng-hide="true">
+	  <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+		<p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+	  </div>
+	</div>
+	<div ng-if="!ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in control.vlcSI[control.itemsKey] track by $index" ng-hide="true">
+	  <div ng-if="p.vlcSelected">
+		<p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+	  </div>
+	</div>
+	</div>
+	</th>
+	<th><b>ID Card Design</b></th>
+	<th style="width: 30%;"><b>Plan Name</b></th>
+	<th><b>Line Of Business</b></th>
+	<th><b>Funding Type</b></th>
+	<th><b>Contract Code</b></th>
+	</tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0 && bpTree.response.OrdType == 'Change Request Off Cycle'">
+   <tr ng-repeat="p in control.vlcSI[control.itemsKey]" ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }"  >
+      <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this);ctrl.onSelectGroupID(p);'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+		</th>
+         
+        <td style="padding: 12px;font-size:12px;"> 
+            <p ng-show="!p.vlcSelected" style="font-size:12px;">{{ p.IdCardDesign }}</p>
+            <input type="text" name="IdCardDesign" ng-model="p.IdCardDesign" ng-show="p.vlcSelected" class="slds-input ng-pristine ng-untouched ng-valid-minlength ng-valid-maxlength ng-empty ng-valid ng-valid-required" />
+        </td>
+           	
+		<td class="wrapword" style= "white-space:Normal">{{p.ProductName}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.LOB}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.Funding}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.ContractCode}}</td>
+				</tr>
+     </tbody>
+	 
+	 <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0 && bpTree.response.NewBusiness == 'Yes'">
+		<tr ng-repeat="p in control.vlcSI[control.itemsKey]" ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" ng-init="onSelectItem(control, p, $index, this, true);">
+		<th class="slds-cell-shrink" ng-show="bpTree.response.OrdType == 'Change Request Off Cycle'">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this); ctrl.selectAllChange(false);'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+		</th>
+         
+        <td style="padding: 12px;font-size:12px;"> 
+            <input type="text" name="IdCardDesign" ng-model="p.IdCardDesign" class="slds-input ng-pristine ng-untouched ng-valid-minlength ng-valid-maxlength ng-empty ng-valid ng-valid-required" />
+         </td>
+           	
+		<td class="wrapword" style= "white-space:Normal">{{p.ProductName}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.LOB}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.Funding}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.ContractCode}}</td>
+		</tr>
+     </tbody>
+	 
+	 </table>
+	 </div>
+ </script> 
+ 
+ <script type="text/ng-template" id="vlcIGroupPlanDesignsUploadTemplate.html">
+ <div class="panel panel-default" ng-controller="IDCGroupPlanDesignController as ctrl" style="width: 100%">
+   <table class="slds-table slds-table--bordered slds-table--cell-buffer nobordertop slds-wrap" style="table-layout: auto;width:100%;height: 100%">
+   <thead>
+   <tr>
+   <th class="slds-cell-shrink" >
+	<label class="slds-checkbox" style="text-align: center;">
+	<input type="checkbox" ng-model='ctrl.selectAll' ng-change="ctrl.selectAllChange(true);"/>
+	<a ng-model='ctrl.selectAll' ng-click="ctrl.selectAllChange(ctrl.selectAll);" style="color: #514f4d;"><b>Select</b></a>
+	<!--<u><b>Select All</b></u>-->
+	</label>
+	
+	<div ng-if="ctrl.selectFlag">
+	<div ng-if="ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in control.vlcSI[control.itemsKey] track by $index" ng-hide="true">
+	  <div ng-if="p.vlcSelected == false || p.vlcSelected == undefined">
+		<p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+	  </div>
+	</div>
+	<div ng-if="!ctrl.selectAll && ctrl.selectAllInit" ng-repeat="p in control.vlcSI[control.itemsKey] track by $index" ng-hide="true">
+	  <div ng-if="p.vlcSelected">
+		<p ng-init="onSelectItem(control, p, $index, this, true);"></p>
+	  </div>
+	</div>
+	</div>
+	
+	</th>
+            
+   <th style="width: 40%;"><b>Suffix</b></th>
+	<th style="width: 30%;"><b>Plan Name</b></th>
+	<th><b>Line Of Business</b></th>
+	<th><b>Employee category</b></th>
+	<th><b>Employee Class Name</b></th>
+	<th><b>Effective Date</b></th>
+	</tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+   <tr ng-repeat="p in control.vlcSI[control.itemsKey] | orderBy : '-EffectiveDate'" ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+        <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this); ctrl.onSelectGroupID(p);'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+		</th>
+        
+    	<td class="wrapword" style= "white-space:Normal">{{p.GroupSuffix}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.PlanName}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.LineOFBusiness}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.EmpCategory}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.EmpClassname}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.EffectiveDate}}</td>
+		</tr>
+     </tbody>
+	 </table>
+	</div>
+</script>
+    
+<script type="text/ng-template" id="vlcSelectedGroupPlanDesignsDocs.html">
+   <table class="slds-table slds-table--bordered slds-table--cell-buffer nobordertop slds-wrap" style="table-layout: auto;width:100%;height: 100%">
+   <thead>
+   <tr>
+        
+   <th style="width: 40%;"><b>Suffix</b></th>
+	<th style="width: 30%;"><b>Plan Name</b></th>
+	<th><b>Line Of Business</b></th>
+	<th><b>Employee category</b></th>
+	<th><b>Employee Class Name</b></th>
+	<th><b>Effective Date</b></th>
+	</tr>
+   </thead>
+  <tbody class='ins' ng-if="bpTree.response.SelectSuffixes.Group_Suffixes.length > 0" >
+   <tr ng-repeat="p in bpTree.response.SelectSuffixes.Group_Suffixes | orderBy : '-EffectiveDate'" ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+    	
+       <td class="wrapword" style= "white-space:Normal">{{p.GroupSuffix}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.PlanName}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.LineOFBusiness}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.EmpCategory}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.EmpClassname}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.EffectiveDate}}</td>
+		</tr>
+     </tbody>
+	 </table>
+    </script>
+	
+	<!--<script type="text/ng-template" id="vlcSelectedGroupPlanDesignsNB.html">
+   <table class="slds-table slds-table--bordered slds-table--cell-buffer nobordertop slds-wrap" style="table-layout: auto;width:100%;height: 100%">
+   <thead>
+   <tr>
+        
+   <th style="width: 40%;"><b>Suffix</b></th>
+	<th style="width: 30%;"><b>Plan Name</b></th>
+	<th><b>Line Of Business</b></th>
+	<th><b>Employee category</b></th>
+	<th><b>Employee Class Name</b></th>
+	<th><b>Effective Date</b></th>
+	</tr>
+   </thead>
+  <tbody class='ins' ng-if="bpTree.response.Group_Suffixes1.length > 0" >
+   <tr ng-repeat="p in bpTree.response.Group_Suffixes1" ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+    	
+       <td class="wrapword" style= "white-space:Normal">{{p.GroupSuffix}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.PlanName}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.LineOFBusiness}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.EmpCategory}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.EmpClassname}}</td>
+		<td class="wrapword" style= "white-space:Normal">{{p.EffectiveDate}}</td>
+		</tr>
+     </tbody>
+	 </table>
+    </script>-->
+</apex:component>

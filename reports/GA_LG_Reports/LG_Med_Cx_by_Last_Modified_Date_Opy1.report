@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_32961235</developerName>
+        <masterLabel>New Bus Prospect Based on Prod Stage</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Account.Opportunities.Quotes.QuoteLineItems$ProductStage__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Sold</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP Dead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP In Progress</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP Sold</sourceValue>
+            </sourceValues>
+            <value>New Business Prospect</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_54606262</developerName>
+        <masterLabel>New Bus Prospect Based on Upsell Quote</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Opportunities.Quotes.QuoteLineItems$Upsell__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Yes</sourceValue>
+            </sourceValues>
+            <value>New Business Prospect</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>No</sourceValue>
+            </sourceValues>
+            <value>-</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_60804866</developerName>
+        <masterLabel>Product Overall Status</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Opportunities.Quotes.QuoteLineItems$ProductStage__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Renewed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Sold</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP Sold</sourceValue>
+            </sourceValues>
+            <value>Sold</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Dead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Declined to Quote</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Termed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP Dead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP Lost</sourceValue>
+            </sourceValues>
+            <value>Lost</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>In Progress</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeopardy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP In Progress</sourceValue>
+            </sourceValues>
+            <value>In Process</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_78659082</developerName>
+        <masterLabel>Product Status Detail</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Opportunities.Quotes.QuoteLineItems$ProductStage__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Termed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Dead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP Dead</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP Lost</sourceValue>
+            </sourceValues>
+            <value>Closed Lost</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Sold</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Renewed</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP Sold</sourceValue>
+            </sourceValues>
+            <value>Closed Won</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Declined to Quote</sourceValue>
+            </sourceValues>
+            <value>DTQ by Sales</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>In Progress</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeopardy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IGAP In Progress</sourceValue>
+            </sourceValues>
+            <value>Quoting</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_96306441</developerName>
+        <masterLabel>Prospect Type Based on Opp Rcrd Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Account.Opportunities$OpportunityRecordTypeName__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>In Group Add Product Local</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>New Business Local</sourceValue>
+            </sourceValues>
+            <value>New Business Prospect</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Renewal Local</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Group Change Local</sourceValue>
+            </sourceValues>
+            <value>Renewal Prospect</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account.Opportunities$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$ProductStage__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$ProductLOB__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$CloseDate</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account$vlocity_ins__MarketSegment__c</field>
+    </columns>
+    <columns>
+        <field>Account$MBU_Codes__c</field>
+    </columns>
+    <columns>
+        <field>Account$Group_Size__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Funding__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Competitor__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Members__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Subscribers__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Financing__c</field>
+    </columns>
+    <columns>
+        <field>Account$Cancel_Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$StageName</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$Stage_Reason__c</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities$RecordType</field>
+    </columns>
+    <columns>
+        <field>Account.Opportunities.Quotes.QuoteLineItems$Group_Number__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account$WARP_Medical_Members__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account$WARPMedicalSubscribers__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account$Anthem_Entity__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Local/Large Group,Labor and Trust</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Situs_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Georgia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$vlocity_ins__MarketSegment__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Government,Individual,Medicare,Small Group</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities.Quotes.QuoteLineItems$ProductCategory__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Product</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities.Quotes.QuoteLineItems$ProductLOB__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Medical</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Opportunity.Renewal_Local,Opportunity.In_Group_Change,Opportunity.Renewal</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Customer Termed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$LastModifiedDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>12/6/2019 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Opportunities$CloseDate</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>10/1/2019</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>LG Med Cx by Last Modified Date (Opy)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_Opportunities_Quotes_and_QLI__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Account$LastActivityDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

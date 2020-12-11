@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Title__c</field>
+    </columns>
+    <columns>
+        <field>Request__c.Request_Description__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Request__c.TotEst__c</field>
+    </columns>
+    <description>This report shows only the Phase 1b Reqs considered NOT MVP by EZ. Reqs considered not MVP by ANTM have been removed.</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>Client Intent,CIP Management,Account Management Handoff,Group Structure Setup,SME Management,NIDB,Project Plan &amp; Task Management,Vendor Management,Communications &amp; Task Management,Impl. Reporting,Impl. Document Management,AM Document Management</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Requirement_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Business</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Close: Deployed,Close: Rejected,Close: Duplicate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Request__c.Planned_Release__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Release 1b</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>392,407,423,99,123,525,527,528,344,183,538,337,340,341,348,351,353,561,562,547,556,472,474,582,596,565,567,569,205,299,587,504,505,519,462,463,516,465,520,521,493,496,438,444,445,452,453,456,487,490,491,495,448,450,451,570</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Phase 1b Requests EZ-ANTM NOT MVP</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Request__c@Request__c.Capability__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Request__c.TotEst__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Request__c.StartTime_Approved_Emergency_Release__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

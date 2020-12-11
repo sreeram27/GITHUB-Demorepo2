@@ -1,0 +1,11 @@
+<messaging:emailTemplate subject="ANA Custom Networks Approval Requested for {!relatedTo.ClientName__c}" recipientType="User" relatedToType="QuoteLineItemApproval__c">
+<messaging:htmlEmailBody >
+  A new ANA Custom Networks product has been submitted for approval on {!relatedTo.LastModifiedDate} by {!relatedTo.LastModifiedBy.Name}. 
+ 
+ <c:ANA_Custom_Networks_Approval_Request qlitemappId="{!relatedTo.Id}"/>
+ 
+ To review and approve / reject the product, please click this link. 
+ {!relatedTo.UrlFormulaField__c}{!relatedTo.id}
+ 
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

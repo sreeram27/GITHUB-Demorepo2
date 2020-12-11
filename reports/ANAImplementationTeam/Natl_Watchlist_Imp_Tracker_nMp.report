@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Implementation_Tracking__c.Account_Legal_Name__c</field>
+    </columns>
+    <columns>
+        <field>Implementation_Tracking__c.Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Implementation_Tracking__c.Region__c</field>
+    </columns>
+    <columns>
+        <field>Implementation_Tracking__c.Implementation_Record_ID__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Implementation_Tracking__c.Overall_Status__c</field>
+    </columns>
+    <columns>
+        <field>Implementation_Tracking__c.Implementation_Effective_Date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Implementation_Tracking__c.Overall_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Active - Yellow</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Implementation_Tracking__c.Implementation_Effective_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1/1/2020</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Natl Watchlist  Imp Tracker</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Implementation_Tracking__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Implementation_Tracking__c.Audit_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

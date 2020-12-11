@@ -1,0 +1,4 @@
+<apex:component controller="APLG_01_OpportunityEmailTemplate_CC" access="global">
+     <apex:attribute name="accountId" type="Id" description="Id of related Account" assignTo="{!accId}"/>
+    {!IF(TaxIdsByAccountId != null,TaxIdsByAccountId.Tax_ID__c, "")}
+</apex:component>

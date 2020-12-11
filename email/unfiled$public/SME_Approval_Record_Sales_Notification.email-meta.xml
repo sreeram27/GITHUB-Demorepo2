@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sends a notification to sales support on Status change to Denied ,Pending,Approved with Deviations</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SME Approval Record Sales Notification</name>
+    <style>none</style>
+    <subject>Action Required: Update to SME Approval Record for {!SME_Approvals__c.Account_Legal_Name__c}</subject>
+    <textOnly>The status of {!SME_Approvals__c.SMEHy__c} was updated. Please review and take appropriate steps.
+
+Account name: {!SME_Approvals__c.Account_Legal_Name__c}
+Implementation Case name: {!SME_Approvals__c.Implementation_Case_Name__c}
+Implementation Case status: {!SME_Approvals__c.Implementation_Status__c}
+SME Approval record status: {!SME_Approvals__c.Status__c}
+Return Reason: {!SME_Approvals__c.Return_Reason__c}
+Comments: {!SME_Approvals__c.Comments__c}
+
+To view the SME Approval Record, please see the below link:
+{!SME_Approvals__c.SMEHy__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

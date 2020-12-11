@@ -1,0 +1,128 @@
+<apex:component >
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcAutoDepartmentSelection.html Template.  Created at 2018-02-21 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcAutoDepartmentSelection.html">
+  <style>
+ 
+  .via-slds .memberField{
+    border: 1px solid #cfd7e6 !important;
+    width: 80px;
+    font-size: 13px;
+    padding-left: 3px;
+  }
+  .via-slds .propField{
+    background: rgb(255, 255, 255);
+    border-radius: 1px;
+    border: 1px solid #cfd7e6 !important;
+    min-width: 60px;
+    padding-left: 3px;
+  }
+
+  .via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+  .via-slds .slds-table td, .via-slds .slds-table th{
+       white-space: normal !important;
+  }
+    input .inputChkDisabled {
+        background-color: #FFFFFF;
+    }
+
+    input .inputChkDisabled[disabled] {
+        background-color: #FFFFFF;
+    }
+    input[type=checkbox] {
+        content: " ";
+        background-color: #FFFFFF;
+        display: inline-block;
+        visibility: visible;
+    }
+    
+    input[type=checkbox]:checked:after {
+        content: "\2714";
+        background-color: #FFFFFF;
+        display: inline-block;
+    }    
+  </style>
+  
+ <div class="panel panel-default" ng-controller="SMEApprovalcontroller">
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">&nbsp;</th>
+     <th>SME Department</th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey] | orderBy' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+     <th class="slds-cell-shrink">&nbsp;
+        <!-- 
+        <label class="slds-checkbox">
+          <input id="autoDept" class="inputChkDisabled" type="checkbox" ng-model="checked" ng-init="checked=true"  ng-disabled="checked" ng-class="{'disabled-class': !inputChkDisabled}"/>
+          <span class="inputChkDisabled slds-checkbox--faux"></span>
+        </label>
+         -->
+     </th>
+     <td>{{p.Name}}</td>
+   </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcAutoDepartmentSelection.html  Template. -->
+<!-- ----------------------------- -->
+
+    
+<!-- ------------------------------------------------------------------- -->
+<!-- Start of vlcManualDepartmentSelection.html Template.  Created at 2018-02-21 18:50:22 UTC -->
+<!-- ------------------------------------------------------------------- -->
+<script type="text/ng-template" id="vlcManualDepartmentSelection.html">
+ 
+ <div class="panel panel-default" ng-controller="SMEApprovalcontroller" ng-init='onSelectItem(control, p, $index, this);'>
+  <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+   <thead>
+    <tr>
+     <!-- Header for checkbox -->
+     <th class="slds-cell-shrink">Select</th>
+     <th>SME Department</th>
+     <th>&nbsp;</th>
+    </tr>
+   </thead>
+   <tbody class='ins' ng-if="control.vlcSI[control.itemsKey].length > 0" >
+    <tr ng-repeat='p in control.vlcSI[control.itemsKey] ' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+    
+     <th class="slds-cell-shrink">
+        <label class="slds-checkbox">
+          <input id="manualDept" type="checkbox" ng-model='p.vlcSelected;' ng-init ='p.vlcSelected =(p.vlcSelected == "true"? true:false);onSelectItem(control, p, $index, this);' ng-change='onSelectItem(control, p, $index, this);showOTher=(p.Name == "Other" && p.vlcSelected ? true:false)'' />
+          <span class="slds-checkbox--faux"></span>
+        </label>
+     </th>
+     <td>{{p.Name}}</td>
+     <td><div ng-show='showOTher' >          
+         <div class="slds-form-element">
+   
+   <label class="slds-form-element__label" for="text-input-01"><span class="vlc-asterix icon-v-asterix ng-scope"></span>Provide Name of Department</label>
+  <div class="slds-form-element__control">
+    <input id="otherId" type="text" ng-model='p.otherDepartment'  class="slds-input" ng-required='showOTher' />
+  </div>
+</div> 
+
+                     
+                            
+         </div></td>
+   </tr>
+   </tbody>
+  </table>
+  
+ </div>
+ <p>&nbsp;</p>
+</script>
+<!-- ----------------------------- -->
+<!-- End of vlcManualDepartmentSelection.html  Template. -->
+<!-- ----------------------------- -->
+
+</apex:component>

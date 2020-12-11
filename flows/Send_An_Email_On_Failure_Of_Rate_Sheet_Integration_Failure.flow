@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email_to_Users</name>
+        <label>Send Email to Users</label>
+        <locationX>436</locationX>
+        <locationY>73</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Final Rate Sheet Error Notification </stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>UserEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>IntegrationStatusFailedNotificationtoRateSheetOwner</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <description>Latest Version 30</description>
+    <interviewLabel>Send An Email On Failure Of  Rate Sheet Integration Failure {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send An Email On Failure Of  Rate Sheet Integration Failure</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_File_Owner_From_Content_Document</name>
+        <label>Get File Owner From Content Document</label>
+        <locationX>248</locationX>
+        <locationY>72</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Query_On_User_To_Get_Email</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ContentDocumentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ContentDocumentId</elementReference>
+            </value>
+        </filters>
+        <object>ContentVersion</object>
+        <outputAssignments>
+            <assignToReference>UploadedByID</assignToReference>
+            <field>ContentModifiedById</field>
+        </outputAssignments>
+        <sortField>LastModifiedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+    </recordLookups>
+    <recordLookups>
+        <name>Query_On_User_To_Get_Email</name>
+        <label>Query On User To Get Email</label>
+        <locationX>378</locationX>
+        <locationY>247</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Send_Email_to_Users</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>UploadedByID</elementReference>
+            </value>
+        </filters>
+        <object>User</object>
+        <outputAssignments>
+            <assignToReference>UserEmail</assignToReference>
+            <field>Email</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>OwnerFirstName</assignToReference>
+            <field>FirstName</field>
+        </outputAssignments>
+    </recordLookups>
+    <startElementReference>Get_File_Owner_From_Content_Document</startElementReference>
+    <status>Draft</status>
+    <textTemplates>
+        <name>IntegrationStatusFailedNotificationtoRateSheetOwner</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>Hello {!OwnerFirstName},
+
+Please be advised that the rate sheet you uploaded has failed. Please view and re-upload a new rate sheet.
+File URL: {!FileURL}
+
+Implementation Case &amp; Account Information:
+Implementation Case: {!ImplementationCase}.
+Account Name: {!AccountName}.
+
+Error Details:
+Error Status: {!ErrorStatus}.
+Error Description: {!StatusDescription}.
+Error ID: {!ErrorId}.
+Error Date/Time: {!ErrorDate}.
+
+Thank you!</text>
+    </textTemplates>
+    <variables>
+        <description>Account Name related to the Implementation Case.</description>
+        <name>AccountName</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ContentDocumentId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ErrorDate</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>name of the error</description>
+        <name>ErrorId</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ErrorStatus</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>FileURL</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>Id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>ImplementationCase</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>OwnerFirstName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>StatusDescription</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>UploadedByID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>UserEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

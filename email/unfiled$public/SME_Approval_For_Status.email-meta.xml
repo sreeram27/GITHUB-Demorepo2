@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SME Approval For Status</name>
+    <style>none</style>
+    <subject>{!SME_Approvals__c.Account_Legal_Name__c},{!SME_Approvals__c.Impl_Case_Name__c} – SME Approval Record Denied</subject>
+    <textOnly>Attention: {!SME_Approvals__c.Name} associated with {!SME_Approvals__c.Impl_Case_Name__c} is in Status &apos;Denied&quot; and Requires Attention
+
+{!SME_Approvals__c.Implementation_Record_ID__c}
+
+To view the SME Approval Record, please see the below link:
+{!SME_Approvals__c.SMEHy__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

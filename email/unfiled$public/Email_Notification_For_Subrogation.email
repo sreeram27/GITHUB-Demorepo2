@@ -1,0 +1,73 @@
+<messaging:emailTemplate subject="Other - Anthem Subrogation Carve Out Notification for {!relatedTo.Quote.Opportunity.Account.Name}" recipientType="User" relatedToType="QuoteLineItem">
+<messaging:htmlEmailBody >
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+     border-collapse: collapse;
+     text-align: left;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<p>Details have been captured in Salesforce for the <b>'Other - Anthem Subrogation product'</b> on <b>{!DAY(TODAY())}-{!MONTH(TODAY())}-{!YEAR(TODAY())}</b> by <b><c:GetAccountImplementerComponent orderID="{!relatedTo.Quote.Opportunity.ID}"/></b>. This is an automated notification for your awareness. Important! Please contact Kaye Newsome to discuss carve out prior to finalizing with client.There is an impact of $.30 PMPM to clients on their ASO fee if carving out Subrogation.
+</p>
+<table style='position:relative'>
+  <tr>
+  <th>Client Name:</th>
+     <td> {!relatedTo.Quote.Opportunity.Account.Name} </td>
+  </tr>
+  <tr>
+  <th>Effective Date:</th>
+    <td>{!Day(relatedTo.Effective_Date_IC__c)}-{!Month(relatedTo.Effective_Date_IC__c)}-{!Year(relatedTo.Effective_Date_IC__c)}</td> 
+     </tr>
+   <tr>  
+  <th>Region:</th>
+    <td> {!relatedTo.Quote.Opportunity.Account.Region__c} </td>
+  </tr>
+  <tr>
+  <th>New or Existing Client:</th>
+      <td> {!relatedTo.Quote.Opportunity.RecordType.name} </td>
+  </tr>
+  <tr>
+  <th>Market:</th>
+      <td> {!relatedTo.Quote.Opportunity.Account.Anthem_Entity__c} </td>
+  </tr>
+  <tr>
+  <th>Likelihood of Winning:</th>
+      <td> {!relatedTo.Probability__c} </td>
+  </tr>
+  <tr>
+  <th>Financing:</th>
+      <td> {!relatedTo.Financing__c} </td>
+  </tr>
+  <tr>
+  <th>Claims Platform:</th>
+      <td> {!relatedTo.Quote.Claim_System__c} </td> 
+  </tr>
+  <tr>
+  <th>Subrogation Carved Out:</th>
+      <td> {!relatedTo.Carved_Out__c} </td>
+  </tr>
+  <tr>
+  <th>Comments:</th>
+      <td> {!relatedTo.Carved_Out_Comments__c} </td>
+  </tr>
+  <tr>
+  <th>Estimated Membership:</th>
+      <td> {!relatedTo.Members__c} </td>
+  </tr>
+</table>
+<br>
+</br>
+<i> Sales/Account Management should contact Kaye Newsome (outside of Salesforce - kaye.Newsome@anthem.com) if they are discussing subrogation carve-out with the client and then notify "Kaye Newsome" (via Salesforce) when subrogation carve out is yes/selected.</i>
+
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

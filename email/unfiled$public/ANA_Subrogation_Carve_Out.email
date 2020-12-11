@@ -1,0 +1,18 @@
+</p>
+<table border="1">
+<tr><td>Client Name: </td><td>{!QuoteLineItem.ClientName__c}</td></tr>
+<tr><td>Effective Date: </td><td>{!QuoteLineItem.EffectiveDate__c}</td></tr>
+<tr><td>Group Number: </td><td>{!QuoteLineItem.Group_Number__c}</td></tr>
+<tr><td>Region: </td><td>{!QuoteLineItem.Region__c}</td></tr> 
+<tr><td>New or existing: </td><td>{!QuoteLineItem.New_or_Existing_Opportunity__c}</td></tr>
+<tr><td>Market: </td><td>National Accounts</td></tr>
+<tr><td>Likelihood of winning: </td><td>{!QuoteLineItem.Probability__c}</td></tr>
+<tr><td>Financing: </td><td>{!QuoteLineItem.Financing__c}</td></tr>
+<tr><td>Claims Platform: </td><td>{!QuoteLineItem.ClaimsPlatform__c}</td></tr>
+<tr><td>Subrogation Carved Out: </td><td>{!QuoteLineItem.Subrogation_Carved_Out__c}</td></tr>
+<tr><td>Subro Carve Out Effective Date : </td><td>{!QuoteLineItem.Subro_Carve_Out_Effective_Date__c}</td></tr>
+<tr><td>Subro Carve Out Carrier : </td><td>{!QuoteLineItem.Subro_Carve_Out_Carrier__c}</td></tr>
+<tr><td>Comments: </td><td>{!QuoteLineItem.Subrogation_Carved_Out_Comments__c}</td></tr>
+<tr><td>Estimated Membership: </td><td>{!QuoteLineItem.Members__c}</td></tr>
+</table>
+<p>

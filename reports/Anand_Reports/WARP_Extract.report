@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_28214350</developerName>
+        <masterLabel>L_Opp-Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Account.Opportunities$OpportunityRecordTypeName__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>New Business</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>New Business Local</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Group Add Product Local</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Group Add Product</sourceValue>
+            </sourceValues>
+            <value>New Business</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>In Group Change</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Group Change Local</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Renewal</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Renewal Local</sourceValue>
+            </sourceValues>
+            <value>Renewal</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>StopLoss</sourceValue>
+            </sourceValues>
+            <value>Stop Loss</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_84519762</developerName>
+        <masterLabel>L_Stage-Roll-Up</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Account.Opportunities$StageName</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Verbal Commitment</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Initiated</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Quoting</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Jeopardy</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Submitted to Customer</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Finalist</sourceValue>
+            </sourceValues>
+            <value>Pending</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>DTQ by Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DTQ by UW</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>DTQ</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Closed Dead</sourceValue>
+            </sourceValues>
+            <value>Declined</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Closed Won</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Renewal Finalized</sourceValue>
+            </sourceValues>
+            <value>Won</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Closed Lost</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Customer Termed</sourceValue>
+            </sourceValues>
+            <value>Lost</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Account$AccountSource</field>
+    </columns>
+    <columns>
+        <field>Account$AccountIDCode__c</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account$WARPMedicalSubscribers__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account$WARP_Medical_Members__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account$Anthem_Entity__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Local/Large Group,Labor and Trust</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$Demo__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Account.LG_Customer</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>WARP Extract</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Opps_Quote__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Account$AccountSource</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Account.Opportunities$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

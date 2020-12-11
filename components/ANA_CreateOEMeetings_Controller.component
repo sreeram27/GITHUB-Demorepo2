@@ -1,0 +1,151 @@
+<apex:component >
+  <script>
+      app.controller('anaCreateOEMeetingsController', function($scope) {
+  
+      });
+
+      baseCtrl.prototype.vlcCustom_addItem = function(scp, control, index)
+      {
+          //console.info("Internal");
+          var newItem = angular.copy(control.eleArray[index]);
+          //console.info(newItem);
+         
+          <!--newItem.index = control.eleArray.length;-->
+          newItem.index = control.eleArray.length;
+          control.eleArray.splice(control.eleArray.length, 0, newItem);
+          //for(var i=index+2; i<control.eleArray.length; i++)
+              //control.eleArray[i].index = control.eleArray[i].index+1;
+          if(control.eleArray[0].type === 'Block' && scp.$parent && scp.$parent.$parent) {
+              var parentNode = (sfdcVars.layout === 'lightning')?scp.$parent.$parent.$parent:scp.$parent.$parent;
+              if(parentNode)
+                  scp.aggregate(parentNode, control.index, control.indexInParent, false, index);
+          }
+          else
+              scp.aggregate(scp, control.index, control.indexInParent, false, index);
+      };
+      baseCtrl.prototype.addItemNew = function(scp, control, index)
+      {
+          var newItem = angular.copy(control.eleArray[index]);
+          //console.info(newItem);
+          nullifyResponse(newItem);
+            //console.info("newItem = " + newItem);
+          <!--newItem.index = control.eleArray.length;-->
+          newItem.index = control.eleArray.length;
+          control.eleArray.splice(control.eleArray.length, 0, newItem);
+          //for(var i=index+2; i<control.eleArray.length; i++)
+              //control.eleArray[i].index = control.eleArray[i].index+1;
+          if(control.eleArray[0].type === 'Block' && scp.$parent && scp.$parent.$parent) {
+              var parentNode = (sfdcVars.layout === 'lightning')?scp.$parent.$parent.$parent:scp.$parent.$parent;
+              if(parentNode)
+                  scp.aggregate(parentNode, control.index, control.indexInParent, false, index);
+          }
+          else
+              scp.aggregate(scp, control.index, control.indexInParent, false, index);
+      };
+      
+      baseCtrl.prototype.onMeetingLabel = function(scp, control, index)
+      {
+          var containerArray = document.getElementsByName("loopformcustom");
+          //console.info("containerArray = " + containerArray.length);
+          var sDiv = containerArray[index];
+          if(!!sDiv) {
+              var sSpan =sDiv.getElementsByClassName('ng-binding');
+              var sCurrentSpan =  sSpan[0].querySelector('#meetingDynamic');
+              var sDateInput = control.eleArray[index].response.MeetingInfoBlock.MeetingDate;
+              var sCity = control.eleArray[index].response.Address.MeetingCity;
+              var sState = control.eleArray[index].response.Address.MeetingState;
+              var MeetingLabeltemp = '';
+              if (!!sDateInput){
+                  //console.info("sDateInput = "+sDateInput);
+                  var month = sDateInput.substr(5, 2);
+                  var day = sDateInput.substr(8, 2);
+                  var year = sDateInput.substr(0, 4);
+                  sDateStr = month + "/" + day + "/" + year;
+                  MeetingLabeltemp = sDateStr;
+              }
+              if (!!sCity){
+                   MeetingLabeltemp = MeetingLabeltemp + ' ' + sCity;
+                   // console.info("sCity = "+sCity);
+              } 
+              if (!!sState){
+                 MeetingLabeltemp = MeetingLabeltemp + ' ' + sState;
+                 //console.info("sState = "+sState);
+              } 
+              if (!!MeetingLabeltemp){
+                  if(!!sCurrentSpan) {
+                      sCurrentSpan.innerHTML = '- ' + MeetingLabeltemp;
+                  }
+              else{
+                  var sSpanDynamic = document.createElement('span');
+                  sSpanDynamic.id='meetingDynamic';
+                  sSpanDynamic.innerHTML = '- ' + MeetingLabeltemp;
+                  sSpan[0].appendChild(sSpanDynamic);
+              }
+            }
+         }
+       };
+ function nullifyResponse(eleNode)
+ {
+    if(eleNode.type === 'Block')
+    {
+        var blkResp = eleNode.response;
+        if(blkResp){
+            eleNode.response = nullifyBlockResponse(blkResp);
+        }
+    }
+    else
+        eleNode.response = null;
+    if(eleNode.type === 'Multi-select' && angular.isArray(eleNode.propSetMap.options))
+    {
+        for(var k=0; k<eleNode.propSetMap.options.length; k++)
+            delete eleNode.propSetMap.options[k].selected;
+    }
+    if(eleNode.type === 'Checkbox' || eleNode.type === 'Disclosure')
+    {
+        eleNode.response = false;
+    }
+    if(eleNode.children.length === 0)
+        return;
+    else {
+        for(var i=0; i<eleNode.children.length; i++)
+        {
+            if(eleNode.children[i].response)
+                eleNode.children[i].response = nullifyBlockResponse(eleNode.children[i].response);
+            for(var j=0; j<eleNode.children[i].eleArray.length; j++)
+             {
+                nullifyResponse(eleNode.children[i].eleArray[j]);
+             }
+         }
+         
+    }
+ };
+function nullifyBlockResponse(value)
+        {
+            var returnVal = value;
+            if(value === true)
+                returnVal = false;
+            else if(value.constructor === Object)
+            {
+                for (var key in value)
+                {
+                    if(value.hasOwnProperty(key))
+                    {
+                        var data = value[key];
+                        if(data)
+                            returnVal[key] = nullifyBlockResponse(data);
+                    }
+                }
+            }
+            else if(angular.isArray(value))
+            {
+                for(var i=0; i<value.length; i++)
+                    if(value[i])
+                        returnVal[i] = nullifyBlockResponse(value[i]);
+            }
+            else
+                returnVal = null;
+
+   return returnVal;
+ };
+  </script>
+</apex:component>

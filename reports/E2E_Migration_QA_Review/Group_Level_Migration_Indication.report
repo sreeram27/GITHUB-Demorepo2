@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_ID</field>
+    </columns>
+    <columns>
+        <field>Group__c.IsPartOfAMigration__c</field>
+    </columns>
+    <columns>
+        <field>Account.Situs_State__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Collab_Account_ID__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Date_Migrated_to_WGS__c</field>
+    </columns>
+    <columns>
+        <field>Account.Claims_System__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Situs_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Connecticut,Indiana,Kentucky,Maine,Missouri,New Hampshire,Ohio,Virginia,Wisconsin</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>All Groups w Migration Indicator</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$Group__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

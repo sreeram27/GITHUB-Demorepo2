@@ -1,0 +1,153 @@
+<!-------------------------------------------------------------------------------------------------------
+Component Name   : QLISoleraComponent
+Date Created : 27-NOV-2018
+Created By   : XMEN-Poonam/Swetha
+User Story:PRDCM-25413
+Description  : Visualforce Email Template used for  Anthem & Solera Health – National Accounts Client Account Confirmation Form"
+--------------------------------------------------------------------------------------------------------------------------->
+<apex:component controller="QLISoleraTemplateController" access="global">
+<apex:attribute name="SoleraTemplateQLIid" type="Id" description="Id of the QLI" assignTo="{!QLIid}"/>
+<html>
+<head>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    tr {
+        padding-left: 10px;
+    }
+    table.bdrless ,table.bdrless td{
+        width:600px;
+        border: none !important;
+    }
+</style>
+</head>
+<body>
+    <table class="bdrless" id="para2">
+        <tbody>
+            <tr>
+                <td>
+                    <center>
+                        <b><span style="color:gray" >Anthem &amp; Solera Health – National Accounts</span></b><br/>
+                        <i><span style="color:gray" align="padding-left: 100px;"> Client Account Confirmation Form</span></i>
+                    </center>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <table>
+  <apex:repeat value="{!QLIrec}" var="QLI">
+  <col width="300px">
+  <col width="250px">
+  <tr>
+     <td>Client Account Name<br/></td>
+     <td>{!QLI.Quote.Account.Name}</td> 
+  </tr>
+  <tr >
+     <td>Prefix for Client Account<br/></td>
+     <td>
+        <apex:outputField value="{!QLI.Prefix_for_Client_Account__c}">
+        </apex:outputField>
+     </td>
+  </tr>
+  <tr >
+     <td>Target Go-Live Date<sup>1</sup><br/></td>
+     <td>
+        <apex:outputText value="{0,date,MM/dd/yyyy}">
+        <apex:param value="{!QLI.Quote.Opportunity.CloseDate}"/>
+        </apex:outputText>
+     </td>
+  </tr>
+  <tr >
+     <td>Anthem Situs State<br/></td>
+     <td>
+         <apex:outputText value="{!IF((QLI.Quote.Account.WGS_Contracting_Situs_State__c == null),QLI.Quote.Account.NASCO_Contracting_Situs_State__c,QLI.Quote.Account.WGS_Contracting_Situs_State__c)}"/> 
+     </td>
+  </tr>
+  <tr >
+     <td>Geography of Population <br>
+     <font size="1">(State, % of Population)</font></br></td>
+     <td>
+        <apex:outputField value="{!QLI.Geography_of_the_Population__c}">
+        </apex:outputField>
+     </td>
+  </tr>
+  <tr >
+     <td>Client Account Insured Type<br/></td>
+     <td>{!QLI.Financing__c}<br/></td>
+  </tr>
+  <tr>
+     <td>Contact Information for Primary Point of<br/>
+         Contact at Client Account<br/> 
+     </td>
+     <td>
+         {!QLI.Primary_Point_of_Contact__r.Name}<br/>
+         {!QLI.Primary_Point_of_Contact__r.Email}<br/>
+         {!QLI.Primary_Point_of_Contact__r.Phone}<br/>
+         {!QLI.Primary_Point_of_Contact__r.Title}
+      </td>
+  </tr>
+  <tr>
+     <td>Contact Information for <br></br> 
+         Anthem Account Manager<br/></td>
+     <td>
+         {!QLI.Anthem_Account_Manager__r.Name}<br/>
+         {!QLI.Anthem_Account_Manager__r.Email}<br/>
+         {!QLI.Anthem_Account_Manager__r.Phone}<br/>
+         Account Manager
+    </td>
+  </tr>
+  <tr>
+      <td>Contact Information for Anthem <br/>
+           Implementation Coordinator<br/>
+           <font size="1">(Solera Health will reach out directly to Coordinator to<br/>
+           begin the client implementation process)</font><br/>
+      </td>
+         <apex:repeat value="{!accTeamRole}" var="accTeam" >
+             <td>
+                 {!accTeam.user.Name}<br/>
+                 {!accTeam.user.email}<br/>
+                 {!accTeam.user.Phone}<br/>
+                 Implementation Coordinator
+             </td>
+         </apex:repeat>
+  </tr>
+  <tr> 
+      <td>Marketing / Outreach <br/>
+        File Source<br/></td>
+   <td>{!QLI.Marketing_outreach__c}</td>
+  </tr>
+  <tr>
+     <td>Does the Client Have an Early Retiree<br/>
+            Population Covered Under the Anthem<br/>
+            Medical Plan?<br/></td>
+     <td>{!QLI.Early_Retiree_Population_Covered__c}</td>
+  </tr>
+  <tr>
+     <td>Does the Client Have Members Covered<br/>
+            Under a Commercial Medicare Plan?</td>
+     <td>{!QLI.Members_Covered__c}</td>
+  </tr>
+  <tr>
+     <td>Other/Notes Field</td>
+     <td><apex:outputField value="{!QLI.Other_Notes__c}">
+     </apex:outputField>
+     </td>
+  </tr>
+  </col>
+  </col>
+  </apex:repeat>
+  </table>
+  <footer>
+  <br/>
+  <br/>
+  __________________________<br/>
+  <br/>
+   <font size="1"> <span><sup>1</sup>Target Go-Live Date represents the parties' best estimate and does not constitute a warranty, covenant, guarantee or promise that such date will be met. All parties should work</span><br/>
+    <span> collaboratively toward meeting the target date or such later date as may be communicated due to changes in circumstances.</span></font>
+  </footer>   
+</body>
+</html>
+</apex:component>

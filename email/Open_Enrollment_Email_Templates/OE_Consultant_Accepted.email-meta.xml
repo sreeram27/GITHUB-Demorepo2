@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email will alert the OE Contractor Coordinator about Accept</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>OE Consultant Accepted</name>
+    <style>none</style>
+    <subject>Consultant Action for OE Meeting - {!SFDC_Volunteer_Event__c.OE_Coordinator_Action__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

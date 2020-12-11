@@ -1,0 +1,23 @@
+<messaging:emailTemplate subject="File upload alert - {!relatedTo.Account__r.Name}" recipientType="Contact" relatedToType="Open_Enrollment_Meetings__c">
+<messaging:HTMLEmailBody >
+<html>
+    <style type="text/css">
+        .xl69{
+            width: 482px;
+        }
+    </style>    
+<!--<apex:image id="Logo" value="https://commercialgroup--c.na52.content.force.com/servlet/servlet.ImageServer?id=015d0000003E8Yu&oid=00Dd0000000i5kt"/>-->
+<br/>
+    <body>   
+        Hello! <br/>
+        <br/>
+        A file has been uploaded for the following client:&nbsp;<strong>{!relatedTo.Account__r.Name}</strong><br/> 
+        <br/>
+        The meeting grouping link is:&nbsp;<apex:outputlink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+relatedTo.Id}">{!relatedTo.Name}</apex:outputlink> <br/>      
+        <br/>
+        Thank you<br/>
+        <br/>
+    </body>
+</html>
+</messaging:HTMLEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,19 @@
+<apex:page showHeader="false" sidebar="false" StandardController="Broker_Consultant_Commissions1__c" recordSetVar="bcs" extensions="ANA_VFC03_Create_BC_Commission_oppty" id="pge">
+    
+    <script src="/lightning/lightning.out.js"></script>
+    <div id="lightning" />
+
+    <script>  
+        var oppId = '{!JSENCODE(opportunityId)}';  
+        console.log('oppid'+ oppId);          
+        $Lightning.use("c:ANA_LTNG03_BrokerConsultant_App_oppty", function() {
+          $Lightning.createComponent("c:ANA_LTNG02_BrokerConsultant_Commission_oppty",{ "oppId": oppId },
+          "lightning",
+          function(cmp) {
+            // do some stuff
+          });
+        });
+    </script>
+    
+    
+</apex:page>

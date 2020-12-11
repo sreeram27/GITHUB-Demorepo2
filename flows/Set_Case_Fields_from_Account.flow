@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>isChangedDecision11_myRule_10_AccountId</name>
+        <label>isChangedDecision11_myRule_10_AccountId</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>isChangedRule_11_myRule_10_AccountId</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_old</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>myVariable_old.AccountId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>myVariable_current.AccountId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myDecision</targetReference>
+            </connector>
+            <label>isChangedRule_11_myRule_10_AccountId</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision6</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Account Specified</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision6</name>
+        <label>myDecision6</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myDecision9</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_7</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Subject</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>{EXTERNAL}</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_7_A1</targetReference>
+            </connector>
+            <label>Reset Case Subject</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision9</name>
+        <label>myDecision9</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_10</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>Account</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>isChangedRule_11_myRule_10_AccountId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>Account</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_10_A1</targetReference>
+            </connector>
+            <label>Account Name is Changed to Null</label>
+        </rules>
+    </decisions>
+    <description>When Account is Specified Set a series of values on the Case</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>[Case].Account.Name </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_2146301470</name>
+        <dataType>String</dataType>
+        <expression>{!myVariable_current.Account.Name}</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE([Case].Account.Region__c,
+&quot;Central&quot;,&quot;Central&quot;,
+&quot;North East&quot;,&quot;East&quot;,
+&quot;South East&quot;,&quot;East&quot;,
+&quot;East&quot;, &quot;East&quot;,
+&quot;West&quot;,&quot;West&quot;,
+&quot;&quot;) </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A1_8130140148</name>
+        <dataType>String</dataType>
+        <expression>CASE({!myVariable_current.Account.Region__c},
+&quot;Central&quot;,&quot;Central&quot;,
+&quot;North East&quot;,&quot;East&quot;,
+&quot;South East&quot;,&quot;East&quot;,
+&quot;East&quot;, &quot;East&quot;,
+&quot;West&quot;,&quot;West&quot;,
+&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE([Case].Account.Submarket__c,
+&quot;Akron/Canton&quot;,&quot;Akron/Canton&quot;,
+&quot;Atlanta&quot;,&quot;Atlanta&quot;,
+&quot;Central&quot;,&quot;Central&quot;,
+&quot;Chattanooga&quot;,&quot;Chattanooga&quot;,
+&quot;Cincinnati&quot;,&quot;Cincinnati&quot;,
+&quot;Cleveland&quot;,&quot;Cleveland&quot;,
+&quot;Columbus&quot;,&quot;Columbus&quot;,
+&quot;Dayton&quot;,&quot;Dayton&quot;,
+&quot;Down State&quot;,&quot;Down State&quot;,
+&quot;East&quot;,&quot;East&quot;,
+&quot;East Central&quot;,&quot;East Central&quot;,
+&quot;Eastern&quot;,&quot;Eastern&quot;,
+&quot;East Northern&quot;,&quot;East Northern&quot;,
+&quot;East Southern&quot;,&quot;East Southern&quot;,
+&quot;Evansville&quot;,&quot;Evansville&quot;,
+&quot;Ft. Wayne&quot;,&quot;Ft. Wayne&quot;,
+&quot;GL&quot;,&quot;GL&quot;,
+&quot;GS&quot;,&quot;GS&quot;,
+&quot;H&quot;,&quot;H&quot;,
+&quot;Indianapolis&quot;,&quot;Indianapolis&quot;,
+&quot;Labor/Union&quot;,&quot;Labor/Union&quot;,
+&quot;Lexington&quot;,&quot;Lexington&quot;,
+&quot;Louisville&quot;,&quot;Louisville&quot;,
+&quot;Metro&quot;,&quot;Metro&quot;,
+&quot;Mid-Atlantic&quot;,&quot;Mid-Atlantic&quot;,
+&quot;NC&quot;,&quot;NC&quot;,
+&quot;None&quot;,&quot;None&quot;,
+&quot;North&quot;,&quot;North&quot;,
+&quot;North Central&quot;,&quot;North Central&quot;,
+&quot;Northeast&quot;,&quot;Northeast&quot;,
+&quot;Northern&quot;,&quot;Northern&quot;,
+&quot;Northwest&quot;,&quot;Northwest&quot;,
+&quot;Owensboro&quot;,&quot;Owensboro&quot;,
+&quot;South&quot;,&quot;South&quot;,
+&quot;South Central&quot;,&quot;South Central&quot;,
+&quot;Southeast&quot;,&quot;Southeast&quot;,
+&quot;Southern&quot;,&quot;Southern&quot;,
+&quot;Southwest&quot;,&quot;Southwest&quot;,
+&quot;Strategic&quot;,&quot;Strategic&quot;,
+&quot;Toledo&quot;,&quot;Toledo&quot;,
+&quot;Upstate&quot;,&quot;Upstate&quot;,
+&quot;West&quot;,&quot;West&quot;,
+&quot;West Central&quot;,&quot;West Central&quot;,
+&quot;Western&quot;,&quot;Western&quot;,
+&quot;West Northern&quot;,&quot;West Northern&quot;,
+&quot;West Sourthern&quot;,&quot;West Sourthern&quot;,
+&quot;Younstown&quot;,&quot;Younstown&quot;,
+&quot;&quot;)
+ </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_4_myRule_1_A1_4469957126</name>
+        <dataType>String</dataType>
+        <expression>CASE({!myVariable_current.Account.Submarket__c},
+&quot;Akron/Canton&quot;,&quot;Akron/Canton&quot;,
+&quot;Atlanta&quot;,&quot;Atlanta&quot;,
+&quot;Central&quot;,&quot;Central&quot;,
+&quot;Chattanooga&quot;,&quot;Chattanooga&quot;,
+&quot;Cincinnati&quot;,&quot;Cincinnati&quot;,
+&quot;Cleveland&quot;,&quot;Cleveland&quot;,
+&quot;Columbus&quot;,&quot;Columbus&quot;,
+&quot;Dayton&quot;,&quot;Dayton&quot;,
+&quot;Down State&quot;,&quot;Down State&quot;,
+&quot;East&quot;,&quot;East&quot;,
+&quot;East Central&quot;,&quot;East Central&quot;,
+&quot;Eastern&quot;,&quot;Eastern&quot;,
+&quot;East Northern&quot;,&quot;East Northern&quot;,
+&quot;East Southern&quot;,&quot;East Southern&quot;,
+&quot;Evansville&quot;,&quot;Evansville&quot;,
+&quot;Ft. Wayne&quot;,&quot;Ft. Wayne&quot;,
+&quot;GL&quot;,&quot;GL&quot;,
+&quot;GS&quot;,&quot;GS&quot;,
+&quot;H&quot;,&quot;H&quot;,
+&quot;Indianapolis&quot;,&quot;Indianapolis&quot;,
+&quot;Labor/Union&quot;,&quot;Labor/Union&quot;,
+&quot;Lexington&quot;,&quot;Lexington&quot;,
+&quot;Louisville&quot;,&quot;Louisville&quot;,
+&quot;Metro&quot;,&quot;Metro&quot;,
+&quot;Mid-Atlantic&quot;,&quot;Mid-Atlantic&quot;,
+&quot;NC&quot;,&quot;NC&quot;,
+&quot;None&quot;,&quot;None&quot;,
+&quot;North&quot;,&quot;North&quot;,
+&quot;North Central&quot;,&quot;North Central&quot;,
+&quot;Northeast&quot;,&quot;Northeast&quot;,
+&quot;Northern&quot;,&quot;Northern&quot;,
+&quot;Northwest&quot;,&quot;Northwest&quot;,
+&quot;Owensboro&quot;,&quot;Owensboro&quot;,
+&quot;South&quot;,&quot;South&quot;,
+&quot;South Central&quot;,&quot;South Central&quot;,
+&quot;Southeast&quot;,&quot;Southeast&quot;,
+&quot;Southern&quot;,&quot;Southern&quot;,
+&quot;Southwest&quot;,&quot;Southwest&quot;,
+&quot;Strategic&quot;,&quot;Strategic&quot;,
+&quot;Toledo&quot;,&quot;Toledo&quot;,
+&quot;Upstate&quot;,&quot;Upstate&quot;,
+&quot;West&quot;,&quot;West&quot;,
+&quot;West Central&quot;,&quot;West Central&quot;,
+&quot;Western&quot;,&quot;Western&quot;,
+&quot;West Northern&quot;,&quot;West Northern&quot;,
+&quot;West Sourthern&quot;,&quot;West Sourthern&quot;,
+&quot;Younstown&quot;,&quot;Younstown&quot;,
+&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE([Case].Account.Situs_State__c ,
+&quot;ANA&quot;, &quot;ANA&quot;,
+&quot;Alabama &quot;,&quot;Alabama &quot;,
+&quot;Alaska &quot;,&quot;Alaska &quot;,
+&quot;Arizona &quot;,&quot;Arizona &quot;,
+&quot;Arkansas &quot;,&quot;Arkansas &quot;,
+&quot;California &quot;,&quot;California &quot;,
+&quot;Colorado &quot;,&quot;Colorado &quot;,
+&quot;Connecticut &quot;,&quot;Connecticut &quot;,
+&quot;Delaware &quot;,&quot;Delaware &quot;,
+&quot;Florida &quot;,&quot;Florida &quot;,
+&quot;Georgia &quot;,&quot;Georgia &quot;,
+&quot;Hawaii &quot;,&quot;Hawaii &quot;,
+&quot;Idaho &quot;,&quot;Idaho &quot;,
+&quot;Illinois Indiana &quot;,&quot;Illinois Indiana &quot;,
+&quot;Iowa &quot;,&quot;Iowa &quot;,
+&quot;Kansas &quot;,&quot;Kansas &quot;,
+&quot;Kentucky &quot;,&quot;Kentucky &quot;,
+&quot;Louisiana &quot;,&quot;Louisiana &quot;,
+&quot;Maine &quot;,&quot;Maine &quot;,
+&quot;Maryland &quot;,&quot;Maryland &quot;,
+&quot;Massachusetts &quot;,&quot;Massachusetts &quot;,
+&quot;Michigan &quot;,&quot;Michigan &quot;,
+&quot;Minnesota &quot;,&quot;Minnesota &quot;,
+&quot;Mississippi &quot;,&quot;Mississippi &quot;,
+&quot;Missouri &quot;,&quot;Missouri &quot;,
+&quot;Montana Nebraska &quot;,&quot;Montana Nebraska &quot;,
+&quot;Nevada &quot;,&quot;Nevada &quot;,
+&quot;New Hampshire &quot;,&quot;New Hampshire &quot;,
+&quot;New Jersey &quot;,&quot;New Jersey &quot;,
+&quot;New Mexico &quot;,&quot;New Mexico &quot;,
+&quot;New York &quot;,&quot;New York &quot;,
+&quot;North Carolina &quot;,&quot;North Carolina &quot;,
+&quot;North Dakota &quot;,&quot;North Dakota &quot;,
+&quot;Ohio &quot;,&quot;Ohio &quot;,
+&quot;Oklahoma &quot;,&quot;Oklahoma &quot;,
+&quot;Oregon &quot;,&quot;Oregon &quot;,
+&quot;Pennsylvania Rhode Island &quot;,&quot;Pennsylvania Rhode Island &quot;,
+&quot;South Carolina &quot;,&quot;South Carolina &quot;,
+&quot;South Dakota &quot;,&quot;South Dakota &quot;,
+&quot;Tennessee &quot;,&quot;Tennessee &quot;,
+&quot;Texas &quot;,&quot;Texas &quot;,
+&quot;Utah &quot;,&quot;Utah &quot;,
+&quot;Vermont &quot;,&quot;Vermont &quot;,
+&quot;Virginia &quot;,&quot;Virginia &quot;,
+&quot;Washington &quot;,&quot;Washington &quot;,
+&quot;West Virginia &quot;,&quot;West Virginia &quot;,
+&quot;Wisconsin &quot;,&quot;Wisconsin &quot;,
+&quot;Wyoming&quot;,&quot;Wyoming&quot;,
+&quot;&quot;)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_5_myRule_1_A1_9392724055</name>
+        <dataType>String</dataType>
+        <expression>CASE({!myVariable_current.Account.Situs_State__c} ,
+&quot;ANA&quot;, &quot;ANA&quot;,
+&quot;Alabama &quot;,&quot;Alabama &quot;,
+&quot;Alaska &quot;,&quot;Alaska &quot;,
+&quot;Arizona &quot;,&quot;Arizona &quot;,
+&quot;Arkansas &quot;,&quot;Arkansas &quot;,
+&quot;California &quot;,&quot;California &quot;,
+&quot;Colorado &quot;,&quot;Colorado &quot;,
+&quot;Connecticut &quot;,&quot;Connecticut &quot;,
+&quot;Delaware &quot;,&quot;Delaware &quot;,
+&quot;Florida &quot;,&quot;Florida &quot;,
+&quot;Georgia &quot;,&quot;Georgia &quot;,
+&quot;Hawaii &quot;,&quot;Hawaii &quot;,
+&quot;Idaho &quot;,&quot;Idaho &quot;,
+&quot;Illinois Indiana &quot;,&quot;Illinois Indiana &quot;,
+&quot;Iowa &quot;,&quot;Iowa &quot;,
+&quot;Kansas &quot;,&quot;Kansas &quot;,
+&quot;Kentucky &quot;,&quot;Kentucky &quot;,
+&quot;Louisiana &quot;,&quot;Louisiana &quot;,
+&quot;Maine &quot;,&quot;Maine &quot;,
+&quot;Maryland &quot;,&quot;Maryland &quot;,
+&quot;Massachusetts &quot;,&quot;Massachusetts &quot;,
+&quot;Michigan &quot;,&quot;Michigan &quot;,
+&quot;Minnesota &quot;,&quot;Minnesota &quot;,
+&quot;Mississippi &quot;,&quot;Mississippi &quot;,
+&quot;Missouri &quot;,&quot;Missouri &quot;,
+&quot;Montana Nebraska &quot;,&quot;Montana Nebraska &quot;,
+&quot;Nevada &quot;,&quot;Nevada &quot;,
+&quot;New Hampshire &quot;,&quot;New Hampshire &quot;,
+&quot;New Jersey &quot;,&quot;New Jersey &quot;,
+&quot;New Mexico &quot;,&quot;New Mexico &quot;,
+&quot;New York &quot;,&quot;New York &quot;,
+&quot;North Carolina &quot;,&quot;North Carolina &quot;,
+&quot;North Dakota &quot;,&quot;North Dakota &quot;,
+&quot;Ohio &quot;,&quot;Ohio &quot;,
+&quot;Oklahoma &quot;,&quot;Oklahoma &quot;,
+&quot;Oregon &quot;,&quot;Oregon &quot;,
+&quot;Pennsylvania Rhode Island &quot;,&quot;Pennsylvania Rhode Island &quot;,
+&quot;South Carolina &quot;,&quot;South Carolina &quot;,
+&quot;South Dakota &quot;,&quot;South Dakota &quot;,
+&quot;Tennessee &quot;,&quot;Tennessee &quot;,
+&quot;Texas &quot;,&quot;Texas &quot;,
+&quot;Utah &quot;,&quot;Utah &quot;,
+&quot;Vermont &quot;,&quot;Vermont &quot;,
+&quot;Virginia &quot;,&quot;Virginia &quot;,
+&quot;Washington &quot;,&quot;Washington &quot;,
+&quot;West Virginia &quot;,&quot;West Virginia &quot;,
+&quot;Wisconsin &quot;,&quot;Wisconsin &quot;,
+&quot;Wyoming&quot;,&quot;Wyoming&quot;,
+&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>MID([Case].Subject,11,LEN([Case].Subject))</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_8_myRule_7_A1_4261681205</name>
+        <dataType>String</dataType>
+        <expression>MID({!myVariable_current.Subject},11,LEN({!myVariable_current.Subject}))</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+ISNEW(),
+[Case].AccountId &lt;&gt; NULL)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+{!myVariable_current.AccountId} &lt;&gt; NULL)</expression>
+    </formulas>
+    <interviewLabel>Set_Case_Fields_from_Account-9_InterviewLabel</interviewLabel>
+    <label>Set Case Fields from Account</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Case</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Case]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_10_A1</name>
+        <label>Remove Account Fields on Case</label>
+        <locationX>1000</locationX>
+        <locationY>200</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Group Name</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Group_Name__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>PB Fired</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>PB_Fired__c</field>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Region</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Region__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>State Region</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>State_Region__c</field>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>State</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>GlobalConstant</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>State__c</field>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Case]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Set Case Fields from Account</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision6</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Group Name</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Group_Name__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_2146301470</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>PB Fired</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>PB_Fired__c</field>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Region</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Region__c</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A1_8130140148</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>State Region</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>State_Region__c</field>
+            <value>
+                <elementReference>formula_4_myRule_1_A1_4469957126</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>State</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>State__c</field>
+            <value>
+                <elementReference>formula_5_myRule_1_A1_9392724055</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Case]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_7_A1</name>
+        <label>Remove External Prefix</label>
+        <locationX>700</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myDecision9</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Subject</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Subject</field>
+            <value>
+                <elementReference>formula_8_myRule_7_A1_4261681205</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <startElementReference>isChangedDecision11_myRule_10_AccountId</startElementReference>
+    <status>Active</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

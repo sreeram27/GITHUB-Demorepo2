@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>kishore.agrawal@anthem.com</contactEmail>
+    <description>Interface to accept opportunity detail and status from castlight</description>
+    <label>Castlight_Status_Update_Svc</label>
+    <oauthConfig>
+        <callbackUrl>https://localhost:3000/notused.apex</callbackUrl>
+        <consumerKey>3MVG9eQyYZ1h89HeO90UV6o6amNY97lKa7YXaKQkTFba5YmLYhuubepT3GpUvOFRf.2HeXyJhL.kRDsCBU7Gs</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

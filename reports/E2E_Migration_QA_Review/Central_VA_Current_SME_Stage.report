@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order$HQ_State__c</field>
+    </columns>
+    <columns>
+        <field>Order$Implementation_Effective_Date__c</field>
+    </columns>
+    <columns>
+        <field>Order$Account_Manager_Name__c</field>
+    </columns>
+    <columns>
+        <field>Order$AccountLegalName__c</field>
+    </columns>
+    <columns>
+        <field>Order$Group_Name__c</field>
+    </columns>
+    <columns>
+        <field>Order$OrderNumber</field>
+    </columns>
+    <columns>
+        <field>Order$Current_SME_Stage__c</field>
+    </columns>
+    <description>Filters to central and VA for only those groups that are/have migrated, showing them by effective date, Implementation Case #, and Current SME stage.</description>
+    <filter>
+        <criteriaItems>
+            <column>Order$HQ_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>IN,WI,MO,OH,KY,VA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order$Group_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>startsWith</operator>
+            <value>W</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Central &amp; VA Current SME Stage</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Imp_Cases_with_SME_Approvals__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Order$Implementation_Effective_Date__c</dateColumn>
+        <interval>INTERVAL_CURNEXT1</interval>
+    </timeFrameFilter>
+</Report>

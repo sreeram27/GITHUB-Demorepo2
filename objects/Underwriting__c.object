@@ -1,0 +1,2646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Underwriting_Record_Page2</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Legal_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( Implementation_Tracking_ID__r.Account_Legal_Name__r.Id ), &apos;&apos;, HYPERLINK(Implementation_Tracking_ID__r.Account_Legal_Name__r.Id, Implementation_Tracking_ID__r.Account_Legal_Name__r.Name))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Legal Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anthem_Entity__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Implementation_Record_ID__r.Account.Anthem_Entity__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Anthem Entity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_or_Declined_Time__c</fullName>
+        <description>Intermediate Field For Approval Or Declined Date</description>
+        <externalId>false</externalId>
+        <formula>CASE(MOD( Underwriting_Check_Date__c - DATE(1985,6,24),7), 
+
+0 , CASE( MOD( Approved_or_Declined_Date__c - Underwriting_Check_Date__c,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( Approved_or_Declined_Date__c - Underwriting_Check_Date__c ,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( Approved_or_Declined_Date__c - Underwriting_Check_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( Approved_or_Declined_Date__c - Underwriting_Check_Date__c ,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( Approved_or_Declined_Date__c - Underwriting_Check_Date__c ,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( Approved_or_Declined_Date__c - Underwriting_Check_Date__c,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( Approved_or_Declined_Date__c - Underwriting_Check_Date__c,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR(( Approved_or_Declined_Date__c - Underwriting_Check_Date__c )/7)*5)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval or Declined Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approved_Date_Completed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Approved_Date_Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Approved_or_Declined_Date__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Approved or Declined.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Approved or Declined Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AutorabitExtId__c</fullName>
+        <description>External Id created by AutoRABIT</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>true</externalId>
+        <label>AutorabitExtId__c</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claim_System__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Claim_System__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Claim System</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Completed Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Current_SME_Queue_time__c</fullName>
+        <description>Pratibha created this for PRDCRM- 30663</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK(In_Progress_Date_Completed__c),Now() - Not_Started_Date_Completed__c, 
+(In_Progress_Date_Completed__c - Not_Started_Date_Completed__c) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current SME Queue time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_SME_time__c</fullName>
+        <description>Pratibha created this for PRDCRM- 30663</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISBLANK(Approved_Date_Completed__c),((Now() - In_Progress_Date_Completed__c) - Pending_Correction_Time__c) , 
+((Approved_Date_Completed__c - In_Progress_Date_Completed__c) - Pending_Correction_Time__c)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current SME time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Assigned_to_UW__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Date Assigned to UW</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Implementations_Notified_Of_Sale__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Date_Implementations_Notified_Of_Sale__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date Implementations Notified Of Sale</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Days_From_Assignment__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Days_From_Assignment__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days From Assignment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grandfathered_List__c</fullName>
+        <externalId>false</externalId>
+        <label>Grandfathered List</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Group_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( Implementation_Tracking_ID__r.Group_Number__r.Id ), &apos;&apos;, HYPERLINK(Implementation_Tracking_ID__r.Group_Number__r.Id, Implementation_Tracking_ID__r.Group_Number__r.Name))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Size__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Group_Size__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Size</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HQ_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Implementation_Record_ID__r.Account.HQ_State__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HQ State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__c</formula>
+        <label>Implementation Case Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Case_Name1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Implementation Case Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Case_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Implementation Case Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Implementation_Case_Start_Date__c</fullName>
+        <description>This field refers to the Implementation Case Start Date field of the related Implementation Case.</description>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.EffectiveDate</formula>
+        <label>Implementation Case Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Effective_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Implementation Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Tracking_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Implementation Tracking ID</label>
+        <referenceTo>Implementation_Tracking__c</referenceTo>
+        <relationshipLabel>Underwriting</relationshipLabel>
+        <relationshipName>Underwriting</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Implementation Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_Progress_Date_Completed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>In_Progress_Date_Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Is_Pending_Correction_Record_Present__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is True If Pending Correction Record Present, Else False.</description>
+        <externalId>false</externalId>
+        <label>Is Pending Correction Record Present</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Underwriting_Details_Applicable__c</fullName>
+        <externalId>false</externalId>
+        <label>Is Underwriting Details Applicable</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>JAA_Group__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.JAA_Group__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>JAA Group</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LoggedInUserProfile__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.ProfileName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LoggedInUserProfile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LoggedinProfile__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.ProfileName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LoggedinProfile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MCS_Group__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Implementation_Record_ID__r.MCS_Group__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MCS Group</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Medical_UW_Approved__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical UW Approved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Not_Started_Date_Completed__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Not_Started_Date_Completed</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Not_Started_Date__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Not Started.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Not Started Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Original_Underwriting_Date__c</fullName>
+        <description>Original Underwriting Date Used In The Workflow Rule When A New Record Is Created.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Underwriting Original Check Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Overall_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Overall_Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overall Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(Owner:User.Id), Owner:Queue.Name, Owner:User.FirstName &amp; &quot; &quot; &amp; Owner:User.LastName )</formula>
+        <label>Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PendingCorrectionAction__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(OR(LoggedinProfile__c ==&apos;SME&apos;,LoggedinProfile__c ==&apos;SME Dual&apos;,LoggedinProfile__c ==&apos;Underwriting&apos;,LoggedinProfile__c ==&apos;Underwriting Dual&apos;,LoggedinProfile__c ==&apos;Specialty Post Sales&apos;, LoggedinProfile__c ==&apos;Specialty Post Sales Dual&apos;), Tech_Support_Underwriting__c == False),&apos;Y&apos;,&apos;N&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PendingCorrectionAction</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_Date__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Pending Correction from WF Rule.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Correction Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_Time__c</fullName>
+        <description>Pratibha created this for PRDCRM- 30663</description>
+        <externalId>false</externalId>
+        <label>Pending Correction Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_to_Approved_Declined__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Approved or Declined from Pending Correction As Prior Value. Retrieving From WF Rule.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Correction to Approved/Declined</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Correction_to_Not_Started__c</fullName>
+        <description>The Date When Record Stage Field Value Changes To Not Started from Pending Correction As Prior Value. Retrieving From WF Rule.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Correction to Not Started</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pending_Corrections_Stage__c</fullName>
+        <description>This field fetches the associated Pending Correction&apos;s Stage.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Pending Corrections Stage</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pending_Time__c</fullName>
+        <description>Intermediate Pending Correction Date field</description>
+        <externalId>false</externalId>
+        <formula>CASE(MOD( Underwriting_Check_Date__c - DATE(1985,6,24),7), 
+
+0 , CASE( MOD( Pending_Correction_Date__c -  Underwriting_Check_Date__c ,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( Pending_Correction_Date__c -  Underwriting_Check_Date__c,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( Pending_Correction_Date__c -  Underwriting_Check_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( Pending_Correction_Date__c -  Underwriting_Check_Date__c,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( Pending_Correction_Date__c -  Underwriting_Check_Date__c ,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( Pending_Correction_Date__c -  Underwriting_Check_Date__c,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( Pending_Correction_Date__c -  Underwriting_Check_Date__c,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR(( Pending_Correction_Date__c -  Underwriting_Check_Date__c)/7)*5)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pending Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pooled_Non_Pooled__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Implementation_Record_ID__r.Account.Pooled_Non_Pooled__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pooled/Non-Pooled</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Production_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Production_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Production Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Received_Date__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Received Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>Implementation_Tracking_ID__r.Region__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Situs_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Implementation_Tracking_ID__r.Account_Legal_Name__r.Situs_State__c )</formula>
+        <label>Situs State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>01A Assign To UW</fullName>
+                    <default>false</default>
+                    <label>01A Assign To UW</label>
+                </value>
+                <value>
+                    <fullName>01 Not Started</fullName>
+                    <default>true</default>
+                    <label>01 Not Started</label>
+                </value>
+                <value>
+                    <fullName>02 Work In Progress</fullName>
+                    <default>false</default>
+                    <label>02 Work In Progress</label>
+                </value>
+                <value>
+                    <fullName>03 Pending Correction</fullName>
+                    <default>false</default>
+                    <label>03 Pending Correction</label>
+                </value>
+                <value>
+                    <fullName>03 Pending Correction Returned</fullName>
+                    <default>false</default>
+                    <label>03 Pending Correction Returned</label>
+                </value>
+                <value>
+                    <fullName>04 Approved</fullName>
+                    <default>false</default>
+                    <label>04 Approved</label>
+                </value>
+                <value>
+                    <fullName>05 Declined</fullName>
+                    <default>false</default>
+                    <label>05 Declined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Support_Docs_Saved__c</fullName>
+        <externalId>false</externalId>
+        <label>Support Docs Saved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Tech_Support_Underwriting__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Tech Support Underwriting</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Time_To_Approve_Deny__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Updated from the Process Builder- Underwriting Pending Correction Time</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Is How Long It Took The SME Department To Approve/Deny A SME Record</inlineHelpText>
+        <label>Time To Approve/Deny</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_To_Pend__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Updated from the Process Builder- Underwriting Pending Correction Time</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This Is How Long It Took A SME Department To Submit A Pending Correction</inlineHelpText>
+        <label>Time To Pend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_in_SME_Dept__c</fullName>
+        <description>Sum of &quot;Time To Pend&quot; and &quot;Time To Approve&quot;</description>
+        <externalId>false</externalId>
+        <formula>IF( Pending_Correction_Date__c &lt;&gt; Approved_or_Declined_Date__c, (Time_To_Approve_Deny__c + Time_To_Pend__c ), Time_To_Pend__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Sum Of Time To Pend And Time To Approve/Deny</inlineHelpText>
+        <label>Time in SME Dept</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Time__c</fullName>
+        <description>Difference Between The Dates Of Previous Department&apos;s &quot;Approved?&quot; Checkbox Was checked And Date When The Current SME Record&apos;s Stage Is Changed To &quot;03 Pending Correction&quot; To &quot;04 Approved&quot; Or &quot;05 Declined&quot;.</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+ISNULL(Pending_Correction_to_Approved_Declined__c), 0 ,
+
+CASE(MOD( Original_Underwriting_Date__c - DATE(1985,6,24),7), 
+
+0 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Underwriting_Date__c,7),1,2,2,3,3,4,4,5,5,5,6,5,1), 
+1 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Underwriting_Date__c,7),1,2,2,3,3,4,4,4,5,4,6,5,1), 
+2 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Underwriting_Date__c ,7),1,2,2,3,3,3,4,3,5,4,6,5,1), 
+3 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Underwriting_Date__c,7),1,2,2,2,3,2,4,3,5,4,6,5,1), 
+4 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Underwriting_Date__c,7),1,1,2,1,3,2,4,3,5,4,6,5,1), 
+5 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Underwriting_Date__c,7),1,0,2,1,3,2,4,3,5,4,6,5,0), 
+6 , CASE( MOD( Pending_Correction_to_Approved_Declined__c -  Original_Underwriting_Date__c,7),1,1,2,2,3,3,4,4,5,5,6,5,0), 
+999) 
++ 
+(FLOOR((Pending_Correction_to_Approved_Declined__c -  Original_Underwriting_Date__c)/7)*5)
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total Time SME Record Was In The SME Department And The Sales Support/Implementations Department</inlineHelpText>
+        <label>Total Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>URL__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT($Api.Partner_Server_URL_340, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_340))&amp; Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Underwriter_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Underwriter Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dental</fullName>
+                    <default>false</default>
+                    <label>Dental</label>
+                </value>
+                <value>
+                    <fullName>Life &amp; Disability</fullName>
+                    <default>false</default>
+                    <label>Life &amp; Disability</label>
+                </value>
+                <value>
+                    <fullName>Medical</fullName>
+                    <default>false</default>
+                    <label>Medical</label>
+                </value>
+                <value>
+                    <fullName>Vision</fullName>
+                    <default>false</default>
+                    <label>Vision</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Underwriting_Check_Date__c</fullName>
+        <description>Captures Date When The Underwriting Check Field Is True</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <inlineHelpText>Captures Date When The Underwriting Check Field Is True</inlineHelpText>
+        <label>Underwriting Check Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Underwriting_Support_Approved_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Underwriting Support Approved By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Underwriting</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Underwriting_Support_Approved__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Underwriting Support Approved</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Underwriting_Type_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+TEXT(Underwriter_Type__c) == &apos;Dental&apos;, 
+&apos;Dental UW&apos;, 
+IF( 
+TEXT(Underwriter_Type__c) == &apos;Medical&apos;, 
+&apos;Underwriter&apos;, 
+IF( 
+TEXT(Underwriter_Type__c) == &apos;Vision&apos;, &apos;Vision UW&apos;, 
+IF( 
+TEXT(Underwriter_Type__c) == &apos;Life &amp; Disability&apos;, &apos;L&amp;D UW&apos;, &apos;None&apos; 
+) 
+) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Underwriting Type Formula</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Underwriting</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Production_Date__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Region__c</columns>
+        <columns>Date_Implementations_Notified_Of_Sale__c</columns>
+        <columns>Days_From_Assignment__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Underwriting_Medical_Key_Account</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Region__c</columns>
+        <columns>Date_Implementations_Notified_Of_Sale__c</columns>
+        <columns>Days_From_Assignment__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </filters>
+        <label>All Underwriting Medical - Key Account</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Underwriting_Specialty_Key_Account</fullName>
+        <booleanFilter>(1 OR  2 OR 3)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Region__c</columns>
+        <columns>Date_Implementations_Notified_Of_Sale__c</columns>
+        <columns>Days_From_Assignment__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Life &amp; Disability</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </filters>
+        <label>All Underwriting Specialty - Key Account</label>
+    </listViews>
+    <listViews>
+        <fullName>Life_Disability_UW_Assigned</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Group_Size__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Anthem_Entity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Life &amp; Disability</value>
+        </filters>
+        <filters>
+            <field>Owner__c</field>
+            <operation>notEqual</operation>
+            <value>Underwriting - Local</value>
+        </filters>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group,National Accounts</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started,01A Assign To UW,02 Work In Progress,03 Pending Correction</value>
+        </filters>
+        <label>Life &amp; Disability UW - Assigned</label>
+    </listViews>
+    <listViews>
+        <fullName>Life_Disability_UW_Completed</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Group_Size__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Anthem_Entity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Life &amp; Disability</value>
+        </filters>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group,National Accounts</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <label>Life &amp; Disability UW – Completed</label>
+    </listViews>
+    <listViews>
+        <fullName>Life_Disability_UW_Unassigned</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Situs_State__c</columns>
+        <columns>Group_Size__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Anthem_Entity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Life &amp; Disability</value>
+        </filters>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group,National Accounts</value>
+        </filters>
+        <filters>
+            <field>Owner__c</field>
+            <operation>equals</operation>
+            <value>Underwriting - Local</value>
+        </filters>
+        <label>Life &amp; Disability UW - Unassigned</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_CA_NP_Med_Change_Req_Off_Cycle</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group,Labor and Trust</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>01 Not Started,01A Assign To UW,02 Work In Progress,03 Pending Correction</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>Change request Off Cycle</value>
+        </filters>
+        <filters>
+            <field>Pooled_Non_Pooled__c</field>
+            <operation>equals</operation>
+            <value>Non-pooled</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>California</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </filters>
+        <label>Local CA NP Med Change Req Off Cycle</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_CA_NP_Med_UW_New_Business</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Pooled_Non_Pooled__c</field>
+            <operation>equals</operation>
+            <value>Non-Pooled</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>California</value>
+        </filters>
+        <label>Local CA NP UW New Business</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_CA_NP_Med_UW_Renewal</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Pooled_Non_Pooled__c</field>
+            <operation>equals</operation>
+            <value>Non-Pooled</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>Renewal</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>California</value>
+        </filters>
+        <label>Local CA NP UW Renewal</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_CA_NP_Med_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Pooled_Non_Pooled__c</field>
+            <operation>equals</operation>
+            <value>Non-Pooled</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>California</value>
+        </filters>
+        <label>Local CA NP UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_CA_P_Med_Change_Request_Off_Cycle</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Pooled_Non_Pooled__c</field>
+            <operation>equals</operation>
+            <value>Pooled</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>Change request Off Cycle</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>California</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Dental,Medical</value>
+        </filters>
+        <label>Local CA P Change Request Off Cycle</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_CA_Pooled_Med_UW_New_Business</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Pooled_Non_Pooled__c</field>
+            <operation>equals</operation>
+            <value>Pooled</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>New Business</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>California</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Dental,Medical</value>
+        </filters>
+        <label>Local CA Pooled UW New Business</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_CA_Pooled_Med_UW_Renewal</fullName>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND (7 OR 8 OR 9)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Pooled_Non_Pooled__c</field>
+            <operation>equals</operation>
+            <value>Pooled</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>California</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Dental,Medical</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>Renewal</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>Full Group Term</value>
+        </filters>
+        <filters>
+            <field>Implementation_Type__c</field>
+            <operation>equals</operation>
+            <value>Change Request Off Cycle</value>
+        </filters>
+        <label>Local CA Pooled UW Renewal</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_CO_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Colorado</value>
+        </filters>
+        <label>Local CO  UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_CT_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Connecticut</value>
+        </filters>
+        <label>Local CT UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Dental_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </filters>
+        <filters>
+            <field>Pooled_Non_Pooled__c</field>
+            <operation>notEqual</operation>
+            <value>Pooled</value>
+        </filters>
+        <label>Local - Dental UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_GA_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Georgia</value>
+        </filters>
+        <label>Local GA UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_IN_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Indiana</value>
+        </filters>
+        <label>Local IN UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_KY_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Kentucky</value>
+        </filters>
+        <label>Local KY UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Life_Disability_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Life &amp; Disability</value>
+        </filters>
+        <label>Local – Life &amp; Disability UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_ME_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Maine</value>
+        </filters>
+        <label>Local ME UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_MO_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Missouri</value>
+        </filters>
+        <label>Local MO UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </filters>
+        <label>Local - Medical UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_NH_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>New Hampshire</value>
+        </filters>
+        <label>Local NH UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_NV_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Nevada</value>
+        </filters>
+        <label>Local NV UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_NY_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>New York</value>
+        </filters>
+        <label>Local NY UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_OH_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Ohio</value>
+        </filters>
+        <label>Local OH UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Specialty_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Dental,Life &amp; Disability,Vision</value>
+        </filters>
+        <label>Local – Specialty UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_UW_Dental_Key_Accou</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Dental</value>
+        </filters>
+        <filters>
+            <field>Group_Size__c</field>
+            <operation>equals</operation>
+            <value>51 - 99</value>
+        </filters>
+        <label>Local - Unassigned UW Dental – Key Acc</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_UW_L_D_Key_Account</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Life &amp; Disability</value>
+        </filters>
+        <filters>
+            <field>Group_Size__c</field>
+            <operation>equals</operation>
+            <value>51 - 99</value>
+        </filters>
+        <label>Local - Unassigned UW L&amp;D – Key Account</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_UW_Life_Disabilityn</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Life &amp; Disability</value>
+        </filters>
+        <label>Local - Unassigned UW Life &amp; Disability</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_UW_Medical</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </filters>
+        <label>Local - Unassigned UW Medical</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_UW_Specialty</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Dental,Life &amp; Disability,Vision</value>
+        </filters>
+        <label>Local - Unassigned UW Specialty</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_UW_Vision</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </filters>
+        <label>Local - Unassigned UW Vision</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Unassigned_UW_Vision_Key_Accou</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </filters>
+        <filters>
+            <field>Group_Size__c</field>
+            <operation>equals</operation>
+            <value>51 - 99</value>
+        </filters>
+        <label>Local - Unassigned UW Vision – Key Acc</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_VA_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Virginia</value>
+        </filters>
+        <label>Local VA UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_Vision_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Vision</value>
+        </filters>
+        <label>Local - Vision UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Local_WI_Medical_UW_Review</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Is_Underwriting_Details_Applicable__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </filters>
+        <filters>
+            <field>Situs_State__c</field>
+            <operation>equals</operation>
+            <value>Wisconsin</value>
+        </filters>
+        <label>Local WI UW Review</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Underwriting_Implementations</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Overall_Status__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <label>My Underwriting Implementations</label>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned_UW_Medical_Key_AccountUnassigned_Underwriting_Medical_Key_Ac</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Medical</value>
+        </filters>
+        <filters>
+            <field>Group_Size__c</field>
+            <operation>equals</operation>
+            <value>51 - 99</value>
+        </filters>
+        <label>Local – Unassigned UW Medical – Key Acc</label>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned_UW_Specialty_Key_Account</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Underwriter_Type__c</field>
+            <operation>equals</operation>
+            <value>Dental,Life &amp; Disability,Medical</value>
+        </filters>
+        <filters>
+            <field>Group_Size__c</field>
+            <operation>equals</operation>
+            <value>51 - 99</value>
+        </filters>
+        <label>Local - Unassigned  Specialty – Key Acc</label>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned_Underwriting_Local</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Underwriter_Type__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Date_Assigned_to_UW__c</columns>
+        <columns>Time_To_Approve_Deny__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>04 Approved,05 Declined</value>
+        </filters>
+        <filters>
+            <field>Anthem_Entity__c</field>
+            <operation>equals</operation>
+            <value>Local/Large Group</value>
+        </filters>
+        <label>Local - Unassigned Underwriting</label>
+    </listViews>
+    <listViews>
+        <fullName>Underwriting_Local_Underwriting</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Legal_Name__c</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Implementation_Type__c</columns>
+        <columns>Implementation_Effective_Date__c</columns>
+        <columns>Overall_Status__c</columns>
+        <columns>Owner__c</columns>
+        <columns>Production_Date__c</columns>
+        <columns>Claim_System__c</columns>
+        <columns>Region__c</columns>
+        <columns>Situs_State__c</columns>
+        <filterScope>Queue</filterScope>
+        <label>Underwriting - Local</label>
+        <queue>Underwriting_Local</queue>
+    </listViews>
+    <nameField>
+        <displayFormat>UW-{000000}</displayFormat>
+        <label>Underwriting Tracking ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Underwriting</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account_Legal_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Group_Number__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Implementation_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Owner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Implementation_Effective_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Production_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Claim_System__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Region__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Account_Legal_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Group_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Implementation_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Owner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Implementation_Effective_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Production_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Claim_System__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Region__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

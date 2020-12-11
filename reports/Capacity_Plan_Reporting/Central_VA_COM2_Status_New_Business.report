@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Order.Claim_system__c</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Type__c</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Effective_Date__c</field>
+    </columns>
+    <columns>
+        <field>Account.Situs_State__c</field>
+    </columns>
+    <columns>
+        <field>Order.Email_Template_Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>Order.Account_Group_Size__c</field>
+    </columns>
+    <columns>
+        <field>Order.Implementation_Status__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Order.Anthem_Entity__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Local/Large Group</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ORDER_CREATED_DATE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>5/8/2019 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Situs_State__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Indiana,Kentucky,Ohio,Missouri,Wisconsin,Virginia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Implementation_Type__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>New Business</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Implementation_Effective_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>1/1/2020</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Order.Claim_system__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>WGS 2.0</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Central &amp; VA COM2 Status New Business</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>OrderList</reportType>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ORDER_EFFECTIVE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

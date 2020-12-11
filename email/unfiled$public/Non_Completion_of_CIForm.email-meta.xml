@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Non Completion of CIF Form</name>
+    <style>none</style>
+    <subject>{!Castlight_Opportunity__c.AccountId__c} - Castlight Engage Client Information Form (CIF) Completion Required</subject>
+    <textOnly>This e-mail is a reminder to advise that Engage CIF form must be completed for the following products: Engage Elite, Engage Elite Plus, Engage Essential, Engage Essential Plus when the product stage = Sold or IGAP Sold.  To create the Castlight Client Information Form (CIF), please navigate to the &quot;Castlight Engage CIF&quot; button located on the Action Panel within the Opportunity: {!Castlight_Opportunity__c.OpportunityId__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

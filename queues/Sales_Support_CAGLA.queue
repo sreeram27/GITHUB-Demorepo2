@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>CAGLA Queue - Sales Support</name>
+    <queueMembers>
+        <users>
+            <user>asea.safgren@anthem.com2</user>
+            <user>brenna.bevan@decare.com2</user>
+            <user>carolina.vazquezperez@anthem.com2</user>
+            <user>cristy.hong@anthem.com2</user>
+            <user>af18451@anthem.com2</user>
+            <user>ac42089@anthem.com2</user>
+            <user>ab94428@anthem.com2</user>
+            <user>kelly.casey@anthem.com2</user>
+            <user>liza.roepke@anthem.com2.iceprod</user>
+            <user>paula.moore2@decare.com2.iceprod</user>
+            <user>rochelle.molzen@decare.com2</user>
+            <user>stephanie.schmucker@anthem.com2.iceprod</user>
+            <user>ab94287@anthem.com2.sme</user>
+            <user>tjohnson@anthemdentaladmin.com2</user>
+            <user>ae00532@anthem.com2</user>
+            <user>ab94328@wellpoint.com2</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

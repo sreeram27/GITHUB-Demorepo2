@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>AnthemLogo</letterhead>
+    <name>LG_ESR_EMAIL</name>
+    <style>freeForm</style>
+    <subject>Assign an ESR to this Group</subject>
+    <textOnly>All:
+
+This communication is to make you aware that the Implementation Case Record for {!Group__c.Name} from {!Group__c.Situs_State__c} has been approved with an effective date of {!Group__c.Implementation_Effective_Date__c}. As an eligible account, an ESR assignment is being requested. Please enter the group’s designated ESR using the link to the Group record.
+
+
+
+Group Number : {!Group__c.Group_Name_Link__c}
+
+Case : {!Group__c.Implementation_Case_Link__c}
+
+Total Eligible Members: {!Group__c.TotalEligibles__c}
+
+Implementation Coordinator: {!Group__c.Assigned_Implementer__c}
+
+
+
+Please let me know if you have any additional questions.
+
+
+
+Sincerely,
+
+Anthem, Inc.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

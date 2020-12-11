@@ -1,0 +1,104 @@
+<apex:component >
+  <script type="text/ng-template" id="vlcCustomBlock.html">
+      <div class="slds-col--padded slds-size--1-of-1" ng-controller="anaCreateOEMeetingsController as anaCreateOEMeetings">
+
+        <!-- loopform (ootb) was changed by loopformcustom -->
+        <ng-form name='loopformcustom'
+                 class='slds-form-element vlc-flex slds-clearfix vlc-slds-block'
+                 id ='{{::control.name}}' 
+                 ng-repeat='control in child.eleArray' >
+ <!-- id ='{{::control.index}}' -->
+            <div class="slds-form-element__control">
+
+                <!-- add block label -->
+                <label vlc-slds-toggle="toggle" class="slds-form-element__label slds-clearfix" ng-if="::control.propSetMap.label" ng-click='baseCtrl.onMeetingLabel(this, child, $index);'>
+                     <slds-svg-icon aria-hidden="true"
+                                   sprite="'utility'"
+                                   icon="'chevrondown'"
+                                   size="'small'"
+                                   extra-classes="'vlc-slds-collapse slds-button__icon slds-button__icon--large'">
+                    </slds-svg-icon>
+
+                    <slds-svg-icon aria-hidden="true"
+                                   sprite="'utility'"
+                                   icon="'chevronup'"
+                                   size="'small'"
+                                   extra-classes="'vlc-slds-expand slds-button__icon slds-button__icon--large'">
+                    </slds-svg-icon>
+
+<!-- adding id="meetingblock" as well as line 32 and 33 -->
+                    <div id="meetingblock" class="slds-form-element__label--toggleText" tabindex="-1" ng-click='baseCtrl.onMeetingLabel(this, child, $index);'>
+                       {{::control.propSetMap.label}}
+                     <span id = "meetingspan" ng-if='!( $first && $last )'>{{control.index+1}}</span>
+                     <span id = "meetingspan" class="meetingLabel"></span>
+                    </div>
+
+                    <div class="vlc-slds-control-action__container" vlc-bubble-canceller="testing" ng-click='baseCtrl.onMeetingLabel(this, child, $index);'>
+                        <!-- THis is hold addition for Copy button 37 to 42-->
+                        <span ng-if='::control.propSetMap.repeat'
+                              ng-click='baseCtrl.vlcCustom_addItem(this, child, $index);'
+                              aria-hidden="true">
+                            Copy
+                        </span>
+                        
+                        <span ng-if='::control.propSetMap.repeat'
+                              ng-click='baseCtrl.addItemNew(this, child, $index);'
+                              aria-hidden="true">
+                            {{::customLabels.OmniAdd}}
+                        </span>
+
+                        <span ng-if='child.eleArray.length > 1'
+                              ng-click='removeDomElement(this, child, $index)'
+                              vlc-slds-remove-item="ng-form.vlc-slds-block"
+                              aria-hidden="true">
+                            {{::customLabels.OmniDelete}}
+                        </span>
+
+                    </div>
+
+                </label>
+
+
+                <!-- block withing the main grid  ng-hide hides hthe block by default-->
+                <div class='slds-size--1-of-1 ng-hide' vlc-slds-toggle-elem='visible' ng-click='baseCtrl.onMeetingLabel(this, child, $index);'>
+
+                    <div class="vlc-slds-control-action__container" vlc-bubble-canceller="test" ng-if="::!control.propSetMap.label">
+                        <!-- THis is hold addition for Copy button 67 to 71-->
+                        <span ng-if='::control.propSetMap.repeat'
+                              ng-click='baseCtrl.vlcCustom_addItem(this, child, $index);'
+                              aria-hidden="true">
+                            Copy
+                        </span>
+                        
+                        <span ng-if='::control.propSetMap.repeat'
+                              ng-click='baseCtrl.addItemNew(this, child, $index);'
+                              aria-hidden="true">
+                            {{::customLabels.OmniAdd}}
+                        </span>
+
+                        <span ng-if='child.eleArray.length > 1'
+                              ng-click='removeDomElement(this, child, $index)'
+                              vlc-slds-remove-item="ng-form.vlc-slds-block"
+                              aria-hidden="true">
+                            {{::customLabels.OmniDelete}}
+                        </span>
+
+                    </div>
+
+                    <div  class="slds-grid slds-wrap slds-grid--pull-padded">
+                        <child class="slds-size--1-of-1 slds-medium--1-of-1 slds-large-size--{{child.eleArray[0].propSetMap.controlWidth}}-of-12"
+                               ng-repeat='child in ::children = control.children'
+                               ng-show='::!child.eleArray[0].propSetMap.hide'
+                               ng-if='child.eleArray[0].propSetMap.hide||(!child.eleArray[0].propSetMap.show || evaluateShow(child.eleArray[0], this))'>
+                        </child>
+                    </div>
+                </div>
+
+            </div>
+
+        </ng-form>
+
+     </div>
+  </script>
+  <!-- all "ng-clicks" are the cusomize functions triggered on the controller -->
+ </apex:component>
