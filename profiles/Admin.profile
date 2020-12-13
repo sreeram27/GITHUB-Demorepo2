@@ -277,6 +277,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>A08123</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ACEBrokerages_ChatterController</apexClass>
         <enabled>true</enabled>
     </classAccesses>

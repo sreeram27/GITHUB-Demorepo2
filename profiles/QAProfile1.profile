@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>A0</apexClass>
@@ -26,6 +25,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A036</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A08123</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -106,6 +109,7 @@
     <layoutAssignments>
         <layout>qb2__c-qb2 Layout</layout>
     </layoutAssignments>
+    <loginHours/>
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>

@@ -28,6 +28,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>A08123</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>QC1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
