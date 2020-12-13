@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>APXTConga4__CongaMerge</application>
@@ -245,6 +244,34 @@
         <default>false</default>
         <visible>false</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>A0</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A000</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A0001</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A0123</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A027</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A028</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A036</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <classAccesses>
         <apexClass>ACEBrokerages_ChatterController</apexClass>
         <enabled>false</enabled>
@@ -3234,6 +3261,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>QC1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>QC2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>QLISoleraTemplateController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -5623,6 +5658,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>rrd__CPConfigExtensionTester</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>sa123</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -33602,6 +33641,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Dbj1__c.F1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Dbj1__c.F3__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Dbj1__c.f2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Defect__c.Capability__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -33743,6 +33797,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Defect__c.Times_Reopened__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>DemoObj007__c.F1__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -67507,6 +67566,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Sb1__c.F2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Segment__c.Description__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -78553,6 +78617,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>dsfs__Recipient__c.dsfs__Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>qb1__c.f1__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -94441,6 +94510,18 @@
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>A1__c-A1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>A2__c-A2 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>A3__c-A3 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>A4s__c-A4 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ANA_Underwriting__c-ANA Underwriting Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -94760,11 +94841,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Billing__c-Billing Layout</layout>
-        <recordType>Billing__c.Billing</recordType>
+        <recordType>Billing__c.BillingASO</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Billing__c-Billing Layout</layout>
-        <recordType>Billing__c.BillingASO</recordType>
+        <recordType>Billing__c.Billing</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Broker_Consultant_Commissions1__c-Broker%2FConsultant Commissions1 Layout</layout>
@@ -95208,7 +95289,21 @@
         <recordType>Data_Interface_Team__c.National_and_Local_WGS_Non_Commingled</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Dbj1__c-Dbj1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Dbj1__c-Dbj1 Layout</layout>
+        <recordType>Dbj1__c.Dbj_RC1</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Dbj1__c-Dbj1 Layout</layout>
+        <recordType>Dbj1__c.Dbj_RC2</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Defect__c-Defect Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>DemoObj007__c-DemoObj007 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Dental_Complete__c-Dental Complete Layout</layout>
@@ -96401,11 +96496,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Product2-vlocity_ins__Plan %28Vlocity 2%2E5%29</layout>
-        <recordType>Product2.vlocity_ins__Product</recordType>
+        <recordType>Product2.vlocity_ins__ProductTemplate</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Product2-vlocity_ins__Plan %28Vlocity 2%2E5%29</layout>
-        <recordType>Product2.vlocity_ins__ProductTemplate</recordType>
+        <recordType>Product2.vlocity_ins__Product</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Product2-vlocity_ins__Plan %28Vlocity 2%2E5%29</layout>
@@ -96625,6 +96720,9 @@
         <layout>Sales_Compensation__c-Sales Compensation Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Sb1__c-Sb1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Scorecard-Scorecard Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -96707,11 +96805,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.EUSR_User_Create</recordType>
+        <recordType>Support_Request__c.EUSR_User_Create1</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Support_Request__c-End User Support Request</layout>
-        <recordType>Support_Request__c.EUSR_User_Create1</recordType>
+        <recordType>Support_Request__c.EUSR_User_Create</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Support_Request__c-End User Support Request</layout>
@@ -97125,6 +97223,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>dsfs__Recipient__c-dsfs__DocuSign Recipient Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>qb1__c-qb1 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>qb2__c-qb2 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>rrd__CustomPointConfig__c-rrd__CustomPoint Layout</layout>
@@ -97766,11 +97870,11 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__ObjectClass__c-vlocity_ins__Object Class Layout</layout>
-        <recordType>vlocity_ins__ObjectClass__c.vlocity_ins__Object</recordType>
+        <recordType>vlocity_ins__ObjectClass__c.vlocity_ins__ObjectType</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__ObjectClass__c-vlocity_ins__Object Class Layout</layout>
-        <recordType>vlocity_ins__ObjectClass__c.vlocity_ins__ObjectType</recordType>
+        <recordType>vlocity_ins__ObjectClass__c.vlocity_ins__Object</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>vlocity_ins__ObjectElement__c-vlocity_ins__Vlocity Object Section Element Layout</layout>
@@ -98347,6 +98451,7 @@
     <layoutAssignments>
         <layout>vlocity_ins__VqResource__c-vlocity_ins__Vlocity Acuity Resource Layout</layout>
     </layoutAssignments>
+    <loginHours/>
     <pageAccesses>
         <apexPage>ANAWeeklyOppt</apexPage>
         <enabled>false</enabled>
@@ -101784,6 +101889,11 @@
         <default>false</default>
         <recordType>Data_Interface_Team__c.National_and_Local_WGS_Non_Commingled</recordType>
         <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>Dbj1__c.Dbj_RC1</recordType>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>

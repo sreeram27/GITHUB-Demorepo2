@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>Accept</actionName>
@@ -143,7 +142,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>11</description>
+    <description>Test1</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -156,7 +155,7 @@
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>F1__c</fullName>
-        <description>may4th</description>
+        <description>test1</description>
         <externalId>false</externalId>
         <label>F1</label>
         <length>37</length>
@@ -171,6 +170,26 @@
         <externalId>false</externalId>
         <label>F2</label>
         <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F3__c</fullName>
+        <externalId>false</externalId>
+        <label>F3</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>f2__c</fullName>
+        <externalId>false</externalId>
+        <label>f2</label>
+        <length>6</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>

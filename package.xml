@@ -1,16 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>49.0</version>
+<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <version>48.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
         <members>A0001</members>
         <members>A0123</members>
+        <members>A027</members>
+        <members>A028</members>
+        <members>A036</members>
         <members>A0981</members>
         <members>A1</members>
         <members>ANewCls1</members>
+        <members>QC1</members>
+        <members>QC2</members>
         <members>a0testclass</members>
         <members>a1testclass</members>
+        <members>sa123</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -704,8 +709,11 @@
         <members>DataUsePurpose.Name</members>
         <members>Dbj1__c.F1__c</members>
         <members>Dbj1__c.F2__c</members>
+        <members>Dbj1__c.F3__c</members>
+        <members>Dbj1__c.f2__c</members>
         <members>Demo4Obj7__c.Demo4Field1__c</members>
         <members>Demo4Obj7__c.Demo4Field2__c</members>
+        <members>DemoObj007__c.F1__c</members>
         <members>DepTestObj1__c.F1__c</members>
         <members>DigitalWallet.AccountId</members>
         <members>DigitalWallet.AuditEmail</members>
@@ -1158,6 +1166,7 @@
         <members>SaoObj900__c.F2__c</members>
         <members>SaoObj900__c.f1__c</members>
         <members>SaoObj900__c.f4__c</members>
+        <members>Sb1__c.F2__c</members>
         <members>Scorecard.Description</members>
         <members>Scorecard.Name</members>
         <members>Scorecard.OwnerId</members>
@@ -1273,6 +1282,7 @@
         <members>obj800__c.field3__c</members>
         <members>objconfig2__c.AutorabitExtId__c</members>
         <members>objconfig2__c.f1__c</members>
+        <members>qb1__c.f1__c</members>
         <members>rk_obj1__c.AutorabitExtId__c</members>
         <members>sc1obj1__c.F1__c</members>
         <members>zb1__c.f1__c</members>
@@ -1498,6 +1508,9 @@
     </types>
     <types>
         <members>A1__c</members>
+        <members>A2__c</members>
+        <members>A3__c</members>
+        <members>A4s__c</members>
         <members>AAA_001__c</members>
         <members>ABC__c</members>
         <members>ACCObjTest1__c</members>
@@ -1568,6 +1581,7 @@
         <members>DataUsePurpose</members>
         <members>Dbj1__c</members>
         <members>Demo4Obj7__c</members>
+        <members>DemoObj007__c</members>
         <members>DepTestObj1__c</members>
         <members>DesObj1__c</members>
         <members>DigitalWallet</members>
@@ -1656,6 +1670,7 @@
         <members>Sai_Obj500__c</members>
         <members>Saiobj500__c</members>
         <members>SaoObj900__c</members>
+        <members>Sb1__c</members>
         <members>Scorecard</members>
         <members>ScorecardAssociation</members>
         <members>ScorecardMetric</members>
@@ -1694,6 +1709,8 @@
         <members>obj800__c</members>
         <members>objconfig2__c</members>
         <members>pradeep__c</members>
+        <members>qb1__c</members>
+        <members>qb2__c</members>
         <members>rk_obj1__c</members>
         <members>rkobj2__c</members>
         <members>sc1obj1__c</members>
@@ -1799,6 +1816,11 @@
         <name>CustomObjectTranslation</name>
     </types>
     <types>
+        <members>New1</members>
+        <members>TestSite1</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
         <members>ACR2__c</members>
         <members>ACR3__c</members>
         <members>DLConfigTestObj__c</members>
@@ -1876,7 +1898,14 @@
         <name>InstalledPackage</name>
     </types>
     <types>
+        <members>New1.Banned</members>
+        <name>KeywordList</name>
+    </types>
+    <types>
         <members>A1__c-A1 Layout</members>
+        <members>A2__c-A2 Layout</members>
+        <members>A3__c-A3 Layout</members>
+        <members>A4s__c-A4 Layout</members>
         <members>AAA_001__c-AAA-001 Layout</members>
         <members>ABC__c-ABC Layout</members>
         <members>ACCObjTest1__c-ACCObjTest1 Layout</members>
@@ -1932,6 +1961,7 @@
         <members>DandBCompany-D%26B Company Layout</members>
         <members>Dbj1__c-Dbj1 Layout</members>
         <members>Demo4Obj7__c-Demo4Obj7 Layout</members>
+        <members>DemoObj007__c-DemoObj007 Layout</members>
         <members>DepTestObj1__c-DepTestObj1 Layout</members>
         <members>DesObj1__c-DesObj1 Layout</members>
         <members>DigitalWallet-Digital Wallet Layout</members>
@@ -2004,6 +2034,7 @@
         <members>Sai_Obj500__c-Sai-Obj500 Layout</members>
         <members>Saiobj500__c-Saiobj500 Layout</members>
         <members>SaoObj900__c-SaiObj900 Layout</members>
+        <members>Sb1__c-Sb1 Layout</members>
         <members>Scorecard-Scorecard Layout</members>
         <members>ScorecardAssociation-Scorecard Association Layout</members>
         <members>ScorecardMetric-Scorecard Metric Layout</members>
@@ -2036,6 +2067,8 @@
         <members>obj1new__c-obj1new Layout</members>
         <members>obj800__c-obj800 Layout</members>
         <members>objconfig2__c-objconfig2 Layout</members>
+        <members>qb1__c-qb1 Layout</members>
+        <members>qb2__c-qb2 Layout</members>
         <members>rk_obj1__c-rk-obj1 Layout</members>
         <members>rkobj2__c-rkobj2 Layout</members>
         <members>sc1obj1__c-sc1obj1 Layout</members>
@@ -2161,6 +2194,26 @@
         <name>ManagedContentType</name>
     </types>
     <types>
+        <members>New1.Block_banned_keywords</members>
+        <members>New1.Flag_banned</members>
+        <members>New1.Freeze_for_frequent_posting</members>
+        <members>New1.Replace_banned</members>
+        <members>New1.Review_the_first_post</members>
+        <name>ModerationRule</name>
+    </types>
+    <types>
+        <members>Default_Navigation2</members>
+        <name>NavigationMenu</name>
+    </types>
+    <types>
+        <members>New1</members>
+        <name>Network</name>
+    </types>
+    <types>
+        <members>cbNew1</members>
+        <name>NetworkBranding</name>
+    </types>
+    <types>
         <members>NotificationTypeConfig</members>
         <name>NotificationTypeConfig</name>
     </types>
@@ -2168,8 +2221,10 @@
         <members>NewPermissionSet1</members>
         <members>PRS007</members>
         <members>PRS008</members>
+        <members>PRS009</members>
         <members>PRS1</members>
         <members>PRS2</members>
+        <members>PradeepPermSet1</members>
         <members>sfdc_chatbot_service_permset</members>
         <members>test2</members>
         <name>PermissionSet</name>
@@ -2179,12 +2234,14 @@
         <members>ARProfile10</members>
         <members>ARProfile2</members>
         <members>ARProfile9</members>
+        <members>ATESTProfile1</members>
         <members>Admin</members>
         <members>AdminClone</members>
         <members>Analytics Cloud Integration User</members>
         <members>Analytics Cloud Security User</members>
         <members>Authenticated Website</members>
         <members>CFPProfile</members>
+        <members>Catch up Profile</members>
         <members>Chatter External User</members>
         <members>Chatter Free User</members>
         <members>Chatter Moderator User</members>
@@ -2205,11 +2262,13 @@
         <members>Force%2Ecom - App Subscription User</members>
         <members>Force%2Ecom - Free User</members>
         <members>Gold Partner User</members>
+        <members>Guest</members>
         <members>High Volume Customer Portal User</members>
         <members>HighVolumePortal</members>
         <members>Identity User</members>
         <members>MarketingProfile</members>
         <members>Minimum Access - Salesforce</members>
+        <members>New1 Profile</members>
         <members>NewProfile1</members>
         <members>Partner App Subscription User</members>
         <members>Partner Community Login User</members>
@@ -2217,7 +2276,10 @@
         <members>PlatformPortal</members>
         <members>ProfileTest1</members>
         <members>ProfileTest123</members>
+        <members>Profileest</members>
+        <members>QAProfile1</members>
         <members>ReadOnly</members>
+        <members>SaiJun19thprofile</members>
         <members>Silver Partner User</members>
         <members>SolutionManager</members>
         <members>Standard</members>
@@ -2225,17 +2287,25 @@
         <members>System AdministratorClone</members>
         <members>Test1</members>
         <members>Test1Profile</members>
+        <members>TestCommunity Profile</members>
+        <members>TestCreateProfile</members>
+        <members>TestSite1 Profile</members>
         <members>Work%2Ecom Only User</members>
         <members>clone profile</members>
         <members>profilestandared</members>
+        <members>sp1</members>
         <name>Profile</name>
     </types>
     <types>
+        <members>ARProfile1_profilePasswordPolicy1520692602097</members>
         <members>CustomProfile1_profilePasswordPolicy1572348446030</members>
+        <members>QAProfile1_profilePasswordPolicy1605676608968</members>
         <name>ProfilePasswordPolicy</name>
     </types>
     <types>
+        <members>ARProfile1_profileSessionSetting1520692602184</members>
         <members>CustomProfile1_profileSessionSetting1572348446100</members>
+        <members>QAProfile1_profileSessionSetting1605676609061</members>
         <name>ProfileSessionSetting</name>
     </types>
     <types>
@@ -2632,6 +2702,16 @@
         <members>sc1obj1__c</members>
         <members>zb1__c</members>
         <name>TopicsForObjects</name>
+    </types>
+    <types>
+        <members>en_US</members>
+        <name>Translations</name>
+    </types>
+    <types>
+        <members>New1.Customer_Members</members>
+        <members>New1.Members_without_contribution</members>
+        <members>New1.Partner_and_Customer_members</members>
+        <name>UserCriteria</name>
     </types>
     <types>
         <members>AR_SFObj1__c.ARSFvalidationRule1</members>
