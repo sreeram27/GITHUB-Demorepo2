@@ -24,7 +24,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A1</apexClass>
+        <apexClass>A331</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -54,7 +54,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.ACCField1__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -64,7 +64,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.AutorabitExtId__c</field>
-        <readable>false</readable>
+        <readable>True</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -148,7 +148,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ADDObj1__c.F1__c</field>
+        <field>ADDObj1__c.F112__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -333,8 +333,8 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>SB100__c.F1__c</field>
-        <readable>false</readable>
+        <field>SB100__c.F1123__c</field>
+        <readable>False</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -538,7 +538,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ZLObj100__c.AutorabitExtId__c</field>
+        <field>ZLObj1001__c.AutorabitExtId__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -564,7 +564,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>zb1__c.f1__c</field>
-        <readable>false</readable>
+        <readable>False</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -576,7 +576,7 @@
     <license>Salesforce</license>
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
+        <allowDelete>TRue</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
@@ -596,7 +596,7 @@
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
+        <allowRead>Talse</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>Dbj1__c</object>
         <viewAllRecords>true</viewAllRecords>
@@ -608,11 +608,11 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>STObj1__c</object>
-        <viewAllRecords>false</viewAllRecords>
+        <viewAllRecords>False1</viewAllRecords>
     </objectPermissions>
     <pageAccesses>
         <apexPage>ApexPage</apexPage>
-        <enabled>true</enabled>
+        <enabled>TRue1</enabled>
     </pageAccesses>
     <recordTypeVisibilities>
         <recordType>Dbj1__c.Dbj_RC1</recordType>
