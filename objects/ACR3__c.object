@@ -173,7 +173,7 @@
         <fullName>field1__c</fullName>
         <externalId>false</externalId>
         <label>field1</label>
-        <length>6</length>
+        <length>7</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
