@@ -143,7 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Add Comment for this Object ARSFObj1111112344</description>
+    <description>Add Comment for 1111 Object ARSFObj1111112344</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>true</enableFeeds>
@@ -160,13 +160,13 @@
         <label>ARSFField4</label>
         <required>true</required>
         <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
+        <trackTrending>true</trackTrending>
         <type>Email</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>AR_SFField2__c</fullName>
-        <description>Add  Desc</description>
+        <description>111  Desc</description>
         <externalId>false</externalId>
         <label>AR-SFField2</label>
         <length>40</length>
