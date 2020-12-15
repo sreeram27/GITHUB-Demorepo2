@@ -5,7 +5,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AAtest456</shortDescription>
-        <value>123sdsf</value>
+        <value>123</value>
     </labels>
     <labels>
         <fullName>AC1</fullName>
@@ -82,7 +82,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>SACCTest</shortDescription>
-        <value>!</value>
+        <value>!1</value>
     </labels>
     <labels>
         <fullName>ACCt3</fullName>
