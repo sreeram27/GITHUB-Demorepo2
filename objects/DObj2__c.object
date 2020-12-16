@@ -174,14 +174,6 @@
         <type>Email</type>
         <unique>false</unique>
     </fields>
-    <fields>
-        <fullName>field2__c</fullName>
-        <externalId>false</externalId>
-        <label>field2</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Phone</type>
-    </fields>
     <label>DObj2</label>
     <nameField>
         <label>DObj1 Name</label>

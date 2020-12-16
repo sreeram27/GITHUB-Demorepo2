@@ -250,10 +250,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A170</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>A18</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -582,6 +578,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Apicls2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Aug21stClass1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -766,6 +766,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>July22nd</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>K1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -818,6 +822,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>N897</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>NA23Class1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -854,6 +862,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>PPS</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PUlreqcls1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -867,6 +879,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>S10</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>S16class1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1066,6 +1082,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>n09</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>n1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1083,6 +1103,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>rtclass1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>sai007</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1131,6 +1155,21 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>ACCObjTest1__c.N1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACCObjTest1__c.PLNew1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACCObjTest1__c.PLnew3__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.PLt1__c</field>
         <readable>false</readable>
@@ -1139,6 +1178,11 @@
         <editable>false</editable>
         <field>ACCObjTest1__c.Plt3__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ACCObjTest1__c.pl1__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1641,6 +1685,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.ExternalIdentifier</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Asset.InstallDate</field>
         <readable>true</readable>
@@ -1653,6 +1702,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Asset.IsInternal</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.ManufactureDate</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1701,6 +1755,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.StatusReason</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Asset.StockKeepingUnit</field>
         <readable>true</readable>
@@ -1709,6 +1768,11 @@
         <editable>true</editable>
         <field>Asset.UsageEndDate</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Asset.Uuid</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -2292,6 +2356,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>ContactPointTypeConsent.EngagementChannelTypeId</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contract.ActivatedById</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2584,11 +2653,6 @@
         <editable>true</editable>
         <field>Feb26Obj123__c.F1__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Goal.OrigGoalId__c</field>
-        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -2908,11 +2972,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>MergeObject1__c.MergeField2__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Metric.OrigMetricId__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3607,6 +3666,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>SaiDX124__c.f2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>SaiKObj1__c.Field1__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4127,10 +4191,6 @@
         <layout>Accobj4__c-Accobj4 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Account-Account %28Marketing%29 Layout</layout>
-        <recordType>Account.ARC1</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Account-Account Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4194,10 +4254,6 @@
         <layout>ConsumptionSchedule-Consumption Schedule Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Contact-Contact %28Marketing%29 Layout</layout>
-        <recordType>Contact.CRT1</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Contact-Contact Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4216,14 +4272,6 @@
         <layout>DLCObj18__c-DLCObj18 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>DLCObj18__c-DLCObj18 Layout</layout>
-        <recordType>DLCObj18__c.DLCObj18_RcType1</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>DLCObj18__c-DLCObj18 Layout</layout>
-        <recordType>DLCObj18__c.DLCObj18_RcType2</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>DLConfigTestObj__c-DLConfigTestObj Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4237,14 +4285,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Dbj1__c-Dbj1 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Dbj1__c-Dbj1 Layout</layout>
-        <recordType>Dbj1__c.Dbj_RC1</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Dbj1__c-Dbj1 Layout</layout>
-        <recordType>Dbj1__c.Dbj_RC2</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Demo4Obj7__c-Demo4Obj7 Layout</layout>
@@ -4266,14 +4306,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>EC_AccObj1__c-EC-AccObj1 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>EC_AccObj1__c-EC-AccObj1 Layout</layout>
-        <recordType>EC_AccObj1__c.ECrecordTypeTest3</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>EC_AccObj1__c-EC-AccObj1 Layout</layout>
-        <recordType>EC_AccObj1__c.Test1</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>EObj1__c-EObj1 Layout</layout>
@@ -4312,15 +4344,7 @@
         <layout>LB500obj2__c-LB500obj2 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Lead-Lead %28Sales%29 Layout</layout>
-        <recordType>Lead.LeadRecType1</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Lead-Lead Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Lead-Lead Layout</layout>
-        <recordType>Lead.RecType1</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Lobj45__c-Lobj45 Layout</layout>
@@ -4390,10 +4414,6 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Obj900__c-Obj900 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Obj900__c-Obj900 Layout</layout>
-        <recordType>Obj900__c.Obj900RC1</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ObjAc1__c-ObjAc1 Layout</layout>
@@ -4493,6 +4513,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>STobj3__c-STobj3 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SaiDX124__c-SaiDX124 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>SaiKObj1__c-SaiKObj1 Layout</layout>
@@ -4916,6 +4939,11 @@
     </pageAccesses>
     <recordTypeVisibilities>
         <default>true</default>
+        <recordType>ACCObjTest1__c.SairecordType1</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
         <recordType>Account.ARC1</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -4957,16 +4985,6 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Lead.RecType1</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Metric.Completion</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>Metric.Progress</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
