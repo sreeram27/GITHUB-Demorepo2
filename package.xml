@@ -5,6 +5,7 @@
         <members>ARProfile1</members>
         <members>ARProfile10</members>
         <members>ARProfile2</members>
+        <members>ProfileTest1</members>
         <members>QAProfile1</members>
         <members>Test1Profile</members>
         <name>Profile</name>
