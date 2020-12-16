@@ -3997,6 +3997,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>sp1__c.F2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>zb1__c.f1__c</field>
         <readable>true</readable>
     </fieldPermissions>
