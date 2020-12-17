@@ -4,6 +4,7 @@
     <types>
         <members>A0</members>
         <members>A000</members>
+        <members>A0123</members>
         <name>ApexClass</name>
     </types>
 </Package>
