@@ -9,7 +9,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A0233</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0456</apexClass>
@@ -24,7 +24,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A11</apexClass>
+        <apexClass>A12</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -119,7 +119,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ACR2__c.LookUpField2__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -148,7 +148,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ADDObj1__c.F11__c</field>
+        <field>ADDObj1__c.F12__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -198,7 +198,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Dbj1__c.F1__c</field>
+        <field>Dbj1__c.F17__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -347,7 +347,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>SKVObject1__c.SKVField1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -373,7 +373,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>STObj1__c.sf1__c</field>
+        <field>STObj1__c.sf4__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -467,7 +467,7 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>SaiTFSObj1__c.field1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -590,7 +590,7 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
         <object>CAcobj1__c</object>
-        <viewAllRecords>true</viewAllRecords>
+        <viewAllRecords>False</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -615,7 +615,7 @@
         <enabled>false</enabled>
     </pageAccesses>
     <recordTypeVisibilities>
-        <recordType>Dbj1__c.Dbj_RC1</recordType>
+        <recordType>Dbj1__c.Dbj_RC200</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
 </PermissionSet>
