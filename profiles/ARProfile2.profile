@@ -1035,6 +1035,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>RC1__c.F1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RC1__c.F2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>SB100__c.F1__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1474,6 +1484,15 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>ACCObjTest1__c</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>RC1__c</object>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <pageAccesses>
         <apexPage>ApexPage</apexPage>
