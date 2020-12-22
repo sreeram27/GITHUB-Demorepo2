@@ -143,6 +143,7 @@
         <members>BusinessClass</members>
         <members>BusinessClassTest</members>
         <members>C1</members>
+        <members>Casehelper</members>
         <members>ChangePasswordController</members>
         <members>ChangePasswordControllerTest</members>
         <members>CommunitiesLandingController</members>
@@ -255,6 +256,10 @@
         <members>v7</members>
         <members>v8</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>apexEmailNotifications</members>
+        <name>ApexEmailNotifications</name>
     </types>
     <types>
         <members>AnswersHome</members>
@@ -2003,6 +2008,10 @@
         <name>InboundCertificate</name>
     </types>
     <types>
+        <members>BigHack__b.BHIndex</members>
+        <name>Index</name>
+    </types>
+    <types>
         <members>addNewShares</members>
         <members>existingShares</members>
         <members>lightningSharingWrapper</members>
@@ -2131,10 +2140,6 @@
         <members>qaobj91__c.All</members>
         <members>rcobj1__c.All</members>
         <name>ListView</name>
-    </types>
-    <types>
-        <members>apexEmailNotifications</members>
-        <name>NetworkBranding</name>
     </types>
     <types>
         <members>PRS1</members>
