@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>50.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -387,6 +387,7 @@
         <members>ACR2__c.Test</members>
         <members>ACR3__c.Layout_layout</members>
         <members>ACR4__c.Layout_layout</members>
+        <members>SMobj1__c.TestCompactlayout</members>
         <name>CompactLayout</name>
     </types>
     <types>
@@ -2488,6 +2489,7 @@
         <members>SEObject1__c</members>
         <members>SKVAug16Obj1__c</members>
         <members>SKVObject1__c</members>
+        <members>SMobj1__c</members>
         <members>SSObj1__c</members>
         <members>STObj1__c</members>
         <members>STObj2__c</members>
@@ -3377,6 +3379,7 @@
         <members>StandardAul</members>
         <members>System AdministratorClone</members>
         <members>Test1</members>
+        <members>Test1557</members>
         <members>Test1Profile</members>
         <members>TestCreateProfile</members>
         <members>TestSite1 Profile</members>
