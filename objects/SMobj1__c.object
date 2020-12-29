@@ -141,7 +141,7 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>TestCompactlayout</compactLayoutAssignment>
     <compactLayouts>
         <fullName>TestCompactlayout</fullName>
         <fields>CreatedById</fields>
