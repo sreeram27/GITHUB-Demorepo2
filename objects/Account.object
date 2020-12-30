@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>CallHighlightAction</actionName>
@@ -364,6 +363,16 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>MyCoolCheckBox__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Some Description</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Hello World!</inlineHelpText>
+        <label>MyCoolCheckBox</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>NaicsCode</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -605,32 +614,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>Active__c</picklist>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>CustomerPriority__c</picklist>
-            <values>
-                <fullName>High</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Low</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Medium</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Industry</picklist>
             <values>
                 <fullName>Agriculture</fullName>
@@ -796,25 +779,6 @@
             </values>
         </picklistValues>
         <picklistValues>
-            <picklist>SLA__c</picklist>
-            <values>
-                <fullName>Bronze</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Gold</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Platinum</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Silver</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
             <picklist>Type</picklist>
             <values>
                 <fullName>Channel Partner %2F Reseller</fullName>
@@ -842,21 +806,6 @@
             </values>
             <values>
                 <fullName>Technology Partner</fullName>
-                <default>false</default>
-            </values>
-        </picklistValues>
-        <picklistValues>
-            <picklist>UpsellOpportunity__c</picklist>
-            <values>
-                <fullName>Maybe</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>No</fullName>
-                <default>false</default>
-            </values>
-            <values>
-                <fullName>Yes</fullName>
                 <default>false</default>
             </values>
         </picklistValues>
