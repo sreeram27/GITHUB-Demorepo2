@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>flow2_screen</name>
+        <label>flow2 screen</label>
+        <locationX>244</locationX>
+        <locationY>286</locationY>
+        <assignmentItems>
+            <assignToReference>ret</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ratna</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <interviewLabel>Flow2 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Flow2</label>
+    <processType>Flow</processType>
+    <screens>
+        <name>Flow1</name>
+        <label>Flow1</label>
+        <locationX>111</locationX>
+        <locationY>124</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <status>InvalidDraft</status>
+    <variables>
+        <name>ratna</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ret</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
