@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
         <fullName>AAtest456</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AAtest456</shortDescription>
-        <value>123sdsf</value>
+        <value>111111</value>
     </labels>
     <labels>
         <fullName>AC1</fullName>
         <language>en_US</language>
-        <protected>false</protected>
+        <protected>true</protected>
         <shortDescription>ac111</shortDescription>
-        <value>987</value>
+        <value>1233451111111</value>
     </labels>
     <labels>
         <fullName>AC100</fullName>
@@ -40,7 +39,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC211</shortDescription>
-        <value>007</value>
+        <value>123111</value>
     </labels>
     <labels>
         <fullName>AC56</fullName>
@@ -75,7 +74,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACCL3</shortDescription>
-        <value>3111</value>
+        <value>311111</value>
     </labels>
     <labels>
         <fullName>ACCTest</fullName>
@@ -124,7 +123,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>S22CL2</shortDescription>
-        <value>11</value>
+        <value>1111111</value>
     </labels>
     <labels>
         <fullName>ACL24</fullName>
@@ -152,7 +151,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>ACL4</shortDescription>
-        <value>rl1</value>
+        <value>rl11</value>
     </labels>
     <labels>
         <fullName>ACL5</fullName>
@@ -908,6 +907,20 @@
         <value>s345</value>
     </labels>
     <labels>
+        <fullName>NCN1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NCN1</shortDescription>
+        <value>123</value>
+    </labels>
+    <labels>
+        <fullName>NCinoCl1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NCinoCl1</shortDescription>
+        <value>123</value>
+    </labels>
+    <labels>
         <fullName>NCl2</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1214,6 +1227,20 @@
         <protected>true</protected>
         <shortDescription>SS2</shortDescription>
         <value>1</value>
+    </labels>
+    <labels>
+        <fullName>SSlabel1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SSlabel1</shortDescription>
+        <value>to see you go</value>
+    </labels>
+    <labels>
+        <fullName>STAB203_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>STAB203 Label</shortDescription>
+        <value>Test</value>
     </labels>
     <labels>
         <fullName>SV1</fullName>

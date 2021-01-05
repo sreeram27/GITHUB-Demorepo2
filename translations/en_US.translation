@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- AppTest1 --></label>
+        <name>AppTest1</name>
+    </customApplications>
+    <customLabels>
+        <label><!-- AAtest456 --></label>
+        <name>AAtest456</name>
+    </customLabels>
     <customLabels>
         <label>test</label>
         <name>AC1</name>
@@ -7,6 +15,10 @@
     <customLabels>
         <label><!-- AC211 --></label>
         <name>AC2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AC56 --></label>
+        <name>AC56</name>
     </customLabels>
     <customLabels>
         <label><!-- AC6712 --></label>
@@ -25,8 +37,20 @@
         <name>ACL2</name>
     </customLabels>
     <customLabels>
+        <label><!-- ACL3 --></label>
+        <name>ACL3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ACL4 --></label>
+        <name>ACL4</name>
+    </customLabels>
+    <customLabels>
         <label><!-- ACL50 --></label>
         <name>ACL50</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- AL2 --></label>
+        <name>AL2</name>
     </customLabels>
     <customLabels>
         <label><!-- APXL1 --></label>
@@ -53,6 +77,10 @@
         <name>Des12345</name>
     </customLabels>
     <customLabels>
+        <label><!-- Kl1233 --></label>
+        <name>Kl1233</name>
+    </customLabels>
+    <customLabels>
         <label><!-- Mar21CL2 --></label>
         <name>Mar21CL2</name>
     </customLabels>
@@ -61,8 +89,24 @@
         <name>NCL1</name>
     </customLabels>
     <customLabels>
+        <label><!-- NCN1 --></label>
+        <name>NCN1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NCinoCl1 --></label>
+        <name>NCinoCl1</name>
+    </customLabels>
+    <customLabels>
         <label><!-- S16label1 --></label>
         <name>S16label1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- SSlabel1 --></label>
+        <name>SSlabel1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- STAB203 Label --></label>
+        <name>STAB203_Label</name>
     </customLabels>
     <customLabels>
         <label><!-- Urltestlabel1 --></label>
@@ -85,6 +129,10 @@
         <name>kkkl</name>
     </customLabels>
     <customLabels>
+        <label><!-- pr1 --></label>
+        <name>pr1</name>
+    </customLabels>
+    <customLabels>
         <label><!-- prcl --></label>
         <name>prcl</name>
     </customLabels>
@@ -101,9 +149,29 @@
         <fullName>Automated_email_on_QLI_Onduo_product_Created_Updated</fullName>
     </flowDefinitions>
     <flowDefinitions>
+        <flows>
+            <screens>
+                <name>Pradeep</name>
+            </screens>
+        </flows>
+        <fullName>Pradeep</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
         <flows/>
         <fullName>QuoteLineItem</fullName>
     </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>test</fullName>
+    </flowDefinitions>
+    <quickActions>
+        <label><!-- Guest Community Case --></label>
+        <name>GuestCommunityCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Community Case --></label>
+        <name>NewCommunityCase</name>
+    </quickActions>
     <reportTypes>
         <description><!-- Screen Flows --></description>
         <label><!-- Screen Flows --></label>
