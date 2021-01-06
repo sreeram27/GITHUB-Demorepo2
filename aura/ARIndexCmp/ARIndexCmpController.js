@@ -17,7 +17,7 @@
             	$A.util.addClass(spinnerDivTarget, 'show');
             }		
             //$A.util.removeClass(spinnerDivTarget, 'hide');
-            //$A.util.addClass(spinnerDivTarget, 'show');
+            //$A.util.addClass(spinnerDivTarget, 'show');test
             
             var loginFieldsData = component.get("v.loginData");
             helper.loginCallOut(component, JSON.parse(JSON.stringify(loginFieldsData)), helper);

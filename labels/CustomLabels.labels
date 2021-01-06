@@ -1,18 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
         <fullName>AAtest456</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AAtest456</shortDescription>
-        <value>11111</value>
+        <value>112</value>
     </labels>
     <labels>
         <fullName>AC1</fullName>
         <language>en_US</language>
-        <protected>false</protected>
+        <protected>true</protected>
         <shortDescription>ac111</shortDescription>
-        <value>https://pilot.autorabit.com</value>
+        <value>2111111</value>
     </labels>
     <labels>
         <fullName>AC100</fullName>
@@ -40,7 +39,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC211</shortDescription>
-        <value>11111</value>
+        <value>1111111</value>
     </labels>
     <labels>
         <fullName>AC56</fullName>
@@ -54,14 +53,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC6712</shortDescription>
-        <value>111</value>
+        <value>111111111</value>
     </labels>
     <labels>
         <fullName>AC8</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC8</shortDescription>
-        <value>11</value>
+        <value>111</value>
     </labels>
     <labels>
         <fullName>ACCL1</fullName>
@@ -616,6 +615,14 @@
         <protected>true</protected>
         <shortDescription>DXCl2</shortDescription>
         <value>1111</value>
+    </labels>
+    <labels>
+        <fullName>DX_API</fullName>
+        <categories>API URL - http://103.211.39.40:8589/rabit/rabitservices?wsdl</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DX_API</shortDescription>
+        <value>http://103.211.39.40:8590/rabit/rabitservices?wsdl</value>
     </labels>
     <labels>
         <fullName>DepCl1</fullName>
@@ -1188,6 +1195,13 @@
         <value>1</value>
     </labels>
     <labels>
+        <fullName>SSlabel1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SSlabel1</shortDescription>
+        <value>webhook Test</value>
+    </labels>
+    <labels>
         <fullName>SV1</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1522,14 +1536,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>b1</shortDescription>
-        <value>1</value>
+        <value>1233</value>
     </labels>
     <labels>
         <fullName>b2</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>b2</shortDescription>
-        <value>1</value>
+        <value>111</value>
     </labels>
     <labels>
         <fullName>bv12</fullName>
