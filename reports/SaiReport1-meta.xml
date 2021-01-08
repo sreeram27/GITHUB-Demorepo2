@@ -2,7 +2,7 @@
 <ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
     <folderShares>
         <accessLevel>Manage</accessLevel>
-        <sharedTo>saikumar-sb.three@autorabit.com</sharedTo>
+        <sharedTo>saikumar.k@autorabit.com</sharedTo>
         <sharedToType>User</sharedToType>
     </folderShares>
     <name>SaiReport1</name>
