@@ -152,35 +152,32 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <fields>
-        <fullName>AYfd1__c</fullName>
-        <description>1111111111111111111</description>
+        <fullName>F1__c</fullName>
         <externalId>false</externalId>
-        <label>AYfd1</label>
-        <length>7</length>
+        <label>F1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>F2__c</fullName>
+        <externalId>false</externalId>
+        <label>F2</label>
+        <length>8</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <fields>
-        <fullName>Ayfd2__c</fullName>
-        <description>111111</description>
-        <externalId>false</externalId>
-        <label>Ayfd2</label>
-        <length>7</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <label>AYObj3</label>
+    <label>NA17Obj1</label>
     <nameField>
-        <label>AYObj3 Name</label>
+        <label>NA17Obj1 Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>AYObj3s</pluralLabel>
+    <pluralLabel>NA17Obj1s</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

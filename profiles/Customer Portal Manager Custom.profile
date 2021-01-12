@@ -214,10 +214,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>A158</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>A159</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1452,21 +1448,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>AYObj1__c.AYField1__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>AYObj2__c.Ayf1__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>AYObj3__c.AYfd1__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>AYObj3__c.Ayfd2__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>

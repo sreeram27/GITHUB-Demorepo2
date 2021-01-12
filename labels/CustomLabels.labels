@@ -5,7 +5,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AAtest456</shortDescription>
-        <value>11111</value>
+        <value>123sdsf</value>
     </labels>
     <labels>
         <fullName>AC1</fullName>
@@ -19,7 +19,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC100</shortDescription>
-        <value>11</value>
+        <value>123</value>
     </labels>
     <labels>
         <fullName>AC11</fullName>
@@ -40,7 +40,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC211</shortDescription>
-        <value>11111111</value>
+        <value>007</value>
     </labels>
     <labels>
         <fullName>AC56</fullName>
@@ -1214,6 +1214,13 @@
         <protected>true</protected>
         <shortDescription>SS2</shortDescription>
         <value>1</value>
+    </labels>
+    <labels>
+        <fullName>SSlabel1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SSlabel1</shortDescription>
+        <value>to see you go</value>
     </labels>
     <labels>
         <fullName>SV1</fullName>
