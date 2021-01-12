@@ -96,7 +96,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A000</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0001</apexClass>
@@ -248,10 +248,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A156</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>A158</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1497,21 +1493,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>AYObj2__c.Ayf1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>AYObj3__c.AYfd1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>AYObj3__c.Ayfd2__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Accobj4__c.Field1__c</field>
         <readable>false</readable>
@@ -2567,14 +2548,14 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>DObj2__c.Field3__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>DObj2__c.field1__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -3589,6 +3570,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>QObj2__c.field1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RC1__c.F1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>RC1__c.F2__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4849,6 +4840,39 @@
         <layout>zb1__c-zb1 Layout</layout>
     </layoutAssignments>
     <loginHours/>
+    <loginIpRanges>
+        <endAddress>255.234.123.223</endAddress>
+        <startAddress>0.0.0.0</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.201</endAddress>
+        <startAddress>1.0.0.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.207</endAddress>
+        <startAddress>1.0.0.9</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.229</endAddress>
+        <startAddress>1.1.1.1</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.222</endAddress>
+        <startAddress>2.2.2.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <description>test</description>
+        <endAddress>255.234.123.222</endAddress>
+        <startAddress>3.3.3.3</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.227</endAddress>
+        <startAddress>6.6.6.6</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.234.123.228</endAddress>
+        <startAddress>7.7.7.7</startAddress>
+    </loginIpRanges>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -5045,6 +5069,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>QuickText</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>RC1__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
