@@ -4931,11 +4931,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>DLCObj18__c.DLCObj18_RcType1</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
         <recordType>Dbj1__c.Dbj_RC1</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>

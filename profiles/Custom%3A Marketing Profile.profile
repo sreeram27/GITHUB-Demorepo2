@@ -5030,11 +5030,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
-        <recordType>DLCObj18__c.DLCObj18_RcType1</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
         <recordType>Dbj1__c.Dbj_RC1</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>

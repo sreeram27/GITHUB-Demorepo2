@@ -212,12 +212,6 @@
     </nameField>
     <pluralLabel>DLCObj18s</pluralLabel>
     <recordTypes>
-        <fullName>DLCObj18_RcType1</fullName>
-        <active>true</active>
-        <description>test</description>
-        <label>DLCObj18 RcType1</label>
-    </recordTypes>
-    <recordTypes>
         <fullName>DLCObj18_RcType2</fullName>
         <active>false</active>
         <label>DLCObj18 RcType2</label>
