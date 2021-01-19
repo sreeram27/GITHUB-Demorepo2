@@ -193,6 +193,7 @@
                 </div>
             </div>
         </div><br></br>
+	<br></br>
         
         <!--***************************** Third Row***************************************-->
         <div class="slds-grid slds-wrap slds-grid--pull-padded slds-grid--align-space">
@@ -205,7 +206,7 @@
                                       value="{!v.newBandConsuComm.BrokerageAndConsultant__c}"
                                       required="true"/> -->
                         Brokerage/Consultant<span class="tooltipB">
-                        <span class="tooltiptextB   slds-popover slds-nubbin--bottom ">Dont make any consultant changes using this field.Please click cancel and select the appropriate consultant from the drop-down</span>
+                        <span class="tooltiptextB   slds-popover slds-nubbin--bottom ">Dont make any consultant changes using this field.Please click cancel and select the appropriate consultant from the dropdown</span>
                         <button class="slds-button slds-button slds-button--icon" aria-describedby="help" title="Help" />
                         <lightning:icon iconName="utility:info" size="xx-small" alternativeText="Help"/></span>
                         <c:ANA_LTNG01_CustomLookup objectName="Brokerage_and_Consultant__c"
@@ -270,7 +271,7 @@
                         <lightning:icon iconName="utility:info" size="xx-small" alternativeText="Help"/></span>
                         <lightning:textarea name="myText" label="" class="slds-textarea slds-input" value="{!v.newBandConsuComm.Group_Numbers__c}"  aura:id="GroupNumbers"/>
 						<aura:if isTrue="{!v.selectGroupNumber}"> 
-						<span style="font-size: .75rem; margin-top:.5rem;color: rgb(194, 57, 52)"> Group Numbers Can't be empty</span>
+						<span style="font-size: .75rem; margin-top:.5rem;color: rgb(194, 57, 53)"> Group Numbers Can't be empty</span>
 						</aura:if>
                     </div>
                  </div>        
