@@ -3,15 +3,18 @@
     <version>49.0</version>
     <types>
         <members>Jan15Obj__c.CompactLayout1</members>
+        <members>X31643Object__c.CompactLayout1</members>
         <name>CompactLayout</name>
     </types>
     <types>
         <members>Jan15Obj__c.Field1__c</members>
         <members>Jan15Obj__c.Field2__c</members>
+        <members>X31643Object__c.Field1__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>Jan15Obj__c</members>
+        <members>X31643Object__c</members>
         <name>CustomObject</name>
     </types>
 </Package>
