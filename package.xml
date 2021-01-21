@@ -10,6 +10,7 @@
         <members>Jan15Obj__c.Field1__c</members>
         <members>Jan15Obj__c.Field2__c</members>
         <members>X31643Object__c.Field1__c</members>
+        <members>X31643Object__c.Field2__c</members>
         <name>CustomField</name>
     </types>
     <types>
