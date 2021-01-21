@@ -2,8 +2,16 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <version>49.0</version>
     <types>
+        <members>Jan15Obj__c.CompactLayout1</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
         <members>Jan15Obj__c.Field1__c</members>
         <members>Jan15Obj__c.Field2__c</members>
         <name>CustomField</name>
+    </types>
+    <types>
+        <members>Jan15Obj__c</members>
+        <name>CustomObject</name>
     </types>
 </Package>
