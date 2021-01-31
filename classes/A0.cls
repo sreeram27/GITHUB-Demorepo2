@@ -1,8 +1,7 @@
 public Class A0
 {
 public Account createAccount(String name)  //method to create account
-{//45
-QDTest= new Account();
+{//451234
 Account a01231111112331= new Account();
 Account a0123111111233= new Account();
 Account a0123111111= new Account(); //commentsource line2 modify1
