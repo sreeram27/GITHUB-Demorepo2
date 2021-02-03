@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>48.0</version>
+    <version>49.0</version>
     <types>
         <members>Summer19</members>
         <members>Test_animation</members>
         <name>AnimationRule</name>
     </types>
     <types>
-        <members>A0009</members>
+        <members>A0</members>
+        <members>A000</members>
         <members>A0071</members>
         <members>A009</members>
         <members>A0233</members>
@@ -184,6 +185,7 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>ACR5__c.F3__c</members>
         <members>Account.AccountNumber</members>
         <members>Account.AccountSource</members>
         <members>Account.Active__c</members>
