@@ -1329,7 +1329,7 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ACR4__c.field2__c</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
