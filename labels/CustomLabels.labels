@@ -5,14 +5,14 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AAtest456</shortDescription>
-        <value>123sdsf</value>
+        <value>123</value>
     </labels>
     <labels>
         <fullName>AC1</fullName>
         <language>en_US</language>
-        <protected>false</protected>
+        <protected>true</protected>
         <shortDescription>ac111</shortDescription>
-        <value>12</value>
+        <value>701</value>
     </labels>
     <labels>
         <fullName>AC100</fullName>
