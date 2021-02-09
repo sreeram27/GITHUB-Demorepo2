@@ -7,6 +7,6 @@ public Account createAccount(String name)  //method to create account
 Account a01111111112= new Account();
 a01111111112.Name = name;
 return a01111111112;
-//add commentqqq1111
+//add comment
 }
 }

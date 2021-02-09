@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>Accept</actionName>
@@ -143,7 +142,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>111111111hghgjgjh</description>
+    <description>007 feb8th</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -155,9 +154,10 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
-        <fullName>field1__c</fullName>
+        <fullName>F3__c</fullName>
+        <description>test feb8th</description>
         <externalId>false</externalId>
-        <label>field1</label>
+        <label>F3</label>
         <length>7</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -165,7 +165,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>field1__c</fullName>
+        <description>1112</description>
+        <externalId>false</externalId>
+        <label>field1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>field2__c</fullName>
+        <description>sdfsd</description>
         <externalId>false</externalId>
         <label>field2</label>
         <required>false</required>

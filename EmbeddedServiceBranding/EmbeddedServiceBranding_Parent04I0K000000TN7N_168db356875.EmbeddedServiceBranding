@@ -7,7 +7,9 @@
     <height>498</height>
     <masterLabel>EmbeddedServiceBranding_Parent04I0K000000TN7N_168db356875</masterLabel>
     <navBarColor>#222222</navBarColor>
+    <navBarTextColor>#ffffff</navBarTextColor>
     <primaryColor>#222222</primaryColor>
     <secondaryColor>#005290</secondaryColor>
+    <secondaryNavBarColor>#cb2b19</secondaryNavBarColor>
     <width>320</width>
 </EmbeddedServiceBranding>

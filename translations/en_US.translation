@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- AppTest1 --></label>
+        <name>AppTest1</name>
+    </customApplications>
     <customLabels>
         <label><!-- AAtest456 --></label>
         <name>AAtest456</name>
@@ -7,10 +11,6 @@
     <customLabels>
         <label>test</label>
         <name>AC1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- AC100 --></label>
-        <name>AC100</name>
     </customLabels>
     <customLabels>
         <label><!-- AC133 --></label>
@@ -97,24 +97,8 @@
         <name>ACLT11</name>
     </customLabels>
     <customLabels>
-        <label><!-- ACLTest89 --></label>
-        <name>ACLTest89</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- ACLabel1 --></label>
-        <name>ACLabel1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- ACLabel45 --></label>
-        <name>ACLabel45</name>
-    </customLabels>
-    <customLabels>
         <label><!-- ACTNRLabel1 --></label>
         <name>ACTNRLabel1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- ACTNRLabel2 --></label>
-        <name>ACTNRLabel2</name>
     </customLabels>
     <customLabels>
         <label><!-- ACTNRLabel5 --></label>
@@ -165,26 +149,6 @@
         <name>APXL2</name>
     </customLabels>
     <customLabels>
-        <label><!-- APXLabel1 --></label>
-        <name>APXLabel1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- APXLabel2 --></label>
-        <name>APXLabel2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- APXLabel4 --></label>
-        <name>APXLabel4</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- ARCL1 --></label>
-        <name>ARCL1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- ARCutLabel1 --></label>
-        <name>ARCutLabel1</name>
-    </customLabels>
-    <customLabels>
         <label><!-- AR User Story --></label>
         <name>AR_User_Story</name>
     </customLabels>
@@ -197,56 +161,12 @@
         <name>AYL2</name>
     </customLabels>
     <customLabels>
-        <label><!-- AccNewLabel1 --></label>
-        <name>AccNewLabel1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- AccTest1 --></label>
-        <name>AccTest1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Acclabel45 --></label>
-        <name>Acclabel45</name>
-    </customLabels>
-    <customLabels>
         <label><!-- AnLabel11 --></label>
         <name>AnLabel11</name>
     </customLabels>
     <customLabels>
         <label><!-- Apicl2 --></label>
         <name>Apicl2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- At1 --></label>
-        <name>At1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Bl --></label>
-        <name>Bl</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CL1 --></label>
-        <name>CL1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CL1234 --></label>
-        <name>CL1234</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CL2 --></label>
-        <name>CL2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CL3 --></label>
-        <name>CL3</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CL4 --></label>
-        <name>CL4</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CL90 --></label>
-        <name>CL90</name>
     </customLabels>
     <customLabels>
         <label><!-- CLJUL16PAN01 - New --></label>
@@ -257,76 +177,16 @@
         <name>CLJUL16PAN03</name>
     </customLabels>
     <customLabels>
-        <label><!-- CLS1 --></label>
-        <name>CLS1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CLT1 --></label>
-        <name>CLT1</name>
-    </customLabels>
-    <customLabels>
         <label><!-- CLT101 --></label>
         <name>CLT101</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CLT4 --></label>
-        <name>CLT4</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CLTS1 --></label>
-        <name>CLTS1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CLTest11 --></label>
-        <name>CLTest11</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CLTest12 --></label>
-        <name>CLTest12</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CLTest123 --></label>
-        <name>CLTest123</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CLTest26 --></label>
-        <name>CLTest26</name>
     </customLabels>
     <customLabels>
         <label><!-- CLt200 --></label>
         <name>CLt200</name>
     </customLabels>
     <customLabels>
-        <label><!-- CLtest2 --></label>
-        <name>CLtest2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CSB31 --></label>
-        <name>CSB31</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CST6 --></label>
-        <name>CST6</name>
-    </customLabels>
-    <customLabels>
         <label><!-- Cl900 --></label>
         <name>Cl900</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Ct1 --></label>
-        <name>Ct1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Ct2 --></label>
-        <name>Ct2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CustomLabelTest2 --></label>
-        <name>CustomLabelTest2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- CustomlabelSB3 --></label>
-        <name>CustomlabelSB3</name>
     </customLabels>
     <customLabels>
         <label><!-- DL1 --></label>
@@ -345,16 +205,20 @@
         <name>DepCl1</name>
     </customLabels>
     <customLabels>
-        <label><!-- ESCCustomLabel1 --></label>
-        <name>ESCCustomLabel1</name>
+        <label><!-- Des1234 --></label>
+        <name>Des123</name>
     </customLabels>
     <customLabels>
-        <label><!-- ESCCustomLabel2 --></label>
-        <name>ESCCustomLabel2</name>
+        <label><!-- Des12345 --></label>
+        <name>Des12345</name>
     </customLabels>
     <customLabels>
         <label><!-- FS_Container_AuthenticationFailure_Title_04I0K000000TN7S_1694902 --></label>
         <name>FS_Container_AuthenticationFailure_Title_04I0K000000TN7S_1694902</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Feb8thCl1 --></label>
+        <name>Feb8thCl1</name>
     </customLabels>
     <customLabels>
         <label><!-- Fgv1 --></label>
@@ -373,16 +237,8 @@
         <name>J2</name>
     </customLabels>
     <customLabels>
-        <label><!-- KALabel1 --></label>
-        <name>KALabel1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- KALabel2 --></label>
-        <name>KALabel2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- KL1 --></label>
-        <name>KL1</name>
+        <label><!-- KMl1 --></label>
+        <name>KMl1</name>
     </customLabels>
     <customLabels>
         <label><!-- Kl1233 --></label>
@@ -433,22 +289,6 @@
         <name>LS1</name>
     </customLabels>
     <customLabels>
-        <label><!-- LabelTest51 --></label>
-        <name>LabelTest51</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- LabelTest56 --></label>
-        <name>LabelTest56</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Labelorg1 --></label>
-        <name>Labelorg1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Labeltest57 --></label>
-        <name>Labeltest57</name>
-    </customLabels>
-    <customLabels>
         <label><!-- Lbale891 --></label>
         <name>Lbale891</name>
     </customLabels>
@@ -473,24 +313,16 @@
         <name>N98765</name>
     </customLabels>
     <customLabels>
-        <label><!-- NA23Label1 --></label>
-        <name>NA23Label1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- NA23Label2 --></label>
-        <name>NA23Label2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- NA23label11 --></label>
-        <name>NA23label11</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- NA23label12 --></label>
-        <name>NA23label12</name>
-    </customLabels>
-    <customLabels>
         <label><!-- NCL1 --></label>
         <name>NCL1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NCN1 --></label>
+        <name>NCN1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NCinoCl1 --></label>
+        <name>NCinoCl1</name>
     </customLabels>
     <customLabels>
         <label><!-- NCl2 --></label>
@@ -499,10 +331,6 @@
     <customLabels>
         <label><!-- NM101 --></label>
         <name>NM101</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- NS25Label1 --></label>
-        <name>NS25Label1</name>
     </customLabels>
     <customLabels>
         <label><!-- New12 --></label>
@@ -525,80 +353,12 @@
         <name>Obj897</name>
     </customLabels>
     <customLabels>
-        <label><!-- Org1Label1 --></label>
-        <name>Org1Label1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Org1Label2 --></label>
-        <name>Org1Label2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- PLabel2 --></label>
-        <name>PLabel2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- RL54 --></label>
-        <name>RL54</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- RL55 --></label>
-        <name>RL55</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- RL56 --></label>
-        <name>RL56</name>
-    </customLabels>
-    <customLabels>
         <label><!-- RLB1 --></label>
         <name>RLB1</name>
     </customLabels>
     <customLabels>
-        <label><!-- RLLabel3 --></label>
-        <name>RLLabel3</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- RLTest50 --></label>
-        <name>RLTest50</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- RLTest51 --></label>
-        <name>RLTest51</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- RLabel52 --></label>
-        <name>RLabel52</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- RLabel54 --></label>
-        <name>RLabel54</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- RLabel58 --></label>
-        <name>RLabel58</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- RLr1 --></label>
-        <name>RLr1</name>
-    </customLabels>
-    <customLabels>
         <label><!-- RTLabel1 --></label>
         <name>RTLabel1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Rl1 --></label>
-        <name>Rl1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Rlabel53 --></label>
-        <name>Rlabel53</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Rlabel56 --></label>
-        <name>Rlabel56</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Rlabel59 --></label>
-        <name>Rlabel59</name>
     </customLabels>
     <customLabels>
         <label><!-- S12 --></label>
@@ -629,18 +389,6 @@
         <name>SC1</name>
     </customLabels>
     <customLabels>
-        <label><!-- SCLabelTest1 --></label>
-        <name>SCLabelTest1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- SCLabelTest2 --></label>
-        <name>SCLabelTest2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- SCLabelTest3 --></label>
-        <name>SCLabelTest3</name>
-    </customLabels>
-    <customLabels>
         <label><!-- SKVAug16Label1 --></label>
         <name>SKVAug16Label1</name>
     </customLabels>
@@ -657,10 +405,6 @@
         <name>SL12</name>
     </customLabels>
     <customLabels>
-        <label><!-- SLabel2 --></label>
-        <name>SLabel2</name>
-    </customLabels>
-    <customLabels>
         <label><!-- SS1 --></label>
         <name>SS1</name>
     </customLabels>
@@ -669,8 +413,12 @@
         <name>SS2</name>
     </customLabels>
     <customLabels>
-        <label><!-- SV1 --></label>
-        <name>SV1</name>
+        <label><!-- SSlabel1 --></label>
+        <name>SSlabel1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- STAB203 Label --></label>
+        <name>STAB203_Label</name>
     </customLabels>
     <customLabels>
         <label><!-- SaiCustomlabel10 --></label>
@@ -725,96 +473,12 @@
         <name>SampathLab1l1</name>
     </customLabels>
     <customLabels>
-        <label><!-- SbTwoL1 --></label>
-        <name>SbTwoL1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Slabel1 --></label>
-        <name>Slabel1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- T123 --></label>
-        <name>T123</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- T4 --></label>
-        <name>T4</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- T67 --></label>
-        <name>T67</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- T9 --></label>
-        <name>T9</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- TC1 --></label>
-        <name>TC1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- TCL1 --></label>
-        <name>TCL1</name>
-    </customLabels>
-    <customLabels>
         <label><!-- TL2 --></label>
         <name>TL2</name>
     </customLabels>
     <customLabels>
-        <label><!-- Test1 --></label>
-        <name>Test1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Test989 --></label>
-        <name>Test989</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- TestCustomLabel --></label>
-        <name>TestCustomLabel</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- TestLAbel89 --></label>
-        <name>TestLAbel89</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- TestLabel1 --></label>
-        <name>TestLabel1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- TestLabel1234 --></label>
-        <name>TestLabel1234</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- TestLabel2 --></label>
-        <name>TestLabel2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- TestLabel2345 --></label>
-        <name>TestLabel2345</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- TestLabl13 --></label>
-        <name>TestLabl13</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- Tl123 --></label>
-        <name>Tl123</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- UL1 --></label>
-        <name>UL1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- UL2 --></label>
-        <name>UL2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- UL4 --></label>
-        <name>UL4</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- UL9 --></label>
-        <name>UL9</name>
+        <label><!-- Urltestlabel1 --></label>
+        <name>Urltestlabel1</name>
     </customLabels>
     <customLabels>
         <label><!-- V8 --></label>
@@ -823,18 +487,6 @@
     <customLabels>
         <label><!-- V9 --></label>
         <name>V9</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- VCLTest1 --></label>
-        <name>VCL1</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- VCLabel --></label>
-        <name>VCLabel</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- VCl5 --></label>
-        <name>VCl5</name>
     </customLabels>
     <customLabels>
         <label><!-- 212 --></label>
@@ -909,6 +561,10 @@
         <name>fdf</name>
     </customLabels>
     <customLabels>
+        <label><!-- feb8tCl1 --></label>
+        <name>feb8tCl1</name>
+    </customLabels>
+    <customLabels>
         <label><!-- gggg --></label>
         <name>gggg</name>
     </customLabels>
@@ -945,10 +601,6 @@
         <name>mar19label3</name>
     </customLabels>
     <customLabels>
-        <label><!-- mar20Label7 --></label>
-        <name>mar20Label7</name>
-    </customLabels>
-    <customLabels>
         <label><!-- mc78 --></label>
         <name>mc78</name>
     </customLabels>
@@ -969,20 +621,12 @@
         <name>njan12</name>
     </customLabels>
     <customLabels>
-        <label><!-- nl1 --></label>
-        <name>nl1</name>
-    </customLabels>
-    <customLabels>
         <label><!-- nm1 --></label>
         <name>nm1</name>
     </customLabels>
     <customLabels>
         <label><!-- nn2 --></label>
         <name>nn2</name>
-    </customLabels>
-    <customLabels>
-        <label><!-- oct1 --></label>
-        <name>oct1</name>
     </customLabels>
     <customLabels>
         <label><!-- ol1 --></label>
@@ -1037,52 +681,36 @@
         <name>zl123</name>
     </customLabels>
     <flowDefinitions>
+        <flows>
+            <screens>
+                <name>Test</name>
+            </screens>
+        </flows>
+        <fullName>Automated_email_on_QLI_Onduo_product_Created_Updated</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <screens>
+                <name>Pradeep</name>
+            </screens>
+        </flows>
+        <fullName>Pradeep</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows/>
+        <fullName>QuoteLineItem</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
         <flows/>
         <fullName>TestFlowLabel1</fullName>
     </flowDefinitions>
     <quickActions>
-        <label><!-- LogACall --></label>
-        <name>LogACall</name>
+        <label><!-- Guest Community Case --></label>
+        <name>GuestCommunityCase</name>
     </quickActions>
     <quickActions>
-        <label><!-- NewAccount --></label>
-        <name>NewAccount</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- NewCase --></label>
-        <name>NewCase</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- NewContact --></label>
-        <name>NewContact</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- NewEvent --></label>
-        <name>NewEvent</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- NewGroup --></label>
-        <name>NewGroup</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- NewLead --></label>
-        <name>NewLead</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- NewNote --></label>
-        <name>NewNote</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- NewOpportunity --></label>
-        <name>NewOpportunity</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- NewTask --></label>
-        <name>NewTask</name>
-    </quickActions>
-    <quickActions>
-        <label><!-- SendEmail --></label>
-        <name>SendEmail</name>
+        <label><!-- New Community Case --></label>
+        <name>NewCommunityCase</name>
     </quickActions>
     <reportTypes>
         <description><!-- Screen Flows --></description>
