@@ -2,7 +2,14 @@
     <version>50.0</version>
     <types>
         <members>ARProfile1</members>
+        <members>ARProfile10</members>
         <members>ARProfile2</members>
+        <members>ATESTProfile1</members>
+        <members>Admin</members>
+        <members>CloneProfile1</members>
+        <members>ProfileTest1</members>
+        <members>ProfileTest123</members>
+        <members>Profileest</members>
         <name>Profile</name>
     </types>
 </Package>
