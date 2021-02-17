@@ -3313,6 +3313,8 @@
     <types>
         <members>PRS1</members>
         <members>PRS2</members>
+        <members>PradeepPermSet1</members>
+        <members>feb8th</members>
         <name>PermissionSet</name>
     </types>
     <types>
