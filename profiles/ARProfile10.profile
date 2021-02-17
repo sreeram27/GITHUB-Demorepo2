@@ -67,7 +67,7 @@
     </applicationVisibilities>
     <classAccesses>
         <apexClass>A0</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A000</apexClass>
@@ -1190,7 +1190,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
-    <description>profilr ad</description>
+    <description>profilr ad feb8th</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACCObjTest1__c.ACCField1__c</field>

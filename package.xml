@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <version>44.0</version>
+<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <version>50.0</version>
     <types>
         <members>A0</members>
         <members>A000</members>
@@ -2492,8 +2491,13 @@
         <name>NetworkBranding</name>
     </types>
     <types>
+        <members>PRS007</members>
+        <members>PRS008</members>
+        <members>PRS009</members>
         <members>PRS1</members>
         <members>PRS2</members>
+        <members>PradeepPermSet1</members>
+        <members>feb8th</members>
         <name>PermissionSet</name>
     </types>
     <types>
