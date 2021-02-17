@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<?xml version="1.0" encoding="UTF-8"?><Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <version>50.0</version>
     <types>
         <members>A0</members>
@@ -7740,6 +7739,9 @@
         <name>NotificationTypeConfig</name>
     </types>
     <types>
+        <members>PRS007</members>
+        <members>PRS008</members>
+        <members>PRS009</members>
         <members>PRS1</members>
         <members>PRS2</members>
         <name>PermissionSet</name>
@@ -7817,6 +7819,8 @@
         <members>Teste Profile</members>
         <members>Work%2Ecom Only User</members>
         <members>clone profile</members>
+        <members>feb8th</members>
+        <members>sp1</members>
         <name>Profile</name>
     </types>
     <types>
