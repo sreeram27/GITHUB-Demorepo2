@@ -19,7 +19,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>AC100</shortDescription>
-        <value>123</value>
+        <value>12</value>
     </labels>
     <labels>
         <fullName>AC11</fullName>
