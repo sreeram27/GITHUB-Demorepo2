@@ -60,6 +60,10 @@
         <apexClass>A59</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>TestCustomPerm1</name>
+    </customPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>ACRObj1__c.Field4__c</field>
