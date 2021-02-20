@@ -2,8 +2,7 @@
 public class a1testclass{
  static testmethod void a1test()
  {
-  A1 Octa1= new A1();
+  Classacd Octa1= new Classacd();
   Octa1.createAccount('name');
  }
- //T11
 }
