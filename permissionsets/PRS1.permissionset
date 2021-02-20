@@ -2,11 +2,11 @@
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>AppTest1</application>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
         <application>standard__AppLauncher</application>
-        <visible>false</visible>
+        <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
         <apexClass>A0</apexClass>
@@ -91,7 +91,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <flowAccesses>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
         <flow>Automated_email_on_QLI_Onduo_product_Created_Updated</flow>
     </flowAccesses>
     <hasActivationRequired>false</hasActivationRequired>
@@ -168,7 +168,7 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <userPermissions>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
         <name>EditCaseComments</name>
     </userPermissions>
 </PermissionSet>
