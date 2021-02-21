@@ -119,7 +119,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A028</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A036</apexClass>
