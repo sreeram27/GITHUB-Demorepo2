@@ -171,4 +171,8 @@
         <recordType>Dbj1__c.Dbj_RC1</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditCaseComments</name>
+    </userPermissions>
 </PermissionSet>
