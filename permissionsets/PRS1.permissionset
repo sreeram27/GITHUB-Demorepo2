@@ -22,7 +22,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A036</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0456</apexClass>
