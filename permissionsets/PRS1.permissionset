@@ -10,7 +10,7 @@
     </applicationVisibilities>
     <classAccesses>
         <apexClass>A0</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A012378</apexClass>
@@ -19,10 +19,6 @@
     <classAccesses>
         <apexClass>A0233</apexClass>
         <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>A036</apexClass>
-        <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>A0456</apexClass>
@@ -115,7 +111,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <flowAccesses>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <flow>Automated_email_on_QLI_Onduo_product_Created_Updated</flow>
     </flowAccesses>
     <hasActivationRequired>false</hasActivationRequired>
@@ -203,7 +199,7 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>Apexpage6</apexPage>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </pageAccesses>
     <recordTypeVisibilities>
         <recordType>Dbj1__c.Dbj_RC1</recordType>
