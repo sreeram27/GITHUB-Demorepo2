@@ -902,6 +902,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Pclass1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>RClass1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
