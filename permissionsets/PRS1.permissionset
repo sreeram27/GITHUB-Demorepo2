@@ -58,7 +58,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Feb22ndCls1</apexClass>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
     </classAccesses>
     <customPermissions>
         <enabled>true</enabled>
