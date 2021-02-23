@@ -6,30 +6,6 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities><applicationVisibilities>
-        <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>standard__Chatter</application>
         <default>false</default>
         <visible>true</visible>
@@ -127,18 +103,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>A022233444</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>A0233</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>A0233</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>A0233</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -4046,6 +4010,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>feb23obj1__c.F1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>lboj879__c.f8__c</field>
         <readable>true</readable>
@@ -4536,15 +4505,6 @@
         <layout>STObj1__c-STObj1 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>STObj1__c-STObj1 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>STObj1__c-STObj1 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>STObj1__c-STObj1 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>STObj2__c-STObj2 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -4996,6 +4956,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>StreamingChannel</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>false</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>feb23obj1__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
