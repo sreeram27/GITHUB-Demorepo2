@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <classAccesses>
         <apexClass>A0</apexClass>
@@ -242,6 +243,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>feb23obj1__c.F1__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>qb1__c.f1__c</field>
         <readable>false</readable>
@@ -313,6 +319,15 @@
         <object>STObj1__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>feb23obj1__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <pageAccesses>
         <apexPage>ApexPage</apexPage>
         <enabled>true</enabled>
@@ -321,4 +336,8 @@
         <recordType>Dbj1__c.Dbj_RC1</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditCaseComments</name>
+    </userPermissions>
 </PermissionSet>
