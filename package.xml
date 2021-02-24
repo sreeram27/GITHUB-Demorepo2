@@ -460,8 +460,10 @@
         <members>ACR3__c.field2__c</members>
         <members>ACR4__c.Field1__c</members>
         <members>ACR4__c.field2__c</members>
+        <members>ACR5__c.F3__c</members>
         <members>ACR5__c.field1__c</members>
         <members>ACR5__c.field2__c</members>
+        <members>ACR5__c.pf1__c</members>
         <members>ACR6__c.fileld1__c</members>
         <members>ACR6__c.fileld2__c</members>
         <members>ACRObj1__c.Field2__c</members>
