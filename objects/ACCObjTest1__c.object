@@ -206,6 +206,7 @@
     </fields>
     <fields>
         <fullName>Pf3__c</fullName>
+        <description>dsfsdfsd</description>
         <externalId>false</externalId>
         <label>Pf3</label>
         <required>false</required>
@@ -217,8 +218,13 @@
                 <sorted>false</sorted>
                 <value>
                     <fullName>test</fullName>
-                    <default>true</default>
+                    <default>false</default>
                     <label>test</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>true</default>
+                    <label>1</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
