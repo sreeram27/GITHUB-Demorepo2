@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>AppTest1</application>
@@ -185,6 +186,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>A98</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>A989</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>A999</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -366,6 +375,26 @@
     </classAccesses>
     <classAccesses>
         <apexClass>DepCls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>E2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>E3</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Feb22ndCls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Feb5</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Feb523</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -876,6 +905,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Feb22ndObj1__c.F1__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Feb22ndObj1__c.F2__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>NA17Obj1__c.F1__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -953,6 +992,11 @@
         <editable>true</editable>
         <field>Sep8thObj1__c.F2__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>feb23obj1__c.F1__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1103,6 +1147,36 @@
         <layout>sp1__c-sp1 Layout</layout>
     </layoutAssignments>
     <loginHours/>
+    <loginIpRanges>
+        <endAddress>255.255.255.200</endAddress>
+        <startAddress>1.0.0.2</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.202</endAddress>
+        <startAddress>1.0.0.3</startAddress>
+    </loginIpRanges>
+    <loginIpRanges>
+        <endAddress>255.255.255.201</endAddress>
+        <startAddress>1.0.0.3</startAddress>
+    </loginIpRanges>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Feb22ndObj1__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>feb23obj1__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <pageAccesses>
         <apexPage>ApexPage</apexPage>
         <enabled>false</enabled>
