@@ -12,33 +12,20 @@
         <apexClass>A0123</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>Feb22ndCls1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Feb5</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Feb523</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
-    <description>Sai&lt;&gt;
-?
-:
-;
-&quot;&apos;
-/
-{}
-[]{}
-|
-\
-~`
-@
-!
-#
-$
-%
-^
-&amp;
-*
-+
-_
-=
--
-.
-,
-/</description>
+    <description>add</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACDemoOBj1__c.Ftest12__c</field>
@@ -99,6 +86,7 @@ _
         <field>DObj2__c.field2__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <loginHours/>
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>

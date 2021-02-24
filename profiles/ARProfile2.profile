@@ -12,7 +12,20 @@
         <apexClass>A0123</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>Feb22ndCls1</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Feb5</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Feb523</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
+    <description>111111</description>
     <fieldPermissions>
         <editable>false</editable>
         <field>ACDemoOBj1__c.Ftest12__c</field>
